@@ -33,7 +33,9 @@ var _graft_count: int = 0
 
 
 static func parse(text: String, lex: LexiconData) -> Dictionary:
-	return PhraseParser.new()._run(text, lex)
+	var result := PhraseParser.new()._run(CreativeComposer.prepare(text), lex)
+	result["text"] = text
+	return result
 
 
 func _run(text: String, lex: LexiconData) -> Dictionary:

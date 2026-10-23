@@ -2435,7 +2435,9 @@
       "bomba de nêutrons",
       "bomba de neutrons",
       "bomba de neutron",
-      "bomba de nêutron"
+      "bomba de nêutron",
+      "bomba de neutrinos",
+      "bomba de neutrino"
     ],
     "forms": []
   },
@@ -2625,6 +2627,133 @@
     "words": [
       "morcego",
       "morcegos"
+    ],
+    "forms": []
+  },
+  "blast_shield": {
+    "name": "escudo anti bombas",
+    "words": [
+      "escudo anti bombas",
+      "escudo contra bombas",
+      "escudo anti bomba",
+      "escudo antibomba"
+    ],
+    "forms": []
+  },
+  "neutron_shield": {
+    "name": "escudo anti nêutrons",
+    "words": [
+      "escudo anti nêutrons",
+      "escudo contra nêutrons",
+      "escudo anti bomba de nêutrons",
+      "escudo anti bomba de neutrons",
+      "escudo anti neutrinos",
+      "escudo anti bomba de neutrinos",
+      "escudo anti bomba de neutrino",
+      "escudo anti neutrino",
+      "escudo anti bomba de neutron"
+    ],
+    "forms": []
+  },
+  "nuclear_shield": {
+    "name": "escudo anti bombas nucleares",
+    "words": [
+      "escudo anti bombas nucleares",
+      "escudo contra bombas nucleares"
+    ],
+    "forms": []
+  },
+  "gravity_shield": {
+    "name": "escudo anti gravidade",
+    "words": [
+      "escudo anti gravidade",
+      "escudo contra gravidade"
+    ],
+    "forms": []
+  },
+  "spatial_shield": {
+    "name": "escudo anti cortes espaciais",
+    "words": [
+      "escudo anti cortes espaciais",
+      "escudo contra cortes espaciais"
+    ],
+    "forms": []
+  },
+  "house": {
+    "name": "casa",
+    "words": [
+      "casa",
+      "casinha",
+      "casa de blocos"
+    ],
+    "forms": []
+  },
+  "walking_house": {
+    "name": "casa ambulante",
+    "words": [
+      "casa ambulante",
+      "casa que anda",
+      "casa andante",
+      "casa movel"
+    ],
+    "forms": []
+  },
+  "queen_ant": {
+    "name": "formiga rainha",
+    "words": [
+      "formiga rainha",
+      "rainha das formigas"
+    ],
+    "forms": []
+  },
+  "ant_nest": {
+    "name": "ninho de formigas",
+    "words": [
+      "ninho de formigas",
+      "formigueiro",
+      "ninho"
+    ],
+    "forms": []
+  },
+  "queen_bee": {
+    "name": "abelha rainha",
+    "words": [
+      "abelha rainha",
+      "rainha das abelhas"
+    ],
+    "forms": []
+  },
+  "beehive": {
+    "name": "colmeia",
+    "words": [
+      "colmeia",
+      "ninho de abelhas"
+    ],
+    "forms": []
+  },
+  "chicken_coop": {
+    "name": "galinheiro",
+    "words": [
+      "galinheiro",
+      "criador de galinhas"
+    ],
+    "forms": []
+  },
+  "anteater": {
+    "name": "tamanduá",
+    "words": [
+      "tamanduá",
+      "tamandua",
+      "tamanduás"
+    ],
+    "forms": []
+  },
+  "shield_projector": {
+    "name": "projetor de escudos",
+    "words": [
+      "projetor de escudos",
+      "arma que faz escudos",
+      "arma de escudos"
     ],
     "forms": []
   }

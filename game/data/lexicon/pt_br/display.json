@@ -26,30 +26,66 @@
     "pull": "puxa",
     "freeze": "congela",
     "ignite": "incendeia",
-    "split": "divide em {n}", "strike": "golpeia",
+    "split": "divide em {n}",
+    "strike": "golpeia",
     "burst_into": "explode em"
   },
-  "aim": { "enemy": "no inimigo" },
+  "aim": {
+    "enemy": "no inimigo"
+  },
   "mods": {
     "scale": "×{v}",
     "width": "largura ×{v}",
     "height": "altura ×{v}",
     "length": "comprimento ×{v}",
     "speed": "velocidade ×{v}",
-    "barrels": "{v} bocas", "barrels_melee": "{v} pontas",
+    "barrels": "{v} bocas",
+    "barrels_melee": "{v} pontas",
     "upright": "em pé",
     "explosive": "explosivo",
-    "element": { "fire": "de fogo", "ice": "de gelo",
-  "laser": "de laser"
-},
+    "element": {
+      "fire": "de fogo",
+      "ice": "de gelo",
+      "laser": "de laser"
+    },
     "parts": "{section} de {name}",
     "attachments": "com {names}",
-    "color": {"red": "vermelho", "blue": "azul", "green": "verde", "yellow": "amarelo", "orange": "laranja", "purple": "roxo", "pink": "rosa", "black": "preto", "white": "branco", "gold": "dourado", "silver": "prateado"},
-    "material": {"rubber": "de borracha"},
+    "color": {
+      "red": "vermelho",
+      "blue": "azul",
+      "green": "verde",
+      "yellow": "amarelo",
+      "orange": "laranja",
+      "purple": "roxo",
+      "pink": "rosa",
+      "black": "preto",
+      "white": "branco",
+      "gold": "dourado",
+      "silver": "prateado"
+    },
+    "material": {
+      "rubber": "de borracha"
+    },
     "magnetic": "magnético",
-    "unstable": "instável"
+    "unstable": "instável",
+    "shield_profile": {
+      "blast": "proteção contra bombas",
+      "neutron": "proteção contra nêutrons",
+      "nuclear": "proteção nuclear",
+      "gravity": "proteção gravitacional",
+      "spatial": "proteção espacial"
+    },
+    "diet": {
+      "ant": "come só formigas",
+      "insect": "come só insetos",
+      "rodent": "come só ratos",
+      "chicken": "come só galinhas"
+    }
   },
-  "control": { "player": "pilotável", "auto": "automático" },
+  "control": {
+    "player": "pilotável",
+    "auto": "automático"
+  },
   "movement": {
     "static": "parado",
     "straight": "reto",
@@ -62,11 +98,41 @@
     "follow_aim": "teleguiado",
     "piloted": "pilotado"
   },
-  "abilities": { "fly": "voar", "sprint": "correr", "super_jump": "super pulo" },
-  "commands": { "recycle": "reciclar" },
-  "sections_melee": { "rear": "cabo", "front": "lâmina", "muzzle": "ponta" },
-  "sections": { "rear": "coronha", "front": "corpo", "muzzle": "cano" },
-  "dims": { "scale": "tamanho", "width": "largura", "height": "altura", "length": "comprimento" },
-  "status": { "frozen": "❄ congelado", "burning": "🔥 pegando fogo" },
-  "mounts": {"mount_front": "na frente", "mount_back": "atrás", "mount_top": "em cima", "mount_bottom": "embaixo", "mount_left": "à esquerda", "mount_right": "à direita", "mount_hand": "na mão"}
+  "abilities": {
+    "fly": "voar",
+    "sprint": "correr",
+    "super_jump": "super pulo"
+  },
+  "commands": {
+    "recycle": "reciclar"
+  },
+  "sections_melee": {
+    "rear": "cabo",
+    "front": "lâmina",
+    "muzzle": "ponta"
+  },
+  "sections": {
+    "rear": "coronha",
+    "front": "corpo",
+    "muzzle": "cano"
+  },
+  "dims": {
+    "scale": "tamanho",
+    "width": "largura",
+    "height": "altura",
+    "length": "comprimento"
+  },
+  "status": {
+    "frozen": "❄ congelado",
+    "burning": "🔥 pegando fogo"
+  },
+  "mounts": {
+    "mount_front": "na frente",
+    "mount_back": "atrás",
+    "mount_top": "em cima",
+    "mount_bottom": "embaixo",
+    "mount_left": "à esquerda",
+    "mount_right": "à direita",
+    "mount_hand": "na mão"
+  }
 }

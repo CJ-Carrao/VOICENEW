@@ -41,15 +41,25 @@ static func _node(node: Dictionary, lex: LexiconData) -> float:
 		total += float(lex.bal("cost.movement." + String(node["movement"]), 0.0))
 	total += float(lex.bal("cost.control." + String(node.get("control", "none")), 0.0))
 	for key: String in mods:
+		if key == "shield_profile":
+			total += float(lex.bal("innovation.protection_costs." + String(mods[key]), 25.0)) * maxf(1.0, float(mods.get("count", 1)))
+			continue
 		if mods[key] is Dictionary or mods[key] is Array:
 			continue
-		total += float(lex.bal("cost.mods." + key, 0.0))
+		total += float(lex.bal("cost.mods." + key, 0.0)) * (maxf(1.0, float(mods.get("count", 1))) if key == "diet" else 1.0)
 
 	for gear: Variant in mods.get("attachments", []):
 		total += lex.thing_statf(String(gear), "cost")
 	for graft: Dictionary in mods.get("grafts", []):
 		total += _node(graft["node"], lex) * maxf(1.0, float(mods.get("count", 1)))
 	for behavior: Dictionary in node.get("behaviors", []):
+		# Naming a queen's built-in nest production must not charge twelve nests upfront.
+		# Its offspring are paid individually when the ecological component produces them.
+		var ecology: Dictionary = lex.thing_def(id).get("ecology", {})
+		var action: Dictionary = behavior.get("do", {})
+		var child: Dictionary = action.get("arg", {}) if action.get("arg") is Dictionary else {}
+		if action.get("type") == "spawn" and not child.is_empty() and child.get("thing") == ecology.get("produces") and child.get("mods", {}).is_empty() and child.get("behaviors", []).is_empty():
+			continue
 		total += _behavior(behavior, id, lex)
 	total = minf(total, lex.balf("cost.max_node_cost"))
 

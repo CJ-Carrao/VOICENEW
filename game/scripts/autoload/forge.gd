@@ -358,6 +358,8 @@ func spawn_child(node: Dictionary, role: String, at: Vector3, direction: Vector3
 		return null
 	if Session.is_online() and not Session.creations.descendant_allowed(spawner.owner_id, node):
 		return null
+	if not InnovationRules.authorize_spawn(spawner, node):
+		return null
 	var child: = Assembler.build(node, role, Lexicon.data)
 	child.set_owner_info(spawner.owner_id, spawner.team, spawner.owner_player, spawner)
 	if same_generation:
@@ -386,6 +388,8 @@ func summon_child(node: Dictionary, target: Vector3, heading: Vector3, spawner: 
 	if not has_effect_authority() or world == null or node.is_empty() or not _depth_allows(spawner):
 		return null
 	if Session.is_online() and not Session.creations.descendant_allowed(spawner.owner_id, node):
+		return null
+	if not InnovationRules.authorize_spawn(spawner, node):
 		return null
 	var child: = Assembler.build(node, "summoned", Lexicon.data)
 	child.set_owner_info(spawner.owner_id, spawner.team, spawner.owner_player, spawner)

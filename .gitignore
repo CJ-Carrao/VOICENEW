@@ -15,3 +15,7 @@ game/.godot/
 game/.autoconverted/
 game/voice/
 game/gdre_export.log
+
+tools/__pycache__/
+game/Godot/
+game/LAVOICE-Lab/

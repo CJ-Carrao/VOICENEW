@@ -18,7 +18,8 @@ func _ready() -> void:
 	_build()
 	for argument in OS.get_cmdline_user_args():
 		if argument == "--catalogo":
-			await get_tree().create_timer(1.0).timeout
+			while Forge.world == null or _world_loading():
+				await get_tree().create_timer(0.1).timeout
 			toggle()
 
 
@@ -76,7 +77,7 @@ func _build() -> void:
 	content.add_child(help)
 	var tabs := HBoxContainer.new()
 	content.add_child(tabs)
-	for pair in [["ANIMAIS", "Animais"], ["GRANADAS", "Granadas de criaturas"], ["BOMBAS", "Bombas especiais"], ["ARMAS", "Armas especiais"]]:
+	for pair in [["ANIMAIS", "Animais"], ["GRANADAS", "Granadas de criaturas"], ["BOMBAS", "Bombas especiais"], ["ARMAS", "Armas especiais"], ["DEFESAS", "Defesas"], ["ECOLOGIA", "Ecologia"], ["COMBINAR", "Combinações"]]:
 		var tab := Button.new()
 		tab.text = pair[0]
 		tab.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -95,7 +96,7 @@ func _build() -> void:
 	hint = _text("F2  /  NOVAS CRIAÇÕES", 16, Color("#d5c8a8"))
 	hint.theme = theme
 	hint.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
-	hint.position = Vector2(-265, 14)
+	hint.position = Vector2(-285, 110)
 	hint.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(hint)
 
@@ -105,8 +106,9 @@ func _populate(group: String) -> void:
 	for child in entries.get_children():
 		entries.remove_child(child)
 		child.queue_free()
-	for entry in catalog.creations:
-		if entry.group != group:
+	var list: Array = catalog.get("combinations", []) if group == "Combinações" else catalog.creations
+	for entry in list:
+		if group != "Combinações" and entry.group != group:
 			continue
 		var card := PanelContainer.new()
 		card.add_theme_stylebox_override("panel", _style(Color("#2c3945"), true))
@@ -115,13 +117,21 @@ func _populate(group: String) -> void:
 		row.add_theme_constant_override("separation", 4)
 		card.add_child(row)
 		row.add_child(_text(String(entry.name).to_upper(), 22))
+		if entry.has("base_cost"):
+			row.add_child(_text("Matéria base: %.0f  /  combinações e repetição alteram o custo" % float(entry.base_cost), 16, Color("#b3c1c7")))
 		var description := _text(entry.effect, 17, Color("#c5c9c5"))
 		description.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		row.add_child(description)
 		row.add_child(_text("Diga: “%s”" % entry.phrase, 17, Color("#e8ab70")))
 
 
+func _world_loading() -> bool:
+	return Forge.world != null and (bool(Forge.world.get("_waiting_world")) or not Forge.world.arena.is_world_ready() or String(Forge.world.state) == "map_intro")
+
+
 func toggle() -> void:
+	if not panel.visible and _world_loading():
+		return
 	if panel.visible:
 		panel.hide()
 		get_tree().paused = previous_paused
@@ -144,7 +154,7 @@ func toggle() -> void:
 
 
 func _process(_delta: float) -> void:
-	hint.visible = not panel.visible and Input.mouse_mode != Input.MOUSE_MODE_HIDDEN
+	hint.visible = not panel.visible and not _world_loading() and Input.mouse_mode != Input.MOUSE_MODE_HIDDEN
 
 
 func _input(event: InputEvent) -> void:

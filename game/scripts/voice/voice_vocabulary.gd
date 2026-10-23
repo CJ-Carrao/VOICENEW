@@ -44,6 +44,8 @@ static func hotwords(lex: LexiconData) -> PackedStringArray:
 
 static func _all_phrases(lex: LexiconData) -> PackedStringArray:
 	var out: = PackedStringArray()
+	for phrase in CreativeComposer.SPOKEN_FORMS:
+		out.append(phrase)
 	for table in ["things", "verbs", "modifiers", "parts", "abilities", "commands", "macros"]:
 		for key: String in lex.lexicon[table]:
 			if key.begins_with("_"):

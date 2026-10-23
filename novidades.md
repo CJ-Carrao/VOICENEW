@@ -1,5 +1,5 @@
 ---
-title: Pacote Caos - 62 novas criacoes
+title: Pacote Caos - 76 novas criacoes
 date: 2026-10-23
 tags:
   - lavoice
@@ -9,7 +9,7 @@ tags:
 
 # Pacote Caos
 
-62 criações novas no LAVOICE Lab: 30 animais, 12 granadas de criaturas, 12 bombas especiais e 8 armas. A formiga anterior foi refeita com peças em blocos, seis patas e antenas.
+76 criações novas no LAVOICE Lab: o pacote inicial de 62 ganhou 14 opções de defesa, construção e ecologia. Veja [criatividade.md](criatividade.md) para combinações, custos e colônias. A formiga anterior foi refeita com peças em blocos, seis patas e antenas.
 
 ## Como usar
 
@@ -31,7 +31,7 @@ tags:
 - Quero uma bomba hipotética de gravidade.
 - Quero uma faca que corta o espaço.
 
-A faca abre um corte à distância que atinge inimigos e blocos. A bomba de gravidade atrai e comprime; a hipotética levanta e depois repele. A de nêutrons atinge combatentes e criaturas sem escavar o terreno. São mecânicas de ficção do jogo.
+A faca abre um corte à distância que atinge inimigos e blocos. A bomba de gravidade atrai e comprime; a hipotética levanta e depois repele. A de nêutrons agora lança blocos, faz uma cratera curta e atinge criaturas mais longe. São mecânicas de ficção do jogo.
 
 ## Animais
 

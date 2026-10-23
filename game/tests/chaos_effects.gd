@@ -70,7 +70,7 @@ func _run() -> void:
 				_check(blasts > before and target.hp < 1000, "Nuclear blast did not deal damage")
 			"neutron":
 				_check(target.hp < 1000, "Neutron pulse did not hit creature")
-				_check(wall.hp == 1000 and blasts == before, "Neutron pulse damaged structures or terrain")
+				_check(wall.hp < 1000 and blasts > before, "Neutron blast failed to break nearby structures and terrain")
 			"gravity", "singularity":
 				_check(target.velocity.x < -0.1, "Gravity did not pull inward: " + mode)
 			"hypothetical":

@@ -1,6 +1,6 @@
 {
   "generator": "tools/models/gen_world_assets.py",
-  "new_definitions": 183,
+  "new_definitions": 197,
   "units": "meters",
   "notes": "Dimensões representativas; locomoção biologicamente inspirada com velocidades de combate balanceadas. Tubarão flutua na arena sem água. Unicórnio é fantasia. Não são modelos anatômicos científicos.",
   "sources": {
@@ -1166,6 +1166,90 @@
       "group": "creature",
       "pieces": 28,
       "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "blast_shield",
+      "group": "tool",
+      "pieces": 9,
+      "reference": "arte original em blocos do pacote Criatividade"
+    },
+    {
+      "id": "neutron_shield",
+      "group": "tool",
+      "pieces": 9,
+      "reference": "arte original em blocos do pacote Criatividade"
+    },
+    {
+      "id": "nuclear_shield",
+      "group": "tool",
+      "pieces": 9,
+      "reference": "arte original em blocos do pacote Criatividade"
+    },
+    {
+      "id": "gravity_shield",
+      "group": "tool",
+      "pieces": 9,
+      "reference": "arte original em blocos do pacote Criatividade"
+    },
+    {
+      "id": "spatial_shield",
+      "group": "tool",
+      "pieces": 9,
+      "reference": "arte original em blocos do pacote Criatividade"
+    },
+    {
+      "id": "house",
+      "group": "structure",
+      "pieces": 14,
+      "reference": "arte original em blocos do pacote Criatividade"
+    },
+    {
+      "id": "walking_house",
+      "group": "vehicle",
+      "pieces": 22,
+      "reference": "arte original em blocos do pacote Criatividade"
+    },
+    {
+      "id": "queen_ant",
+      "group": "creature",
+      "pieces": 28,
+      "reference": "arte original em blocos do pacote Criatividade"
+    },
+    {
+      "id": "ant_nest",
+      "group": "structure",
+      "pieces": 7,
+      "reference": "arte original em blocos do pacote Criatividade"
+    },
+    {
+      "id": "queen_bee",
+      "group": "creature",
+      "pieces": 21,
+      "reference": "arte original em blocos do pacote Criatividade"
+    },
+    {
+      "id": "beehive",
+      "group": "structure",
+      "pieces": 7,
+      "reference": "arte original em blocos do pacote Criatividade"
+    },
+    {
+      "id": "chicken_coop",
+      "group": "structure",
+      "pieces": 27,
+      "reference": "arte original em blocos do pacote Criatividade"
+    },
+    {
+      "id": "anteater",
+      "group": "creature",
+      "pieces": 18,
+      "reference": "arte original em blocos do pacote Criatividade"
+    },
+    {
+      "id": "shield_projector",
+      "group": "weapon",
+      "pieces": 8,
+      "reference": "arte original em blocos do pacote Criatividade"
     }
   ],
   "reviewed_existing_weapons": [

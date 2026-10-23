@@ -683,7 +683,10 @@
   "chicken": {
     "category": "creature",
     "movement": "chase_enemy",
-    "impact": "stop"
+    "impact": "stop",
+    "ecology_tags": [
+      "chicken"
+    ]
   },
   "snake": {
     "category": "creature",
@@ -699,7 +702,11 @@
     "category": "creature",
     "movement": "chase_enemy",
     "impact": "stop",
-    "voxel_motion": true
+    "voxel_motion": true,
+    "ecology_tags": [
+      "ant",
+      "insect"
+    ]
   },
   "trex": {
     "category": "creature",
@@ -1470,7 +1477,11 @@
         }
       }
     ],
-    "aerial": true
+    "aerial": true,
+    "ecology_tags": [
+      "bee",
+      "insect"
+    ]
   },
   "rat": {
     "category": "creature",
@@ -1486,6 +1497,9 @@
           "type": "strike"
         }
       }
+    ],
+    "ecology_tags": [
+      "rodent"
     ]
   },
   "zombie": {
@@ -1812,19 +1826,28 @@
     "movement": "fly",
     "impact": "stop",
     "voxel_motion": true,
-    "aerial": true
+    "aerial": true,
+    "ecology_tags": [
+      "insect"
+    ]
   },
   "beetle": {
     "category": "creature",
     "movement": "chase_enemy",
     "impact": "stop",
-    "voxel_motion": true
+    "voxel_motion": true,
+    "ecology_tags": [
+      "insect"
+    ]
   },
   "mantis": {
     "category": "creature",
     "movement": "chase_enemy",
     "impact": "stop",
-    "voxel_motion": true
+    "voxel_motion": true,
+    "ecology_tags": [
+      "insect"
+    ]
   },
   "snail": {
     "category": "creature",
@@ -2154,12 +2177,13 @@
         "do": {
           "type": "anomaly",
           "mode": "nuclear",
-          "radius": 14,
-          "damage": 180,
+          "radius": 12,
+          "damage": 160,
           "color": "#d9b95b"
         }
       }
-    ]
+    ],
+    "threat_type": "nuclear"
   },
   "neutron_bomb": {
     "category": "projectile",
@@ -2174,12 +2198,13 @@
         "do": {
           "type": "anomaly",
           "mode": "neutron",
-          "radius": 12,
-          "damage": 140,
+          "radius": 9,
+          "damage": 110,
           "color": "#8cc8cf"
         }
       }
-    ]
+    ],
+    "threat_type": "neutron"
   },
   "gravity_bomb": {
     "category": "projectile",
@@ -2194,12 +2219,13 @@
         "do": {
           "type": "anomaly",
           "mode": "gravity",
-          "radius": 8,
-          "damage": 45,
+          "radius": 7,
+          "damage": 30,
           "color": "#a38bc9"
         }
       }
-    ]
+    ],
+    "threat_type": "gravity"
   },
   "hypothetical_gravity_bomb": {
     "category": "projectile",
@@ -2219,7 +2245,8 @@
           "color": "#cebd69"
         }
       }
-    ]
+    ],
+    "threat_type": "gravity"
   },
   "singularity_bomb": {
     "category": "projectile",
@@ -2234,12 +2261,13 @@
         "do": {
           "type": "anomaly",
           "mode": "singularity",
-          "radius": 10,
-          "damage": 85,
+          "radius": 8,
+          "damage": 65,
           "color": "#8364aa"
         }
       }
-    ]
+    ],
+    "threat_type": "gravity"
   },
   "repulsion_bomb": {
     "category": "projectile",
@@ -2259,7 +2287,8 @@
           "color": "#a6c3cf"
         }
       }
-    ]
+    ],
+    "threat_type": "gravity"
   },
   "frost_bomb": {
     "category": "projectile",
@@ -2279,7 +2308,8 @@
           "color": "#95bec9"
         }
       }
-    ]
+    ],
+    "threat_type": "frost"
   },
   "inferno_bomb": {
     "category": "projectile",
@@ -2299,7 +2329,8 @@
           "color": "#d4864d"
         }
       }
-    ]
+    ],
+    "threat_type": "inferno"
   },
   "storm_bomb": {
     "category": "projectile",
@@ -2319,7 +2350,8 @@
           "color": "#aaa4cf"
         }
       }
-    ]
+    ],
+    "threat_type": "storm"
   },
   "emp_bomb": {
     "category": "projectile",
@@ -2339,7 +2371,8 @@
           "color": "#8fa8b8"
         }
       }
-    ]
+    ],
+    "threat_type": "emp"
   },
   "meteor_bomb": {
     "category": "projectile",
@@ -2359,7 +2392,8 @@
           "color": "#b7845b"
         }
       }
-    ]
+    ],
+    "threat_type": "meteor"
   },
   "cluster_bomb": {
     "category": "projectile",
@@ -2379,7 +2413,8 @@
           "color": "#8d9c72"
         }
       }
-    ]
+    ],
+    "threat_type": "cluster"
   },
   "meteor_fragment": {
     "category": "projectile",
@@ -2432,11 +2467,13 @@
           "type": "anomaly",
           "mode": "rift",
           "radius": 4,
-          "damage": 65,
-          "color": "#ac85d2"
+          "damage": 48,
+          "color": "#ac85d2",
+          "reach": 16
         }
       }
-    ]
+    ],
+    "threat_type": "spatial"
   },
   "gravity_hammer": {
     "category": "weapon",
@@ -2603,5 +2640,162 @@
     "impact": "stop",
     "voxel_motion": true,
     "aerial": true
+  },
+  "blast_shield": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "held_protection": true,
+    "shield_profile": "blast",
+    "shield_radius": 3.5
+  },
+  "neutron_shield": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "held_protection": true,
+    "shield_profile": "neutron",
+    "shield_radius": 3.5
+  },
+  "nuclear_shield": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "held_protection": true,
+    "shield_profile": "nuclear",
+    "shield_radius": 3.5
+  },
+  "gravity_shield": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "held_protection": true,
+    "shield_profile": "gravity",
+    "shield_radius": 3.5
+  },
+  "spatial_shield": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "held_protection": true,
+    "shield_profile": "spatial",
+    "shield_radius": 3.5
+  },
+  "house": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "enclosure": true
+  },
+  "walking_house": {
+    "category": "vehicle",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "enclosure": true,
+    "voxel_motion": true
+  },
+  "queen_ant": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "aerial": false,
+    "ecology_tags": [
+      "ant",
+      "insect",
+      "queen",
+      "ant_queen"
+    ],
+    "ecology": {
+      "produces": "ant_nest",
+      "interval": 8,
+      "local_cap": 1
+    }
+  },
+  "ant_nest": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "ecology_tags": [
+      "nest"
+    ],
+    "ecology": {
+      "produces": "ant",
+      "interval": 5,
+      "local_cap": 8,
+      "needs_queen": true,
+      "queen_tag": "ant_queen",
+      "child_lifetime": 60
+    }
+  },
+  "queen_bee": {
+    "category": "creature",
+    "movement": "fly",
+    "impact": "stop",
+    "voxel_motion": true,
+    "aerial": true,
+    "ecology_tags": [
+      "bee",
+      "insect",
+      "queen",
+      "bee_queen"
+    ],
+    "ecology": {
+      "produces": "beehive",
+      "interval": 8,
+      "local_cap": 1
+    }
+  },
+  "beehive": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "ecology_tags": [
+      "nest"
+    ],
+    "ecology": {
+      "produces": "bee",
+      "interval": 5,
+      "local_cap": 5,
+      "needs_queen": true,
+      "queen_tag": "bee_queen",
+      "child_lifetime": 60
+    }
+  },
+  "chicken_coop": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "enclosure": true,
+    "ecology": {
+      "produces": "chicken",
+      "interval": 8,
+      "local_cap": 4,
+      "child_lifetime": 60
+    }
+  },
+  "anteater": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "diet": "ant",
+    "voxel_motion": true
+  },
+  "shield_projector": {
+    "category": "weapon",
+    "projectile": "blast_shield",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "spawn",
+          "arg": {
+            "thing": "blast_shield"
+          }
+        }
+      }
+    ]
   }
 }

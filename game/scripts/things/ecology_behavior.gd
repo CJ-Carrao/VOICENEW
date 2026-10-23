@@ -1,0 +1,85 @@
+extends Node
+
+var thing: Thing
+var config: Dictionary = {}
+var diet := ""
+var clock := 0.0
+var next_production := 2.0
+var next_bite := 0.0
+var queen_ref: WeakRef
+
+
+func setup(owner_thing: Thing, settings: Dictionary, diet_id: String) -> void:
+	thing = owner_thing
+	config = settings
+	diet = diet_id
+	process_physics_priority = -20
+
+
+func _physics_process(delta: float) -> void:
+	if not is_instance_valid(thing) or not thing.can_act():
+		return
+	clock += delta
+	if not diet.is_empty():
+		_hunt()
+	if not config.is_empty() and clock >= next_production:
+		next_production = clock + maxf(float(config.get("interval", 5.0)), 2.5)
+		_produce()
+
+
+func _living_queen() -> bool:
+	if not bool(config.get("needs_queen", false)):
+		return true
+	if queen_ref != null:
+		var queen = queen_ref.get_ref()
+		return is_instance_valid(queen) and not queen.is_dead
+	if is_instance_valid(thing.spawner) and thing.spawner is Thing and InnovationRules.tags(thing.spawner).has("queen"):
+		queen_ref = weakref(thing.spawner)
+		return not thing.spawner.is_dead
+	if Forge.world != null:
+		for candidate in Forge.world.get_node("Things").get_children():
+			var queen := candidate as Thing
+			if queen != null and not queen.is_dead and queen.team == thing.team and InnovationRules.tags(queen).has(String(config.get("queen_tag", "ant_queen"))) and queen.center().distance_to(thing.center()) < 12.0:
+				queen_ref = weakref(queen)
+				return true
+	return false
+
+
+func _produce() -> void:
+	if not _living_queen():
+		return
+	var child_id := String(config.get("produces", ""))
+	if child_id.is_empty():
+		return
+	var ahead := Gravity.flat(-thing.global_basis.z, thing.up()).normalized()
+	var spot := Forge.ground_point(thing.global_position + ahead * (maxf(thing.bounds.size.x, thing.bounds.size.z) * 0.5 + 1.0), thing.up())
+	var child := Forge.spawn_child(Recipe.new_node(child_id), "spawned", spot, ahead, thing, 0.0)
+	if child != null and not Lexicon.data.thing_def(child_id).has("ecology"):
+		child.lifetime = float(config.get("child_lifetime", 60.0))
+
+
+func _hunt() -> void:
+	if Forge.world == null or thing.move == null:
+		return
+	thing.move.steering = true
+	var prey: Thing
+	var distance := INF
+	for candidate in Forge.world.get_node("Things").get_children():
+		var other := candidate as Thing
+		if other == null or other == thing or other.is_dead or other.is_held or not InnovationRules.tags(other).has(diet):
+			continue
+		var current := thing.center().distance_to(other.center())
+		if current < distance and current < 30.0:
+			prey = other
+			distance = current
+	var up := thing.up()
+	if prey == null:
+		thing.velocity = up * thing.velocity.dot(up)
+		return
+	var direction := Gravity.flat(prey.center() - thing.center(), up)
+	thing.velocity = direction.normalized() * maxf(thing.speed, 0.6) + up * thing.velocity.dot(up) if direction.length() > 0.65 else up * thing.velocity.dot(up)
+	if distance <= maxf(1.0, thing.bounds.size.z * 0.7) and clock >= next_bite:
+		next_bite = clock + 0.7
+		# Diet is an explicit ecological relationship, including prey of the same team.
+		Combat.apply_damage(prey, maxf(7.0, thing.impact_damage * 2.0), "bite", thing)
+		ExpansionFx.burst(Forge.fx_root(thing), prey.center(), 0.25, Color("d6b982"), "bite")

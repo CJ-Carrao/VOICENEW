@@ -1085,7 +1085,8 @@
       "ignite": 4.0,
       "split": 4.0,
       "strike": 3.0,
-      "burst_into": 8
+      "burst_into": 8,
+      "anomaly": 25
     },
     "trigger_factor": {
       "on_fire": 1.0,
@@ -1123,7 +1124,8 @@
       "upright": 0.0,
       "material": 4,
       "magnetic": 6,
-      "unstable": 5
+      "unstable": 5,
+      "diet": 8
     },
     "_magazine_rounds": "o que vai dentro de um pente ('pente de granadas') custa como se fossem tantas criações:",
     "magazine_rounds": 4.0,
@@ -1836,7 +1838,7 @@
     },
     "rift_knife": {
       "rear": {
-        "fire_interval_s": 1.05,
+        "fire_interval_s": 1.6,
         "magazine": 0,
         "automatic": false
       },
@@ -1963,6 +1965,18 @@
         "barrels": 1,
         "speed_mult": 1.0,
         "spread_deg": 2
+      }
+    },
+    "shield_projector": {
+      "rear": {
+        "fire_interval_s": 1.5,
+        "magazine": 0
+      },
+      "front": {
+        "power": 1
+      },
+      "muzzle": {
+        "barrels": 1
       }
     }
   },
@@ -3283,7 +3297,7 @@
       "impact_damage": 4
     },
     "ant_grenade": {
-      "cost": 18,
+      "cost": 35.0,
       "weight_kg": 1.0,
       "hp": 25,
       "speed": 12,
@@ -3291,7 +3305,7 @@
       "explosion_damage": 8
     },
     "chicken_grenade": {
-      "cost": 18,
+      "cost": 51.8,
       "weight_kg": 1.0,
       "hp": 25,
       "speed": 12,
@@ -3299,7 +3313,7 @@
       "explosion_damage": 8
     },
     "duck_grenade": {
-      "cost": 18,
+      "cost": 77,
       "weight_kg": 1.0,
       "hp": 25,
       "speed": 12,
@@ -3307,7 +3321,7 @@
       "explosion_damage": 8
     },
     "bee_grenade": {
-      "cost": 18,
+      "cost": 35.0,
       "weight_kg": 1.0,
       "hp": 25,
       "speed": 12,
@@ -3315,7 +3329,7 @@
       "explosion_damage": 8
     },
     "spider_grenade": {
-      "cost": 18,
+      "cost": 38.6,
       "weight_kg": 1.0,
       "hp": 25,
       "speed": 12,
@@ -3323,7 +3337,7 @@
       "explosion_damage": 8
     },
     "crab_grenade": {
-      "cost": 18,
+      "cost": 41.6,
       "weight_kg": 1.0,
       "hp": 25,
       "speed": 12,
@@ -3331,7 +3345,7 @@
       "explosion_damage": 8
     },
     "frog_grenade": {
-      "cost": 18,
+      "cost": 40.4,
       "weight_kg": 1.0,
       "hp": 25,
       "speed": 12,
@@ -3339,7 +3353,7 @@
       "explosion_damage": 8
     },
     "rat_grenade": {
-      "cost": 18,
+      "cost": 41.6,
       "weight_kg": 1.0,
       "hp": 25,
       "speed": 12,
@@ -3347,7 +3361,7 @@
       "explosion_damage": 8
     },
     "pigeon_grenade": {
-      "cost": 18,
+      "cost": 41.0,
       "weight_kg": 1.0,
       "hp": 25,
       "speed": 12,
@@ -3355,7 +3369,7 @@
       "explosion_damage": 8
     },
     "raptor_grenade": {
-      "cost": 32,
+      "cost": 41,
       "weight_kg": 1.0,
       "hp": 25,
       "speed": 12,
@@ -3363,7 +3377,7 @@
       "explosion_damage": 8
     },
     "slime_grenade": {
-      "cost": 18,
+      "cost": 77,
       "weight_kg": 1.0,
       "hp": 25,
       "speed": 12,
@@ -3371,7 +3385,7 @@
       "explosion_damage": 8
     },
     "beetle_grenade": {
-      "cost": 18,
+      "cost": 38.0,
       "weight_kg": 1.0,
       "hp": 25,
       "speed": 12,
@@ -3379,31 +3393,31 @@
       "explosion_damage": 8
     },
     "nuclear_bomb": {
-      "cost": 75,
-      "weight_kg": 3.0,
-      "hp": 35,
-      "speed": 12,
-      "explosion_radius": 14,
-      "explosion_damage": 180
-    },
-    "neutron_bomb": {
-      "cost": 65,
+      "cost": 240,
       "weight_kg": 3.0,
       "hp": 35,
       "speed": 12,
       "explosion_radius": 12,
-      "explosion_damage": 140
+      "explosion_damage": 160
     },
-    "gravity_bomb": {
-      "cost": 35,
+    "neutron_bomb": {
+      "cost": 210,
       "weight_kg": 3.0,
       "hp": 35,
       "speed": 12,
-      "explosion_radius": 8,
-      "explosion_damage": 45
+      "explosion_radius": 9,
+      "explosion_damage": 110
+    },
+    "gravity_bomb": {
+      "cost": 110,
+      "weight_kg": 3.0,
+      "hp": 35,
+      "speed": 12,
+      "explosion_radius": 7,
+      "explosion_damage": 30
     },
     "hypothetical_gravity_bomb": {
-      "cost": 40,
+      "cost": 145,
       "weight_kg": 3.0,
       "hp": 35,
       "speed": 12,
@@ -3411,15 +3425,15 @@
       "explosion_damage": 35
     },
     "singularity_bomb": {
-      "cost": 55,
+      "cost": 220,
       "weight_kg": 3.0,
       "hp": 35,
       "speed": 12,
-      "explosion_radius": 10,
-      "explosion_damage": 85
+      "explosion_radius": 8,
+      "explosion_damage": 65
     },
     "repulsion_bomb": {
-      "cost": 25,
+      "cost": 65,
       "weight_kg": 3.0,
       "hp": 35,
       "speed": 12,
@@ -3427,7 +3441,7 @@
       "explosion_damage": 25
     },
     "frost_bomb": {
-      "cost": 24,
+      "cost": 60,
       "weight_kg": 3.0,
       "hp": 35,
       "speed": 12,
@@ -3435,7 +3449,7 @@
       "explosion_damage": 20
     },
     "inferno_bomb": {
-      "cost": 28,
+      "cost": 85,
       "weight_kg": 3.0,
       "hp": 35,
       "speed": 12,
@@ -3443,7 +3457,7 @@
       "explosion_damage": 55
     },
     "storm_bomb": {
-      "cost": 32,
+      "cost": 100,
       "weight_kg": 3.0,
       "hp": 35,
       "speed": 12,
@@ -3451,7 +3465,7 @@
       "explosion_damage": 55
     },
     "emp_bomb": {
-      "cost": 22,
+      "cost": 55,
       "weight_kg": 3.0,
       "hp": 35,
       "speed": 12,
@@ -3459,7 +3473,7 @@
       "explosion_damage": 0
     },
     "meteor_bomb": {
-      "cost": 45,
+      "cost": 160,
       "weight_kg": 3.0,
       "hp": 35,
       "speed": 12,
@@ -3467,7 +3481,7 @@
       "explosion_damage": 0
     },
     "cluster_bomb": {
-      "cost": 30,
+      "cost": 110,
       "weight_kg": 3.0,
       "hp": 35,
       "speed": 12,
@@ -3493,54 +3507,54 @@
       "explosion_damage": 30
     },
     "rift_knife": {
-      "cost": 45,
+      "cost": 180,
       "weight_kg": 2,
       "hp": 70,
       "fire_cooldown": 1.0,
       "impact_damage": 18
     },
     "gravity_hammer": {
-      "cost": 28,
+      "cost": 90,
       "weight_kg": 2,
       "hp": 70,
       "fire_cooldown": 1.0,
       "impact_damage": 18
     },
     "thunder_hammer": {
-      "cost": 28,
+      "cost": 95,
       "weight_kg": 2,
       "hp": 70,
       "fire_cooldown": 1.0,
       "impact_damage": 18
     },
     "frost_axe": {
-      "cost": 23,
+      "cost": 70,
       "weight_kg": 2,
       "hp": 70,
       "fire_cooldown": 1.0,
       "impact_damage": 18
     },
     "inferno_sword": {
-      "cost": 25,
+      "cost": 80,
       "weight_kg": 2,
       "hp": 70,
       "fire_cooldown": 1.0,
       "impact_damage": 18
     },
     "ant_launcher": {
-      "cost": 27,
+      "cost": 60,
       "weight_kg": 3,
       "hp": 60,
       "fire_cooldown": 0.75
     },
     "chicken_launcher": {
-      "cost": 27,
+      "cost": 75,
       "weight_kg": 3,
       "hp": 60,
       "fire_cooldown": 0.75
     },
     "bee_launcher": {
-      "cost": 27,
+      "cost": 75,
       "weight_kg": 3,
       "hp": 60,
       "fire_cooldown": 0.75
@@ -3551,6 +3565,85 @@
       "hp": 40.0,
       "speed": 6,
       "impact_damage": 4.0
+    },
+    "blast_shield": {
+      "cost": 24,
+      "hp": 150,
+      "weight_kg": 4.0
+    },
+    "neutron_shield": {
+      "cost": 38,
+      "hp": 150,
+      "weight_kg": 4.0
+    },
+    "nuclear_shield": {
+      "cost": 48,
+      "hp": 150,
+      "weight_kg": 4.0
+    },
+    "gravity_shield": {
+      "cost": 34,
+      "hp": 150,
+      "weight_kg": 4.0
+    },
+    "spatial_shield": {
+      "cost": 60,
+      "hp": 150,
+      "weight_kg": 4.0
+    },
+    "house": {
+      "cost": 38,
+      "hp": 240,
+      "weight_kg": 500
+    },
+    "walking_house": {
+      "cost": 90,
+      "hp": 240,
+      "weight_kg": 600,
+      "speed": 1.6,
+      "impact_damage": 5
+    },
+    "queen_ant": {
+      "cost": 85,
+      "hp": 85,
+      "weight_kg": 1.5,
+      "speed": 0.55,
+      "impact_damage": 3
+    },
+    "ant_nest": {
+      "cost": 30,
+      "hp": 90,
+      "weight_kg": 10
+    },
+    "queen_bee": {
+      "cost": 85,
+      "hp": 85,
+      "weight_kg": 1.5,
+      "speed": 0.55,
+      "impact_damage": 3
+    },
+    "beehive": {
+      "cost": 30,
+      "hp": 90,
+      "weight_kg": 10
+    },
+    "chicken_coop": {
+      "cost": 55,
+      "hp": 130,
+      "weight_kg": 80
+    },
+    "anteater": {
+      "cost": 28,
+      "hp": 55,
+      "weight_kg": 20,
+      "speed": 3.1,
+      "impact_damage": 6
+    },
+    "shield_projector": {
+      "cost": 65,
+      "hp": 60,
+      "weight_kg": 3,
+      "fire_cooldown": 1.5
     }
   },
   "grafts": {
@@ -3577,5 +3670,34 @@
       }
     },
     "metal_db": -7
+  },
+  "innovation": {
+    "shield_wear": 0.7,
+    "resistance": {
+      "blast": {
+        "blast": 0.15,
+        "nuclear": 0.75
+      },
+      "neutron": {
+        "neutron": 0.1
+      },
+      "nuclear": {
+        "nuclear": 0.15,
+        "blast": 0.4
+      },
+      "gravity": {
+        "gravity": 0.15
+      },
+      "spatial": {
+        "spatial": 0.25
+      }
+    },
+    "protection_costs": {
+      "blast": 14,
+      "neutron": 26,
+      "nuclear": 36,
+      "gravity": 22,
+      "spatial": 48
+    }
   }
 }

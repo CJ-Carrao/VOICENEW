@@ -1,6 +1,6 @@
 {
   "title": "Pacote Caos",
-  "version": 1,
+  "version": 2,
   "creations": [
     {
       "id": "duck",
@@ -8,7 +8,8 @@
       "phrase": "quero pato",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 13
+      "pieces": 13,
+      "base_cost": 12
     },
     {
       "id": "goose",
@@ -16,7 +17,8 @@
       "phrase": "quero ganso",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 13
+      "pieces": 13,
+      "base_cost": 12
     },
     {
       "id": "turkey",
@@ -24,7 +26,8 @@
       "phrase": "quero peru",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 19
+      "pieces": 19,
+      "base_cost": 12
     },
     {
       "id": "pig",
@@ -32,7 +35,8 @@
       "phrase": "quero porco",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 18
+      "pieces": 18,
+      "base_cost": 12
     },
     {
       "id": "cow",
@@ -40,7 +44,8 @@
       "phrase": "quero vaca",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 20
+      "pieces": 20,
+      "base_cost": 12
     },
     {
       "id": "sheep",
@@ -48,7 +53,8 @@
       "phrase": "quero ovelha",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 31
+      "pieces": 31,
+      "base_cost": 12
     },
     {
       "id": "donkey",
@@ -56,7 +62,8 @@
       "phrase": "quero burro",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 16
+      "pieces": 16,
+      "base_cost": 12
     },
     {
       "id": "camel",
@@ -64,7 +71,8 @@
       "phrase": "quero camelo",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 19
+      "pieces": 19,
+      "base_cost": 12
     },
     {
       "id": "llama",
@@ -72,7 +80,8 @@
       "phrase": "quero lhama",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 17
+      "pieces": 17,
+      "base_cost": 12
     },
     {
       "id": "giraffe",
@@ -80,7 +89,8 @@
       "phrase": "quero girafa",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 29
+      "pieces": 29,
+      "base_cost": 12
     },
     {
       "id": "zebra",
@@ -88,7 +98,8 @@
       "phrase": "quero zebra",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 28
+      "pieces": 28,
+      "base_cost": 12
     },
     {
       "id": "rhino",
@@ -96,7 +107,8 @@
       "phrase": "quero rinoceronte",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 19
+      "pieces": 19,
+      "base_cost": 12
     },
     {
       "id": "hippo",
@@ -104,7 +116,8 @@
       "phrase": "quero hipopótamo",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 17
+      "pieces": 17,
+      "base_cost": 12
     },
     {
       "id": "bison",
@@ -112,7 +125,8 @@
       "phrase": "quero bisão",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 19
+      "pieces": 19,
+      "base_cost": 12
     },
     {
       "id": "panda",
@@ -120,7 +134,8 @@
       "phrase": "quero panda",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 20
+      "pieces": 20,
+      "base_cost": 12
     },
     {
       "id": "koala",
@@ -128,7 +143,8 @@
       "phrase": "quero coala",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 20
+      "pieces": 20,
+      "base_cost": 12
     },
     {
       "id": "capybara",
@@ -136,7 +152,8 @@
       "phrase": "quero capivara",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 16
+      "pieces": 16,
+      "base_cost": 12
     },
     {
       "id": "otter",
@@ -144,7 +161,8 @@
       "phrase": "quero lontra",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 16
+      "pieces": 16,
+      "base_cost": 12
     },
     {
       "id": "raccoon",
@@ -152,7 +170,8 @@
       "phrase": "quero guaxinim",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 32
+      "pieces": 32,
+      "base_cost": 12
     },
     {
       "id": "hedgehog",
@@ -160,7 +179,8 @@
       "phrase": "quero ouriço",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 31
+      "pieces": 31,
+      "base_cost": 12
     },
     {
       "id": "armadillo",
@@ -168,7 +188,8 @@
       "phrase": "quero tatu",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 31
+      "pieces": 31,
+      "base_cost": 12
     },
     {
       "id": "cave_bat",
@@ -176,7 +197,8 @@
       "phrase": "quero morcego",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 18
+      "pieces": 18,
+      "base_cost": 16
     },
     {
       "id": "butterfly",
@@ -184,7 +206,8 @@
       "phrase": "quero borboleta",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 18
+      "pieces": 18,
+      "base_cost": 5.5
     },
     {
       "id": "beetle",
@@ -192,7 +215,8 @@
       "phrase": "quero besouro",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 28
+      "pieces": 28,
+      "base_cost": 5.5
     },
     {
       "id": "mantis",
@@ -200,7 +224,8 @@
       "phrase": "quero louva a deus",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 29
+      "pieces": 29,
+      "base_cost": 5.5
     },
     {
       "id": "snail",
@@ -208,7 +233,8 @@
       "phrase": "quero caracol",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 11
+      "pieces": 11,
+      "base_cost": 5.5
     },
     {
       "id": "octopus",
@@ -216,7 +242,8 @@
       "phrase": "quero polvo",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 22
+      "pieces": 22,
+      "base_cost": 12
     },
     {
       "id": "raptor",
@@ -224,7 +251,8 @@
       "phrase": "quero velociraptor",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 25
+      "pieces": 25,
+      "base_cost": 12
     },
     {
       "id": "dragon",
@@ -232,7 +260,8 @@
       "phrase": "quero dragão",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao; cospe fogo.",
-      "pieces": 33
+      "pieces": 33,
+      "base_cost": 42
     },
     {
       "id": "slime",
@@ -240,7 +269,8 @@
       "phrase": "quero slime",
       "group": "Animais",
       "effect": "Criatura em blocos com movimento e animacao.",
-      "pieces": 6
+      "pieces": 6,
+      "base_cost": 12
     },
     {
       "id": "ant_grenade",
@@ -248,7 +278,8 @@
       "phrase": "quero granada de formigas",
       "group": "Granadas de criaturas",
       "effect": "Explode depois de arremessada e libera 6 formigas vivos.",
-      "pieces": 11
+      "pieces": 11,
+      "base_cost": 35.0
     },
     {
       "id": "chicken_grenade",
@@ -256,7 +287,8 @@
       "phrase": "quero granada de galinhas",
       "group": "Granadas de criaturas",
       "effect": "Explode depois de arremessada e libera 6 galinhas vivos.",
-      "pieces": 11
+      "pieces": 11,
+      "base_cost": 51.8
     },
     {
       "id": "duck_grenade",
@@ -264,7 +296,8 @@
       "phrase": "quero granada de patos",
       "group": "Granadas de criaturas",
       "effect": "Explode depois de arremessada e libera 6 patos vivos.",
-      "pieces": 11
+      "pieces": 11,
+      "base_cost": 77
     },
     {
       "id": "bee_grenade",
@@ -272,7 +305,8 @@
       "phrase": "quero granada de abelhas",
       "group": "Granadas de criaturas",
       "effect": "Explode depois de arremessada e libera 6 abelhas vivos.",
-      "pieces": 11
+      "pieces": 11,
+      "base_cost": 35.0
     },
     {
       "id": "spider_grenade",
@@ -280,7 +314,8 @@
       "phrase": "quero granada de aranhas",
       "group": "Granadas de criaturas",
       "effect": "Explode depois de arremessada e libera 6 aranhas vivos.",
-      "pieces": 11
+      "pieces": 11,
+      "base_cost": 38.6
     },
     {
       "id": "crab_grenade",
@@ -288,7 +323,8 @@
       "phrase": "quero granada de caranguejos",
       "group": "Granadas de criaturas",
       "effect": "Explode depois de arremessada e libera 6 caranguejos vivos.",
-      "pieces": 11
+      "pieces": 11,
+      "base_cost": 41.6
     },
     {
       "id": "frog_grenade",
@@ -296,7 +332,8 @@
       "phrase": "quero granada de sapos",
       "group": "Granadas de criaturas",
       "effect": "Explode depois de arremessada e libera 6 sapos vivos.",
-      "pieces": 11
+      "pieces": 11,
+      "base_cost": 40.4
     },
     {
       "id": "rat_grenade",
@@ -304,7 +341,8 @@
       "phrase": "quero granada de ratos",
       "group": "Granadas de criaturas",
       "effect": "Explode depois de arremessada e libera 6 ratos vivos.",
-      "pieces": 11
+      "pieces": 11,
+      "base_cost": 41.6
     },
     {
       "id": "pigeon_grenade",
@@ -312,7 +350,8 @@
       "phrase": "quero granada de pombos",
       "group": "Granadas de criaturas",
       "effect": "Explode depois de arremessada e libera 6 pombos vivos.",
-      "pieces": 11
+      "pieces": 11,
+      "base_cost": 41.0
     },
     {
       "id": "raptor_grenade",
@@ -320,7 +359,8 @@
       "phrase": "quero granada de velociraptores",
       "group": "Granadas de criaturas",
       "effect": "Explode depois de arremessada e libera 3 velociraptores vivos.",
-      "pieces": 11
+      "pieces": 11,
+      "base_cost": 41
     },
     {
       "id": "slime_grenade",
@@ -328,7 +368,8 @@
       "phrase": "quero granada de slimes",
       "group": "Granadas de criaturas",
       "effect": "Explode depois de arremessada e libera 6 slimes vivos.",
-      "pieces": 11
+      "pieces": 11,
+      "base_cost": 77
     },
     {
       "id": "beetle_grenade",
@@ -336,7 +377,8 @@
       "phrase": "quero granada de besouros",
       "group": "Granadas de criaturas",
       "effect": "Explode depois de arremessada e libera 6 besouros vivos.",
-      "pieces": 11
+      "pieces": 11,
+      "base_cost": 38.0
     },
     {
       "id": "nuclear_bomb",
@@ -344,15 +386,17 @@
       "phrase": "quero bomba nuclear",
       "group": "Bombas especiais",
       "effect": "Explosao ampla com cratera e cogumelo de blocos.",
-      "pieces": 11
+      "pieces": 11,
+      "base_cost": 240
     },
     {
       "id": "neutron_bomb",
       "name": "bomba de nêutrons",
       "phrase": "quero bomba de nêutrons",
       "group": "Bombas especiais",
-      "effect": "Pulso contra combatentes e criaturas, sem escavar terreno.",
-      "pieces": 7
+      "effect": "Explosao azul com blocos e cratera curta; o pulso de neutrons atinge criaturas mais longe. Escudo comum nao protege.",
+      "pieces": 7,
+      "base_cost": 210
     },
     {
       "id": "gravity_bomb",
@@ -360,7 +404,8 @@
       "phrase": "quero bomba de gravidade",
       "group": "Bombas especiais",
       "effect": "Puxa inimigos por tres segundos e causa dano de compressao.",
-      "pieces": 7
+      "pieces": 7,
+      "base_cost": 110
     },
     {
       "id": "hypothetical_gravity_bomb",
@@ -368,7 +413,8 @@
       "phrase": "quero bomba hipotética de gravidade",
       "group": "Bombas especiais",
       "effect": "Inverte a gravidade: levanta alvos e depois os repele.",
-      "pieces": 8
+      "pieces": 8,
+      "base_cost": 145
     },
     {
       "id": "singularity_bomb",
@@ -376,7 +422,8 @@
       "phrase": "quero bomba de singularidade",
       "group": "Bombas especiais",
       "effect": "Campo de atracao mais forte por quatro segundos.",
-      "pieces": 7
+      "pieces": 7,
+      "base_cost": 220
     },
     {
       "id": "repulsion_bomb",
@@ -384,7 +431,8 @@
       "phrase": "quero bomba de repulsão",
       "group": "Bombas especiais",
       "effect": "Onda de choque que lanca inimigos para fora.",
-      "pieces": 7
+      "pieces": 7,
+      "base_cost": 65
     },
     {
       "id": "frost_bomb",
@@ -392,7 +440,8 @@
       "phrase": "quero bomba criogênica",
       "group": "Bombas especiais",
       "effect": "Congela os alvos proximos e causa dano frio.",
-      "pieces": 7
+      "pieces": 7,
+      "base_cost": 60
     },
     {
       "id": "inferno_bomb",
@@ -400,7 +449,8 @@
       "phrase": "quero bomba incendiária",
       "group": "Bombas especiais",
       "effect": "Explode e aplica incendio na area.",
-      "pieces": 7
+      "pieces": 7,
+      "base_cost": 85
     },
     {
       "id": "storm_bomb",
@@ -408,7 +458,8 @@
       "phrase": "quero bomba de tempestade",
       "group": "Bombas especiais",
       "effect": "Descargas em blocos atingem os inimigos na area.",
-      "pieces": 7
+      "pieces": 7,
+      "base_cost": 100
     },
     {
       "id": "emp_bomb",
@@ -416,7 +467,8 @@
       "phrase": "quero bomba eletromagnética",
       "group": "Bombas especiais",
       "effect": "Pulso que desacelera e desloca alvos, sem cratera.",
-      "pieces": 7
+      "pieces": 7,
+      "base_cost": 55
     },
     {
       "id": "meteor_bomb",
@@ -424,7 +476,8 @@
       "phrase": "quero bomba de meteoros",
       "group": "Bombas especiais",
       "effect": "Invoca seis fragmentos explosivos que caem do alto.",
-      "pieces": 7
+      "pieces": 7,
+      "base_cost": 160
     },
     {
       "id": "cluster_bomb",
@@ -432,7 +485,8 @@
       "phrase": "quero bomba de fragmentação",
       "group": "Bombas especiais",
       "effect": "Libera seis minibombas, com explosoes secundarias.",
-      "pieces": 7
+      "pieces": 7,
+      "base_cost": 110
     },
     {
       "id": "rift_knife",
@@ -440,7 +494,8 @@
       "phrase": "quero faca que corta o espaço",
       "group": "Armas especiais",
       "effect": "Abre uma fenda de ate 22 metros que corta inimigos e blocos.",
-      "pieces": 13
+      "pieces": 13,
+      "base_cost": 180
     },
     {
       "id": "gravity_hammer",
@@ -448,7 +503,8 @@
       "phrase": "quero martelo de gravidade",
       "group": "Armas especiais",
       "effect": "Golpe corpo a corpo acompanhado de pulso elemental.",
-      "pieces": 5
+      "pieces": 5,
+      "base_cost": 90
     },
     {
       "id": "thunder_hammer",
@@ -456,7 +512,8 @@
       "phrase": "quero martelo do trovão",
       "group": "Armas especiais",
       "effect": "Golpe corpo a corpo acompanhado de pulso elemental.",
-      "pieces": 5
+      "pieces": 5,
+      "base_cost": 95
     },
     {
       "id": "frost_axe",
@@ -464,7 +521,8 @@
       "phrase": "quero machado de gelo",
       "group": "Armas especiais",
       "effect": "Golpe corpo a corpo acompanhado de pulso elemental.",
-      "pieces": 5
+      "pieces": 5,
+      "base_cost": 70
     },
     {
       "id": "inferno_sword",
@@ -472,7 +530,8 @@
       "phrase": "quero espada infernal",
       "group": "Armas especiais",
       "effect": "Golpe corpo a corpo acompanhado de pulso elemental.",
-      "pieces": 17
+      "pieces": 17,
+      "base_cost": 80
     },
     {
       "id": "ant_launcher",
@@ -480,7 +539,8 @@
       "phrase": "quero lança formigas",
       "group": "Armas especiais",
       "effect": "Dispara criaturas vivas; use um pente para recarregar.",
-      "pieces": 8
+      "pieces": 8,
+      "base_cost": 60
     },
     {
       "id": "chicken_launcher",
@@ -488,7 +548,8 @@
       "phrase": "quero lança galinhas",
       "group": "Armas especiais",
       "effect": "Dispara criaturas vivas; use um pente para recarregar.",
-      "pieces": 8
+      "pieces": 8,
+      "base_cost": 75
     },
     {
       "id": "bee_launcher",
@@ -496,7 +557,171 @@
       "phrase": "quero lança abelhas",
       "group": "Armas especiais",
       "effect": "Dispara criaturas vivas; use um pente para recarregar.",
-      "pieces": 8
+      "pieces": 8,
+      "base_cost": 75
+    },
+    {
+      "id": "blast_shield",
+      "name": "escudo anti bombas",
+      "phrase": "quero escudo anti bombas",
+      "group": "Defesas",
+      "effect": "Protege aliados num raio de 3,5 m contra esta ameaca; absorver dano desgasta o escudo. Outros tipos atravessam.",
+      "pieces": 9,
+      "base_cost": 24
+    },
+    {
+      "id": "neutron_shield",
+      "name": "escudo anti nêutrons",
+      "phrase": "quero escudo anti nêutrons",
+      "group": "Defesas",
+      "effect": "Protege aliados num raio de 3,5 m contra esta ameaca; absorver dano desgasta o escudo. Outros tipos atravessam.",
+      "pieces": 9,
+      "base_cost": 38
+    },
+    {
+      "id": "nuclear_shield",
+      "name": "escudo anti bombas nucleares",
+      "phrase": "quero escudo anti bombas nucleares",
+      "group": "Defesas",
+      "effect": "Protege aliados num raio de 3,5 m contra esta ameaca; absorver dano desgasta o escudo. Outros tipos atravessam.",
+      "pieces": 9,
+      "base_cost": 48
+    },
+    {
+      "id": "gravity_shield",
+      "name": "escudo anti gravidade",
+      "phrase": "quero escudo anti gravidade",
+      "group": "Defesas",
+      "effect": "Protege aliados num raio de 3,5 m contra esta ameaca; absorver dano desgasta o escudo. Outros tipos atravessam.",
+      "pieces": 9,
+      "base_cost": 34
+    },
+    {
+      "id": "spatial_shield",
+      "name": "escudo anti cortes espaciais",
+      "phrase": "quero escudo anti cortes espaciais",
+      "group": "Defesas",
+      "effect": "Protege aliados num raio de 3,5 m contra esta ameaca; absorver dano desgasta o escudo. Outros tipos atravessam.",
+      "pieces": 9,
+      "base_cost": 60
+    },
+    {
+      "id": "house",
+      "name": "casa",
+      "phrase": "quero casa",
+      "group": "Defesas",
+      "effect": "Casa oca com porta, janelas e teto em blocos.",
+      "pieces": 14,
+      "base_cost": 38
+    },
+    {
+      "id": "walking_house",
+      "name": "casa ambulante",
+      "phrase": "quero casa ambulante",
+      "group": "Defesas",
+      "effect": "Casa com pernas; aceita protecoes, armas acopladas e controle remoto.",
+      "pieces": 22,
+      "base_cost": 90
+    },
+    {
+      "id": "queen_ant",
+      "name": "formiga rainha",
+      "phrase": "quero formiga rainha",
+      "group": "Ecologia",
+      "effect": "Constroi um ninho pago com sua materia. Um ninho por rainha; a morte dela interrompe a producao.",
+      "pieces": 28,
+      "base_cost": 85
+    },
+    {
+      "id": "ant_nest",
+      "name": "ninho de formigas",
+      "phrase": "quero ninho de formigas",
+      "group": "Ecologia",
+      "effect": "Gera uma criatura a cada 5 s, consumindo materia. Precisa de rainha viva; producao limitada por ninho.",
+      "pieces": 7,
+      "base_cost": 30
+    },
+    {
+      "id": "queen_bee",
+      "name": "abelha rainha",
+      "phrase": "quero abelha rainha",
+      "group": "Ecologia",
+      "effect": "Constroi um ninho pago com sua materia. Um ninho por rainha; a morte dela interrompe a producao.",
+      "pieces": 21,
+      "base_cost": 85
+    },
+    {
+      "id": "beehive",
+      "name": "colmeia",
+      "phrase": "quero colmeia",
+      "group": "Ecologia",
+      "effect": "Gera uma criatura a cada 5 s, consumindo materia. Precisa de rainha viva; producao limitada por ninho.",
+      "pieces": 7,
+      "base_cost": 30
+    },
+    {
+      "id": "chicken_coop",
+      "name": "galinheiro",
+      "phrase": "quero galinheiro",
+      "group": "Ecologia",
+      "effect": "Produz ate quatro galinhas vivas, pagando materia por cada uma.",
+      "pieces": 27,
+      "base_cost": 55
+    },
+    {
+      "id": "anteater",
+      "name": "tamanduá",
+      "phrase": "quero tamanduá",
+      "group": "Ecologia",
+      "effect": "Caca somente formigas e rainhas, inclusive da sua colonia. Nao ataca jogadores.",
+      "pieces": 18,
+      "base_cost": 28
+    },
+    {
+      "id": "shield_projector",
+      "name": "projetor de escudos",
+      "phrase": "quero projetor de escudos",
+      "group": "Armas especiais",
+      "effect": "Cria escudos no mundo. Cada disparo paga o escudo; limite de tres campos por equipe.",
+      "pieces": 8,
+      "base_cost": 65
+    }
+  ],
+  "combinations": [
+    {
+      "name": "Arma que fabrica defesa",
+      "phrase": "quero uma arma que faça um escudo anti bomba de nêutrons",
+      "effect": "Cria o escudo especializado ao disparar; a producao paga materia por escudo."
+    },
+    {
+      "name": "Jacare armado",
+      "phrase": "quero um jacaré que use uma AK47",
+      "effect": "Animal com arma acoplada e mira automatica; a arma aumenta o custo."
+    },
+    {
+      "name": "Casa protegida",
+      "phrase": "quero uma casa ambulante anti bomba de nêutrons",
+      "effect": "Combina movimento, casa oca e campo de protecao especializado."
+    },
+    {
+      "name": "Colonia de formigas",
+      "phrase": "quero uma formiga rainha que faça um ninho",
+      "effect": "A rainha faz um ninho pago que produz formigas enquanto ela vive e ha materia."
+    },
+    {
+      "name": "Pato predador",
+      "phrase": "quero um pato que só coma formigas",
+      "effect": "Caca apenas formigas e rainhas, ate da propria equipe. Sem elas, fica quieto."
+    },
+    {
+      "name": "Barreira com protecao escolhida",
+      "phrase": "quero uma parede anti bomba nuclear",
+      "effect": "O mesmo modificador de defesa pode ser aplicado em outras criacoes."
+    },
+    {
+      "name": "Raposa seletiva",
+      "phrase": "quero uma raposa que só coma ratos",
+      "effect": "Outra combinacao de criatura com uma dieta especifica."
     }
   ]
 }

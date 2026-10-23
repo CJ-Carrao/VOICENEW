@@ -62,6 +62,20 @@ static func build(node: Dictionary, role: String, lex: LexiconData, mount_depth:
 	thing.name = thing_id
 	thing.configure(node, role, def, lex)
 	thing.attach_model(ModelBuilder.build(thing_id, node.get("mods", {}), lex))
+	var protection := InnovationRules.profile(node, lex)
+	if not protection.is_empty():
+		var emitter = load("res://scripts/things/protection_emitter.gd").new()
+		emitter.name = "ProtectionEmitter"
+		emitter.profile_id = protection
+		emitter.radius = clampf(float(def.get("shield_radius", 3.5)) * thing.scale_factor, 2.0, 6.0)
+		thing.add_child(emitter)
+	var ecosystem: Dictionary = def.get("ecology", {})
+	var diet := String(node.get("mods", {}).get("diet", def.get("diet", "")))
+	if not ecosystem.is_empty() or not diet.is_empty():
+		var ecology = load("res://scripts/things/ecology_behavior.gd").new()
+		ecology.name = "EcologyBehavior"
+		ecology.setup(thing, ecosystem, diet)
+		thing.add_child(ecology)
 	if bool(def.get("voxel_motion", false)):
 		var motion = load("res://scripts/things/voxel_creature_motion.gd").new()
 		motion.name = "VoxelCreatureMotion"

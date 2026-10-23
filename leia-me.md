@@ -87,3 +87,7 @@ Essa recuperacao fornece a base real do jogo, mas nao comprova equivalencia inte
 - [Godot 4.7.2](https://github.com/godotengine/godot-builds/releases/tag/4.7.2-stable)
 
 Contexto do vault: [[copia-de-jogo]], [[rea]], [[tony]].
+
+## Atualização de criatividade
+
+O executável inclui 76 criações novas, combinações de armas e criaturas, casa ambulante, campos de proteção especializados e colônias com predadores. Consulte [criatividade.md](criatividade.md) e a aba COMBINAR do F2. A bomba de nêutrons agora remove blocos reais e faz uma cratera próxima.

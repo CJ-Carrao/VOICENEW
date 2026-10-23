@@ -41,6 +41,7 @@ func _run() -> void:
 		var parsed: Dictionary = parser.parse(phrase, lex)
 		_check(parsed.get("ok", false) and parsed.get("unknown_words", []).is_empty(), "Composition failed: " + phrase + " " + str(parsed))
 	_check(voice.hotwords(lex).has("capivara"), "New vocabulary missing from speech recognition")
+	_check(voice.hotwords(lex).has("faça") and voice.hotwords(lex).has("use"), "Creative composition verbs missing from voice vocabulary")
 	_check(lex.errors.is_empty(), "Lexicon errors: " + str(lex.errors))
 	var colloquial: Dictionary = parser.parse("quero uma granada que exploda seis formigas", lex)
 	var burst: Dictionary = colloquial.recipe.behaviors[0].do

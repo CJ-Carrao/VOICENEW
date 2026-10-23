@@ -38,9 +38,11 @@ func run(ctx: ActionContext) -> void:
 			ExpansionFx.burst(parent, at, radius, Color("ffca52"), "nuclear")
 			Combat.explode(thing, at, radius, damage)
 		"neutron":
-			# Biological/robot combatants only; this pulse never calls terrain destruction.
+			ExpansionFx.burst(parent, at, radius * 0.9, Color("bce8ef"), "neutron")
+			Fx.explosion(parent, at, radius * 0.65, Color("86c3d1"))
+			Combat.explode(thing, at, minf(radius * 0.32, 3.2), damage * 0.30)
 			for target in Combat.in_radius(thing, at, radius):
-				if Combat.affects(thing, target) and (target is Player or target.is_in_group(Combat.COMBATANTS_GROUP) or target.get("category") == "creature"):
+				if Combat.affects(thing, target) and (target is Player or target.is_in_group(Combat.COMBATANTS_GROUP) or target.get("category") == "creature" or target.has_node("ProtectionEmitter")):
 					Combat.apply_damage(target, damage, "neutron", thing)
 		"gravity", "hypothetical", "singularity", "repulsion":
 			await _gravity_field(at, radius, damage, mode, color)
@@ -109,6 +111,7 @@ func _gravity_field(at: Vector3, radius: float, damage: float, mode: String, col
 				impulse = (up * 4.0 if pulse < 8 else offset.normalized() * 7.0) * weight
 			elif mode == "repulsion":
 				impulse = (offset.normalized() + up * 0.5) * 32.0 * weight
+			impulse *= InnovationRules.force_multiplier(target, thing)
 			if target.has_method("apply_knockback"):
 				target.call("apply_knockback", impulse)
 			elif target is Thing:

@@ -16,6 +16,7 @@ static func apply_damage(target: Object, amount: float, type: String, source: Th
 	var final: = amount
 	if source != null and target == source.owner_player:
 		final *= Lexicon.balf("combat.self_damage_mult")
+	final = InnovationRules.protected_damage(target, final, type, source)
 	target.call("take_damage", final, type, source)
 	if not is_instance_valid(target):
 		return
@@ -112,7 +113,7 @@ static func impulse(source: Thing, at: Vector3, radius: float, strength: float, 
 		var falloff: = 1.0 - clampf(offset.length() / radius, 0.0, 1.0)
 		var up: = Gravity.up_at(center_of(target), source.up())
 		var dir: = offset.normalized() if offset.length_squared() > 0.0001 else up
-		var push: = (dir * signf(strength) + up * lift).normalized() * absf(strength) * falloff
+		var push: = (dir * signf(strength) + up * lift).normalized() * absf(strength) * falloff * InnovationRules.force_multiplier(target, source)
 		if target.has_method("apply_knockback"):
 			target.call("apply_knockback", push)
 		elif target is Thing:
