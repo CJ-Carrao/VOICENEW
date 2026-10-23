@@ -1,0 +1,104 @@
+{
+  "_comment": "balde: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.175,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.3,
+        0.04,
+        0.3
+      ],
+      "pos": [
+        0,
+        0.02,
+        0
+      ],
+      "color": "#397c9e",
+      "tag": "base"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.035,
+        0.35,
+        0.3
+      ],
+      "pos": [
+        -0.1325,
+        0.175,
+        0
+      ],
+      "color": "#397c9e",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.3,
+        0.35,
+        0.035
+      ],
+      "pos": [
+        0,
+        0.175,
+        -0.1325
+      ],
+      "color": "#397c9e",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.035,
+        0.35,
+        0.3
+      ],
+      "pos": [
+        0.1325,
+        0.175,
+        0
+      ],
+      "color": "#397c9e",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.3,
+        0.35,
+        0.035
+      ],
+      "pos": [
+        0,
+        0.175,
+        0.1325
+      ],
+      "color": "#397c9e",
+      "tag": "wall"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.144,
+      "inner_radius": 0.129,
+      "pos": [
+        0,
+        0.3325,
+        0
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "handle"
+    }
+  ]
+}

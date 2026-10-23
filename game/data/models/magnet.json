@@ -1,0 +1,87 @@
+{
+  "_comment": "ímã: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.15,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.084,
+        0.255,
+        0.18
+      ],
+      "pos": [
+        -0.108,
+        0.165,
+        0
+      ],
+      "color": "#ae3b3c",
+      "tag": "pole"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.084,
+        0.045,
+        0.18
+      ],
+      "pos": [
+        -0.108,
+        0.3,
+        0
+      ],
+      "color": "#c5c9ce",
+      "tag": "tip"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.084,
+        0.255,
+        0.18
+      ],
+      "pos": [
+        0.108,
+        0.165,
+        0
+      ],
+      "color": "#4261a6",
+      "tag": "pole"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.084,
+        0.045,
+        0.18
+      ],
+      "pos": [
+        0.108,
+        0.3,
+        0
+      ],
+      "color": "#c5c9ce",
+      "tag": "tip"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.3,
+        0.066,
+        0.18
+      ],
+      "pos": [
+        0,
+        0.033,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "bridge"
+    }
+  ]
+}

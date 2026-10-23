@@ -1,0 +1,912 @@
+{
+  "_comment": "Todos os números de balanceamento e tetos (Regra 6). Tudo provisório: muda com playtest.",
+
+  "space": {
+    "_comment": "Mapa do espaço (DESIGN 27). gravity: probe_up_m = de onde (acima dos pés) a gravidade é medida; align_halflife_s = quão rápido o corpo deita na superfície nova pisando (air_ = no ar, mais suave pra virar de planeta/parede). out_margin_m: além da caixa, volta pro spawn. launch: salto espacial (pular agachado no espaço) sai com a velocidade pra escapar do alcance da superfície + extra_m; air_accel_zero_g: controle no vácuo.",
+    "gravity": { "probe_up_m": 0.9, "align_halflife_s": 0.0, "air_align_halflife_s": 0.22, "align_max_deg_s": 300.0, "air_keep_look": true, "floor_snap_m": 0.35, "floor_max_deg": 60.0 },
+    "out_margin_m": 6.0,
+    "launch": { "extra_m": 3.0, "min_ms": 9.0, "forward_ms": 3.0 },
+    "air_accel_zero_g": 3.0,
+    "arrival_m": 40.0,
+    "voxel": { "_comment": "Planetas de blocos (DESIGN 27/28, BlockPlanet; o nome ficou da etapa 2): core_fraction = raio do núcleo que não se cava (× raio do planeta); crust_m = espessura da crosta clara (abaixo dela, rocha escura); relief_m/relief_frequency = morrinhos da superfície; material = de onde vem a matéria (pedra).",
+      "core_fraction": 0.3, "crust_m": 2.0, "relief_m": 0.5, "relief_frequency": 0.09, "material": "stone" }
+  },
+
+  "arena": {
+    "size": 96.0,
+    "wall_height": 6.0,
+    "wall_thickness": 1.0,
+    "spawn_distance": 64.0,
+    "kill_y": -30.0,
+    "out_of_bounds_margin": 20.0
+  },
+
+  "player": {
+    "max_health": 100.0,
+    "walk_speed": 6.0,
+    "sprint_speed": 10.0,
+    "jump_velocity": 5.5,
+    "accel_ground": 60.0,
+    "accel_air": 14.0,
+    "eye_height": 1.6,
+    "slots": 3,
+    "aim_range": 200.0,
+    "camera": {
+      "_comment": "Câmera de 1ª/3ª pessoa de quem joga (scroll). Cada clique afasta/aproxima step_m; a 3ª pessoa começa em min_third_m e vai até max_m; abaixo de min_third_m volta pra 1ª pessoa (e abaixo de first_person_below_m a câmera de fora some). smoothing: quão rápido a distância chega na escolhida. shoulder_m/height_m: deslocamento de ombro e altura na 3ª pessoa. wall_margin_m: folga da parede quando ela puxa a câmera. hide_body_below_m: mais perto que isso da cabeça, o próprio corpo some. Em 3ª pessoa a câmera é livre (o corpo vira pra onde anda, com meia-vida turn_halflife_s); mirando, ela vem pro ombro (aim_distance_m) e fecha o campo de visão (aim_fov_mult), e o corpo trava olhando pra mira (face_aim_halflife_s), também até face_aim_after_use_s depois de usar.",
+      "first_person_below_m": 0.3,
+      "min_third_m": 1.4,
+      "step_m": 0.6,
+      "max_m": 4.4,
+      "smoothing": 10.0,
+      "shoulder_m": 0.6,
+      "height_m": 0.3,
+      "wall_margin_m": 0.2,
+      "hide_body_below_m": 0.6,
+      "aim_distance_m": 2.3,
+      "aim_shoulder_m": 0.95,
+      "aim_height_m": 0.28,
+      "aim_fov_mult": 0.82,
+      "face_aim_after_use_s": 0.8,
+      "face_aim_halflife_s": 0.04,
+      "turn_halflife_s": 0.08
+    },
+    "impact": {
+      "_comment": "Impacto (DESIGN 18.5): empurrão (m/s) a partir de stagger_ms faz o robô tropeçar (o clipe do lado de onde veio); o jogador continua no controle. Sem queda nem ragdoll (descartado em 2026-10-19).",
+      "stagger_ms": 5.0
+    },
+    "hold": {
+      "_comment": "Arma única (DESIGN 18.4): onde fica o cabo da arma da mão (onde a mão direita do robô pega), no espaço do olho (+X direita, +Y cima, −Z frente, m), em escala real, por classe da coisa da mão (RobotBody.hold_class; sem a classe, rifle). hip: no quadril (a coronha no ombro direito, à vista da câmera de 3ª pessoa); ads: mirando (a altura vai pra linha de mira ficar ads_over_sight_m abaixo do olho: dá pra ver o trilho e as miras); carry + carry_pitch_deg/carry_yaw_deg: na 3ª pessoa livre sem mirar, carregada relaxada (sem seguir o olhar da câmera). O braço do robô é curto (0,5 m): a arma fica perto do corpo. carry_halflife_s: a troca.",
+      "ads_over_sight_m": 0.03,
+      "orb_hand": { "fp": [-0.21, -0.26, -0.42], "carry": [-0.34, -0.3, -0.22] },
+      "carry_halflife_s": 0.1,
+      "classes": {
+        "rifle": { "hip": [0.2, -0.27, -0.16], "ads": [0.0, 0.0, -0.28], "carry": [0.28, -0.3, -0.12], "carry_pitch_deg": -20.0, "carry_yaw_deg": -8.0 },
+        "pistol": { "hip": [0.15, -0.22, -0.3], "ads": [0.0, 0.0, -0.34], "carry": [0.22, -0.4, -0.18], "carry_pitch_deg": -35.0, "carry_yaw_deg": 0.0 },
+        "heavy": { "hip": [0.24, -0.2, -0.12], "ads": [0.04, 0.0, -0.22], "carry": [0.26, -0.22, -0.08], "carry_pitch_deg": -10.0, "carry_yaw_deg": 5.0 },
+        "melee": { "hip": [0.22, -0.3, -0.25], "ads": [0.18, -0.25, -0.25], "carry": [0.24, -0.38, -0.15], "carry_pitch_deg": -20.0, "carry_yaw_deg": 0.0 },
+        "throw": { "hip": [0.18, -0.24, -0.3], "ads": [0.12, -0.18, -0.34], "carry": [0.22, -0.35, -0.2], "carry_pitch_deg": -20.0, "carry_yaw_deg": 0.0 },
+        "none": { "hip": [0.2, -0.25, -0.3], "ads": [0.1, -0.15, -0.32], "carry": [0.22, -0.35, -0.2], "carry_pitch_deg": -20.0, "carry_yaw_deg": 0.0 }
+      }
+    },
+    "move": { "space_stick_ms": 0.6, "step_up_m": 0.32, "step_down_m": 0.4, "step_drop_ms": 4.0, "step_smooth_min_m": 0.05, "step_climb_hold_s": 0.12,
+      "_comment": "Movimento frenético (F1, DESIGN 10.1; FpsMove). Agachar liga e desliga (C): agachado fica agachado até apertar de novo ou pular, andando a crouch_speed e, com Shift, a crouch_run_speed. Alturas da cápsula em pé/agachado/escorregando (o olho desce o mesmo tanto) e quão rápido muda. sprint_forward_min: em 1ª pessoa só corre pra frente (W mais que isso). sprint_out_s: saindo da corrida, a arma leva isso pra subir (o tiro espera), pela classe da arma da mão (pesquisa v3: pistola mais rápida, pesada mais lenta). Escorregão: agachar correndo acima de slide_min_start_ms; sai com +slide_boost_ms (até slide_max_ms), perde slide_friction_ms2 por segundo no chão, ganha a gravidade × slide_slope_mult descendo, vira slide_steer_deg_s pro lado do WASD, acaba abaixo de slide_end_ms ou depois de slide_max_s; espera slide_cooldown_s pro próximo. Escalar: beirada entre mantle_min_m e mantle_max_m acima dos pés, a até mantle_reach_m do corpo; leva de mantle_min_s a mantle_max_s (mais alto, mais tempo) e sai a mantle_exit_ms.",
+      "crouch_speed": 3.0,
+      "crouch_run_speed": 4.5,
+      "stand_height_m": 1.8,
+      "crouch_height_m": 1.2,
+      "slide_height_m": 1.1,
+      "height_change_mps": 5.0,
+      "sprint_forward_min": 0.3,
+      "sprint_out_s": { "none": 0.08, "melee": 0.1, "pistol": 0.12, "rifle": 0.16, "heavy": 0.22 },
+      "slide_min_start_ms": 7.5,
+      "slide_boost_ms": 2.0,
+      "slide_max_ms": 12.0,
+      "slide_friction_ms2": 9.0,
+      "slide_slope_mult": 1.0,
+      "slide_downhill_max_ms": 14.0,
+      "slide_steer_deg_s": 69.0,
+      "slide_end_ms": 3.0,
+      "slide_max_s": 1.1,
+      "slide_cooldown_s": 0.4,
+      "mantle_min_m": 0.45,
+      "mantle_max_m": 1.75,
+      "mantle_reach_m": 0.55,
+      "mantle_min_s": 0.3,
+      "mantle_max_s": 0.55,
+      "mantle_exit_ms": 3.0
+    }
+  },
+  "feel": {
+    "_comment": "O juice de FPS de quem joga (F1, DESIGN 10.2; FpsFeel): só câmera e arma de primeira pessoa, por molas com meia-vida. bob: balanço da câmera no ritmo do passo do robô (m, graus), pela velocidade (speed_ref_ms = 1), mais correndo, menos agachado, quase nada mirando. weapon_bob: o oito da arma e a respiração parada. sway: a arma atrasa com o mouse (graus por pixel, máximo, volta). strafe_tilt: câmera e arma inclinam andando de lado. sprint_pose: a arma baixa e de lado correndo. slide: inclinação da câmera e da arma escorregando. land: câmera e arma afundam no pouso (m por m/s de queda) e voltam balançando; pulo dá um tranco na arma; queda acima de trauma_from_ms treme. mantle: mergulho da câmera ao escalar. fov: o campo de visão abre correndo e escorregando. shake: tremor por trauma (0..1; tremor = trauma²) de explosão perto (até explosion_reach_mult × o raio, pela força ÷ explosion_ref_damage), dano e tiro (por grau de coice). crosshair: a mira abre andando, no ar e atirando; marca de acerto. sound: volumes (dB) dos passos, pouso, escorregão, pulo e acerto.",
+    "bob": { "vertical_m": 0.012, "lateral_m": 0.012, "roll_deg": 0.35, "speed_ref_ms": 6.0, "sprint_mult": 1.4, "crouch_mult": 0.6, "ads_mult": 0.15, "halflife_s": 0.1 },
+    "weapon_bob": { "lateral_m": 0.01, "vertical_m": 0.008, "yaw_deg": 1.2, "sprint_mult": 1.6, "idle_hz": 0.3, "idle_m": 0.002 },
+    "sway": { "deg_per_px": 0.035, "max_deg": 4.0, "halflife_s": 0.05, "return_halflife_s": 0.08, "pos_m_per_deg": 0.003, "ads_mult": 0.25 },
+    "strafe_tilt": { "camera_deg": 1.2, "weapon_deg": 4.0, "halflife_s": 0.1 },
+    "sprint_pose": { "rot_deg": [-18.0, 35.0, 20.0], "pos_m": [0.04, -0.06, 0.03], "halflife_s": 0.07 },
+    "slide": { "roll_deg": 5.0, "weapon_rot_deg": [4.0, 8.0, 14.0], "halflife_s": 0.08 },
+    "land": { "camera_m_per_ms": 0.012, "max_m": 0.12, "frequency_hz": 3.5, "damping": 0.55, "weapon_mult": 1.4, "weapon_frequency_hz": 4.5,
+      "weapon_pitch_deg_per_m": 60.0, "jump_weapon_m": 0.02, "trauma_from_ms": 9.0, "trauma_per_ms": 0.04 },
+    "mantle": { "s": 0.45, "dip_m": 0.06, "pitch_deg": 4.0, "roll_deg": 3.0 },
+    "fov": { "sprint_deg": 6.0, "slide_deg": 10.0, "halflife_s": 0.12 },
+    "shake": { "max_deg": [2.5, 2.5, 4.0], "max_m": 0.04, "frequency_hz": 18.0, "decay_per_s": 1.4, "explosion_trauma": 1.0,
+      "explosion_reach_mult": 3.0, "explosion_ref_damage": 50.0, "hurt_trauma_per_damage": 0.012, "fire_trauma_per_recoil_deg": 0.02 },
+    "crosshair": { "move_px_per_ms": 1.2, "air_px": 8.0, "fire_px": 6.0, "max_px": 26.0, "halflife_s": 0.08, "bloom_halflife_s": 0.12,
+      "hit_s": 0.16, "hit_inner_px": 6.0, "hit_len_px": 7.0 },
+    "sound": { "step_db": -6.0, "step_sprint_db": 3.0, "step_crouch_db": -10.0, "land_db": -2.0, "land_min_ms": 2.5, "slide_db": -8.0,
+      "jump_db": -15.0, "hit_db": -6.0, "fire_db": -4.0, "fire_medium_from": 0.045, "fire_heavy_from": 0.07,
+      "explosion_db": 0.0, "swing_db": -10.0, "break_db": -12.0, "extract_db": -16.0, "countdown_db": -8.0, "match_db": -4.0,
+      "hurt_db": -6.0, "talk_db": -14.0 }
+  },
+
+  "dummy": {
+    "_comment": "Boneco alvo do modo Treino: na frente do spawn A, anda de um lado pro outro (move_range metros pra cada lado).",
+    "max_health": 100.0,
+    "distance_from_spawn": 18.0,
+    "respawn_s": 2.0,
+    "friction": 12.0,
+    "move_speed": 3.0,
+    "move_range": 6.0
+  },
+
+  "matter": {
+    "_comment": "Lavoisier (DESIGN 9 e 17): nada se cria, nada se perde, tudo se transforma. Transmutar: pedir algo com uma coisa na mão desfaz ela, e a matéria dela paga o pedido antes da esfera (a sobra volta pra esfera; o que não cabe cai no chão). 'recicla' desfaz a coisa da mão pra esfera. Morrer derrama a esfera e as coisas da mão como entulho onde caiu. Ninguém começa com matéria (start) e ela não volta sozinha: vem da extração (modo extração) do mundo, do entulho e das coisas. Montar gasta a matéria peça a peça (o custo determinístico da árvore, em matéria); sem matéria a montagem para no meio, incompleta e sem funcionar, e continua quando a matéria chega (a da mão só enquanto está selecionada: trocar de slot guarda a arma inacabada). capacity: o máximo que dá pra carregar. debris_fraction: quanto da matéria de uma criação destruída vira entulho no chão (só o que foi pedido direto: o que uma arma cria não devolve matéria, senão dava pra fabricar matéria atirando). rubble_merge_m: entulho que cai perto de um monte entra nele.",
+    "start": 0.0,
+    "capacity": 300.0,
+    "debris_fraction": 1.0,
+    "rubble_merge_m": 2.0,
+    "dissolve_per_hp": 0.1,
+    "orb": {
+      "_comment": "A esfera de matéria acima da mão esquerda (DESIGN 17.3): núcleo que cresce e brilha com a carga (core_min_m..core_max_m, glow_max), até max_blocks bloquinhos girando em volta (block_m, shell_m, spin_rad_s), um por fatia da carga, na cor do material de onde veio. Na 1ª pessoa de quem joga, fp_scale do tamanho. Flutua above_hand_m acima da palma, seguindo suave no espaço do jogador (follow_halflife_s, nunca mais longe que max_lag_m do ponto certo) e subindo e descendo (bob). Bloquinhos que voam do ponto da extração: bit_m, bit_flight_s, bit_arc_m. Coisa desfeita (transmutar, reciclar) manda um bloquinho por bit_matter de matéria, até bits_max. pulse: o tranco quando chega e sai matéria.",
+      "above_hand_m": 0.17,
+      "follow_halflife_s": 0.05,
+      "max_lag_m": 0.04,
+      "bob_hz": 0.7,
+      "bob_m": 0.012,
+      "core_min_m": 0.03,
+      "core_max_m": 0.07,
+      "glow_max": 1.3,
+      "max_blocks": 40,
+      "block_m": 0.025,
+      "shell_m": 0.085,
+      "fp_scale": 0.55,
+      "spin_rad_s": 1.6,
+      "bit_m": 0.04,
+      "bit_flight_s": 0.35,
+      "bit_arc_m": 0.4,
+      "bit_matter": 2.0,
+      "bits_max": 12,
+      "pulse_kick": 1.2,
+      "pulse_hz": 5.0,
+      "default_color": "#ffb347"
+    }
+  },
+
+  "extraction": {
+    "_comment": "Modo extração (DESIGN 17): toque rápido (até tap_max_s) no botão de voz liga/desliga; segurar fala. No modo, o clique segurado puxa matéria do que estiver na mira até range_m. A taxa cresce de rate_per_s até max_rate_per_s em ramp_s de extração contínua; soltar ou encher a carga reinicia. gap_grace_s tolera pequenas falhas entre pedaços, sem acelerar quando não sai matéria. stick_m: acabou o pedaço da mira, continua no vizinho até essa distância.",
+    "tap_max_s": 0.22,
+    "rate_per_s": 6.0,
+    "max_rate_per_s": 30.0,
+    "ramp_s": 3.0,
+    "gap_grace_s": 0.25,
+    "range_m": 6.0,
+    "stick_m": 2.0,
+    "beam_color": "#ffc65c"
+  },
+
+  "materials": {
+    "_comment": "Materiais das construções do mundo (Lavoisier). Por metro cúbico: matter_per_m3 (o que a extração dá e o que vira entulho), hp_per_m3 (vida do pedaço). color, variation (variação de cor entre pedaços), finish (acabamento do ModelBuilder), alpha (vidro). Um tijolo de 1 × 0,5 × 0,25 m = 0,125 m³: 1,5 de matéria e 50 de vida.",
+    "brick": { "matter_per_m3": 12.0, "hp_per_m3": 400.0, "color": "#a3513a", "variation": 0.14, "finish": "rubber" },
+    "concrete": { "matter_per_m3": 14.0, "hp_per_m3": 650.0, "color": "#a19f97", "variation": 0.07, "finish": "rubber" },
+    "wood": { "matter_per_m3": 9.0, "hp_per_m3": 300.0, "color": "#8c6239", "variation": 0.12, "finish": "wood" },
+    "glass": { "matter_per_m3": 10.0, "hp_per_m3": 150.0, "color": "#a9d6e8", "variation": 0.0, "finish": "glass", "alpha": 0.4 },
+    "stone": { "matter_per_m3": 16.0, "hp_per_m3": 700.0, "color": "#7f7c74", "variation": 0.1, "finish": "rubber" },
+    "soil": { "matter_per_m3": 4.0, "hp_per_m3": 1200.0, "color": "#6b5038", "variation": 0.1, "finish": "rubber" },
+    "metal": { "matter_per_m3": 28.0, "hp_per_m3": 1200.0, "color": "#5f666e", "variation": 0.06, "finish": "metal" },
+    "scrap": { "matter_per_m3": 20.0, "hp_per_m3": 600.0, "color": "#6b7380", "variation": 0.1, "finish": "metal" },
+    "core": { "matter_per_m3": 0.0, "hp_per_m3": 0.0, "color": "#ff8a2a", "variation": 0.12, "finish": "rubber" },
+    "bedrock": { "matter_per_m3": 0.0, "hp_per_m3": 0.0, "color": "#2e2c31", "variation": 0.08, "finish": "rubber" }
+  },
+
+  "blocks": {
+    "_comment": "O mundo em blocos (DESIGN 28). size_m: lado do bloco. chunk_cells: blocos por lado de cada pedaço (malha e colisão próprias). rebuild_budget_ms: tempo por quadro pra remontar pedaços mexidos (load_budget_ms com a tela de carregamento aberta). explosion_radius_mult: raio que a explosão morde (× raio da explosão); explosion_damage_mult: um bloco sai se a vida dele ≤ dano × isso × queda (miolo tira tudo, borda só o fraco). island_limit: teto da busca de apoio (ilha maior conta como apoiada). fall_max_visual: blocos desenhados caindo por ilha. extract_radius_m: a bacia da extração (raio em volta da mira). creation_grain: as criações (ModelBuilder) também são feitas de blocos: o maior lado do modelo dividido por isso dá o lado do bloco, entre creation_min_m e creation_max_m.",
+    "size_m": 0.25, "chunk_cells": 16, "rebuild_budget_ms": 3.0, "explosion_radius_mult": 0.6, "explosion_damage_mult": 2.0,
+    "island_limit": 6000, "fall_max_visual": 400, "extract_radius_m": 0.6, "load_budget_ms": 12.0,
+    "creation_grain": 18.0, "creation_min_m": 0.004, "creation_max_m": 0.25
+  },
+
+  "shaping": {
+    "_comment": "Dar forma (Lavoisier L2, DESIGN 17.1): o rascunho de giz. Cada clique do scroll multiplica a medida da vez por step (pra cima) ou divide (pra baixo), presa entre min e max e arredondada em snap. length_shot_speed_exponent: cano mais comprido atira mais rápido (velocidade do tiro × comprimento^isso), pra qualquer coisa que atira. chalk_*: o visual do contorno (cor de giz, transparência e o risco no chão).",
+    "step": 1.1,
+    "snap": 0.05,
+    "min": { "scale": 0.3, "width": 0.3, "height": 0.3, "length": 0.4 },
+    "max": { "scale": 4.0, "width": 5.0, "height": 4.0, "length": 4.0 },
+    "length_shot_speed_exponent": 0.5,
+    "chalk_color": "#f3efe2",
+    "chalk_alpha": 0.34,
+    "chalk_line_m": 0.04
+  },
+
+  "carry": {
+    "_comment": "Peso do que está nas mãos (todos os slots) deixa o jogador mais lento (Lavoisier L2). Peso da coisa = balance.things.<id>.weight_kg × escala^weight_exponent × largura × altura × comprimento (o volume). Até free_kg não pesa; depois cada kg tira slow_per_kg da velocidade de andar e correr, até min_speed_mult.",
+    "weight_exponent": 3.0,
+    "free_kg": 8.0,
+    "slow_per_kg": 0.02,
+    "min_speed_mult": 0.4
+  },
+
+  "terrain": {
+    "_comment": "Chão da arena original em blocos (DESIGN 28; balance.blocks dá o tamanho). max_depth_m: quanto dá pra cavar abaixo do chão original até a rocha de base (que não sai). ground_color: a camada de cima (a terra embaixo tem a cor de materials.soil). support_tolerance_m: pedaço de construção perde o apoio do chão se o chão embaixo dele descer mais que isso. Cratera: a explosão tira blocos pelo raio e pela vida (balance.blocks.explosion_*).",
+    "max_depth_m": 2.5,
+    "ground_color": "#4d525c",
+    "support_tolerance_m": 0.2
+  },
+
+  "robot": {
+    "_comment": "O robô LAVOICE (DESIGN 18). blend_s: troca suave entre camadas (andar, ar, voo, segurar). idle_speed/move_full_speed: abaixo de um é parado, acima do outro anda inteiro. min_cadence_mult: devagarinho, o passo não fica mais lento que isso × o do trote. air_delay_s: no ar há tanto tempo antes da pose de pulo (degrau não conta). hard_landing_speed: caindo mais rápido que isso (m/s), pouso pesado. land_moving_cut: quanto do pouso some se está andando. oneshot_fade_s: entrada/saída dos clipes que tocam uma vez. torso_upper_weight: quanto a pose de segurar manda no tronco (os braços, inteiro). aim_split/look_split: fração do ângulo da mira em cada osso (com e sem coisa na mão). heavy_hold_kg: daqui pra cima segura como arma pesada. team_tint: quanto da cor do time vai nas peças-chave. expression_hold_s: quanto tempo cada expressão de evento fica. ik: o ímã dos pés (raio pra cima/baixo, quanto sobe/desce, quanto o quadril desce, distância máxima do pé travado). pieces: desmontar (voo, giro, quique, tempo no chão) e montar (tempo e distância de onde as peças vêm). R2 (DESIGN 18.2, molas por meia-vida): ik.air_weight/land_blend_in_s/air_fade_s: o IK some no ar e volta depois do pouso; foot/pelvis/foot_align_halflife_s: suavização; foot_align_max_*: quanto o pé deita no chão inclinado; lock_release_s: tempo pra soltar o pé travado. dir: folga e vantagem de frente/trás na escolha da direção de clipe, troca forçada pro vizinho mais perto acima de force_nearest_deg (8 direções: pesquisa v3 §2), troca suave. pivot: na 3ª pessoa livre, correndo, virar mais que start_deg toca a meia-volta (Jog_Pivot). settle: parar depois de andar toca o assentamento (Idle_Settle). warp: quanto as pernas giram pra casar com o movimento (diagonal) e quanto a coluna desfaz. turn: giro parado (a partir de quantos graus, torção máxima, divisão da torção na coluna, volta do corpo andando). lean: inclinação pra dentro da aceleração (graus por m/s², mola que balança, ossos). land: pouso que afunda (m por m/s de queda, mola, parado vale menos porque o clipe já dobra, peito inclina). torso: balanço do andar por cima da pose de segurar (tronco e braços), cabeça estável (filtro), esforço e respiração. dangle: pernas soltas no voo (pêndulos com mola: graus por m/s de vento pra trás e de lado, frequências L/R, amortecimento baixo = balança mais; joelho pela velocidade, descida e chicote; pé e ponta caem soltos pelo peso e balançam). low: agachado e escorregão sem clipe ainda (quadril desce, tronco inclina, no escorregão uma perna à frente; o IK dobra os joelhos). free_look: na 3ª pessoa livre a cabeça olha pra onde a câmera olha (até max_deg; com a câmera de frente, além de give_up_deg, desiste), e a mira pra cima/baixo vale pitch_mult.",
+    "blend_s": 0.15,
+    "idle_speed": 0.25,
+    "move_full_speed": 1.2,
+    "min_cadence_mult": 0.55,
+    "air_delay_s": 0.12,
+    "hard_landing_speed": 8.0,
+    "land_moving_cut": 1.0,
+    "oneshot_fade_s": 0.06,
+    "torso_upper_weight": 0.5,
+    "_step": "Degrau de bloco: o corpo físico sobe/desce o degrau num quadro; o robô e a câmera (que segue o olho dele) deslizam até lá com meia-vida step_halflife_s (sobe e desce morro como rampa). step_max_m: o tanto máximo que o desenho fica pra trás.",
+    "step_halflife_s": 0.12,
+    "step_max_m": 0.6,
+    "fidget_after_s": [6.0, 11.0],
+    "aim_split": { "spine": 0.25, "chest": 0.35, "neck": 0.2, "head": 0.2 },
+    "look_split": { "neck": 0.4, "head": 0.6 },
+    "heavy_hold_kg": 9.0,
+    "team_tint": 0.6,
+    "low_health_fraction": 0.3,
+    "bored_after_s": 14.0,
+    "sleepy_after_s": 30.0,
+    "bot_talk_s": 1.0,
+    "expression_hold_s": { "failed": 1.6, "built": 1.2, "hurt": 0.6, "won": 3.0 },
+    "ik": { "probe_up_m": 0.5, "probe_down_m": 0.7, "max_drop_m": 0.35, "max_raise_m": 0.45, "max_pelvis_drop_m": 0.3, "lock_max_m": 0.25,
+      "air_weight": 0.0, "land_blend_in_s": 0.12, "air_fade_s": 0.05, "foot_halflife_s": 0.05, "pelvis_halflife_s": 0.08,
+      "foot_align_max_pitch_deg": 30.0, "foot_align_max_roll_deg": 20.0, "foot_align_halflife_s": 0.06, "lock_release_s": 0.0167 },
+    "dir": { "hysteresis_deg": 7.5, "forward_bias_deg": 0.0, "force_nearest_deg": 30.0, "crossfade_s": 0.2 },
+    "warp": { "max_deg": 30.0, "spine_counter": 1.0, "halflife_s": 0.08 },
+    "pivot": { "start_deg": 120.0, "min_speed_ms": 2.0, "cooldown_s": 0.55 },
+    "settle": { "moving_min": 0.7, "stopped_max": 0.3 },
+    "turn": { "start_deg": 70.0, "max_twist_deg": 100.0, "max_move_weight": 0.2, "settle_halflife_s": 0.1,
+      "twist_split": { "spine": 0.35, "chest": 0.35, "neck": 0.15, "head": 0.15 } },
+    "lean": { "accel_deg_per_ms2": 0.6, "max_deg": 14.0, "accel_halflife_s": 0.04, "frequency_hz": 2.2, "damping": 0.65,
+      "split": { "spine": 0.5, "chest": 0.5 } },
+    "land": { "compress_m_per_ms": 0.012, "max_m": 0.1, "frequency_hz": 4.0, "damping": 0.65, "standing_mult": 0.4, "chest_deg_per_m": 60.0 },
+    "low": { "crouch_drop_m": 0.38, "crouch_lean_deg": 12.0, "slide_drop_m": 0.55, "slide_lean_deg": 28.0,
+      "slide_front_foot_m": [0.0, 0.05, -0.45], "slide_back_foot_m": [0.0, 0.0, 0.15] },
+    "dangle": { "drag_deg_per_ms": 5.0, "side_deg_per_ms": 4.0, "max_deg": 55.0, "frequency_hz": [1.9, 2.3], "damping": 0.28,
+      "idle_deg": 6.0, "idle_hz": 0.45, "knee_base_deg": 12.0, "knee_per_ms": 2.5, "knee_max_deg": 70.0, "fall_knee_deg_per_ms": 4.0,
+      "climb_knee_deg_per_ms": 3.0, "whip_s": 0.06, "spread_deg": 4.0,
+      "foot_hang_deg": 45.0, "foot_drag_deg_per_ms": 2.0, "foot_max_deg": 75.0, "foot_whip_s": 0.05, "foot_damping": 0.22,
+      "toe_hang_deg": 20.0, "toe_max_deg": 40.0, "toe_whip_s": 0.03,
+      "fly_lean_deg_per_ms": 1.5, "fly_lean_max_deg": 16.0, "fly_lean_halflife_s": 0.25 },
+    "arm_ik": { "blend_s": 0.12, "pull_reach": 0.85, "pull_shake_m": 0.008, "pull_shake_hz": 18.0 },
+    "eye": { "halflife_s": 0.03, "vertical_halflife_s": 0.08, "max_offset_m": 0.6 },
+    "free_look": { "max_deg": 70.0, "give_up_deg": 120.0, "halflife_s": 0.12, "pitch_mult": 0.7 },
+    "torso": { "gait_add_weight": 0.7, "gait_add_arms": 0.15, "head_lowpass_halflife_s": 0.15, "head_stabilize": 0.5,
+      "exertion_rise_s": 0.8, "exertion_fall_s": 4.0,
+      "breath": { "calm_hz": 0.25, "exerted_hz": 0.6, "calm_deg": 0.4, "exerted_deg": 2.5 } },
+    "pieces": { "burst_speed_ms": [1.5, 4.0], "burst_up_ms": [2.0, 4.5], "burst_spin_rad_s": 8.0, "gravity": 14.0, "bounce": 0.35, "friction": 4.0, "linger_s": 5.0, "fade_s": 0.5, "assemble_s": 0.9, "assemble_spread_m": 1.1 }
+  },
+
+  "world": {
+    "_comment": "Mapa (DESIGN 17): de onde vêm as construções destrutíveis. Recriadas a cada round.",
+    "layout": "res://data/world/arena.json"
+  },
+
+  "novelty": {
+    "_comment": "Combinação ainda não usada pelo jogador na partida custa first_mult; cada repetição soma repeat_add (acumula): 1ª ×0,8, 2ª ×1,25, 3ª ×1,5... A repetição esquece: a cada forget_s sem pedir a mesma coisa, uma repetição sai da conta (até ×1,0; o desconto de novo é só da 1ª vez).",
+    "first_mult": 0.8,
+    "repeat_add": 0.25,
+    "forget_s": 45.0
+  },
+
+  "match": {
+    "_comment": "Duelo: zerar a vida do oponente vence o round; melhor de 3. O fim do round limpa tudo que foi criado.",
+    "rounds_to_win": 2,
+    "countdown_s": 3.0,
+    "intermission_s": 3.0
+  },
+
+  "bot": {
+    "_comment": "Bot de treino (DESIGN 13): pede coisas aleatórias válidas pelo Forge, usa o que montou e se mexe. Dificuldade aqui.",
+    "reaction_s": 0.25,
+    "request_interval_min_s": 5.0,
+    "request_interval_max_s": 11.0,
+    "extract_margin": 1.15,
+    "extract_target_min": 12.0,
+    "extract_give_up_s": 6.0,
+    "aim_error_deg": 2.5,
+    "strafe_change_min_s": 1.2,
+    "strafe_change_max_s": 3.0,
+    "near_distance": 10.0,
+    "far_distance": 26.0,
+    "jump_chance_per_s": 0.15,
+    "pilot_command_distance": 4.0,
+    "pilot_timeout_s": 6.0,
+    "_space": "Espaço (DESIGN 27): sem entulho a space_rubble_m, cava o chão a space_dig_ahead_m à frente. Inimigo em outro planeta: salta quando o pra cima está a space_align_deg do rumo certo (ou depois de space_align_give_up_s tentando).",
+    "space_rubble_m": 14.0,
+    "space_dig_ahead_m": 1.4,
+    "space_align_deg": 4.0,
+    "space_align_give_up_s": 7.0
+  },
+
+  "input": {
+    "mouse_sensitivity": 0.0025
+  },
+
+  "caps": {
+    "tree_depth": 3,
+    "live_entities_per_player": 40,
+    "explosions_per_s": 6,
+    "projectile_max_life_s": 10.0,
+    "split_max": 8,
+    "graft_depth": 2,
+    "grafts_per_recipe": 8
+  },
+
+  "parser": {
+    "fuzzy_min_len": 4,
+    "fuzzy_long_len": 8,
+    "fuzzy_short_max_dist": 1,
+    "fuzzy_long_max_dist": 2,
+    "hear_target_min_len": 3,
+    "phonetic_long_len": 7,
+    "phonetic_short_max_dist": 1,
+    "phonetic_long_max_dist": 2,
+    "join_max_words": 3,
+    "join_fuzzy_min_len": 6,
+    "initial_consonant_penalty": 1,
+    "macro_depth": 4
+  },
+
+  "modifiers": {
+    "giant": 2.0,
+    "big": 1.5,
+    "tiny": 0.5,
+    "wide": 1.6,
+    "narrow": 0.6,
+    "tall": 1.6,
+    "low": 0.6,
+    "long": 1.6,
+    "short": 0.6,
+    "fast": 1.5,
+    "slow": 0.6
+  },
+
+  "trigger_defaults": {
+    "every": { "s": 1.5 },
+    "after": { "s": 3.0 },
+    "near_enemy": { "r": 3.0 },
+    "on_aim_hold": { "s": 2.0 }
+  },
+
+  "triggers": {
+    "near_enemy_cooldown_s": 1.0,
+    "aim_hold_tolerance_m": 1.5,
+    "aim_hold_mark_radius": 1.4
+  },
+
+  "actions": {
+    "split": { "n": 3, "scale": 0.6, "fan_deg": 50.0, "gap": 0.3 },
+    "push": { "radius": 4.0, "strength": 14.0, "lift": 0.3 },
+    "pull": { "radius": 6.0, "strength": 12.0, "lift": 0.15 },
+    "freeze": { "radius": 3.0 },
+    "ignite": { "radius": 3.0 },
+    "shoot": { "fan_step_deg": 5.0, "fan_max_deg": 40.0, "spread_deg": 8.0 },
+    "drop": { "inherit_velocity": 0.2, "below_offset": 0.3, "side_spacing": 0.4 },
+    "spawn": { "ahead_gap": 1.0, "side_spacing": 1.5 },
+    "strike": {
+      "_comment": "Golpe corpo a corpo (DESIGN 3.8, Parte 3). damage × power da frente da arma × pontas; knockback × knockback da frente. Alcance = o quanto o modelo vai à frente da mão + reach_base (braço); fora da mão (pombo que golpeia) no mínimo reach_free. arc_deg = abertura padrão (a ponta da arma muda); vertical_deg = tolerância pra cima e pra baixo. windup_s: o golpe acerta um pouquinho depois do clique (o tempo da lâmina chegar). Segurar o clique carrega: a partir de charge_min_s vira golpe forte, cheio em charge_s (heavy_mult no dano, heavy_knockback_mult no empurrão). Projétil inimigo dentro do arco é cortado. Botão direito com arma branca = defender: dano que vem pela frente (block_arc_deg) × block_damage_mult.",
+      "damage": 20.0,
+      "knockback": 6.0,
+      "lift": 0.25,
+      "reach_base": 0.75,
+      "reach_free": 2.6,
+      "arc_deg": 90.0,
+      "vertical_deg": 50.0,
+      "windup_s": 0.07,
+      "charge_min_s": 0.22,
+      "charge_s": 0.6,
+      "heavy_mult": 1.8,
+      "heavy_knockback_mult": 1.6,
+      "cuts_projectiles": true,
+      "block_damage_mult": 0.35,
+      "block_arc_deg": 150.0
+    },
+    "impulse_profiles": {"launch_pad": {"direction": [0, 1, 0], "strength": 12, "affects_own_team": true, "above_only": true}, "bed_spring": {"direction": [0, 1, 0], "strength": 7, "affects_own_team": true, "above_only": true}}
+  },
+
+  "movement": {
+    "ballistic_lift_deg": 12.0,
+    "bounce_damping": 0.4,
+    "floor_normal_min_y": 0.6,
+    "fly_min_altitude": 1.2,
+    "fly_max_pitch_deg": 15.0,
+    "fly_climb_rate": 2.0,
+    "follow_aim_turn_deg_per_s": 140.0,
+    "pilot_turn_deg_per_s": 160.0,
+    "pilot_climb_factor": 0.7,
+    "flyover_altitude": 12.0,
+    "arrival_edge_margin": 8.0,
+    "arrival_drop_height": 15.0,
+    "bounce_restitution": 0.75,
+    "bounce_hop_speed": 6.0,
+    "bounce_rest_speed": 1.5,
+    "chase_turn_deg_per_s": 200.0,
+    "chase_default_speed": 5.0,
+    "orbit_radius": 2.5,
+    "orbit_height": 1.4,
+    "orbit_default_speed": 6.0,
+    "orbit_catch_up": 6.0
+  },
+
+  "attachments": {
+    "_comment": "Acessórios de arma (DESIGN 3.8): zoom (mira com o botão direito; a óptica troca a da arma), *_mult multiplicam o que a arma já tem (recoil = coice, inaccuracy = desvio sem mirar, ads_inaccuracy = desvio mirando, power = dano), flash false = sem clarão na boca, laser = ponto vermelho onde a arma aponta, light = lanterna. Funcionam em qualquer coisa; numa coisa que não atira, só aparecem.",
+    "red_dot": {"zoom": 1.6, "ads_inaccuracy_mult": 0.6},
+    "acog": {"zoom": 3.5, "ads_inaccuracy_mult": 0.5},
+    "sniper_scope": {"zoom": 8.0, "ads_inaccuracy_mult": 0.1},
+    "suppressor": {"power_mult": 0.92, "recoil_mult": 0.85, "flash": false},
+    "compensator": {"recoil_mult": 0.6},
+    "muzzle_brake": {"recoil_mult": 0.5, "inaccuracy_mult": 0.9},
+    "foregrip": {"recoil_mult": 0.75, "inaccuracy_mult": 0.75},
+    "bipod": {"recoil_mult": 0.5, "inaccuracy_mult": 0.6},
+    "laser_sight": {"inaccuracy_mult": 0.5, "laser": true},
+    "flashlight": {"light": true}
+  },
+
+  "attachments_fx": {
+    "_comment": "Visual dos acessórios e do tiro: lanterna (alcance, abertura, força), ponto do laser e tamanho do clarão na boca (escala com a raiz do power da arma).",
+    "light_range": 30.0,
+    "light_angle_deg": 18.0,
+    "light_energy": 3.0,
+    "laser_dot_radius": 0.035,
+    "flash_size": 0.035
+  },
+
+  "aim": {
+    "_comment": "Mira no botão direito (DESIGN 3.8): o campo de visão fecha pelo zoom da arma (front.zoom) em ads_speed; a arma vai pra player.hold.ads_grip_m (a linha de mira no olho); o desvio do tiro cai pra ads_inaccuracy_mult. Coice: a mira sobe recoil_deg por tiro e volta sozinha recoil_recover dele, a recoil_recover_deg_s. Zoom a partir de scope_overlay_zoom mostra a luneta na tela.",
+    "ads_speed": 14.0,
+    "ads_inaccuracy_mult": 0.2,
+    "recoil_recover": 0.75,
+    "recoil_recover_deg_s": 24.0,
+    "scope_overlay_zoom": 3.0
+  },
+
+  "status": {
+    "_comment": "Efeitos que duram (DESIGN 3.4 freeze/ignite, 3.6 elementos). element: de onde vem a cor da casca (rules/elements.json). Acertar com coisa de fogo/gelo aplica o status do elemento por element_hit_duration_mult da duração. affects_own_team: status, empurrão e puxão pegam no próprio time?",
+    "frozen": { "duration_s": 2.5, "speed_mult": 0.3, "element": "ice" },
+    "burning": { "duration_s": 3.0, "damage_per_s": 8.0, "tick_s": 0.5, "element": "fire" },
+    "element_hit_duration_mult": 0.5,
+    "affects_own_team": false
+  },
+
+  "control": {
+    "_comment": "control auto (DESIGN 3.5): IA simples. Mira no inimigo mais perto, chega até approach_distance e usa (on_fire) a cada fire_interval_s se ele estiver a menos de fire_range. Na mão, 'automático' = segura e continua atirando.",
+    "auto": { "fire_range": 18.0, "fire_interval_s": 0.6, "approach_distance": 6.0, "climb_gain": 0.8, "climb_deadband": 2.0 }
+  },
+
+  "placement": {
+    "structure_max_range": 15.0,
+    "front_distance": 3.0,
+    "hover_height": 1.6
+  },
+
+  "combat": {
+    "_comment": "structure_*_mult: dano em construção do mundo (Lavoisier) por tipo: impacto (bala, coisa batendo), golpe (arma branca) e explosão. Tijolo de 1 × 0,5 × 0,25 m tem 50 de vida.",
+    "self_damage_mult": 0.5,
+    "structure_impact_mult": 1.0,
+    "structure_strike_mult": 1.5,
+    "structure_explosion_mult": 4.0,
+    "projectiles_hit_own": false,
+    "explosion_knockback": 9.0,
+    "explosion_min_falloff": 0.3
+  },
+
+  "abilities": {
+    "_comment": "Habilidades no próprio jogador. speed_mult/jump_mult multiplicam andar/pular; flight liga o voo (Espaço sobe, Shift desce). cost entra no custo do pedido.",
+    "fly": { "duration": 8.0, "flight": true, "fly_speed": 9.0, "climb_speed": 6.0, "cost": 30.0 },
+    "sprint": { "duration": 6.0, "speed_mult": 1.8, "cost": 15.0 },
+    "super_jump": { "duration": 8.0, "jump_mult": 2.2, "cost": 20.0 }
+  },
+
+  "cost": {
+    "_comment": "Custo determinístico da árvore (DESIGN 9). custo(nó) = base(coisa) × escala × canos × quantidade + extras + Σ custo(comportamento). custo(comportamento) = peso(ação) × fator(gatilho) + custo(X) × criações esperadas. Mais poder ⇒ mais custo, sempre. Energia e novidade entram no Marco 4.",
+    "build_base_s": 1.4,
+    "build_s_per_cost": 0.015,
+    "build_max_s": 10.0,
+    "max_node_cost": 600.0,
+    "_scale_exponent": "tamanho (escala) pesa mais que linear no custo: custo × escala^scale_exponent × largura × altura × comprimento.",
+    "scale_exponent": 1.5,
+    "max_creations": 12.0,
+    "action_weight": { "shoot": 2.0, "drop": 2.0, "spawn": 4.0, "summon": 8.0, "explode": 6.0, "anchor": 2.0, "push": 3.0, "pull": 3.0, "freeze": 4.0, "ignite": 4.0, "split": 4.0, "strike": 3.0,
+  "burst_into": 8
+},
+    "trigger_factor": { "on_fire": 1.0, "on_hit": 1.0, "every": 1.2, "after": 0.8, "on_death": 0.8, "near_enemy": 1.2, "on_aim_hold": 1.0, "on_command": 1.0 },
+    "expected_creations": { "on_fire": 4.0, "on_hit": 1.0, "after": 1.0, "on_death": 1.0, "near_enemy": 2.0, "on_aim_hold": 1.0, "on_command": 1.0 },
+    "movement": { "follow_aim": 6.0, "chase_enemy": 6.0, "orbit_owner": 4.0, "bounce": 2.0, "fly": 3.0 },
+    "control": { "player": 8.0, "auto": 6.0 },
+    "mods": { "explosive": 6.0, "element": 4.0, "upright": 0.0,
+  "material": 4,
+  "magnetic": 6,
+  "unstable": 5
+},
+    "_magazine_rounds": "o que vai dentro de um pente ('pente de granadas') custa como se fossem tantas criações:",
+    "magazine_rounds": 4.0,
+    "magazine_round_share": 0.1, "magazine_round_cost": 1.0
+  },
+
+  "build": {
+    "_comment": "Montagem peça a peça como show de bloquinhos (DESIGN 8 e 17.3). As peças saem da esfera de matéria do dono e voam em arco (piece_flight + flight_per_m por metro, até flight_max; arco arc_min + arc_per_m, até arc_max; girando spin_rad; passam do tamanho até overshoot) do ponto de ancoragem pra fora; o intervalo começa em first_interval e é multiplicado por interval_mult (até min_interval): vai ficando frenético. Cliques sobem pela escala pentatônica em note_steps notas a partir de pitch_start. A última peça espera final_pause, voa final_flight_mult mais devagar, com arco final_arc_mult e overshoot final_overshoot, e encaixa com impacto: o objeto amassa squash em squash_time, baque grave, poeira e tremor (impact_trauma, até impact_reach_m). A programação estica/encolhe pra caber na duração alvo (custo). offset_* = sem esfera, de quantos 'tamanhos de modelo' a peça vem. Coisas criadas durante o jogo: instant (sem montagem) ou micro (pop curto com um clique).",
+    "first_interval": 0.12,
+    "interval_mult": 0.88,
+    "min_interval": 0.015,
+    "piece_flight": 0.18,
+    "flight_per_m": 0.04,
+    "flight_max": 0.45,
+    "arc_min": 0.15,
+    "arc_per_m": 0.25,
+    "arc_max": 1.2,
+    "spin_rad": 4.0,
+    "overshoot": 1.15,
+    "final_pause": 0.22,
+    "final_flight_mult": 2.5,
+    "final_arc_mult": 1.6,
+    "final_overshoot": 1.45,
+    "squash": 0.12,
+    "squash_time": 0.3,
+    "impact_reach_m": 8.0,
+    "impact_trauma": 0.18,
+    "note_steps": 11,
+    "offset_min": 0.4,
+    "offset_max": 0.8,
+    "offset_size_ref": 1.5,
+    "offset_size_min": 0.35,
+    "offset_size_max": 3.0,
+    "drop_categories": ["structure"],
+    "pitch_start": 0.9,
+    "pitch_jitter": 0.05,
+    "max_clicks": 8,
+    "child_roles": { "projectile": "instant", "spawned": "micro", "summoned": "micro" },
+    "micro_time": 0.15,
+    "fail_pieces": 8,
+    "fail_gather_s": 0.35,
+    "fail_shake_s": 0.6,
+    "fail_fall_s": 0.7,
+    "fail_distance": 2.5
+  },
+
+  "pilot": {
+    "camera_distance": 3.5,
+    "camera_height": 1.2
+  },
+
+  "weapons": {
+    "_comment": "Armas em 3 partes (DESIGN 3.8). rear (atrás do gatilho): fire_interval_s entre disparos, automatic (segurando continua), magazine (tiros no pente; 0 = sem pente), reload_s. front (na frente do gatilho): power multiplica o dano de tudo que a arma atira; a munição padrão (o que e quantos por disparo, ex.: chumbo da escopeta) vem dos comportamentos em defs/things.json. muzzle (cano): barrels = canos (cada cano gasta 1 tiro do pente por disparo), speed_mult na velocidade do que sai, spread_deg = abertura do leque. Misturar ('pistola com corpo de bazuca') pega cada parte de uma arma. Números com base nas armas reais, ajustados pro jogo.",
+    "_cost_share": { "rear": 0.3, "front": 0.4, "muzzle": 0.3 },
+    "_reload": { "_comment": "Recarregar = pedir um pente ('quero um pente', 'pente de granadas'). auto: pente vazio recarrega sozinho em reload_s; manual_key: a tecla R recarrega.", "auto": false, "manual_key": false },
+    
+    "_spin_rad_s": 40.0,
+    "_ammo_visual": { "_comment": "O tamanho do pente na arma (AmmoVisual, só visual). Pente no modelo: cresce em volume na proporção da capacidade ÷ pente de fábrica, primeiro alongando pra baixo (min_scale até max_length ×) e o resto engrossando (até max_scale ×). Sem pente no modelo (bazuca, RPG, arco): o que passa do de fábrica fica em cima, até reserve_max cópias do tiro, com reserve_gap entre elas.", "min_scale": 0.6, "max_length": 3.0, "max_scale": 6.0, "reserve_max": 24, "reserve_gap": 1.15 },
+    "pistol": {
+      "rear": {"fire_interval_s": 0.18, "automatic": false, "magazine": 17, "reload_s": 1.2},
+      "front": {"power": 1.0, "zoom": 1.15, "recoil_deg": 1.5},
+      "muzzle": {"barrels": 1, "speed_mult": 1.0, "spread_deg": 4.0, "inaccuracy_deg": 1.8}
+    },
+    "revolver": {
+      "rear": {"fire_interval_s": 0.35, "automatic": false, "magazine": 6, "reload_s": 2.0},
+      "front": {"power": 2.3, "zoom": 1.2, "recoil_deg": 4.0},
+      "muzzle": {"barrels": 1, "speed_mult": 1.15, "spread_deg": 3.0, "inaccuracy_deg": 1.4}
+    },
+    "desert_eagle": {
+      "rear": {"fire_interval_s": 0.4, "automatic": false, "magazine": 7, "reload_s": 1.4},
+      "front": {"power": 3.4, "zoom": 1.2, "recoil_deg": 6.0},
+      "muzzle": {"barrels": 1, "speed_mult": 1.25, "spread_deg": 3.0, "inaccuracy_deg": 2.0}
+    },
+    "uzi": {
+      "rear": {"fire_interval_s": 0.1, "automatic": true, "magazine": 32, "reload_s": 1.6},
+      "front": {"power": 0.85, "zoom": 1.15, "recoil_deg": 0.7},
+      "muzzle": {"barrels": 1, "speed_mult": 1.0, "spread_deg": 4.0, "inaccuracy_deg": 3.5}
+    },
+    "mp5": {
+      "rear": {"fire_interval_s": 0.075, "automatic": true, "magazine": 30, "reload_s": 1.8},
+      "front": {"power": 0.9, "zoom": 1.3, "recoil_deg": 0.55},
+      "muzzle": {"barrels": 1, "speed_mult": 1.05, "spread_deg": 3.0, "inaccuracy_deg": 2.2}
+    },
+    "tommy_gun": {
+      "rear": {"fire_interval_s": 0.09, "automatic": true, "magazine": 50, "reload_s": 2.6},
+      "front": {"power": 1.1, "zoom": 1.2, "recoil_deg": 0.8},
+      "muzzle": {"barrels": 1, "speed_mult": 0.95, "spread_deg": 4.0, "inaccuracy_deg": 3.0}
+    },
+    "rifle": {
+      "rear": {"fire_interval_s": 0.1, "automatic": true, "magazine": 30, "reload_s": 2.2},
+      "front": {"power": 1.3, "zoom": 1.3, "recoil_deg": 1.0},
+      "muzzle": {"barrels": 1, "speed_mult": 1.35, "spread_deg": 3.0, "inaccuracy_deg": 2.5}
+    },
+    "m4": {
+      "rear": {"fire_interval_s": 0.25, "automatic": false, "burst": 3, "burst_interval_s": 0.07, "magazine": 30, "reload_s": 2.0},
+      "front": {"power": 1.15, "zoom": 1.5, "recoil_deg": 0.7},
+      "muzzle": {"barrels": 1, "speed_mult": 1.5, "spread_deg": 3.0, "inaccuracy_deg": 1.8}
+    },
+    "sniper": {
+      "rear": {"fire_interval_s": 1.3, "automatic": false, "magazine": 5, "reload_s": 3.0},
+      "front": {"power": 7.5, "zoom": 8.0, "recoil_deg": 7.0, "ads_inaccuracy_mult": 0.04},
+      "muzzle": {"barrels": 1, "speed_mult": 2.2, "spread_deg": 1.0, "inaccuracy_deg": 6.0}
+    },
+    "barrett": {
+      "rear": {"fire_interval_s": 0.6, "automatic": false, "magazine": 10, "reload_s": 3.2},
+      "front": {"power": 10.0, "zoom": 6.0, "recoil_deg": 9.0, "ads_inaccuracy_mult": 0.05},
+      "muzzle": {"barrels": 1, "speed_mult": 2.3, "spread_deg": 1.0, "inaccuracy_deg": 7.0}
+    },
+    "shotgun": {
+      "rear": {"fire_interval_s": 0.8, "automatic": false, "magazine": 6, "reload_s": 2.4},
+      "front": {"power": 1.0, "zoom": 1.15, "recoil_deg": 5.0},
+      "muzzle": {"barrels": 1, "speed_mult": 0.85, "spread_deg": 16.0, "inaccuracy_deg": 0.0}
+    },
+    "double_barrel": {
+      "rear": {"fire_interval_s": 0.35, "automatic": false, "magazine": 2, "reload_s": 2.0},
+      "front": {"power": 1.15, "zoom": 1.1, "recoil_deg": 7.0},
+      "muzzle": {"barrels": 2, "speed_mult": 0.85, "spread_deg": 14.0, "inaccuracy_deg": 0.0}
+    },
+    "lmg": {
+      "rear": {"fire_interval_s": 0.07, "automatic": true, "magazine": 100, "reload_s": 4.0},
+      "front": {"power": 1.15, "zoom": 1.35, "recoil_deg": 0.8},
+      "muzzle": {"barrels": 1, "speed_mult": 1.5, "spread_deg": 3.0, "inaccuracy_deg": 4.0}
+    },
+    "minigun": {
+      "rear": {"fire_interval_s": 0.03, "automatic": true, "magazine": 500, "reload_s": 5.0, "spin_up_s": 0.6},
+      "front": {"power": 0.8, "zoom": 1.1, "recoil_deg": 0.25},
+      "muzzle": {"barrels": 6, "speed_mult": 1.45, "spread_deg": 3.0, "inaccuracy_deg": 3.5, "fire_mode": "rotate"}
+    },
+    "grenade_launcher": {
+      "rear": {"fire_interval_s": 0.6, "automatic": false, "magazine": 1, "reload_s": 2.2},
+      "front": {"power": 1.0, "zoom": 1.2, "recoil_deg": 4.0},
+      "muzzle": {"barrels": 1, "speed_mult": 1.6, "spread_deg": 6.0, "inaccuracy_deg": 0.0}
+    },
+    "rpg": {
+      "rear": {"fire_interval_s": 1.0, "automatic": false, "magazine": 1, "reload_s": 2.8},
+      "front": {"power": 1.15, "zoom": 1.8, "recoil_deg": 5.0},
+      "muzzle": {"barrels": 1, "speed_mult": 1.15, "spread_deg": 8.0, "inaccuracy_deg": 0.0}
+    },
+    "rocket_launcher": {
+      "rear": {"fire_interval_s": 1.0, "automatic": false, "magazine": 1, "reload_s": 2.5},
+      "front": {"power": 1.0, "zoom": 1.3, "recoil_deg": 5.0},
+      "muzzle": {"barrels": 1, "speed_mult": 1.0, "spread_deg": 10.0, "inaccuracy_deg": 0.0}
+    },
+    "laser_pointer": {
+      "rear": { "fire_interval_s": 0.08, "automatic": true, "magazine": 0, "reload_s": 0.0 },
+      "front": { "power": 1.0 },
+      "muzzle": { "barrels": 1, "speed_mult": 1.0, "spread_deg": 2.0 }
+    },
+    "_melee_comment": "Armas brancas (Parte 3): as mesmas 3 partes. rear = cabo (fire_interval_s = tempo entre golpes; automatic = segurando continua, a motosserra), front = lâmina ou cabeça (power no dano do golpe, knockback no empurrão), muzzle = ponta (arc_deg = abertura do golpe, style = slash corte de lado, thrust estocada, overhead de cima pra baixo, saw serra; barrels = quantas pontas, cada uma acerta). Pesos e medidas das armas reais, ajustados pro jogo: faca Ka-Bar 30 cm/0,3 kg, facão 50 cm/0,6 kg, katana 95 cm/1,2 kg, espada longa 120 cm/1,4 kg, machado de bombeiro 90 cm/2,5 kg, marreta 10 lb 90 cm/5 kg, taco 86 cm/0,9 kg, lança 2,2 m, motosserra sabre de 45 cm, maça 70 cm/1,2 kg.",
+    "knife": {
+      "rear": { "fire_interval_s": 0.35, "automatic": false, "magazine": 0 },
+      "front": { "power": 0.6, "knockback": 0.5 },
+      "muzzle": { "barrels": 1, "arc_deg": 70.0, "style": "slash" }
+    },
+    "machete": {
+      "rear": { "fire_interval_s": 0.45, "automatic": false, "magazine": 0 },
+      "front": { "power": 0.95, "knockback": 0.8 },
+      "muzzle": { "barrels": 1, "arc_deg": 95.0, "style": "slash" }
+    },
+    "katana": {
+      "rear": { "fire_interval_s": 0.5, "automatic": false, "magazine": 0 },
+      "front": { "power": 1.3, "knockback": 0.9 },
+      "muzzle": { "barrels": 1, "arc_deg": 110.0, "style": "slash" }
+    },
+    "sword": {
+      "rear": { "fire_interval_s": 0.65, "automatic": false, "magazine": 0 },
+      "front": { "power": 1.5, "knockback": 1.1 },
+      "muzzle": { "barrels": 1, "arc_deg": 120.0, "style": "slash" }
+    },
+    "axe": {
+      "rear": { "fire_interval_s": 0.8, "automatic": false, "magazine": 0 },
+      "front": { "power": 2.0, "knockback": 1.4 },
+      "muzzle": { "barrels": 1, "arc_deg": 60.0, "style": "overhead" }
+    },
+    "sledgehammer": {
+      "rear": { "fire_interval_s": 1.1, "automatic": false, "magazine": 0 },
+      "front": { "power": 2.6, "knockback": 2.6 },
+      "muzzle": { "barrels": 1, "arc_deg": 55.0, "style": "overhead" }
+    },
+    "bat": {
+      "rear": { "fire_interval_s": 0.6, "automatic": false, "magazine": 0 },
+      "front": { "power": 1.0, "knockback": 2.2 },
+      "muzzle": { "barrels": 1, "arc_deg": 120.0, "style": "slash" }
+    },
+    "spear": {
+      "rear": { "fire_interval_s": 0.6, "automatic": false, "magazine": 0 },
+      "front": { "power": 1.2, "knockback": 1.0 },
+      "muzzle": { "barrels": 1, "arc_deg": 24.0, "style": "thrust" }
+    },
+    "chainsaw": {
+      "rear": { "fire_interval_s": 0.1, "automatic": true, "magazine": 0 },
+      "front": { "power": 0.25, "knockback": 0.12 },
+      "muzzle": { "barrels": 1, "arc_deg": 45.0, "style": "saw" }
+    },
+    "mace": {
+      "rear": { "fire_interval_s": 0.75, "automatic": false, "magazine": 0 },
+      "front": { "power": 1.8, "knockback": 1.6 },
+      "muzzle": { "barrels": 1, "arc_deg": 70.0, "style": "overhead" }
+    },
+    "hammer": {"rear": {"fire_interval_s": 0.55, "automatic": false, "magazine": 0}, "front": {"power": 1.1, "knockback": 0.9}, "muzzle": {"barrels": 1, "arc_deg": 55.0, "style": "overhead"}},
+    "pan": {"rear": {"fire_interval_s": 0.65, "automatic": false, "magazine": 0}, "front": {"power": 1, "knockback": 1.1, "recoil_deg": 0.2, "zoom": 1.2}, "muzzle": {"barrels": 1, "arc_deg": 120.0, "style": "slash"}},
+    "guitar": {"rear": {"fire_interval_s": 0.65, "automatic": false, "magazine": 0}, "front": {"power": 1, "knockback": 1.1, "recoil_deg": 0.2, "zoom": 1.2}, "muzzle": {"barrels": 1, "arc_deg": 120.0, "style": "slash"}},
+    "chains": {"rear": {"fire_interval_s": 0.65, "automatic": false, "magazine": 0}, "front": {"power": 1, "knockback": 1.1, "recoil_deg": 0.2, "zoom": 1.2}, "muzzle": {"barrels": 1, "arc_deg": 120.0, "style": "slash"}},
+    "crossbow": {"rear": {"fire_interval_s": 0.65, "automatic": false, "magazine": 1, "reload_s": 1.2}, "front": {"power": 1, "zoom": 1.2, "recoil_deg": 0.2}, "muzzle": {"barrels": 1, "speed_mult": 1, "spread_deg": 4, "inaccuracy_deg": 0.3}},
+    "bow": {"rear": {"fire_interval_s": 0.65, "automatic": false, "magazine": 1, "reload_s": 1.2}, "front": {"power": 1, "zoom": 1.2, "recoil_deg": 0.2}, "muzzle": {"barrels": 1, "speed_mult": 1, "spread_deg": 4, "inaccuracy_deg": 0.3}},
+    "flamethrower": {"rear": {"fire_interval_s": 0.08, "automatic": true, "magazine": 40, "reload_s": 2.2}, "front": {"power": 1, "zoom": 1.2, "recoil_deg": 0.2}, "muzzle": {"barrels": 1, "speed_mult": 1, "spread_deg": 4, "inaccuracy_deg": 0.3, "lifetime_s": 0.65}}
+  },
+
+  "things": {
+    "_comment": "Atributos por coisa. O que faltar vem de _default. hp e dano de explosão escalam com o modificador de escala. speed = velocidade de lançamento/voo. lifetime só vale pra quem foi atirado/solto (0 = não expira). fire_cooldown/automatic valem pra quem está na mão e não é arma (arma tira isso de balance.weapons).",
+    "_default": { "weight_kg": 1.0,
+      "cost": 5.0,
+      "hp": 20.0,
+      "speed": 25.0,
+      "lifetime": 10.0,
+      "impact_damage": 0.0,
+      "explosion_damage": 25.0,
+      "explosion_radius": 2.5,
+      "fire_cooldown": 0.3,
+      "automatic": false
+    },
+    "pistol": { "weight_kg": 0.9, "cost": 8.0 },
+    "shotgun": { "weight_kg": 3.6, "cost": 12.0 },
+    "rifle": { "weight_kg": 3.5, "cost": 14.0 },
+    "rocket_launcher": { "weight_kg": 6.0, "cost": 20.0 },
+    "revolver": { "weight_kg": 1.2, "cost": 10.0 },
+    "desert_eagle": { "weight_kg": 2.0, "cost": 12.0 },
+    "uzi": { "weight_kg": 3.5, "cost": 12.0 },
+    "mp5": { "weight_kg": 2.5, "cost": 13.0 },
+    "tommy_gun": { "weight_kg": 4.9, "cost": 15.0 },
+    "m4": { "weight_kg": 3.0, "cost": 15.0 },
+    "sniper": { "weight_kg": 6.0, "cost": 22.0 },
+    "barrett": { "weight_kg": 14.0, "cost": 30.0 },
+    "double_barrel": { "weight_kg": 3.2, "cost": 12.0 },
+    "lmg": { "weight_kg": 8.0, "cost": 22.0 },
+    "minigun": { "weight_kg": 18.0, "cost": 35.0 },
+    "grenade_launcher": { "weight_kg": 3.0, "cost": 16.0 },
+    "rpg": { "weight_kg": 7.0, "cost": 22.0 },
+    "laser_pointer": { "weight_kg": 0.1, "cost": 6.0 },
+    "knife": { "weight_kg": 0.3, "cost": 6.0, "impact_damage": 15.0 },
+    "machete": { "weight_kg": 0.6, "cost": 8.0, "impact_damage": 15.0 },
+    "katana": { "weight_kg": 1.2, "cost": 14.0, "impact_damage": 18.0 },
+    "sword": { "weight_kg": 1.4, "cost": 14.0, "impact_damage": 18.0 },
+    "axe": { "weight_kg": 3.5, "cost": 14.0, "impact_damage": 22.0 },
+    "sledgehammer": { "weight_kg": 5.5, "cost": 16.0, "impact_damage": 25.0 },
+    "bat": { "weight_kg": 0.9, "cost": 8.0, "impact_damage": 12.0 },
+    "spear": { "weight_kg": 2.0, "cost": 12.0, "impact_damage": 25.0 },
+    "chainsaw": { "weight_kg": 6.0, "cost": 22.0, "impact_damage": 10.0 },
+    "mace": { "weight_kg": 1.2, "cost": 12.0, "impact_damage": 18.0 },
+
+    "bullet": { "cost": 1.0, "hp": 1.0, "speed": 90.0, "lifetime": 3.0, "impact_damage": 10.0 },
+    "magazine": { "weight_kg": 0.5, "cost": 3.0, "hp": 5.0, "speed": 14.0, "impact_damage": 6.0 },
+    "red_dot": { "cost": 3.0, "hp": 5.0, "speed": 12.0, "impact_damage": 4.0 },
+    "acog": { "cost": 5.0, "hp": 5.0, "speed": 12.0, "impact_damage": 4.0 },
+    "sniper_scope": { "cost": 8.0, "hp": 5.0, "speed": 12.0, "impact_damage": 4.0 },
+    "suppressor": { "cost": 5.0, "hp": 5.0, "speed": 12.0, "impact_damage": 4.0 },
+    "compensator": { "cost": 3.0, "hp": 5.0, "speed": 12.0, "impact_damage": 4.0 },
+    "muzzle_brake": { "cost": 3.0, "hp": 5.0, "speed": 12.0, "impact_damage": 4.0 },
+    "foregrip": { "cost": 3.0, "hp": 5.0, "speed": 12.0, "impact_damage": 4.0 },
+    "bipod": { "cost": 4.0, "hp": 5.0, "speed": 12.0, "impact_damage": 4.0 },
+    "laser_sight": { "cost": 3.0, "hp": 5.0, "speed": 12.0, "impact_damage": 4.0 },
+    "flashlight": { "cost": 2.0, "hp": 5.0, "speed": 12.0, "impact_damage": 4.0 },
+    "laser_beam": { "cost": 1.0, "hp": 1.0, "speed": 160.0, "lifetime": 2.0, "impact_damage": 8.0 },
+    "missile": { "cost": 6.0, "hp": 5.0, "speed": 30.0, "explosion_damage": 40.0, "explosion_radius": 3.0 },
+    "grenade": { "weight_kg": 0.4, "cost": 5.0, "hp": 5.0, "speed": 16.0, "explosion_damage": 35.0, "explosion_radius": 3.5 },
+    "bomb": { "weight_kg": 2.0, "cost": 5.0, "hp": 5.0, "speed": 10.0, "explosion_damage": 30.0, "explosion_radius": 3.0 },
+
+    "wall": { "cost": 10.0, "hp": 80.0, "speed": 20.0 },
+    "tower": { "cost": 25.0, "hp": 200.0 },
+    "pigeon": { "cost": 6.0, "hp": 10.0, "speed": 9.0, "lifetime": 6.0, "impact_damage": 5.0 },
+    "drone": { "cost": 15.0, "hp": 30.0, "speed": 8.0, "explosion_damage": 50.0, "explosion_radius": 4.0 },
+    "plane": { "cost": 30.0, "hp": 60.0, "speed": 30.0 },
+    "monkey": {"weight_kg": 4, "cost": 10, "hp": 35, "speed": 7, "impact_damage": 4},
+    "shield": {"weight_kg": 4, "cost": 12, "hp": 160, "speed": 12, "impact_damage": 6.0},
+    "gorilla": {"weight_kg": 160, "cost": 30.3, "hp": 121.2, "speed": 6, "impact_damage": 27.3},
+    "bear": {"weight_kg": 250, "cost": 36.6, "hp": 146.5, "speed": 7, "impact_damage": 33.6},
+    "dog": {"weight_kg": 25, "cost": 15.0, "hp": 60.0, "speed": 8, "impact_damage": 12.0},
+    "wolf": {"weight_kg": 45, "cost": 18.4, "hp": 73.7, "speed": 9, "impact_damage": 15.4},
+    "horse": {"weight_kg": 500, "cost": 49.7, "hp": 198.9, "speed": 12, "impact_damage": 46.7},
+    "unicorn": {"weight_kg": 500, "cost": 49.7, "hp": 198.9, "speed": 12, "impact_damage": 46.7},
+    "shark": {"weight_kg": 700, "cost": 57.9, "hp": 231.7, "speed": 7, "impact_damage": 54.9},
+    "eagle": {"weight_kg": 5, "cost": 9.5, "hp": 37.9, "speed": 15, "impact_damage": 6.5},
+    "chicken": {"weight_kg": 2, "cost": 7.8, "hp": 31.3, "speed": 3, "impact_damage": 4.8},
+    "snake": {"weight_kg": 3, "cost": 8.5, "hp": 33.9, "speed": 1.5, "impact_damage": 5.5},
+    "spider": {"weight_kg": 0.1, "cost": 5.6, "hp": 22.5, "speed": 0.8, "impact_damage": 2.6},
+    "trex": {"weight_kg": 6000, "cost": 85, "hp": 300, "speed": 7, "impact_damage": 55},
+    "cat": {"weight_kg": 4, "cost": 9.0, "hp": 36.0, "speed": 6, "impact_damage": 6.0},
+    "rabbit": {"weight_kg": 2, "cost": 7.8, "hp": 31.3, "speed": 5, "impact_damage": 4.8},
+    "fox": {"weight_kg": 7, "cost": 10.3, "hp": 41.2, "speed": 7, "impact_damage": 7.3},
+    "boar": {"weight_kg": 100, "cost": 25.0, "hp": 100.0, "speed": 7, "impact_damage": 22.0},
+    "crocodile": {"weight_kg": 200, "cost": 33.3, "hp": 133.1, "speed": 3, "impact_damage": 30.3},
+    "elephant": {"weight_kg": 4500, "cost": 85, "hp": 300, "speed": 5, "impact_damage": 55},
+    "lion": {"weight_kg": 180, "cost": 31.8, "hp": 127.3, "speed": 9, "impact_damage": 28.8},
+    "tiger": {"weight_kg": 220, "cost": 34.7, "hp": 138.7, "speed": 9, "impact_damage": 31.7},
+    "penguin": {"weight_kg": 25, "cost": 15.0, "hp": 60.0, "speed": 1.5, "impact_damage": 12.0},
+    "turtle": {"weight_kg": 8, "cost": 10.7, "hp": 42.6, "speed": 0.25, "impact_damage": 7.7},
+    "goat": {"weight_kg": 45, "cost": 18.4, "hp": 73.7, "speed": 5, "impact_damage": 15.4},
+    "deer": {"weight_kg": 100, "cost": 25.0, "hp": 100.0, "speed": 10, "impact_damage": 22.0},
+    "crab": {"weight_kg": 0.3, "cost": 6.1, "hp": 24.4, "speed": 0.7, "impact_damage": 3.1},
+    "scorpion": {"weight_kg": 0.05, "cost": 5.4, "hp": 21.8, "speed": 0.5, "impact_damage": 2.4},
+    "frog": {"weight_kg": 0.2, "cost": 5.9, "hp": 23.6, "speed": 1, "impact_damage": 2.9},
+    "helicopter": {"weight_kg": 1200, "cost": 74.3, "hp": 297.1, "speed": 22, "impact_damage": 55},
+    "tank": {"weight_kg": 50000, "cost": 85, "hp": 300, "speed": 8, "impact_damage": 55},
+    "car": {"weight_kg": 1300, "cost": 77.1, "hp": 300, "speed": 12, "impact_damage": 55},
+    "motorcycle": {"weight_kg": 180, "cost": 31.8, "hp": 127.3, "speed": 14, "impact_damage": 28.8},
+    "skateboard": {"weight_kg": 3, "cost": 8.5, "hp": 33.9, "speed": 5, "impact_damage": 5.5},
+    "cannon": {"weight_kg": 400, "cost": 45.0, "hp": 180.0, "speed": 0, "impact_damage": 42.0},
+    "catapult": {"weight_kg": 500, "cost": 49.7, "hp": 198.9, "speed": 0, "impact_damage": 46.7},
+    "fan": {"weight_kg": 25, "cost": 15.0, "hp": 60.0, "speed": 0, "impact_damage": 12.0},
+    "barrel": {"weight_kg": 18, "cost": 13.5, "hp": 53.9, "speed": 12, "impact_damage": 10.5, "explosion_damage": 45, "explosion_radius": 4},
+    "gas_cylinder": {"weight_kg": 26, "cost": 15.2, "hp": 60.8, "speed": 12, "impact_damage": 12.2, "explosion_damage": 45, "explosion_radius": 4},
+    "anvil": {"weight_kg": 100, "cost": 25.0, "hp": 100.0, "speed": 12, "impact_damage": 22.0},
+    "cage": {"weight_kg": 80, "cost": 22.9, "hp": 91.6, "speed": 12, "impact_damage": 19.9},
+    "trampoline": {"weight_kg": 30, "cost": 16.0, "hp": 63.8, "speed": 12, "impact_damage": 13.0},
+    "spike_trap": {"weight_kg": 15, "cost": 12.7, "hp": 51.0, "speed": 12, "impact_damage": 9.7},
+    "fridge": {"weight_kg": 60, "cost": 20.5, "hp": 82.0, "speed": 12, "impact_damage": 17.5},
+    "piano": {"weight_kg": 200, "cost": 33.3, "hp": 133.1, "speed": 12, "impact_damage": 30.3},
+    "toilet": {"weight_kg": 25, "cost": 15.0, "hp": 60.0, "speed": 12, "impact_damage": 12.0},
+    "tire": {"weight_kg": 9, "cost": 11.0, "hp": 44.0, "speed": 12, "impact_damage": 8.0},
+    "banana": {"weight_kg": 0.12, "cost": 5.7, "hp": 22.8, "speed": 12, "impact_damage": 2.7},
+    "watermelon": {"weight_kg": 5, "cost": 9.5, "hp": 37.9, "speed": 12, "impact_damage": 6.5},
+    "boulder": {"weight_kg": 900, "cost": 65.0, "hp": 260.0, "speed": 12, "impact_damage": 55},
+    "magnet": {"weight_kg": 4, "cost": 9.0, "hp": 36.0, "speed": 12, "impact_damage": 6.0},
+    "sphere": {"weight_kg": 1, "cost": 7.0, "hp": 28.0, "speed": 12, "impact_damage": 4.0},
+    "chair": {"weight_kg": 5, "cost": 9.5, "hp": 37.9, "speed": 12, "impact_damage": 6.5},
+    "table": {"weight_kg": 20, "cost": 13.9, "hp": 55.8, "speed": 12, "impact_damage": 10.9},
+    "sofa": {"weight_kg": 40, "cost": 17.6, "hp": 70.6, "speed": 12, "impact_damage": 14.6},
+    "traffic_cone": {"weight_kg": 2, "cost": 7.8, "hp": 31.3, "speed": 12, "impact_damage": 4.8},
+    "basketball": {"weight_kg": 0.6, "cost": 6.5, "hp": 26.2, "speed": 12, "impact_damage": 3.5},
+    "log": {"weight_kg": 80, "cost": 22.9, "hp": 91.6, "speed": 12, "impact_damage": 19.9},
+    "crate": {"weight_kg": 12, "cost": 11.9, "hp": 47.7, "speed": 12, "impact_damage": 8.9},
+    "traffic_barrier": {"weight_kg": 500, "cost": 49.7, "hp": 198.9, "speed": 12, "impact_damage": 46.7},
+    "anchor": {"weight_kg": 30, "cost": 16.0, "hp": 63.8, "speed": 12, "impact_damage": 13.0},
+    "bell": {"weight_kg": 15, "cost": 12.7, "hp": 51.0, "speed": 12, "impact_damage": 9.7},
+    "hammer": {"weight_kg": 0.8, "cost": 6.8, "hp": 27.2, "speed": 12, "impact_damage": 3.8},
+    "boomerang": {"weight_kg": 0.3, "cost": 6.1, "hp": 24.4, "speed": 12, "impact_damage": 3.1},
+    "shopping_cart": {"cost": 13.5, "hp": 53.9, "weight_kg": 18.0, "speed": 5, "impact_damage": 10.5},
+    "wheelchair": {"cost": 13.5, "hp": 53.9, "weight_kg": 18.0, "speed": 5, "impact_damage": 10.5},
+    "bed": {"cost": 16.8, "hp": 67.3, "weight_kg": 35.0, "speed": 12, "impact_damage": 13.8},
+    "tv": {"cost": 11.9, "hp": 47.7, "weight_kg": 12.0, "speed": 12, "impact_damage": 8.9},
+    "computer": {"cost": 12.7, "hp": 51.0, "weight_kg": 15.0, "speed": 12, "impact_damage": 9.7},
+    "microwave": {"cost": 11.9, "hp": 47.7, "weight_kg": 12.0, "speed": 12, "impact_damage": 8.9},
+    "washing_machine": {"cost": 21.1, "hp": 84.5, "weight_kg": 65.0, "speed": 12, "impact_damage": 18.1},
+    "trash_can": {"cost": 9.5, "hp": 37.9, "weight_kg": 5.0, "speed": 12, "impact_damage": 6.5},
+    "street_light": {"cost": 24.0, "hp": 95.9, "weight_kg": 90.0, "speed": 12, "impact_damage": 21.0},
+    "stop_sign": {"cost": 11.3, "hp": 45.3, "weight_kg": 10.0, "speed": 12, "impact_damage": 8.3},
+    "bowling_ball": {"cost": 9.9, "hp": 39.6, "weight_kg": 6.0, "speed": 12, "impact_damage": 6.9},
+    "soccer_ball": {"cost": 6.3, "hp": 25.2, "weight_kg": 0.43, "speed": 12, "impact_damage": 3.3},
+    "brick": {"cost": 8.2, "hp": 32.6, "weight_kg": 2.5, "speed": 12, "impact_damage": 5.2},
+    "cinder_block": {"cost": 11.9, "hp": 47.7, "weight_kg": 12.0, "speed": 12, "impact_damage": 8.9},
+    "pan": {"cost": 7.3, "hp": 120, "weight_kg": 1.3, "speed": 12, "impact_damage": 15},
+    "guitar": {"cost": 8.7, "hp": 35.0, "weight_kg": 3.5, "speed": 12, "impact_damage": 5.7},
+    "chains": {"cost": 8.5, "hp": 33.9, "weight_kg": 3.0, "speed": 12, "impact_damage": 5.5},
+    "bear_trap": {"cost": 10.3, "hp": 41.2, "weight_kg": 7.0, "speed": 12, "impact_damage": 7.3},
+    "landmine": {"cost": 8.5, "hp": 33.9, "weight_kg": 3.0, "speed": 12, "impact_damage": 5.5, "explosion_damage": 40, "explosion_radius": 3},
+    "c4": {"cost": 7.0, "hp": 28.0, "weight_kg": 1.0, "speed": 12, "impact_damage": 4.0, "explosion_damage": 40, "explosion_radius": 3},
+    "molotov": {"cost": 6.7, "hp": 26.7, "weight_kg": 0.7, "speed": 12, "impact_damage": 3.7, "explosion_damage": 40, "explosion_radius": 3},
+    "crossbow": {"cost": 8.5, "hp": 33.9, "weight_kg": 3.0, "speed": 12, "impact_damage": 5.5},
+    "bow": {"cost": 7.0, "hp": 28.0, "weight_kg": 1.0, "speed": 12, "impact_damage": 4.0},
+    "flamethrower": {"cost": 11.9, "hp": 47.7, "weight_kg": 12.0, "speed": 12, "impact_damage": 8.9},
+    "mortar": {"cost": 16.8, "hp": 67.3, "weight_kg": 35.0, "speed": 12, "impact_damage": 13.8},
+    "bull": {"cost": 57.9, "hp": 231.7, "weight_kg": 700.0, "speed": 8, "impact_damage": 54.9},
+    "bee": {"cost": 5.0, "hp": 20.1, "weight_kg": 0.0001, "speed": 4, "impact_damage": 2.0},
+    "rat": {"cost": 6.1, "hp": 24.4, "weight_kg": 0.3, "speed": 3, "impact_damage": 3.1},
+    "zombie": {"cost": 22.3, "hp": 89.3, "weight_kg": 75.0, "speed": 2, "impact_damage": 19.3},
+    "skeleton": {"cost": 11.9, "hp": 47.7, "weight_kg": 12.0, "speed": 4, "impact_damage": 8.9},
+    "dummy": {"cost": 13.9, "hp": 55.8, "weight_kg": 20.0, "speed": 0, "impact_damage": 10.9},
+    "bucket": {"cost": 7.0, "hp": 28.0, "weight_kg": 1.0, "speed": 12, "impact_damage": 4.0},
+    "pipe": {"cost": 8.5, "hp": 33.9, "weight_kg": 3.0, "speed": 12, "impact_damage": 5.5},
+    "mattress": {"cost": 11.3, "hp": 45.3, "weight_kg": 10.0, "speed": 12, "impact_damage": 8.3},
+    "fire_extinguisher": {"cost": 9.9, "hp": 39.6, "weight_kg": 6.0, "speed": 12, "impact_damage": 6.9},
+    "safe": {"cost": 25.0, "hp": 100.0, "weight_kg": 100.0, "speed": 12, "impact_damage": 22.0},
+    "vending_machine": {"cost": 34.7, "hp": 138.7, "weight_kg": 220.0, "speed": 12, "impact_damage": 31.7},
+    "shipping_container": {"cost": 90, "hp": 320, "weight_kg": 2200.0, "speed": 12, "impact_damage": 55},
+    "pallet": {"cost": 13.9, "hp": 55.8, "weight_kg": 20.0, "speed": 12, "impact_damage": 10.9},
+    "wheelbarrow": {"cost": 12.7, "hp": 51.0, "weight_kg": 15.0, "speed": 5, "impact_damage": 9.7},
+    "bicycle": {"cost": 11.9, "hp": 47.7, "weight_kg": 12.0, "speed": 10, "impact_damage": 8.9},
+    "scooter": {"cost": 9.5, "hp": 37.9, "weight_kg": 5.0, "speed": 10, "impact_damage": 6.5},
+    "forklift": {"cost": 90, "hp": 320, "weight_kg": 3000.0, "speed": 5, "impact_damage": 55},
+    "ambulance": {"cost": 90, "hp": 320, "weight_kg": 3000.0, "speed": 10, "impact_damage": 55},
+    "bus": {"cost": 90, "hp": 320, "weight_kg": 11000.0, "speed": 10, "impact_damage": 55},
+    "tractor": {"cost": 90, "hp": 320, "weight_kg": 2000.0, "speed": 10, "impact_damage": 55},
+    "traffic_light": {"cost": 17.6, "hp": 70.6, "weight_kg": 40.0, "speed": 12, "impact_damage": 14.6},
+    "lamp": {"cost": 7.8, "hp": 31.3, "weight_kg": 2.0, "speed": 12, "impact_damage": 4.8},
+    "bookshelf": {"cost": 16.0, "hp": 63.8, "weight_kg": 30.0, "speed": 12, "impact_damage": 13.0},
+    "bathtub": {"cost": 19.1, "hp": 76.6, "weight_kg": 50.0, "speed": 12, "impact_damage": 16.1},
+    "rubber_duck": {"cost": 5.4, "hp": 21.8, "weight_kg": 0.05, "speed": 12, "impact_damage": 2.4},
+    "bowling_pin": {"cost": 7.4, "hp": 29.8, "weight_kg": 1.5, "speed": 12, "impact_damage": 4.4},
+    "arrow": {"cost": 5.3, "hp": 21.4, "weight_kg": 0.03, "speed": 40, "impact_damage": 24, "lifetime": 6, "launch_lift_deg": 3},
+    "bunker": {"cost": 90, "hp": 320, "weight_kg": 4000.0, "speed": 12, "impact_damage": 55}
+  },
+  "grafts": {"max_size_ratio": 3.0, "min_limit_m": 0.65, "spacing_mult": 1.1},
+  "material_effects": {"contact_cooldown_s": 0.25, "contact_cache": 64, "melee_explosion_radius_mult": 0.6},
+  "mechanics": {"min_section_m": 0.1, "failure_db": -8, "profiles": {"scatter": {"spread_deg": 38, "speed_mult": 0.45, "pellets_min": 6}, "air_recoil": {"recoil_impulse": 8}}, "metal_db": -7}
+}

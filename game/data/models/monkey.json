@@ -1,0 +1,237 @@
+{
+  "_comment": "macaco: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.3575,
+    0
+  ],
+  "sockets": {
+    "mount_hand": [
+      0.168,
+      0.35750000000000004,
+      -0.11699999999999999
+    ]
+  },
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "reference": "https://animaldiversity.org/accounts/Cebus_capucinus/",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.3705,
+        0
+      ],
+      "color": "#8f7356",
+      "tag": "body",
+      "_stretch": [
+        0.23800000000000002,
+        0.29900000000000004,
+        0.29250000000000004
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.572,
+        -0.078
+      ],
+      "color": "#8f7356",
+      "tag": "head",
+      "_stretch": [
+        0.18200000000000002,
+        0.1625,
+        0.24700000000000003
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.5525,
+        -0.1885
+      ],
+      "color": "#bda083",
+      "tag": "face",
+      "_stretch": [
+        0.14,
+        0.09100000000000001,
+        0.0845
+      ]
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0392,
+      "height": 0.325,
+      "pos": [
+        -0.1372,
+        0.3445,
+        0
+      ],
+      "color": "#8f7356",
+      "tag": "arm"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0532,
+      "height": 0.247,
+      "pos": [
+        -0.07,
+        0.13,
+        0
+      ],
+      "color": "#8f7356",
+      "tag": "leg"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0364,
+      "pos": [
+        -0.0952,
+        0.5915,
+        -0.065
+      ],
+      "color": "#8f7356",
+      "tag": "ear"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0392,
+      "height": 0.325,
+      "pos": [
+        0.1372,
+        0.3445,
+        0
+      ],
+      "color": "#8f7356",
+      "tag": "arm"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0532,
+      "height": 0.247,
+      "pos": [
+        0.07,
+        0.13,
+        0
+      ],
+      "color": "#8f7356",
+      "tag": "leg"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0364,
+      "pos": [
+        0.0952,
+        0.5915,
+        -0.065
+      ],
+      "color": "#8f7356",
+      "tag": "ear"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.035,
+      "pos": [
+        0.0,
+        0.221,
+        0.117
+      ],
+      "color": "#8f7356",
+      "tag": "tail"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.035,
+      "pos": [
+        0.0355,
+        0.246,
+        0.182
+      ],
+      "color": "#8f7356",
+      "tag": "tail"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.035,
+      "pos": [
+        0.0678,
+        0.271,
+        0.247
+      ],
+      "color": "#8f7356",
+      "tag": "tail"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.035,
+      "pos": [
+        0.094,
+        0.296,
+        0.312
+      ],
+      "color": "#8f7356",
+      "tag": "tail"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.035,
+      "pos": [
+        0.1118,
+        0.321,
+        0.377
+      ],
+      "color": "#8f7356",
+      "tag": "tail"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.035,
+      "pos": [
+        0.1197,
+        0.346,
+        0.442
+      ],
+      "color": "#8f7356",
+      "tag": "tail"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.035,
+      "pos": [
+        0.1169,
+        0.371,
+        0.507
+      ],
+      "color": "#8f7356",
+      "tag": "tail"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0126,
+      "pos": [
+        -0.0476,
+        0.585,
+        -0.221
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0126,
+      "pos": [
+        0.0476,
+        0.585,
+        -0.221
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    }
+  ]
+}

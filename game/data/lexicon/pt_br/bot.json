@@ -1,0 +1,62 @@
+{
+  "_comment": "Pedidos do bot de treino (DESIGN 13). O bot sorteia um modelo, preenche as {lacunas} com palavras das listas, confere no parser e só manda o que foi entendido. De mãos vazias ele sorteia de 'armed' (algo pra lutar); com algo na mão, de 'any'; com a arma sem bala, de 'reload' (pente). Frase nova pro bot é só dado. {branca}: armas brancas (Parte 3).",
+  "armed": [
+    "quero uma {arma}",
+    "quero uma {arma} {jeito}",
+    "quero uma {arma} que atira {municao}",
+    "quero uma {arma} {jeito} que atira {municao}",
+    "quero uma {arma} que explode",
+    "quero uma {arma} que {efeito}",
+    "quero uma {arma} automática",
+    "quero uma {arma} com {acessorio}",
+    "quero uma granada {tamanho}",
+    "quero {numero} granadas",
+    "quero uma {branca}",
+    "quero uma {branca} {jeito_branca}",
+    "quero uma {branca} que {efeito}"
+  ],
+  "any": [
+    "quero uma {arma} que atira um {voador} que solta {municao}",
+    "quero uma torre que atira {municao} no inimigo",
+    "quero uma torre",
+    "quero {numero} paredes",
+    "quero uma parede",
+    "quero um bombardeiro",
+    "quero uma mina",
+    "quero um {voador} que solta bombas",
+    "eu quero {habilidade}",
+    "quero uma {arma} {jeito}",
+    "quero uma torre que {efeito}",
+    "quero {numero} pombos que orbitam e atiram",
+    "quero um {voador} que persegue o inimigo e explode",
+    "quero um drone automático que atira {municao}",
+    "quero uma granada que {efeito}",
+    "quero uma granada que se divide em {numero}",
+    "quero uma granada que quica",
+    "quero uma {acessorio}",
+    "quero uma {arma} com corpo de {arma} e {numero} canos",
+    "quero um {voador} que golpeia",
+    "quero uma {arma} com lâmina de {branca}",
+    "quero uma {branca}"
+  ],
+  "reload": [
+    "quero um pente",
+    "quero um pente",
+    "quero um pente {jeito_pente}",
+    "quero um pente de {municao}"
+  ],
+  "slots": {
+    "branca": ["katana", "espada", "machado", "marreta", "taco", "lança", "motosserra", "maça", "faca", "facão"],
+    "jeito_branca": ["de fogo", "de gelo", "gigante", "explosiva"],
+    "arma": ["pistola", "escopeta", "ak", "bazuca", "metralhadora", "uzi", "mp5", "thompson", "m4", "sniper", "revólver", "desert eagle", "cano duplo", "minigun", "lança-granadas", "rpg"],
+    "jeito": ["explosiva", "de fogo", "de gelo", "de três bocas", "teleguiada", "rápida"],
+    "municao": ["granadas", "pombos", "paredes", "bombas", "laser", "mísseis", "balas"],
+    "voador": ["pombo", "drone", "avião"],
+    "tamanho": ["gigante", "pequena", "grande"],
+    "numero": ["duas", "três"],
+    "habilidade": ["correr", "pular alto", "voar"],
+    "efeito": ["congela", "queima", "empurra", "puxa"],
+    "jeito_pente": ["de fogo", "de gelo", "explosivo", "gigante"],
+    "acessorio": ["luneta", "mira de ponto vermelho", "silenciador", "compensador", "empunhadura vertical", "bipé", "mira laser", "lanterna"]
+  }
+}

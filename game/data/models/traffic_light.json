@@ -1,0 +1,105 @@
+{
+  "_comment": "semáforo: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    1.6,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.12,
+      "height": 0.06,
+      "pos": [
+        0,
+        0.03,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "base"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.045,
+      "height": 2.72,
+      "pos": [
+        0,
+        1.376,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "pole"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.4,
+        0.96,
+        0.18
+      ],
+      "pos": [
+        0,
+        2.688,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "housing"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.116,
+      "height": 0.025,
+      "pos": [
+        0,
+        3.008,
+        -0.105
+      ],
+      "color": "#bd4036",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "light",
+      "glow": 0.4
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.116,
+      "height": 0.025,
+      "pos": [
+        0,
+        2.72,
+        -0.105
+      ],
+      "color": "#dfba3e",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "light",
+      "glow": 0.4
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.116,
+      "height": 0.025,
+      "pos": [
+        0,
+        2.432,
+        -0.105
+      ],
+      "color": "#5bae67",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "light",
+      "glow": 0.4
+    }
+  ]
+}

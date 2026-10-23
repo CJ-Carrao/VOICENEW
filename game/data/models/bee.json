@@ -1,0 +1,122 @@
+{
+  "_comment": "abelha: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.0075,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.0075,
+        0
+      ],
+      "color": "#d7ae36",
+      "tag": "abdomen",
+      "_stretch": [
+        0.012,
+        0.010499999999999999,
+        0.025
+      ]
+    },
+    {
+      "shape": "torus",
+      "radius": 0.0052,
+      "inner_radius": 0.0045,
+      "pos": [
+        0,
+        0.0075,
+        -0.0063
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "stripe"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.0052,
+      "inner_radius": 0.0045,
+      "pos": [
+        0,
+        0.0075,
+        0.0
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "stripe"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.0052,
+      "inner_radius": 0.0045,
+      "pos": [
+        0,
+        0.0075,
+        0.0063
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "stripe"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        -0.0108,
+        0.0127,
+        0
+      ],
+      "color": "#dce3df",
+      "tag": "wing",
+      "_stretch": [
+        0.0168,
+        0.002,
+        0.017499999999999998
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0.0108,
+        0.0127,
+        0
+      ],
+      "color": "#dce3df",
+      "tag": "wing",
+      "_stretch": [
+        0.0168,
+        0.002,
+        0.017499999999999998
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0045,
+      "pos": [
+        0,
+        0.009,
+        -0.0125
+      ],
+      "color": "#2a2d32",
+      "tag": "head"
+    }
+  ]
+}

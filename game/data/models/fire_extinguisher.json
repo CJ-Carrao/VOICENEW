@@ -1,0 +1,68 @@
+{
+  "_comment": "extintor: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.275,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.0828,
+      "height": 0.385,
+      "pos": [
+        0,
+        0.198,
+        0
+      ],
+      "color": "#bd4036",
+      "tag": "body"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.036,
+      "height": 0.1375,
+      "pos": [
+        0,
+        0.451,
+        0
+      ],
+      "color": "#c5c9ce",
+      "tag": "neck"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.126,
+        0.066,
+        0.025
+      ],
+      "pos": [
+        0,
+        0.5335,
+        0
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        0,
+        0,
+        15
+      ],
+      "tag": "handle"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.015,
+      "height": 0.3025,
+      "pos": [
+        0.108,
+        0.2915,
+        0
+      ],
+      "color": "#141416",
+      "tag": "hose"
+    }
+  ]
+}

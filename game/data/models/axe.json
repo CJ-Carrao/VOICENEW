@@ -1,0 +1,204 @@
+{
+ "_comment": "Machado de bombeiro. Gerado por tools/models/gen_arsenal.py.",
+ "anchor": [
+  0,
+  0,
+  0.04
+ ],
+ "joints": {
+  "trigger": [
+   0,
+   0,
+   0
+  ],
+  "muzzle": [
+   0,
+   0,
+   -0.81
+  ]
+ },
+ "pieces": [
+  {
+   "shape": "cylinder",
+   "radius": 0.019,
+   "height": 0.075,
+   "pos": [
+    0,
+    0,
+    0.045
+   ],
+   "color": "#141416",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "handle",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.022,
+   "height": 0.012,
+   "pos": [
+    0,
+    0,
+    0.086
+   ],
+   "color": "#141416",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "pommel",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0165,
+   "height": 0.8,
+   "pos": [
+    0,
+    0,
+    -0.395
+   ],
+   "color": "#b5835a",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "body",
+   "finish": "wood",
+   "section": "front"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.036,
+    0.055,
+    0.075
+   ],
+   "pos": [
+    0,
+    0,
+    -0.76
+   ],
+   "color": "#b3241e",
+   "tag": "head",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.013,
+    0.085,
+    0.075
+   ],
+   "pos": [
+    0,
+    -0.07,
+    -0.76
+   ],
+   "color": "#b3241e",
+   "tag": "head",
+   "finish": "metal"
+  },
+  {
+   "shape": "wedge",
+   "size": [
+    0.013,
+    0.06,
+    0.034
+   ],
+   "pos": [
+    0,
+    -0.082,
+    -0.8145
+   ],
+   "color": "#b3241e",
+   "point": 0.0,
+   "tag": "head",
+   "finish": "metal"
+  },
+  {
+   "shape": "wedge",
+   "size": [
+    0.013,
+    0.06,
+    0.034
+   ],
+   "pos": [
+    0,
+    -0.082,
+    -0.7055
+   ],
+   "color": "#b3241e",
+   "point": 0.0,
+   "rot": [
+    0,
+    180,
+    0
+   ],
+   "tag": "head",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.007,
+    0.01,
+    0.142
+   ],
+   "pos": [
+    0,
+    -0.115,
+    -0.76
+   ],
+   "color": "#e4e8ee",
+   "tag": "head",
+   "finish": "metal"
+  },
+  {
+   "shape": "wedge",
+   "size": [
+    0.014,
+    0.035,
+    0.1
+   ],
+   "pos": [
+    0,
+    0.077,
+    -0.76
+   ],
+   "color": "#b3241e",
+   "point": 0.5,
+   "rot": [
+    90,
+    0,
+    0
+   ],
+   "tag": "head",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0175,
+   "height": 0.025,
+   "pos": [
+    0,
+    0,
+    -0.81
+   ],
+   "color": "#16171a",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "tip",
+   "finish": "metal"
+  }
+ ]
+}

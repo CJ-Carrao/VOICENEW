@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://d1fo5t4nxlc6l" path="res://scenes/dev/itch_shots.gd" id="1"]
+
+[node name="ItchShots" type="Node" unique_id=1378448719]
+script = ExtResource("1")

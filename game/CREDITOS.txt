@@ -1,0 +1,18 @@
+LAVOICE — Somyst Game Studio / Caixa Preta Engine
+
+Godot Engine 4.7.2: https://godotengine.org — MIT.
+As licenças da engine e de suas bibliotecas estão na pasta licenses.
+
+Reconhecimento offline:
+- sherpa-onnx 1.13.8, projeto k2-fsa: Apache-2.0.
+  https://github.com/k2-fsa/sherpa-onnx
+- NVIDIA parakeet-tdt-0.6b-v3: CC BY 4.0, NVIDIA.
+  https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3
+  Conversão ONNX e quantização int8 por k2-fsa/sherpa-onnx:
+  https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models
+  O jogo utiliza essa versão quantizada sem novas alterações nos pesos.
+- ONNX Runtime, Microsoft: MIT.
+  https://github.com/microsoft/onnxruntime
+
+Oxanium, Vernon Adams: SIL Open Font License 1.1 (licenses/Oxanium-OFL.txt).
+Direct3D 12 Agility SDK e runtime Visual C++: Microsoft.

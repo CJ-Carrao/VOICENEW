@@ -1,0 +1,46 @@
+{
+  "_comment": "Gatilho padrão quando a frase tem ação sem gatilho (DESIGN 4.3). Vale a PRIMEIRA regra que casar. Filtros opcionais: action (ou '*'), category (lista) e control. 'when' é o gatilho (parâmetro que faltar vem de balance.trigger_defaults). 'do' acrescenta campos na ação.",
+  "rules": [
+    {"action": "burst_into", "category": ["creature", "vehicle", "structure"], "when": {"type": "near_enemy"}},
+
+    {"action": "explode", "control": "player", "when": {"type": "on_command"}},
+    {"action": "shoot", "category": ["weapon", "tool"], "when": {"type": "on_fire"}},
+    { "action": "shoot", "category": ["structure"], "when": { "type": "every", "s": 1.0 },
+  "do": {"aim": "enemy"}
+},
+
+    { "action": "shoot", "category": ["creature",
+  "vehicle"
+], "when": { "type": "every", "s": 1.5 } },
+    { "action": "drop", "category": ["creature"], "when": { "type": "every", "s": 1.5 } },
+
+    { "action": "drop", "category": ["vehicle"], "when": { "type": "every",
+  "s": 0.25
+} },
+    { "action": "explode", "category": ["projectile"], "when": { "type": "on_hit" } },
+
+    { "action": "explode", "category": ["creature", "vehicle",
+  "structure"
+], "when": { "type": "near_enemy" } },
+
+    { "action": "summon", "category": ["weapon",
+  "tool"
+], "when": {"type": "on_aim_hold"} },
+
+    { "action": "split", "category": ["projectile"], "when": {"type": "after", "s": 1.0} },
+    { "action": "strike", "when": { "type": "near_enemy",
+  "r": 2.5
+},
+  "category": ["creature", "vehicle", "structure"]
+},
+
+    {"action": "split", "when": {"type": "on_death"}},
+    { "action": "*", "category": ["weapon",
+  "tool"
+], "when": { "type": "on_fire" } },
+    { "action": "*", "when": {"type": "on_hit"},
+  "category": ["projectile"]
+},
+    {"action": "*", "when": {"type": "every", "s": 2.0}}
+  ]
+}

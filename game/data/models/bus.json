@@ -1,0 +1,407 @@
+{
+  "_comment": "ônibus: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    1.6,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.512,
+      "height": 0.3,
+      "pos": [
+        -1.2,
+        0.512,
+        -3.2
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.2304,
+      "height": 0.325,
+      "pos": [
+        -1.2,
+        0.512,
+        -3.2
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.512,
+      "height": 0.3,
+      "pos": [
+        -1.2,
+        0.512,
+        3.2
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.2304,
+      "height": 0.325,
+      "pos": [
+        -1.2,
+        0.512,
+        3.2
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.512,
+      "height": 0.3,
+      "pos": [
+        1.2,
+        0.512,
+        -3.2
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.2304,
+      "height": 0.325,
+      "pos": [
+        1.2,
+        0.512,
+        -3.2
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.512,
+      "height": 0.3,
+      "pos": [
+        1.2,
+        0.512,
+        3.2
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.2304,
+      "height": 0.325,
+      "pos": [
+        1.2,
+        0.512,
+        3.2
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub"
+    },
+    {
+      "shape": "box",
+      "size": [
+        2.25,
+        0.96,
+        9.0
+      ],
+      "pos": [
+        0,
+        1.12,
+        0
+      ],
+      "color": "#397c9e",
+      "tag": "chassis"
+    },
+    {
+      "shape": "box",
+      "size": [
+        2.05,
+        1.536,
+        7.0
+      ],
+      "pos": [
+        0,
+        2.336,
+        1.0
+      ],
+      "color": "#397c9e",
+      "tag": "cabin"
+    },
+    {
+      "shape": "box",
+      "size": [
+        1.75,
+        0.832,
+        0.025
+      ],
+      "pos": [
+        0,
+        2.56,
+        -2.6
+      ],
+      "color": "#7194a6",
+      "tag": "windshield"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.736,
+        0.75
+      ],
+      "pos": [
+        -1.05,
+        2.56,
+        -1.9
+      ],
+      "color": "#7194a6",
+      "tag": "window"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.736,
+        0.75
+      ],
+      "pos": [
+        1.05,
+        2.56,
+        -1.9
+      ],
+      "color": "#7194a6",
+      "tag": "window"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.736,
+        0.75
+      ],
+      "pos": [
+        -1.05,
+        2.56,
+        -1.03
+      ],
+      "color": "#7194a6",
+      "tag": "window"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.736,
+        0.75
+      ],
+      "pos": [
+        1.05,
+        2.56,
+        -1.03
+      ],
+      "color": "#7194a6",
+      "tag": "window"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.736,
+        0.75
+      ],
+      "pos": [
+        -1.05,
+        2.56,
+        -0.16
+      ],
+      "color": "#7194a6",
+      "tag": "window"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.736,
+        0.75
+      ],
+      "pos": [
+        1.05,
+        2.56,
+        -0.16
+      ],
+      "color": "#7194a6",
+      "tag": "window"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.736,
+        0.75
+      ],
+      "pos": [
+        -1.05,
+        2.56,
+        0.71
+      ],
+      "color": "#7194a6",
+      "tag": "window"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.736,
+        0.75
+      ],
+      "pos": [
+        1.05,
+        2.56,
+        0.71
+      ],
+      "color": "#7194a6",
+      "tag": "window"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.736,
+        0.75
+      ],
+      "pos": [
+        -1.05,
+        2.56,
+        1.58
+      ],
+      "color": "#7194a6",
+      "tag": "window"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.736,
+        0.75
+      ],
+      "pos": [
+        1.05,
+        2.56,
+        1.58
+      ],
+      "color": "#7194a6",
+      "tag": "window"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.736,
+        0.75
+      ],
+      "pos": [
+        -1.05,
+        2.56,
+        2.45
+      ],
+      "color": "#7194a6",
+      "tag": "window"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.736,
+        0.75
+      ],
+      "pos": [
+        1.05,
+        2.56,
+        2.45
+      ],
+      "color": "#7194a6",
+      "tag": "window"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.736,
+        0.75
+      ],
+      "pos": [
+        -1.05,
+        2.56,
+        3.32
+      ],
+      "color": "#7194a6",
+      "tag": "window"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.736,
+        0.75
+      ],
+      "pos": [
+        1.05,
+        2.56,
+        3.32
+      ],
+      "color": "#7194a6",
+      "tag": "window"
+    }
+  ]
+}

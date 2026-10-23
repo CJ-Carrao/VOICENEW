@@ -1,0 +1,222 @@
+{
+  "_comment": "cervo: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.825,
+    0
+  ],
+  "sockets": {
+    "mount_hand": [
+      0.24,
+      0.8250000000000001,
+      -0.288
+    ]
+  },
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.87,
+        0
+      ],
+      "color": "#8f7356",
+      "tag": "body",
+      "_stretch": [
+        0.34,
+        0.66,
+        1.024
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        1.2,
+        -0.576
+      ],
+      "color": "#8f7356",
+      "tag": "head",
+      "_stretch": [
+        0.24,
+        0.48,
+        0.4
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        1.095,
+        -0.768
+      ],
+      "color": "#8f7356",
+      "tag": "muzzle",
+      "_stretch": [
+        0.16000000000000003,
+        0.21000000000000002,
+        0.288
+      ]
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.056,
+      "height": 0.72,
+      "pos": [
+        -0.124,
+        0.36,
+        -0.368
+      ],
+      "color": "#8f7356",
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.056,
+      "height": 0.72,
+      "pos": [
+        -0.124,
+        0.36,
+        0.368
+      ],
+      "color": "#8f7356",
+      "tag": "leg"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.052,
+      "height": 0.18,
+      "pos": [
+        -0.088,
+        1.47,
+        -0.496
+      ],
+      "color": "#8f7356",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "ear"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.056,
+      "height": 0.72,
+      "pos": [
+        0.124,
+        0.36,
+        -0.368
+      ],
+      "color": "#8f7356",
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.056,
+      "height": 0.72,
+      "pos": [
+        0.124,
+        0.36,
+        0.368
+      ],
+      "color": "#8f7356",
+      "tag": "leg"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.052,
+      "height": 0.18,
+      "pos": [
+        0.088,
+        1.47,
+        -0.496
+      ],
+      "color": "#8f7356",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "ear"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.036,
+      "height": 0.48,
+      "pos": [
+        0,
+        0.93,
+        0.688
+      ],
+      "color": "#8f7356",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "tail"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.02,
+      "pos": [
+        -0.108,
+        1.275,
+        -0.688
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.02,
+      "pos": [
+        0.108,
+        1.275,
+        -0.688
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.036,
+      "height": 0.42,
+      "pos": [
+        -0.08,
+        1.605,
+        -0.448
+      ],
+      "color": "#d2b58b",
+      "rot": [
+        15,
+        0,
+        -16
+      ],
+      "tag": "horn"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.036,
+      "height": 0.42,
+      "pos": [
+        0.08,
+        1.605,
+        -0.448
+      ],
+      "color": "#d2b58b",
+      "rot": [
+        15,
+        0,
+        16
+      ],
+      "tag": "horn"
+    }
+  ]
+}

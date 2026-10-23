@@ -1,0 +1,314 @@
+{
+ "_comment": "Bazuca M1A1 (60 mm). Gerado por tools/models/gen_arsenal.py.",
+ "anchor": [
+  0,
+  -0.09,
+  0.0
+ ],
+ "joints": {
+  "trigger": [
+   0,
+   0.03,
+   -0.03
+  ],
+  "front_plug": [
+   0,
+   0.03,
+   -0.17
+  ],
+  "muzzle": [
+   0,
+   0.03,
+   -0.58
+  ]
+ },
+ "pieces": [
+  {
+   "shape": "box",
+   "size": [
+    0.032,
+    0.1,
+    0.045
+   ],
+   "pos": [
+    0,
+    -0.08,
+    0.0
+   ],
+   "color": "#5c3a1f",
+   "rot": [
+    -8,
+    0,
+    0
+   ],
+   "tag": "grip",
+   "finish": "wood"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.006,
+    0.02,
+    0.006
+   ],
+   "pos": [
+    0,
+    -0.03,
+    -0.002
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    12,
+    0,
+    0
+   ],
+   "tag": "trigger",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.011,
+    0.005,
+    0.05
+   ],
+   "pos": [
+    0,
+    -0.05,
+    -0.005
+   ],
+   "color": "#16171a",
+   "tag": "trigger"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.011,
+    0.034,
+    0.006
+   ],
+   "pos": [
+    0,
+    -0.033,
+    -0.03
+   ],
+   "color": "#16171a",
+   "rot": [
+    12,
+    0,
+    0
+   ],
+   "tag": "trigger"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.033,
+   "height": 0.62,
+   "pos": [
+    0,
+    0.03,
+    0.14
+   ],
+   "color": "#4b5a3a",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "receiver",
+   "finish": "metal",
+   "section": "rear"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.04,
+    0.05,
+    0.22
+   ],
+   "pos": [
+    0,
+    -0.025,
+    0.12
+   ],
+   "color": "#5c3a1f",
+   "tag": "stock",
+   "finish": "wood"
+  },
+  {
+   "shape": "torus",
+   "radius": 0.04,
+   "inner_radius": 0.034,
+   "pos": [
+    0,
+    0.03,
+    0.45
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    90,
+    0,
+    0
+   ],
+   "tag": "receiver",
+   "section": "rear"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.012,
+    0.04,
+    0.012
+   ],
+   "pos": [
+    0,
+    0.075,
+    0.3
+   ],
+   "color": "#16171a",
+   "tag": "receiver",
+   "section": "rear"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.033,
+   "height": 0.42,
+   "pos": [
+    0,
+    0.03,
+    -0.38
+   ],
+   "color": "#4b5a3a",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "receiver",
+   "finish": "metal"
+  },
+  {
+   "shape": "torus",
+   "radius": 0.035,
+   "inner_radius": 0.031,
+   "pos": [
+    0,
+    0.03,
+    -0.2
+   ],
+   "color": "#16171a",
+   "rot": [
+    90,
+    0,
+    0
+   ],
+   "tag": "receiver"
+  },
+  {
+   "shape": "torus",
+   "radius": 0.035,
+   "inner_radius": 0.031,
+   "pos": [
+    0,
+    0.03,
+    -0.45
+   ],
+   "color": "#16171a",
+   "rot": [
+    90,
+    0,
+    0
+   ],
+   "tag": "receiver"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.03,
+    0.04,
+    0.04
+   ],
+   "pos": [
+    0.04,
+    0.06,
+    -0.24
+   ],
+   "color": "#16171a",
+   "tag": "sight",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.004,
+    0.025,
+    0.004
+   ],
+   "pos": [
+    0.04,
+    0.09,
+    -0.24
+   ],
+   "color": "#2a2d32",
+   "tag": "sight"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.03,
+    0.09,
+    0.04
+   ],
+   "pos": [
+    0,
+    -0.05,
+    -0.3
+   ],
+   "color": "#5c3a1f",
+   "rot": [
+    6,
+    0,
+    0
+   ],
+   "tag": "handguard",
+   "finish": "wood"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.033,
+   "height": 0.05,
+   "pos": [
+    0,
+    0.03,
+    -0.615
+   ],
+   "color": "#4b5a3a",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "barrel",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.042,
+   "height": 0.08,
+   "pos": [
+    0,
+    0.03,
+    -0.68
+   ],
+   "color": "#16171a",
+   "top_radius": 0.06,
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "muzzle",
+   "finish": "metal"
+  }
+ ]
+}

@@ -1,0 +1,73 @@
+{
+ "_comment": "Freio de boca (portas dos lados). Gerado por tools/models/gen_arsenal.py.",
+ "anchor": [
+  0,
+  0,
+  0
+ ],
+ "pieces": [
+  {
+   "shape": "cylinder",
+   "radius": 0.016,
+   "height": 0.06,
+   "pos": [
+    0,
+    0,
+    -0.03
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "muzzle",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.034,
+    0.006,
+    0.008
+   ],
+   "pos": [
+    0,
+    0,
+    -0.012
+   ],
+   "color": "#16171a",
+   "tag": "muzzle"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.034,
+    0.006,
+    0.008
+   ],
+   "pos": [
+    0,
+    0,
+    -0.028
+   ],
+   "color": "#16171a",
+   "tag": "muzzle"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.034,
+    0.006,
+    0.008
+   ],
+   "pos": [
+    0,
+    0,
+    -0.044
+   ],
+   "color": "#16171a",
+   "tag": "muzzle"
+  }
+ ]
+}

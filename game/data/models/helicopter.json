@@ -1,0 +1,248 @@
+{
+  "_comment": "helicóptero: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    1.6,
+    0
+  ],
+  "sockets": {
+    "mount_hand": [
+      0.95,
+      1.4,
+      -1.8
+    ],
+    "mount_top": [
+      0,
+      2.55,
+      -1
+    ]
+  },
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "reference": "https://www.airbus.com/sites/g/files/jlcbta136/files/2025-01/master-ground-rescue-booklet-h125.pdf",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        1.6,
+        -1.4
+      ],
+      "color": "#4b5a3a",
+      "tag": "body",
+      "_stretch": [
+        1.8,
+        1.8,
+        4.1
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        1.8,
+        -2.8
+      ],
+      "color": "#44758b",
+      "tag": "cockpit",
+      "_stretch": [
+        1.72,
+        1.25,
+        1.8
+      ]
+    },
+    {
+      "shape": "cone",
+      "radius": 0.55,
+      "height": 5.4,
+      "pos": [
+        0,
+        1.7,
+        2.9
+      ],
+      "color": "#4b5a3a",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "tail"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.12,
+      "height": 0.7,
+      "pos": [
+        0,
+        2.7,
+        -0.8
+      ],
+      "color": "#2a2d32",
+      "tag": "rotor_mast"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.22,
+        0.045,
+        5.136
+      ],
+      "pos": [
+        0.0,
+        3.1,
+        1.768
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "rotor"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.22,
+        0.045,
+        5.136
+      ],
+      "pos": [
+        2.224,
+        3.1,
+        -2.084
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        0,
+        120,
+        0
+      ],
+      "tag": "rotor"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.22,
+        0.045,
+        5.136
+      ],
+      "pos": [
+        -2.224,
+        3.1,
+        -2.084
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        0,
+        240,
+        0
+      ],
+      "tag": "rotor"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.06,
+        1.6,
+        0.18
+      ],
+      "pos": [
+        0.35,
+        2.2,
+        5.5
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        30,
+        0,
+        0
+      ],
+      "tag": "tail_rotor"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.055,
+      "height": 3.6,
+      "pos": [
+        -0.9,
+        0.2,
+        -1
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "skid"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.04,
+      "height": 1,
+      "pos": [
+        -0.75,
+        0.7,
+        -2
+      ],
+      "color": "#2a2d32",
+      "tag": "landing_strut"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.04,
+      "height": 1,
+      "pos": [
+        -0.75,
+        0.7,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "landing_strut"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.055,
+      "height": 3.6,
+      "pos": [
+        0.9,
+        0.2,
+        -1
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "skid"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.04,
+      "height": 1,
+      "pos": [
+        0.75,
+        0.7,
+        -2
+      ],
+      "color": "#2a2d32",
+      "tag": "landing_strut"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.04,
+      "height": 1,
+      "pos": [
+        0.75,
+        0.7,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "landing_strut"
+    }
+  ]
+}

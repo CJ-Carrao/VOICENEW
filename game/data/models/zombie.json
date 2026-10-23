@@ -1,0 +1,125 @@
+{
+  "_comment": "zumbi: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.9,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        1.17,
+        0
+      ],
+      "color": "#647d48",
+      "tag": "torso",
+      "_stretch": [
+        0.35750000000000004,
+        0.63,
+        0.27999999999999997
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.81,
+        0
+      ],
+      "color": "#647d48",
+      "tag": "pelvis",
+      "_stretch": [
+        0.30250000000000005,
+        0.198,
+        0.24
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.162,
+      "pos": [
+        0,
+        1.62,
+        0
+      ],
+      "color": "#647d48",
+      "tag": "head"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.066,
+      "height": 0.72,
+      "pos": [
+        -0.1155,
+        0.414,
+        0
+      ],
+      "color": "#647d48",
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.055,
+      "height": 0.648,
+      "pos": [
+        -0.231,
+        1.08,
+        -0.06
+      ],
+      "color": "#647d48",
+      "tag": "arm"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.035,
+      "pos": [
+        -0.065,
+        1.656,
+        -0.144
+      ],
+      "color": "#2a2d32",
+      "tag": "eye"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.066,
+      "height": 0.72,
+      "pos": [
+        0.1155,
+        0.414,
+        0
+      ],
+      "color": "#647d48",
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.055,
+      "height": 0.648,
+      "pos": [
+        0.231,
+        1.08,
+        -0.06
+      ],
+      "color": "#647d48",
+      "tag": "arm"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.035,
+      "pos": [
+        0.065,
+        1.656,
+        -0.144
+      ],
+      "color": "#2a2d32",
+      "tag": "eye"
+    }
+  ]
+}

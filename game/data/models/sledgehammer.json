@@ -1,0 +1,165 @@
+{
+ "_comment": "Marreta de 10 lb. Gerado por tools/models/gen_arsenal.py.",
+ "anchor": [
+  0,
+  0,
+  0.04
+ ],
+ "joints": {
+  "trigger": [
+   0,
+   0,
+   0
+  ],
+  "muzzle": [
+   0,
+   0,
+   -0.82
+  ]
+ },
+ "pieces": [
+  {
+   "shape": "cylinder",
+   "radius": 0.02,
+   "height": 0.09,
+   "pos": [
+    0,
+    0,
+    0.05
+   ],
+   "color": "#141416",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "handle",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.023,
+   "height": 0.012,
+   "pos": [
+    0,
+    0,
+    0.098
+   ],
+   "color": "#141416",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "pommel",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0175,
+   "height": 0.8,
+   "pos": [
+    0,
+    0,
+    -0.4
+   ],
+   "color": "#b5835a",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "body",
+   "finish": "wood",
+   "section": "front"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.036,
+   "height": 0.15,
+   "pos": [
+    0,
+    0,
+    -0.775
+   ],
+   "color": "#5d636b",
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "tag": "head",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.031,
+   "height": 0.012,
+   "pos": [
+    0,
+    -0.078,
+    -0.775
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "tag": "head",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.031,
+   "height": 0.012,
+   "pos": [
+    0,
+    0.078,
+    -0.775
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "tag": "head",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.03,
+    0.02,
+    0.03
+   ],
+   "pos": [
+    0,
+    0,
+    -0.775
+   ],
+   "color": "#16171a",
+   "tag": "head",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.018,
+   "height": 0.02,
+   "pos": [
+    0,
+    0,
+    -0.815
+   ],
+   "color": "#16171a",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "tip",
+   "finish": "metal"
+  }
+ ]
+}

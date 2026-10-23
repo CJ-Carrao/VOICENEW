@@ -1,0 +1,30 @@
+{
+  "_comment": "Plantas das construções destrutíveis (Lavoisier, DESIGN 17), lidas por scripts/world/structure_blueprints.gd. Medidas em metros, chão em y = 0, frente pra +Z. house: size [largura X, fundo Z], height, thickness, block [comprimento, altura] dos blocos das paredes (fileiras desencontradas), wall (material), roof (material das placas do telhado), roof_block, openings [{side front|back|left|right, at (deslocamento no meio da parede), width, height, bottom, fill (material do vidro, opcional)}]. wall: length, height, block, thickness, material, broken (ruína). box: size, cells, material. rock: size, material. Os materiais (matéria, vida, cor) estão em balance.materials.",
+  "house_brick": {
+    "type": "house", "size": [6.0, 5.0], "height": 3.0, "thickness": 0.25, "block": [1.0, 0.5],
+    "wall": "brick", "roof": "wood", "roof_block": 1.0, "roof_thickness": 0.2,
+    "openings": [
+      { "side": "front", "at": -1.0, "width": 1.0, "height": 2.0, "bottom": 0.0 },
+      { "side": "front", "at": 1.5, "width": 1.0, "height": 1.0, "bottom": 1.0, "fill": "glass" },
+      { "side": "left", "at": 0.0, "width": 1.5, "height": 1.0, "bottom": 1.0, "fill": "glass" },
+      { "side": "right", "at": 0.5, "width": 1.0, "height": 1.0, "bottom": 1.0, "fill": "glass" },
+      { "side": "back", "at": -1.5, "width": 1.0, "height": 1.0, "bottom": 1.0, "fill": "glass" }
+    ]
+  },
+  "house_wood": {
+    "type": "house", "size": [5.0, 4.0], "height": 2.75, "thickness": 0.15, "block": [1.25, 0.25],
+    "wall": "wood", "roof": "wood", "roof_block": 1.0, "roof_thickness": 0.15,
+    "openings": [
+      { "side": "front", "at": 0.0, "width": 1.0, "height": 2.0, "bottom": 0.0 },
+      { "side": "left", "at": 0.0, "width": 1.0, "height": 0.75, "bottom": 1.25, "fill": "glass" },
+      { "side": "back", "at": 1.0, "width": 1.25, "height": 0.75, "bottom": 1.25, "fill": "glass" }
+    ]
+  },
+  "ruin_wall": { "type": "wall", "length": 5.0, "height": 2.0, "block": [1.0, 0.5], "thickness": 0.3, "material": "concrete", "broken": true },
+  "low_wall": { "type": "wall", "length": 3.0, "height": 1.0, "block": [1.0, 0.5], "thickness": 0.3, "material": "brick" },
+  "crate": { "type": "box", "size": [1.0, 1.0, 1.0], "cells": [2, 2, 2], "material": "wood" },
+  "crate_long": { "type": "box", "size": [2.0, 0.8, 1.0], "cells": [4, 2, 2], "material": "wood" },
+  "rock": { "type": "rock", "size": [2.0, 1.4, 1.6], "material": "stone" },
+  "rock_big": { "type": "rock", "size": [3.0, 2.0, 2.4], "material": "stone" },
+  "scrap": { "type": "box", "size": [1.6, 0.6, 1.0], "cells": [2, 1, 2], "material": "metal" }
+}

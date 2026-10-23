@@ -1,0 +1,6 @@
+{
+  "anchor": [0, 0, 0],
+  "pieces": [
+    { "shape": "cylinder", "radius": 0.025, "height": 1.4, "pos": [0, 0, 0], "rot": [90, 0, 0], "color": "#ff2a2a", "glow": 4.0, "tag": "body" }
+  ]
+}

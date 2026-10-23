@@ -1,0 +1,36 @@
+{
+  "_comment": "mina terrestre: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.04,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.15,
+      "height": 0.056,
+      "pos": [
+        0,
+        0.028,
+        0
+      ],
+      "color": "#65704b",
+      "tag": "body"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.09,
+      "height": 0.024,
+      "pos": [
+        0,
+        0.068,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "trigger"
+    }
+  ]
+}

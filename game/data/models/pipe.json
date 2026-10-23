@@ -1,0 +1,226 @@
+{
+  "_comment": "tubo: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.06,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "torus",
+      "radius": 0.06,
+      "inner_radius": 0.0408,
+      "pos": [
+        0,
+        0.06,
+        -0.48
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "rim"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.06,
+      "inner_radius": 0.0408,
+      "pos": [
+        0,
+        0.06,
+        0.48
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "rim"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.0168,
+        1.0
+      ],
+      "pos": [
+        0.0504,
+        0.06,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.0168,
+        1.0
+      ],
+      "pos": [
+        0.0436,
+        0.0852,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.0168,
+        1.0
+      ],
+      "pos": [
+        0.0252,
+        0.1036,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.0168,
+        1.0
+      ],
+      "pos": [
+        0.0,
+        0.1104,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.0168,
+        1.0
+      ],
+      "pos": [
+        -0.0252,
+        0.1036,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.0168,
+        1.0
+      ],
+      "pos": [
+        -0.0436,
+        0.0852,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.0168,
+        1.0
+      ],
+      "pos": [
+        -0.0504,
+        0.06,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.0168,
+        1.0
+      ],
+      "pos": [
+        -0.0436,
+        0.0348,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.0168,
+        1.0
+      ],
+      "pos": [
+        -0.0252,
+        0.0164,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.0168,
+        1.0
+      ],
+      "pos": [
+        -0.0,
+        0.0096,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.0168,
+        1.0
+      ],
+      "pos": [
+        0.0252,
+        0.0164,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.0168,
+        1.0
+      ],
+      "pos": [
+        0.0436,
+        0.0348,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "wall"
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "logo": "LAVOICE",
+  "canvas": {
+    "width": 1510,
+    "height": 270
+  },
+  "coordinates": "x/y are top-left positions in the assembled logo; units are SVG pixels; use top-left pivot",
+  "pieces": [
+    {
+      "id": "01_L_superior",
+      "file": "01_L_superior.svg",
+      "letter": "L",
+      "x": 8,
+      "y": 36,
+      "width": 73,
+      "height": 164,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "02_L_base",
+      "file": "02_L_base.svg",
+      "letter": "L",
+      "x": 8,
+      "y": 196,
+      "width": 173,
+      "height": 61,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "03_A_topo",
+      "file": "03_A_topo.svg",
+      "letter": "A",
+      "x": 245,
+      "y": 37,
+      "width": 167,
+      "height": 95,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "04_A_hastes-1",
+      "file": "04_A_hastes-1.svg",
+      "letter": "A",
+      "x": 176,
+      "y": 128,
+      "width": 190,
+      "height": 130,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "05_A_hastes-2",
+      "file": "05_A_hastes-2.svg",
+      "letter": "A",
+      "x": 335,
+      "y": 128,
+      "width": 142,
+      "height": 130,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "06_V_hastes-1",
+      "file": "06_V_hastes-1.svg",
+      "letter": "V",
+      "x": 541,
+      "y": 59,
+      "width": 137,
+      "height": 118,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "07_V_hastes-2",
+      "file": "07_V_hastes-2.svg",
+      "letter": "V",
+      "x": 445,
+      "y": 119,
+      "width": 87,
+      "height": 58,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "08_V_base",
+      "file": "08_V_base.svg",
+      "letter": "V",
+      "x": 456,
+      "y": 173,
+      "width": 164,
+      "height": 89,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "09_O_superior-esquerdo",
+      "file": "09_O_superior-esquerdo.svg",
+      "letter": "O",
+      "x": 685,
+      "y": 36,
+      "width": 137,
+      "height": 112,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "10_O_superior-direito",
+      "file": "10_O_superior-direito.svg",
+      "letter": "O",
+      "x": 818,
+      "y": 36,
+      "width": 131,
+      "height": 112,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "11_O_inferior-esquerdo",
+      "file": "11_O_inferior-esquerdo.svg",
+      "letter": "O",
+      "x": 685,
+      "y": 144,
+      "width": 137,
+      "height": 114,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "12_O_inferior-direito",
+      "file": "12_O_inferior-direito.svg",
+      "letter": "O",
+      "x": 818,
+      "y": 144,
+      "width": 130,
+      "height": 114,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "13_I_superior",
+      "file": "13_I_superior.svg",
+      "letter": "I",
+      "x": 967,
+      "y": 35,
+      "width": 74,
+      "height": 114,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "14_I_inferior",
+      "file": "14_I_inferior.svg",
+      "letter": "I",
+      "x": 967,
+      "y": 145,
+      "width": 74,
+      "height": 114,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "15_C_superior",
+      "file": "15_C_superior.svg",
+      "letter": "C",
+      "x": 1060,
+      "y": 36,
+      "width": 242,
+      "height": 61,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "16_C_central",
+      "file": "16_C_central.svg",
+      "letter": "C",
+      "x": 1060,
+      "y": 93,
+      "width": 80,
+      "height": 107,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "17_C_inferior",
+      "file": "17_C_inferior.svg",
+      "letter": "C",
+      "x": 1060,
+      "y": 196,
+      "width": 243,
+      "height": 62,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "18_E_haste",
+      "file": "18_E_haste.svg",
+      "letter": "E",
+      "x": 1296,
+      "y": 36,
+      "width": 77,
+      "height": 222,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "19_E_barra-superior",
+      "file": "19_E_barra-superior.svg",
+      "letter": "E",
+      "x": 1369,
+      "y": 36,
+      "width": 132,
+      "height": 60,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "20_E_barra-central",
+      "file": "20_E_barra-central.svg",
+      "letter": "E",
+      "x": 1369,
+      "y": 119,
+      "width": 98,
+      "height": 55,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "21_E_barra-inferior",
+      "file": "21_E_barra-inferior.svg",
+      "letter": "E",
+      "x": 1369,
+      "y": 196,
+      "width": 133,
+      "height": 62,
+      "color": "#F5F1E8"
+    },
+    {
+      "id": "22_V_encaixe-laranja",
+      "file": "22_V_encaixe-laranja.svg",
+      "letter": "V",
+      "x": 381,
+      "y": 8,
+      "width": 122,
+      "height": 124,
+      "color": "#FF791C"
+    }
+  ]
+}

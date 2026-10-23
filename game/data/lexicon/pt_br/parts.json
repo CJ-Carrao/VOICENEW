@@ -1,0 +1,9 @@
+{
+  "_comment": "Partes de uma coisa. 'boca'/'cano'/'ponta' alimentam barrels; 'mira' é só descritiva. Arma branca usa as mesmas 3 partes: cabo (= coronha, atrás), lâmina/cabeça (= corpo, frente) e ponta (= cano). 'que' nunca se liga a uma parte. As 3 partes da arma: coronha (atrás do gatilho), corpo (na frente) e cano; 'PARTE de ARMA' troca a parte ('pistola com corpo de bazuca').",
+  "barrel": { "words": ["boca", "bocas", "cano", "canos", "saída", "saídas"] },
+  "stock":  { "words": ["coronha", "coronhas", "cabo", "cabos", "empunhadura", "empunhaduras", "punho", "culatra", "traseira", "parte de trás"] },
+  "body":   { "words": ["corpo", "corpos", "frente", "ferrolho", "carcaça", "receptor", "parte da frente"] },
+  "blade":  { "words": ["lâmina", "lâminas", "cabeça", "cabeças", "gume"] },
+  "sight":  { "words": ["mira", "miras"] },
+  "tip":    { "words": ["ponta", "pontas"] }
+}

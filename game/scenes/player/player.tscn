@@ -1,0 +1,57 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://byovy5b6mwfu6" path="res://scenes/player/player.gd" id="1"]
+[ext_resource type="Script" uid="uid://t1j8rq4c42pp" path="res://scenes/player/hands.gd" id="2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_body"]
+radius = 0.35
+height = 1.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_body"]
+albedo_color = Color(0.25, 0.55, 0.95, 1)
+roughness = 0.7
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_body"]
+material = SubResource("StandardMaterial3D_body")
+radius = 0.35
+height = 1.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_visor"]
+albedo_color = Color(0.1, 0.12, 0.16, 1)
+emission_enabled = true
+emission = Color(0.4, 0.8, 1, 1)
+emission_energy_multiplier = 0.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_visor"]
+material = SubResource("StandardMaterial3D_visor")
+size = Vector3(0.42, 0.14, 0.2)
+
+[node name="Player" type="CharacterBody3D" unique_id=959896203]
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2134009101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_body")
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=508553487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+layers = 2
+mesh = SubResource("CapsuleMesh_body")
+
+[node name="Visor" type="MeshInstance3D" parent="Body" unique_id=42180046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62, -0.26)
+layers = 2
+mesh = SubResource("BoxMesh_visor")
+
+[node name="Head" type="Node3D" parent="." unique_id=1131928493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1879307597]
+cull_mask = 1048573
+fov = 80.0
+
+[node name="Hands" type="Node3D" parent="Head/Camera3D" unique_id=1502761134]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.2, -0.19, -0.42)
+script = ExtResource("2")

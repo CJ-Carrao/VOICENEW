@@ -1,0 +1,59 @@
+{
+  "_comment": "barril: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.45,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.3,
+      "height": 0.765,
+      "pos": [
+        0,
+        0.414,
+        0
+      ],
+      "color": "#ad5144",
+      "tag": "body",
+      "finish": "metal"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.306,
+      "inner_radius": 0.276,
+      "pos": [
+        0,
+        0.117,
+        0
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "rim"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.306,
+      "inner_radius": 0.276,
+      "pos": [
+        0,
+        0.684,
+        0
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "rim"
+    }
+  ]
+}

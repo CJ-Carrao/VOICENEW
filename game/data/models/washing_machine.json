@@ -1,0 +1,79 @@
+{
+  "_comment": "máquina de lavar: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.425,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.6,
+        0.85,
+        0.6
+      ],
+      "pos": [
+        0,
+        0.425,
+        0
+      ],
+      "color": "#d6dcd8",
+      "tag": "body",
+      "finish": "metal"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.198,
+      "inner_radius": 0.144,
+      "pos": [
+        0,
+        0.374,
+        -0.306
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "door"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.15,
+      "height": 0.025,
+      "pos": [
+        0,
+        0.374,
+        -0.312
+      ],
+      "color": "#334b58",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "window"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.02,
+      "pos": [
+        0.18,
+        0.7225,
+        -0.312
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "dial"
+    }
+  ]
+}

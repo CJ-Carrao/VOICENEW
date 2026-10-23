@@ -1,0 +1,8 @@
+{
+  "_comment": "Armas em 3 partes (DESIGN 3.8): rear = atrás do gatilho (cadência, pente, recarga), front = na frente do gatilho (dano e munição), muzzle = cano (canos, velocidade, abertura). Cada peça do modelo cai numa parte pela tag (ou pelo campo 'section' da própria peça; tag que não está aqui vai pra front). Pra misturar armas ('pistola com corpo de bazuca'), cada modelo de arma diz onde ficam as juntas em 'joints': 'trigger' (onde a parte de trás recebe a frente) e 'muzzle' (onde a frente recebe o cano). Se a frente ou o cano começam em outro ponto, 'front_plug' e 'muzzle_plug' dizem onde eles encaixam (padrão: a própria junta).",
+  "tags": {
+    "rear": ["grip", "stock", "trigger", "magazine", "handle", "pommel", "engine"],
+    "front": ["body", "sight", "handguard", "receiver", "pump", "head", "blade", "guard"],
+    "muzzle": ["barrel", "muzzle", "tip"]
+  }
+}

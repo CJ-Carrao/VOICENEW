@@ -1,0 +1,87 @@
+{
+  "_comment": "bloco de concreto: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.095,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.19,
+        0.39
+      ],
+      "pos": [
+        -0.0575,
+        0.095,
+        0
+      ],
+      "color": "#92928b",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.19,
+        0.39
+      ],
+      "pos": [
+        0.0575,
+        0.095,
+        0
+      ],
+      "color": "#92928b",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.14,
+        0.19,
+        0.025
+      ],
+      "pos": [
+        0,
+        0.095,
+        -0.1833
+      ],
+      "color": "#92928b",
+      "tag": "web"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.14,
+        0.19,
+        0.025
+      ],
+      "pos": [
+        0,
+        0.095,
+        0.0
+      ],
+      "color": "#92928b",
+      "tag": "web"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.14,
+        0.19,
+        0.025
+      ],
+      "pos": [
+        0,
+        0.095,
+        0.1833
+      ],
+      "color": "#92928b",
+      "tag": "web"
+    }
+  ]
+}

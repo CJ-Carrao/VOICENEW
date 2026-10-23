@@ -1,0 +1,583 @@
+{
+ "_comment": "AK-47 (fuzil padrão). Gerado por tools/models/gen_arsenal.py.",
+ "anchor": [
+  0,
+  -0.065,
+  0.06
+ ],
+ "joints": {
+  "trigger": [
+   0,
+   0,
+   0
+  ],
+  "muzzle": [
+   0,
+   0,
+   -0.38
+  ]
+ },
+ "pieces": [
+  {
+   "shape": "box",
+   "size": [
+    0.03,
+    0.095,
+    0.04
+   ],
+   "pos": [
+    0,
+    -0.065,
+    0.055
+   ],
+   "color": "#5c3a1f",
+   "rot": [
+    -20,
+    0,
+    0
+   ],
+   "tag": "grip",
+   "finish": "wood"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.006,
+    0.02,
+    0.006
+   ],
+   "pos": [
+    0,
+    -0.03,
+    -0.002
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    12,
+    0,
+    0
+   ],
+   "tag": "trigger",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.011,
+    0.005,
+    0.06
+   ],
+   "pos": [
+    0,
+    -0.046,
+    0.0
+   ],
+   "color": "#2a2d32",
+   "tag": "trigger"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.011,
+    0.03,
+    0.006
+   ],
+   "pos": [
+    0,
+    -0.031,
+    -0.03
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    12,
+    0,
+    0
+   ],
+   "tag": "trigger"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.036,
+    0.045,
+    0.1
+   ],
+   "pos": [
+    0,
+    -0.004,
+    0.06
+   ],
+   "color": "#2a2d32",
+   "tag": "receiver",
+   "finish": "metal",
+   "section": "rear"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.032,
+    0.03,
+    0.05
+   ],
+   "pos": [
+    0,
+    0.028,
+    0.08
+   ],
+   "color": "#2a2d32",
+   "tag": "receiver",
+   "finish": "metal",
+   "section": "rear"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.034,
+    0.05,
+    0.26
+   ],
+   "pos": [
+    0,
+    -0.03,
+    0.23
+   ],
+   "color": "#7a4b26",
+   "rot": [
+    8,
+    0,
+    0
+   ],
+   "tag": "stock",
+   "finish": "wood"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.036,
+    0.1,
+    0.06
+   ],
+   "pos": [
+    0,
+    -0.065,
+    0.345
+   ],
+   "color": "#7a4b26",
+   "rot": [
+    11,
+    0,
+    0
+   ],
+   "tag": "stock",
+   "finish": "wood"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.038,
+    0.105,
+    0.008
+   ],
+   "pos": [
+    0,
+    -0.07,
+    0.377
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    11,
+    0,
+    0
+   ],
+   "tag": "stock",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.027,
+    0.07,
+    0.044
+   ],
+   "pos": [
+    0,
+    -0.06,
+    -0.07
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    10,
+    0,
+    0
+   ],
+   "tag": "magazine",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.027,
+    0.07,
+    0.044
+   ],
+   "pos": [
+    0,
+    -0.125,
+    -0.085
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    22,
+    0,
+    0
+   ],
+   "tag": "magazine",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.027,
+    0.05,
+    0.044
+   ],
+   "pos": [
+    0,
+    -0.178,
+    -0.11
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    34,
+    0,
+    0
+   ],
+   "tag": "magazine",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.028,
+    0.004,
+    0.03
+   ],
+   "pos": [
+    0,
+    -0.065,
+    -0.072
+   ],
+   "color": "#16171a",
+   "rot": [
+    10,
+    0,
+    0
+   ],
+   "tag": "magazine"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.028,
+    0.004,
+    0.03
+   ],
+   "pos": [
+    0,
+    -0.105,
+    -0.084
+   ],
+   "color": "#16171a",
+   "rot": [
+    18,
+    0,
+    0
+   ],
+   "tag": "magazine"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.028,
+    0.004,
+    0.03
+   ],
+   "pos": [
+    0,
+    -0.145,
+    -0.096
+   ],
+   "color": "#16171a",
+   "rot": [
+    26,
+    0,
+    0
+   ],
+   "tag": "magazine"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.028,
+    0.004,
+    0.03
+   ],
+   "pos": [
+    0,
+    -0.185,
+    -0.108
+   ],
+   "color": "#16171a",
+   "rot": [
+    34,
+    0,
+    0
+   ],
+   "tag": "magazine"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.036,
+    0.045,
+    0.16
+   ],
+   "pos": [
+    0,
+    -0.004,
+    -0.06
+   ],
+   "color": "#2a2d32",
+   "tag": "receiver",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.032,
+    0.026,
+    0.17
+   ],
+   "pos": [
+    0,
+    0.028,
+    -0.03
+   ],
+   "color": "#3b3f46",
+   "tag": "receiver",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.033,
+    0.018,
+    0.002
+   ],
+   "pos": [
+    0,
+    0.028,
+    -0.09
+   ],
+   "color": "#2a2d32",
+   "tag": "receiver"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.033,
+    0.018,
+    0.002
+   ],
+   "pos": [
+    0,
+    0.028,
+    -0.08
+   ],
+   "color": "#2a2d32",
+   "tag": "receiver"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.033,
+    0.018,
+    0.002
+   ],
+   "pos": [
+    0,
+    0.028,
+    -0.07
+   ],
+   "color": "#2a2d32",
+   "tag": "receiver"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.008,
+    0.012,
+    0.025
+   ],
+   "pos": [
+    0.02,
+    0.0,
+    0.02
+   ],
+   "color": "#2a2d32",
+   "tag": "body",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.026,
+    0.018,
+    0.05
+   ],
+   "pos": [
+    0,
+    0.03,
+    -0.15
+   ],
+   "color": "#2a2d32",
+   "tag": "sight",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.032,
+    0.035,
+    0.18
+   ],
+   "pos": [
+    0,
+    -0.012,
+    -0.24
+   ],
+   "color": "#7a4b26",
+   "tag": "handguard",
+   "finish": "wood"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.034,
+    0.012,
+    0.03
+   ],
+   "pos": [
+    0,
+    -0.012,
+    -0.335
+   ],
+   "color": "#2a2d32",
+   "tag": "handguard",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.012,
+   "height": 0.2,
+   "pos": [
+    0,
+    0.026,
+    -0.27
+   ],
+   "color": "#7a4b26",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "handguard",
+   "finish": "wood"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0095,
+   "height": 0.03,
+   "pos": [
+    0,
+    0.026,
+    -0.385
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "body",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0095,
+   "height": 0.36,
+   "pos": [
+    0,
+    0.0,
+    -0.56
+   ],
+   "color": "#1d2128",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "barrel",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.02,
+    0.05,
+    0.022
+   ],
+   "pos": [
+    0,
+    0.012,
+    -0.66
+   ],
+   "color": "#2a2d32",
+   "tag": "muzzle",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.004,
+    0.02,
+    0.004
+   ],
+   "pos": [
+    0,
+    0.04,
+    -0.66
+   ],
+   "color": "#2a2d32",
+   "tag": "muzzle"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.013,
+   "height": 0.035,
+   "pos": [
+    0,
+    0.0,
+    -0.75
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "muzzle",
+   "finish": "metal"
+  }
+ ]
+}

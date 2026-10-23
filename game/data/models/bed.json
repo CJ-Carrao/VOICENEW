@@ -1,0 +1,133 @@
+{
+  "_comment": "cama: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.3,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.95,
+        0.24,
+        2.0
+      ],
+      "pos": [
+        0,
+        0.42,
+        0
+      ],
+      "color": "#6485a4",
+      "tag": "cushion",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.76,
+        0.072,
+        0.44
+      ],
+      "pos": [
+        0,
+        0.576,
+        0.66
+      ],
+      "color": "#d6dcd8",
+      "tag": "pillow"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.95,
+        0.08,
+        2.0
+      ],
+      "pos": [
+        0,
+        0.27,
+        0
+      ],
+      "color": "#7a4b26",
+      "tag": "frame"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.07,
+        0.3,
+        0.07
+      ],
+      "pos": [
+        -0.418,
+        0.15,
+        -0.9
+      ],
+      "color": "#7a4b26",
+      "tag": "leg"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.07,
+        0.3,
+        0.07
+      ],
+      "pos": [
+        -0.418,
+        0.15,
+        0.9
+      ],
+      "color": "#7a4b26",
+      "tag": "leg"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.07,
+        0.3,
+        0.07
+      ],
+      "pos": [
+        0.418,
+        0.15,
+        -0.9
+      ],
+      "color": "#7a4b26",
+      "tag": "leg"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.07,
+        0.3,
+        0.07
+      ],
+      "pos": [
+        0.418,
+        0.15,
+        0.9
+      ],
+      "color": "#7a4b26",
+      "tag": "leg"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.95,
+        0.48,
+        0.08
+      ],
+      "pos": [
+        0,
+        0.39,
+        0.98
+      ],
+      "color": "#7a4b26",
+      "tag": "headboard"
+    }
+  ]
+}

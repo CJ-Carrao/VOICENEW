@@ -1,0 +1,11 @@
+{
+  "_comment": "Gatilhos (DESIGN 3.3). 'params' em ordem; o primeiro é o que a frase pode dizer ('a cada 2 segundos'). Valores padrão em balance.trigger_defaults.",
+  "on_fire":     {},
+  "on_hit":      {},
+  "every":       { "params": ["s"] },
+  "after":       { "params": ["s"] },
+  "on_death":    {},
+  "near_enemy":  { "params": ["r"] },
+  "on_aim_hold": { "params": ["s"] },
+  "on_command":  {}
+}

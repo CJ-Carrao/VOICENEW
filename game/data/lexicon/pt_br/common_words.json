@@ -1,0 +1,19 @@
+{
+  "_comment": "Palavras comuns de conversa que NÃO são do jogo. O 'ouvido' (correção de palavra mal ouvida) nunca troca estas por uma palavra do jogo ('minha' não vira 'mina', 'sério' não vira 'zero'); elas continuam aparecendo como desconhecidas. Palavra que o jogo já conhece é ignorada aqui. Não ponha aqui palavras reais que o reconhecedor costuma escrever no lugar de palavras do jogo ('fugiu' por 'fuzil').",
+  "words": [
+    "eu", "tu", "você", "vocês", "voce", "ele", "ela", "eles", "elas", "nós", "gente", "me", "mim", "comigo", "te", "ti",
+    "lhe", "meu", "minha", "meus", "minhas", "seu", "sua", "seus", "suas", "nosso", "nossa", "dele", "dela",
+    "este", "esta", "esse", "essa", "isto", "isso", "aquele", "aquela", "aquilo", "aqui", "ali", "lá", "aí", "cá",
+    "já", "ainda", "agora", "sim", "não", "nunca", "sempre", "também", "muito", "pouco", "bem", "mal", "assim",
+    "então", "só", "tipo", "né", "tá", "tô", "tão", "quase", "talvez", "logo", "cedo", "hoje", "ontem", "amanhã",
+    "é", "era", "foi", "fui", "ser", "sou", "ter", "tem", "tenho", "tinha", "estar", "está", "estou", "estava",
+    "vou", "vai", "vamos", "fazer", "faz", "fiz", "fez", "ver", "vi", "viu", "dá", "deu", "dou", "pode", "posso",
+    "sei", "sabe", "fala", "falou", "falei", "olha", "olhou", "acho", "achei", "entendi", "entendeu", "ganhei",
+    "ganhou", "perdi", "perdeu", "morri", "morreu", "matei", "matou", "jogar", "jogo", "joguei", "saiu", "caiu",
+    "chegou", "voltou", "espera", "pera", "pegou", "funciona", "funcionou",
+    "cara", "mano", "velho", "bom", "boa", "dia", "noite", "tarde", "legal", "massa", "top", "show", "beleza",
+    "valeu", "obrigado", "obrigada", "desculpa", "caramba", "pessoal", "internet", "partida", "rodada", "vez",
+    "coisa", "nada", "tudo", "algo", "alguém", "ninguém", "sério", "verdade", "mentira", "certo", "errado",
+    "difícil", "fácil", "pronto", "acabou", "cadê", "onde", "como", "porque", "sem", "ok", "oi", "olá", "tchau"
+  ]
+}

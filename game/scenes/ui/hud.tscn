@@ -1,0 +1,293 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://c5xv6huiqqsug" path="res://scenes/ui/hud.gd" id="1"]
+[ext_resource type="Script" uid="uid://sqhtynsvxocj" path="res://scenes/ui/crosshair.gd" id="2"]
+[ext_resource type="Script" uid="uid://dw5yvgo7m5upw" path="res://scenes/ui/hud_bar.gd" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/ui/console.tscn" id="4"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1900378860]
+script = ExtResource("1")
+
+[node name="Root" type="Control" parent="." unique_id=1316177509]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Crosshair" type="Control" parent="Root" unique_id=980658242]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2")
+
+[node name="TopCenter" type="PanelContainer" parent="Root" unique_id=308119320]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -170.0
+offset_top = 14.0
+offset_right = 170.0
+offset_bottom = 70.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="VBox" type="VBoxContainer" parent="Root/TopCenter" unique_id=721283371]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="RoundLabel" type="Label" parent="Root/TopCenter/VBox" unique_id=899435480]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"TagLabel"
+horizontal_alignment = 1
+
+[node name="Scoreboard" type="Label" parent="Root/TopCenter/VBox" unique_id=175996442]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"BigLabel"
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="OpponentBar" type="Control" parent="Root/TopCenter/VBox" unique_id=1328930149]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("3")
+fill = Color(1, 0.294, 0.227, 1)
+chamfer = 3.0
+
+[node name="OpponentLabel" type="Label" parent="Root/TopCenter/VBox" unique_id=780384910]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+horizontal_alignment = 1
+
+[node name="Banner" type="Label" parent="Root" unique_id=294804754]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -170.0
+offset_right = 450.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(450, 65)
+theme_type_variation = &"BigLabel"
+theme_override_colors/font_outline_color = Color(0.0627451, 0.0627451, 0.0705882, 0.9)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 46
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VoicePrompt" type="Label" parent="Root" unique_id=1320749492]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -190.0
+offset_right = 540.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.776, 0.36, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.85)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="RightColumn" type="VBoxContainer" parent="Root" unique_id=1211421313]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -320.0
+offset_top = 14.0
+offset_right = -20.0
+offset_bottom = 216.0
+grow_horizontal = 0
+mouse_filter = 2
+
+[node name="CreationsPanel" type="PanelContainer" parent="Root/RightColumn" unique_id=24841658]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+
+[node name="VBox" type="VBoxContainer" parent="Root/RightColumn/CreationsPanel" unique_id=1980413735]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="Root/RightColumn/CreationsPanel/VBox" unique_id=1565731246]
+layout_mode = 2
+theme_type_variation = &"TagLabel"
+text = "CRIAÇÕES"
+horizontal_alignment = 2
+
+[node name="CreationsList" type="VBoxContainer" parent="Root/RightColumn/CreationsPanel/VBox" unique_id=966711507]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="CreationsEmpty" type="Label" parent="Root/RightColumn/CreationsPanel/VBox/CreationsList" unique_id=1175162988]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="DebugPanel" type="PanelContainer" parent="Root/RightColumn" unique_id=478048135]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="DebugText" type="Label" parent="Root/RightColumn/DebugPanel" unique_id=978706237]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "debug"
+autowrap_mode = 3
+
+[node name="Vitals" type="PanelContainer" parent="Root" unique_id=1150761288]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -104.0
+offset_right = 300.0
+offset_bottom = -20.0
+grow_vertical = 0
+mouse_filter = 2
+theme_type_variation = &"AccentPanel"
+
+[node name="VBox" type="VBoxContainer" parent="Root/Vitals" unique_id=2072703729]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 3
+
+[node name="HealthRow" type="HBoxContainer" parent="Root/Vitals/VBox" unique_id=508902116]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="Root/Vitals/VBox/HealthRow" unique_id=1466274304]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_type_variation = &"DimLabel"
+text = "VIDA"
+
+[node name="HealthLabel" type="Label" parent="Root/Vitals/VBox/HealthRow" unique_id=1853780294]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"BigLabel"
+theme_override_font_sizes/font_size = 22
+text = "100"
+horizontal_alignment = 2
+
+[node name="HealthBar" type="Control" parent="Root/Vitals/VBox" unique_id=1657332524]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("3")
+low_below = 0.3
+segments = 4
+
+[node name="MatterRow" type="HBoxContainer" parent="Root/Vitals/VBox" unique_id=1695141434]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="Root/Vitals/VBox/MatterRow" unique_id=977037609]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_type_variation = &"DimLabel"
+text = "MATÉRIA"
+
+[node name="MatterLabel" type="Label" parent="Root/Vitals/VBox/MatterRow" unique_id=997969760]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.776, 0.36, 1)
+theme_override_font_sizes/font_size = 15
+text = "0 / 300"
+horizontal_alignment = 2
+
+[node name="MatterBar" type="Control" parent="Root/Vitals/VBox" unique_id=1854550155]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 7)
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("3")
+fill = Color(1, 0.776, 0.36, 1)
+chamfer = 4.0
+
+[node name="Slots" type="HBoxContainer" parent="Root" unique_id=1562449362]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -72.0
+offset_right = 220.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Status" type="Label" parent="Root" unique_id=687510943]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -420.0
+offset_top = -104.0
+offset_right = 420.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.8)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Console" parent="Root" unique_id=1647961642 instance=ExtResource("4")]
+unique_name_in_owner = true
+layout_mode = 1

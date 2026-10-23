@@ -1,0 +1,197 @@
+{
+  "_comment": "trator: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    1.1,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.352,
+      "height": 0.216,
+      "pos": [
+        -0.864,
+        0.352,
+        -1.12
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.1584,
+      "height": 0.234,
+      "pos": [
+        -0.864,
+        0.352,
+        -1.12
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.352,
+      "height": 0.216,
+      "pos": [
+        -0.864,
+        0.352,
+        1.12
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.1584,
+      "height": 0.234,
+      "pos": [
+        -0.864,
+        0.352,
+        1.12
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.352,
+      "height": 0.216,
+      "pos": [
+        0.864,
+        0.352,
+        -1.12
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.1584,
+      "height": 0.234,
+      "pos": [
+        0.864,
+        0.352,
+        -1.12
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.352,
+      "height": 0.216,
+      "pos": [
+        0.864,
+        0.352,
+        1.12
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.1584,
+      "height": 0.234,
+      "pos": [
+        0.864,
+        0.352,
+        1.12
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub"
+    },
+    {
+      "shape": "box",
+      "size": [
+        1.62,
+        0.66,
+        3.15
+      ],
+      "pos": [
+        0,
+        0.77,
+        0
+      ],
+      "color": "#588047",
+      "tag": "chassis"
+    },
+    {
+      "shape": "box",
+      "size": [
+        1.476,
+        1.056,
+        1.26
+      ],
+      "pos": [
+        0,
+        1.606,
+        0.35
+      ],
+      "color": "#588047",
+      "tag": "cabin"
+    },
+    {
+      "shape": "box",
+      "size": [
+        1.26,
+        0.572,
+        0.025
+      ],
+      "pos": [
+        0,
+        1.76,
+        -0.315
+      ],
+      "color": "#7194a6",
+      "tag": "windshield"
+    }
+  ]
+}

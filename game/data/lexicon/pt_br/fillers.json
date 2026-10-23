@@ -1,0 +1,15 @@
+{
+  "_comment": "Enchimento: palavras que a gramática pula. start_only só conta como enchimento antes da coisa pedida ('cria uma torre'); depois disso é verbo ('torre que cria paredes').",
+  "always": [
+    "quero", "queria", "quer", "querer", "gostaria", "vou", "eu", "me", "mim", "se",
+    "por favor", "porfavor", "pfv", "pf", "aí", "ae", "ei", "oi", "tipo", "então", "agora", "logo", "rapidinho",
+    "também", "só", "bem", "muito", "bastante", "extremamente", "super", "hiper", "ultra", "isso", "esse", "essa", "aquele", "aquela", "ter",
+    "um", "uma", "uns", "umas", "o", "a", "os", "as",
+    "do", "da", "dos", "das", "no", "na", "nos", "nas", "ao", "aos",
+    "pro", "pra", "pros", "pras", "para", "pelo", "pela", "dá", "dai",
+    "sai",
+    "saem",
+    "saindo"
+  ],
+  "start_only": ["cria", "criar", "crie", "faz", "fazer", "faça", "gera", "gerar", "gere", "manda", "mande"]
+}

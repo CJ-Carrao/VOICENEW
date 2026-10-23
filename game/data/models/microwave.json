@@ -1,0 +1,94 @@
+{
+  "_comment": "micro-ondas: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.15,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.5,
+        0.3,
+        0.4
+      ],
+      "pos": [
+        0,
+        0.15,
+        0
+      ],
+      "color": "#d6dcd8",
+      "tag": "body",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.335,
+        0.201,
+        0.025
+      ],
+      "pos": [
+        -0.05,
+        0.159,
+        -0.204
+      ],
+      "color": "#233643",
+      "tag": "door"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.025,
+      "pos": [
+        0.19,
+        0.12,
+        -0.212
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "button"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.025,
+      "pos": [
+        0.19,
+        0.18,
+        -0.212
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "button"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.025,
+      "pos": [
+        0.19,
+        0.24,
+        -0.212
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "button"
+    }
+  ]
+}

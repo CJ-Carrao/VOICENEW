@@ -1,0 +1,14 @@
+{
+  "_comment": "Cores que dá pra pedir ('pombo azul', 'pistola dourada'): só visual, tinge o modelo inteiro (mix = quanto da cor da peça some) e glow acende um brilho. Vale pra qualquer coisa. A palavra de cada cor fica no léxico (modifiers.json) e o id em defs/modifiers.json.",
+  "red":    { "tint": "#e53935", "mix": 0.8 },
+  "blue":   { "tint": "#2f6bff", "mix": 0.8 },
+  "green":  { "tint": "#3fae4a", "mix": 0.8 },
+  "yellow": { "tint": "#fdd835", "mix": 0.8 },
+  "orange": { "tint": "#fb8c00", "mix": 0.8 },
+  "purple": { "tint": "#8e3ad6", "mix": 0.8 },
+  "pink":   { "tint": "#ff6fb5", "mix": 0.8 },
+  "black":  { "tint": "#1f1f24", "mix": 0.85 },
+  "white":  { "tint": "#f4f4f4", "mix": 0.85 },
+  "gold":   { "tint": "#d9a520", "mix": 0.85, "glow": 0.12 },
+  "silver": { "tint": "#c4cad0", "mix": 0.85, "glow": 0.15 }
+}

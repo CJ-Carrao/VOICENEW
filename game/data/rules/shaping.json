@@ -1,0 +1,6 @@
+{
+  "_comment": "Dar forma (Lavoisier L2, DESIGN 17.1): quando o pedido vira rascunho (contorno de giz) em vez de montar na hora. always: lugares onde sempre dá pra escolher onde e quanto (estrutura no chão mirado). when_sized: lugares onde só vira rascunho se a frase falou de tamanho (escala, largura, altura ou comprimento: 'pistola enorme', 'sniper de cano longo'). dims: as medidas que o scroll ajusta, na ordem em que o botão do meio (ou R) troca. Limites e passo em balance.shaping.",
+  "always": ["aim_ground"],
+  "when_sized": ["hand", "throwable", "front"],
+  "dims": ["scale", "width", "height", "length"]
+}

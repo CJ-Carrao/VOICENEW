@@ -1,0 +1,12 @@
+{
+  "_comment": "Onde aparece a coisa que é a cabeça do pedido (DESIGN 7), por categoria. Coisa com 'aerial': true usa a chave '<categoria>_aerial'. hand = slot livre na mão; throwable = na mão, e usar arremessa; aim_ground = no chão onde eu miro (alcance em balance.placement); front = à minha frente; flyover = passa sobre o ponto mirado (Marco 2b); load = monta na arma da mão e enche o pente dela (sem arma de pente na mão, vira arremessável); attach = monta o acessório na coisa da mão (sem nada na mão, vira arremessável).",
+  "weapon": "hand",
+  "tool": "hand",
+  "projectile": "throwable",
+  "structure": "aim_ground",
+  "creature": "front",
+  "vehicle": "front",
+  "vehicle_aerial": "flyover",
+  "ammo": "load",
+  "attachment": "attach"
+}

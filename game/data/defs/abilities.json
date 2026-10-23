@@ -1,0 +1,6 @@
+{
+  "_comment": "Habilidades aplicadas no próprio jogador (DESIGN 3.7). Duração em balance.abilities.<id>.duration.",
+  "fly": {},
+  "sprint": {},
+  "super_jump": {}
+}

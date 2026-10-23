@@ -1,0 +1,120 @@
+{
+  "_comment": "bola de futebol: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.11,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.11,
+      "pos": [
+        0,
+        0.11,
+        0
+      ],
+      "color": "#d6dcd8",
+      "tag": "ball",
+      "finish": "rubber"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        -0.1034,
+        0.11,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "patch",
+      "_stretch": [
+        0.015400000000000002,
+        0.0704,
+        0.0704
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.0066,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "patch",
+      "_stretch": [
+        0.0704,
+        0.015400000000000002,
+        0.0704
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.11,
+        -0.1034
+      ],
+      "color": "#2a2d32",
+      "tag": "patch",
+      "_stretch": [
+        0.0704,
+        0.0704,
+        0.015400000000000002
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0.1034,
+        0.11,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "patch",
+      "_stretch": [
+        0.015400000000000002,
+        0.0704,
+        0.0704
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.2134,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "patch",
+      "_stretch": [
+        0.0704,
+        0.015400000000000002,
+        0.0704
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.11,
+        0.1034
+      ],
+      "color": "#2a2d32",
+      "tag": "patch",
+      "_stretch": [
+        0.0704,
+        0.0704,
+        0.015400000000000002
+      ]
+    }
+  ]
+}

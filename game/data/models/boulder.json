@@ -1,0 +1,70 @@
+{
+  "_comment": "pedregulho: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.45,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.45,
+        0
+      ],
+      "color": "#73736c",
+      "tag": "body",
+      "_stretch": [
+        1.2,
+        0.9,
+        1.1
+      ]
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        0.6,
+        0.495,
+        0.77
+      ],
+      "pos": [
+        -0.312,
+        0.36,
+        0.05
+      ],
+      "color": "#828078",
+      "point": 0.5,
+      "rot": [
+        0,
+        -23,
+        0
+      ],
+      "tag": "facet"
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        0.6,
+        0.495,
+        0.77
+      ],
+      "pos": [
+        0.312,
+        0.36,
+        0.05
+      ],
+      "color": "#828078",
+      "point": 0.5,
+      "rot": [
+        0,
+        23,
+        0
+      ],
+      "tag": "facet"
+    }
+  ]
+}

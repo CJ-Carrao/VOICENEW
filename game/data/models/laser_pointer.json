@@ -1,0 +1,14 @@
+{
+  "anchor": [0, 0, 0],
+  "joints": { "trigger": [0, 0.0, -0.05], "muzzle": [0, 0.0, -0.235] },
+  "pieces": [
+    { "shape": "cylinder", "radius": 0.022, "height": 0.24, "pos": [0, 0, -0.08], "rot": [90, 0, 0], "color": "#8a8f99", "tag": "body" },
+    { "shape": "box", "size": [0.014, 0.01, 0.03], "pos": [0, 0.024, -0.05], "color": "#d33a3a", "tag": "trigger" },
+    { "shape": "cylinder", "radius": 0.0235, "height": 0.012, "pos": [0, 0, -0.02], "rot": [90, 0, 0], "color": "#3a3d44", "tag": "body" },
+    { "shape": "cylinder", "radius": 0.024, "height": 0.03, "pos": [0, 0, 0.055], "rot": [90, 0, 0], "color": "#3a3d44", "tag": "body" },
+    { "shape": "box", "size": [0.006, 0.008, 0.12], "pos": [0.026, 0, -0.03], "color": "#b0b3b8", "tag": "body" },
+    { "shape": "cylinder", "radius": 0.0235, "height": 0.012, "pos": [0, 0, -0.13], "rot": [90, 0, 0], "color": "#3a3d44", "tag": "body" },
+    { "shape": "cylinder", "radius": 0.026, "height": 0.04, "pos": [0, 0, -0.215], "rot": [90, 0, 0], "color": "#3a3d44", "tag": "head" },
+    { "shape": "cylinder", "radius": 0.014, "height": 0.02, "pos": [0, 0, -0.245], "rot": [90, 0, 0], "color": "#ff3030", "glow": 2.0, "tag": "barrel" }
+  ]
+}

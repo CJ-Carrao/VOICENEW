@@ -1,0 +1,300 @@
+{
+ "_comment": "Faca de combate (Ka-Bar USMC). Gerado por tools/models/gen_arsenal.py.",
+ "anchor": [
+  0,
+  0,
+  0.04
+ ],
+ "joints": {
+  "trigger": [
+   0,
+   0,
+   0
+  ],
+  "muzzle": [
+   0,
+   0,
+   -0.121
+  ]
+ },
+ "pieces": [
+  {
+   "shape": "cylinder",
+   "radius": 0.0145,
+   "height": 0.0126,
+   "pos": [
+    0,
+    0,
+    0.0075
+   ],
+   "color": "#4a2e1c",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "handle",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0145,
+   "height": 0.0126,
+   "pos": [
+    0,
+    0,
+    0.0201
+   ],
+   "color": "#5b3a24",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "handle",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0145,
+   "height": 0.0126,
+   "pos": [
+    0,
+    0,
+    0.0327
+   ],
+   "color": "#4a2e1c",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "handle",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0145,
+   "height": 0.0126,
+   "pos": [
+    0,
+    0,
+    0.0453
+   ],
+   "color": "#5b3a24",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "handle",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0145,
+   "height": 0.0126,
+   "pos": [
+    0,
+    0,
+    0.0579
+   ],
+   "color": "#4a2e1c",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "handle",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0145,
+   "height": 0.0126,
+   "pos": [
+    0,
+    0,
+    0.0705
+   ],
+   "color": "#5b3a24",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "handle",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0145,
+   "height": 0.0126,
+   "pos": [
+    0,
+    0,
+    0.0831
+   ],
+   "color": "#4a2e1c",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "handle",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0145,
+   "height": 0.0126,
+   "pos": [
+    0,
+    0,
+    0.0957
+   ],
+   "color": "#5b3a24",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "handle",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0145,
+   "height": 0.0126,
+   "pos": [
+    0,
+    0,
+    0.1083
+   ],
+   "color": "#4a2e1c",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "handle",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0158,
+   "height": 0.016,
+   "pos": [
+    0,
+    0,
+    0.124
+   ],
+   "color": "#5d636b",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "pommel",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.012,
+    0.064,
+    0.006
+   ],
+   "pos": [
+    0,
+    0.002,
+    -0.003
+   ],
+   "color": "#5d636b",
+   "tag": "guard",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.005,
+    0.03,
+    0.115
+   ],
+   "pos": [
+    0,
+    0.0,
+    -0.0635
+   ],
+   "color": "#b9c0c8",
+   "tag": "blade",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.0038,
+    0.008,
+    0.115
+   ],
+   "pos": [
+    0,
+    -0.0145,
+    -0.0635
+   ],
+   "color": "#e4e8ee",
+   "tag": "blade",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.0056,
+    0.004,
+    0.075
+   ],
+   "pos": [
+    0,
+    0.007,
+    -0.05
+   ],
+   "color": "#8b929b",
+   "tag": "blade",
+   "finish": "metal"
+  },
+  {
+   "shape": "wedge",
+   "size": [
+    0.005,
+    0.03,
+    0.058
+   ],
+   "pos": [
+    0,
+    0.0,
+    -0.15
+   ],
+   "color": "#b9c0c8",
+   "point": 0.58,
+   "tag": "tip",
+   "finish": "metal"
+  },
+  {
+   "shape": "wedge",
+   "size": [
+    0.0038,
+    0.008,
+    0.05
+   ],
+   "pos": [
+    0,
+    -0.0145,
+    -0.146
+   ],
+   "color": "#e4e8ee",
+   "point": 1.0,
+   "tag": "tip",
+   "finish": "metal"
+  }
+ ]
+}

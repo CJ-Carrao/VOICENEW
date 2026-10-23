@@ -1,0 +1,81 @@
+{
+  "_comment": "morteiro: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.425,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.325,
+      "height": 0.06,
+      "pos": [
+        0,
+        0.03,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "base"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.09,
+      "height": 0.85,
+      "pos": [
+        0,
+        0.425,
+        -0.1
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        -25,
+        0,
+        0
+      ],
+      "tag": "barrel"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.04,
+        0.51,
+        0.04
+      ],
+      "pos": [
+        -0.195,
+        0.272,
+        0
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        0,
+        0,
+        -22
+      ],
+      "tag": "leg"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.04,
+        0.51,
+        0.04
+      ],
+      "pos": [
+        0.195,
+        0.272,
+        0
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        0,
+        0,
+        22
+      ],
+      "tag": "leg"
+    }
+  ]
+}

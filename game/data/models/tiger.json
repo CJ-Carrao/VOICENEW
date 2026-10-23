@@ -1,0 +1,278 @@
+{
+  "_comment": "tigre: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.605,
+    0
+  ],
+  "sockets": {
+    "mount_hand": [
+      0.36,
+      0.6050000000000001,
+      -0.378
+    ]
+  },
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.638,
+        0
+      ],
+      "color": "#db8a34",
+      "tag": "body",
+      "_stretch": [
+        0.51,
+        0.48400000000000004,
+        1.344
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.88,
+        -0.756
+      ],
+      "color": "#db8a34",
+      "tag": "head",
+      "_stretch": [
+        0.36,
+        0.35200000000000004,
+        0.525
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.803,
+        -1.008
+      ],
+      "color": "#db8a34",
+      "tag": "muzzle",
+      "_stretch": [
+        0.24,
+        0.15400000000000003,
+        0.378
+      ]
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.084,
+      "height": 0.528,
+      "pos": [
+        -0.186,
+        0.264,
+        -0.483
+      ],
+      "color": "#db8a34",
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.084,
+      "height": 0.528,
+      "pos": [
+        -0.186,
+        0.264,
+        0.483
+      ],
+      "color": "#db8a34",
+      "tag": "leg"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.078,
+      "height": 0.132,
+      "pos": [
+        -0.132,
+        1.078,
+        -0.651
+      ],
+      "color": "#db8a34",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "ear"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.084,
+      "height": 0.528,
+      "pos": [
+        0.186,
+        0.264,
+        -0.483
+      ],
+      "color": "#db8a34",
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.084,
+      "height": 0.528,
+      "pos": [
+        0.186,
+        0.264,
+        0.483
+      ],
+      "color": "#db8a34",
+      "tag": "leg"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.078,
+      "height": 0.132,
+      "pos": [
+        0.132,
+        1.078,
+        -0.651
+      ],
+      "color": "#db8a34",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "ear"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.054,
+      "height": 0.63,
+      "pos": [
+        0,
+        0.682,
+        0.903
+      ],
+      "color": "#db8a34",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "tail"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.03,
+      "pos": [
+        -0.162,
+        0.935,
+        -0.903
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.03,
+      "pos": [
+        0.162,
+        0.935,
+        -0.903
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.522,
+        0.044,
+        0.0378
+      ],
+      "pos": [
+        0,
+        0.88,
+        -0.42
+      ],
+      "color": "#372b23",
+      "tag": "stripe"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.522,
+        0.044,
+        0.0378
+      ],
+      "pos": [
+        0,
+        0.88,
+        -0.252
+      ],
+      "color": "#372b23",
+      "tag": "stripe"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.522,
+        0.044,
+        0.0378
+      ],
+      "pos": [
+        0,
+        0.88,
+        -0.084
+      ],
+      "color": "#372b23",
+      "tag": "stripe"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.522,
+        0.044,
+        0.0378
+      ],
+      "pos": [
+        0,
+        0.88,
+        0.084
+      ],
+      "color": "#372b23",
+      "tag": "stripe"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.522,
+        0.044,
+        0.0378
+      ],
+      "pos": [
+        0,
+        0.88,
+        0.252
+      ],
+      "color": "#372b23",
+      "tag": "stripe"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.522,
+        0.044,
+        0.0378
+      ],
+      "pos": [
+        0,
+        0.88,
+        0.42
+      ],
+      "color": "#372b23",
+      "tag": "stripe"
+    }
+  ]
+}

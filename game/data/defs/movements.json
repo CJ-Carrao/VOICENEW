@@ -1,0 +1,13 @@
+{
+  "_comment": "Movimentos (DESIGN 3.2). O comportamento de cada um entra no Marco 2 como componente Move*.",
+  "static": {},
+  "straight": {},
+  "ballistic": {},
+  "fly": {},
+  "flyover": {},
+  "bounce": {},
+  "chase_enemy": {},
+  "orbit_owner": {},
+  "follow_aim": {},
+  "piloted": {}
+}

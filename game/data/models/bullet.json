@@ -1,0 +1,6 @@
+{
+  "anchor": [0, 0, 0],
+  "pieces": [
+    { "shape": "capsule", "radius": 0.035, "height": 0.22, "pos": [0, 0, 0], "rot": [90, 0, 0], "color": "#ffd060", "glow": 1.5, "tag": "body" }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "_comment": "colchão: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.1,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.9,
+        0.08,
+        1.9
+      ],
+      "pos": [
+        0,
+        0.14,
+        0
+      ],
+      "color": "#6485a4",
+      "tag": "cushion",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.72,
+        0.024,
+        0.418
+      ],
+      "pos": [
+        0,
+        0.192,
+        0.627
+      ],
+      "color": "#d6dcd8",
+      "tag": "pillow"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.855,
+        0.008,
+        0.012
+      ],
+      "pos": [
+        0,
+        0.182,
+        -0.665
+      ],
+      "color": "#d6dcd8",
+      "tag": "seam"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.855,
+        0.008,
+        0.012
+      ],
+      "pos": [
+        0,
+        0.182,
+        0.0
+      ],
+      "color": "#d6dcd8",
+      "tag": "seam"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.855,
+        0.008,
+        0.012
+      ],
+      "pos": [
+        0,
+        0.182,
+        0.665
+      ],
+      "color": "#d6dcd8",
+      "tag": "seam"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "_comment": "carrinho de mão: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.3,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.52,
+        0.05,
+        0.91
+      ],
+      "pos": [
+        0,
+        0.258,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "frame"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.65,
+        0.08,
+        0.78
+      ],
+      "pos": [
+        0,
+        0.42,
+        -0.195
+      ],
+      "color": "#397c9e",
+      "tag": "tray"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.21,
+        0.78
+      ],
+      "pos": [
+        -0.2925,
+        0.504,
+        -0.195
+      ],
+      "color": "#397c9e",
+      "tag": "rim"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.04,
+        0.04,
+        0.78
+      ],
+      "pos": [
+        -0.195,
+        0.42,
+        0.455
+      ],
+      "color": "#7a4b26",
+      "tag": "handle"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.04,
+        0.36,
+        0.04
+      ],
+      "pos": [
+        -0.208,
+        0.18,
+        0.13
+      ],
+      "color": "#2a2d32",
+      "tag": "leg"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.21,
+        0.78
+      ],
+      "pos": [
+        0.2925,
+        0.504,
+        -0.195
+      ],
+      "color": "#397c9e",
+      "tag": "rim"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.04,
+        0.04,
+        0.78
+      ],
+      "pos": [
+        0.195,
+        0.42,
+        0.455
+      ],
+      "color": "#7a4b26",
+      "tag": "handle"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.04,
+        0.36,
+        0.04
+      ],
+      "pos": [
+        0.208,
+        0.18,
+        0.13
+      ],
+      "color": "#2a2d32",
+      "tag": "leg"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.18,
+      "height": 0.12,
+      "pos": [
+        0,
+        0.18,
+        -0.52
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.5525,
+        0.04,
+        0.04
+      ],
+      "pos": [
+        0,
+        0.57,
+        0.494
+      ],
+      "color": "#bd4036",
+      "tag": "handle"
+    }
+  ]
+}

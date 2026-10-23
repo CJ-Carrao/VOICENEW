@@ -1,0 +1,72 @@
+{
+  "_comment": "vaso sanitário: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.375,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.14,
+      "height": 0.35,
+      "pos": [
+        0,
+        0.2,
+        -0.08
+      ],
+      "color": "#e6e7df",
+      "tag": "base"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.4,
+        -0.12
+      ],
+      "color": "#eceee5",
+      "tag": "bowl",
+      "_stretch": [
+        0.4,
+        0.25,
+        0.52
+      ]
+    },
+    {
+      "shape": "torus",
+      "radius": 0.18,
+      "inner_radius": 0.12,
+      "pos": [
+        0,
+        0.51,
+        -0.12
+      ],
+      "color": "#ced7d8",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "seat"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.4,
+        0.4,
+        0.18
+      ],
+      "pos": [
+        0,
+        0.55,
+        0.23
+      ],
+      "color": "#eceee5",
+      "tag": "tank"
+    }
+  ]
+}

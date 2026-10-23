@@ -1,0 +1,294 @@
+{
+ "_comment": "Espingarda de cano duplo lado a lado. Gerado por tools/models/gen_arsenal.py.",
+ "anchor": [
+  0,
+  -0.06,
+  0.07
+ ],
+ "joints": {
+  "trigger": [
+   0,
+   0,
+   0
+  ],
+  "muzzle": [
+   0,
+   0,
+   -0.08
+  ]
+ },
+ "muzzle_layout": "row",
+ "pieces": [
+  {
+   "shape": "box",
+   "size": [
+    0.034,
+    0.075,
+    0.07
+   ],
+   "pos": [
+    0,
+    -0.05,
+    0.065
+   ],
+   "color": "#946235",
+   "rot": [
+    -18,
+    0,
+    0
+   ],
+   "tag": "grip",
+   "finish": "wood"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.038,
+    0.06,
+    0.28
+   ],
+   "pos": [
+    0,
+    -0.045,
+    0.23
+   ],
+   "color": "#946235",
+   "rot": [
+    9,
+    0,
+    0
+   ],
+   "tag": "stock",
+   "finish": "wood"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.042,
+    0.12,
+    0.08
+   ],
+   "pos": [
+    0,
+    -0.08,
+    0.37
+   ],
+   "color": "#946235",
+   "rot": [
+    12,
+    0,
+    0
+   ],
+   "tag": "stock",
+   "finish": "wood"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.044,
+    0.124,
+    0.01
+   ],
+   "pos": [
+    0,
+    -0.084,
+    0.413
+   ],
+   "color": "#16171a",
+   "rot": [
+    12,
+    0,
+    0
+   ],
+   "tag": "stock"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.006,
+    0.02,
+    0.006
+   ],
+   "pos": [
+    0,
+    -0.03,
+    -0.002
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    12,
+    0,
+    0
+   ],
+   "tag": "trigger",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.011,
+    0.005,
+    0.06
+   ],
+   "pos": [
+    0,
+    -0.046,
+    0.0
+   ],
+   "color": "#2a2d32",
+   "tag": "trigger"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.011,
+    0.03,
+    0.006
+   ],
+   "pos": [
+    0,
+    -0.031,
+    -0.03
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    12,
+    0,
+    0
+   ],
+   "tag": "trigger"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.006,
+    0.02,
+    0.006
+   ],
+   "pos": [
+    0,
+    -0.03,
+    0.012
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    12,
+    0,
+    0
+   ],
+   "tag": "trigger",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.05,
+    0.05,
+    0.09
+   ],
+   "pos": [
+    0,
+    -0.008,
+    -0.01
+   ],
+   "color": "#c5c9ce",
+   "tag": "receiver",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.051,
+    0.03,
+    0.05
+   ],
+   "pos": [
+    0,
+    -0.012,
+    -0.01
+   ],
+   "color": "#3b3f46",
+   "tag": "receiver"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.012,
+    0.006,
+    0.03
+   ],
+   "pos": [
+    0,
+    0.02,
+    0.035
+   ],
+   "color": "#2a2d32",
+   "tag": "body",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.042,
+    0.026,
+    0.18
+   ],
+   "pos": [
+    0,
+    -0.024,
+    -0.17
+   ],
+   "color": "#946235",
+   "tag": "handguard",
+   "finish": "wood"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0125,
+   "height": 0.71,
+   "pos": [
+    0,
+    0.0,
+    -0.435
+   ],
+   "color": "#1d2128",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "barrel",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.006,
+    0.006,
+    0.7
+   ],
+   "pos": [
+    0,
+    0.012,
+    -0.435
+   ],
+   "color": "#1d2128",
+   "tag": "muzzle",
+   "finish": "metal",
+   "replicate": false
+  },
+  {
+   "shape": "sphere",
+   "radius": 0.003,
+   "pos": [
+    0,
+    0.016,
+    -0.785
+   ],
+   "color": "#c9a227",
+   "tag": "muzzle",
+   "finish": "metal",
+   "replicate": false
+  }
+ ]
+}

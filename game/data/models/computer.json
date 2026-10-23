@@ -1,0 +1,193 @@
+{
+  "_comment": "computador: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.275,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.65,
+        0.385,
+        0.08
+      ],
+      "pos": [
+        0,
+        0.3465,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "display"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.585,
+        0.3245,
+        0.012
+      ],
+      "pos": [
+        0,
+        0.3465,
+        -0.046
+      ],
+      "color": "#4e8cb8",
+      "tag": "screen",
+      "glow": 0.25
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.06,
+        0.121,
+        0.06
+      ],
+      "pos": [
+        0,
+        0.099,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "stem"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.325,
+        0.035,
+        0.42
+      ],
+      "pos": [
+        0,
+        0.025,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "base"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1625,
+        0.44,
+        0.33
+      ],
+      "pos": [
+        0.455,
+        0.22,
+        0.06
+      ],
+      "color": "#2a2d32",
+      "tag": "tower"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.5525,
+        0.025,
+        0.18
+      ],
+      "pos": [
+        0,
+        0.04,
+        -0.24
+      ],
+      "color": "#d6dcd8",
+      "tag": "keyboard"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.065,
+        0.008,
+        0.015
+      ],
+      "pos": [
+        -0.208,
+        0.057,
+        -0.24
+      ],
+      "color": "#2a2d32",
+      "tag": "key"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.065,
+        0.008,
+        0.015
+      ],
+      "pos": [
+        -0.1235,
+        0.057,
+        -0.24
+      ],
+      "color": "#2a2d32",
+      "tag": "key"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.065,
+        0.008,
+        0.015
+      ],
+      "pos": [
+        -0.039,
+        0.057,
+        -0.24
+      ],
+      "color": "#2a2d32",
+      "tag": "key"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.065,
+        0.008,
+        0.015
+      ],
+      "pos": [
+        0.0455,
+        0.057,
+        -0.24
+      ],
+      "color": "#2a2d32",
+      "tag": "key"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.065,
+        0.008,
+        0.015
+      ],
+      "pos": [
+        0.13,
+        0.057,
+        -0.24
+      ],
+      "color": "#2a2d32",
+      "tag": "key"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.065,
+        0.008,
+        0.015
+      ],
+      "pos": [
+        0.2145,
+        0.057,
+        -0.24
+      ],
+      "color": "#2a2d32",
+      "tag": "key"
+    }
+  ]
+}

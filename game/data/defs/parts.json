@@ -1,0 +1,9 @@
+{
+  "_comment": "Partes (DESIGN 4.3, 3.8). 'feeds': em qual mod o número entra ('de 3 bocas' → barrels: 3; 'lança de 3 pontas' → 3 pontas). 'section': qual parte da arma ela é; 'PARTE de ARMA' troca essa parte inteira ('com corpo de bazuca' → parts.front = rocket_launcher). Sem feeds nem section, a parte é só descritiva ('com mira teleguiada').",
+  "barrel": { "feeds": "barrels", "section": "muzzle", "whole_melee": true },
+  "stock":  { "section": "rear", "whole_melee": true },
+  "body":   { "section": "front", "whole_melee": true },
+  "blade":  { "section": "front" },
+  "sight":  {},
+  "tip":    { "feeds": "barrels", "section": "muzzle" }
+}

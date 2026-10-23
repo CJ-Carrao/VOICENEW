@@ -1,0 +1,30 @@
+{
+  "_comment": "Palavras de função da língua. rel: liga a relativa ('que'). and: encadeia comportamentos. of/with/in: complementos. units: unidade → multiplicador. adjuncts: expressões que viram gatilho (trigger) ou campo da ação (set). plural_rules: [sufixo, troca] pro fallback de plural, em ordem.",
+  "rel":  ["que", "q"],
+  "and":  ["e", "e também", "e depois"],
+  "of":   ["de"],
+  "with": ["com"],
+  "in":   ["em"],
+  "units": {
+    "segundo": 1, "segundos": 1, "seg": 1, "s": 1,
+    "minuto": 60, "minutos": 60,
+    "metro": 1, "metros": 1
+  },
+  "adjuncts": {
+    "every":      { "trigger": "every",      "words": ["a cada", "cada"] },
+    "after":      { "trigger": "after",      "words": ["depois de", "após"] },
+    "on_hit":     { "trigger": "on_hit",     "words": ["quando bater", "ao bater", "quando acertar", "ao acertar", "quando encostar", "no impacto"] },
+    "on_command": { "trigger": "on_command", "words": ["quando eu mandar", "quando eu quiser", "quando eu apertar", "no meu comando"] },
+    "on_death":   { "trigger": "on_death",   "words": ["quando morrer", "ao morrer", "quando quebrar", "ao quebrar", "quando for destruído"] },
+    "near_enemy": { "trigger": "near_enemy", "words": ["perto do inimigo", "perto de inimigo", "perto do oponente", "quando chegar perto"] },
+    "aim_enemy":  { "set": { "aim": "enemy" }, "words": ["no inimigo", "nos inimigos", "pro inimigo", "para o inimigo", "no oponente", "em direção ao inimigo",
+  "nos outros",
+  "no outro"
+] },
+    "on_fire": {"trigger": "on_fire", "words": ["a cada bala", "a cada tiro", "por tiro"]}
+  },
+  "plural_rules": [
+    ["ões", "ão"], ["ães", "ão"], ["ais", "al"], ["éis", "el"], ["eis", "il"], ["ns", "m"], ["es", ""], ["s", ""]
+  ],
+  "mounts": {"front": {"sockets": ["mount_front"], "words": ["na frente", "à frente"]}, "back": {"sockets": ["mount_back"], "words": ["atrás", "na traseira"]}, "top": {"sockets": ["mount_top"], "words": ["em cima", "no topo"]}, "bottom": {"sockets": ["mount_bottom"], "words": ["embaixo", "em baixo"]}, "left": {"sockets": ["mount_left"], "words": ["à esquerda", "do lado esquerdo"]}, "right": {"sockets": ["mount_right"], "words": ["à direita", "do lado direito"]}, "both": {"sockets": ["mount_left", "mount_right"], "words": ["de cada lado", "dos dois lados"]}, "hand": {"sockets": ["mount_hand"], "words": ["na mão", "nas mãos"]}}
+}

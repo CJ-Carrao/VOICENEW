@@ -1,0 +1,477 @@
+{
+  "_comment": "tanque: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    1.25,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        2.625,
+        1.05,
+        5.8
+      ],
+      "pos": [
+        0,
+        1.1,
+        0.6
+      ],
+      "color": "#4b5a3a",
+      "tag": "hull"
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        2.8,
+        0.6,
+        1.1
+      ],
+      "pos": [
+        0,
+        1.15,
+        -2.7
+      ],
+      "color": "#4b5a3a",
+      "point": 0.5,
+      "tag": "front_armor"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.65,
+        0.9,
+        6
+      ],
+      "pos": [
+        -1.4,
+        0.55,
+        0.6
+      ],
+      "color": "#141416",
+      "tag": "track"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.65,
+        0.9,
+        6
+      ],
+      "pos": [
+        1.4,
+        0.55,
+        0.6
+      ],
+      "color": "#141416",
+      "tag": "track"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.37,
+      "height": 0.2405,
+      "pos": [
+        -1.575,
+        0.5,
+        -1.7
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.185,
+      "height": 0.2516,
+      "pos": [
+        -1.575,
+        0.5,
+        -1.7
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.37,
+      "height": 0.2405,
+      "pos": [
+        -1.575,
+        0.5,
+        -0.6
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.185,
+      "height": 0.2516,
+      "pos": [
+        -1.575,
+        0.5,
+        -0.6
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.37,
+      "height": 0.2405,
+      "pos": [
+        -1.575,
+        0.5,
+        0.5
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.185,
+      "height": 0.2516,
+      "pos": [
+        -1.575,
+        0.5,
+        0.5
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.37,
+      "height": 0.2405,
+      "pos": [
+        -1.575,
+        0.5,
+        1.6
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.185,
+      "height": 0.2516,
+      "pos": [
+        -1.575,
+        0.5,
+        1.6
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.37,
+      "height": 0.2405,
+      "pos": [
+        -1.575,
+        0.5,
+        2.7
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.185,
+      "height": 0.2516,
+      "pos": [
+        -1.575,
+        0.5,
+        2.7
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.37,
+      "height": 0.2405,
+      "pos": [
+        1.575,
+        0.5,
+        -1.7
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.185,
+      "height": 0.2516,
+      "pos": [
+        1.575,
+        0.5,
+        -1.7
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.37,
+      "height": 0.2405,
+      "pos": [
+        1.575,
+        0.5,
+        -0.6
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.185,
+      "height": 0.2516,
+      "pos": [
+        1.575,
+        0.5,
+        -0.6
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.37,
+      "height": 0.2405,
+      "pos": [
+        1.575,
+        0.5,
+        0.5
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.185,
+      "height": 0.2516,
+      "pos": [
+        1.575,
+        0.5,
+        0.5
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.37,
+      "height": 0.2405,
+      "pos": [
+        1.575,
+        0.5,
+        1.6
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.185,
+      "height": 0.2516,
+      "pos": [
+        1.575,
+        0.5,
+        1.6
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.37,
+      "height": 0.2405,
+      "pos": [
+        1.575,
+        0.5,
+        2.7
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.185,
+      "height": 0.2516,
+      "pos": [
+        1.575,
+        0.5,
+        2.7
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 1,
+      "height": 0.7,
+      "pos": [
+        0,
+        1.9,
+        -0.2
+      ],
+      "color": "#4b5a3a",
+      "tag": "turret"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.12,
+      "height": 3.9,
+      "pos": [
+        0,
+        2,
+        -2.9
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "barrel"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.6,
+        0.13,
+        0.6
+      ],
+      "pos": [
+        0,
+        2.32,
+        0.1
+      ],
+      "color": "#2a2d32",
+      "tag": "hatch"
+    }
+  ]
+}

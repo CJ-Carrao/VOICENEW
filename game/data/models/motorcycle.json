@@ -1,0 +1,143 @@
+{
+  "_comment": "moto: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.575,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.32,
+      "height": 0.12,
+      "pos": [
+        0,
+        0.32,
+        -0.73
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.32,
+      "height": 0.12,
+      "pos": [
+        0,
+        0.32,
+        0.73
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.3,
+        0.27,
+        0.65
+      ],
+      "pos": [
+        0,
+        0.55,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "engine"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.85,
+        -0.2
+      ],
+      "color": "#a43c35",
+      "tag": "tank",
+      "_stretch": [
+        0.38,
+        0.3,
+        0.55
+      ]
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.3,
+        0.1,
+        0.55
+      ],
+      "pos": [
+        0,
+        0.92,
+        0.3
+      ],
+      "color": "#141416",
+      "tag": "seat"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.025,
+      "height": 0.7,
+      "pos": [
+        0,
+        1.1,
+        -0.6
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "handlebar"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.025,
+      "height": 0.75,
+      "pos": [
+        -0.12,
+        0.7,
+        -0.7
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        -12,
+        0,
+        0
+      ],
+      "tag": "fork"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.025,
+      "height": 0.75,
+      "pos": [
+        0.12,
+        0.7,
+        -0.7
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        -12,
+        0,
+        0
+      ],
+      "tag": "fork"
+    }
+  ]
+}

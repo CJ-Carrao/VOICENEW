@@ -1,0 +1,88 @@
+{
+  "_comment": "caixote: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.35,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "pos": [
+        0,
+        0.35,
+        0
+      ],
+      "color": "#7a4b26",
+      "tag": "body",
+      "finish": "wood"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.728,
+        0.07,
+        0.04
+      ],
+      "pos": [
+        0,
+        0.105,
+        -0.357
+      ],
+      "color": "#b28b51",
+      "tag": "brace"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.728,
+        0.07,
+        0.04
+      ],
+      "pos": [
+        0,
+        0.595,
+        -0.357
+      ],
+      "color": "#b28b51",
+      "tag": "brace"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.728,
+        0.07,
+        0.04
+      ],
+      "pos": [
+        0,
+        0.105,
+        0.357
+      ],
+      "color": "#b28b51",
+      "tag": "brace"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.728,
+        0.07,
+        0.04
+      ],
+      "pos": [
+        0,
+        0.595,
+        0.357
+      ],
+      "color": "#b28b51",
+      "tag": "brace"
+    }
+  ]
+}

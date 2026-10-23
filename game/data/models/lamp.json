@@ -1,0 +1,49 @@
+{
+  "_comment": "abajur: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.3,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.105,
+      "height": 0.06,
+      "pos": [
+        0,
+        0.03,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "base"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.51,
+      "pos": [
+        0,
+        0.258,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "pole"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.175,
+      "height": 0.252,
+      "pos": [
+        0,
+        0.468,
+        0
+      ],
+      "color": "#d9c69a",
+      "top_radius": 0.0805,
+      "tag": "shade"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "_comment": "geladeira: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.85,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.6,
+        1.7,
+        0.65
+      ],
+      "pos": [
+        0,
+        0.85,
+        0
+      ],
+      "color": "#d8ddcf",
+      "tag": "body"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.035,
+        0.22,
+        0.04
+      ],
+      "pos": [
+        0.21,
+        0.68,
+        -0.3445
+      ],
+      "color": "#c5c9ce",
+      "tag": "handle"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.035,
+        0.22,
+        0.04
+      ],
+      "pos": [
+        0.21,
+        1.36,
+        -0.3445
+      ],
+      "color": "#c5c9ce",
+      "tag": "handle"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.606,
+        0.018,
+        0.02
+      ],
+      "pos": [
+        0,
+        1.173,
+        -0.3315
+      ],
+      "color": "#2a2d32",
+      "tag": "door_seam"
+    }
+  ]
+}

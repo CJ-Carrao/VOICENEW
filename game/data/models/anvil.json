@@ -1,0 +1,74 @@
+{
+  "_comment": "bigorna: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.2,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.3,
+        0.08,
+        0.4125
+      ],
+      "pos": [
+        0,
+        0.04,
+        0.05
+      ],
+      "color": "#2a2d32",
+      "tag": "base"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.18,
+        0.2,
+        0.225
+      ],
+      "pos": [
+        0,
+        0.18,
+        0.05
+      ],
+      "color": "#2a2d32",
+      "tag": "waist"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.3,
+        0.08,
+        0.4875
+      ],
+      "pos": [
+        0,
+        0.34,
+        0.05
+      ],
+      "color": "#2a2d32",
+      "tag": "face"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.09,
+      "height": 0.3,
+      "pos": [
+        0,
+        0.34,
+        -0.3
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "horn"
+    }
+  ]
+}

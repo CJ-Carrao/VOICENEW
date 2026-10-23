@@ -1,0 +1,60 @@
+{
+  "_comment": "bola de boliche: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.109,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.109,
+      "pos": [
+        0,
+        0.109,
+        0
+      ],
+      "color": "#594b89",
+      "tag": "ball",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.013,
+      "height": 0.002,
+      "pos": [
+        -0.03,
+        0.2138,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "finger_hole"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.013,
+      "height": 0.002,
+      "pos": [
+        0.03,
+        0.2138,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "finger_hole"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.013,
+      "height": 0.002,
+      "pos": [
+        0,
+        0.2083,
+        0.045
+      ],
+      "color": "#2a2d32",
+      "tag": "finger_hole"
+    }
+  ]
+}

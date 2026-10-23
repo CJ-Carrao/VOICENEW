@@ -1,0 +1,158 @@
+{
+  "_comment": "tartaruga: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.121,
+    0
+  ],
+  "sockets": {
+    "mount_hand": [
+      0.21,
+      0.12100000000000001,
+      -0.09
+    ]
+  },
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.11,
+        0
+      ],
+      "color": "#586b38",
+      "tag": "shell",
+      "_stretch": [
+        0.35,
+        0.17600000000000002,
+        0.275
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.11,
+        -0.2
+      ],
+      "color": "#586b38",
+      "tag": "head",
+      "_stretch": [
+        0.12249999999999998,
+        0.08800000000000001,
+        0.15
+      ]
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0352,
+      "height": 0.175,
+      "pos": [
+        -0.1575,
+        0.044,
+        -0.1
+      ],
+      "color": "#586b38",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0352,
+      "height": 0.175,
+      "pos": [
+        -0.1575,
+        0.044,
+        0.1
+      ],
+      "color": "#586b38",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0352,
+      "height": 0.175,
+      "pos": [
+        0.1575,
+        0.044,
+        -0.1
+      ],
+      "color": "#586b38",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0352,
+      "height": 0.175,
+      "pos": [
+        0.1575,
+        0.044,
+        0.1
+      ],
+      "color": "#586b38",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "leg"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.0875,
+      "height": 0.225,
+      "pos": [
+        0,
+        0.088,
+        0.225
+      ],
+      "color": "#586b38",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "tail"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0154,
+      "pos": [
+        -0.0525,
+        0.165,
+        -0.16
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0154,
+      "pos": [
+        0.0525,
+        0.165,
+        -0.16
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    }
+  ]
+}

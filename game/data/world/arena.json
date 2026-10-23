@@ -1,0 +1,361 @@
+{
+ "_comment": "Onde ficam as construções destrutíveis e os morros (Lavoisier L1/L3, DESIGN 17). Arena de 96 m: spawn A em z = +32 olhando pro centro, B em z = -32; o boneco do Treino fica 18 m à frente do A. Cada construção do lado A tem o espelho no lado B (-x, -z, girada 180°). O corredor do meio (|x| < 4) fica livre pra mira. structures: pos [x, y, z] no chão, rot em graus (Y). hills: domos suaves no chão (pos [x, z], radius, height), longe das construções. Tudo volta inteiro a cada round.",
+ "structures": [
+  {
+   "blueprint": "house_brick",
+   "pos": [
+    -16.0,
+    0.0,
+    24.0
+   ],
+   "rot": 90
+  },
+  {
+   "blueprint": "house_wood",
+   "pos": [
+    16.0,
+    0.0,
+    26.0
+   ],
+   "rot": -90
+  },
+  {
+   "blueprint": "house_brick",
+   "pos": [
+    34.0,
+    0.0,
+    8.0
+   ],
+   "rot": -90
+  },
+  {
+   "blueprint": "house_wood",
+   "pos": [
+    -34.0,
+    0.0,
+    12.0
+   ],
+   "rot": 90
+  },
+  {
+   "blueprint": "ruin_wall",
+   "pos": [
+    -9.0,
+    0.0,
+    4.0
+   ],
+   "rot": 90
+  },
+  {
+   "blueprint": "ruin_wall",
+   "pos": [
+    22.0,
+    0.0,
+    2.0
+   ],
+   "rot": 0
+  },
+  {
+   "blueprint": "low_wall",
+   "pos": [
+    -7.0,
+    0.0,
+    18.0
+   ],
+   "rot": 0
+  },
+  {
+   "blueprint": "low_wall",
+   "pos": [
+    8.0,
+    0.0,
+    12.0
+   ],
+   "rot": 15
+  },
+  {
+   "blueprint": "crate",
+   "pos": [
+    7.0,
+    0.0,
+    22.0
+   ],
+   "rot": 15
+  },
+  {
+   "blueprint": "crate",
+   "pos": [
+    -6.0,
+    0.0,
+    28.0
+   ],
+   "rot": 30
+  },
+  {
+   "blueprint": "crate_long",
+   "pos": [
+    -22.0,
+    0.0,
+    14.0
+   ],
+   "rot": -10
+  },
+  {
+   "blueprint": "scrap",
+   "pos": [
+    12.0,
+    0.0,
+    6.0
+   ],
+   "rot": 25
+  },
+  {
+   "blueprint": "scrap",
+   "pos": [
+    -26.0,
+    0.0,
+    30.0
+   ],
+   "rot": 40
+  },
+  {
+   "blueprint": "rock",
+   "pos": [
+    -42.0,
+    0.0,
+    24.0
+   ],
+   "rot": 0
+  },
+  {
+   "blueprint": "rock_big",
+   "pos": [
+    42.0,
+    0.0,
+    30.0
+   ],
+   "rot": 40
+  },
+  {
+   "blueprint": "rock",
+   "pos": [
+    26.0,
+    0.0,
+    38.0
+   ],
+   "rot": 70
+  },
+  {
+   "blueprint": "crate",
+   "pos": [
+    14.0,
+    0.0,
+    -1.0
+   ],
+   "rot": 0
+  },
+  {
+   "blueprint": "house_brick",
+   "pos": [
+    16.0,
+    0.0,
+    -24.0
+   ],
+   "rot": -90
+  },
+  {
+   "blueprint": "house_wood",
+   "pos": [
+    -16.0,
+    0.0,
+    -26.0
+   ],
+   "rot": 90
+  },
+  {
+   "blueprint": "house_brick",
+   "pos": [
+    -34.0,
+    0.0,
+    -8.0
+   ],
+   "rot": 90
+  },
+  {
+   "blueprint": "house_wood",
+   "pos": [
+    34.0,
+    0.0,
+    -12.0
+   ],
+   "rot": -90
+  },
+  {
+   "blueprint": "ruin_wall",
+   "pos": [
+    9.0,
+    0.0,
+    -4.0
+   ],
+   "rot": -90
+  },
+  {
+   "blueprint": "ruin_wall",
+   "pos": [
+    -22.0,
+    0.0,
+    -2.0
+   ],
+   "rot": -180
+  },
+  {
+   "blueprint": "low_wall",
+   "pos": [
+    7.0,
+    0.0,
+    -18.0
+   ],
+   "rot": -180
+  },
+  {
+   "blueprint": "low_wall",
+   "pos": [
+    -8.0,
+    0.0,
+    -12.0
+   ],
+   "rot": -165
+  },
+  {
+   "blueprint": "crate",
+   "pos": [
+    -7.0,
+    0.0,
+    -22.0
+   ],
+   "rot": -165
+  },
+  {
+   "blueprint": "crate",
+   "pos": [
+    6.0,
+    0.0,
+    -28.0
+   ],
+   "rot": -150
+  },
+  {
+   "blueprint": "crate_long",
+   "pos": [
+    22.0,
+    0.0,
+    -14.0
+   ],
+   "rot": 170
+  },
+  {
+   "blueprint": "scrap",
+   "pos": [
+    -12.0,
+    0.0,
+    -6.0
+   ],
+   "rot": -155
+  },
+  {
+   "blueprint": "scrap",
+   "pos": [
+    26.0,
+    0.0,
+    -30.0
+   ],
+   "rot": -140
+  },
+  {
+   "blueprint": "rock",
+   "pos": [
+    42.0,
+    0.0,
+    -24.0
+   ],
+   "rot": -180
+  },
+  {
+   "blueprint": "rock_big",
+   "pos": [
+    -42.0,
+    0.0,
+    -30.0
+   ],
+   "rot": -140
+  },
+  {
+   "blueprint": "rock",
+   "pos": [
+    -26.0,
+    0.0,
+    -38.0
+   ],
+   "rot": -110
+  },
+  {
+   "blueprint": "crate",
+   "pos": [
+    -14.0,
+    0.0,
+    1.0
+   ],
+   "rot": -180
+  }
+ ],
+ "hills": [
+  {
+   "pos": [
+    -40.0,
+    40.0
+   ],
+   "radius": 9.0,
+   "height": 3.0
+  },
+  {
+   "pos": [
+    40.0,
+    42.0
+   ],
+   "radius": 7.0,
+   "height": 2.2
+  },
+  {
+   "pos": [
+    -44.0,
+    -2.0
+   ],
+   "radius": 6.0,
+   "height": 1.8
+  },
+  {
+   "pos": [
+    40.0,
+    -40.0
+   ],
+   "radius": 9.0,
+   "height": 3.0
+  },
+  {
+   "pos": [
+    -40.0,
+    -42.0
+   ],
+   "radius": 7.0,
+   "height": 2.2
+  },
+  {
+   "pos": [
+    44.0,
+    2.0
+   ],
+   "radius": 6.0,
+   "height": 1.8
+  }
+ ]
+}

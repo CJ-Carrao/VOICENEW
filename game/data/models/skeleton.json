@@ -1,0 +1,210 @@
+{
+  "_comment": "esqueleto: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.875,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        1.1375,
+        0
+      ],
+      "color": "#e2dfcf",
+      "tag": "torso",
+      "_stretch": [
+        0.325,
+        0.6124999999999999,
+        0.21
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.7875,
+        0
+      ],
+      "color": "#e2dfcf",
+      "tag": "pelvis",
+      "_stretch": [
+        0.275,
+        0.1925,
+        0.18
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.1575,
+      "pos": [
+        0,
+        1.575,
+        0
+      ],
+      "color": "#e2dfcf",
+      "tag": "head"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0225,
+      "height": 0.7,
+      "pos": [
+        -0.105,
+        0.4025,
+        0
+      ],
+      "color": "#e2dfcf",
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.02,
+      "height": 0.63,
+      "pos": [
+        -0.21,
+        1.05,
+        -0.045
+      ],
+      "color": "#e2dfcf",
+      "tag": "arm"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.035,
+      "pos": [
+        -0.065,
+        1.61,
+        -0.14
+      ],
+      "color": "#2a2d32",
+      "tag": "eye"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0225,
+      "height": 0.7,
+      "pos": [
+        0.105,
+        0.4025,
+        0
+      ],
+      "color": "#e2dfcf",
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.02,
+      "height": 0.63,
+      "pos": [
+        0.21,
+        1.05,
+        -0.045
+      ],
+      "color": "#e2dfcf",
+      "tag": "arm"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.035,
+      "pos": [
+        0.065,
+        1.61,
+        -0.14
+      ],
+      "color": "#2a2d32",
+      "tag": "eye"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.145,
+      "inner_radius": 0.125,
+      "pos": [
+        0,
+        0.9275,
+        0
+      ],
+      "color": "#e2dfcf",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "rib"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.145,
+      "inner_radius": 0.125,
+      "pos": [
+        0,
+        1.0063,
+        0
+      ],
+      "color": "#e2dfcf",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "rib"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.145,
+      "inner_radius": 0.125,
+      "pos": [
+        0,
+        1.085,
+        0
+      ],
+      "color": "#e2dfcf",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "rib"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.145,
+      "inner_radius": 0.125,
+      "pos": [
+        0,
+        1.1638,
+        0
+      ],
+      "color": "#e2dfcf",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "rib"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.145,
+      "inner_radius": 0.125,
+      "pos": [
+        0,
+        1.2425,
+        0
+      ],
+      "color": "#e2dfcf",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "rib"
+    }
+  ]
+}

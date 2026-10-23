@@ -1,0 +1,118 @@
+{
+  "_comment": "flecha: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0,
+    0.05
+  ],
+  "joints": {
+    "trigger": [
+      0,
+      0,
+      0
+    ],
+    "muzzle": [
+      0,
+      0,
+      -0.2625
+    ]
+  },
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.005,
+      "height": 0.675,
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "color": "#7a4b26",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "shaft"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.018,
+      "height": 0.08,
+      "pos": [
+        0,
+        0,
+        -0.3675
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "point"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.055,
+        0.002,
+        0.1
+      ],
+      "pos": [
+        0,
+        0,
+        0.3
+      ],
+      "color": "#bd4036",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "feather"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.055,
+        0.002,
+        0.1
+      ],
+      "pos": [
+        0,
+        0,
+        0.3
+      ],
+      "color": "#bd4036",
+      "rot": [
+        0,
+        0,
+        120
+      ],
+      "tag": "feather"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.055,
+        0.002,
+        0.1
+      ],
+      "pos": [
+        0,
+        0,
+        0.3
+      ],
+      "color": "#bd4036",
+      "rot": [
+        0,
+        0,
+        240
+      ],
+      "tag": "feather"
+    }
+  ]
+}

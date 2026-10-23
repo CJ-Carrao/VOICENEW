@@ -1,0 +1,47 @@
+{
+  "_comment": "pneu: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.325,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "torus",
+      "radius": 0.325,
+      "inner_radius": 0.1885,
+      "pos": [
+        0,
+        0.325,
+        0
+      ],
+      "color": "#141416",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "tire",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.208,
+      "height": 0.132,
+      "pos": [
+        0,
+        0.325,
+        0
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "rim"
+    }
+  ]
+}

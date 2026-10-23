@@ -1,0 +1,336 @@
+{
+  "_comment": "Como cada coisa se fala. words: singular e sinônimos; forms: plurais e variações; name: nome no HUD. as_head/as_arg: id usado quando a palavra é a cabeça do pedido ou argumento de uma ação (mecanismo genérico, vale pra qualquer palavra). Tudo é normalizado na carga: minúsculas, sem acento, hífen vira espaço, número por extenso vira dígito.",
+
+  "pistol": {
+    "name": "pistola",
+    "words": ["pistola", "pistolinha", "arma", "glock", "nove milímetros", "pistola nove"],
+    "forms": ["pistolas", "pistolinhas", "armas", "glocks"]
+  },
+  "shotgun": {
+    "name": "escopeta",
+    "words": ["shotgun", "shot", "escopeta", "espingarda", "doze", "calibre doze", "pump", "escopeta de bomba", "remington"],
+    "forms": ["shotguns", "shots", "escopetas", "espingardas"]
+  },
+  "rifle": {
+    "name": "fuzil",
+    "words": ["fuzil", "ak", "ak47", "ak 47", "aká", "a ká", "aká 47", "a ká 47", "rifle", "kalashnikov", "akzinha"],
+    "forms": ["fuzis", "aks", "rifles", "kalashnikovs"]
+  },
+  "revolver": {
+    "name": "revólver",
+    "words": ["revólver", "trinta e oito", "38", "três oitão", "magnum", "357", "colt", "python", "tambor de seis"],
+    "forms": ["revólveres", "magnums"]
+  },
+  "desert_eagle": {
+    "name": "desert eagle",
+    "words": ["desert eagle", "deagle", "desert", "águia do deserto", "pistola calibre 50", "pistolão"],
+    "forms": ["desert eagles", "deagles"]
+  },
+  "uzi": {
+    "name": "uzi",
+    "words": ["uzi", "submetralhadora", "metralhadorinha", "mini uzi"],
+    "forms": ["uzis", "submetralhadoras"]
+  },
+  "mp5": {
+    "name": "mp5",
+    "words": ["mp5", "mp 5", "emepê cinco", "submetralhadora alemã"],
+    "forms": ["mp5s"]
+  },
+  "tommy_gun": {
+    "name": "thompson",
+    "words": ["thompson", "tommy gun", "tommy", "tombstone", "metralhadora da máfia", "metralhadora de gângster", "metralhadora de gangster", "metralhadora de tambor", "metralhadora do al capone"],
+    "forms": ["thompsons", "tommy guns"]
+  },
+  "m4": {
+    "name": "m4",
+    "words": ["m4", "m16", "ar15", "ar 15", "fuzil americano", "carabina", "m4a1"],
+    "forms": ["m4s", "m16s", "carabinas"]
+  },
+  "sniper": {
+    "name": "sniper",
+    "words": ["sniper", "fuzil de precisão", "rifle de precisão", "awp", "fuzil sniper", "rifle sniper", "fuzil de franco-atirador", "franco-atirador"],
+    "forms": ["snipers"]
+  },
+  "barrett": {
+    "name": "barrett",
+    "words": ["barrett", "calibre 50", "ponto 50", "fuzil antimaterial", "antimaterial", "m82", "cinquentinha"],
+    "forms": ["barretts"]
+  },
+  "double_barrel": {
+    "name": "cano duplo",
+    "words": ["cano duplo", "escopeta de cano duplo", "espingarda de cano duplo", "espingarda de caça", "doze de cano duplo", "doze de dois canos", "cano serrado"],
+    "forms": ["canos duplos"]
+  },
+  "lmg": {
+    "name": "metralhadora",
+    "words": ["metralhadora", "metralhadora leve", "metralhadora pesada", "m249", "minimi", "metralhadora de fita", "metranca"],
+    "forms": ["metralhadoras"]
+  },
+  "minigun": {
+    "name": "minigun",
+    "words": ["minigun", "mini gun", "minigã", "metralhadora giratória", "gatling", "metralhadora gatling", "metralhadora de canos giratórios", "vulcan", "m134"],
+    "forms": ["miniguns"]
+  },
+  "grenade_launcher": {
+    "name": "lança-granadas",
+    "words": ["lança-granadas", "lança granadas", "lança-granada", "lança granada", "lançador de granadas", "m79"],
+    "forms": ["lança-granadas"]
+  },
+  "rpg": {
+    "name": "rpg",
+    "words": ["rpg", "rpg 7", "rpg7", "lança-rojão", "lança rojão", "rojão"],
+    "forms": ["rpgs"]
+  },
+  "rocket_launcher": {
+    "name": "bazuca",
+    "words": ["bazuca", "bazooka", "lança-foguete", "lança-foguetes", "lança-míssil", "lança-mísseis"],
+    "forms": ["bazucas"]
+  },
+  "laser": {
+    "words": ["laser", "lazer", "raio laser"],
+    "forms": ["lasers", "lazers", "raios laser"],
+    "as_head": "laser_pointer",
+    "as_arg": "laser_beam"
+  },
+  "laser_pointer": {
+    "name": "laser",
+    "words": ["apontador laser", "apontador", "ponteiro laser", "caneta laser"],
+    "forms": ["apontadores"]
+  },
+  "laser_beam": {
+    "name": "raio laser",
+    "words": ["feixe", "feixe laser", "feixe de laser", "raio"],
+    "forms": ["feixes", "raios"]
+  },
+
+  "knife": {
+    "name": "faca",
+    "words": ["faca", "faquinha", "faca de combate", "faca de cozinha", "peixeira", "adaga", "punhal", "canivete", "ka-bar", "kabar", "baioneta"],
+    "forms": ["facas", "faquinhas", "peixeiras", "adagas", "punhais", "canivetes", "baionetas"]
+  },
+  "machete": {
+    "name": "facão",
+    "words": ["facão", "machete", "terçado"],
+    "forms": ["facões", "machetes", "terçados"]
+  },
+  "katana": {
+    "name": "katana",
+    "words": ["katana", "catana", "espada japonesa", "espada de samurai", "espada samurai", "sabre japonês"],
+    "forms": ["katanas", "catanas", "espadas japonesas"]
+  },
+  "sword": {
+    "name": "espada",
+    "words": ["espada", "espada longa", "espadão", "montante", "espada medieval", "sabre", "gládio"],
+    "forms": ["espadas", "espadões", "sabres", "gládios"]
+  },
+  "axe": {
+    "name": "machado",
+    "words": ["machado", "machadinha", "machado de bombeiro", "machado de guerra", "acha"],
+    "forms": ["machados", "machadinhas"]
+  },
+  "sledgehammer": {
+    "name": "marreta",
+    "words": ["marreta", "marretão", "martelo de guerra", "malho", "marreta de demolição"],
+    "forms": ["marretas", "malhos"]
+  },
+  "bat": {
+    "name": "taco",
+    "words": ["taco", "taco de beisebol", "taco de baseball", "bastão", "porrete", "cassetete", "pedaço de pau"],
+    "forms": ["tacos", "bastões", "porretes", "cassetetes"]
+  },
+  "spear": {
+    "name": "lança",
+    "words": ["lança", "lança de guerra", "zagaia", "azagaia", "pique"],
+    "forms": ["lanças", "zagaias", "azagaias"]
+  },
+  "chainsaw": {
+    "name": "motosserra",
+    "words": ["motosserra", "serra elétrica"],
+    "forms": ["motosserras", "serras elétricas"]
+  },
+  "mace": {
+    "name": "maça",
+    "words": ["maça", "clava", "maça medieval", "maça de guerra", "maça de espinhos", "estrela da manhã", "morning star"],
+    "forms": ["maças", "clavas"]
+  },
+  "magazine": {
+    "name": "pente",
+    "words": ["pente", "carregador", "magazine", "munição", "recarga", "pente de munição", "carga"],
+    "forms": ["pentes", "carregadores", "magazines", "munições", "recargas", "cargas"]
+  },
+  "red_dot": { "name": "mira de ponto vermelho", "words": ["mira de ponto vermelho", "ponto vermelho", "red dot", "mira holográfica", "holográfica", "mira reflexa"], "forms": ["miras de ponto vermelho", "miras holográficas"] },
+  "acog": { "name": "luneta", "words": ["luneta", "acog", "mira de aumento", "luneta média", "mira 4x"], "forms": ["lunetas"] },
+  "sniper_scope": { "name": "luneta de sniper", "words": ["luneta de sniper", "luneta grande", "mira telescópica", "luneta de precisão", "luneta 8x"], "forms": ["lunetas de sniper", "lunetas grandes"] },
+  "suppressor": { "name": "silenciador", "words": ["silenciador", "supressor", "abafador"], "forms": ["silenciadores", "supressores"] },
+  "compensator": { "name": "compensador", "words": ["compensador"], "forms": ["compensadores"] },
+  "muzzle_brake": { "name": "freio de boca", "words": ["freio de boca", "quebra-chamas", "freio de recuo"], "forms": ["freios de boca"] },
+  "foregrip": { "name": "empunhadura vertical", "words": ["empunhadura vertical", "empunhadura frontal", "pegador", "grip", "foregrip"], "forms": ["empunhaduras verticais", "pegadores"] },
+  "bipod": { "name": "bipé", "words": ["bipé", "tripé"], "forms": ["bipés", "tripés"] },
+  "laser_sight": { "name": "mira laser", "words": ["mira laser", "laser de mira", "mira a laser"], "forms": ["miras laser"] },
+  "flashlight": { "name": "lanterna", "words": ["lanterna", "lanterna tática", "farol"], "forms": ["lanternas"] },
+  "bullet": {
+    "name": "bala",
+    "words": ["bala", "projétil", "tiro", "cartucho", "chumbo"],
+    "forms": ["balas", "projéteis", "tiros", "cartuchos"]
+  },
+  "missile": {
+    "name": "míssil",
+    "words": ["míssil", "foguete"],
+    "forms": ["mísseis", "foguetes"]
+  },
+  "grenade": {
+    "name": "granada",
+    "words": ["granada"],
+    "forms": ["granadas"]
+  },
+  "bomb": {
+    "name": "bomba",
+    "words": ["bomba"],
+    "forms": ["bombas"]
+  },
+
+  "wall": {
+    "name": "parede",
+    "words": ["parede", "muro", "muralha", "barreira"],
+    "forms": ["paredes", "muros", "muralhas", "barreiras"]
+  },
+  "tower": {
+    "name": "torre",
+    "words": ["torre"],
+    "forms": ["torres"]
+  },
+
+  "pigeon": {
+    "name": "pombo",
+    "words": ["pombo", "pomba", "passarinho", "pássaro", "ave"],
+    "forms": ["pombos", "pombas", "passarinhos", "pássaros", "aves"]
+  },
+  "drone": {
+    "name": "drone",
+    "words": ["drone", "quadricóptero"],
+    "forms": ["drones", "quadricópteros"]
+  },
+  "plane": {
+    "name": "avião",
+    "words": ["avião", "jato", "aeronave"],
+    "forms": ["aviões", "jatos", "aeronaves"]
+  },
+  "monkey": {"name": "macaco", "words": ["macaco", "macaca", "símio"], "forms": ["macacos", "macacas", "símios"]},
+  "shield": {"name": "escudo", "words": ["escudo", "escudo tático", "escudo medieval"], "forms": ["escudos", "escudos táticos", "escudos medievais"]},
+  "gorilla": {"name": "gorila", "words": ["gorila", "grande símio"], "forms": ["gorilas"]},
+  "bear": {"name": "urso", "words": ["urso", "ursa", "urso pardo"], "forms": ["ursos", "ursas"]},
+  "dog": {"name": "cachorro", "words": ["cachorro", "cachorra", "cão", "cadela"], "forms": ["cachorros", "cachorras", "cães", "cadelas"]},
+  "wolf": {"name": "lobo", "words": ["lobo", "loba"], "forms": ["lobos", "lobas"]},
+  "horse": {"name": "cavalo", "words": ["cavalo", "égua", "potro"], "forms": ["cavalos", "éguas", "potros"]},
+  "unicorn": {"name": "unicórnio", "words": ["unicórnio", "unicórnia"], "forms": ["unicórnios", "unicórnias"]},
+  "shark": {"name": "tubarão", "words": ["tubarão", "tubarão branco"], "forms": ["tubarões"]},
+  "eagle": {"name": "águia", "words": ["águia", "águia careca"], "forms": ["águias"]},
+  "chicken": {"name": "galinha", "words": ["galinha", "galo", "frango"], "forms": ["galinhas", "galos", "frangos"]},
+  "snake": {"name": "cobra", "words": ["cobra", "serpente"], "forms": ["cobras", "serpentes"]},
+  "spider": {"name": "aranha", "words": ["aranha", "tarântula"], "forms": ["aranhas", "tarântulas"]},
+  "trex": {"name": "tiranossauro", "words": ["tiranossauro", "tiranossauro rex", "t rex", "t-rex"], "forms": ["tiranossauros"]},
+  "cat": {"name": "gato", "words": ["gato", "gata", "gatinho"], "forms": ["gatos", "gatas", "gatinhos"]},
+  "rabbit": {"name": "coelho", "words": ["coelho", "coelha", "lebre"], "forms": ["coelhos", "coelhas", "lebres"]},
+  "fox": {"name": "raposa", "words": ["raposa", "raposo"], "forms": ["raposas", "raposos"]},
+  "boar": {"name": "javali", "words": ["javali", "porco selvagem"], "forms": ["javalis"]},
+  "crocodile": {"name": "crocodilo", "words": ["crocodilo", "jacaré"], "forms": ["crocodilos", "jacarés"]},
+  "elephant": {"name": "elefante", "words": ["elefante", "elefanta"], "forms": ["elefantes", "elefantas"]},
+  "lion": {"name": "leão", "words": ["leão", "leoa"], "forms": ["leões", "leoas"]},
+  "tiger": {"name": "tigre", "words": ["tigre", "tigresa"], "forms": ["tigres", "tigresas"]},
+  "penguin": {"name": "pinguim", "words": ["pinguim", "pinguim imperador"], "forms": ["pinguins"]},
+  "turtle": {"name": "tartaruga", "words": ["tartaruga", "jabuti"], "forms": ["tartarugas", "jabutis"]},
+  "goat": {"name": "cabra", "words": ["cabra", "bode", "cabrito"], "forms": ["cabras", "bodes", "cabritos"]},
+  "deer": {"name": "cervo", "words": ["cervo", "cerva", "veado", "veada"], "forms": ["cervos", "cervas", "veados", "veadas"]},
+  "crab": {"name": "caranguejo", "words": ["caranguejo", "siri"], "forms": ["caranguejos", "siris"]},
+  "scorpion": {"name": "escorpião", "words": ["escorpião", "lacrau"], "forms": ["escorpiões", "lacraus"]},
+  "frog": {"name": "sapo", "words": ["sapo", "rã", "perereca"], "forms": ["sapos", "rãs", "pererecas"]},
+  "helicopter": {"name": "helicóptero", "words": ["helicóptero", "helicóptero de combate"], "forms": ["helicópteros", "helicópteros de combate"]},
+  "tank": {"name": "tanque", "words": ["tanque", "tanque de guerra", "blindado"], "forms": ["tanques", "tanques de guerra", "blindados"]},
+  "car": {"name": "carro", "words": ["carro", "automóvel", "sedã"], "forms": ["carros", "automóveis", "sedãs"]},
+  "motorcycle": {"name": "moto", "words": ["moto", "motocicleta"], "forms": ["motos", "motocicletas"]},
+  "skateboard": {"name": "skate", "words": ["skate", "prancha de skate"], "forms": ["skates", "pranchas de skate"]},
+  "cannon": {"name": "canhão", "words": ["canhão", "canhão de artilharia"], "forms": ["canhões", "canhões de artilharia"]},
+  "catapult": {"name": "catapulta", "words": ["catapulta", "máquina de cerco"], "forms": ["catapultas", "máquinas de cerco"]},
+  "fan": {"name": "ventilador", "words": ["ventilador", "ventilador industrial"], "forms": ["ventiladores"]},
+  "barrel": {"name": "barril", "words": ["barril", "tonel"], "forms": ["barris", "tonéis"]},
+  "gas_cylinder": {"name": "botijão", "words": ["botijão", "botijão de gás", "bujão de gás", "cilindro de gás"], "forms": ["botijões", "botijões de gás", "bujões de gás", "cilindros de gás", "botijões de gás", "bujões de gás", "cilindros de gás"]},
+  "anvil": {"name": "bigorna", "words": ["bigorna", "bigorna pesada"], "forms": ["bigornas"]},
+  "cage": {"name": "jaula", "words": ["jaula", "gaiola"], "forms": ["jaulas", "gaiolas"]},
+  "trampoline": {"name": "trampolim", "words": ["trampolim", "cama elástica", "pula pula"], "forms": ["trampolins"]},
+  "spike_trap": {"name": "espinhos", "words": ["espinhos", "armadilha de espinhos", "espinho"], "forms": ["espinhos", "armadilhas de espinhos"]},
+  "fridge": {"name": "geladeira", "words": ["geladeira", "refrigerador"], "forms": ["geladeiras", "refrigeradores"]},
+  "piano": {"name": "piano", "words": ["piano", "piano de armário"], "forms": ["pianos", "pianos de armário"]},
+  "toilet": {"name": "vaso sanitário", "words": ["vaso sanitário", "privada", "patente"], "forms": ["privadas", "patentes", "vasos sanitários"]},
+  "tire": {"name": "pneu", "words": ["pneu", "pneu de carro"], "forms": ["pneus", "pneus de carro"]},
+  "banana": {"name": "banana", "words": ["banana", "banana prata"], "forms": ["bananas"]},
+  "watermelon": {"name": "melancia", "words": ["melancia", "melancia inteira"], "forms": ["melancias"]},
+  "boulder": {"name": "pedregulho", "words": ["pedregulho", "rocha", "pedra", "pedra grande"], "forms": ["pedregulhos", "rochas", "pedras"]},
+  "magnet": {"name": "ímã", "words": ["ímã", "imã", "magneto", "eletroímã"], "forms": ["ímãs", "imãs", "magnetos", "eletroímãs"]},
+  "sphere": {"name": "esfera", "words": ["esfera", "esfera sólida"], "forms": ["esferas"]},
+  "chair": {"name": "cadeira", "words": ["cadeira", "cadeira de madeira"], "forms": ["cadeiras", "cadeiras de madeira"]},
+  "table": {"name": "mesa", "words": ["mesa", "mesa de madeira"], "forms": ["mesas", "mesas de madeira"]},
+  "sofa": {"name": "sofá", "words": ["sofá", "sofá de dois lugares"], "forms": ["sofás", "sofás de dois lugares"]},
+  "traffic_cone": {"name": "cone", "words": ["cone", "cone de trânsito"], "forms": ["cones", "cones de trânsito"]},
+  "basketball": {"name": "bola de basquete", "words": ["bola de basquete", "bola"], "forms": ["bolas de basquete", "bolas", "bolas de basquete"]},
+  "log": {"name": "tronco", "words": ["tronco", "tronco de árvore"], "forms": ["troncos", "troncos de árvore"]},
+  "crate": {"name": "caixote", "words": ["caixote", "caixa de madeira"], "forms": ["caixotes", "caixas de madeira"]},
+  "traffic_barrier": {"name": "barreira de trânsito", "words": ["barreira de trânsito", "barreira de concreto"], "forms": ["barreiras de trânsito", "barreiras de concreto", "barreiras de trânsito", "barreiras de concreto"]},
+  "anchor": {"name": "âncora", "words": ["âncora", "âncora de navio"], "forms": ["âncoras", "âncoras de navio"]},
+  "bell": {"name": "sino", "words": ["sino", "sino de bronze"], "forms": ["sinos", "sinos de bronze"]},
+  "hammer": {"name": "martelo", "words": ["martelo", "martelo de unha"], "forms": ["martelos", "martelos de unha"]},
+  "boomerang": {"name": "bumerangue", "words": ["bumerangue", "boomerang"], "forms": ["bumerangues", "boomerangs"]},
+  "shopping_cart": {"name": "carrinho de supermercado", "words": ["carrinho de supermercado", "carrinho de compras"], "forms": ["carrinhos de supermercado", "carrinhos de compras", "carrinhos de supermercado", "carrinhos de compras"]},
+  "wheelchair": {"name": "cadeira de rodas", "words": ["cadeira de rodas"], "forms": ["cadeiras de rodas", "cadeiras de rodas"]},
+  "bed": {"name": "cama", "words": ["cama", "cama de solteiro"], "forms": ["camas", "camas de solteiro"]},
+  "tv": {"name": "televisão", "words": ["televisão", "televisor"], "forms": ["televisões", "televisores"]},
+  "computer": {"name": "computador", "words": ["computador", "pc"], "forms": ["computadores", "pcs"]},
+  "microwave": {"name": "micro-ondas", "words": ["micro-ondas", "forno micro-ondas"], "forms": []},
+  "washing_machine": {"name": "máquina de lavar", "words": ["máquina de lavar", "lavadora"], "forms": ["máquinas de lavar", "lavadoras", "máquinas de lavar"]},
+  "trash_can": {"name": "lixeira", "words": ["lixeira", "cesto de lixo"], "forms": ["lixeiras", "cestos de lixo"]},
+  "street_light": {"name": "poste", "words": ["poste", "poste de luz"], "forms": ["postes", "postes de luz", "postes de luz"]},
+  "stop_sign": {"name": "placa de pare", "words": ["placa de pare", "placa de trânsito"], "forms": ["placas de pare", "placas de trânsito", "placas de pare"]},
+  "bowling_ball": {"name": "bola de boliche", "words": ["bola de boliche"], "forms": ["bolas de boliche", "bolas de boliche"]},
+  "soccer_ball": {"name": "bola de futebol", "words": ["bola de futebol"], "forms": ["bolas de futebol", "bolas de futebol"]},
+  "brick": {"name": "tijolo", "words": ["tijolo", "tijolo de barro"], "forms": ["tijolos", "tijolos de barro"]},
+  "cinder_block": {"name": "bloco de concreto", "words": ["bloco de concreto"], "forms": ["blocos de concreto", "blocos de concreto"]},
+  "pan": {"name": "frigideira", "words": ["frigideira", "panela de ferro"], "forms": ["frigideiras", "panelas de ferro"]},
+  "guitar": {"name": "guitarra", "words": ["guitarra", "violão"], "forms": ["guitarras", "violões"]},
+  "chains": {"name": "correntes", "words": ["correntes", "corrente de ferro"], "forms": ["correntes", "correntes de ferro"]},
+  "bear_trap": {"name": "armadilha de pressão", "words": ["armadilha de pressão", "armadilha de urso"], "forms": ["armadilhas de pressão", "armadilhas de urso", "armadilhas de pressão", "armadilhas de urso"]},
+  "landmine": {"name": "mina terrestre", "words": ["mina terrestre", "minas terrestres"], "forms": ["minas terrestres"]},
+  "c4": {"name": "explosivo C4", "words": ["explosivo C4", "c4"], "forms": ["c4s"]},
+  "molotov": {"name": "coquetel molotov", "words": ["coquetel molotov", "molotov"], "forms": ["molotovs", "coquetéis molotov"]},
+  "crossbow": {"name": "besta", "words": ["besta", "besta medieval"], "forms": ["bestas"]},
+  "bow": {"name": "arco", "words": ["arco", "arco de caça"], "forms": ["arcos", "arcos de caça"]},
+  "flamethrower": {"name": "lança-chamas", "words": ["lança-chamas", "lanca chamas"], "forms": []},
+  "mortar": {"name": "morteiro", "words": ["morteiro"], "forms": ["morteiros"]},
+  "bull": {"name": "touro", "words": ["touro", "boi"], "forms": ["touros", "bois"]},
+  "bee": {"name": "abelha", "words": ["abelha", "vespa"], "forms": ["abelhas", "vespas"]},
+  "rat": {"name": "rato", "words": ["rato", "rata"], "forms": ["ratos", "ratas"]},
+  "zombie": {"name": "zumbi", "words": ["zumbi", "morto-vivo"], "forms": ["zumbis"]},
+  "skeleton": {"name": "esqueleto", "words": ["esqueleto", "caveira"], "forms": ["esqueletos", "caveiras"]},
+  "dummy": {"name": "boneco de treino", "words": ["boneco de treino", "manequim"], "forms": ["bonecos de treino", "manequins", "bonecos de treino"]},
+  "bucket": {"name": "balde", "words": ["balde"], "forms": ["baldes"]},
+  "pipe": {"name": "tubo", "words": ["tubo", "cano de metal"], "forms": ["tubos", "canos de metal"]},
+  "mattress": {"name": "colchão", "words": ["colchão", "colchão elástico"], "forms": ["colchões"]},
+  "fire_extinguisher": {"name": "extintor", "words": ["extintor", "extintor de incêndio"], "forms": ["extintores", "extintores de incêndio"]},
+  "safe": {"name": "cofre", "words": ["cofre"], "forms": ["cofres"]},
+  "vending_machine": {"name": "máquina de refrigerante", "words": ["máquina de refrigerante", "máquina de vendas"], "forms": ["máquinas de refrigerante", "máquinas de vendas"]},
+  "shipping_container": {"name": "contêiner", "words": ["contêiner", "container"], "forms": ["contêineres", "containeres"]},
+  "pallet": {"name": "palete", "words": ["palete", "pallet"], "forms": ["paletes", "pallets"]},
+  "wheelbarrow": {"name": "carrinho de mão", "words": ["carrinho de mão"], "forms": ["carrinhos de mão"]},
+  "bicycle": {"name": "bicicleta", "words": ["bicicleta", "bike"], "forms": ["bicicletas", "bikes"]},
+  "scooter": {"name": "patinete", "words": ["patinete"], "forms": ["patinetes"]},
+  "forklift": {"name": "empilhadeira", "words": ["empilhadeira"], "forms": ["empilhadeiras"]},
+  "ambulance": {"name": "ambulância", "words": ["ambulância"], "forms": ["ambulâncias"]},
+  "bus": {"name": "ônibus", "words": ["ônibus", "busão"], "forms": ["ônibus", "busões"]},
+  "tractor": {"name": "trator", "words": ["trator"], "forms": ["tratores"]},
+  "traffic_light": {"name": "semáforo", "words": ["semáforo", "sinaleira"], "forms": ["semáforos", "sinaleiras"]},
+  "lamp": {"name": "abajur", "words": ["abajur", "luminária"], "forms": ["abajures", "luminárias"]},
+  "bookshelf": {"name": "estante", "words": ["estante", "estante de livros"], "forms": ["estantes", "estantes de livros"]},
+  "bathtub": {"name": "banheira", "words": ["banheira"], "forms": ["banheiras"]},
+  "rubber_duck": {"name": "pato de borracha", "words": ["pato de borracha", "patinho de borracha"], "forms": ["patos de borracha", "patinhos de borracha", "patos de borracha"]},
+  "bowling_pin": {"name": "pino de boliche", "words": ["pino de boliche"], "forms": ["pinos de boliche", "pinos de boliche"]},
+  "arrow": {"name": "flecha", "words": ["flecha", "seta de besta"], "forms": ["flechas", "setas de besta"]},
+  "bunker": {"name": "bunker", "words": ["bunker", "casamata"], "forms": ["bunkeres", "casamatas"]}
+}

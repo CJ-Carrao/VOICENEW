@@ -1,0 +1,7 @@
+{
+  "_comment": "Onde as mãos do robô pegam a coisa da mão (arma única, DESIGN 18.4): pelo tag das peças do modelo. main = mão direita (centro das peças com o primeiro tag da lista que existir); support = mão esquerda (centro das peças desses tags; a empunhadura acessória entra aqui). Sem apoio e com cabo comprido (arma branca de duas mãos), a esquerda pega o cabo two_hand_handle_frac do comprimento mais pra trás (pro pomo), se o cabo tem pelo menos two_hand_handle_m.",
+  "main": ["grip", "handle"],
+  "support": ["handguard", "pump"],
+  "two_hand_handle_m": 0.2,
+  "two_hand_handle_frac": 0.35
+}

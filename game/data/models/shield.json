@@ -1,0 +1,89 @@
+{
+  "_comment": "escudo: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0,
+    0.04
+  ],
+  "joints": {
+    "trigger": [
+      0,
+      0,
+      0
+    ],
+    "muzzle": [
+      0,
+      0,
+      -0.24
+    ]
+  },
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.55,
+        0.8,
+        0.04
+      ],
+      "pos": [
+        0,
+        0,
+        -0.025
+      ],
+      "color": "#566575",
+      "tag": "body",
+      "finish": "metal"
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        0.55,
+        0.15,
+        0.04
+      ],
+      "pos": [
+        0,
+        -0.46,
+        -0.025
+      ],
+      "color": "#566575",
+      "point": 0.5,
+      "rot": [
+        0,
+        0,
+        180
+      ],
+      "tag": "base"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.012,
+      "height": 0.15,
+      "pos": [
+        0,
+        0,
+        0.03
+      ],
+      "color": "#141416",
+      "tag": "grip"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.4,
+        0.045,
+        0.05
+      ],
+      "pos": [
+        0,
+        0.27,
+        -0.03
+      ],
+      "color": "#91a7b2",
+      "tag": "visor",
+      "finish": "glass"
+    }
+  ]
+}

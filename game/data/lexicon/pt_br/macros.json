@@ -1,0 +1,1138 @@
+{
+  "_comment": "Atalhos: viram uma frase ANTES do parse (com proteção contra recursão). Conteúdo novo sem código. O valor pode ser a frase direto, ou { to, words } pra ter variações.",
+  "bombardeiro": {
+    "to": "avião que solta bombas",
+    "words": [
+      "bombardeiro",
+      "bombardeiros"
+    ]
+  },
+  "torreta": {
+    "to": "torre que atira no inimigo",
+    "words": [
+      "torreta",
+      "torretas",
+      "sentinela",
+      "sentinelas"
+    ]
+  },
+  "mina": {
+    "to": "granada que explode perto do inimigo",
+    "words": [
+      "mina",
+      "minas"
+    ]
+  },
+  "kamikaze": {
+    "to": "drone de controle remoto que explode",
+    "words": [
+      "kamikaze",
+      "drone kamikaze",
+      "drones kamikaze"
+    ]
+  },
+  "pombo-bomba": {
+    "to": "pombo explosivo que persegue o inimigo",
+    "words": [
+      "pombo-bomba",
+      "pombos-bomba"
+    ]
+  },
+  "tridente": {
+    "to": "lança de 3 pontas",
+    "words": [
+      "tridente",
+      "tridentes"
+    ]
+  },
+  "tambor": {
+    "to": "pente gigante",
+    "words": [
+      "tambor",
+      "pente de tambor",
+      "carregador de tambor",
+      "fita de munição",
+      "cinto de munição"
+    ]
+  },
+  "sabre de luz": {
+    "to": "espada de laser que incendeia",
+    "words": [
+      "sabre de luz"
+    ]
+  },
+  "buraco negro": {
+    "to": "esfera magnética que explode depois de 5 segundos",
+    "words": [
+      "buraco negro"
+    ]
+  },
+  "cão de guarda": {
+    "to": "cachorro que persegue o inimigo e golpeia",
+    "words": [
+      "cão de guarda"
+    ]
+  },
+  "míssil nuclear": {
+    "to": "míssil gigante explosivo",
+    "words": [
+      "míssil nuclear"
+    ]
+  },
+  "armadilha de urso": {
+    "to": "armadilha de pressão",
+    "words": [
+      "armadilha de urso"
+    ]
+  },
+  "macaco artilheiro": {
+    "to": "macaco com metralhadora",
+    "words": [
+      "macaco artilheiro"
+    ]
+  },
+  "gorila de guerra": {
+    "to": "gorila com marreta",
+    "words": [
+      "gorila de guerra"
+    ]
+  },
+  "urso polar": {
+    "to": "urso de gelo que golpeia",
+    "words": [
+      "urso polar"
+    ]
+  },
+  "cavalaria blindada": {
+    "to": "cavalo com escudo na frente",
+    "words": [
+      "cavalaria blindada"
+    ]
+  },
+  "unicórnio de guerra": {
+    "to": "unicórnio com metralhadora de cada lado",
+    "words": [
+      "unicórnio de guerra"
+    ]
+  },
+  "unicórnio aéreo": {
+    "to": "unicórnio que explode em helicóptero",
+    "words": [
+      "unicórnio aéreo"
+    ]
+  },
+  "tubarão voador": {
+    "to": "tubarão que voa e persegue o inimigo",
+    "words": [
+      "tubarão voador"
+    ]
+  },
+  "águia bombardeira": {
+    "to": "águia que solta granadas",
+    "words": [
+      "águia bombardeira"
+    ]
+  },
+  "galinha explosiva": {
+    "to": "galinha instável que persegue o inimigo",
+    "words": [
+      "galinha explosiva"
+    ]
+  },
+  "cobra congelante": {
+    "to": "cobra de gelo que golpeia",
+    "words": [
+      "cobra congelante"
+    ]
+  },
+  "aranha saltadora": {
+    "to": "aranha de borracha que persegue o inimigo",
+    "words": [
+      "aranha saltadora"
+    ]
+  },
+  "dinossauro de cerco": {
+    "to": "tiranossauro com canhão em cima",
+    "words": [
+      "dinossauro de cerco"
+    ]
+  },
+  "gato ninja": {
+    "to": "gato com katana",
+    "words": [
+      "gato ninja"
+    ]
+  },
+  "coelho saltitante": {
+    "to": "coelho de borracha",
+    "words": [
+      "coelho saltitante"
+    ]
+  },
+  "raposa incendiária": {
+    "to": "raposa de fogo que golpeia",
+    "words": [
+      "raposa incendiária"
+    ]
+  },
+  "javali blindado": {
+    "to": "javali com escudo na frente",
+    "words": [
+      "javali blindado"
+    ]
+  },
+  "jacaré de gelo": {
+    "to": "crocodilo de gelo que golpeia",
+    "words": [
+      "jacaré de gelo"
+    ]
+  },
+  "elefante artilheiro": {
+    "to": "elefante com canhão em cima",
+    "words": [
+      "elefante artilheiro"
+    ]
+  },
+  "leão elétrico": {
+    "to": "leão magnético que golpeia",
+    "words": [
+      "leão elétrico"
+    ]
+  },
+  "tigre de aço": {
+    "to": "tigre com escudo na frente",
+    "words": [
+      "tigre de aço"
+    ]
+  },
+  "pinguim guerreiro": {
+    "to": "pinguim com lança",
+    "words": [
+      "pinguim guerreiro"
+    ]
+  },
+  "tartaruga fortaleza": {
+    "to": "tartaruga com torre em cima",
+    "words": [
+      "tartaruga fortaleza"
+    ]
+  },
+  "cabra explosiva": {
+    "to": "cabra instável que persegue o inimigo",
+    "words": [
+      "cabra explosiva"
+    ]
+  },
+  "cervo de combate": {
+    "to": "cervo com metralhadora",
+    "words": [
+      "cervo de combate"
+    ]
+  },
+  "caranguejo gigante": {
+    "to": "caranguejo enorme que golpeia",
+    "words": [
+      "caranguejo gigante"
+    ]
+  },
+  "sapo foguete": {
+    "to": "sapo que atira mísseis",
+    "words": [
+      "sapo foguete"
+    ]
+  },
+  "escudo repelente": {
+    "to": "escudo que empurra a cada 1 segundo",
+    "words": [
+      "escudo repelente"
+    ]
+  },
+  "bumerangue incendiário": {
+    "to": "bumerangue de fogo",
+    "words": [
+      "bumerangue incendiário"
+    ]
+  },
+  "lança glacial": {
+    "to": "lança de gelo longa",
+    "words": [
+      "lança glacial"
+    ]
+  },
+  "machado vulcânico": {
+    "to": "machado de fogo explosivo",
+    "words": [
+      "machado vulcânico"
+    ]
+  },
+  "serra magnética": {
+    "to": "motosserra magnética",
+    "words": [
+      "serra magnética"
+    ]
+  },
+  "espada saltadora": {
+    "to": "espada de borracha",
+    "words": [
+      "espada saltadora"
+    ]
+  },
+  "helicóptero artilheiro": {
+    "to": "helicóptero com metralhadora de cada lado",
+    "words": [
+      "helicóptero artilheiro"
+    ]
+  },
+  "tanque lançador": {
+    "to": "tanque que atira granadas",
+    "words": [
+      "tanque lançador"
+    ]
+  },
+  "carro triturador": {
+    "to": "carro com motosserra na frente",
+    "words": [
+      "carro triturador"
+    ]
+  },
+  "moto de escolta": {
+    "to": "moto com metralhadora em cima",
+    "words": [
+      "moto de escolta"
+    ]
+  },
+  "skate explosivo": {
+    "to": "skate instável",
+    "words": [
+      "skate explosivo"
+    ]
+  },
+  "canhão de gelo": {
+    "to": "canhão que atira pedregulhos de gelo",
+    "words": [
+      "canhão de gelo"
+    ]
+  },
+  "catapulta incendiária": {
+    "to": "catapulta que atira barris de fogo",
+    "words": [
+      "catapulta incendiária"
+    ]
+  },
+  "ventilador glacial": {
+    "to": "ventilador de gelo que congela a cada 1 segundo",
+    "words": [
+      "ventilador glacial"
+    ]
+  },
+  "barril ambulante": {
+    "to": "barril que persegue o inimigo e explode",
+    "words": [
+      "barril ambulante"
+    ]
+  },
+  "botijão voador": {
+    "to": "botijão que voa e explode perto do inimigo",
+    "words": [
+      "botijão voador"
+    ]
+  },
+  "bigorna orbital": {
+    "to": "bigorna que orbita",
+    "words": [
+      "bigorna orbital"
+    ]
+  },
+  "trampolim congelante": {
+    "to": "trampolim de gelo",
+    "words": [
+      "trampolim congelante"
+    ]
+  },
+  "campo de espinhos": {
+    "to": "espinhos largos que golpeiam",
+    "words": [
+      "campo de espinhos"
+    ]
+  },
+  "geladeira voadora": {
+    "to": "geladeira que voa e solta granadas",
+    "words": [
+      "geladeira voadora"
+    ]
+  },
+  "piano de guerra": {
+    "to": "piano com metralhadora em cima",
+    "words": [
+      "piano de guerra"
+    ]
+  },
+  "privada lançadora": {
+    "to": "privada que atira bananas",
+    "words": [
+      "privada lançadora"
+    ]
+  },
+  "pneu saltador": {
+    "to": "pneu de borracha",
+    "words": [
+      "pneu saltador"
+    ]
+  },
+  "melancia bomba": {
+    "to": "melancia instável",
+    "words": [
+      "melancia bomba"
+    ]
+  },
+  "chuva de pedras": {
+    "to": "avião que solta pedregulhos",
+    "words": [
+      "chuva de pedras"
+    ]
+  },
+  "ímã voador": {
+    "to": "ímã que voa",
+    "words": [
+      "ímã voador"
+    ]
+  },
+  "cadeira elétrica": {
+    "to": "cadeira magnética que incendeia",
+    "words": [
+      "cadeira elétrica"
+    ]
+  },
+  "mesa fortificada": {
+    "to": "mesa com escudo na frente",
+    "words": [
+      "mesa fortificada"
+    ]
+  },
+  "sofá de assalto": {
+    "to": "sofá que persegue o inimigo e atira no inimigo",
+    "words": [
+      "sofá de assalto"
+    ]
+  },
+  "cone sentinela": {
+    "to": "cone que atira no inimigo",
+    "words": [
+      "cone sentinela"
+    ]
+  },
+  "bola de demolição": {
+    "to": "bola de basquete gigante explosiva",
+    "words": [
+      "bola de demolição"
+    ]
+  },
+  "tronco aríete": {
+    "to": "tronco gigante que vai reto",
+    "words": [
+      "tronco aríete"
+    ]
+  },
+  "caixote surpresa": {
+    "to": "caixote que explode em macaco",
+    "words": [
+      "caixote surpresa"
+    ]
+  },
+  "barreira glacial": {
+    "to": "barreira de concreto de gelo",
+    "words": [
+      "barreira glacial"
+    ]
+  },
+  "sino repelente": {
+    "to": "sino que empurra a cada 1 segundo",
+    "words": [
+      "sino repelente"
+    ]
+  },
+  "pistola guarda costas": {
+    "to": "pistola com escudo na frente",
+    "words": [
+      "pistola guarda costas"
+    ]
+  },
+  "fuzil de macacos": {
+    "to": "fuzil que atira macaco com metralhadora",
+    "words": [
+      "fuzil de macacos"
+    ]
+  },
+  "escopeta de bananas": {
+    "to": "escopeta que atira bananas explosivas",
+    "words": [
+      "escopeta de bananas"
+    ]
+  },
+  "bazuca de enxame": {
+    "to": "bazuca que atira aranhas que perseguem o inimigo",
+    "words": [
+      "bazuca de enxame"
+    ]
+  },
+  "ninho aéreo": {
+    "to": "drone que solta águias",
+    "words": [
+      "ninho aéreo"
+    ]
+  },
+  "torre aspiradora": {
+    "to": "torre magnética que puxa a cada 1 segundo",
+    "words": [
+      "torre aspiradora"
+    ]
+  },
+  "fortaleza ambulante": {
+    "to": "torre com escudo de cada lado que persegue o inimigo",
+    "words": [
+      "fortaleza ambulante"
+    ]
+  },
+  "lobo infernal": {
+    "to": "lobo de fogo que golpeia",
+    "words": [
+      "lobo infernal"
+    ]
+  },
+  "martelo glacial": {
+    "to": "martelo de gelo longo",
+    "words": [
+      "martelo glacial"
+    ]
+  },
+  "prisão magnética": {
+    "to": "jaula magnética",
+    "words": [
+      "prisão magnética"
+    ]
+  },
+  "banana bomba": {
+    "to": "banana explosiva",
+    "words": [
+      "banana bomba"
+    ]
+  },
+  "âncora gravitacional": {
+    "to": "âncora magnética",
+    "words": [
+      "âncora gravitacional"
+    ]
+  },
+  "granada pula pula": {
+    "to": "granada de borracha que empurra ao bater",
+    "words": [
+      "granada pula pula"
+    ]
+  },
+  "escorpião infernal": {
+    "to": "escorpião de fogo que golpeia",
+    "words": [
+      "escorpião infernal"
+    ]
+  },
+  "oitão": {
+    "to": "revólver",
+    "words": [
+      "oitão"
+    ]
+  },
+  "uma doze": {
+    "to": "uma espingarda",
+    "words": [
+      "uma doze"
+    ]
+  },
+  "awp": {
+    "to": "sniper",
+    "words": [
+      "awp"
+    ]
+  },
+  "bazucão": {
+    "to": "bazuca gigante",
+    "words": [
+      "bazucão"
+    ]
+  },
+  "carrinho de rolimã": {
+    "to": "skate largo com cadeira em cima",
+    "words": [
+      "carrinho de rolimã"
+    ]
+  },
+  "bomba relógio": {
+    "to": "bomba que explode depois de 5 segundos",
+    "words": [
+      "bomba relógio"
+    ]
+  },
+  "parede de gelo": {
+    "to": "parede congelante",
+    "words": [
+      "parede de gelo"
+    ]
+  },
+  "chuva de meteoros": {
+    "to": "avião que solta pedregulhos de fogo",
+    "words": [
+      "chuva de meteoros"
+    ]
+  },
+  "ataque aéreo": {
+    "to": "laser que marca e chama avião que solta bombas",
+    "words": [
+      "ataque aéreo"
+    ]
+  },
+  "pistola silenciada": {
+    "to": "pistola com silenciador",
+    "words": [
+      "pistola silenciada"
+    ]
+  },
+  "fuzil tunado": {
+    "to": "fuzil com luneta e silenciador",
+    "words": [
+      "fuzil tunado"
+    ]
+  },
+  "metralhadora pesada de cerco": {
+    "to": "metralhadora com bipé",
+    "words": [
+      "metralhadora pesada de cerco"
+    ]
+  },
+  "sniper de bolso": {
+    "to": "sniper minúscula",
+    "words": [
+      "sniper de bolso"
+    ]
+  },
+  "escopeta serrada": {
+    "to": "escopeta curta",
+    "words": [
+      "escopeta serrada"
+    ]
+  },
+  "granada de impacto": {
+    "to": "granada que explode ao bater",
+    "words": [
+      "granada de impacto"
+    ]
+  },
+  "granada de gelo": {
+    "to": "granada congelante",
+    "words": [
+      "granada de gelo"
+    ]
+  },
+  "granada incendiária": {
+    "to": "granada de fogo",
+    "words": [
+      "granada incendiária"
+    ]
+  },
+  "bomba de sucção": {
+    "to": "bomba magnética",
+    "words": [
+      "bomba de sucção"
+    ]
+  },
+  "lançador de flechas": {
+    "to": "besta automática",
+    "words": [
+      "lançador de flechas"
+    ]
+  },
+  "arco glacial": {
+    "to": "arco que atira flechas de gelo",
+    "words": [
+      "arco glacial"
+    ]
+  },
+  "carrinho blindado": {
+    "to": "carrinho de supermercado com escudo na frente",
+    "words": [
+      "carrinho blindado"
+    ]
+  },
+  "carrinho foguete": {
+    "to": "carrinho de supermercado com bazuca em cima",
+    "words": [
+      "carrinho foguete"
+    ]
+  },
+  "carrinho de limpeza": {
+    "to": "carrinho de supermercado magnético",
+    "words": [
+      "carrinho de limpeza"
+    ]
+  },
+  "cadeira motorizada": {
+    "to": "cadeira de rodas rápida",
+    "words": [
+      "cadeira motorizada"
+    ]
+  },
+  "cadeira de artilharia": {
+    "to": "cadeira de rodas com metralhadora em cima",
+    "words": [
+      "cadeira de artilharia"
+    ]
+  },
+  "cama voadora": {
+    "to": "cama que voa",
+    "words": [
+      "cama voadora"
+    ]
+  },
+  "cama de gelo": {
+    "to": "cama congelante",
+    "words": [
+      "cama de gelo"
+    ]
+  },
+  "tv explosiva": {
+    "to": "televisão instável",
+    "words": [
+      "tv explosiva"
+    ]
+  },
+  "pc gamer": {
+    "to": "computador com ventilador em cima",
+    "words": [
+      "pc gamer"
+    ]
+  },
+  "computador incendiário": {
+    "to": "computador de fogo",
+    "words": [
+      "computador incendiário"
+    ]
+  },
+  "micro-ondas assassino": {
+    "to": "micro-ondas que persegue o inimigo e explode",
+    "words": [
+      "micro-ondas assassino"
+    ]
+  },
+  "lavadora centrífuga": {
+    "to": "máquina de lavar que empurra a cada 1 segundo",
+    "words": [
+      "lavadora centrífuga"
+    ]
+  },
+  "lixeira magnética": {
+    "to": "lixeira que puxa a cada 1 segundo",
+    "words": [
+      "lixeira magnética"
+    ]
+  },
+  "poste sentinela": {
+    "to": "poste que atira no inimigo",
+    "words": [
+      "poste sentinela"
+    ]
+  },
+  "placa escudo": {
+    "to": "escudo com placa de pare na frente",
+    "words": [
+      "placa escudo"
+    ]
+  },
+  "boliche explosivo": {
+    "to": "bola de boliche explosiva",
+    "words": [
+      "boliche explosivo"
+    ]
+  },
+  "futebol de fogo": {
+    "to": "bola de futebol flamejante",
+    "words": [
+      "futebol de fogo"
+    ]
+  },
+  "tijolo voador": {
+    "to": "tijolo que voa",
+    "words": [
+      "tijolo voador"
+    ]
+  },
+  "bloco congelante": {
+    "to": "bloco de concreto de gelo",
+    "words": [
+      "bloco congelante"
+    ]
+  },
+  "frigideira glacial": {
+    "to": "frigideira de gelo",
+    "words": [
+      "frigideira glacial"
+    ]
+  },
+  "guitarra flamejante": {
+    "to": "guitarra de fogo",
+    "words": [
+      "guitarra flamejante"
+    ]
+  },
+  "corrente magnética": {
+    "to": "correntes que puxam ao bater",
+    "words": [
+      "corrente magnética"
+    ]
+  },
+  "armadilha congelante": {
+    "to": "armadilha de pressão de gelo",
+    "words": [
+      "armadilha congelante"
+    ]
+  },
+  "campo minado": {
+    "to": "3 minas terrestres",
+    "words": [
+      "campo minado"
+    ]
+  },
+  "c4 voador": {
+    "to": "explosivo C4 que voa",
+    "words": [
+      "c4 voador"
+    ]
+  },
+  "molotov saltador": {
+    "to": "coquetel molotov de borracha",
+    "words": [
+      "molotov saltador"
+    ]
+  },
+  "besta incendiária": {
+    "to": "besta que atira flechas de fogo",
+    "words": [
+      "besta incendiária"
+    ]
+  },
+  "arco explosivo": {
+    "to": "arco que atira flechas explosivas",
+    "words": [
+      "arco explosivo"
+    ]
+  },
+  "sopro de dragão": {
+    "to": "lança-chamas de 3 canos",
+    "words": [
+      "sopro de dragão"
+    ]
+  },
+  "morteiro de frutas": {
+    "to": "morteiro que atira melancias explosivas",
+    "words": [
+      "morteiro de frutas"
+    ]
+  },
+  "touro blindado": {
+    "to": "touro com escudo na frente",
+    "words": [
+      "touro blindado"
+    ]
+  },
+  "touro de guerra": {
+    "to": "touro com metralhadora em cima",
+    "words": [
+      "touro de guerra"
+    ]
+  },
+  "enxame perseguidor": {
+    "to": "3 abelhas que perseguem o inimigo",
+    "words": [
+      "enxame perseguidor"
+    ]
+  },
+  "enxame explosivo": {
+    "to": "3 abelhas explosivas",
+    "words": [
+      "enxame explosivo"
+    ]
+  },
+  "rato artilheiro": {
+    "to": "rato com pistola em cima",
+    "words": [
+      "rato artilheiro"
+    ]
+  },
+  "rato de gelo": {
+    "to": "rato congelante",
+    "words": [
+      "rato de gelo"
+    ]
+  },
+  "zumbi blindado": {
+    "to": "zumbi com escudo na frente",
+    "words": [
+      "zumbi blindado"
+    ]
+  },
+  "zumbi artilheiro": {
+    "to": "zumbi com escopeta",
+    "words": [
+      "zumbi artilheiro"
+    ]
+  },
+  "zumbi incendiário": {
+    "to": "zumbi de fogo que golpeia",
+    "words": [
+      "zumbi incendiário"
+    ]
+  },
+  "esqueleto arqueiro": {
+    "to": "esqueleto com arco",
+    "words": [
+      "esqueleto arqueiro"
+    ]
+  },
+  "esqueleto gladiador": {
+    "to": "esqueleto com espada",
+    "words": [
+      "esqueleto gladiador"
+    ]
+  },
+  "boneco artilheiro": {
+    "to": "boneco de treino com metralhadora",
+    "words": [
+      "boneco artilheiro"
+    ]
+  },
+  "boneco incendiário": {
+    "to": "boneco de treino de fogo",
+    "words": [
+      "boneco incendiário"
+    ]
+  },
+  "balde bacamarte": {
+    "to": "pistola com cano de balde",
+    "words": [
+      "balde bacamarte"
+    ]
+  },
+  "tubo improvisado": {
+    "to": "pistola com cano de tubo",
+    "words": [
+      "tubo improvisado"
+    ]
+  },
+  "colchão aéreo": {
+    "to": "colchão que voa",
+    "words": [
+      "colchão aéreo"
+    ]
+  },
+  "extintor artilheiro": {
+    "to": "extintor que atira balas de gelo",
+    "words": [
+      "extintor artilheiro"
+    ]
+  },
+  "cofre ambulante": {
+    "to": "cofre que persegue o inimigo",
+    "words": [
+      "cofre ambulante"
+    ]
+  },
+  "máquina blindada": {
+    "to": "máquina de refrigerante com escudo na frente",
+    "words": [
+      "máquina blindada"
+    ]
+  },
+  "contêiner voador": {
+    "to": "contêiner que voa",
+    "words": [
+      "contêiner voador"
+    ]
+  },
+  "palete saltitante": {
+    "to": "palete de borracha",
+    "words": [
+      "palete saltitante"
+    ]
+  },
+  "carrinho aríete": {
+    "to": "carrinho de mão com bigorna na frente",
+    "words": [
+      "carrinho aríete"
+    ]
+  },
+  "bicicleta armada": {
+    "to": "bicicleta com metralhadora em cima",
+    "words": [
+      "bicicleta armada"
+    ]
+  },
+  "patinete blindado": {
+    "to": "patinete com escudo na frente",
+    "words": [
+      "patinete blindado"
+    ]
+  },
+  "empilhadeira de cerco": {
+    "to": "empilhadeira com canhão em cima",
+    "words": [
+      "empilhadeira de cerco"
+    ]
+  },
+  "ambulância de combate": {
+    "to": "ambulância com metralhadora em cima",
+    "words": [
+      "ambulância de combate"
+    ]
+  },
+  "ônibus blindado": {
+    "to": "ônibus com escudo de cada lado",
+    "words": [
+      "ônibus blindado"
+    ]
+  },
+  "trator triturador": {
+    "to": "trator com motosserra na frente",
+    "words": [
+      "trator triturador"
+    ]
+  },
+  "semáforo sentinela": {
+    "to": "semáforo que atira no inimigo",
+    "words": [
+      "semáforo sentinela"
+    ]
+  },
+  "abajur de gelo": {
+    "to": "abajur congelante",
+    "words": [
+      "abajur de gelo"
+    ]
+  },
+  "estante fortificada": {
+    "to": "estante com escudo na frente",
+    "words": [
+      "estante fortificada"
+    ]
+  },
+  "banheira de guerra": {
+    "to": "banheira com metralhadora em cima",
+    "words": [
+      "banheira de guerra"
+    ]
+  },
+  "pato explosivo": {
+    "to": "pato de borracha instável",
+    "words": [
+      "pato explosivo"
+    ]
+  },
+  "pino incendiário": {
+    "to": "pino de boliche de fogo",
+    "words": [
+      "pino incendiário"
+    ]
+  },
+  "flecha glacial": {
+    "to": "flecha de gelo",
+    "words": [
+      "flecha glacial"
+    ]
+  },
+  "bunker magnético": {
+    "to": "bunker que puxa a cada 1 segundo",
+    "words": [
+      "bunker magnético"
+    ]
+  },
+  "fuzil bananeiro": {
+    "to": "fuzil com cano de banana",
+    "words": [
+      "fuzil bananeiro"
+    ]
+  },
+  "pistola primata": {
+    "to": "pistola com corpo de macaco",
+    "words": [
+      "pistola primata"
+    ]
+  },
+  "bazuca botijão": {
+    "to": "bazuca com corpo de botijão de gás",
+    "words": [
+      "bazuca botijão"
+    ]
+  },
+  "escopeta sanitária": {
+    "to": "escopeta com cano de privada",
+    "words": [
+      "escopeta sanitária"
+    ]
+  },
+  "pistola refrigerada": {
+    "to": "pistola com corpo de geladeira",
+    "words": [
+      "pistola refrigerada"
+    ]
+  },
+  "fuzil ventilado": {
+    "to": "fuzil com traseira de ventilador",
+    "words": [
+      "fuzil ventilado"
+    ]
+  },
+  "revólver pesado": {
+    "to": "revólver com corpo de bigorna",
+    "words": [
+      "revólver pesado"
+    ]
+  },
+  "sniper magnética": {
+    "to": "sniper com cano de ímã",
+    "words": [
+      "sniper magnética"
+    ]
+  },
+  "fuzil de cerco": {
+    "to": "fuzil com escudo na frente",
+    "words": [
+      "fuzil de cerco"
+    ]
+  },
+  "escopeta de flechas": {
+    "to": "escopeta que atira flechas",
+    "words": [
+      "escopeta de flechas"
+    ]
+  },
+  "torre arqueira": {
+    "to": "torre que atira flechas",
+    "words": [
+      "torre arqueira"
+    ]
+  },
+  "drone minador": {
+    "to": "drone que solta minas terrestres",
+    "words": [
+      "drone minador"
+    ]
+  },
+  "chuva de tijolos": {
+    "to": "avião que solta tijolos",
+    "words": [
+      "chuva de tijolos"
+    ]
+  },
+  "caixa de susto": {
+    "to": "caixote que explode em zumbi",
+    "words": [
+      "caixa de susto"
+    ]
+  }
+}

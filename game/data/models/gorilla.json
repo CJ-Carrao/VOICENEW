@@ -1,0 +1,160 @@
+{
+  "_comment": "gorila: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.9625,
+    0
+  ],
+  "sockets": {
+    "mount_hand": [
+      0.54,
+      0.9625000000000001,
+      -0.144
+    ]
+  },
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "reference": "https://animals.sandiegozoo.org/animals/gorilla",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.9975,
+        0
+      ],
+      "color": "#343337",
+      "tag": "body",
+      "_stretch": [
+        0.765,
+        0.805,
+        0.36000000000000004
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        1.54,
+        -0.096
+      ],
+      "color": "#343337",
+      "tag": "head",
+      "_stretch": [
+        0.5850000000000001,
+        0.4375,
+        0.30400000000000005
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        1.4875,
+        -0.232
+      ],
+      "color": "#bda083",
+      "tag": "face",
+      "_stretch": [
+        0.45,
+        0.24500000000000002,
+        0.10400000000000001
+      ]
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.126,
+      "height": 0.875,
+      "pos": [
+        -0.441,
+        0.9275,
+        0
+      ],
+      "color": "#343337",
+      "tag": "arm"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.171,
+      "height": 0.665,
+      "pos": [
+        -0.225,
+        0.35,
+        0
+      ],
+      "color": "#343337",
+      "tag": "leg"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.117,
+      "pos": [
+        -0.306,
+        1.5925,
+        -0.08
+      ],
+      "color": "#343337",
+      "tag": "ear"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.126,
+      "height": 0.875,
+      "pos": [
+        0.441,
+        0.9275,
+        0
+      ],
+      "color": "#343337",
+      "tag": "arm"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.171,
+      "height": 0.665,
+      "pos": [
+        0.225,
+        0.35,
+        0
+      ],
+      "color": "#343337",
+      "tag": "leg"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.117,
+      "pos": [
+        0.306,
+        1.5925,
+        -0.08
+      ],
+      "color": "#343337",
+      "tag": "ear"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0405,
+      "pos": [
+        -0.153,
+        1.575,
+        -0.272
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0405,
+      "pos": [
+        0.153,
+        1.575,
+        -0.272
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    }
+  ]
+}

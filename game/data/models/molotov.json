@@ -1,0 +1,56 @@
+{
+  "_comment": "coquetel molotov: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.15,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.0414,
+      "height": 0.21,
+      "pos": [
+        0,
+        0.108,
+        0
+      ],
+      "color": "#4a7042",
+      "tag": "body"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.075,
+      "pos": [
+        0,
+        0.246,
+        0
+      ],
+      "color": "#c5c9ce",
+      "tag": "neck"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.063,
+        0.036,
+        0.025
+      ],
+      "pos": [
+        0,
+        0.291,
+        0
+      ],
+      "color": "#d6dcd8",
+      "rot": [
+        0,
+        0,
+        15
+      ],
+      "tag": "rag"
+    }
+  ]
+}

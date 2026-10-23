@@ -1,0 +1,4 @@
+{
+  "_comment": "Movimento de quem não tem movimento próprio pro papel (DESIGN 7): a coisa que seria 'static' nesse papel usa este. Atirada ou solta (projectile), qualquer coisa sem movimento de projétil (faca, pistola, torre) cai em arco, como coisa jogada, em vez de ficar parada no ar. Vale pra qualquer coisa: sem caso especial por combinação.",
+  "projectile": { "static": "ballistic" }
+}

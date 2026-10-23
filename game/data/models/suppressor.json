@@ -1,0 +1,64 @@
+{
+ "_comment": "Silenciador / supressor. Gerado por tools/models/gen_arsenal.py.",
+ "anchor": [
+  0,
+  0,
+  0
+ ],
+ "pieces": [
+  {
+   "shape": "cylinder",
+   "radius": 0.017,
+   "height": 0.17,
+   "pos": [
+    0,
+    0,
+    -0.085
+   ],
+   "color": "#16171a",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "muzzle",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0185,
+   "height": 0.012,
+   "pos": [
+    0,
+    0,
+    -0.004
+   ],
+   "color": "#3b3f46",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "muzzle",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0185,
+   "height": 0.008,
+   "pos": [
+    0,
+    0,
+    -0.166
+   ],
+   "color": "#3b3f46",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "muzzle",
+   "finish": "metal"
+  }
+ ]
+}

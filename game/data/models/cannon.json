@@ -1,0 +1,133 @@
+{
+  "_comment": "canhão: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.55,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.7,
+        0.2,
+        1.5
+      ],
+      "pos": [
+        0,
+        0.4,
+        0.1
+      ],
+      "color": "#7a4b26",
+      "tag": "carriage"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.45,
+      "height": 0.2925,
+      "pos": [
+        -0.495,
+        0.45,
+        0.15
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.225,
+      "height": 0.306,
+      "pos": [
+        -0.495,
+        0.45,
+        0.15
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.45,
+      "height": 0.2925,
+      "pos": [
+        0.495,
+        0.45,
+        0.15
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.225,
+      "height": 0.306,
+      "pos": [
+        0.495,
+        0.45,
+        0.15
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.19,
+      "height": 2.0,
+      "pos": [
+        0,
+        0.9,
+        -0.25
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "barrel"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.135,
+      "height": 0.025,
+      "pos": [
+        0,
+        0.9,
+        -1.2625
+      ],
+      "color": "#111318",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "bore"
+    }
+  ]
+}

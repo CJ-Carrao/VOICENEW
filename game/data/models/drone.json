@@ -1,0 +1,21 @@
+{
+  "anchor": [0, 0, 0],
+  "pieces": [
+    { "shape": "box", "size": [0.34, 0.11, 0.34], "pos": [0, 0, 0], "color": "#2e3138", "tag": "body" },
+    { "shape": "box", "size": [0.24, 0.05, 0.24], "pos": [0, 0.08, 0], "color": "#3a3e46", "tag": "body" },
+    { "shape": "sphere", "radius": 0.055, "pos": [0, -0.06, -0.16], "color": "#3fa0ff", "glow": 1.5, "tag": "sight" },
+    { "shape": "sphere", "radius": 0.02, "pos": [0, 0.11, 0.1], "color": "#ff3030", "glow": 2.0, "tag": "sight" },
+    { "shape": "box", "size": [0.025, 0.025, 0.36], "pos": [0.12, -0.11, 0], "color": "#22252a", "tag": "leg" },
+    { "shape": "box", "size": [0.025, 0.025, 0.36], "pos": [-0.12, -0.11, 0], "color": "#22252a", "tag": "leg" },
+    { "shape": "box", "size": [0.9, 0.035, 0.05], "pos": [0, 0.02, 0], "rot": [0, 45, 0], "color": "#45484f", "tag": "arm" },
+    { "shape": "box", "size": [0.9, 0.035, 0.05], "pos": [0, 0.02, 0], "rot": [0, -45, 0], "color": "#45484f", "tag": "arm" },
+    { "shape": "cylinder", "radius": 0.045, "height": 0.06, "pos": [0.32, 0.05, 0.32], "color": "#22252a", "tag": "arm" },
+    { "shape": "cylinder", "radius": 0.045, "height": 0.06, "pos": [-0.32, 0.05, 0.32], "color": "#22252a", "tag": "arm" },
+    { "shape": "cylinder", "radius": 0.045, "height": 0.06, "pos": [0.32, 0.05, -0.32], "color": "#22252a", "tag": "arm" },
+    { "shape": "cylinder", "radius": 0.045, "height": 0.06, "pos": [-0.32, 0.05, -0.32], "color": "#22252a", "tag": "arm" },
+    { "shape": "cylinder", "radius": 0.16, "height": 0.015, "pos": [0.32, 0.09, 0.32], "color": "#9aa0a8", "tag": "rotor" },
+    { "shape": "cylinder", "radius": 0.16, "height": 0.015, "pos": [-0.32, 0.09, 0.32], "color": "#9aa0a8", "tag": "rotor" },
+    { "shape": "cylinder", "radius": 0.16, "height": 0.015, "pos": [0.32, 0.09, -0.32], "color": "#9aa0a8", "tag": "rotor" },
+    { "shape": "cylinder", "radius": 0.16, "height": 0.015, "pos": [-0.32, 0.09, -0.32], "color": "#9aa0a8", "tag": "rotor" }
+  ]
+}

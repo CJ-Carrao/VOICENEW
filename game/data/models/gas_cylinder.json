@@ -1,0 +1,71 @@
+{
+  "_comment": "botijão: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.23,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.18,
+      "height": 0.391,
+      "pos": [
+        0,
+        0.2116,
+        0
+      ],
+      "color": "#878d96",
+      "tag": "body",
+      "finish": "metal"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.1836,
+      "inner_radius": 0.1656,
+      "pos": [
+        0,
+        0.0598,
+        0
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "rim"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.1836,
+      "inner_radius": 0.1656,
+      "pos": [
+        0,
+        0.3496,
+        0
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "rim"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.05,
+      "height": 0.1,
+      "pos": [
+        0,
+        0.4324,
+        0
+      ],
+      "color": "#bba15b",
+      "tag": "valve"
+    }
+  ]
+}

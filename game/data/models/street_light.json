@@ -1,0 +1,67 @@
+{
+  "_comment": "poste: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    2.5,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.09,
+      "height": 0.06,
+      "pos": [
+        0,
+        0.03,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "base"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.045,
+      "height": 4.25,
+      "pos": [
+        0,
+        2.15,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "pole"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.08,
+        0.08,
+        1.5
+      ],
+      "pos": [
+        0,
+        4.65,
+        -0.6
+      ],
+      "color": "#2a2d32",
+      "tag": "arm"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.3,
+        0.06,
+        0.5
+      ],
+      "pos": [
+        0,
+        4.5,
+        -1.275
+      ],
+      "color": "#f3df95",
+      "tag": "light",
+      "glow": 0.5
+    }
+  ]
+}

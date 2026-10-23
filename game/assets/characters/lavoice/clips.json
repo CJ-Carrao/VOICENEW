@@ -1,0 +1,5383 @@
+{
+ "_comment": "Gerado por tools/character/import_lavoice.py a partir do animacoes.json do pacote (DESIGN 18). Não edite à mão: rode o importador de novo.",
+ "fps": 60.0,
+ "overlap_seconds": {
+  "chest_to_head": 0.06,
+  "forearm_to_hand": 0.035,
+  "pelvis_to_chest": 0.04
+ },
+ "gait_additive": {
+  "aim_note": "Hand weights zero reduce drift, but weapon aim and left grip still require final IK. Do not multiply all weights by gait_add_weight again.",
+  "bone_weights": {
+   "chest": 0.7,
+   "forearm.L": 0.1,
+   "forearm.R": 0.1,
+   "hand.L": 0.0,
+   "hand.R": 0.0,
+   "head": 0.25,
+   "neck": 0.4,
+   "spine": 0.7,
+   "upper_arm.L": 0.15,
+   "upper_arm.R": 0.15
+  },
+  "formula": "D=Qgait_model*inverse(Qmean_model); Qout_model=slerp(identity,D,weight)*Qhold_model; reconstruct locals parent-first",
+  "mean_policy": "normalized hemisphere-aligned quaternion sum, full cycle excluding duplicate endpoint",
+  "quaternion_order": "xyzw",
+  "space": "Godot skeleton model"
+ },
+ "clips": {
+  "Block": {
+   "duration_s": 1.2,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Breath_Calm_Add": {
+   "duration_s": 4.0,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": true,
+   "authoring_speed_mps": 0.0
+  },
+  "Breath_Exerted_Add": {
+   "duration_s": 1.66666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": true,
+   "authoring_speed_mps": 0.0
+  },
+  "Build_Wait": {
+   "duration_s": 3.0,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Celebrate_Hop": {
+   "duration_s": 0.8,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Crouch_Block": {
+   "duration_s": 1.2,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Crouch_Enter": {
+   "duration_s": 0.2,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Crouch_Exit": {
+   "duration_s": 0.2,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Crouch_Extract": {
+   "duration_s": 1.2,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Crouch_Hold_Empty": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "none",
+   "grip_state": "crouch"
+  },
+  "Crouch_Hold_Heavy": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "heavy",
+   "grip_state": "crouch"
+  },
+  "Crouch_Hold_Melee": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "melee",
+   "grip_state": "crouch"
+  },
+  "Crouch_Hold_Pistol": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "pistol",
+   "grip_state": "crouch"
+  },
+  "Crouch_Hold_Rifle": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "rifle",
+   "grip_state": "crouch"
+  },
+  "Crouch_Hold_Throw": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "throw",
+   "grip_state": "crouch"
+  },
+  "Crouch_Idle": {
+   "duration_s": 2.0,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Crouch_Melee_ChargeHold": {
+   "duration_s": 1.2,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Crouch_Melee_Overhead": {
+   "duration_s": 0.65,
+   "loop": false,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Crouch_Melee_Slash": {
+   "duration_s": 0.5,
+   "loop": false,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Crouch_Melee_Thrust": {
+   "duration_s": 0.45,
+   "loop": false,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Crouch_Shape_Point": {
+   "duration_s": 2.0,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Crouch_Talk": {
+   "duration_s": 2.0,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Crouch_Throw": {
+   "duration_s": 0.65,
+   "loop": false,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Crouch_TurnInPlace_L90": {
+   "duration_s": 0.8,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "contacts": {
+    "L": [
+     [
+      0.0,
+      0.06
+     ],
+     [
+      0.44,
+      1.0
+     ]
+    ],
+    "R": [
+     [
+      0.0,
+      0.56
+     ],
+     [
+      0.94,
+      1.0
+     ]
+    ]
+   },
+   "turn_degrees": 90.0
+  },
+  "Crouch_TurnInPlace_R90": {
+   "duration_s": 0.8,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "contacts": {
+    "L": [
+     [
+      0.0,
+      0.06
+     ],
+     [
+      0.44,
+      1.0
+     ]
+    ],
+    "R": [
+     [
+      0.0,
+      0.56
+     ],
+     [
+      0.94,
+      1.0
+     ]
+    ]
+   },
+   "turn_degrees": -90.0
+  },
+  "Crouch_Walk_B": {
+   "duration_s": 0.6,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 3.0,
+   "direction_godot": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "gait": "Crouch",
+   "duty_factor": 0.22,
+   "cycle_distance_m": 1.8,
+   "contacts": {
+    "L": {
+     "foot_flat": 0.0044,
+     "heel_off": 0.2156,
+     "heel_strike": 0.0,
+     "toe_off": 0.22
+    },
+    "R": {
+     "foot_flat": 0.5044,
+     "heel_off": 0.7156,
+     "heel_strike": 0.5,
+     "toe_off": 0.72
+    }
+   },
+   "knee_measured_deg": [
+    76.88174648487158,
+    120.6275022329396
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Crouch_Walk_BL": {
+   "duration_s": 0.6,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 3.0,
+   "direction_godot": [
+    -0.707106781186547,
+    0.0,
+    0.707106781186547
+   ],
+   "gait": "Crouch",
+   "duty_factor": 0.22,
+   "cycle_distance_m": 1.8,
+   "contacts": {
+    "L": {
+     "foot_flat": 0.0044,
+     "heel_off": 0.2156,
+     "heel_strike": 0.0,
+     "toe_off": 0.22
+    },
+    "R": {
+     "foot_flat": 0.5044,
+     "heel_off": 0.7156,
+     "heel_strike": 0.5,
+     "toe_off": 0.72
+    }
+   },
+   "knee_measured_deg": [
+    56.098429654219785,
+    117.12327157633297
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Crouch_Walk_BR": {
+   "duration_s": 0.6,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 3.0,
+   "direction_godot": [
+    0.707106781186547,
+    0.0,
+    0.707106781186547
+   ],
+   "gait": "Crouch",
+   "duty_factor": 0.22,
+   "cycle_distance_m": 1.8,
+   "contacts": {
+    "L": {
+     "foot_flat": 0.0044,
+     "heel_off": 0.2156,
+     "heel_strike": 0.0,
+     "toe_off": 0.22
+    },
+    "R": {
+     "foot_flat": 0.5044,
+     "heel_off": 0.7156,
+     "heel_strike": 0.5,
+     "toe_off": 0.72
+    }
+   },
+   "knee_measured_deg": [
+    56.332744552651086,
+    117.11979651320128
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Crouch_Walk_F": {
+   "duration_s": 0.6,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 3.0,
+   "direction_godot": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "gait": "Crouch",
+   "duty_factor": 0.22,
+   "cycle_distance_m": 1.8,
+   "contacts": {
+    "L": {
+     "foot_flat": 0.0044,
+     "heel_off": 0.2156,
+     "heel_strike": 0.0,
+     "toe_off": 0.22
+    },
+    "R": {
+     "foot_flat": 0.5044,
+     "heel_off": 0.7156,
+     "heel_strike": 0.5,
+     "toe_off": 0.72
+    }
+   },
+   "knee_measured_deg": [
+    77.14381532259853,
+    120.47823489046863
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Crouch_Walk_FL": {
+   "duration_s": 0.6,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 3.0,
+   "direction_godot": [
+    -0.707106781186547,
+    0.0,
+    -0.707106781186547
+   ],
+   "gait": "Crouch",
+   "duty_factor": 0.22,
+   "cycle_distance_m": 1.8,
+   "contacts": {
+    "L": {
+     "foot_flat": 0.0044,
+     "heel_off": 0.2156,
+     "heel_strike": 0.0,
+     "toe_off": 0.22
+    },
+    "R": {
+     "foot_flat": 0.5044,
+     "heel_off": 0.7156,
+     "heel_strike": 0.5,
+     "toe_off": 0.72
+    }
+   },
+   "knee_measured_deg": [
+    56.54955568454436,
+    117.21099743470336
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Crouch_Walk_FR": {
+   "duration_s": 0.6,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 3.0,
+   "direction_godot": [
+    0.707106781186547,
+    0.0,
+    -0.707106781186547
+   ],
+   "gait": "Crouch",
+   "duty_factor": 0.22,
+   "cycle_distance_m": 1.8,
+   "contacts": {
+    "L": {
+     "foot_flat": 0.0044,
+     "heel_off": 0.2156,
+     "heel_strike": 0.0,
+     "toe_off": 0.22
+    },
+    "R": {
+     "foot_flat": 0.5044,
+     "heel_off": 0.7156,
+     "heel_strike": 0.5,
+     "toe_off": 0.72
+    }
+   },
+   "knee_measured_deg": [
+    56.35014388452481,
+    117.21064196721923
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Crouch_Walk_L": {
+   "duration_s": 0.6,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 3.0,
+   "direction_godot": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "gait": "Crouch",
+   "duty_factor": 0.22,
+   "cycle_distance_m": 1.8,
+   "contacts": {
+    "L": {
+     "foot_flat": 0.0044,
+     "heel_off": 0.2156,
+     "heel_strike": 0.0,
+     "toe_off": 0.22
+    },
+    "R": {
+     "foot_flat": 0.5044,
+     "heel_off": 0.7156,
+     "heel_strike": 0.5,
+     "toe_off": 0.72
+    }
+   },
+   "knee_measured_deg": [
+    64.0503659724906,
+    114.62405131791563
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Crouch_Walk_R": {
+   "duration_s": 0.6,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 3.0,
+   "direction_godot": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "gait": "Crouch",
+   "duty_factor": 0.22,
+   "cycle_distance_m": 1.8,
+   "contacts": {
+    "L": {
+     "foot_flat": 0.0044,
+     "heel_off": 0.2156,
+     "heel_strike": 0.0,
+     "toe_off": 0.22
+    },
+    "R": {
+     "foot_flat": 0.5044,
+     "heel_off": 0.7156,
+     "heel_strike": 0.5,
+     "toe_off": 0.72
+    }
+   },
+   "knee_measured_deg": [
+    64.11002027089299,
+    114.83489686013003
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Death_Stagger": {
+   "duration_s": 0.25,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Defeat_Slump": {
+   "duration_s": 1.2,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Extract": {
+   "duration_s": 1.2,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Fire_Recoil": {
+   "duration_s": 0.2,
+   "loop": false,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": true,
+   "authoring_speed_mps": 0.0
+  },
+  "Fly": {
+   "duration_s": 1.2,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "GetUp_FaceDown": {
+   "duration_s": 1.3,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0,
+   "contacts": {
+    "L": [
+     [
+      0.65,
+      1
+     ]
+    ],
+    "R": [
+     [
+      0.65,
+      1
+     ]
+    ]
+   },
+   "ragdoll_side": "FaceDown"
+  },
+  "GetUp_FaceDown_Start": {
+   "duration_s": 0.016666666666666666,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0,
+   "single_pose": true,
+   "ragdoll_side": "FaceDown"
+  },
+  "GetUp_FaceUp": {
+   "duration_s": 1.3,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0,
+   "contacts": {
+    "L": [
+     [
+      0.65,
+      1
+     ]
+    ],
+    "R": [
+     [
+      0.65,
+      1
+     ]
+    ]
+   },
+   "ragdoll_side": "FaceUp"
+  },
+  "GetUp_FaceUp_Start": {
+   "duration_s": 0.016666666666666666,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0,
+   "single_pose": true,
+   "ragdoll_side": "FaceUp"
+  },
+  "Hit_Back": {
+   "duration_s": 0.3,
+   "loop": false,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": true,
+   "authoring_speed_mps": 0.0
+  },
+  "Hit_Front": {
+   "duration_s": 0.3,
+   "loop": false,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": true,
+   "authoring_speed_mps": 0.0
+  },
+  "Hit_Left": {
+   "duration_s": 0.3,
+   "loop": false,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": true,
+   "authoring_speed_mps": 0.0
+  },
+  "Hit_Right": {
+   "duration_s": 0.3,
+   "loop": false,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": true,
+   "authoring_speed_mps": 0.0
+  },
+  "Hold_Empty": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "gait_additive_weights": {
+    "chest": 0.7,
+    "forearm.L": 0.1,
+    "forearm.R": 0.1,
+    "hand.L": 0.0,
+    "hand.R": 0.0,
+    "head": 0.25,
+    "neck": 0.4,
+    "spine": 0.7,
+    "upper_arm.L": 0.15,
+    "upper_arm.R": 0.15
+   },
+   "single_pose": true,
+   "breath_external": true,
+   "hold_static": true,
+   "grip_class": "none",
+   "grip_state": "hip"
+  },
+  "Hold_Empty_ADS": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "none",
+   "grip_state": "ads"
+  },
+  "Hold_Empty_Sprint": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "none",
+   "grip_state": "sprint"
+  },
+  "Hold_Heavy": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "gait_additive_weights": {
+    "chest": 0.7,
+    "forearm.L": 0.1,
+    "forearm.R": 0.1,
+    "hand.L": 0.0,
+    "hand.R": 0.0,
+    "head": 0.25,
+    "neck": 0.4,
+    "spine": 0.7,
+    "upper_arm.L": 0.15,
+    "upper_arm.R": 0.15
+   },
+   "left_hand_ik": {
+    "chain": [
+     "upper_arm.L",
+     "forearm.L",
+     "hand.L"
+    ],
+    "elbow_pole_position_m": [
+     -0.414765000343323,
+     0.549931645393372,
+     0.0291996002197266
+    ],
+    "left_hand_position_m": [
+     -0.18306577205658,
+     0.253776550292969,
+     0.0549999475479126
+    ],
+    "left_hand_quat_xyzw": [
+     -4.0171133974809e-08,
+     8.62693454450891e-08,
+     -0.707107067108154,
+     0.707106471061707
+    ],
+    "pole_distance_from_chain_m": 0.32319343984127,
+    "reference_bone": "hand.R",
+    "source": "Measured imported Hold at t=0. Local coordinates of hand.R, not skeleton/global or socket. Weapon authored grip overrides effector; no stretch."
+   },
+   "single_pose": true,
+   "breath_external": true,
+   "hold_static": true,
+   "grip_class": "heavy",
+   "grip_state": "hip"
+  },
+  "Hold_Heavy_ADS": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "heavy",
+   "grip_state": "ads"
+  },
+  "Hold_Heavy_Sprint": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "heavy",
+   "grip_state": "sprint"
+  },
+  "Hold_Melee": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "gait_additive_weights": {
+    "chest": 0.7,
+    "forearm.L": 0.1,
+    "forearm.R": 0.1,
+    "hand.L": 0.0,
+    "hand.R": 0.0,
+    "head": 0.25,
+    "neck": 0.4,
+    "spine": 0.7,
+    "upper_arm.L": 0.15,
+    "upper_arm.R": 0.15
+   },
+   "single_pose": true,
+   "breath_external": true,
+   "hold_static": true,
+   "grip_class": "melee",
+   "grip_state": "hip"
+  },
+  "Hold_Melee_ADS": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "melee",
+   "grip_state": "ads"
+  },
+  "Hold_Melee_Sprint": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "melee",
+   "grip_state": "sprint"
+  },
+  "Hold_Pistol": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "gait_additive_weights": {
+    "chest": 0.7,
+    "forearm.L": 0.1,
+    "forearm.R": 0.1,
+    "hand.L": 0.0,
+    "hand.R": 0.0,
+    "head": 0.25,
+    "neck": 0.4,
+    "spine": 0.7,
+    "upper_arm.L": 0.15,
+    "upper_arm.R": 0.15
+   },
+   "single_pose": true,
+   "breath_external": true,
+   "hold_static": true,
+   "grip_class": "pistol",
+   "grip_state": "hip"
+  },
+  "Hold_Pistol_ADS": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "pistol",
+   "grip_state": "ads"
+  },
+  "Hold_Pistol_Sprint": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "pistol",
+   "grip_state": "sprint"
+  },
+  "Hold_Rifle": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "gait_additive_weights": {
+    "chest": 0.7,
+    "forearm.L": 0.1,
+    "forearm.R": 0.1,
+    "hand.L": 0.0,
+    "hand.R": 0.0,
+    "head": 0.25,
+    "neck": 0.4,
+    "spine": 0.7,
+    "upper_arm.L": 0.15,
+    "upper_arm.R": 0.15
+   },
+   "left_hand_ik": {
+    "chain": [
+     "upper_arm.L",
+     "forearm.L",
+     "hand.L"
+    ],
+    "elbow_pole_position_m": [
+     -0.414765000343323,
+     0.549931645393372,
+     0.0291996002197266
+    ],
+    "left_hand_position_m": [
+     -0.18306577205658,
+     0.253776550292969,
+     0.0549999475479126
+    ],
+    "left_hand_quat_xyzw": [
+     -4.0171133974809e-08,
+     8.62693454450891e-08,
+     -0.707107067108154,
+     0.707106471061707
+    ],
+    "pole_distance_from_chain_m": 0.32319343984127,
+    "reference_bone": "hand.R",
+    "source": "Measured imported Hold at t=0. Local coordinates of hand.R, not skeleton/global or socket. Weapon authored grip overrides effector; no stretch."
+   },
+   "single_pose": true,
+   "breath_external": true,
+   "hold_static": true,
+   "grip_class": "rifle",
+   "grip_state": "hip"
+  },
+  "Hold_Rifle_ADS": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "rifle",
+   "grip_state": "ads"
+  },
+  "Hold_Rifle_Sprint": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "rifle",
+   "grip_state": "sprint"
+  },
+  "Hold_Throw": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "throw",
+   "grip_state": "hip"
+  },
+  "Hold_Throw_ADS": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "throw",
+   "grip_state": "ads"
+  },
+  "Hold_Throw_Sprint": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "throw",
+   "grip_state": "sprint"
+  },
+  "Idle": {
+   "duration_s": 5.0,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Idle_HeadTilt": {
+   "duration_s": 2.0,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Idle_LookAround": {
+   "duration_s": 2.0,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Idle_Settle": {
+   "duration_s": 0.4,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Idle_TapFoot": {
+   "duration_s": 2.0,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Jog_B": {
+   "duration_s": 0.5,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 6.0,
+   "direction_godot": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "gait": "Jog",
+   "duty_factor": 0.2,
+   "cycle_distance_m": 3.0,
+   "step_length_m": 1.5,
+   "cadence_spm": 240.0,
+   "contacts": {
+    "L": {
+     "flat": 0.032,
+     "heel_off": 0.116,
+     "heel_strike": 0.0,
+     "toe_off": 0.2
+    },
+    "R": {
+     "flat": 0.532,
+     "heel_off": 0.616,
+     "heel_strike": 0.5,
+     "toe_off": 0.7
+    }
+   },
+   "knee_measured_deg": [
+    8.92193225809808,
+    123.07799424423634
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Jog_BL": {
+   "duration_s": 0.5,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 6.0,
+   "direction_godot": [
+    -0.707106781186547,
+    0.0,
+    0.707106781186547
+   ],
+   "gait": "Jog",
+   "duty_factor": 0.188561808316413,
+   "cycle_distance_m": 3.0,
+   "step_length_m": 1.5,
+   "cadence_spm": 240.0,
+   "contacts": {
+    "L": {
+     "flat": 0.00377123616632825,
+     "heel_off": 0.184790572150085,
+     "heel_strike": 0.0,
+     "toe_off": 0.188561808316413
+    },
+    "R": {
+     "flat": 0.503771236166328,
+     "heel_off": 0.684790572150085,
+     "heel_strike": 0.5,
+     "toe_off": 0.688561808316413
+    }
+   },
+   "knee_measured_deg": [
+    8.921837127568045,
+    111.44761676277038
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Jog_BR": {
+   "duration_s": 0.5,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 6.0,
+   "direction_godot": [
+    0.707106781186547,
+    0.0,
+    0.707106781186547
+   ],
+   "gait": "Jog",
+   "duty_factor": 0.188561808316413,
+   "cycle_distance_m": 3.0,
+   "step_length_m": 1.5,
+   "cadence_spm": 240.0,
+   "contacts": {
+    "L": {
+     "flat": 0.00377123616632825,
+     "heel_off": 0.184790572150085,
+     "heel_strike": 0.0,
+     "toe_off": 0.188561808316413
+    },
+    "R": {
+     "flat": 0.503771236166328,
+     "heel_off": 0.684790572150085,
+     "heel_strike": 0.5,
+     "toe_off": 0.688561808316413
+    }
+   },
+   "knee_measured_deg": [
+    8.921893998664892,
+    110.81222614744506
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Jog_F": {
+   "duration_s": 0.5,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 6.0,
+   "direction_godot": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "gait": "Jog",
+   "duty_factor": 0.2,
+   "cycle_distance_m": 3.0,
+   "step_length_m": 1.5,
+   "cadence_spm": 240.0,
+   "contacts": {
+    "L": {
+     "flat": 0.032,
+     "heel_off": 0.116,
+     "heel_strike": 0.0,
+     "toe_off": 0.2
+    },
+    "R": {
+     "flat": 0.532,
+     "heel_off": 0.616,
+     "heel_strike": 0.5,
+     "toe_off": 0.7
+    }
+   },
+   "knee_measured_deg": [
+    47.829467227235675,
+    123.07799384220361
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Jog_FL": {
+   "duration_s": 0.5,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 6.0,
+   "direction_godot": [
+    -0.707106781186547,
+    0.0,
+    -0.707106781186547
+   ],
+   "gait": "Jog",
+   "duty_factor": 0.188561808316413,
+   "cycle_distance_m": 3.0,
+   "step_length_m": 1.5,
+   "cadence_spm": 240.0,
+   "contacts": {
+    "L": {
+     "flat": 0.00377123616632825,
+     "heel_off": 0.184790572150085,
+     "heel_strike": 0.0,
+     "toe_off": 0.188561808316413
+    },
+    "R": {
+     "flat": 0.503771236166328,
+     "heel_off": 0.684790572150085,
+     "heel_strike": 0.5,
+     "toe_off": 0.688561808316413
+    }
+   },
+   "knee_measured_deg": [
+    8.921868722666208,
+    111.15121747874888
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Jog_FR": {
+   "duration_s": 0.5,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 6.0,
+   "direction_godot": [
+    0.707106781186547,
+    0.0,
+    -0.707106781186547
+   ],
+   "gait": "Jog",
+   "duty_factor": 0.188561808316413,
+   "cycle_distance_m": 3.0,
+   "step_length_m": 1.5,
+   "cadence_spm": 240.0,
+   "contacts": {
+    "L": {
+     "flat": 0.00377123616632825,
+     "heel_off": 0.184790572150085,
+     "heel_strike": 0.0,
+     "toe_off": 0.188561808316413
+    },
+    "R": {
+     "flat": 0.503771236166328,
+     "heel_off": 0.684790572150085,
+     "heel_strike": 0.5,
+     "toe_off": 0.688561808316413
+    }
+   },
+   "knee_measured_deg": [
+    8.92191927459264,
+    111.34113603964988
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Jog_L": {
+   "duration_s": 0.5,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 6.0,
+   "direction_godot": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "gait": "Jog",
+   "duty_factor": 0.133333333333333,
+   "cycle_distance_m": 3.0,
+   "step_length_m": 1.5,
+   "cadence_spm": 240.0,
+   "contacts": {
+    "L": {
+     "flat": 0.00266666666666666,
+     "heel_off": 0.130666666666667,
+     "heel_strike": 0.0,
+     "toe_off": 0.133333333333333
+    },
+    "R": {
+     "flat": 0.502666666666667,
+     "heel_off": 0.630666666666667,
+     "heel_strike": 0.5,
+     "toe_off": 0.633333333333333
+    }
+   },
+   "knee_measured_deg": [
+    8.921834066787124,
+    110.5643612862663
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Jog_Pivot_L180": {
+   "duration_s": 0.55,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "contacts": {
+    "support_intervals": {
+     "L": [
+      [
+       0.0,
+       0.3
+      ],
+      [
+       0.72,
+       1.0
+      ]
+     ],
+     "R": [
+      [
+       0.0,
+       0.05
+      ],
+      [
+       0.34,
+       0.68
+      ],
+      [
+       0.95,
+       1.0
+      ]
+     ]
+    }
+   },
+   "running_pivot": true,
+   "turn_degrees": 180.0,
+   "entry_speed_mps": 6.0,
+   "exit_speed_mps": 6.0,
+   "blend_in_s": 0.08,
+   "blend_out_s": 0.08
+  },
+  "Jog_Pivot_R180": {
+   "duration_s": 0.55,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "contacts": {
+    "support_intervals": {
+     "L": [
+      [
+       0.0,
+       0.05
+      ],
+      [
+       0.34,
+       0.68
+      ],
+      [
+       0.95,
+       1.0
+      ]
+     ],
+     "R": [
+      [
+       0.0,
+       0.3
+      ],
+      [
+       0.72,
+       1.0
+      ]
+     ]
+    }
+   },
+   "running_pivot": true,
+   "turn_degrees": -180.0,
+   "entry_speed_mps": 6.0,
+   "exit_speed_mps": 6.0,
+   "blend_in_s": 0.08,
+   "blend_out_s": 0.08
+  },
+  "Jog_R": {
+   "duration_s": 0.5,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 6.0,
+   "direction_godot": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "gait": "Jog",
+   "duty_factor": 0.133333333333333,
+   "cycle_distance_m": 3.0,
+   "step_length_m": 1.5,
+   "cadence_spm": 240.0,
+   "contacts": {
+    "L": {
+     "flat": 0.00266666666666666,
+     "heel_off": 0.130666666666667,
+     "heel_strike": 0.0,
+     "toe_off": 0.133333333333333
+    },
+    "R": {
+     "flat": 0.502666666666667,
+     "heel_off": 0.630666666666667,
+     "heel_strike": 0.5,
+     "toe_off": 0.633333333333333
+    }
+   },
+   "knee_measured_deg": [
+    8.921850870215273,
+    110.5643612862663
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Jump_Fall": {
+   "duration_s": 0.6,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Jump_Rise": {
+   "duration_s": 0.6,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Jump_Start": {
+   "duration_s": 0.1,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Land_Heavy": {
+   "duration_s": 0.6,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Land_Heavy_Add": {
+   "duration_s": 0.45,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": true,
+   "authoring_speed_mps": 0.0,
+   "pelvis_compression_curve": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.0166666666666667,
+     0.00021912418526906
+    ],
+    [
+     0.0333333333333333,
+     0.00087409597064777
+    ],
+    [
+     0.05,
+     0.00195773934819385
+    ],
+    [
+     0.0666666666666667,
+     0.00345818169429596
+    ],
+    [
+     0.0833333333333333,
+     0.00535898384862245
+    ],
+    [
+     0.1,
+     0.0076393202250021
+    ],
+    [
+     0.116666666666667,
+     0.0102742069809042
+    ],
+    [
+     0.133333333333333,
+     0.0132347757456457
+    ],
+    [
+     0.15,
+     0.0164885899083011
+    ],
+    [
+     0.166666666666667,
+     0.02
+    ],
+    [
+     0.183333333333333,
+     0.023730534276968
+    ],
+    [
+     0.2,
+     0.0276393202250021
+    ],
+    [
+     0.216666666666667,
+     0.0316835323672896
+    ],
+    [
+     0.233333333333333,
+     0.0358188614692939
+    ],
+    [
+     0.25,
+     0.04
+    ],
+    [
+     0.266666666666667,
+     0.0441811385307061
+    ],
+    [
+     0.283333333333333,
+     0.0483164676327104
+    ],
+    [
+     0.3,
+     0.0523606797749979
+    ],
+    [
+     0.316666666666667,
+     0.056269465723032
+    ],
+    [
+     0.333333333333333,
+     0.06
+    ],
+    [
+     0.35,
+     0.0635114100916989
+    ],
+    [
+     0.366666666666667,
+     0.0667652242543543
+    ],
+    [
+     0.383333333333333,
+     0.0697257930190958
+    ],
+    [
+     0.4,
+     0.0723606797749979
+    ],
+    [
+     0.416666666666667,
+     0.0746410161513776
+    ],
+    [
+     0.433333333333333,
+     0.076541818305704
+    ],
+    [
+     0.45,
+     0.0780422606518062
+    ],
+    [
+     0.466666666666667,
+     0.0791259040293522
+    ],
+    [
+     0.483333333333333,
+     0.0797808758147309
+    ],
+    [
+     0.5,
+     0.08
+    ],
+    [
+     0.516666666666667,
+     0.0797808758147309
+    ],
+    [
+     0.533333333333333,
+     0.0791259040293522
+    ],
+    [
+     0.55,
+     0.0780422606518062
+    ],
+    [
+     0.566666666666667,
+     0.076541818305704
+    ],
+    [
+     0.583333333333333,
+     0.0746410161513776
+    ],
+    [
+     0.6,
+     0.0723606797749979
+    ],
+    [
+     0.616666666666667,
+     0.0697257930190958
+    ],
+    [
+     0.633333333333333,
+     0.0667652242543543
+    ],
+    [
+     0.65,
+     0.0635114100916989
+    ],
+    [
+     0.666666666666667,
+     0.06
+    ],
+    [
+     0.683333333333333,
+     0.056269465723032
+    ],
+    [
+     0.7,
+     0.0523606797749979
+    ],
+    [
+     0.716666666666667,
+     0.0483164676327104
+    ],
+    [
+     0.733333333333333,
+     0.0441811385307062
+    ],
+    [
+     0.75,
+     0.04
+    ],
+    [
+     0.766666666666667,
+     0.0358188614692939
+    ],
+    [
+     0.783333333333333,
+     0.0316835323672896
+    ],
+    [
+     0.8,
+     0.0276393202250021
+    ],
+    [
+     0.816666666666667,
+     0.023730534276968
+    ],
+    [
+     0.833333333333333,
+     0.02
+    ],
+    [
+     0.85,
+     0.0164885899083011
+    ],
+    [
+     0.866666666666667,
+     0.0132347757456457
+    ],
+    [
+     0.883333333333333,
+     0.0102742069809042
+    ],
+    [
+     0.9,
+     0.0076393202250021
+    ],
+    [
+     0.916666666666667,
+     0.00535898384862244
+    ],
+    [
+     0.933333333333333,
+     0.00345818169429596
+    ],
+    [
+     0.95,
+     0.00195773934819386
+    ],
+    [
+     0.966666666666667,
+     0.00087409597064777
+    ],
+    [
+     0.983333333333333,
+     0.00021912418526906
+    ],
+    [
+     1.0,
+     3e-32
+    ]
+   ],
+   "compression_reference_m": 0.08
+  },
+  "Land_Light": {
+   "duration_s": 0.4,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Land_Light_Add": {
+   "duration_s": 0.35,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": true,
+   "authoring_speed_mps": 0.0,
+   "pelvis_compression_curve": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.0166666666666667,
+     0.00010956209263453
+    ],
+    [
+     0.0333333333333333,
+     0.00043704798532388
+    ],
+    [
+     0.05,
+     0.00097886967409692
+    ],
+    [
+     0.0666666666666667,
+     0.00172909084714798
+    ],
+    [
+     0.0833333333333333,
+     0.00267949192431122
+    ],
+    [
+     0.1,
+     0.00381966011250105
+    ],
+    [
+     0.116666666666667,
+     0.00513710349045211
+    ],
+    [
+     0.133333333333333,
+     0.00661738787282283
+    ],
+    [
+     0.15,
+     0.00824429495415053
+    ],
+    [
+     0.166666666666667,
+     0.00999999999999999
+    ],
+    [
+     0.183333333333333,
+     0.011865267138484
+    ],
+    [
+     0.2,
+     0.013819660112501
+    ],
+    [
+     0.216666666666667,
+     0.0158417661836448
+    ],
+    [
+     0.233333333333333,
+     0.0179094307346469
+    ],
+    [
+     0.25,
+     0.02
+    ],
+    [
+     0.266666666666667,
+     0.0220905692653531
+    ],
+    [
+     0.283333333333333,
+     0.0241582338163552
+    ],
+    [
+     0.3,
+     0.026180339887499
+    ],
+    [
+     0.316666666666667,
+     0.028134732861516
+    ],
+    [
+     0.333333333333333,
+     0.03
+    ],
+    [
+     0.35,
+     0.0317557050458495
+    ],
+    [
+     0.366666666666667,
+     0.0333826121271772
+    ],
+    [
+     0.383333333333333,
+     0.0348628965095479
+    ],
+    [
+     0.4,
+     0.0361803398874989
+    ],
+    [
+     0.416666666666667,
+     0.0373205080756888
+    ],
+    [
+     0.433333333333333,
+     0.038270909152852
+    ],
+    [
+     0.45,
+     0.0390211303259031
+    ],
+    [
+     0.466666666666667,
+     0.0395629520146761
+    ],
+    [
+     0.483333333333333,
+     0.0398904379073655
+    ],
+    [
+     0.5,
+     0.04
+    ],
+    [
+     0.516666666666667,
+     0.0398904379073655
+    ],
+    [
+     0.533333333333333,
+     0.0395629520146761
+    ],
+    [
+     0.55,
+     0.0390211303259031
+    ],
+    [
+     0.566666666666667,
+     0.038270909152852
+    ],
+    [
+     0.583333333333333,
+     0.0373205080756888
+    ],
+    [
+     0.6,
+     0.0361803398874989
+    ],
+    [
+     0.616666666666667,
+     0.0348628965095479
+    ],
+    [
+     0.633333333333333,
+     0.0333826121271772
+    ],
+    [
+     0.65,
+     0.0317557050458495
+    ],
+    [
+     0.666666666666667,
+     0.03
+    ],
+    [
+     0.683333333333333,
+     0.028134732861516
+    ],
+    [
+     0.7,
+     0.026180339887499
+    ],
+    [
+     0.716666666666667,
+     0.0241582338163552
+    ],
+    [
+     0.733333333333333,
+     0.0220905692653531
+    ],
+    [
+     0.75,
+     0.02
+    ],
+    [
+     0.766666666666667,
+     0.0179094307346469
+    ],
+    [
+     0.783333333333333,
+     0.0158417661836448
+    ],
+    [
+     0.8,
+     0.013819660112501
+    ],
+    [
+     0.816666666666667,
+     0.011865267138484
+    ],
+    [
+     0.833333333333333,
+     0.00999999999999999
+    ],
+    [
+     0.85,
+     0.00824429495415053
+    ],
+    [
+     0.866666666666667,
+     0.00661738787282283
+    ],
+    [
+     0.883333333333333,
+     0.00513710349045211
+    ],
+    [
+     0.9,
+     0.00381966011250105
+    ],
+    [
+     0.916666666666667,
+     0.00267949192431122
+    ],
+    [
+     0.933333333333333,
+     0.00172909084714798
+    ],
+    [
+     0.95,
+     0.00097886967409693
+    ],
+    [
+     0.966666666666667,
+     0.00043704798532388
+    ],
+    [
+     0.983333333333333,
+     0.00010956209263453
+    ],
+    [
+     1.0,
+     1e-32
+    ]
+   ],
+   "compression_reference_m": 0.04
+  },
+  "Lean_B": {
+   "duration_s": 0.0166666666666667,
+   "loop": false,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": true,
+   "authoring_speed_mps": 0.0,
+   "lean_direction": [
+    -1.0,
+    0.0
+   ],
+   "lean_max_deg": 14.0,
+   "single_pose": true
+  },
+  "Lean_F": {
+   "duration_s": 0.0166666666666667,
+   "loop": false,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": true,
+   "authoring_speed_mps": 0.0,
+   "lean_direction": [
+    1.0,
+    0.0
+   ],
+   "lean_max_deg": 14.0,
+   "single_pose": true
+  },
+  "Lean_L": {
+   "duration_s": 0.0166666666666667,
+   "loop": false,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": true,
+   "authoring_speed_mps": 0.0,
+   "lean_direction": [
+    0.0,
+    -1.0
+   ],
+   "lean_max_deg": 14.0,
+   "single_pose": true
+  },
+  "Lean_R": {
+   "duration_s": 0.0166666666666667,
+   "loop": false,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": true,
+   "authoring_speed_mps": 0.0,
+   "lean_direction": [
+    0.0,
+    1.0
+   ],
+   "lean_max_deg": 14.0,
+   "single_pose": true
+  },
+  "Mantle_High": {
+   "duration_s": 0.7,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "obstacle_height_m": 1.6,
+   "hand_contact_intervals": {
+    "L": [
+     [
+      0.25,
+      0.32
+     ]
+    ],
+    "R": [
+     [
+      0.25,
+      0.32
+     ]
+    ]
+   }
+  },
+  "Mantle_Low": {
+   "duration_s": 0.5,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "obstacle_height_m": 1.0,
+   "hand_contact_intervals": {
+    "L": [
+     [
+      0.25,
+      0.32
+     ]
+    ],
+    "R": [
+     [
+      0.25,
+      0.32
+     ]
+    ]
+   }
+  },
+  "Melee_ChargeHold": {
+   "duration_s": 1.2,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Melee_Overhead": {
+   "duration_s": 0.65,
+   "loop": false,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Melee_Slash": {
+   "duration_s": 0.5,
+   "loop": false,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Melee_Thrust": {
+   "duration_s": 0.45,
+   "loop": false,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Shape_Point": {
+   "duration_s": 2.0,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Slide_Aim": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true
+  },
+  "Slide_Enter": {
+   "duration_s": 0.183333333333333,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Slide_Exit": {
+   "duration_s": 0.25,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Slide_Hold_Empty": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "none",
+   "grip_state": "slide"
+  },
+  "Slide_Hold_Heavy": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "heavy",
+   "grip_state": "slide"
+  },
+  "Slide_Hold_Melee": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "melee",
+   "grip_state": "slide"
+  },
+  "Slide_Hold_Pistol": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "pistol",
+   "grip_state": "slide"
+  },
+  "Slide_Hold_Rifle": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "rifle",
+   "grip_state": "slide"
+  },
+  "Slide_Hold_Throw": {
+   "duration_s": 0.0166666666666667,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "single_pose": true,
+   "hold_static": true,
+   "grip_class": "throw",
+   "grip_state": "slide"
+  },
+  "Slide_Loop": {
+   "duration_s": 0.8,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "slide_reference_speed_mps": 10.0
+  },
+  "Sprint_B": {
+   "duration_s": 0.4,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 10.0,
+   "direction_godot": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "gait": "Sprint",
+   "duty_factor": 0.15,
+   "cycle_distance_m": 4.0,
+   "step_length_m": 2.0,
+   "cadence_spm": 300.0,
+   "contacts": {
+    "L": {
+     "flat": 0.024,
+     "heel_off": 0.087,
+     "heel_strike": 0.0,
+     "toe_off": 0.15
+    },
+    "R": {
+     "flat": 0.524,
+     "heel_off": 0.587,
+     "heel_strike": 0.5,
+     "toe_off": 0.65
+    }
+   },
+   "knee_measured_deg": [
+    8.921935466946364,
+    133.59154275349002
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Sprint_BL": {
+   "duration_s": 0.4,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 10.0,
+   "direction_godot": [
+    -0.707106781186547,
+    0.0,
+    0.707106781186547
+   ],
+   "gait": "Sprint",
+   "duty_factor": 0.14142135623731,
+   "cycle_distance_m": 4.0,
+   "step_length_m": 2.0,
+   "cadence_spm": 300.0,
+   "contacts": {
+    "L": {
+     "flat": 0.00282842712474619,
+     "heel_off": 0.138592929112563,
+     "heel_strike": 0.0,
+     "toe_off": 0.14142135623731
+    },
+    "R": {
+     "flat": 0.502828427124746,
+     "heel_off": 0.638592929112563,
+     "heel_strike": 0.5,
+     "toe_off": 0.64142135623731
+    }
+   },
+   "knee_measured_deg": [
+    8.9218560846403,
+    121.26834266179984
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Sprint_BR": {
+   "duration_s": 0.4,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 10.0,
+   "direction_godot": [
+    0.707106781186547,
+    0.0,
+    0.707106781186547
+   ],
+   "gait": "Sprint",
+   "duty_factor": 0.14142135623731,
+   "cycle_distance_m": 4.0,
+   "step_length_m": 2.0,
+   "cadence_spm": 300.0,
+   "contacts": {
+    "L": {
+     "flat": 0.00282842712474619,
+     "heel_off": 0.138592929112563,
+     "heel_strike": 0.0,
+     "toe_off": 0.14142135623731
+    },
+    "R": {
+     "flat": 0.502828427124746,
+     "heel_off": 0.638592929112563,
+     "heel_strike": 0.5,
+     "toe_off": 0.64142135623731
+    }
+   },
+   "knee_measured_deg": [
+    8.92190663663767,
+    120.44606007331197
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Sprint_F": {
+   "duration_s": 0.4,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 10.0,
+   "direction_godot": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "gait": "Sprint",
+   "duty_factor": 0.15,
+   "cycle_distance_m": 4.0,
+   "step_length_m": 2.0,
+   "cadence_spm": 300.0,
+   "contacts": {
+    "L": {
+     "flat": 0.024,
+     "heel_off": 0.087,
+     "heel_strike": 0.0,
+     "toe_off": 0.15
+    },
+    "R": {
+     "flat": 0.524,
+     "heel_off": 0.587,
+     "heel_strike": 0.5,
+     "toe_off": 0.65
+    }
+   },
+   "knee_measured_deg": [
+    44.63202829451934,
+    133.35341367095077
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Sprint_FL": {
+   "duration_s": 0.4,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 10.0,
+   "direction_godot": [
+    -0.707106781186547,
+    0.0,
+    -0.707106781186547
+   ],
+   "gait": "Sprint",
+   "duty_factor": 0.14142135623731,
+   "cycle_distance_m": 4.0,
+   "step_length_m": 2.0,
+   "cadence_spm": 300.0,
+   "contacts": {
+    "L": {
+     "flat": 0.00282842712474619,
+     "heel_off": 0.138592929112563,
+     "heel_strike": 0.0,
+     "toe_off": 0.14142135623731
+    },
+    "R": {
+     "flat": 0.502828427124746,
+     "heel_off": 0.638592929112563,
+     "heel_strike": 0.5,
+     "toe_off": 0.64142135623731
+    }
+   },
+   "knee_measured_deg": [
+    8.921893998664892,
+    120.90815128725338
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Sprint_FR": {
+   "duration_s": 0.4,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 10.0,
+   "direction_godot": [
+    0.707106781186547,
+    0.0,
+    -0.707106781186547
+   ],
+   "gait": "Sprint",
+   "duty_factor": 0.14142135623731,
+   "cycle_distance_m": 4.0,
+   "step_length_m": 2.0,
+   "cadence_spm": 300.0,
+   "contacts": {
+    "L": {
+     "flat": 0.00282842712474619,
+     "heel_off": 0.138592929112563,
+     "heel_strike": 0.0,
+     "toe_off": 0.14142135623731
+    },
+    "R": {
+     "flat": 0.502828427124746,
+     "heel_off": 0.638592929112563,
+     "heel_strike": 0.5,
+     "toe_off": 0.64142135623731
+    }
+   },
+   "knee_measured_deg": [
+    8.92188767967195,
+    120.97761900743937
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Sprint_L": {
+   "duration_s": 0.4,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 10.0,
+   "direction_godot": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "gait": "Sprint",
+   "duty_factor": 0.1,
+   "cycle_distance_m": 4.0,
+   "step_length_m": 2.0,
+   "cadence_spm": 300.0,
+   "contacts": {
+    "L": {
+     "flat": 0.002,
+     "heel_off": 0.098,
+     "heel_strike": 0.0,
+     "toe_off": 0.1
+    },
+    "R": {
+     "flat": 0.502,
+     "heel_off": 0.598,
+     "heel_strike": 0.5,
+     "toe_off": 0.6
+    }
+   },
+   "knee_measured_deg": [
+    8.921933442903857,
+    120.24405559135535
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Sprint_Out": {
+   "duration_s": 0.2,
+   "loop": false,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": true,
+   "authoring_speed_mps": 0.0,
+   "weapon_pose_blend_curve": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "Sprint_R": {
+   "duration_s": 0.4,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 10.0,
+   "direction_godot": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "gait": "Sprint",
+   "duty_factor": 0.1,
+   "cycle_distance_m": 4.0,
+   "step_length_m": 2.0,
+   "cadence_spm": 300.0,
+   "contacts": {
+    "L": {
+     "flat": 0.002,
+     "heel_off": 0.098,
+     "heel_strike": 0.0,
+     "toe_off": 0.1
+    },
+    "R": {
+     "flat": 0.502,
+     "heel_off": 0.598,
+     "heel_strike": 0.5,
+     "toe_off": 0.6
+    }
+   },
+   "knee_measured_deg": [
+    8.921902193602419,
+    120.43255994415495
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Stagger_B": {
+   "duration_s": 0.7,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0,
+   "contacts": {
+    "R": [
+     [
+      0,
+      0.15
+     ],
+     [
+      0.48,
+      1
+     ]
+    ],
+    "L": [
+     [
+      0,
+      0.48
+     ],
+     [
+      0.81,
+      1
+     ]
+    ]
+   },
+   "leading_foot": "R",
+   "recovery_direction_blender": [
+    0,
+    1
+   ],
+   "recovery_distance_m": 0.18
+  },
+  "Stagger_F": {
+   "duration_s": 0.7,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0,
+   "contacts": {
+    "R": [
+     [
+      0,
+      0.15
+     ],
+     [
+      0.48,
+      1
+     ]
+    ],
+    "L": [
+     [
+      0,
+      0.48
+     ],
+     [
+      0.81,
+      1
+     ]
+    ]
+   },
+   "leading_foot": "R",
+   "recovery_direction_blender": [
+    0,
+    -1
+   ],
+   "recovery_distance_m": 0.18
+  },
+  "Stagger_L": {
+   "duration_s": 0.7,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0,
+   "contacts": {
+    "R": [
+     [
+      0,
+      0.15
+     ],
+     [
+      0.48,
+      1
+     ]
+    ],
+    "L": [
+     [
+      0,
+      0.48
+     ],
+     [
+      0.81,
+      1
+     ]
+    ]
+   },
+   "leading_foot": "R",
+   "recovery_direction_blender": [
+    1,
+    0
+   ],
+   "recovery_distance_m": 0.18
+  },
+  "Stagger_R": {
+   "duration_s": 0.7,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0,
+   "contacts": {
+    "L": [
+     [
+      0,
+      0.15
+     ],
+     [
+      0.48,
+      1
+     ]
+    ],
+    "R": [
+     [
+      0,
+      0.48
+     ],
+     [
+      0.81,
+      1
+     ]
+    ]
+   },
+   "leading_foot": "L",
+   "recovery_direction_blender": [
+    -1,
+    0
+   ],
+   "recovery_distance_m": 0.18
+  },
+  "Talk": {
+   "duration_s": 2.0,
+   "loop": true,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Taunt_Wave": {
+   "duration_s": 2.0,
+   "loop": false,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Throw": {
+   "duration_s": 0.65,
+   "loop": false,
+   "mask": [
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "TurnInPlace_L180": {
+   "duration_s": 1.4,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "contacts": {
+    "support_intervals": {
+     "L": [
+      [
+       0.0,
+       0.03
+      ],
+      [
+       0.22,
+       0.53
+      ],
+      [
+       0.72,
+       1.0
+      ]
+     ],
+     "R": [
+      [
+       0.0,
+       0.28
+      ],
+      [
+       0.47,
+       0.78
+      ],
+      [
+       0.97,
+       1.0
+      ]
+     ]
+    }
+   },
+   "turn_degrees": 180.0
+  },
+  "TurnInPlace_L90": {
+   "duration_s": 0.8,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "contacts": {
+    "support_intervals": {
+     "L": [
+      [
+       0.0,
+       0.06
+      ],
+      [
+       0.44,
+       1.0
+      ]
+     ],
+     "R": [
+      [
+       0.0,
+       0.56
+      ],
+      [
+       0.94,
+       1.0
+      ]
+     ]
+    }
+   },
+   "turn_degrees": 90.0
+  },
+  "TurnInPlace_R180": {
+   "duration_s": 1.4,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "contacts": {
+    "support_intervals": {
+     "L": [
+      [
+       0.0,
+       0.03
+      ],
+      [
+       0.22,
+       0.53
+      ],
+      [
+       0.72,
+       1.0
+      ]
+     ],
+     "R": [
+      [
+       0.0,
+       0.28
+      ],
+      [
+       0.47,
+       0.78
+      ],
+      [
+       0.97,
+       1.0
+      ]
+     ]
+    }
+   },
+   "turn_degrees": -180.0
+  },
+  "TurnInPlace_R90": {
+   "duration_s": 0.8,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "contacts": {
+    "support_intervals": {
+     "L": [
+      [
+       0.0,
+       0.06
+      ],
+      [
+       0.44,
+       1.0
+      ]
+     ],
+     "R": [
+      [
+       0.0,
+       0.56
+      ],
+      [
+       0.94,
+       1.0
+      ]
+     ]
+    }
+   },
+   "turn_degrees": -90.0
+  },
+  "Vault": {
+   "duration_s": 0.7,
+   "loop": false,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0,
+   "obstacle_height_m": 0.8,
+   "hand_contact_intervals": {
+    "L": [
+     [
+      0.25,
+      0.32
+     ]
+    ],
+    "R": [
+     [
+      0.25,
+      0.32
+     ]
+    ]
+   }
+  },
+  "Victory_Dance": {
+   "duration_s": 2.0,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 0.0
+  },
+  "Walk_B": {
+   "duration_s": 0.6,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 2.4,
+   "direction_godot": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "gait": "Walk",
+   "duty_factor": 0.44,
+   "cycle_distance_m": 1.44,
+   "step_length_m": 0.72,
+   "cadence_spm": 200.0,
+   "contacts": {
+    "L": {
+     "flat": 0.0704,
+     "heel_off": 0.2552,
+     "heel_strike": 0.0,
+     "toe_off": 0.44
+    },
+    "R": {
+     "flat": 0.5704,
+     "heel_off": 0.7552,
+     "heel_strike": 0.5,
+     "toe_off": 0.94
+    }
+   },
+   "knee_measured_deg": [
+    27.79783819012117,
+    97.52708064538463
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Walk_BL": {
+   "duration_s": 0.6,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 2.4,
+   "direction_godot": [
+    -0.707106781186547,
+    0.0,
+    0.707106781186547
+   ],
+   "gait": "Walk",
+   "duty_factor": 0.392837100659193,
+   "cycle_distance_m": 1.44,
+   "step_length_m": 0.72,
+   "cadence_spm": 200.0,
+   "contacts": {
+    "L": {
+     "flat": 0.00785674201318386,
+     "heel_off": 0.384980358646009,
+     "heel_strike": 0.0,
+     "toe_off": 0.392837100659193
+    },
+    "R": {
+     "flat": 0.507856742013184,
+     "heel_off": 0.884980358646009,
+     "heel_strike": 0.5,
+     "toe_off": 0.892837100659193
+    }
+   },
+   "knee_measured_deg": [
+    8.921868722666208,
+    89.73476819838405
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Walk_BR": {
+   "duration_s": 0.6,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 2.4,
+   "direction_godot": [
+    0.707106781186547,
+    0.0,
+    0.707106781186547
+   ],
+   "gait": "Walk",
+   "duty_factor": 0.392837100659193,
+   "cycle_distance_m": 1.44,
+   "step_length_m": 0.72,
+   "cadence_spm": 200.0,
+   "contacts": {
+    "L": {
+     "flat": 0.00785674201318386,
+     "heel_off": 0.384980358646009,
+     "heel_strike": 0.0,
+     "toe_off": 0.392837100659193
+    },
+    "R": {
+     "flat": 0.507856742013184,
+     "heel_off": 0.884980358646009,
+     "heel_strike": 0.5,
+     "toe_off": 0.892837100659193
+    }
+   },
+   "knee_measured_deg": [
+    8.921868722666208,
+    88.26457373272933
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Walk_F": {
+   "duration_s": 0.6,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 2.4,
+   "direction_godot": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "gait": "Walk",
+   "duty_factor": 0.44,
+   "cycle_distance_m": 1.44,
+   "step_length_m": 0.72,
+   "cadence_spm": 200.0,
+   "contacts": {
+    "L": {
+     "flat": 0.0704,
+     "heel_off": 0.2552,
+     "heel_strike": 0.0,
+     "toe_off": 0.44
+    },
+    "R": {
+     "flat": 0.5704,
+     "heel_off": 0.7552,
+     "heel_strike": 0.5,
+     "toe_off": 0.94
+    }
+   },
+   "knee_measured_deg": [
+    38.01146333736261,
+    97.71190692895433
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Walk_FL": {
+   "duration_s": 0.6,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 2.4,
+   "direction_godot": [
+    -0.707106781186547,
+    0.0,
+    -0.707106781186547
+   ],
+   "gait": "Walk",
+   "duty_factor": 0.392837100659193,
+   "cycle_distance_m": 1.44,
+   "step_length_m": 0.72,
+   "cadence_spm": 200.0,
+   "contacts": {
+    "L": {
+     "flat": 0.00785674201318386,
+     "heel_off": 0.384980358646009,
+     "heel_strike": 0.0,
+     "toe_off": 0.392837100659193
+    },
+    "R": {
+     "flat": 0.507856742013184,
+     "heel_off": 0.884980358646009,
+     "heel_strike": 0.5,
+     "toe_off": 0.892837100659193
+    }
+   },
+   "knee_measured_deg": [
+    8.921846606109199,
+    88.45912182619836
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Walk_FR": {
+   "duration_s": 0.6,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 2.4,
+   "direction_godot": [
+    0.707106781186547,
+    0.0,
+    -0.707106781186547
+   ],
+   "gait": "Walk",
+   "duty_factor": 0.392837100659193,
+   "cycle_distance_m": 1.44,
+   "step_length_m": 0.72,
+   "cadence_spm": 200.0,
+   "contacts": {
+    "L": {
+     "flat": 0.00785674201318386,
+     "heel_off": 0.384980358646009,
+     "heel_strike": 0.0,
+     "toe_off": 0.392837100659193
+    },
+    "R": {
+     "flat": 0.507856742013184,
+     "heel_off": 0.884980358646009,
+     "heel_strike": 0.5,
+     "toe_off": 0.892837100659193
+    }
+   },
+   "knee_measured_deg": [
+    8.921837127568045,
+    89.77792550931396
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Walk_L": {
+   "duration_s": 0.6,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 2.4,
+   "direction_godot": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "gait": "Walk",
+   "duty_factor": 0.277777777777778,
+   "cycle_distance_m": 1.44,
+   "step_length_m": 0.72,
+   "cadence_spm": 200.0,
+   "contacts": {
+    "L": {
+     "flat": 0.00555555555555555,
+     "heel_off": 0.272222222222222,
+     "heel_strike": 0.0,
+     "toe_off": 0.277777777777778
+    },
+    "R": {
+     "flat": 0.505555555555556,
+     "heel_off": 0.772222222222222,
+     "heel_strike": 0.5,
+     "toe_off": 0.777777777777778
+    }
+   },
+   "knee_measured_deg": [
+    8.921878633137144,
+    90.99152644607757
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  },
+  "Walk_R": {
+   "duration_s": 0.6,
+   "loop": true,
+   "mask": [
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "toe.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "toe.R"
+   ],
+   "additive": false,
+   "authoring_speed_mps": 2.4,
+   "direction_godot": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "gait": "Walk",
+   "duty_factor": 0.277777777777778,
+   "cycle_distance_m": 1.44,
+   "step_length_m": 0.72,
+   "cadence_spm": 200.0,
+   "contacts": {
+    "L": {
+     "flat": 0.00555555555555555,
+     "heel_off": 0.272222222222222,
+     "heel_strike": 0.0,
+     "toe_off": 0.277777777777778
+    },
+    "R": {
+     "flat": 0.505555555555556,
+     "heel_off": 0.772222222222222,
+     "heel_strike": 0.5,
+     "toe_off": 0.777777777777778
+    }
+   },
+   "knee_measured_deg": [
+    8.921842087257511,
+    90.7058205552566
+   ],
+   "ik_pole_godot": [
+    0,
+    0,
+    -1
+   ]
+  }
+ }
+}

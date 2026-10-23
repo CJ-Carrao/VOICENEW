@@ -1,0 +1,13 @@
+{
+  "anchor": [0, 0, 0],
+  "pieces": [
+    { "shape": "capsule", "radius": 0.11, "height": 0.48, "pos": [0, 0, 0], "rot": [90, 0, 0], "color": "#33363c", "tag": "body" },
+    { "shape": "cylinder", "radius": 0.112, "height": 0.04, "pos": [0, 0, -0.06], "rot": [90, 0, 0], "color": "#c9a227", "tag": "stripe" },
+    { "shape": "cone", "radius": 0.09, "height": 0.12, "pos": [0, 0, 0.26], "rot": [90, 0, 0], "color": "#2a2c30", "tag": "body" },
+    { "shape": "box", "size": [0.015, 0.14, 0.12], "pos": [0, 0.1, 0.3], "color": "#55595f", "tag": "wing" },
+    { "shape": "box", "size": [0.015, 0.14, 0.12], "pos": [0, -0.1, 0.3], "color": "#55595f", "tag": "wing" },
+    { "shape": "box", "size": [0.14, 0.015, 0.12], "pos": [-0.1, 0, 0.3], "color": "#55595f", "tag": "wing" },
+    { "shape": "box", "size": [0.14, 0.015, 0.12], "pos": [0.1, 0, 0.3], "color": "#55595f", "tag": "wing" },
+    { "shape": "cylinder", "radius": 0.1, "height": 0.03, "pos": [0, 0, 0.36], "rot": [90, 0, 0], "color": "#55595f", "tag": "wing" }
+  ]
+}

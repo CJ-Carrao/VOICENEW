@@ -1,0 +1,277 @@
+{
+  "_comment": "armadilha de pressão: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.06,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.4,
+        0.025,
+        0.5
+      ],
+      "pos": [
+        0,
+        0.012,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "base"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.1,
+      "height": 0.015,
+      "pos": [
+        0,
+        0.035,
+        0
+      ],
+      "color": "#c5c9ce",
+      "tag": "plate"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.018,
+      "height": 0.072,
+      "pos": [
+        -0.172,
+        0.072,
+        -0.2
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "tooth"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.018,
+      "height": 0.072,
+      "pos": [
+        -0.172,
+        0.072,
+        -0.1335
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "tooth"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.018,
+      "height": 0.072,
+      "pos": [
+        -0.172,
+        0.072,
+        -0.067
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "tooth"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.018,
+      "height": 0.072,
+      "pos": [
+        -0.172,
+        0.072,
+        -0.0005
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "tooth"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.018,
+      "height": 0.072,
+      "pos": [
+        -0.172,
+        0.072,
+        0.066
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "tooth"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.018,
+      "height": 0.072,
+      "pos": [
+        -0.172,
+        0.072,
+        0.1325
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "tooth"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.018,
+      "height": 0.072,
+      "pos": [
+        -0.172,
+        0.072,
+        0.199
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "tooth"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.018,
+      "height": 0.072,
+      "pos": [
+        0.172,
+        0.072,
+        -0.2
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "tooth"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.018,
+      "height": 0.072,
+      "pos": [
+        0.172,
+        0.072,
+        -0.1335
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "tooth"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.018,
+      "height": 0.072,
+      "pos": [
+        0.172,
+        0.072,
+        -0.067
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "tooth"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.018,
+      "height": 0.072,
+      "pos": [
+        0.172,
+        0.072,
+        -0.0005
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "tooth"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.018,
+      "height": 0.072,
+      "pos": [
+        0.172,
+        0.072,
+        0.066
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "tooth"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.018,
+      "height": 0.072,
+      "pos": [
+        0.172,
+        0.072,
+        0.1325
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "tooth"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.018,
+      "height": 0.072,
+      "pos": [
+        0.172,
+        0.072,
+        0.199
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "tooth"
+    }
+  ]
+}

@@ -1,0 +1,383 @@
+{
+ "_comment": "RPG-7 com granada PG-7 encaixada. Gerado por tools/models/gen_arsenal.py.",
+ "anchor": [
+  0,
+  -0.08,
+  0.0
+ ],
+ "joints": {
+  "trigger": [
+   0,
+   0.0,
+   0.0
+  ],
+  "muzzle": [
+   0,
+   0.0,
+   -0.3
+  ]
+ },
+ "pieces": [
+  {
+   "shape": "box",
+   "size": [
+    0.03,
+    0.095,
+    0.045
+   ],
+   "pos": [
+    0,
+    -0.08,
+    0.0
+   ],
+   "color": "#16171a",
+   "rot": [
+    -10,
+    0,
+    0
+   ],
+   "tag": "grip",
+   "finish": "rubber"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.006,
+    0.02,
+    0.006
+   ],
+   "pos": [
+    0,
+    -0.03,
+    -0.002
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    12,
+    0,
+    0
+   ],
+   "tag": "trigger",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.011,
+    0.005,
+    0.05
+   ],
+   "pos": [
+    0,
+    -0.05,
+    -0.005
+   ],
+   "color": "#16171a",
+   "tag": "trigger"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.011,
+    0.034,
+    0.006
+   ],
+   "pos": [
+    0,
+    -0.033,
+    -0.03
+   ],
+   "color": "#16171a",
+   "rot": [
+    12,
+    0,
+    0
+   ],
+   "tag": "trigger"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.024,
+   "height": 0.32,
+   "pos": [
+    0,
+    0.0,
+    0.18
+   ],
+   "color": "#4b5a3a",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "receiver",
+   "finish": "metal",
+   "section": "rear"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.056,
+   "height": 0.13,
+   "pos": [
+    0,
+    0.0,
+    0.4
+   ],
+   "color": "#4b5a3a",
+   "top_radius": 0.03,
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "receiver",
+   "finish": "metal",
+   "section": "rear"
+  },
+  {
+   "shape": "torus",
+   "radius": 0.058,
+   "inner_radius": 0.05,
+   "pos": [
+    0,
+    0.0,
+    0.466
+   ],
+   "color": "#16171a",
+   "rot": [
+    90,
+    0,
+    0
+   ],
+   "tag": "receiver",
+   "section": "rear"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.026,
+    0.06,
+    0.035
+   ],
+   "pos": [
+    0,
+    -0.05,
+    0.25
+   ],
+   "color": "#16171a",
+   "tag": "grip",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.024,
+   "height": 0.3,
+   "pos": [
+    0,
+    0.0,
+    -0.15
+   ],
+   "color": "#4b5a3a",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "receiver",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.031,
+   "height": 0.22,
+   "pos": [
+    0,
+    0.0,
+    -0.05
+   ],
+   "color": "#7a4b26",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "handguard",
+   "finish": "wood"
+  },
+  {
+   "shape": "torus",
+   "radius": 0.0325,
+   "inner_radius": 0.029,
+   "pos": [
+    0,
+    0.0,
+    -0.16
+   ],
+   "color": "#16171a",
+   "rot": [
+    90,
+    0,
+    0
+   ],
+   "tag": "handguard"
+  },
+  {
+   "shape": "torus",
+   "radius": 0.0325,
+   "inner_radius": 0.029,
+   "pos": [
+    0,
+    0.0,
+    0.06
+   ],
+   "color": "#16171a",
+   "rot": [
+    90,
+    0,
+    0
+   ],
+   "tag": "handguard"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.016,
+    0.05,
+    0.016
+   ],
+   "pos": [
+    -0.032,
+    0.04,
+    -0.02
+   ],
+   "color": "#16171a",
+   "tag": "sight",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.014,
+   "height": 0.12,
+   "pos": [
+    -0.045,
+    0.06,
+    -0.02
+   ],
+   "color": "#16171a",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "sight",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.013,
+   "height": 0.003,
+   "pos": [
+    -0.045,
+    0.06,
+    -0.081
+   ],
+   "color": "#3f8fb8",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "sight",
+   "finish": "glass",
+   "glow": 0.25
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.004,
+    0.03,
+    0.01
+   ],
+   "pos": [
+    0,
+    0.034,
+    -0.27
+   ],
+   "color": "#16171a",
+   "tag": "sight"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.026,
+   "height": 0.06,
+   "pos": [
+    0,
+    0.0,
+    -0.33
+   ],
+   "color": "#5a6a42",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "barrel",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.046,
+   "height": 0.11,
+   "pos": [
+    0,
+    0.0,
+    -0.415
+   ],
+   "color": "#5a6a42",
+   "top_radius": 0.046,
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "muzzle",
+   "finish": "metal"
+  },
+  {
+   "shape": "cone",
+   "radius": 0.046,
+   "height": 0.16,
+   "pos": [
+    0,
+    0.0,
+    -0.55
+   ],
+   "color": "#5a6a42",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "muzzle",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.006,
+   "height": 0.03,
+   "pos": [
+    0,
+    0.0,
+    -0.64
+   ],
+   "color": "#16171a",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "muzzle",
+   "finish": "metal"
+  }
+ ]
+}

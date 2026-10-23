@@ -1,0 +1,32 @@
+{
+  "_comment": "Verbos. Cada entrada aponta pra UM id de defs: action (faz), trigger (quando) ou movement (como se move). Verbo novo de um tipo que já existe é só dado.",
+
+  "shoot":   { "action": "shoot",   "words": ["atira", "atirar", "atiram", "atire", "dispara", "disparar", "disparam", "cospe", "cospem", "cuspir", "lança", "lançar", "lançam", "joga", "jogar", "jogam", "arremessa", "arremessar", "arremessam", "metralha",
+  "atirando"
+] },
+  "drop":    { "action": "drop",    "words": ["solta", "soltar", "soltam", "caga", "cagar", "cagam", "larga", "largar", "largam", "deixa cair", "derruba", "derrubar", "derrubam", "despeja", "despejar", "despejam"] },
+  "spawn":   { "action": "spawn",   "words": ["cria", "criar", "criam", "gera", "gerar", "geram", "faz aparecer", "spawna", "spawnar", "spawnam", "coloca", "colocar", "colocam", "constrói", "construir", "constroem", "levanta", "ergue", "planta"] },
+  "summon":  { "action": "summon",  "words": ["chama", "chamar", "chamam", "invoca", "invocar", "invocam", "traz", "trazer", "trazem", "convoca"] },
+  "explode": { "action": "explode", "words": ["explode", "explodir", "explodem", "estoura", "estourar", "estouram", "detona", "detonar", "detonam"] },
+  "anchor":  { "action": "anchor",  "words": ["crava", "cravar", "cravam", "finca", "fincar", "fincam", "gruda", "grudar", "grudam", "ancora", "ancorar",
+  "fixa",
+  "fixam",
+  "ao fixar"
+] },
+  "push":    { "action": "push",    "words": ["empurra", "empurrar", "empurram", "repele", "repelir", "repelem"] },
+  "pull":    { "action": "pull",    "words": ["puxa", "puxar", "puxam", "atrai", "atrair", "atraem", "suga", "sugar", "sugam"] },
+  "freeze":  { "action": "freeze",  "words": ["congela", "congelar", "congelam"] },
+  "ignite":  { "action": "ignite",  "words": ["queima", "queimar", "queimam", "incendeia", "incendiar", "incendeiam", "bota fogo", "taca fogo", "põe fogo"] },
+  "strike":  { "action": "strike",  "words": ["golpeia", "golpear", "golpeiam", "golpeie", "corta", "cortar", "cortam", "fatia", "fatiar", "fatiam", "retalha", "retalhar", "decepa", "decepar", "esfaqueia", "esfaquear", "dá porrada", "dão porrada", "bate em"] },
+  "split":   { "action": "split",   "words": ["divide", "dividir", "dividem", "multiplica", "multiplicar", "multiplicam", "racha", "rachar", "racham"] },
+
+  "mark":    { "trigger": "on_aim_hold", "words": ["marca", "marcar", "marcam", "aponta", "apontar", "apontam"] },
+
+  "fly":         { "movement": "fly",         "words": ["voa", "voar", "voam", "voando", "flutua", "flutuar", "flutuam", "paira", "pairar", "pairam"] },
+  "bounce":      { "movement": "bounce",      "words": ["quica", "quicar", "quicam", "pula", "pulam", "saltita", "saltitam"] },
+  "chase_enemy": { "movement": "chase_enemy", "words": ["persegue", "perseguir", "perseguem", "persegue o inimigo", "perseguem o inimigo", "segue o inimigo", "seguem o inimigo", "vai atrás do inimigo", "caça o inimigo"] },
+  "orbit_owner": { "movement": "orbit_owner", "words": ["orbita", "orbitar", "orbitam", "gira em volta de mim", "giram em volta de mim", "fica em volta de mim", "ficam em volta de mim", "me rodeia", "me rodeiam"] },
+  "follow_aim":  { "movement": "follow_aim",  "words": ["segue a mira", "seguem a mira", "vai onde eu mirar", "vai pra onde eu miro"] },
+  "straight":    { "movement": "straight",    "words": ["vai reto", "vão reto", "anda reto", "andam reto", "segue reto", "seguem reto"] },
+  "burst_into": {"action": "burst_into", "words": ["explode em", "explodem em", "explodir em", "estoura em", "estouram em"]}
+}

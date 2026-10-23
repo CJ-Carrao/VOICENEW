@@ -1,0 +1,187 @@
+{
+  "_comment": "touro: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.8,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.896,
+        0
+      ],
+      "color": "#79614c",
+      "tag": "body",
+      "_stretch": [
+        0.8,
+        0.8,
+        1.4949999999999999
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        1.12,
+        -0.874
+      ],
+      "color": "#79614c",
+      "tag": "head",
+      "_stretch": [
+        0.48,
+        0.512,
+        0.644
+      ]
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.096,
+      "height": 0.8,
+      "pos": [
+        -0.24,
+        0.4,
+        -0.529
+      ],
+      "color": "#79614c",
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.096,
+      "height": 0.8,
+      "pos": [
+        -0.24,
+        0.4,
+        0.529
+      ],
+      "color": "#79614c",
+      "tag": "leg"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.104,
+      "pos": [
+        -0.216,
+        1.392,
+        -0.874
+      ],
+      "color": "#79614c",
+      "tag": "ear"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.028,
+      "pos": [
+        -0.192,
+        1.216,
+        -1.127
+      ],
+      "color": "#2a2d32",
+      "tag": "eye"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.04,
+      "height": 0.3,
+      "pos": [
+        -0.32,
+        1.456,
+        -0.805
+      ],
+      "color": "#d6dcd8",
+      "rot": [
+        0,
+        0,
+        45
+      ],
+      "tag": "horn"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.096,
+      "height": 0.8,
+      "pos": [
+        0.24,
+        0.4,
+        -0.529
+      ],
+      "color": "#79614c",
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.096,
+      "height": 0.8,
+      "pos": [
+        0.24,
+        0.4,
+        0.529
+      ],
+      "color": "#79614c",
+      "tag": "leg"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.104,
+      "pos": [
+        0.216,
+        1.392,
+        -0.874
+      ],
+      "color": "#79614c",
+      "tag": "ear"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.028,
+      "pos": [
+        0.192,
+        1.216,
+        -1.127
+      ],
+      "color": "#2a2d32",
+      "tag": "eye"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.04,
+      "height": 0.3,
+      "pos": [
+        0.32,
+        1.456,
+        -0.805
+      ],
+      "color": "#d6dcd8",
+      "rot": [
+        0,
+        0,
+        -45
+      ],
+      "tag": "horn"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.032,
+      "height": 1.15,
+      "pos": [
+        0,
+        0.8,
+        1.196
+      ],
+      "color": "#79614c",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "tail"
+    }
+  ]
+}

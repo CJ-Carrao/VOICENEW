@@ -1,0 +1,133 @@
+{
+  "_comment": "ventilador: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.8,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.8,
+        0.08,
+        0.6
+      ],
+      "pos": [
+        0,
+        0.04,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "base"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.065,
+      "height": 0.8,
+      "pos": [
+        0,
+        0.47,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "stand"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.6,
+      "inner_radius": 0.552,
+      "pos": [
+        0,
+        1,
+        0
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "guard"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.13,
+      "height": 0.3,
+      "pos": [
+        0,
+        1,
+        0
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "motor"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.2,
+        0.48,
+        0.035
+      ],
+      "pos": [
+        0.0,
+        1.25,
+        -0.18
+      ],
+      "color": "#9ba5ab",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "blade"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.2,
+        0.48,
+        0.035
+      ],
+      "pos": [
+        0.2165,
+        0.875,
+        -0.18
+      ],
+      "color": "#9ba5ab",
+      "rot": [
+        0,
+        0,
+        -120
+      ],
+      "tag": "blade"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.2,
+        0.48,
+        0.035
+      ],
+      "pos": [
+        -0.2165,
+        0.875,
+        -0.18
+      ],
+      "color": "#9ba5ab",
+      "rot": [
+        0,
+        0,
+        -240
+      ],
+      "tag": "blade"
+    }
+  ]
+}

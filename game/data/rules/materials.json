@@ -1,0 +1,158 @@
+{
+  "_comment": "Pacotes ortogonais. match compara mods; propriedades e comportamentos são fundidos sem repetir gatilho+ação. contact afeta o alvo tocado, inclusive em golpes.",
+  "packs": [
+    {
+      "match": {
+        "element": "ice"
+      },
+      "properties": {
+        "friction": 0.08
+      },
+      "behaviors": [
+        {
+          "when": {
+            "type": "on_hit"
+          },
+          "do": {
+            "type": "freeze",
+            "contact": true
+          }
+        }
+      ]
+    },
+    {
+      "match": {
+        "element": "fire"
+      },
+      "behaviors": [
+        {
+          "when": {
+            "type": "on_hit"
+          },
+          "do": {
+            "type": "ignite",
+            "contact": true
+          }
+        }
+      ]
+    },
+    {
+      "match": {
+        "material": "rubber"
+      },
+      "properties": {
+        "movement": "bounce",
+        "restitution": 0.95,
+        "hop_mult": 1.5
+      },
+      "visual": {
+        "tint": "#d982d6",
+        "mix": 0.45,
+        "roughness": 0.95,
+        "metallic": 0.0
+      },
+      "behaviors": [
+        {
+          "when": {
+            "type": "on_hit"
+          },
+          "do": {
+            "type": "push"
+          }
+        }
+      ]
+    },
+    {
+      "match": {
+        "magnetic": true
+      },
+      "visual": {
+        "tint": "#788ddd",
+        "mix": 0.35,
+        "metallic": 0.9
+      },
+      "behaviors": [
+        {
+          "when": {
+            "type": "every",
+            "s": 0.75
+          },
+          "do": {
+            "type": "pull"
+          }
+        }
+      ]
+    },
+    {
+      "match": {
+        "explosive": true
+      },
+      "behaviors": [
+        {
+          "when": {
+            "type": "on_hit"
+          },
+          "do": {
+            "type": "explode"
+          }
+        },
+        {
+          "when": {
+            "type": "on_death"
+          },
+          "do": {
+            "type": "explode"
+          }
+        }
+      ]
+    },
+    {
+      "match": {
+        "unstable": true
+      },
+      "behaviors": [
+        {
+          "when": {
+            "type": "after",
+            "s": 3.0
+          },
+          "do": {
+            "type": "explode"
+          }
+        },
+        {
+          "when": {
+            "type": "on_hit"
+          },
+          "do": {
+            "type": "explode"
+          }
+        },
+        {
+          "when": {
+            "type": "on_death"
+          },
+          "do": {
+            "type": "explode"
+          }
+        }
+      ]
+    },
+    {
+      "match": {
+        "element": "laser"
+      },
+      "behaviors": [
+        {
+          "when": {
+            "type": "on_hit"
+          },
+          "do": {
+            "type": "ignite",
+            "contact": true
+          }
+        }
+      ]
+    }
+  ]
+}

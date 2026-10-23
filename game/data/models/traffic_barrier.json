@@ -1,0 +1,42 @@
+{
+  "_comment": "barreira de trânsito: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.4,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        2,
+        0.24,
+        0.55
+      ],
+      "pos": [
+        0,
+        0.12,
+        0
+      ],
+      "color": "#a3a197",
+      "tag": "foot"
+    },
+    {
+      "shape": "box",
+      "size": [
+        2,
+        0.56,
+        0.3025
+      ],
+      "pos": [
+        0,
+        0.48,
+        0
+      ],
+      "color": "#b9b6aa",
+      "tag": "body"
+    }
+  ]
+}

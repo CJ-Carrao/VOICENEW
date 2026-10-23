@@ -1,0 +1,107 @@
+{
+  "_comment": "lixeira: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.35,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.45,
+        0.04,
+        0.45
+      ],
+      "pos": [
+        0,
+        0.02,
+        0
+      ],
+      "color": "#397c9e",
+      "tag": "base"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.035,
+        0.7,
+        0.45
+      ],
+      "pos": [
+        -0.2075,
+        0.35,
+        0
+      ],
+      "color": "#397c9e",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.45,
+        0.7,
+        0.035
+      ],
+      "pos": [
+        0,
+        0.35,
+        -0.2075
+      ],
+      "color": "#397c9e",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.035,
+        0.7,
+        0.45
+      ],
+      "pos": [
+        0.2075,
+        0.35,
+        0
+      ],
+      "color": "#397c9e",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.45,
+        0.7,
+        0.035
+      ],
+      "pos": [
+        0,
+        0.35,
+        0.2075
+      ],
+      "color": "#397c9e",
+      "tag": "wall"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.4725,
+        0.05,
+        0.4725
+      ],
+      "pos": [
+        0,
+        0.7,
+        0
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        0,
+        0,
+        10
+      ],
+      "tag": "lid"
+    }
+  ]
+}

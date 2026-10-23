@@ -1,0 +1,79 @@
+{
+  "_comment": "bola de basquete: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.12,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.12,
+        0
+      ],
+      "color": "#c36c30",
+      "tag": "body",
+      "_stretch": [
+        0.24,
+        0.24,
+        0.24
+      ]
+    },
+    {
+      "shape": "torus",
+      "radius": 0.1212,
+      "inner_radius": 0.1176,
+      "pos": [
+        0,
+        0.12,
+        0
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "seam"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.1212,
+      "inner_radius": 0.1176,
+      "pos": [
+        0,
+        0.12,
+        0
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "seam"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.1212,
+      "inner_radius": 0.1176,
+      "pos": [
+        0,
+        0.12,
+        0
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        0,
+        90,
+        0
+      ],
+      "tag": "seam"
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "_comment": "bicicleta: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.55,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.32,
+      "height": 0.06,
+      "pos": [
+        0,
+        0.32,
+        -0.684
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.208,
+      "height": 0.065,
+      "pos": [
+        0,
+        0.32,
+        -0.684
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.32,
+      "height": 0.06,
+      "pos": [
+        0,
+        0.32,
+        0.684
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.208,
+      "height": 0.065,
+      "pos": [
+        0,
+        0.32,
+        0.684
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.04,
+        0.88,
+        0.04
+      ],
+      "pos": [
+        0,
+        0.495,
+        -0.54
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        -8,
+        0,
+        0
+      ],
+      "tag": "stem"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.55,
+        0.035,
+        0.035
+      ],
+      "pos": [
+        0,
+        1.012,
+        -0.63
+      ],
+      "color": "#2a2d32",
+      "tag": "handlebar"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.6347,
+      "pos": [
+        0,
+        0.335,
+        0.367
+      ],
+      "color": "#bd4036",
+      "rot": [
+        -87.29086399943814,
+        0,
+        0
+      ],
+      "tag": "frame"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.6612,
+      "pos": [
+        0,
+        0.534,
+        0.432
+      ],
+      "color": "#bd4036",
+      "rot": [
+        -49.661873095238825,
+        0,
+        0
+      ],
+      "tag": "frame"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.4187,
+      "pos": [
+        0,
+        0.549,
+        0.115
+      ],
+      "color": "#bd4036",
+      "rot": [
+        18.088754972461043,
+        0,
+        0
+      ],
+      "tag": "frame"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.732,
+      "pos": [
+        0,
+        0.814,
+        -0.18
+      ],
+      "color": "#bd4036",
+      "rot": [
+        -79.6111421845304,
+        0,
+        0
+      ],
+      "tag": "frame"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.7931,
+      "pos": [
+        0,
+        0.615,
+        -0.245
+      ],
+      "color": "#bd4036",
+      "rot": [
+        -48.0664855011259,
+        0,
+        0
+      ],
+      "tag": "frame"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.5782,
+      "pos": [
+        0,
+        0.6,
+        -0.612
+      ],
+      "color": "#bd4036",
+      "rot": [
+        -165.57922687248902,
+        0,
+        0
+      ],
+      "tag": "frame"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.17,
+        0.06,
+        0.25
+      ],
+      "pos": [
+        0,
+        0.748,
+        0.18
+      ],
+      "color": "#2a2d32",
+      "tag": "saddle"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.385,
+        0.025,
+        0.06
+      ],
+      "pos": [
+        0,
+        0.275,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "pedal"
+    }
+  ]
+}

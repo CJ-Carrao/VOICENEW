@@ -1,0 +1,60 @@
+{
+ "_comment": "Mira laser (lado esquerdo). Gerado por tools/models/gen_arsenal.py.",
+ "anchor": [
+  0,
+  0,
+  0
+ ],
+ "pieces": [
+  {
+   "shape": "box",
+   "size": [
+    0.006,
+    0.016,
+    0.025
+   ],
+   "pos": [
+    -0.003,
+    0,
+    0
+   ],
+   "color": "#16171a",
+   "tag": "mount",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.016,
+    0.018,
+    0.045
+   ],
+   "pos": [
+    -0.014,
+    0,
+    -0.01
+   ],
+   "color": "#1d1e21",
+   "tag": "body",
+   "finish": "plastic"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.004,
+   "height": 0.003,
+   "pos": [
+    -0.014,
+    0,
+    -0.034
+   ],
+   "color": "#d23a2a",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "body",
+   "glow": 4.0
+  }
+ ]
+}

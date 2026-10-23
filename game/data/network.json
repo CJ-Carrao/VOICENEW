@@ -1,0 +1,47 @@
+{
+  "snapshot_hz": 20.0,
+  "input_redundancy": 5,
+  "max_input_packet_bytes": 4096,
+  "max_snapshot_bytes": 65536,
+  "snapshot_chunk_bytes": 1000,
+  "max_snapshot_assemblies": 2,
+  "snapshot_assembly_timeout_seconds": 0.5,
+  "input_packets_per_second": 120.0,
+  "input_packet_burst": 120.0,
+  "event_packets_per_second": 120.0,
+  "event_packet_burst": 120.0,
+  "max_sequence_lead": 240,
+  "scene_ready_timeout_seconds": 15.0,
+  "creations": {
+    "max_text_bytes": 1024,
+    "max_spawn_bytes": 65536,
+    "max_batch_bytes": 65536,
+    "max_entities": 128,
+    "state_hz": 10.0,
+    "intents_per_second": 8.0,
+    "intent_burst": 12.0,
+    "max_intent_lead": 64,
+    "placement_tolerance_m": 1.0,
+    "motion_hz": 20.0,
+    "fx_per_second": 240
+  },
+  "world": {
+    "state_hz": 10.0,
+    "max_batch_bytes": 16384
+  },
+  "voip": {
+    "sample_rate": 16000,
+    "frame_samples": 320,
+    "max_packet_bytes": 900,
+    "packets_per_second": 60.0,
+    "packet_burst": 80.0,
+    "max_sequence_lead": 300,
+    "jitter_buffer_frames": 3,
+    "max_buffer_frames": 25,
+    "max_plc_frames": 2
+  },
+  "steam": {
+    "app_id": 0,
+    "virtual_port": 0
+  }
+}

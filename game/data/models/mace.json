@@ -1,0 +1,298 @@
+{
+ "_comment": "Maça de aletas. Gerado por tools/models/gen_arsenal.py.",
+ "anchor": [
+  0,
+  0,
+  0.05
+ ],
+ "joints": {
+  "trigger": [
+   0,
+   0,
+   0
+  ],
+  "muzzle": [
+   0,
+   0,
+   -0.58
+  ]
+ },
+ "pieces": [
+  {
+   "shape": "cylinder",
+   "radius": 0.016,
+   "height": 0.11,
+   "pos": [
+    0,
+    0,
+    0.055
+   ],
+   "color": "#4a2e1c",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "handle",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.02,
+   "height": 0.014,
+   "pos": [
+    0,
+    0,
+    0.115
+   ],
+   "color": "#5d636b",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "pommel",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0135,
+   "height": 0.46,
+   "pos": [
+    0,
+    0,
+    -0.23
+   ],
+   "color": "#5d636b",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "body",
+   "finish": "metal",
+   "section": "front"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.017,
+   "height": 0.012,
+   "pos": [
+    0,
+    0,
+    -0.02
+   ],
+   "color": "#5d636b",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "body",
+   "finish": "metal",
+   "section": "front"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.017,
+   "height": 0.012,
+   "pos": [
+    0,
+    0,
+    -0.44
+   ],
+   "color": "#5d636b",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "body",
+   "finish": "metal",
+   "section": "front"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.022,
+   "height": 0.13,
+   "pos": [
+    0,
+    0,
+    -0.52
+   ],
+   "color": "#5d636b",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "head",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.007,
+    0.04,
+    0.11
+   ],
+   "pos": [
+    -0.0,
+    0.04,
+    -0.52
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    0,
+    0,
+    0.0
+   ],
+   "tag": "head",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.007,
+    0.04,
+    0.11
+   ],
+   "pos": [
+    -0.0313,
+    0.0249,
+    -0.52
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    0,
+    0,
+    51.43
+   ],
+   "tag": "head",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.007,
+    0.04,
+    0.11
+   ],
+   "pos": [
+    -0.039,
+    -0.0089,
+    -0.52
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    0,
+    0,
+    102.86
+   ],
+   "tag": "head",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.007,
+    0.04,
+    0.11
+   ],
+   "pos": [
+    -0.0174,
+    -0.036,
+    -0.52
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    0,
+    0,
+    154.29
+   ],
+   "tag": "head",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.007,
+    0.04,
+    0.11
+   ],
+   "pos": [
+    0.0174,
+    -0.036,
+    -0.52
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    0,
+    0,
+    205.71
+   ],
+   "tag": "head",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.007,
+    0.04,
+    0.11
+   ],
+   "pos": [
+    0.039,
+    -0.0089,
+    -0.52
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    0,
+    0,
+    257.14
+   ],
+   "tag": "head",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.007,
+    0.04,
+    0.11
+   ],
+   "pos": [
+    0.0313,
+    0.0249,
+    -0.52
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    0,
+    0,
+    308.57
+   ],
+   "tag": "head",
+   "finish": "metal"
+  },
+  {
+   "shape": "cone",
+   "radius": 0.014,
+   "height": 0.06,
+   "pos": [
+    0,
+    0,
+    -0.61
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "tip",
+   "finish": "metal"
+  }
+ ]
+}

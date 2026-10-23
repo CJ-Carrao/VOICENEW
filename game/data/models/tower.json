@@ -1,0 +1,18 @@
+{
+  "anchor": [0, 0, 0],
+  "pieces": [
+    { "shape": "cylinder", "radius": 0.95, "height": 0.15, "pos": [0, 0.075, 0], "color": "#4f5560", "tag": "leg" },
+    { "shape": "cylinder", "radius": 0.75, "height": 0.3, "pos": [0, 0.3, 0], "color": "#5c6370", "tag": "leg" },
+    { "shape": "cylinder", "radius": 0.42, "height": 1.2, "pos": [0, 1.05, 0], "color": "#7a818c", "tag": "body" },
+    { "shape": "cylinder", "radius": 0.46, "height": 0.1, "pos": [0, 1.7, 0], "color": "#4f5560", "tag": "body" },
+    { "shape": "cylinder", "radius": 0.38, "height": 1.0, "pos": [0, 2.25, 0], "color": "#7a818c", "tag": "body" },
+    { "shape": "cylinder", "radius": 0.65, "height": 0.12, "pos": [0, 2.8, 0], "color": "#4f5560", "tag": "body" },
+    { "shape": "box", "size": [1.0, 0.55, 1.0], "pos": [0, 3.13, 0], "color": "#4a505a", "tag": "head" },
+    { "shape": "box", "size": [0.08, 0.45, 0.8], "pos": [-0.54, 3.13, 0], "color": "#5c6370", "tag": "head" },
+    { "shape": "box", "size": [0.08, 0.45, 0.8], "pos": [0.54, 3.13, 0], "color": "#5c6370", "tag": "head" },
+    { "shape": "box", "size": [0.8, 0.12, 0.8], "pos": [0, 3.46, 0], "color": "#3c414a", "tag": "head" },
+    { "shape": "box", "size": [0.3, 0.12, 0.3], "pos": [0, 3.58, 0.15], "color": "#c94a3a", "glow": 1.0, "tag": "sight" },
+    { "shape": "cylinder", "radius": 0.08, "height": 0.8, "pos": [0, 3.15, -0.7], "rot": [90, 0, 0], "color": "#22252a", "tag": "barrel" },
+    { "shape": "cylinder", "radius": 0.1, "height": 0.08, "pos": [0, 3.15, -1.06], "rot": [90, 0, 0], "color": "#1a1c20", "tag": "muzzle" }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "_comment": "lobo: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.4675,
+    0
+  ],
+  "sockets": {
+    "mount_hand": [
+      0.21,
+      0.4675,
+      -0.216
+    ]
+  },
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "reference": "https://animals.sandiegozoo.org/animals/wolf",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.493,
+        0
+      ],
+      "color": "#737d88",
+      "tag": "body",
+      "_stretch": [
+        0.2975,
+        0.374,
+        0.768
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.68,
+        -0.432
+      ],
+      "color": "#737d88",
+      "tag": "head",
+      "_stretch": [
+        0.21,
+        0.272,
+        0.3
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.6205,
+        -0.576
+      ],
+      "color": "#737d88",
+      "tag": "muzzle",
+      "_stretch": [
+        0.13999999999999999,
+        0.11900000000000001,
+        0.216
+      ]
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.049,
+      "height": 0.408,
+      "pos": [
+        -0.1085,
+        0.204,
+        -0.276
+      ],
+      "color": "#737d88",
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.049,
+      "height": 0.408,
+      "pos": [
+        -0.1085,
+        0.204,
+        0.276
+      ],
+      "color": "#737d88",
+      "tag": "leg"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.0455,
+      "height": 0.102,
+      "pos": [
+        -0.077,
+        0.833,
+        -0.372
+      ],
+      "color": "#737d88",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "ear"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.049,
+      "height": 0.408,
+      "pos": [
+        0.1085,
+        0.204,
+        -0.276
+      ],
+      "color": "#737d88",
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.049,
+      "height": 0.408,
+      "pos": [
+        0.1085,
+        0.204,
+        0.276
+      ],
+      "color": "#737d88",
+      "tag": "leg"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.0455,
+      "height": 0.102,
+      "pos": [
+        0.077,
+        0.833,
+        -0.372
+      ],
+      "color": "#737d88",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "ear"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0315,
+      "height": 0.36,
+      "pos": [
+        0,
+        0.527,
+        0.516
+      ],
+      "color": "#737d88",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "tail"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0175,
+      "pos": [
+        -0.0945,
+        0.7225,
+        -0.516
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0175,
+      "pos": [
+        0.0945,
+        0.7225,
+        -0.516
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    }
+  ]
+}

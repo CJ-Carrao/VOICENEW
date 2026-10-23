@@ -1,0 +1,259 @@
+{
+ "_comment": "Lança de guerra. Gerado por tools/models/gen_arsenal.py.",
+ "anchor": [
+  0,
+  0,
+  0.1
+ ],
+ "joints": {
+  "trigger": [
+   0,
+   0,
+   0
+  ],
+  "muzzle": [
+   0,
+   0,
+   -1.13
+  ]
+ },
+ "pieces": [
+  {
+   "shape": "cylinder",
+   "radius": 0.015,
+   "height": 0.78,
+   "pos": [
+    0,
+    0,
+    0.39
+   ],
+   "color": "#d8c296",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "handle",
+   "finish": "wood"
+  },
+  {
+   "shape": "cone",
+   "radius": 0.015,
+   "height": 0.06,
+   "pos": [
+    0,
+    0,
+    0.81
+   ],
+   "color": "#5d636b",
+   "rot": [
+    90,
+    0,
+    0
+   ],
+   "tag": "pommel",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0162,
+   "height": 0.04,
+   "pos": [
+    0,
+    0,
+    0.02
+   ],
+   "color": "#4a2e1c",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "grip",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0162,
+   "height": 0.04,
+   "pos": [
+    0,
+    0,
+    -0.05
+   ],
+   "color": "#4a2e1c",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "grip",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.015,
+   "height": 1.13,
+   "pos": [
+    0,
+    0,
+    -0.565
+   ],
+   "color": "#d8c296",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "body",
+   "finish": "wood",
+   "section": "front"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0172,
+   "height": 0.008,
+   "pos": [
+    0,
+    0,
+    -1.08
+   ],
+   "color": "#5b3a24",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "tip",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0172,
+   "height": 0.008,
+   "pos": [
+    0,
+    0,
+    -1.09
+   ],
+   "color": "#5b3a24",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "tip",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0172,
+   "height": 0.008,
+   "pos": [
+    0,
+    0,
+    -1.1
+   ],
+   "color": "#5b3a24",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "tip",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0172,
+   "height": 0.008,
+   "pos": [
+    0,
+    0,
+    -1.11
+   ],
+   "color": "#5b3a24",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "tip",
+   "finish": "rubber"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0175,
+   "height": 0.09,
+   "pos": [
+    0,
+    0,
+    -1.17
+   ],
+   "color": "#5d636b",
+   "top_radius": 0.011,
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "tip",
+   "finish": "metal"
+  },
+  {
+   "shape": "wedge",
+   "size": [
+    0.007,
+    0.055,
+    0.06
+   ],
+   "pos": [
+    0,
+    0,
+    -1.235
+   ],
+   "color": "#b9c0c8",
+   "point": 0.5,
+   "rot": [
+    0,
+    180,
+    0
+   ],
+   "tag": "tip",
+   "finish": "metal"
+  },
+  {
+   "shape": "wedge",
+   "size": [
+    0.007,
+    0.055,
+    0.19
+   ],
+   "pos": [
+    0,
+    0,
+    -1.36
+   ],
+   "color": "#b9c0c8",
+   "point": 0.5,
+   "tag": "tip",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.011,
+    0.008,
+    0.22
+   ],
+   "pos": [
+    0,
+    0,
+    -1.33
+   ],
+   "color": "#5d636b",
+   "tag": "tip",
+   "finish": "metal"
+  }
+ ]
+}

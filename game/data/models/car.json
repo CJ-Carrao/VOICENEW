@@ -1,0 +1,262 @@
+{
+  "_comment": "carro: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.7175,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "reference": "https://www.toyota.com/owners/warranty-owners-manuals/digital/article/corolla-hv/2025/om12s84u/ch08se010401/",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        1.6376,
+        0.55,
+        4.63
+      ],
+      "pos": [
+        0,
+        0.62,
+        0
+      ],
+      "color": "#346a94",
+      "tag": "body"
+    },
+    {
+      "shape": "box",
+      "size": [
+        1.424,
+        0.56,
+        2.2224
+      ],
+      "pos": [
+        0,
+        1.12,
+        0.1
+      ],
+      "color": "#4c7183",
+      "tag": "cabin"
+    },
+    {
+      "shape": "box",
+      "size": [
+        1.4596,
+        0.06,
+        2.0835
+      ],
+      "pos": [
+        0,
+        1.42,
+        0.1
+      ],
+      "color": "#346a94",
+      "tag": "roof"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.3,
+      "height": 0.195,
+      "pos": [
+        -0.801,
+        0.3,
+        -1.35
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.15,
+      "height": 0.204,
+      "pos": [
+        -0.801,
+        0.3,
+        -1.35
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.3,
+      "height": 0.195,
+      "pos": [
+        -0.801,
+        0.3,
+        1.35
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.15,
+      "height": 0.204,
+      "pos": [
+        -0.801,
+        0.3,
+        1.35
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.3,
+      "height": 0.195,
+      "pos": [
+        0.801,
+        0.3,
+        -1.35
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.15,
+      "height": 0.204,
+      "pos": [
+        0.801,
+        0.3,
+        -1.35
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.3,
+      "height": 0.195,
+      "pos": [
+        0.801,
+        0.3,
+        1.35
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.15,
+      "height": 0.204,
+      "pos": [
+        0.801,
+        0.3,
+        1.35
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.35,
+        0.15,
+        0.06
+      ],
+      "pos": [
+        -0.58,
+        0.75,
+        -2.3382
+      ],
+      "color": "#eee5b9",
+      "tag": "headlight"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1,
+        0.12,
+        0.4
+      ],
+      "pos": [
+        -0.8366,
+        0.8,
+        0.35
+      ],
+      "color": "#2a2d32",
+      "tag": "door_handle"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.35,
+        0.15,
+        0.06
+      ],
+      "pos": [
+        0.58,
+        0.75,
+        -2.3382
+      ],
+      "color": "#eee5b9",
+      "tag": "headlight"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1,
+        0.12,
+        0.4
+      ],
+      "pos": [
+        0.8366,
+        0.8,
+        0.35
+      ],
+      "color": "#2a2d32",
+      "tag": "door_handle"
+    }
+  ]
+}

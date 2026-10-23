@@ -1,0 +1,172 @@
+{
+  "_comment": "skate: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.06,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.21,
+        0.025,
+        0.8
+      ],
+      "pos": [
+        0,
+        0.1,
+        0
+      ],
+      "color": "#7a4b26",
+      "tag": "deck",
+      "finish": "wood"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.03,
+      "height": 0.0195,
+      "pos": [
+        -0.0945,
+        0.03,
+        -0.24
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.015,
+      "height": 0.0204,
+      "pos": [
+        -0.0945,
+        0.03,
+        -0.24
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.03,
+      "height": 0.0195,
+      "pos": [
+        -0.0945,
+        0.03,
+        0.24
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.015,
+      "height": 0.0204,
+      "pos": [
+        -0.0945,
+        0.03,
+        0.24
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.03,
+      "height": 0.0195,
+      "pos": [
+        0.0945,
+        0.03,
+        -0.24
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.015,
+      "height": 0.0204,
+      "pos": [
+        0.0945,
+        0.03,
+        -0.24
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.03,
+      "height": 0.0195,
+      "pos": [
+        0.0945,
+        0.03,
+        0.24
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.015,
+      "height": 0.0204,
+      "pos": [
+        0.0945,
+        0.03,
+        0.24
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    }
+  ]
+}

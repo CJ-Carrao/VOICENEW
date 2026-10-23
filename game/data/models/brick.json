@@ -1,0 +1,63 @@
+{
+  "_comment": "tijolo: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.035,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.115,
+        0.07,
+        0.24
+      ],
+      "pos": [
+        0,
+        0.035,
+        0
+      ],
+      "color": "#a65c40",
+      "tag": "body"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0184,
+      "height": 0.006,
+      "pos": [
+        0,
+        0.072,
+        -0.072
+      ],
+      "color": "#2a2d32",
+      "tag": "hole"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0184,
+      "height": 0.006,
+      "pos": [
+        0,
+        0.072,
+        0.0
+      ],
+      "color": "#2a2d32",
+      "tag": "hole"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0184,
+      "height": 0.006,
+      "pos": [
+        0,
+        0.072,
+        0.072
+      ],
+      "color": "#2a2d32",
+      "tag": "hole"
+    }
+  ]
+}

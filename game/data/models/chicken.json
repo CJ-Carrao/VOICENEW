@@ -1,0 +1,166 @@
+{
+  "_comment": "galinha: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.2475,
+    0
+  ],
+  "sockets": {
+    "mount_hand": [
+      0.24,
+      0.24750000000000003,
+      -0.081
+    ]
+  },
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.2475,
+        0
+      ],
+      "color": "#d7c5a5",
+      "tag": "body",
+      "_stretch": [
+        0.08800000000000001,
+        0.27,
+        0.27
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.081,
+      "pos": [
+        0,
+        0.387,
+        -0.1125
+      ],
+      "color": "#e4decf",
+      "tag": "head"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.036,
+      "height": 0.09,
+      "pos": [
+        0,
+        0.3735,
+        -0.1935
+      ],
+      "color": "#dcad3d",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "beak"
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        0.172,
+        0.036,
+        0.225
+      ],
+      "pos": [
+        -0.112,
+        0.27,
+        0.018
+      ],
+      "color": "#d7c5a5",
+      "point": 0.5,
+      "rot": [
+        0,
+        15,
+        -5
+      ],
+      "tag": "wing"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0113,
+      "height": 0.126,
+      "pos": [
+        -0.032,
+        0.072,
+        0
+      ],
+      "color": "#be8b38",
+      "tag": "leg"
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        0.172,
+        0.036,
+        0.225
+      ],
+      "pos": [
+        0.112,
+        0.27,
+        0.018
+      ],
+      "color": "#d7c5a5",
+      "point": 0.5,
+      "rot": [
+        0,
+        -15,
+        5
+      ],
+      "tag": "wing"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0113,
+      "height": 0.126,
+      "pos": [
+        0.032,
+        0.072,
+        0
+      ],
+      "color": "#be8b38",
+      "tag": "leg"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0113,
+      "pos": [
+        -0.054,
+        0.4005,
+        -0.1395
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0113,
+      "pos": [
+        0.054,
+        0.4005,
+        -0.1395
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        0,
+        0.4725,
+        -0.099
+      ],
+      "color": "#bd3838",
+      "tag": "comb"
+    }
+  ]
+}

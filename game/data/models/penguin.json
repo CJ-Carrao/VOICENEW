@@ -1,0 +1,167 @@
+{
+  "_comment": "pinguim: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.5225,
+    0
+  ],
+  "sockets": {
+    "mount_hand": [
+      0.36,
+      0.5225,
+      -0.081
+    ]
+  },
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.5225,
+        0
+      ],
+      "color": "#242830",
+      "tag": "body",
+      "_stretch": [
+        0.132,
+        0.57,
+        0.27
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.081,
+      "pos": [
+        0,
+        0.817,
+        -0.1125
+      ],
+      "color": "#e4decf",
+      "tag": "head"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.076,
+      "height": 0.09,
+      "pos": [
+        0,
+        0.7885,
+        -0.1935
+      ],
+      "color": "#dcad3d",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "beak"
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        0.258,
+        0.076,
+        0.225
+      ],
+      "pos": [
+        -0.168,
+        0.57,
+        0.018
+      ],
+      "color": "#242830",
+      "point": 0.5,
+      "rot": [
+        0,
+        15,
+        -5
+      ],
+      "tag": "wing"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0238,
+      "height": 0.266,
+      "pos": [
+        -0.048,
+        0.152,
+        0
+      ],
+      "color": "#be8b38",
+      "tag": "leg"
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        0.258,
+        0.076,
+        0.225
+      ],
+      "pos": [
+        0.168,
+        0.57,
+        0.018
+      ],
+      "color": "#242830",
+      "point": 0.5,
+      "rot": [
+        0,
+        -15,
+        5
+      ],
+      "tag": "wing"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0238,
+      "height": 0.266,
+      "pos": [
+        0.048,
+        0.152,
+        0
+      ],
+      "color": "#be8b38",
+      "tag": "leg"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0238,
+      "pos": [
+        -0.054,
+        0.8455,
+        -0.1395
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0238,
+      "pos": [
+        0.054,
+        0.8455,
+        -0.1395
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.475,
+        -0.1305
+      ],
+      "color": "#ece8de",
+      "tag": "belly",
+      "_stretch": [
+        0.144,
+        0.4275,
+        0.05
+      ]
+    }
+  ]
+}

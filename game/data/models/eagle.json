@@ -1,0 +1,152 @@
+{
+  "_comment": "águia: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.2475,
+    0
+  ],
+  "sockets": {
+    "mount_hand": [
+      1.2,
+      0.24750000000000003,
+      -0.144
+    ]
+  },
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "reference": "https://animals.sandiegozoo.org/animals/bald-eagle",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.2475,
+        0
+      ],
+      "color": "#8f7356",
+      "tag": "body",
+      "_stretch": [
+        0.44,
+        0.27,
+        0.48
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.081,
+      "pos": [
+        0,
+        0.387,
+        -0.2
+      ],
+      "color": "#e4decf",
+      "tag": "head"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.036,
+      "height": 0.16,
+      "pos": [
+        0,
+        0.3735,
+        -0.344
+      ],
+      "color": "#dcad3d",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "beak"
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        0.86,
+        0.036,
+        0.4
+      ],
+      "pos": [
+        -0.56,
+        0.27,
+        0.032
+      ],
+      "color": "#8f7356",
+      "point": 0.5,
+      "rot": [
+        0,
+        15,
+        -5
+      ],
+      "tag": "wing"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0113,
+      "height": 0.126,
+      "pos": [
+        -0.16,
+        0.072,
+        0
+      ],
+      "color": "#be8b38",
+      "tag": "leg"
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        0.86,
+        0.036,
+        0.4
+      ],
+      "pos": [
+        0.56,
+        0.27,
+        0.032
+      ],
+      "color": "#8f7356",
+      "point": 0.5,
+      "rot": [
+        0,
+        -15,
+        5
+      ],
+      "tag": "wing"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0113,
+      "height": 0.126,
+      "pos": [
+        0.16,
+        0.072,
+        0
+      ],
+      "color": "#be8b38",
+      "tag": "leg"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0113,
+      "pos": [
+        -0.054,
+        0.4005,
+        -0.248
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0113,
+      "pos": [
+        0.054,
+        0.4005,
+        -0.248
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    }
+  ]
+}

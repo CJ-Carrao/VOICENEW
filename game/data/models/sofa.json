@@ -1,0 +1,72 @@
+{
+  "_comment": "sofá: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.425,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        1.8,
+        0.3825,
+        0.85
+      ],
+      "pos": [
+        0,
+        0.255,
+        0
+      ],
+      "color": "#667e83",
+      "tag": "seat"
+    },
+    {
+      "shape": "box",
+      "size": [
+        1.8,
+        0.595,
+        0.17
+      ],
+      "pos": [
+        0,
+        0.51,
+        0.34
+      ],
+      "color": "#667e83",
+      "tag": "back"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.216,
+        0.5525,
+        0.85
+      ],
+      "pos": [
+        -0.81,
+        0.34,
+        0
+      ],
+      "color": "#526970",
+      "tag": "armrest"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.216,
+        0.5525,
+        0.85
+      ],
+      "pos": [
+        0.81,
+        0.34,
+        0
+      ],
+      "color": "#526970",
+      "tag": "armrest"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "rules": [
+    {
+      "categories": [
+        "creature"
+      ],
+      "tags": [
+        "soft",
+        "organic",
+        "rubber"
+      ],
+      "sections": [
+        "front",
+        "muzzle"
+      ],
+      "outcome": "dud"
+    },
+    {
+      "tags": [
+        "explosive",
+        "flammable"
+      ],
+      "actions": [
+        "explode",
+        "burst_into"
+      ],
+      "outcome": "backfire"
+    },
+    {
+      "tags": [
+        "wide_hollow"
+      ],
+      "sections": [
+        "muzzle"
+      ],
+      "profile": "scatter"
+    },
+    {
+      "tags": [
+        "cooling"
+      ],
+      "ammo_mods": {
+        "element": "ice"
+      }
+    },
+    {
+      "tags": [
+        "magnetic"
+      ],
+      "ammo_mods": {
+        "magnetic": true
+      }
+    },
+    {
+      "tags": [
+        "airflow"
+      ],
+      "sections": [
+        "rear"
+      ],
+      "profile": "air_recoil"
+    }
+  ]
+}

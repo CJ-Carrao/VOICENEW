@@ -1,0 +1,54 @@
+{
+  "_comment": "sino: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.25,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.2,
+      "height": 0.4,
+      "pos": [
+        0,
+        0.225,
+        0
+      ],
+      "color": "#af8d48",
+      "top_radius": 0.08,
+      "tag": "bell",
+      "finish": "metal"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.04,
+      "pos": [
+        0,
+        0.04,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "clapper"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.055,
+      "inner_radius": 0.03,
+      "pos": [
+        0,
+        0.47,
+        0
+      ],
+      "color": "#af8d48",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "loop"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://kt8k3bw1hf3k" path="res://scenes/dev/itch_cover.gd" id="1"]
+
+[node name="ItchCover" type="Node3D" unique_id=562547831]
+script = ExtResource("1")

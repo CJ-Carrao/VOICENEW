@@ -1,0 +1,158 @@
+{
+  "_comment": "crocodilo: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.275,
+    0
+  ],
+  "sockets": {
+    "mount_hand": [
+      0.36,
+      0.275,
+      -0.63
+    ]
+  },
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.25,
+        0
+      ],
+      "color": "#52623a",
+      "tag": "body",
+      "_stretch": [
+        0.6,
+        0.4,
+        1.9250000000000003
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.25,
+        -1.4
+      ],
+      "color": "#52623a",
+      "tag": "head",
+      "_stretch": [
+        0.21,
+        0.2,
+        1.05
+      ]
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.08,
+      "height": 0.3,
+      "pos": [
+        -0.27,
+        0.1,
+        -0.7
+      ],
+      "color": "#52623a",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.08,
+      "height": 0.3,
+      "pos": [
+        -0.27,
+        0.1,
+        0.7
+      ],
+      "color": "#52623a",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.08,
+      "height": 0.3,
+      "pos": [
+        0.27,
+        0.1,
+        -0.7
+      ],
+      "color": "#52623a",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.08,
+      "height": 0.3,
+      "pos": [
+        0.27,
+        0.1,
+        0.7
+      ],
+      "color": "#52623a",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "leg"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.15,
+      "height": 1.575,
+      "pos": [
+        0,
+        0.2,
+        1.575
+      ],
+      "color": "#52623a",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "tail"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.035,
+      "pos": [
+        -0.09,
+        0.375,
+        -1.12
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.035,
+      "pos": [
+        0.09,
+        0.375,
+        -1.12
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    }
+  ]
+}

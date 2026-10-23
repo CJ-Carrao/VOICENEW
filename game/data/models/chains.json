@@ -1,0 +1,276 @@
+{
+  "_comment": "correntes: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0,
+    0.05
+  ],
+  "joints": {
+    "trigger": [
+      0,
+      0,
+      0
+    ],
+    "muzzle": [
+      0,
+      0,
+      -0.42
+    ]
+  },
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "torus",
+      "radius": 0.04,
+      "inner_radius": 0.027,
+      "pos": [
+        0,
+        0,
+        -0.6
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "link",
+      "section": "front"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.04,
+      "inner_radius": 0.027,
+      "pos": [
+        0,
+        0,
+        -0.5077
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "link",
+      "section": "front"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.04,
+      "inner_radius": 0.027,
+      "pos": [
+        0,
+        0,
+        -0.4154
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "link",
+      "section": "front"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.04,
+      "inner_radius": 0.027,
+      "pos": [
+        0,
+        0,
+        -0.3231
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "link",
+      "section": "front"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.04,
+      "inner_radius": 0.027,
+      "pos": [
+        0,
+        0,
+        -0.2308
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "link",
+      "section": "front"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.04,
+      "inner_radius": 0.027,
+      "pos": [
+        0,
+        0,
+        -0.1385
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "link",
+      "section": "front"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.04,
+      "inner_radius": 0.027,
+      "pos": [
+        0,
+        0,
+        -0.0462
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "link",
+      "section": "front"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.04,
+      "inner_radius": 0.027,
+      "pos": [
+        0,
+        0,
+        0.0462
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "link",
+      "section": "front"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.04,
+      "inner_radius": 0.027,
+      "pos": [
+        0,
+        0,
+        0.1385
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "link",
+      "section": "front"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.04,
+      "inner_radius": 0.027,
+      "pos": [
+        0,
+        0,
+        0.2308
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "link",
+      "section": "front"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.04,
+      "inner_radius": 0.027,
+      "pos": [
+        0,
+        0,
+        0.3231
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "link",
+      "section": "front"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.04,
+      "inner_radius": 0.027,
+      "pos": [
+        0,
+        0,
+        0.4154
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "link",
+      "section": "rear"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.04,
+      "inner_radius": 0.027,
+      "pos": [
+        0,
+        0,
+        0.5077
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "link",
+      "section": "rear"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.04,
+      "inner_radius": 0.027,
+      "pos": [
+        0,
+        0,
+        0.6
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "link",
+      "section": "rear"
+    }
+  ]
+}

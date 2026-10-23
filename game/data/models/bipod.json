@@ -1,0 +1,86 @@
+{
+ "_comment": "Bipé aberto. Gerado por tools/models/gen_arsenal.py.",
+ "anchor": [
+  0,
+  0,
+  0
+ ],
+ "pieces": [
+  {
+   "shape": "box",
+   "size": [
+    0.024,
+    0.012,
+    0.024
+   ],
+   "pos": [
+    0,
+    -0.006,
+    0
+   ],
+   "color": "#16171a",
+   "tag": "mount",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.005,
+   "height": 0.16,
+   "pos": [
+    0.03,
+    -0.075,
+    -0.02
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    10,
+    0,
+    -22
+   ],
+   "tag": "handguard",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.005,
+   "height": 0.16,
+   "pos": [
+    -0.03,
+    -0.075,
+    -0.02
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    10,
+    0,
+    22
+   ],
+   "tag": "handguard",
+   "finish": "metal"
+  },
+  {
+   "shape": "sphere",
+   "radius": 0.008,
+   "pos": [
+    0.059,
+    -0.148,
+    -0.034
+   ],
+   "color": "#141416",
+   "tag": "handguard",
+   "finish": "rubber"
+  },
+  {
+   "shape": "sphere",
+   "radius": 0.008,
+   "pos": [
+    -0.059,
+    -0.148,
+    -0.034
+   ],
+   "color": "#141416",
+   "tag": "handguard",
+   "finish": "rubber"
+  }
+ ]
+}

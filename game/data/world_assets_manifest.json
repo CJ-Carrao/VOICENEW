@@ -1,0 +1,789 @@
+{
+  "generator": "tools/models/gen_world_assets.py",
+  "new_definitions": 118,
+  "units": "meters",
+  "notes": "Dimensões representativas; locomoção biologicamente inspirada com velocidades de combate balanceadas. Tubarão flutua na arena sem água. Unicórnio é fantasia. Não são modelos anatômicos científicos.",
+  "sources": {
+    "gorilla": "https://animals.sandiegozoo.org/animals/gorilla",
+    "monkey": "https://animaldiversity.org/accounts/Cebus_capucinus/",
+    "bear": "https://animals.sandiegozoo.org/animals/brown-bear",
+    "wolf": "https://animals.sandiegozoo.org/animals/wolf",
+    "eagle": "https://animals.sandiegozoo.org/animals/bald-eagle",
+    "shark": "https://www.fisheries.noaa.gov/species/white-shark",
+    "trex": "https://www.amnh.org/dinosaurs/tyrannosaurus-rex",
+    "car": "https://www.toyota.com/owners/warranty-owners-manuals/digital/article/corolla-hv/2025/om12s84u/ch08se010401/",
+    "helicopter": "https://www.airbus.com/sites/g/files/jlcbta136/files/2025-01/master-ground-rescue-booklet-h125.pdf"
+  },
+  "assets": [
+    {
+      "id": "monkey",
+      "group": "creature",
+      "pieces": 18,
+      "reference": "https://animaldiversity.org/accounts/Cebus_capucinus/"
+    },
+    {
+      "id": "gorilla",
+      "group": "creature",
+      "pieces": 11,
+      "reference": "https://animals.sandiegozoo.org/animals/gorilla"
+    },
+    {
+      "id": "bear",
+      "group": "creature",
+      "pieces": 12,
+      "reference": "https://animals.sandiegozoo.org/animals/brown-bear"
+    },
+    {
+      "id": "dog",
+      "group": "creature",
+      "pieces": 12,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "wolf",
+      "group": "creature",
+      "pieces": 12,
+      "reference": "https://animals.sandiegozoo.org/animals/wolf"
+    },
+    {
+      "id": "horse",
+      "group": "creature",
+      "pieces": 13,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "unicorn",
+      "group": "creature",
+      "pieces": 14,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "shark",
+      "group": "creature",
+      "pieces": 11,
+      "reference": "https://www.fisheries.noaa.gov/species/white-shark"
+    },
+    {
+      "id": "eagle",
+      "group": "creature",
+      "pieces": 9,
+      "reference": "https://animals.sandiegozoo.org/animals/bald-eagle"
+    },
+    {
+      "id": "chicken",
+      "group": "creature",
+      "pieces": 10,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "snake",
+      "group": "creature",
+      "pieces": 21,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "spider",
+      "group": "creature",
+      "pieces": 10,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "trex",
+      "group": "creature",
+      "pieces": 27,
+      "reference": "https://www.amnh.org/dinosaurs/tyrannosaurus-rex"
+    },
+    {
+      "id": "cat",
+      "group": "creature",
+      "pieces": 12,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "rabbit",
+      "group": "creature",
+      "pieces": 12,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "fox",
+      "group": "creature",
+      "pieces": 12,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "boar",
+      "group": "creature",
+      "pieces": 12,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "crocodile",
+      "group": "creature",
+      "pieces": 9,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "elephant",
+      "group": "creature",
+      "pieces": 17,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "lion",
+      "group": "creature",
+      "pieces": 13,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "tiger",
+      "group": "creature",
+      "pieces": 18,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "penguin",
+      "group": "creature",
+      "pieces": 10,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "turtle",
+      "group": "creature",
+      "pieces": 9,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "goat",
+      "group": "creature",
+      "pieces": 14,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "deer",
+      "group": "creature",
+      "pieces": 14,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "crab",
+      "group": "creature",
+      "pieces": 12,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "scorpion",
+      "group": "creature",
+      "pieces": 18,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "frog",
+      "group": "creature",
+      "pieces": 7,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "helicopter",
+      "group": "vehicle",
+      "pieces": 14,
+      "reference": "https://www.airbus.com/sites/g/files/jlcbta136/files/2025-01/master-ground-rescue-booklet-h125.pdf"
+    },
+    {
+      "id": "tank",
+      "group": "vehicle",
+      "pieces": 27,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "car",
+      "group": "vehicle",
+      "pieces": 15,
+      "reference": "https://www.toyota.com/owners/warranty-owners-manuals/digital/article/corolla-hv/2025/om12s84u/ch08se010401/"
+    },
+    {
+      "id": "motorcycle",
+      "group": "vehicle",
+      "pieces": 8,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "skateboard",
+      "group": "vehicle",
+      "pieces": 9,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "cannon",
+      "group": "vehicle",
+      "pieces": 7,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "catapult",
+      "group": "vehicle",
+      "pieces": 13,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "fan",
+      "group": "vehicle",
+      "pieces": 7,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "barrel",
+      "group": "prop",
+      "pieces": 3,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "gas_cylinder",
+      "group": "prop",
+      "pieces": 4,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "anvil",
+      "group": "prop",
+      "pieces": 4,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "cage",
+      "group": "prop",
+      "pieces": 37,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "trampoline",
+      "group": "prop",
+      "pieces": 10,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "spike_trap",
+      "group": "prop",
+      "pieces": 26,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "fridge",
+      "group": "prop",
+      "pieces": 4,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "piano",
+      "group": "prop",
+      "pieces": 41,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "toilet",
+      "group": "prop",
+      "pieces": 4,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "tire",
+      "group": "prop",
+      "pieces": 2,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "banana",
+      "group": "prop",
+      "pieces": 9,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "watermelon",
+      "group": "prop",
+      "pieces": 6,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "boulder",
+      "group": "prop",
+      "pieces": 3,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "magnet",
+      "group": "prop",
+      "pieces": 5,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "sphere",
+      "group": "prop",
+      "pieces": 1,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "chair",
+      "group": "prop",
+      "pieces": 6,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "table",
+      "group": "prop",
+      "pieces": 5,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "sofa",
+      "group": "prop",
+      "pieces": 4,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "traffic_cone",
+      "group": "prop",
+      "pieces": 3,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "basketball",
+      "group": "prop",
+      "pieces": 4,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "log",
+      "group": "prop",
+      "pieces": 3,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "crate",
+      "group": "prop",
+      "pieces": 5,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "traffic_barrier",
+      "group": "prop",
+      "pieces": 2,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "anchor",
+      "group": "prop",
+      "pieces": 7,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "bell",
+      "group": "prop",
+      "pieces": 3,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "hammer",
+      "group": "gear",
+      "pieces": 3,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "shield",
+      "group": "gear",
+      "pieces": 4,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "boomerang",
+      "group": "gear",
+      "pieces": 3,
+      "reference": "dimensões aproximadas de exemplar/objeto comum; arte procedural original"
+    },
+    {
+      "id": "shopping_cart",
+      "group": "vehicle",
+      "phase": 2,
+      "pieces": 40,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "wheelchair",
+      "group": "vehicle",
+      "phase": 2,
+      "pieces": 22,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "bed",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 8,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "tv",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 4,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "computer",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 12,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "microwave",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 5,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "washing_machine",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 4,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "trash_can",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 6,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "street_light",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 4,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "stop_sign",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 5,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "bowling_ball",
+      "group": "projectile",
+      "phase": 2,
+      "pieces": 4,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "soccer_ball",
+      "group": "projectile",
+      "phase": 2,
+      "pieces": 7,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "brick",
+      "group": "projectile",
+      "phase": 2,
+      "pieces": 4,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "cinder_block",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 5,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "pan",
+      "group": "weapon",
+      "phase": 2,
+      "pieces": 3,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "guitar",
+      "group": "weapon",
+      "phase": 2,
+      "pieces": 10,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "chains",
+      "group": "weapon",
+      "phase": 2,
+      "pieces": 14,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "bear_trap",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 16,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "landmine",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 2,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "c4",
+      "group": "projectile",
+      "phase": 2,
+      "pieces": 5,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "molotov",
+      "group": "projectile",
+      "phase": 2,
+      "pieces": 3,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "crossbow",
+      "group": "weapon",
+      "phase": 2,
+      "pieces": 12,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "bow",
+      "group": "weapon",
+      "phase": 2,
+      "pieces": 11,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "flamethrower",
+      "group": "weapon",
+      "phase": 2,
+      "pieces": 5,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "mortar",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 4,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "bull",
+      "group": "creature",
+      "phase": 2,
+      "pieces": 13,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "bee",
+      "group": "creature",
+      "phase": 2,
+      "pieces": 7,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "rat",
+      "group": "creature",
+      "phase": 2,
+      "pieces": 11,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "zombie",
+      "group": "creature",
+      "phase": 2,
+      "pieces": 9,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "skeleton",
+      "group": "creature",
+      "phase": 2,
+      "pieces": 14,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "dummy",
+      "group": "creature",
+      "phase": 2,
+      "pieces": 9,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "bucket",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 6,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "pipe",
+      "group": "projectile",
+      "phase": 2,
+      "pieces": 14,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "mattress",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 5,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "fire_extinguisher",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 4,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "safe",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 6,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "vending_machine",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 17,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "shipping_container",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 27,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "pallet",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 10,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "wheelbarrow",
+      "group": "vehicle",
+      "phase": 2,
+      "pieces": 10,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "bicycle",
+      "group": "vehicle",
+      "phase": 2,
+      "pieces": 14,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "scooter",
+      "group": "vehicle",
+      "phase": 2,
+      "pieces": 7,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "forklift",
+      "group": "vehicle",
+      "phase": 2,
+      "pieces": 15,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "ambulance",
+      "group": "vehicle",
+      "phase": 2,
+      "pieces": 16,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "bus",
+      "group": "vehicle",
+      "phase": 2,
+      "pieces": 25,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "tractor",
+      "group": "vehicle",
+      "phase": 2,
+      "pieces": 11,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "traffic_light",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 6,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "lamp",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 3,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "bookshelf",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 36,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "bathtub",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 5,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "rubber_duck",
+      "group": "projectile",
+      "phase": 2,
+      "pieces": 5,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "bowling_pin",
+      "group": "projectile",
+      "phase": 2,
+      "pieces": 4,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "arrow",
+      "group": "projectile",
+      "phase": 2,
+      "pieces": 5,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "bunker",
+      "group": "structure",
+      "phase": 2,
+      "pieces": 7,
+      "reference": "dimensões representativas; modelo de protótipo original"
+    }
+  ],
+  "reviewed_existing_weapons": [
+    "knife",
+    "sword",
+    "katana",
+    "spear",
+    "axe",
+    "chainsaw"
+  ]
+}

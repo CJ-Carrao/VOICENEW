@@ -1,0 +1,138 @@
+{
+  "feet": {
+    "L": {
+      "foot_bone": "foot.L",
+      "limits": {
+        "ankle_pitch_deg": [
+          -75,
+          75
+        ],
+        "ankle_roll_deg": [
+          -35,
+          35
+        ],
+        "joint_axis_note": "Bone local +X pitch (toe up positive), +Y roll. Mechanical ranges are proposed; full clip-to-ragdoll angular coverage is a block C gate.",
+        "terrain_offset_pitch_deg": [
+          -30,
+          30
+        ],
+        "terrain_offset_roll_deg": [
+          -20,
+          20
+        ],
+        "toe_pitch_deg": [
+          -20,
+          45
+        ]
+      },
+      "markers_by_bone": {
+        "foot.L": {
+          "ball_m": [
+            0.0,
+            0.109999805688858,
+            -0.204999998211861
+          ],
+          "heel_m": [
+            0.0,
+            -0.0774998292326927,
+            -0.20499986410141
+          ],
+          "tip_m": [
+            0.0,
+            0.207499578595161,
+            -0.204999879002571
+          ]
+        },
+        "toe.L": {
+          "ball_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "heel_m": [
+            0.0,
+            -0.187499642372131,
+            0.000000143190831636275
+          ],
+          "tip_m": [
+            0.0,
+            0.0974997729063034,
+            0.000000129388652680973
+          ]
+        }
+      },
+      "sole_bottom_vertex_count": 28,
+      "sole_half_width_m": 0.0774999968707561,
+      "toe_bone": "toe.L"
+    },
+    "R": {
+      "foot_bone": "foot.R",
+      "limits": {
+        "ankle_pitch_deg": [
+          -75,
+          75
+        ],
+        "ankle_roll_deg": [
+          -35,
+          35
+        ],
+        "joint_axis_note": "Bone local +X pitch (toe up positive), +Y roll. Mechanical ranges are proposed; full clip-to-ragdoll angular coverage is a block C gate.",
+        "terrain_offset_pitch_deg": [
+          -30,
+          30
+        ],
+        "terrain_offset_roll_deg": [
+          -20,
+          20
+        ],
+        "toe_pitch_deg": [
+          -20,
+          45
+        ]
+      },
+      "markers_by_bone": {
+        "foot.R": {
+          "ball_m": [
+            0.0,
+            0.109999805688858,
+            -0.204999998211861
+          ],
+          "heel_m": [
+            0.0,
+            -0.0774998292326927,
+            -0.20499986410141
+          ],
+          "tip_m": [
+            0.0,
+            0.207499578595161,
+            -0.204999879002571
+          ]
+        },
+        "toe.R": {
+          "ball_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "heel_m": [
+            0.0,
+            -0.187499642372131,
+            0.000000143190831636275
+          ],
+          "tip_m": [
+            0.0,
+            0.0974997729063034,
+            0.000000129388652680973
+          ]
+        }
+      },
+      "sole_bottom_vertex_count": 28,
+      "sole_half_width_m": 0.0774999968707561,
+      "toe_bone": "toe.R"
+    }
+  },
+  "provenance": "Sole markers measured from imported GLB beveled sole; joint limits below are proposed control limits, not a validated ragdoll profile.",
+  "schema": 3,
+  "space": "Godot bone-local coordinates, transform with Skeleton3D.get_bone_global_pose(bone)",
+  "unit": "meter"
+}

@@ -1,0 +1,130 @@
+{
+ "_comment": "Luneta média (ACOG, 4x). Gerado por tools/models/gen_arsenal.py.",
+ "anchor": [
+  0,
+  0,
+  0
+ ],
+ "sight_height": 0.033,
+ "pieces": [
+  {
+   "shape": "box",
+   "size": [
+    0.02,
+    0.006,
+    0.08
+   ],
+   "pos": [
+    0,
+    0.003,
+    0
+   ],
+   "color": "#16171a",
+   "tag": "mount",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.02,
+    0.02,
+    0.016
+   ],
+   "pos": [
+    0,
+    0.015,
+    0.025
+   ],
+   "color": "#16171a",
+   "tag": "mount",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.02,
+    0.02,
+    0.016
+   ],
+   "pos": [
+    0,
+    0.015,
+    -0.025
+   ],
+   "color": "#16171a",
+   "tag": "mount",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.016,
+   "height": 0.13,
+   "pos": [
+    0,
+    0.033,
+    0
+   ],
+   "color": "#4b5a3a",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "sight",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.02,
+   "height": 0.03,
+   "pos": [
+    0,
+    0.033,
+    -0.075
+   ],
+   "color": "#4b5a3a",
+   "top_radius": 0.016,
+   "rot": [
+    90,
+    0,
+    0
+   ],
+   "tag": "sight",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.018,
+   "height": 0.002,
+   "pos": [
+    0,
+    0.033,
+    -0.091
+   ],
+   "color": "#3f8fb8",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "sight",
+   "finish": "glass",
+   "glow": 0.25
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.004,
+    0.012,
+    0.03
+   ],
+   "pos": [
+    0,
+    0.054,
+    -0.02
+   ],
+   "color": "#d23a2a",
+   "tag": "sight"
+  }
+ ]
+}

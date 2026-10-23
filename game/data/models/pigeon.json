@@ -1,0 +1,19 @@
+{
+  "anchor": [0, 0, 0],
+  "pieces": [
+    { "shape": "capsule", "radius": 0.13, "height": 0.42, "pos": [0, 0, 0], "rot": [90, 0, 0], "color": "#9aa0a8", "tag": "body" },
+    { "shape": "sphere", "radius": 0.1, "pos": [0, 0.02, -0.12], "color": "#8a929c", "tag": "body" },
+    { "shape": "sphere", "radius": 0.07, "pos": [0, 0.08, -0.17], "color": "#5d9a8a", "tag": "body" },
+    { "shape": "box", "size": [0.2, 0.03, 0.2], "pos": [0.2, 0.05, 0.0], "rot": [0, 0, 10], "color": "#8a9098", "tag": "wing" },
+    { "shape": "box", "size": [0.2, 0.03, 0.2], "pos": [-0.2, 0.05, 0.0], "rot": [0, 0, -10], "color": "#8a9098", "tag": "wing" },
+    { "shape": "box", "size": [0.03, 0.06, 0.03], "pos": [0.05, -0.14, 0.02], "color": "#e0a030", "tag": "leg" },
+    { "shape": "box", "size": [0.03, 0.06, 0.03], "pos": [-0.05, -0.14, 0.02], "color": "#e0a030", "tag": "leg" },
+    { "shape": "sphere", "radius": 0.085, "pos": [0, 0.14, -0.22], "color": "#6f7884", "tag": "head" },
+    { "shape": "box", "size": [0.16, 0.025, 0.16], "pos": [0, 0.03, 0.27], "color": "#5f656d", "tag": "tail" },
+    { "shape": "sphere", "radius": 0.015, "pos": [0.055, 0.17, -0.27], "color": "#d04020", "tag": "eye" },
+    { "shape": "sphere", "radius": 0.015, "pos": [-0.055, 0.17, -0.27], "color": "#d04020", "tag": "eye" },
+    { "shape": "cone", "radius": 0.022, "height": 0.07, "pos": [0, 0.13, -0.32], "rot": [-90, 0, 0], "color": "#e0a030", "tag": "beak" },
+    { "shape": "box", "size": [0.2, 0.025, 0.16], "pos": [0.38, 0.08, 0.02], "rot": [0, 0, 16], "color": "#7c828a", "tag": "wing" },
+    { "shape": "box", "size": [0.2, 0.025, 0.16], "pos": [-0.38, 0.08, 0.02], "rot": [0, 0, -16], "color": "#7c828a", "tag": "wing" }
+  ]
+}

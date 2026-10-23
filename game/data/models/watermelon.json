@@ -1,0 +1,113 @@
+{
+  "_comment": "melancia: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.125,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.125,
+        0
+      ],
+      "color": "#3c7b39",
+      "tag": "body",
+      "_stretch": [
+        0.25,
+        0.25,
+        0.32
+      ]
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.005,
+      "height": 0.224,
+      "pos": [
+        -0.065,
+        0.2,
+        0
+      ],
+      "color": "#8eaf50",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "stripe"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.005,
+      "height": 0.224,
+      "pos": [
+        -0.0325,
+        0.215,
+        0
+      ],
+      "color": "#8eaf50",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "stripe"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.005,
+      "height": 0.224,
+      "pos": [
+        0.0,
+        0.23,
+        0
+      ],
+      "color": "#8eaf50",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "stripe"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.005,
+      "height": 0.224,
+      "pos": [
+        0.0325,
+        0.215,
+        0
+      ],
+      "color": "#8eaf50",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "stripe"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.005,
+      "height": 0.224,
+      "pos": [
+        0.065,
+        0.2,
+        0
+      ],
+      "color": "#8eaf50",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "stripe"
+    }
+  ]
+}

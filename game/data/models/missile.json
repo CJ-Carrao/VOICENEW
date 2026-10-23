@@ -1,0 +1,13 @@
+{
+  "anchor": [0, 0, 0.25],
+  "pieces": [
+    { "shape": "cylinder", "radius": 0.035, "height": 0.04, "pos": [0, 0, 0.27], "rot": [90, 0, 0], "color": "#ffb030", "glow": 3.0, "tag": "exhaust" },
+    { "shape": "box", "size": [0.012, 0.11, 0.1], "pos": [0, 0.08, 0.2], "color": "#8b9099", "tag": "wing" },
+    { "shape": "box", "size": [0.012, 0.11, 0.1], "pos": [0, -0.08, 0.2], "color": "#8b9099", "tag": "wing" },
+    { "shape": "box", "size": [0.11, 0.012, 0.1], "pos": [-0.08, 0, 0.2], "color": "#8b9099", "tag": "wing" },
+    { "shape": "box", "size": [0.11, 0.012, 0.1], "pos": [0.08, 0, 0.2], "color": "#8b9099", "tag": "wing" },
+    { "shape": "cylinder", "radius": 0.06, "height": 0.5, "pos": [0, 0, 0], "rot": [90, 0, 0], "color": "#d8dadf", "tag": "body" },
+    { "shape": "cylinder", "radius": 0.062, "height": 0.03, "pos": [0, 0, -0.12], "rot": [90, 0, 0], "color": "#c23b2b", "tag": "body" },
+    { "shape": "cone", "radius": 0.06, "height": 0.16, "pos": [0, 0, -0.33], "rot": [-90, 0, 0], "color": "#c23b2b", "tag": "head" }
+  ]
+}

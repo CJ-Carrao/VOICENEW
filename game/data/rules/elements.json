@@ -1,0 +1,10 @@
+{
+  "_comment": "Visual genérico dos elementos (DESIGN 3.6): tinge todas as peças e acende um brilho. Vale pra qualquer coisa. status: o que acertar com coisa desse elemento causa (balance.status).",
+  "fire": { "tint": "#ff6a1a", "mix": 0.5, "glow": 0.8, "explosion": "#ff8a2a", "status": "burning" },
+  "ice":  { "tint": "#8fd8ff", "mix": 0.55, "glow": 0.4, "explosion": "#9fe4ff", "status": "frozen",
+  "roughness": 0.12,
+  "metallic": 0.1
+},
+  "_none": { "explosion": "#ffb347" },
+  "laser": {"tint": "#67c7ff", "mix": 0.75, "glow": 1.2, "explosion": "#8ad7ff", "status": "burning"}
+}

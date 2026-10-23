@@ -1,0 +1,6 @@
+{
+  "_comment": "O mesmo verbo muda de sentido conforme QUEM faz (DESIGN 4.3). Numa arma ou ferramenta, 'solta X' é disparar X ('ak que solta granada' = lança-granadas), não deixar X cair embaixo dela; num pombo ou avião, continua sendo soltar. Vale a primeira regra que casar com a ação × categoria do dono.",
+  "rules": [
+    { "action": "drop", "category": ["weapon", "tool"], "becomes": "shoot" }
+  ]
+}

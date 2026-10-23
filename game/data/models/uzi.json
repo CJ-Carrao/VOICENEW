@@ -1,0 +1,412 @@
+{
+ "_comment": "IMI Uzi 9 mm. Gerado por tools/models/gen_arsenal.py.",
+ "anchor": [
+  0,
+  -0.075,
+  0.0
+ ],
+ "joints": {
+  "trigger": [
+   0,
+   0,
+   0
+  ],
+  "muzzle": [
+   0,
+   0,
+   -0.152
+  ]
+ },
+ "pieces": [
+  {
+   "shape": "box",
+   "size": [
+    0.032,
+    0.1,
+    0.045
+   ],
+   "pos": [
+    0,
+    -0.07,
+    0.008
+   ],
+   "color": "#1d1e21",
+   "tag": "grip",
+   "finish": "plastic"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.026,
+    0.13,
+    0.03
+   ],
+   "pos": [
+    0,
+    -0.13,
+    0.008
+   ],
+   "color": "#2a2d32",
+   "tag": "magazine",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.03,
+    0.01,
+    0.034
+   ],
+   "pos": [
+    0,
+    -0.198,
+    0.008
+   ],
+   "color": "#16171a",
+   "tag": "magazine"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.004,
+    0.012,
+    0.21
+   ],
+   "pos": [
+    0.019,
+    -0.01,
+    0.06
+   ],
+   "color": "#2a2d32",
+   "tag": "stock",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.004,
+    0.012,
+    0.21
+   ],
+   "pos": [
+    -0.019,
+    -0.01,
+    0.06
+   ],
+   "color": "#2a2d32",
+   "tag": "stock",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.04,
+    0.05,
+    0.008
+   ],
+   "pos": [
+    0,
+    -0.02,
+    0.168
+   ],
+   "color": "#2a2d32",
+   "tag": "stock",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.034,
+    0.03,
+    0.06
+   ],
+   "pos": [
+    0,
+    0.005,
+    0.11
+   ],
+   "color": "#2a2d32",
+   "tag": "receiver",
+   "finish": "metal",
+   "section": "rear"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.006,
+    0.02,
+    0.006
+   ],
+   "pos": [
+    0,
+    -0.03,
+    -0.002
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    12,
+    0,
+    0
+   ],
+   "tag": "trigger",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.011,
+    0.005,
+    0.05
+   ],
+   "pos": [
+    0,
+    -0.046,
+    -0.015
+   ],
+   "color": "#2a2d32",
+   "tag": "trigger"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.011,
+    0.03,
+    0.006
+   ],
+   "pos": [
+    0,
+    -0.031,
+    -0.04
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    12,
+    0,
+    0
+   ],
+   "tag": "trigger"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.012,
+    0.025,
+    0.02
+   ],
+   "pos": [
+    0,
+    -0.03,
+    0.05
+   ],
+   "color": "#2a2d32",
+   "tag": "grip",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.036,
+    0.046,
+    0.21
+   ],
+   "pos": [
+    0,
+    0.003,
+    -0.045
+   ],
+   "color": "#3b3f46",
+   "tag": "receiver",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.038,
+    0.004,
+    0.2
+   ],
+   "pos": [
+    0,
+    -0.019,
+    -0.045
+   ],
+   "color": "#2a2d32",
+   "tag": "receiver",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.037,
+    0.03,
+    0.002
+   ],
+   "pos": [
+    0,
+    0.0,
+    -0.12
+   ],
+   "color": "#2a2d32",
+   "tag": "receiver"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.037,
+    0.03,
+    0.002
+   ],
+   "pos": [
+    0,
+    0.0,
+    -0.06
+   ],
+   "color": "#2a2d32",
+   "tag": "receiver"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.037,
+    0.03,
+    0.002
+   ],
+   "pos": [
+    0,
+    0.0,
+    0.0
+   ],
+   "color": "#2a2d32",
+   "tag": "receiver"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.037,
+    0.03,
+    0.002
+   ],
+   "pos": [
+    0,
+    0.0,
+    0.04
+   ],
+   "color": "#2a2d32",
+   "tag": "receiver"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.012,
+    0.01,
+    0.025
+   ],
+   "pos": [
+    0,
+    0.03,
+    -0.01
+   ],
+   "color": "#16171a",
+   "tag": "body"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.028,
+    0.016,
+    0.012
+   ],
+   "pos": [
+    0,
+    0.032,
+    0.05
+   ],
+   "color": "#2a2d32",
+   "tag": "sight",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.024,
+    0.02,
+    0.01
+   ],
+   "pos": [
+    0,
+    0.034,
+    -0.14
+   ],
+   "color": "#2a2d32",
+   "tag": "sight",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.004,
+    0.012,
+    0.006
+   ],
+   "pos": [
+    0,
+    0.034,
+    -0.14
+   ],
+   "color": "#16171a",
+   "tag": "sight"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.032,
+    0.028,
+    0.035
+   ],
+   "pos": [
+    0,
+    -0.006,
+    -0.135
+   ],
+   "color": "#1d1e21",
+   "tag": "handguard",
+   "finish": "plastic"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.011,
+   "height": 0.014,
+   "pos": [
+    0,
+    0.0,
+    -0.158
+   ],
+   "color": "#2a2d32",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "muzzle",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0075,
+   "height": 0.07,
+   "pos": [
+    0,
+    0.0,
+    -0.187
+   ],
+   "color": "#1d2128",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "barrel",
+   "finish": "metal"
+  }
+ ]
+}

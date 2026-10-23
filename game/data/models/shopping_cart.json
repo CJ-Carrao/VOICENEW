@@ -1,0 +1,584 @@
+{
+  "_comment": "carrinho de supermercado: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.525,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.48,
+        0.05,
+        0.7
+      ],
+      "pos": [
+        0,
+        0.4515,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "frame"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.42,
+      "pos": [
+        -0.258,
+        0.714,
+        -0.32
+      ],
+      "color": "#c5c9ce",
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.42,
+      "pos": [
+        -0.258,
+        0.714,
+        -0.192
+      ],
+      "color": "#c5c9ce",
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.42,
+      "pos": [
+        -0.258,
+        0.714,
+        -0.064
+      ],
+      "color": "#c5c9ce",
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.42,
+      "pos": [
+        -0.258,
+        0.714,
+        0.064
+      ],
+      "color": "#c5c9ce",
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.42,
+      "pos": [
+        -0.258,
+        0.714,
+        0.192
+      ],
+      "color": "#c5c9ce",
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.42,
+      "pos": [
+        -0.258,
+        0.714,
+        0.32
+      ],
+      "color": "#c5c9ce",
+      "tag": "wire"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.014,
+        0.7
+      ],
+      "pos": [
+        -0.258,
+        0.525,
+        0
+      ],
+      "color": "#c5c9ce",
+      "tag": "rail"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.516,
+        0.014,
+        0.014
+      ],
+      "pos": [
+        0,
+        0.525,
+        -0.35
+      ],
+      "color": "#c5c9ce",
+      "tag": "rail"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.014,
+        0.7
+      ],
+      "pos": [
+        -0.258,
+        0.6825,
+        0
+      ],
+      "color": "#c5c9ce",
+      "tag": "rail"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.516,
+        0.014,
+        0.014
+      ],
+      "pos": [
+        0,
+        0.6825,
+        -0.35
+      ],
+      "color": "#c5c9ce",
+      "tag": "rail"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.014,
+        0.7
+      ],
+      "pos": [
+        -0.258,
+        0.8925,
+        0
+      ],
+      "color": "#c5c9ce",
+      "tag": "rail"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.516,
+        0.014,
+        0.014
+      ],
+      "pos": [
+        0,
+        0.8925,
+        -0.35
+      ],
+      "color": "#c5c9ce",
+      "tag": "rail"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.42,
+      "pos": [
+        0.258,
+        0.714,
+        -0.32
+      ],
+      "color": "#c5c9ce",
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.42,
+      "pos": [
+        0.258,
+        0.714,
+        -0.192
+      ],
+      "color": "#c5c9ce",
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.42,
+      "pos": [
+        0.258,
+        0.714,
+        -0.064
+      ],
+      "color": "#c5c9ce",
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.42,
+      "pos": [
+        0.258,
+        0.714,
+        0.064
+      ],
+      "color": "#c5c9ce",
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.42,
+      "pos": [
+        0.258,
+        0.714,
+        0.192
+      ],
+      "color": "#c5c9ce",
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.42,
+      "pos": [
+        0.258,
+        0.714,
+        0.32
+      ],
+      "color": "#c5c9ce",
+      "tag": "wire"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.014,
+        0.7
+      ],
+      "pos": [
+        0.258,
+        0.525,
+        0
+      ],
+      "color": "#c5c9ce",
+      "tag": "rail"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.516,
+        0.014,
+        0.014
+      ],
+      "pos": [
+        0,
+        0.525,
+        0.35
+      ],
+      "color": "#c5c9ce",
+      "tag": "rail"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.014,
+        0.7
+      ],
+      "pos": [
+        0.258,
+        0.6825,
+        0
+      ],
+      "color": "#c5c9ce",
+      "tag": "rail"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.516,
+        0.014,
+        0.014
+      ],
+      "pos": [
+        0,
+        0.6825,
+        0.35
+      ],
+      "color": "#c5c9ce",
+      "tag": "rail"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.014,
+        0.7
+      ],
+      "pos": [
+        0.258,
+        0.8925,
+        0
+      ],
+      "color": "#c5c9ce",
+      "tag": "rail"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.516,
+        0.014,
+        0.014
+      ],
+      "pos": [
+        0,
+        0.8925,
+        0.35
+      ],
+      "color": "#c5c9ce",
+      "tag": "rail"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.08,
+      "height": 0.072,
+      "pos": [
+        -0.288,
+        0.08,
+        -0.32
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.036,
+      "height": 0.078,
+      "pos": [
+        -0.288,
+        0.08,
+        -0.32
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.08,
+      "height": 0.072,
+      "pos": [
+        -0.288,
+        0.08,
+        0.32
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.036,
+      "height": 0.078,
+      "pos": [
+        -0.288,
+        0.08,
+        0.32
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.08,
+      "height": 0.072,
+      "pos": [
+        0.288,
+        0.08,
+        -0.32
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.036,
+      "height": 0.078,
+      "pos": [
+        0.288,
+        0.08,
+        -0.32
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.08,
+      "height": 0.072,
+      "pos": [
+        0.288,
+        0.08,
+        0.32
+      ],
+      "color": "#141416",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.036,
+      "height": 0.078,
+      "pos": [
+        0.288,
+        0.08,
+        0.32
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.025,
+        0.7
+      ],
+      "pos": [
+        -0.24,
+        0.13,
+        0
+      ],
+      "color": "#c5c9ce",
+      "tag": "chassis"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.378,
+      "pos": [
+        -0.24,
+        0.273,
+        -0.32
+      ],
+      "color": "#c5c9ce",
+      "tag": "support"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.378,
+      "pos": [
+        -0.24,
+        0.273,
+        0.32
+      ],
+      "color": "#c5c9ce",
+      "tag": "support"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.025,
+        0.7
+      ],
+      "pos": [
+        0.24,
+        0.13,
+        0
+      ],
+      "color": "#c5c9ce",
+      "tag": "chassis"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.378,
+      "pos": [
+        0.24,
+        0.273,
+        -0.32
+      ],
+      "color": "#c5c9ce",
+      "tag": "support"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.378,
+      "pos": [
+        0.24,
+        0.273,
+        0.32
+      ],
+      "color": "#c5c9ce",
+      "tag": "support"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.51,
+        0.04,
+        0.04
+      ],
+      "pos": [
+        0,
+        0.9975,
+        0.38
+      ],
+      "color": "#bd4036",
+      "tag": "handle"
+    }
+  ]
+}

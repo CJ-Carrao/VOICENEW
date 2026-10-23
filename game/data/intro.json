@@ -1,0 +1,247 @@
+{
+  "_comment": "Intro do jogo (DESIGN 19, scenes/intro/). Tempos em segundos da música (o relógio é a posição da música), escolhidos pelos ataques dela: 12,82, 15,80 e 18,78 (a bateria entra), batida de 0,594 s. Tamanhos na tela base de 1280 × 720.",
+  "music": "res://assets/intro/music/time_to_pretend.ogg",
+  "music_db": -1.0,
+  "font": "res://assets/fonts/oxanium/Oxanium-Variable.ttf",
+  "colors": { "text": "#F5F1E8", "muted": "#8f8a80", "accent": "#FF791C", "matter": "#ffb347" },
+  "quote": {
+    "lines": ["Na natureza, nada se cria,", "nada se perde,", "tudo se transforma."],
+    "accent_line": 2,
+    "author": "Antoine Lavoisier",
+    "weight": 300,
+    "size": 44,
+    "line_gap": 1.28,
+    "author_weight": 500,
+    "author_size": 19,
+    "author_spacing": 3,
+    "dash_m": 46,
+    "start_s": 1.3,
+    "word_step_s": 0.13,
+    "accent_at_s": 2.76,
+    "word_fade_s": 0.7,
+    "word_rise": 10,
+    "author_at_s": 4.2,
+    "drift": 0.025,
+    "fade_out_at_s": 10.0,
+    "fade_out_s": 1.7
+  },
+  "blocks": {
+    "count": 1800,
+    "gap": 0.16,
+    "click_db": -11.0,
+    "thunk_db": -2.0,
+    "clicks": 22
+  },
+  "caixa": {
+    "logo": "res://assets/intro/logos/caixa_preta_engine.svg",
+    "height": 400,
+    "threshold": 0.4,
+    "start_s": 12.82,
+    "launch_s": 0.8,
+    "flight_s": [0.28, 0.5],
+    "final_pause_s": 0.16,
+    "final_flight_mult": 1.7,
+    "final_grow": 4.0,
+    "source": [0, 285],
+    "crisp_after_s": 0.12,
+    "crisp_fade_s": 0.32
+  },
+  "somyst": {
+    "logo": "res://assets/intro/logos/somyst_game_studio.svg",
+    "height": 430,
+    "threshold": 0.1,
+    "start_s": 15.8,
+    "wave_s": 0.5,
+    "flight_s": [0.45, 0.75],
+    "crisp_after_s": 0.25,
+    "crisp_fade_s": 0.5
+  },
+  "lavoice": {
+    "pieces": "res://assets/intro/lavoice_pieces/",
+    "logo": "res://assets/intro/logos/lavoice.svg",
+    "width": 920,
+    "threshold": 0.4,
+    "start_s": 18.78,
+    "scatter_s": 0.75,
+    "orbit": { "rx": [330, 560], "squash": 0.36, "speed": 2.1 },
+    "letters": ["L", "A", "V", "O", "I", "C", "E"],
+    "first_letter_s": 19.96,
+    "letter_step_s": 0.594,
+    "dive_s": 0.42,
+    "ball": { "above": 150, "radius": 30, "speed": 3.2, "rise": 46, "rise_at_s": 25.45 },
+    "slam_s": 25.9,
+    "shine_at_s": 26.3,
+    "shine_s": 0.9
+  },
+  "menu": {
+    "background": {
+      "stream": "res://assets/menu/metropole.ogv",
+      "width": 1920,
+      "height": 1080,
+      "fps": 24,
+      "duration_s": 80.0,
+      "volume_db": -6.0
+    },
+    "polish": {
+      "hover_glint_s": 0.7,
+      "glint_width": 0.22,
+      "glint_alpha": 0.58,
+      "rim_alpha": 0.11,
+      "breath_depth": 0.11,
+      "breath_beats": 4,
+      "grain_alpha": 0.018,
+      "scan_gap_px": 5,
+      "selection_hz": 2.6,
+      "selection_damping": 0.5,
+      "press_spark_count": 8,
+      "press_spark_s": 0.24,
+      "press_spark_distance": 24,
+      "press_spark_px": 2,
+      "auto_settle_s": 1.2
+    },
+    "_comment": "Menu principal (DESIGN 19.1, scenes/menu/main_menu.gd). Monta na virada da bateria (27,54 → 28,74) e acende no ápice (29,04): cada coisa chega numa batida (times.lands). A logo do LAVOICE voa do centro pro lugar dela entre logo_from_s e lands.logo. layout: medidas no papel de referência de 941 de altura (escala pela altura da tela). A música repete desde 0 s em todas as voltas, inclusive a primeira; a timeline visual continua crescente e não remonta a intro.",
+    "logo_from_s": 27.54,
+    "music_loop_s": 0.0,
+    "build_label": "Build H-2",
+    "labels": { "create": "CRIAR", "customize": "PERSONALIZAR", "practice": "TREINO", "settings": "CONFIGURAÇÕES", "quit": "SAIR", "voice": "TESTAR VOZ" },
+    "times": {
+      "start_s": 27.4,
+      "lock_s": 29.04,
+      "fly_s": 0.22,
+      "beat_s": 0.594,
+      "lands": { "panel": 27.68, "create": 28.0, "customize": 28.14, "practice": 28.28, "logo": 28.44, "settings": 28.58, "quit": 28.74, "voice": 28.88, "ignite": 29.04 }
+    },
+    "colors": {
+      "panel_top": "#2a2a2d", "panel_bottom": "#19191b", "plate": "#ffffff0b", "panel_edge": "#3b3b40",
+      "button": "#2c2c2f", "button_top": "#37373b", "accent": "#f2601a", "accent_top": "#ff7d2e",
+      "separator": "#4a4a4f", "text": "#f5f1e8", "text_dim": "#a9a49b"
+    },
+    "layout": {
+      "height": 941,
+      "x": 52,
+      "panel_edge_x": 628,
+      "panel": [[0, 0], [628, 0], [576, 52], [576, 290], [502, 364], [502, 620], [426, 696], [426, 866], [352, 941], [0, 941]],
+      "plates": [
+        [[534, 60], [562, 60], [562, 284], [534, 312]],
+        [[462, 376], [488, 376], [488, 610], [462, 636]],
+        [[388, 708], [412, 708], [412, 858], [388, 882]]
+      ],
+      "accents": [[[646, 0], [592, 54], [592, 178]], [[518, 350], [518, 452], [504, 466]], [[442, 712], [442, 850]]],
+      "accent_w": 7,
+      "logo": [52, 98, 512, 182],
+      "main": { "y": 258, "h": 68, "h_sel": 84, "w": 413, "w_sel": 460, "cut": 26, "gap": 16, "text": 40, "text_sel": 54, "pad": 28 },
+      "small": { "sep_gap": 20, "sep_x": [26, 373], "sep_after": 26, "h": 62, "h_sel": 68, "w": 303, "w_sel": 340, "cut": 22, "gap": 0, "text": 29, "text_sel": 32, "pad": 28 },
+      "voice": { "rect": [52, 815, 340, 877], "cut": 14, "dot_r": 12, "dot_x": 37, "text_x": 80, "text": 22 }
+    }
+  },
+  "end": { "fade_s": 0.7, "skip_to_s": 27.38, "skip_hint_s": 2.0 },
+  "cinematic": {
+    "mix_gain_db": -3.0,
+    "quote_matter": {
+      "_comment": "A frase clara termina em 11,70; o destaque permanece e vira os mesmos 1800 blocos entre 12,32 e 12,82. Regenerar mask com scenes/intro/generate_quote_mask.gd se texto/fonte mudar.",
+      "mask": "res://assets/intro/fx/quote_matter.png",
+      "mask_scale": 3,
+      "mask_padding_px": 8,
+      "mask_threshold": 0.08,
+      "start_s": 12.32,
+      "fly_s": 0.5,
+      "text_fade_s": 0.12,
+      "scatter_s": 0.1,
+      "piece_px": 1.3,
+      "sphere_piece_px": 1.7,
+      "lift_px": 42.0
+    },
+    "camera": {
+      "drift_px": [
+        7,
+        4
+      ],
+      "drift_hz": [
+        0.19,
+        0.13
+      ],
+      "push": 0.018,
+      "punch": 0.028,
+      "punch_decay": 8.5,
+      "punch_hz": 4.2,
+      "shake_px": 9,
+      "shake_decay": 5.5,
+      "settle_s": 1.5,
+      "breath_s": 0.42,
+      "breath_zoom": -0.012
+    },
+    "post": {
+      "bloom": 0.18,
+      "impact_bloom": 0.32,
+      "threshold": 0.55,
+      "vignette": 0.08,
+      "aberration_px": 2.0,
+      "aberration_s": 0.11,
+      "radius_px": 6.0,
+      "mip_lod": 3.0
+    },
+    "fx": {
+      "seed": 1789,
+      "life_s": 0.68,
+      "speed_min": 45,
+      "speed_max": 185,
+      "width_min": 1.4,
+      "width_max": 4.2,
+      "gravity": 280,
+      "trail_s": 0.025,
+      "light_s": 0.18,
+      "light_radius": 125,
+      "light_alpha": 0.48,
+      "streak_width": 460,
+      "streak_height": 12,
+      "streak_alpha": 0.38
+    },
+    "quote": {
+      "tracking_ratio": 0.045,
+      "focus_in_px": 1.4,
+      "focus_out_px": 2.6,
+      "dissolve": 0.72,
+      "grain_px": 3.0,
+      "exit_rise_px": 10
+    },
+    "surface": {
+      "bevel": 0.14,
+      "highlight": 0.28,
+      "shade": 0.38,
+      "rear_size": 0.64,
+      "front_size": 1.22,
+      "rear_light": 0.38,
+      "front_light": 1.0,
+      "anticipation_s": 0.24,
+      "anticipation_scale": 0.92,
+      "settle_px": 2.5,
+      "settle_decay": 12,
+      "settle_hz": 4.8,
+      "ball_compress": 0.42,
+      "ball_heat": 0.5
+    },
+    "event_sound_window_s": 0.1,
+    "impact_flash": 0.13,
+    "impact_flash_s": 0.13,
+    "exit": {
+      "panel_margin_px": 24.0,
+      "tile_px": 24,
+      "travel_px": 170,
+      "lift_px": 65,
+      "stagger": 0.28,
+      "spin": 0.3
+    },
+    "sfx": {
+      "whoosh_db": -24,
+      "impact_db": -22,
+      "rise_db": -28,
+      "whoosh_s": 0.28,
+      "rise_s": 0.45,
+      "impact_s": 0.32,
+      "sample_rate": 24000,
+      "seed": 1789,
+      "low_hz": 52,
+      "high_hz": 1200
+    }
+  }
+}

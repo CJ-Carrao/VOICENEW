@@ -1,0 +1,133 @@
+{
+  "_comment": "Pente de fuzil (curvo, como o da AK), genérico pra qualquer arma: é o que aparece montando quando você pede 'quero um pente'.",
+  "anchor": [
+    0,
+    0,
+    0
+  ],
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.026,
+        0.07,
+        0.05
+      ],
+      "pos": [
+        0,
+        -0.035,
+        0.0
+      ],
+      "rot": [
+        8,
+        0,
+        0
+      ],
+      "color": "#2a2c31",
+      "finish": "metal",
+      "tag": "body"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.026,
+        0.07,
+        0.05
+      ],
+      "pos": [
+        0,
+        -0.1,
+        0.012
+      ],
+      "rot": [
+        18,
+        0,
+        0
+      ],
+      "color": "#2a2c31",
+      "finish": "metal",
+      "tag": "body"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.026,
+        0.06,
+        0.05
+      ],
+      "pos": [
+        0,
+        -0.158,
+        0.032
+      ],
+      "rot": [
+        28,
+        0,
+        0
+      ],
+      "color": "#2a2c31",
+      "finish": "metal",
+      "tag": "body"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.012,
+        0.056
+      ],
+      "pos": [
+        0,
+        -0.19,
+        0.048
+      ],
+      "rot": [
+        28,
+        0,
+        0
+      ],
+      "color": "#1b1c1f",
+      "finish": "rubber",
+      "tag": "body"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.027,
+        0.004,
+        0.044
+      ],
+      "pos": [
+        0,
+        -0.06,
+        0.003
+      ],
+      "rot": [
+        12,
+        0,
+        0
+      ],
+      "color": "#3a3d44",
+      "finish": "metal",
+      "tag": "body"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.006,
+      "height": 0.034,
+      "pos": [
+        0,
+        0.004,
+        -0.004
+      ],
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "color": "#c9a227",
+      "finish": "metal",
+      "tag": "head"
+    }
+  ]
+}

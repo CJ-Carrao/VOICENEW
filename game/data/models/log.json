@@ -1,0 +1,64 @@
+{
+  "_comment": "tronco: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.175,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.175,
+      "height": 2,
+      "pos": [
+        0,
+        0.175,
+        0
+      ],
+      "color": "#7a4b26",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "bark",
+      "finish": "wood"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.161,
+      "height": 0.012,
+      "pos": [
+        0,
+        0.175,
+        -1.0
+      ],
+      "color": "#c89c5d",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "endgrain"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.161,
+      "height": 0.012,
+      "pos": [
+        0,
+        0.175,
+        1.0
+      ],
+      "color": "#c89c5d",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "endgrain"
+    }
+  ]
+}

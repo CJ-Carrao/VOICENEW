@@ -1,0 +1,216 @@
+{
+  "_comment": "besta: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0,
+    0.05
+  ],
+  "joints": {
+    "trigger": [
+      0,
+      0,
+      0
+    ],
+    "muzzle": [
+      0,
+      0,
+      -0.28
+    ]
+  },
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.0875,
+        0.035,
+        0.035
+      ],
+      "pos": [
+        -0.35,
+        0,
+        -0.224
+      ],
+      "color": "#7a4b26",
+      "tag": "limb",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0875,
+        0.035,
+        0.035
+      ],
+      "pos": [
+        -0.2625,
+        0,
+        -0.2896
+      ],
+      "color": "#7a4b26",
+      "tag": "limb",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0875,
+        0.035,
+        0.035
+      ],
+      "pos": [
+        -0.175,
+        0,
+        -0.3365
+      ],
+      "color": "#7a4b26",
+      "tag": "limb",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0875,
+        0.035,
+        0.035
+      ],
+      "pos": [
+        -0.0875,
+        0,
+        -0.3646
+      ],
+      "color": "#7a4b26",
+      "tag": "limb",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0875,
+        0.035,
+        0.035
+      ],
+      "pos": [
+        0.0,
+        0,
+        -0.374
+      ],
+      "color": "#7a4b26",
+      "tag": "limb",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0875,
+        0.035,
+        0.035
+      ],
+      "pos": [
+        0.0875,
+        0,
+        -0.3646
+      ],
+      "color": "#7a4b26",
+      "tag": "limb",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0875,
+        0.035,
+        0.035
+      ],
+      "pos": [
+        0.175,
+        0,
+        -0.3365
+      ],
+      "color": "#7a4b26",
+      "tag": "limb",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0875,
+        0.035,
+        0.035
+      ],
+      "pos": [
+        0.2625,
+        0,
+        -0.2896
+      ],
+      "color": "#7a4b26",
+      "tag": "limb",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0875,
+        0.035,
+        0.035
+      ],
+      "pos": [
+        0.35,
+        0,
+        -0.224
+      ],
+      "color": "#7a4b26",
+      "tag": "limb",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.7,
+        0.004,
+        0.004
+      ],
+      "pos": [
+        0,
+        0,
+        -0.224
+      ],
+      "color": "#d6dcd8",
+      "tag": "string",
+      "section": "muzzle"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.07,
+        0.09,
+        0.56
+      ],
+      "pos": [
+        0,
+        -0.03,
+        0.03
+      ],
+      "color": "#7a4b26",
+      "tag": "grip",
+      "section": "rear"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.04,
+        0.035,
+        0.48
+      ],
+      "pos": [
+        0,
+        0.06,
+        -0.16
+      ],
+      "color": "#2a2d32",
+      "tag": "rail",
+      "section": "muzzle"
+    }
+  ]
+}

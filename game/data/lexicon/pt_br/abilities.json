@@ -1,0 +1,6 @@
+{
+  "_comment": "Pedido sem coisa, só com habilidade, vira habilidade aplicada no próprio jogador.",
+  "fly":        { "words": ["voar", "voo", "sair voando"] },
+  "sprint":     { "words": ["correr", "correr rápido", "correr muito", "corrida", "super velocidade", "supervelocidade"] },
+  "super_jump": { "words": ["pular alto", "pular", "pulo alto", "super pulo", "superpulo", "saltar", "saltar alto"] }
+}

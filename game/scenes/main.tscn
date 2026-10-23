@@ -1,0 +1,35 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://cjm52iunlfxw7" path="res://scenes/main.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/arena/arena.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="3"]
+[ext_resource type="Script" uid="uid://lscr2cmava2g" path="res://scripts/bot/bot_brain.gd" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/dummy/dummy.tscn" id="5"]
+[ext_resource type="Script" uid="uid://bnhb8nli7jsqc" path="res://scripts/voice/voice_input.gd" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="7"]
+
+[node name="Main" type="Node3D" unique_id=2048661375]
+script = ExtResource("1")
+
+[node name="Arena" parent="." unique_id=799262466 instance=ExtResource("2")]
+
+[node name="Things" type="Node3D" parent="." unique_id=1218780493]
+
+[node name="Player" parent="." unique_id=2144279807 instance=ExtResource("3")]
+
+[node name="Opponent" parent="." unique_id=455951048 instance=ExtResource("3")]
+player_id = 2
+team = 2
+is_local = false
+display_name = "BOT"
+body_color = Color(0.9, 0.3, 0.25, 1)
+
+[node name="BotBrain" type="Node" parent="Opponent" unique_id=898438658]
+script = ExtResource("4")
+
+[node name="Dummy" parent="." unique_id=581694819 instance=ExtResource("5")]
+
+[node name="Voice" type="Node" parent="." unique_id=1966462665]
+script = ExtResource("6")
+
+[node name="HUD" parent="." unique_id=1382166543 instance=ExtResource("7")]

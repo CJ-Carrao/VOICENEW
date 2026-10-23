@@ -1,0 +1,4 @@
+{
+  "_comment": "Como se fala cada comando (data/defs/commands.json). Pedido só com comando, sem coisa: 'recicla', 'quero desmontar'.",
+  "recycle": { "words": ["reciclar", "recicla", "recicle", "reciclagem", "desmontar", "desmonta", "desmonte", "desfazer", "desfaz", "desfaça"] }
+}

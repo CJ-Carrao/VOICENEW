@@ -1,0 +1,138 @@
+{
+  "_comment": "trampolim: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.275,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 1.128,
+      "height": 0.05,
+      "pos": [
+        0,
+        0.484,
+        0
+      ],
+      "color": "#253846",
+      "tag": "mat",
+      "finish": "rubber"
+    },
+    {
+      "shape": "torus",
+      "radius": 1.2,
+      "inner_radius": 1.104,
+      "pos": [
+        0,
+        0.484,
+        0
+      ],
+      "color": "#3683a5",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "rim"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.4675,
+      "pos": [
+        0.0,
+        0.2365,
+        1.008
+      ],
+      "color": "#2a2d32",
+      "tag": "leg"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.4675,
+      "pos": [
+        0.7128,
+        0.2365,
+        0.7128
+      ],
+      "color": "#2a2d32",
+      "tag": "leg"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.4675,
+      "pos": [
+        1.008,
+        0.2365,
+        0.0
+      ],
+      "color": "#2a2d32",
+      "tag": "leg"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.4675,
+      "pos": [
+        0.7128,
+        0.2365,
+        -0.7128
+      ],
+      "color": "#2a2d32",
+      "tag": "leg"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.4675,
+      "pos": [
+        0.0,
+        0.2365,
+        -1.008
+      ],
+      "color": "#2a2d32",
+      "tag": "leg"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.4675,
+      "pos": [
+        -0.7128,
+        0.2365,
+        -0.7128
+      ],
+      "color": "#2a2d32",
+      "tag": "leg"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.4675,
+      "pos": [
+        -1.008,
+        0.2365,
+        -0.0
+      ],
+      "color": "#2a2d32",
+      "tag": "leg"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.4675,
+      "pos": [
+        -0.7128,
+        0.2365,
+        0.7128
+      ],
+      "color": "#2a2d32",
+      "tag": "leg"
+    }
+  ]
+}

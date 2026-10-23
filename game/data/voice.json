@@ -1,0 +1,18 @@
+{
+  "_comment": "Voz offline (DESIGN 11, Marco 6). Push-to-talk: segura a tecla de falar (V, trocável no Esc), fala, solta. O texto vai pro mesmo Forge.request do console. Um motor só (decisão do dono do projeto, 2026-10-19): sherpa-onnx + parakeet-tdt-0.6b-v3 int8 num processo à parte (tools/voice/sidecar, creativoz.exe), só CPU, prioridade baixa, conversa por pipe, hotwords geradas do léxico; ~1 s por fala, zero queda de FPS. Medido: 82% de árvores certas na voz limpa e 72% com microfone com chiado. O Whisper (máxima precisão na GPU) foi retirado: só ~3 pontos a mais, derrubava o FPS em placa fraca e pesava ~550 MB na build. O que melhora o acerto agora é o 'ouvido' (lexicon/pt_br/phonetics.json) e as hotwords, medidos com a calibração. pre_roll_s/post_roll_s: grava um pouco antes de apertar e depois de soltar, pra não cortar a 1ª e a última sílaba. min_speech_rms: volume mínimo da parte mais alta da fala (janela de speech_window_s); abaixo disso é silêncio ou chiado e nem vai pro motor (o jogador ajusta no Esc). threads: núcleos da CPU pro reconhecimento. hotwords_score: quanto as palavras do jogo puxam. denoiser: '' (desligado: limpar o áudio antes PIORA o acerto) ou caminho do modelo GTCRN/DPDFNet com denoiser_kind gtcrn|dpdfnet.",
+  "engine": "sherpa",
+  "sidecar": "res://voice/sherpa/sidecar/creativoz.exe",
+  "model_dir": "res://voice/sherpa/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8",
+  "model": "res://voice/sherpa/models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/encoder.int8.onnx",
+  "threads": 3,
+  "hotwords": true,
+  "hotwords_score": 1.5,
+  "denoiser": "",
+  "pre_roll_s": 0.3,
+  "post_roll_s": 0.25,
+  "min_speech_rms": 0.01,
+  "speech_window_s": 0.03,
+  "min_record_s": 0.35,
+  "max_record_s": 8.0,
+  "capture_bus": "VoiceCapture"
+}

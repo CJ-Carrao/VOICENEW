@@ -1,0 +1,120 @@
+{
+  "_comment": "banana: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.0225,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.018,
+      "pos": [
+        0.0057,
+        0.025,
+        -0.0908
+      ],
+      "color": "#e5c33e",
+      "tag": "fruit"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.018,
+      "pos": [
+        0.0126,
+        0.025,
+        -0.0672
+      ],
+      "color": "#e5c33e",
+      "tag": "fruit"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.018,
+      "pos": [
+        0.0173,
+        0.025,
+        -0.0412
+      ],
+      "color": "#e5c33e",
+      "tag": "fruit"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.018,
+      "pos": [
+        0.0197,
+        0.025,
+        -0.0139
+      ],
+      "color": "#e5c33e",
+      "tag": "fruit"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.018,
+      "pos": [
+        0.0197,
+        0.025,
+        0.0139
+      ],
+      "color": "#e5c33e",
+      "tag": "fruit"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.018,
+      "pos": [
+        0.0173,
+        0.025,
+        0.0412
+      ],
+      "color": "#e5c33e",
+      "tag": "fruit"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.018,
+      "pos": [
+        0.0126,
+        0.025,
+        0.0672
+      ],
+      "color": "#e5c33e",
+      "tag": "fruit"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.018,
+      "pos": [
+        0.0057,
+        0.025,
+        0.0908
+      ],
+      "color": "#e5c33e",
+      "tag": "fruit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.01,
+        0.012,
+        0.025
+      ],
+      "pos": [
+        0.005,
+        0.025,
+        -0.1
+      ],
+      "color": "#7a4b26",
+      "rot": [
+        0,
+        -20,
+        0
+      ],
+      "tag": "stem"
+    }
+  ]
+}

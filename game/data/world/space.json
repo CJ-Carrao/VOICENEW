@@ -1,0 +1,212 @@
+{
+  "_comment": "Mapa do espaço (DESIGN 27). Caixa de box_half (m) de cada lado do centro: as paredes de dentro puxam quem chega a wall_reach delas. Sol quadrado no centro (half) com gravidade nas faces de fora até reach. Planetas: centro, raio e alcance da gravidade a partir da superfície (fora de todo alcance é gravidade zero). spawns: planeta e direção (do centro pra fora) onde cada jogador nasce, em pé na superfície.",
+  "intro": {
+    "_comment": "Intro do mapa (DESIGN 27.1). Tempos em segundos da música (0 = começo do arquivo; os do dono foram marcados no Sound Forge). pre_roll_s: preto + estrelas antes da música (black_s de preto, fade_s clareando). shots.float: de onde a câmera começa (o sol a turn_deg de lado e pitch_deg abaixo), começa a virar turn_from_after_s depois do começo (ainda no preto) e termina em turn_end olhando pro sol, deslizando truck_m de lado e desfazendo roll_deg. title_in: corte seco pro nome vazado (title_knockout: letras peso weight, espaço spacing, largura width da tela; chegam de push[0] a push[1] e a partir de open_from a câmera atravessa o nome, abrindo a tela em open_to, no corte do primeiro planeta). build: [planeta, começo, duração] de cada planeta se formando do núcleo pra fora (growth_exp: quanto desacelera no fim). shots planet_*/wide: cortes secos com planos firmes (dist em raios do planeta; third: quanto o olhar vai pro lado do sol, deixando o planeta num terço da tela). fly: voo até o jogador desviando de planetas e sol (clearance_m de folga; a do planeta do jogador é home_clearance_m), vindo por approach_offset [atrás, acima]. settle: plano de herói contemplativo (câmera baixa a height_m, dist_m → dist_end_m, girando orbit_deg a partir de start_deg, desacelerando; foco raso). blend: vira a câmera do jogador (1ª ou 3ª pessoa) e as faixas de cinema (aspect) recolhem. countdown_at → go_at: 3, 2, 1. skip_to: pular (dois toques no Espaço). streams: cubos que o sol solta. interior_cube_m: cubo do miolo que cresce. dust: poeira perto da lente (paralaxe). music_fx: reverb do canal da música do mapa (pouco molhado, cauda longa).",
+    "music": "res://assets/music/space_the_earthen_division.ogg",
+    "music_db": -2.0,
+    "pre_roll_s": 2.6,
+    "black_s": 0.9,
+    "fade_s": 1.5,
+    "title": "ESPAÇO",
+    "subtitle": "do caos, a forma",
+    "title_in": 1.821,
+    "turn_end": 1.821,
+    "build": [
+      [
+        1,
+        2.05,
+        4.6
+      ],
+      [
+        3,
+        2.5,
+        5.0
+      ],
+      [
+        0,
+        1.95,
+        8.4
+      ],
+      [
+        2,
+        3.0,
+        6.3
+      ],
+      [
+        4,
+        2.25,
+        3.6
+      ],
+      [
+        5,
+        2.9,
+        4.0
+      ],
+      [
+        6,
+        3.5,
+        3.6
+      ],
+      [
+        7,
+        4.0,
+        4.2
+      ]
+    ],
+    "growth_exp": 1.6,
+    "shots": {
+      "float": {
+        "pos": [
+          6.0,
+          5.0,
+          46.0
+        ],
+        "turn_deg": 100.0,
+        "pitch_deg": 9.0,
+        "turn_from_after_s": 0.6,
+        "truck_m": 3.0,
+        "roll_deg": 5.0
+      },
+      "sun": {
+        "look": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fov": [
+          54.0,
+          46.0
+        ]
+      },
+      "planet_a": {
+        "at": 3.734,
+        "planet": 1,
+        "side": 1.0,
+        "low": 0.12,
+        "dist": 4.3,
+        "third": 0.85,
+        "fov": 40.0
+      },
+      "planet_b": {
+        "at": 5.289,
+        "planet": 3,
+        "side": -1.0,
+        "low": -0.22,
+        "dist": 4.3,
+        "third": 0.85,
+        "fov": 40.0
+      },
+      "wide": {
+        "at": 7.03,
+        "pos": [
+          56.0,
+          33.0,
+          58.0
+        ],
+        "look": [
+          -2.0,
+          -3.0,
+          0.0
+        ],
+        "fov": 66.0
+      },
+      "planet_c": {
+        "at": 8.78,
+        "planet": 2,
+        "side": 1.0,
+        "low": 0.25,
+        "dist": 3.8,
+        "third": 0.8,
+        "fov": 42.0
+      }
+    },
+    "fly": {
+      "from": 9.05,
+      "arrive": 13.9,
+      "clearance_m": 4.5,
+      "home_clearance_m": 1.4,
+      "approach_offset": [
+        7.0,
+        6.0
+      ],
+      "fov": 46.0
+    },
+    "settle": {
+      "until": 13.9,
+      "start_deg": 0.0,
+      "orbit_deg": 0.0,
+      "dist_m": 3.2,
+      "dist_end_m": 3.2,
+      "height_m": 1.7,
+      "height_end_m": 1.7,
+      "look_m": 1.4,
+      "fov_end": 46.0
+    },
+    "blend": {
+      "until": 14.56
+    },
+    "countdown_at": 15.66,
+    "go_at": 16.564,
+    "skip_to": 13.9,
+    "streams": {
+      "count": 420,
+      "speed_ms": 24.0,
+      "cube_m": 0.42
+    },
+    "interior_cube_m": 1.0,
+    "aspect": 2.39,
+    "dust": {
+      "count": 700,
+      "box_m": 36.0,
+      "drift_ms": [
+        0.12,
+        0.05,
+        -0.08
+      ]
+    },
+    "music_fx": {
+      "bus": "MapMusic",
+      "room_size": 0.85,
+      "damping": 0.55,
+      "spread": 1.0,
+      "hipass": 0.3,
+      "predelay_ms": 40.0,
+      "predelay_feedback": 0.25,
+      "dry": 1.0,
+      "wet": 0.14
+    },
+    "title_knockout": {
+      "weight": 800,
+      "spacing": 46,
+      "width": 0.72,
+      "push": [
+        1.0,
+        1.12
+      ],
+      "open_from": 3.3,
+      "open_to": 3.734,
+      "open_scale": 45.0,
+      "sun_fov": 8.0
+    }
+  },
+  "walls": {"_comment": "Paredes invisíveis: acendem até reveal_m em volta dos pés de quem pisa nelas (a até contact_m), em in_s, e apagam em out_s depois que a pessoa sai.", "reveal_m": 7.0, "contact_m": 1.4, "in_s": 0.25, "out_s": 0.8},
+  "box_half": 64.0,
+  "wall_reach": 12.0,
+  "sun": {"half": 5.0, "round": 1.6, "reach": 9.0},
+  "planets": [
+    {"name": "grande", "center": [-26.0, -20.0, 18.0], "radius": 17.0, "reach": 11.0, "color": "#6f7d8c"},
+    {"name": "medio_a", "center": [30.0, 20.0, -22.0], "radius": 10.0, "reach": 8.0, "color": "#8c6f5a"},
+    {"name": "medio_b", "center": [27.0, -29.0, 30.0], "radius": 9.0, "reach": 7.5, "color": "#5f7f68"},
+    {"name": "medio_c", "center": [-30.0, 29.0, -27.0], "radius": 10.0, "reach": 8.0, "color": "#7a6a8e"},
+    {"name": "pequeno_a", "center": [4.0, 34.0, 30.0], "radius": 5.0, "reach": 5.5, "color": "#9a8a62"},
+    {"name": "pequeno_b", "center": [-6.0, -38.0, -32.0], "radius": 4.5, "reach": 5.0, "color": "#6a8a9a"},
+    {"name": "pequeno_c", "center": [42.0, -4.0, 8.0], "radius": 5.0, "reach": 5.5, "color": "#9a6a6a"},
+    {"name": "pequeno_d", "center": [-44.0, 8.0, 42.0], "radius": 4.0, "reach": 5.0, "color": "#7e8a5e"}
+  ],
+  "spawns": [
+    {"planet": 0, "dir": [0.2, 1.0, 0.3]},
+    {"planet": 1, "dir": [-0.4, 0.5, 0.6]},
+    {"planet": 2, "dir": [-0.5, -0.2, -0.7]},
+    {"planet": 3, "dir": [0.6, -0.3, 0.6]}
+  ]
+}

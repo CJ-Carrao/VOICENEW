@@ -1,0 +1,452 @@
+{
+  "_comment": "espinhos: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.2,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        1.5,
+        0.08,
+        1.5
+      ],
+      "pos": [
+        0,
+        0.04,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "base"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        -0.6,
+        0.22,
+        -0.6
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        -0.6,
+        0.22,
+        -0.3
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        -0.6,
+        0.22,
+        0.0
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        -0.6,
+        0.22,
+        0.3
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        -0.6,
+        0.22,
+        0.6
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        -0.3,
+        0.22,
+        -0.6
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        -0.3,
+        0.22,
+        -0.3
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        -0.3,
+        0.22,
+        0.0
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        -0.3,
+        0.22,
+        0.3
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        -0.3,
+        0.22,
+        0.6
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        0.0,
+        0.22,
+        -0.6
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        0.0,
+        0.22,
+        -0.3
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        0.0,
+        0.22,
+        0.0
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        0.0,
+        0.22,
+        0.3
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        0.0,
+        0.22,
+        0.6
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        0.3,
+        0.22,
+        -0.6
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        0.3,
+        0.22,
+        -0.3
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        0.3,
+        0.22,
+        0.0
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        0.3,
+        0.22,
+        0.3
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        0.3,
+        0.22,
+        0.6
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        0.6,
+        0.22,
+        -0.6
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        0.6,
+        0.22,
+        -0.3
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        0.6,
+        0.22,
+        0.0
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        0.6,
+        0.22,
+        0.3
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.07,
+      "height": 0.32,
+      "pos": [
+        0.6,
+        0.22,
+        0.6
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spike"
+    }
+  ]
+}

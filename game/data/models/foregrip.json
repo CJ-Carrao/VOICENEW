@@ -1,0 +1,107 @@
+{
+ "_comment": "Empunhadura vertical. Gerado por tools/models/gen_arsenal.py.",
+ "anchor": [
+  0,
+  0,
+  0
+ ],
+ "pieces": [
+  {
+   "shape": "box",
+   "size": [
+    0.02,
+    0.006,
+    0.03
+   ],
+   "pos": [
+    0,
+    -0.003,
+    0
+   ],
+   "color": "#16171a",
+   "tag": "mount",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.013,
+   "height": 0.08,
+   "pos": [
+    0,
+    -0.046,
+    0
+   ],
+   "color": "#1d1e21",
+   "tag": "handguard",
+   "finish": "rubber"
+  },
+  {
+   "shape": "torus",
+   "radius": 0.0138,
+   "inner_radius": 0.012,
+   "pos": [
+    0,
+    -0.02,
+    0
+   ],
+   "color": "#16171a",
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "tag": "handguard"
+  },
+  {
+   "shape": "torus",
+   "radius": 0.0138,
+   "inner_radius": 0.012,
+   "pos": [
+    0,
+    -0.036,
+    0
+   ],
+   "color": "#16171a",
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "tag": "handguard"
+  },
+  {
+   "shape": "torus",
+   "radius": 0.0138,
+   "inner_radius": 0.012,
+   "pos": [
+    0,
+    -0.052,
+    0
+   ],
+   "color": "#16171a",
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "tag": "handguard"
+  },
+  {
+   "shape": "torus",
+   "radius": 0.0138,
+   "inner_radius": 0.012,
+   "pos": [
+    0,
+    -0.068,
+    0
+   ],
+   "color": "#16171a",
+   "rot": [
+    0,
+    0,
+    0
+   ],
+   "tag": "handguard"
+  }
+ ]
+}

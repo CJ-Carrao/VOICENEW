@@ -1,0 +1,146 @@
+{
+  "passed": true,
+  "scope": "Ensaios isolados do adendo; passed nao significa todos os requisitos visuais/runtime cumpridos. Ver pending.",
+  "full_runtime_compatibility_verified": false,
+  "all_brief_requirements_fully_verified": false,
+  "completed_stage": "Contatos por direcao -> E -> F -> B -> C; artefatos gerados e ensaiados",
+  "generated_at": "2026-10-14T03:53:38.098781-03:00",
+  "checks": {
+    "validacao_blender.json": true,
+    "validacao_importacao.json": true,
+    "validacao_tronco_giros.json": true,
+    "validacao_contato_proposta.json": true,
+    "validacao_E.json": true,
+    "validacao_empunhadura.json": true,
+    "validacao_F_importacao.json": true,
+    "validacao_B.json": true,
+    "validacao_B_geometria.json": true,
+    "validacao_C.json": true,
+    "validacao_ragdoll.json": true,
+    "validacao_ragdoll_limites.json": true,
+    "validacao_D_dados.json": true,
+    "teste_godot/resultado_relogio_rosto.json": true,
+    "determinismo.json": true,
+    "validacao_midias.json": true,
+    "clip_names": true,
+    "clip_count": true,
+    "isolated_glb_matches": true,
+    "isolated_config_matches": true,
+    "bake_60fps": true,
+    "import_60fps": true,
+    "tested_glb_hash": true,
+    "tested_generation_config": true,
+    "all_137_videos": true,
+    "three_model_views": true,
+    "eighteen_weapon_views": true,
+    "nineteen_expressions": true,
+    "blink": true,
+    "standing_contact_scope_24": true,
+    "weapon_presets_30": true,
+    "eight_directions_each_gait": true,
+    "three_composition_videos": true
+  },
+  "clip_count": 137,
+  "bone_count": 28,
+  "mesh_count": 35,
+  "triangles": 2378,
+  "blender": "3.5.1",
+  "godot": {
+    "build": "steam",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (steam)",
+    "timestamp": 0
+  },
+  "glb_sha256": "f68740b117e00a693f2a03e0e48602b93a106b651a30004f61192bde3fd73260",
+  "metrics": {
+    "standing_max_slide_percent": 1.4065351337194398,
+    "standing_max_direction_deg": 0.0611401248603584,
+    "standing_min_ankle_gap_m": 0.167468965053558,
+    "standing_min_own_side_m": 0.0485963113605976,
+    "weapon_max_arm_reach_m": 0.41752541729513515,
+    "getup_max_initial_joint_error_deg": 2.89854018468301,
+    "ragdoll_max_speed_after_3s_mps": 0.0,
+    "max_import_loop_position_m": 1.79433740754575e-07,
+    "max_import_socket_error_m": 2.47556670274207e-07
+  },
+  "pending": [
+    "Jogo nao integrado; teste multiplayer real, latencia/perda, terreno e blends arbitrarios pendentes.",
+    "Contato aprovado condicionado a proposta ik.lock_release_s=1/60; configuracao original 0.08 falhou. Agachado testado por FK, sem certificar IK agachado do runtime.",
+    "Armas reais: calibrar anchors, mira extrema, coice, obstrucao e transicoes. Palmas hip no terco inferior; arma inteira nesse terco nao certificada.",
+    "Camera agachada usa referencia horizontal -0.17523 m: integrador deve misturar deslocamento com a camera da capsula.",
+    "Pivot FK apresenta ate cerca de 4.24 mm de deriva: adaptar trava IK a trajetoria real. E mede pes/maos e obstaculos de referencia, nao toda a capsula.",
+    "Crouch permite sobreposicao adjacente ombro/peito ate 4 mm (medida 3.41 mm); gestos com bracos altos excedem altura da capsula.",
+    "Ragdoll mecanico tem limites amplos; nao e anatomico humano nem fisica deterministica entre clientes. Testar custo de memoria/CPU no jogo."
+  ],
+  "reports": {
+    "validacao_blender.json": {
+      "sha256": "8bc220c5e03aafbb16c682b4fcf387894dd4145fa437b72d3e4a8bd45929cecd",
+      "scope": "Structure, rigid weights, scales, fixed root, socket transforms, loops and GLB masks. Motion/physics gates in named reports."
+    },
+    "validacao_importacao.json": {
+      "sha256": "e614cbfaba6e8fd52d4ee2d97a2e7fd34e0b30f4d047ccde31d328088cb2d5c1",
+      "scope": "All imported names/durations, loop endpoints, scales/root and socket offsets at start/mid/end; detailed motion/physics in block reports."
+    },
+    "validacao_tronco_giros.json": {
+      "sha256": "3a69ad588af19f8f884d9e19e68526de119654eef273a68a25acb5e64cf571de",
+      "scope": "Torso amplitudes and delays, model-space mean poses, turn curves and planted foot rotation. Contact speed is in dedicated 60Hz runtime report."
+    },
+    "validacao_contato_proposta.json": {
+      "sha256": "f263491df10dced606ffd17394049e6878ca01c4d34242aa9a75773aee3fe921",
+      "scope": "Runtime copiado; piso plano, 8 direcoes constantes; antes/depois IK; metricas de material e ankle/toe separadas"
+    },
+    "validacao_E.json": {
+      "sha256": "522fc41c984a09620b8819aca1a5ad21bb8f6d43712da5e98a4b3e84b129d75e",
+      "scope": "Clipes E importados; limites e folga dos pes na beirada geometrica; sem gameplay"
+    },
+    "validacao_empunhadura.json": {
+      "sha256": "b72c1aaef140e6c684c3f14b55fb63c64bcf095a96292ff50bd0510d3dd76d80",
+      "scope": "30 presets, reference camera level, exact rigid mesh surface intersections, full hand vertices in 80deg vertical 16:9; real weapons and aim extremes pending"
+    },
+    "validacao_F_importacao.json": {
+      "sha256": "6f96d764df7760121cdd87256167904614c5fbeaf00a76b3ec4ab8a473da8819",
+      "scope": "Imported upper clips composed on declared body reference; both wrist transforms, real-scale weapon offset and ADS centre. Dynamic aim/recoil/walls/network pending."
+    },
+    "validacao_B.json": {
+      "sha256": "12a32eb379c84fc4c04168006132d9d8c9c509355f787bcfa7f9cd5687f88191",
+      "scope": "Imported B, 60Hz, crouch variants over crouch base. Full arbitrary runtime blends pending."
+    },
+    "validacao_B_geometria.json": {
+      "sha256": "f7a145e9d1ff640f5f0b67a6b4a38fbd4f1b5bcbc9465babed6f1a7b057c17cb",
+      "scope": "Exact convex SAT 60Hz. Adjacent shoulder shell contact <=4mm accepted: original Idle already overlaps 2.66mm at this mechanical joint. Actual overlaps remain reported. Head and opposite arm intersections remain forbidden."
+    },
+    "validacao_C.json": {
+      "sha256": "a24fa5786ee67048f197534ca70ea2621ec3795e0ac770ec11558d052560dca1",
+      "scope": "Imported C at 240Hz; all mesh floor clearance, fixed root, Idle ends, recovery contacts and actual Jolt settled joint comparison. Gameplay impulse trajectory remains external."
+    },
+    "validacao_ragdoll.json": {
+      "sha256": "7c5a316fb1dde81d421668fa0d98367c6123910492221a4c823b401390c57f3e",
+      "scope": "Ver relatorio individual"
+    },
+    "validacao_ragdoll_limites.json": {
+      "sha256": "3b69a72b83d54fa164c91fdd066e6ff4e877b1bc6fa89bbf7aaaa7838de17272",
+      "scope": "All current clips sampled 120Hz; quaternion swing/twist in declared cone axes. Nonadjacent physical boxes in rest and Idle at 60Hz."
+    },
+    "validacao_D_dados.json": {
+      "sha256": "2cd5e7c4d0b115dc0b6b515eb3c7a8f2e8c7ae92200fdb835f895450911000a0",
+      "scope": "Markers and grips from imported geometry; mechanical joint coverage and ragdoll remain block C."
+    },
+    "teste_godot/resultado_relogio_rosto.json": {
+      "sha256": "948e54926d03202460b7b6edc44dcfc71435fe434f18ebd7d99f0a3a9b7d5e50",
+      "scope": "Two local controllers; identical seed and absolute time. No real network or multiplayer integration tested."
+    },
+    "determinismo.json": {
+      "sha256": "ab6d265cde59d6780c5bc45dd2bb18307e32602c1643ff4125abd4528ebdee26",
+      "scope": "Pacote completo do adendo, Blender 3.5.1, duas pastas independentes, GLB byte a byte. Nao inclui .blend nem determinismo de rede/fisica."
+    },
+    "validacao_midias.json": {
+      "sha256": "0b728e55a3447628e2b6d8435643985449e96660c8416d2732580922d23fe6e9",
+      "scope": "137 MP4s: duration, 60 fps, three 512x512 views; visual inspection is separate."
+    }
+  }
+}

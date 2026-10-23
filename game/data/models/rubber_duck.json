@@ -1,0 +1,77 @@
+{
+  "_comment": "pato de borracha: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.04,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.028,
+        0
+      ],
+      "color": "#eec945",
+      "tag": "body",
+      "_stretch": [
+        0.07,
+        0.052000000000000005,
+        0.1
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.024,
+      "pos": [
+        0,
+        0.0592,
+        -0.025
+      ],
+      "color": "#eec945",
+      "tag": "head"
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        0.0315,
+        0.0096,
+        0.035
+      ],
+      "pos": [
+        0,
+        0.0544,
+        -0.053
+      ],
+      "color": "#db8a34",
+      "point": 0.5,
+      "tag": "beak"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.004,
+      "pos": [
+        -0.014,
+        0.068,
+        -0.036
+      ],
+      "color": "#2a2d32",
+      "tag": "eye"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.004,
+      "pos": [
+        0.014,
+        0.068,
+        -0.036
+      ],
+      "color": "#2a2d32",
+      "tag": "eye"
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "_comment": "tubarão: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.66,
+    0
+  ],
+  "sockets": {
+    "mount_hand": [
+      1.08,
+      0.66,
+      -0.72
+    ]
+  },
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "reference": "https://www.fisheries.noaa.gov/species/white-shark",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.576,
+        -0.2
+      ],
+      "color": "#6d8798",
+      "tag": "body",
+      "_stretch": [
+        0.684,
+        0.66,
+        3.12
+      ]
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        0.216,
+        0.42,
+        0.92
+      ],
+      "pos": [
+        0,
+        1.032,
+        0
+      ],
+      "color": "#6d8798",
+      "point": 0.5,
+      "tag": "dorsal_fin"
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        0.756,
+        0.06,
+        0.96
+      ],
+      "pos": [
+        -0.54,
+        0.384,
+        0
+      ],
+      "color": "#6d8798",
+      "point": 0.5,
+      "rot": [
+        0,
+        -25,
+        0
+      ],
+      "tag": "fin"
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        0.756,
+        0.06,
+        0.96
+      ],
+      "pos": [
+        0.54,
+        0.384,
+        0
+      ],
+      "color": "#6d8798",
+      "point": 0.5,
+      "rot": [
+        0,
+        25,
+        0
+      ],
+      "tag": "fin"
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        0.144,
+        1.2,
+        0.8
+      ],
+      "pos": [
+        0,
+        0.6,
+        1.72
+      ],
+      "color": "#6d8798",
+      "point": 0.5,
+      "rot": [
+        0,
+        180,
+        0
+      ],
+      "tag": "tail"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.035,
+      "pos": [
+        -0.252,
+        0.696,
+        -1.4
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.035,
+      "pos": [
+        0.252,
+        0.696,
+        -1.4
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.693,
+        0.276,
+        0.025
+      ],
+      "pos": [
+        0,
+        0.6,
+        -0.88
+      ],
+      "color": "#4c5c66",
+      "tag": "gill"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.693,
+        0.276,
+        0.025
+      ],
+      "pos": [
+        0,
+        0.6,
+        -0.8
+      ],
+      "color": "#4c5c66",
+      "tag": "gill"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.693,
+        0.276,
+        0.025
+      ],
+      "pos": [
+        0,
+        0.6,
+        -0.72
+      ],
+      "color": "#4c5c66",
+      "tag": "gill"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.693,
+        0.276,
+        0.025
+      ],
+      "pos": [
+        0,
+        0.6,
+        -0.64
+      ],
+      "color": "#4c5c66",
+      "tag": "gill"
+    }
+  ]
+}

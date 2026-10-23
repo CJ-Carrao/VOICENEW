@@ -1,0 +1,189 @@
+{
+  "_comment": "urso: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.7425,
+    0
+  ],
+  "sockets": {
+    "mount_hand": [
+      0.51,
+      0.7425000000000002,
+      -0.378
+    ]
+  },
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "reference": "https://animals.sandiegozoo.org/animals/brown-bear",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.783,
+        0
+      ],
+      "color": "#63452e",
+      "tag": "body",
+      "_stretch": [
+        0.7224999999999999,
+        0.5940000000000001,
+        1.344
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        1.08,
+        -0.756
+      ],
+      "color": "#63452e",
+      "tag": "head",
+      "_stretch": [
+        0.51,
+        0.43200000000000005,
+        0.525
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.9855,
+        -1.008
+      ],
+      "color": "#63452e",
+      "tag": "muzzle",
+      "_stretch": [
+        0.34,
+        0.18900000000000003,
+        0.378
+      ]
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.119,
+      "height": 0.648,
+      "pos": [
+        -0.2635,
+        0.324,
+        -0.483
+      ],
+      "color": "#63452e",
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.119,
+      "height": 0.648,
+      "pos": [
+        -0.2635,
+        0.324,
+        0.483
+      ],
+      "color": "#63452e",
+      "tag": "leg"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.1105,
+      "height": 0.162,
+      "pos": [
+        -0.187,
+        1.323,
+        -0.651
+      ],
+      "color": "#63452e",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "ear"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.119,
+      "height": 0.648,
+      "pos": [
+        0.2635,
+        0.324,
+        -0.483
+      ],
+      "color": "#63452e",
+      "tag": "leg"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.119,
+      "height": 0.648,
+      "pos": [
+        0.2635,
+        0.324,
+        0.483
+      ],
+      "color": "#63452e",
+      "tag": "leg"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.1105,
+      "height": 0.162,
+      "pos": [
+        0.187,
+        1.323,
+        -0.651
+      ],
+      "color": "#63452e",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "ear"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0765,
+      "height": 0.63,
+      "pos": [
+        0,
+        0.837,
+        0.903
+      ],
+      "color": "#63452e",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "tail"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0425,
+      "pos": [
+        -0.2295,
+        1.1475,
+        -0.903
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0425,
+      "pos": [
+        0.2295,
+        1.1475,
+        -0.903
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    }
+  ]
+}

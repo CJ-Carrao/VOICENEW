@@ -1,0 +1,965 @@
+{
+  "schema": 2,
+  "seed": 1701,
+  "globals": {
+    "separation": 1,
+    "brightness": 1,
+    "color": [
+      0.85,
+      0.93,
+      0.98
+    ],
+    "background": [
+      0.035,
+      0.075,
+      0.115
+    ]
+  },
+  "blink": {
+    "rest_per_minute": 17,
+    "talk_per_minute": 26,
+    "source": "Bentivoglio et al. 1997 PMID 9399231 (medias de amostra)",
+    "duration_s": 0.24,
+    "close_s": 0.07,
+    "hold_s": 0.025,
+    "open_s": 0.145,
+    "double_probability": 0.12,
+    "double_gap_s": 0.12,
+    "style_source": "tempos e probabilidade estimados para leitura visual"
+  },
+  "gaze": {
+    "duration_intercept_s": 0.025,
+    "duration_per_degree_s": 0.0027,
+    "duration_range_s": [
+      0.035,
+      0.09
+    ],
+    "source": "Baloh et al. 1975 PMID 1237825: slope 2.7 ms/degree. Intercepto, limites e conversao UV/graus estimados.",
+    "uv_per_degree": 0.008,
+    "fixation_s": [
+      1.2,
+      3.4
+    ],
+    "max_uv": [
+      0.09,
+      0.06
+    ],
+    "micro_uv": 0.004,
+    "head_delay_s": 0.14,
+    "large_change_blink_threshold_uv": 0.1
+  },
+  "expressions": {
+    "Neutral": {
+      "L": {
+        "center": [
+          0.235,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.49,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "R": {
+        "center": [
+          0.765,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.49,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "transition_s": 0.18,
+      "ease": "out_cubic",
+      "head_tilt_deg": 0,
+      "provenance": "desenho e numeros autorais; sem copiar poses"
+    },
+    "Happy": {
+      "L": {
+        "center": [
+          0.235,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.34,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0.1,
+          0,
+          0.7
+        ],
+        "arc": 0
+      },
+      "R": {
+        "center": [
+          0.765,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.34,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0.1,
+          0,
+          0.7
+        ],
+        "arc": 0
+      },
+      "transition_s": 0.18,
+      "ease": "out_cubic",
+      "head_tilt_deg": 0,
+      "provenance": "desenho e numeros autorais; sem copiar poses"
+    },
+    "VeryHappy": {
+      "L": {
+        "center": [
+          0.235,
+          0.5
+        ],
+        "width": 0.23,
+        "height": 0.27,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 1
+      },
+      "R": {
+        "center": [
+          0.765,
+          0.5
+        ],
+        "width": 0.23,
+        "height": 0.27,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 1
+      },
+      "transition_s": 0.18,
+      "ease": "out_cubic",
+      "head_tilt_deg": 0,
+      "provenance": "desenho e numeros autorais; sem copiar poses"
+    },
+    "Focused": {
+      "L": {
+        "center": [
+          0.235,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.3,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          0.85,
+          -0.1,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "R": {
+        "center": [
+          0.765,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.3,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          0.85,
+          0.1,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "transition_s": 0.18,
+      "ease": "out_cubic",
+      "head_tilt_deg": 0,
+      "provenance": "desenho e numeros autorais; sem copiar poses"
+    },
+    "Determined": {
+      "L": {
+        "center": [
+          0.235,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.35,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          0.84,
+          -0.26,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "R": {
+        "center": [
+          0.765,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.35,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          0.84,
+          0.26,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "transition_s": 0.18,
+      "ease": "out_cubic",
+      "head_tilt_deg": 0,
+      "provenance": "desenho e numeros autorais; sem copiar poses"
+    },
+    "Angry": {
+      "L": {
+        "center": [
+          0.235,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.37,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          0.72,
+          -0.48,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "R": {
+        "center": [
+          0.765,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.37,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          0.72,
+          0.48,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "transition_s": 0.18,
+      "ease": "out_cubic",
+      "head_tilt_deg": 0,
+      "provenance": "desenho e numeros autorais; sem copiar poses"
+    },
+    "Sad": {
+      "L": {
+        "center": [
+          0.235,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.38,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          0.8,
+          0.4,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "R": {
+        "center": [
+          0.765,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.38,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          0.8,
+          -0.4,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "transition_s": 0.25,
+      "ease": "out_cubic",
+      "head_tilt_deg": 0,
+      "provenance": "desenho e numeros autorais; sem copiar poses"
+    },
+    "Surprised": {
+      "L": {
+        "center": [
+          0.235,
+          0.5
+        ],
+        "width": 0.19,
+        "height": 0.65,
+        "rounding": 0.05,
+        "rotation": 0,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "R": {
+        "center": [
+          0.765,
+          0.5
+        ],
+        "width": 0.19,
+        "height": 0.65,
+        "rounding": 0.05,
+        "rotation": 0,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "transition_s": 0.12,
+      "ease": "out_cubic",
+      "head_tilt_deg": 0,
+      "provenance": "desenho e numeros autorais; sem copiar poses"
+    },
+    "Scared": {
+      "L": {
+        "center": [
+          0.235,
+          0.5
+        ],
+        "width": 0.13,
+        "height": 0.66,
+        "rounding": 0.012,
+        "rotation": -0.06,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "R": {
+        "center": [
+          0.765,
+          0.5
+        ],
+        "width": 0.13,
+        "height": 0.66,
+        "rounding": 0.012,
+        "rotation": 0.06,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "transition_s": 0.18,
+      "ease": "out_cubic",
+      "head_tilt_deg": 0,
+      "provenance": "desenho e numeros autorais; sem copiar poses"
+    },
+    "Sleepy": {
+      "L": {
+        "center": [
+          0.235,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.49,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          0.46,
+          0,
+          0
+        ],
+        "bottom": [
+          0.12,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "R": {
+        "center": [
+          0.765,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.49,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          0.46,
+          0,
+          0
+        ],
+        "bottom": [
+          0.12,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "transition_s": 0.18,
+      "ease": "out_cubic",
+      "head_tilt_deg": 0,
+      "provenance": "desenho e numeros autorais; sem copiar poses"
+    },
+    "Bored": {
+      "L": {
+        "center": [
+          0.235,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.35,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          0.58,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "R": {
+        "center": [
+          0.765,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.35,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          0.58,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "transition_s": 0.18,
+      "ease": "out_cubic",
+      "head_tilt_deg": 0,
+      "provenance": "desenho e numeros autorais; sem copiar poses"
+    },
+    "Confused": {
+      "L": {
+        "center": [
+          0.235,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.28,
+        "rounding": 0.012,
+        "rotation": 0.08,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "R": {
+        "center": [
+          0.765,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.52,
+        "rounding": 0.012,
+        "rotation": -0.08,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "transition_s": 0.18,
+      "ease": "out_cubic",
+      "head_tilt_deg": 10,
+      "provenance": "desenho e numeros autorais; sem copiar poses"
+    },
+    "Dizzy": {
+      "L": {
+        "center": [
+          0.235,
+          0.5
+        ],
+        "width": 0.2,
+        "height": 0.42,
+        "rounding": 0.012,
+        "rotation": -0.55,
+        "top": [
+          0.8,
+          -0.3,
+          0
+        ],
+        "bottom": [
+          0.2,
+          0.3,
+          0
+        ],
+        "arc": 0
+      },
+      "R": {
+        "center": [
+          0.765,
+          0.5
+        ],
+        "width": 0.2,
+        "height": 0.42,
+        "rounding": 0.012,
+        "rotation": 0.55,
+        "top": [
+          0.8,
+          0.3,
+          0
+        ],
+        "bottom": [
+          0.2,
+          -0.3,
+          0
+        ],
+        "arc": 0
+      },
+      "transition_s": 0.18,
+      "ease": "out_cubic",
+      "head_tilt_deg": 0,
+      "provenance": "desenho e numeros autorais; sem copiar poses"
+    },
+    "Straining": {
+      "L": {
+        "center": [
+          0.235,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.24,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          0.8,
+          -0.25,
+          0.3
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "R": {
+        "center": [
+          0.765,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.24,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          0.8,
+          0.25,
+          0.3
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "transition_s": 0.18,
+      "ease": "out_cubic",
+      "head_tilt_deg": 0,
+      "provenance": "desenho e numeros autorais; sem copiar poses"
+    },
+    "Talking": {
+      "L": {
+        "center": [
+          0.235,
+          0.5
+        ],
+        "width": 0.16,
+        "height": 0.46,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "R": {
+        "center": [
+          0.765,
+          0.5
+        ],
+        "width": 0.16,
+        "height": 0.46,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "transition_s": 0.18,
+      "ease": "out_cubic",
+      "head_tilt_deg": 0,
+      "provenance": "desenho e numeros autorais; sem copiar poses"
+    },
+    "Thinking": {
+      "L": {
+        "center": [
+          0.185,
+          0.6
+        ],
+        "width": 0.147,
+        "height": 0.4,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "R": {
+        "center": [
+          0.715,
+          0.6
+        ],
+        "width": 0.147,
+        "height": 0.4,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "transition_s": 0.18,
+      "ease": "out_cubic",
+      "head_tilt_deg": 0,
+      "provenance": "desenho e numeros autorais; sem copiar poses"
+    },
+    "Listening": {
+      "L": {
+        "center": [
+          0.235,
+          0.5
+        ],
+        "width": 0.165,
+        "height": 0.55,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "R": {
+        "center": [
+          0.765,
+          0.5
+        ],
+        "width": 0.165,
+        "height": 0.55,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "transition_s": 0.18,
+      "ease": "out_cubic",
+      "head_tilt_deg": 0,
+      "provenance": "desenho e numeros autorais; sem copiar poses"
+    },
+    "WinkLeft": {
+      "L": {
+        "center": [
+          0.235,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.025,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "R": {
+        "center": [
+          0.765,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.49,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "transition_s": 0.18,
+      "ease": "out_cubic",
+      "head_tilt_deg": 0,
+      "provenance": "desenho e numeros autorais; sem copiar poses"
+    },
+    "WinkRight": {
+      "L": {
+        "center": [
+          0.235,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.49,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "R": {
+        "center": [
+          0.765,
+          0.5
+        ],
+        "width": 0.147,
+        "height": 0.025,
+        "rounding": 0.012,
+        "rotation": 0,
+        "top": [
+          1,
+          0,
+          0
+        ],
+        "bottom": [
+          0,
+          0,
+          0
+        ],
+        "arc": 0
+      },
+      "transition_s": 0.18,
+      "ease": "out_cubic",
+      "head_tilt_deg": 0,
+      "provenance": "desenho e numeros autorais; sem copiar poses"
+    }
+  }
+}

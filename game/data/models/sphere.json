@@ -1,0 +1,28 @@
+{
+  "_comment": "esfera: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.15,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.15,
+        0
+      ],
+      "color": "#6b92ab",
+      "tag": "body",
+      "_stretch": [
+        0.3,
+        0.3,
+        0.3
+      ]
+    }
+  ]
+}

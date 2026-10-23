@@ -1,0 +1,72 @@
+{
+ "_comment": "Mira de ponto vermelho / holográfica. Gerado por tools/models/gen_arsenal.py.",
+ "anchor": [
+  0,
+  0,
+  0
+ ],
+ "sight_height": 0.022,
+ "pieces": [
+  {
+   "shape": "box",
+   "size": [
+    0.02,
+    0.006,
+    0.05
+   ],
+   "pos": [
+    0,
+    0.003,
+    0
+   ],
+   "color": "#16171a",
+   "tag": "mount",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.026,
+    0.03,
+    0.04
+   ],
+   "pos": [
+    0,
+    0.02,
+    0
+   ],
+   "color": "#2a2c30",
+   "tag": "sight",
+   "finish": "metal"
+  },
+  {
+   "shape": "box",
+   "size": [
+    0.024,
+    0.024,
+    0.003
+   ],
+   "pos": [
+    0,
+    0.022,
+    -0.02
+   ],
+   "color": "#3f8fb8",
+   "tag": "sight",
+   "finish": "glass",
+   "glow": 0.2
+  },
+  {
+   "shape": "sphere",
+   "radius": 0.0018,
+   "pos": [
+    0,
+    0.022,
+    -0.012
+   ],
+   "color": "#d23a2a",
+   "tag": "sight",
+   "glow": 3.0
+  }
+ ]
+}

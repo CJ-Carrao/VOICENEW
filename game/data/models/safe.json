@@ -1,0 +1,111 @@
+{
+  "_comment": "cofre: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.3,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.5,
+        0.6,
+        0.5
+      ],
+      "pos": [
+        0,
+        0.3,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "body",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.335,
+        0.402,
+        0.025
+      ],
+      "pos": [
+        -0.05,
+        0.318,
+        -0.255
+      ],
+      "color": "#4b5054",
+      "tag": "door"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.025,
+      "pos": [
+        0.19,
+        0.24,
+        -0.265
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "button"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.025,
+      "pos": [
+        0.19,
+        0.36,
+        -0.265
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "button"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.025,
+      "pos": [
+        0.19,
+        0.48,
+        -0.265
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "button"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.075,
+      "inner_radius": 0.06,
+      "pos": [
+        0,
+        0.33,
+        -0.275
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "wheel"
+    }
+  ]
+}

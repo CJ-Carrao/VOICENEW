@@ -1,0 +1,81 @@
+{
+ "_comment": "Lanterna tática (lado direito). Gerado por tools/models/gen_arsenal.py.",
+ "anchor": [
+  0,
+  0,
+  0
+ ],
+ "pieces": [
+  {
+   "shape": "box",
+   "size": [
+    0.006,
+    0.016,
+    0.025
+   ],
+   "pos": [
+    0.003,
+    0,
+    0
+   ],
+   "color": "#16171a",
+   "tag": "mount",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.012,
+   "height": 0.07,
+   "pos": [
+    0.016,
+    0,
+    -0.012
+   ],
+   "color": "#16171a",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "body",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.016,
+   "height": 0.02,
+   "pos": [
+    0.016,
+    0,
+    -0.055
+   ],
+   "color": "#16171a",
+   "top_radius": 0.012,
+   "rot": [
+    90,
+    0,
+    0
+   ],
+   "tag": "body",
+   "finish": "metal"
+  },
+  {
+   "shape": "cylinder",
+   "radius": 0.0145,
+   "height": 0.002,
+   "pos": [
+    0.016,
+    0,
+    -0.0655
+   ],
+   "color": "#fff7d6",
+   "rot": [
+    -90,
+    0,
+    0
+   ],
+   "tag": "body",
+   "glow": 3.0
+  }
+ ]
+}

@@ -1,0 +1,255 @@
+{
+  "_comment": "cobra: primitivas em metros; proporções de exemplar representativo.",
+  "anchor": [
+    0,
+    0.077,
+    0
+  ],
+  "sockets": {
+    "mount_hand": [
+      0.24,
+      0.07700000000000001,
+      -0.324
+    ]
+  },
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.07,
+      "pos": [
+        0.0,
+        0.07,
+        -0.9
+      ],
+      "color": "#54834a",
+      "tag": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0675,
+      "pos": [
+        0.0578,
+        0.07,
+        -0.7941
+      ],
+      "color": "#54834a",
+      "tag": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0651,
+      "pos": [
+        0.1078,
+        0.07,
+        -0.6882
+      ],
+      "color": "#54834a",
+      "tag": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0626,
+      "pos": [
+        0.1432,
+        0.07,
+        -0.5824
+      ],
+      "color": "#54834a",
+      "tag": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0601,
+      "pos": [
+        0.1593,
+        0.07,
+        -0.4765
+      ],
+      "color": "#54834a",
+      "tag": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0576,
+      "pos": [
+        0.1539,
+        0.07,
+        -0.3706
+      ],
+      "color": "#54834a",
+      "tag": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0552,
+      "pos": [
+        0.1277,
+        0.07,
+        -0.2647
+      ],
+      "color": "#54834a",
+      "tag": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0527,
+      "pos": [
+        0.0842,
+        0.07,
+        -0.1588
+      ],
+      "color": "#54834a",
+      "tag": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0502,
+      "pos": [
+        0.0294,
+        0.07,
+        -0.0529
+      ],
+      "color": "#54834a",
+      "tag": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0478,
+      "pos": [
+        -0.0294,
+        0.07,
+        0.0529
+      ],
+      "color": "#54834a",
+      "tag": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0453,
+      "pos": [
+        -0.0842,
+        0.07,
+        0.1588
+      ],
+      "color": "#54834a",
+      "tag": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0428,
+      "pos": [
+        -0.1277,
+        0.07,
+        0.2647
+      ],
+      "color": "#54834a",
+      "tag": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0404,
+      "pos": [
+        -0.1539,
+        0.07,
+        0.3706
+      ],
+      "color": "#54834a",
+      "tag": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0379,
+      "pos": [
+        -0.1593,
+        0.07,
+        0.4765
+      ],
+      "color": "#54834a",
+      "tag": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0354,
+      "pos": [
+        -0.1432,
+        0.07,
+        0.5824
+      ],
+      "color": "#54834a",
+      "tag": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0329,
+      "pos": [
+        -0.1078,
+        0.07,
+        0.6882
+      ],
+      "color": "#54834a",
+      "tag": "tail"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0305,
+      "pos": [
+        -0.0578,
+        0.07,
+        0.7941
+      ],
+      "color": "#54834a",
+      "tag": "tail"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.028,
+      "pos": [
+        -0.0,
+        0.07,
+        0.9
+      ],
+      "color": "#54834a",
+      "tag": "tail"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.084,
+        -0.9
+      ],
+      "color": "#54834a",
+      "tag": "head",
+      "_stretch": [
+        0.161,
+        0.11200000000000002,
+        0.21000000000000002
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0112,
+      "pos": [
+        -0.056,
+        0.1176,
+        -0.972
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0112,
+      "pos": [
+        0.056,
+        0.1176,
+        -0.972
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    }
+  ]
+}

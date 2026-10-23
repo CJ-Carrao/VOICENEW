@@ -1,0 +1,84 @@
+{
+  "_comment": "placa de pare: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    1.2,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.21,
+      "height": 0.06,
+      "pos": [
+        0,
+        0.03,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "base"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.045,
+      "height": 2.04,
+      "pos": [
+        0,
+        1.032,
+        0
+      ],
+      "color": "#2a2d32",
+      "tag": "pole"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.35,
+      "height": 0.035,
+      "pos": [
+        0,
+        2.05,
+        0
+      ],
+      "color": "#bd4036",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "sign",
+      "radial_segments": 8
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.434,
+        0.018,
+        0.01
+      ],
+      "pos": [
+        0,
+        1.93,
+        -0.025
+      ],
+      "color": "#d6dcd8",
+      "tag": "mark"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.434,
+        0.018,
+        0.01
+      ],
+      "pos": [
+        0,
+        2.17,
+        -0.025
+      ],
+      "color": "#d6dcd8",
+      "tag": "mark"
+    }
+  ]
+}

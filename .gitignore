@@ -1,0 +1,16 @@
+tools/node_modules/
+tools/python/
+tools/gdre/
+tools/godot/
+tools/runtime/
+tools/*.zip
+tools/pnpm-lock.yaml
+tools/package.json
+recovered/
+clean-check/
+build/
+analysis/
+game/.godot/
+game/.autoconverted/
+game/voice/
+game/gdre_export.log

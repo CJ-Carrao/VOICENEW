@@ -1,0 +1,7 @@
+{
+  "_comment": "Mapas que dá pra escolher (treino, duelo e a votação online, DESIGN 27). A ordem é o índice do voto online: só acrescente no fim. id = Arena.next_map, name = título na placa do lobby, image = foto da placa (920×488), about = subtítulo.",
+  "maps": [
+    {"id": "original", "name": "ARENA ORIGINAL", "image": "res://assets/menu/arena_original.png", "about": "CIDADE DE BLOCOS · CHÃO PRA CAVAR"},
+    {"id": "space", "name": "ESPAÇO", "image": "res://assets/menu/arena_espaco.png", "about": "PLANETAS · GRAVIDADE · SEM LADO CERTO"}
+  ]
+}

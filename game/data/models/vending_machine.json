@@ -1,0 +1,238 @@
+{
+  "_comment": "máquina de refrigerante: medidas aproximadas de objeto comum, em metros.",
+  "anchor": [
+    0,
+    0.925,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/gen_world_assets.py",
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.95,
+        1.85,
+        0.8
+      ],
+      "pos": [
+        0,
+        0.925,
+        0
+      ],
+      "color": "#bd4036",
+      "tag": "body",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.6365,
+        1.2395,
+        0.025
+      ],
+      "pos": [
+        -0.095,
+        0.9805,
+        -0.408
+      ],
+      "color": "#233643",
+      "tag": "door"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.025,
+      "pos": [
+        0.361,
+        0.74,
+        -0.424
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "button"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.025,
+      "pos": [
+        0.361,
+        1.11,
+        -0.424
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "button"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.025,
+      "pos": [
+        0.361,
+        1.48,
+        -0.424
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "button"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.13,
+      "pos": [
+        -0.266,
+        0.555,
+        -0.424
+      ],
+      "color": "#397c9e",
+      "tag": "can"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.13,
+      "pos": [
+        -0.076,
+        0.555,
+        -0.424
+      ],
+      "color": "#397c9e",
+      "tag": "can"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.13,
+      "pos": [
+        0.114,
+        0.555,
+        -0.424
+      ],
+      "color": "#397c9e",
+      "tag": "can"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.13,
+      "pos": [
+        -0.266,
+        0.888,
+        -0.424
+      ],
+      "color": "#397c9e",
+      "tag": "can"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.13,
+      "pos": [
+        -0.076,
+        0.888,
+        -0.424
+      ],
+      "color": "#397c9e",
+      "tag": "can"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.13,
+      "pos": [
+        0.114,
+        0.888,
+        -0.424
+      ],
+      "color": "#397c9e",
+      "tag": "can"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.13,
+      "pos": [
+        -0.266,
+        1.221,
+        -0.424
+      ],
+      "color": "#397c9e",
+      "tag": "can"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.13,
+      "pos": [
+        -0.076,
+        1.221,
+        -0.424
+      ],
+      "color": "#397c9e",
+      "tag": "can"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.13,
+      "pos": [
+        0.114,
+        1.221,
+        -0.424
+      ],
+      "color": "#397c9e",
+      "tag": "can"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.13,
+      "pos": [
+        -0.266,
+        1.554,
+        -0.424
+      ],
+      "color": "#397c9e",
+      "tag": "can"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.13,
+      "pos": [
+        -0.076,
+        1.554,
+        -0.424
+      ],
+      "color": "#397c9e",
+      "tag": "can"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.035,
+      "height": 0.13,
+      "pos": [
+        0.114,
+        1.554,
+        -0.424
+      ],
+      "color": "#397c9e",
+      "tag": "can"
+    }
+  ]
+}
