@@ -50,7 +50,8 @@ func _run() -> void:
 		parsed.append({"phrase": phrase, "ok": result.get("ok"), "recipe": result.get("recipe")})
 	_check(ProjectSettings.get_setting("application/config/custom_user_dir_name") == "LAVOICE-Lab", "User data must be isolated")
 	var report := {"scripts_loaded": scripts_loaded, "scenes_loaded": scenes_loaded, "json_loaded": json_loaded, "phrases": parsed, "failures": failures}
-	var file := FileAccess.open("res://../analysis/recovery-smoke.json", FileAccess.WRITE)
+	var report_path := ProjectSettings.globalize_path("res://").path_join("../analysis/recovery-smoke.json").simplify_path()
+	var file := FileAccess.open(report_path, FileAccess.WRITE)
 	if file:
 		file.store_string(JSON.stringify(report, "  "))
 	print("RECOVERY_SMOKE ", JSON.stringify(report))

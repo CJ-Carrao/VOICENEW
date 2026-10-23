@@ -76,7 +76,8 @@ func _success() -> void:
 func _finish(ok: bool, message: String) -> void:
 	finished = true
 	var report := {"ok": ok, "role": role, "message": message, "player_id": session.local_player_id, "roster": session.roster, "phase": session.lobby.phase, "map": session.lobby.chosen_map_id(), "replication": session.replication.stats}
-	var file := FileAccess.open("res://../analysis/network-" + role + ".json", FileAccess.WRITE)
+	var report_path := ProjectSettings.globalize_path("res://").path_join("../analysis/network-" + role + ".json").simplify_path()
+	var file := FileAccess.open(report_path, FileAccess.WRITE)
 	if file:
 		file.store_string(JSON.stringify(report, "  "))
 	print("NETWORK_SMOKE ", JSON.stringify(report))
