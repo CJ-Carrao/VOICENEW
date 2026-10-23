@@ -11,6 +11,14 @@ tags:
 
 Base editavel recuperada da instalacao `F:\Games\LAVOICE`, com codigo, cenas, modelos, animacoes, sons, interface, dados, bot e sistemas de voz e multiplayer. O objetivo definido pelo usuario e preservar o jogo e permitir novas adicoes. A instalacao original nao foi modificada.
 
+## Adicao: formiga
+
+Em 2026-10-23 foi adicionada a criatura `ant`. Com materia disponivel, segure a tecla de criacao (V por padrao), diga **quero uma formiga** e solte. O console de texto aceita o mesmo pedido. Tambem reconhece **formiguinha**, **sauva** e os plurais, incluindo **quero tres formigas**. Modificadores existentes, como **formiga gigante**, continuam disponiveis.
+
+O modelo tem cabeca, torax, abdomen, cintura, seis patas, duas antenas, olhos e mandibulas. Usa o movimento terrestre de perseguir inimigos das outras criaturas do jogo e a economia normal de materia. Arquivo visual: `game/data/models/ant.json`; cadastro, palavras e balanceamento estao nos respectivos catalogos. As novas palavras entram automaticamente nas hotwords do reconhecedor.
+
+Verificado no projeto e na build: pedido de uma formiga, montagem, gasto de materia, modelo completo e deslocamento de aproximadamente 0,85 m em um segundo de teste. O executavel atualizado reconheceu a fala sintetizada **Quero uma formiga.** e criou a criatura. Evidencias em `analysis/ant-*`. O lexico atualizado tem 1.469 expressoes; o projeto tem 220 JSONs.
+
 ## Abrir
 
 - **Jogar:** abra `jogar.cmd`, ou `build\LAVOICE-Lab.exe`.

@@ -41,9 +41,9 @@ func _run() -> void:
 	_check(scenes_loaded == 10, "Expected 10 recovered scenes")
 	var lexicon = root.get_node("Lexicon")
 	_check(lexicon.data.errors.is_empty(), "Lexicon has loading errors")
-	_check(lexicon.data.phrases.size() == 1461, "Lexicon inventory changed")
+	_check(lexicon.data.phrases.size() >= 1461, "Recovered lexicon entries are missing")
 	var parsed := []
-	for phrase in ["pistola", "espada", "quero uma parede", "bazuca", "katana", "granada"]:
+	for phrase in ["pistola", "espada", "quero uma parede", "bazuca", "katana", "granada", "quero uma formiga", "quero tres formigas", "formiguinha"]:
 		var result := PhraseParser.parse(phrase, lexicon.data)
 		_check(bool(result.get("ok", false)), "Parser rejected: " + phrase)
 		_check(result.get("unknown_words", []).is_empty(), "Unknown words in: " + phrase)

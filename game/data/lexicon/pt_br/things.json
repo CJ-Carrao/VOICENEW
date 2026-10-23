@@ -228,6 +228,7 @@
   "chicken": {"name": "galinha", "words": ["galinha", "galo", "frango"], "forms": ["galinhas", "galos", "frangos"]},
   "snake": {"name": "cobra", "words": ["cobra", "serpente"], "forms": ["cobras", "serpentes"]},
   "spider": {"name": "aranha", "words": ["aranha", "tarântula"], "forms": ["aranhas", "tarântulas"]},
+  "ant": {"name": "formiga", "words": ["formiga", "formiguinha", "saúva", "formiga cortadeira"], "forms": ["formigas", "formiguinhas", "saúvas", "formigas cortadeiras"]},
   "trex": {"name": "tiranossauro", "words": ["tiranossauro", "tiranossauro rex", "t rex", "t-rex"], "forms": ["tiranossauros"]},
   "cat": {"name": "gato", "words": ["gato", "gata", "gatinho"], "forms": ["gatos", "gatas", "gatinhos"]},
   "rabbit": {"name": "coelho", "words": ["coelho", "coelha", "lebre"], "forms": ["coelhos", "coelhas", "lebres"]},

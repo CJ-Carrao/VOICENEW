@@ -169,6 +169,7 @@
   "chicken": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
   "snake": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
   "spider": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
+  "ant": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
   "trex": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
   "cat": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
   "rabbit": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},

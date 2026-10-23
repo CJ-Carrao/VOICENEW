@@ -1,6 +1,6 @@
 {
   "generator": "tools/models/gen_world_assets.py",
-  "new_definitions": 118,
+  "new_definitions": 119,
   "units": "meters",
   "notes": "Dimensões representativas; locomoção biologicamente inspirada com velocidades de combate balanceadas. Tubarão flutua na arena sem água. Unicórnio é fantasia. Não são modelos anatômicos científicos.",
   "sources": {
@@ -776,6 +776,12 @@
       "phase": 2,
       "pieces": 7,
       "reference": "dimensões representativas; modelo de protótipo original"
+    },
+    {
+      "id": "ant",
+      "group": "creature",
+      "pieces": 24,
+      "reference": "Modelo procedural original de formiga estilizada, seis patas e duas antenas."
     }
   ],
   "reviewed_existing_weapons": [
