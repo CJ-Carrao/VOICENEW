@@ -1,278 +1,2607 @@
 {
   "_comment": "O que cada coisa É (DESIGN 3.1). 'shape_axes': em que eixo do modelo cada medida estica (padrão: width x, height y, length z = pra frente); a parede estica o comprimento ao longo dela (x), não na espessura. Neutro de idioma. Números (vida, dano, velocidade) ficam no balance.json. 'projectile' = o que a coisa atira por padrão (é pra lá que descem os modificadores de projétil). 'impact' = o que o movimento faz ao bater: destroy (some), stop (para no chão, quica na parede) ou bounce. 'damage_type' = tipo do dano de impacto. 'roles' sobrescreve movimento e comportamentos por papel: head (cabeça do pedido), projectile (atirada/solta), spawned, summoned. Comportamentos usam o mesmo formato da árvore (Recipe).",
-
   "pistol": {
     "category": "weapon",
     "projectile": "bullet",
-    "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "shoot", "arg": { "thing": "bullet" } } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "bullet"
+          }
+        }
+      }
+    ]
   },
   "shotgun": {
     "category": "weapon",
     "projectile": "bullet",
-    "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "shoot", "arg": { "thing": "bullet", "mods": { "count": 6 } } } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "bullet",
+            "mods": {
+              "count": 6
+            }
+          }
+        }
+      }
+    ]
   },
   "rifle": {
     "category": "weapon",
     "projectile": "bullet",
-    "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "shoot", "arg": { "thing": "bullet" } } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "bullet"
+          }
+        }
+      }
+    ]
   },
   "rocket_launcher": {
     "category": "weapon",
     "projectile": "missile",
-    "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "shoot", "arg": { "thing": "missile" } } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "missile"
+          }
+        }
+      }
+    ]
   },
   "revolver": {
     "category": "weapon",
     "projectile": "bullet",
-    "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "shoot", "arg": {"thing": "bullet"} } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "bullet"
+          }
+        }
+      }
+    ]
   },
   "desert_eagle": {
     "category": "weapon",
     "projectile": "bullet",
-    "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "shoot", "arg": {"thing": "bullet"} } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "bullet"
+          }
+        }
+      }
+    ]
   },
   "uzi": {
     "category": "weapon",
     "projectile": "bullet",
-    "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "shoot", "arg": {"thing": "bullet"} } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "bullet"
+          }
+        }
+      }
+    ]
   },
   "mp5": {
     "category": "weapon",
     "projectile": "bullet",
-    "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "shoot", "arg": {"thing": "bullet"} } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "bullet"
+          }
+        }
+      }
+    ]
   },
   "tommy_gun": {
     "category": "weapon",
     "projectile": "bullet",
-    "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "shoot", "arg": {"thing": "bullet"} } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "bullet"
+          }
+        }
+      }
+    ]
   },
   "m4": {
     "category": "weapon",
     "projectile": "bullet",
-    "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "shoot", "arg": {"thing": "bullet"} } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "bullet"
+          }
+        }
+      }
+    ]
   },
   "sniper": {
     "category": "weapon",
     "projectile": "bullet",
-    "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "shoot", "arg": {"thing": "bullet"} } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "bullet"
+          }
+        }
+      }
+    ]
   },
   "barrett": {
     "category": "weapon",
     "projectile": "bullet",
-    "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "shoot", "arg": {"thing": "bullet"} } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "bullet"
+          }
+        }
+      }
+    ]
   },
   "double_barrel": {
     "category": "weapon",
     "projectile": "bullet",
-    "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "shoot", "arg": {"thing": "bullet", "mods": {"count": 6}} } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "bullet",
+            "mods": {
+              "count": 6
+            }
+          }
+        }
+      }
+    ]
   },
   "lmg": {
     "category": "weapon",
     "projectile": "bullet",
-    "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "shoot", "arg": {"thing": "bullet"} } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "bullet"
+          }
+        }
+      }
+    ]
   },
   "minigun": {
     "category": "weapon",
     "projectile": "bullet",
-    "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "shoot", "arg": {"thing": "bullet"} } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "bullet"
+          }
+        }
+      }
+    ]
   },
   "grenade_launcher": {
     "category": "weapon",
     "projectile": "grenade",
-    "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "shoot", "arg": {"thing": "grenade", "behaviors": [{"when": {"type": "on_hit"}, "do": {"type": "explode"}}]} } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "grenade",
+            "behaviors": [
+              {
+                "when": {
+                  "type": "on_hit"
+                },
+                "do": {
+                  "type": "explode"
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
   },
   "rpg": {
     "category": "weapon",
     "projectile": "missile",
-    "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "shoot", "arg": {"thing": "missile"} } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "missile"
+          }
+        }
+      }
+    ]
   },
   "laser_pointer": {
     "category": "tool",
     "projectile": "laser_beam",
-    "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "shoot", "arg": { "thing": "laser_beam" } } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "laser_beam"
+          }
+        }
+      }
+    ]
   },
-
-  "red_dot": { "category": "attachment", "slot": "optic", "movement": "ballistic", "impact": "stop" },
-  "acog": { "category": "attachment", "slot": "optic", "movement": "ballistic", "impact": "stop" },
-  "sniper_scope": { "category": "attachment", "slot": "optic", "movement": "ballistic", "impact": "stop" },
-  "suppressor": { "category": "attachment", "slot": "muzzle", "movement": "ballistic", "impact": "stop" },
-  "compensator": { "category": "attachment", "slot": "muzzle", "movement": "ballistic", "impact": "stop" },
-  "muzzle_brake": { "category": "attachment", "slot": "muzzle", "movement": "ballistic", "impact": "stop" },
-  "foregrip": { "category": "attachment", "slot": "under", "movement": "ballistic", "impact": "stop" },
-  "bipod": { "category": "attachment", "slot": "under", "movement": "ballistic", "impact": "stop" },
-  "laser_sight": { "category": "attachment", "slot": "side_left", "movement": "ballistic", "impact": "stop" },
-  "flashlight": { "category": "attachment", "slot": "side", "movement": "ballistic", "impact": "stop" },
-  "bullet": { "category": "projectile", "movement": "straight", "impact": "destroy" },
-  "knife": { "category": "weapon", "melee": true, "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "strike" } } ] },
-  "machete": { "category": "weapon", "melee": true, "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "strike" } } ] },
-  "katana": { "category": "weapon", "melee": true, "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "strike" } } ] },
-  "sword": { "category": "weapon", "melee": true, "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "strike" } } ] },
-  "axe": { "category": "weapon", "melee": true, "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "strike" } } ] },
-  "sledgehammer": { "category": "weapon", "melee": true, "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "strike" } } ] },
-  "bat": { "category": "weapon", "melee": true, "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "strike" } } ] },
-  "spear": { "category": "weapon", "melee": true, "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "strike" } } ] },
-  "chainsaw": { "category": "weapon", "melee": true, "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "strike" } } ] },
-  "mace": { "category": "weapon", "melee": true, "behaviors": [ { "when": { "type": "on_fire" }, "do": { "type": "strike" } } ] },
+  "red_dot": {
+    "category": "attachment",
+    "slot": "optic",
+    "movement": "ballistic",
+    "impact": "stop"
+  },
+  "acog": {
+    "category": "attachment",
+    "slot": "optic",
+    "movement": "ballistic",
+    "impact": "stop"
+  },
+  "sniper_scope": {
+    "category": "attachment",
+    "slot": "optic",
+    "movement": "ballistic",
+    "impact": "stop"
+  },
+  "suppressor": {
+    "category": "attachment",
+    "slot": "muzzle",
+    "movement": "ballistic",
+    "impact": "stop"
+  },
+  "compensator": {
+    "category": "attachment",
+    "slot": "muzzle",
+    "movement": "ballistic",
+    "impact": "stop"
+  },
+  "muzzle_brake": {
+    "category": "attachment",
+    "slot": "muzzle",
+    "movement": "ballistic",
+    "impact": "stop"
+  },
+  "foregrip": {
+    "category": "attachment",
+    "slot": "under",
+    "movement": "ballistic",
+    "impact": "stop"
+  },
+  "bipod": {
+    "category": "attachment",
+    "slot": "under",
+    "movement": "ballistic",
+    "impact": "stop"
+  },
+  "laser_sight": {
+    "category": "attachment",
+    "slot": "side_left",
+    "movement": "ballistic",
+    "impact": "stop"
+  },
+  "flashlight": {
+    "category": "attachment",
+    "slot": "side",
+    "movement": "ballistic",
+    "impact": "stop"
+  },
+  "bullet": {
+    "category": "projectile",
+    "movement": "straight",
+    "impact": "destroy"
+  },
+  "knife": {
+    "category": "weapon",
+    "melee": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ]
+  },
+  "machete": {
+    "category": "weapon",
+    "melee": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ]
+  },
+  "katana": {
+    "category": "weapon",
+    "melee": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ]
+  },
+  "sword": {
+    "category": "weapon",
+    "melee": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ]
+  },
+  "axe": {
+    "category": "weapon",
+    "melee": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ]
+  },
+  "sledgehammer": {
+    "category": "weapon",
+    "melee": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ]
+  },
+  "bat": {
+    "category": "weapon",
+    "melee": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ]
+  },
+  "spear": {
+    "category": "weapon",
+    "melee": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ]
+  },
+  "chainsaw": {
+    "category": "weapon",
+    "melee": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ]
+  },
+  "mace": {
+    "category": "weapon",
+    "melee": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ]
+  },
   "magazine": {
     "category": "ammo",
     "holds": true,
     "movement": "ballistic",
     "impact": "stop"
   },
-  "laser_beam": { "category": "projectile", "movement": "straight", "impact": "destroy", "damage_type": "laser" },
+  "laser_beam": {
+    "category": "projectile",
+    "movement": "straight",
+    "impact": "destroy",
+    "damage_type": "laser"
+  },
   "missile": {
     "category": "projectile",
     "movement": "straight",
     "impact": "destroy",
-    "behaviors": [ { "when": { "type": "on_hit" }, "do": { "type": "explode" } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_hit"
+        },
+        "do": {
+          "type": "explode"
+        }
+      }
+    ]
   },
   "grenade": {
     "category": "projectile",
     "movement": "ballistic",
     "impact": "stop",
-    "behaviors": [ { "when": { "type": "after", "s": 3.0 }, "do": { "type": "explode" } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 3.0
+        },
+        "do": {
+          "type": "explode"
+        }
+      }
+    ]
   },
   "bomb": {
     "category": "projectile",
     "movement": "ballistic",
     "impact": "stop",
-    "behaviors": [ { "when": { "type": "on_hit" }, "do": { "type": "explode" } } ]
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_hit"
+        },
+        "do": {
+          "type": "explode"
+        }
+      }
+    ]
   },
-
   "wall": {
     "category": "structure",
-    "shape_axes": { "length": "x" },
+    "shape_axes": {
+      "length": "x"
+    },
     "movement": "static",
     "impact": "stop",
     "roles": {
       "projectile": {
         "movement": "ballistic",
-        "behaviors": [ { "when": { "type": "on_hit" }, "do": { "type": "anchor" } } ]
+        "behaviors": [
+          {
+            "when": {
+              "type": "on_hit"
+            },
+            "do": {
+              "type": "anchor"
+            }
+          }
+        ]
       }
     }
   },
-  "tower": { "category": "structure", "movement": "static", "impact": "stop" },
-
-  "pigeon": { "category": "creature", "movement": "fly", "impact": "destroy" },
-  "drone": { "category": "vehicle", "movement": "fly", "impact": "stop" },
-  "plane": { "category": "vehicle", "aerial": true, "movement": "flyover", "impact": "stop" },
-  "monkey": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "shield": {"category": "tool", "movement": "static", "impact": "stop", "held_protection": true},
-  "gorilla": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "bear": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "dog": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "wolf": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "horse": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "unicorn": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "shark": {"category": "creature", "movement": "fly", "impact": "stop"},
-  "eagle": {"category": "creature", "movement": "fly", "impact": "stop"},
-  "chicken": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "snake": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "spider": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "ant": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "trex": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "cat": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "rabbit": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "fox": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "boar": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "crocodile": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "elephant": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "lion": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "tiger": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "penguin": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "turtle": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "goat": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "deer": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "crab": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "scorpion": {"category": "creature", "movement": "chase_enemy", "impact": "stop"},
-  "frog": {"category": "creature", "movement": "bounce", "impact": "stop"},
-  "helicopter": {"category": "vehicle", "movement": "fly", "impact": "stop"},
-  "tank": {"category": "vehicle", "movement": "chase_enemy", "impact": "stop", "projectile": "missile", "behaviors": [{"when": {"type": "every", "s": 2.5}, "do": {"type": "shoot", "arg": {"thing": "missile"}, "aim": "enemy"}}]},
-  "car": {"category": "vehicle", "movement": "chase_enemy", "impact": "stop"},
-  "motorcycle": {"category": "vehicle", "movement": "chase_enemy", "impact": "stop"},
-  "skateboard": {"category": "vehicle", "movement": "chase_enemy", "impact": "stop"},
-  "cannon": {"category": "structure", "movement": "static", "impact": "stop", "projectile": "missile", "behaviors": [{"when": {"type": "every", "s": 2.5}, "do": {"type": "shoot", "arg": {"thing": "missile"}, "aim": "enemy"}}]},
-  "catapult": {"category": "structure", "movement": "static", "impact": "stop", "projectile": "boulder", "behaviors": [{"when": {"type": "every", "s": 2.5}, "do": {"type": "shoot", "arg": {"thing": "boulder"}, "aim": "enemy"}}]},
-  "fan": {"category": "structure", "movement": "static", "impact": "stop", "behaviors": [{"when": {"type": "every", "s": 0.4}, "do": {"type": "push"}}], "mechanical_tags": ["airflow"]},
-  "barrel": {"category": "structure", "movement": "static", "impact": "stop", "behaviors": [{"when": {"type": "on_death"}, "do": {"type": "explode"}}], "mechanical_tags": ["flammable", "wide_hollow"]},
-  "gas_cylinder": {"category": "structure", "movement": "static", "impact": "stop", "behaviors": [{"when": {"type": "on_death"}, "do": {"type": "explode"}}], "mechanical_tags": ["flammable"]},
-  "anvil": {"category": "structure", "movement": "static", "impact": "stop"},
-  "cage": {"category": "structure", "movement": "static", "impact": "stop", "enclosure": true},
-  "trampoline": {"category": "structure", "movement": "static", "impact": "stop", "behaviors": [{"when": {"type": "on_hit"}, "do": {"type": "push", "profile": "launch_pad", "contact": true}}]},
-  "spike_trap": {"category": "structure", "movement": "static", "impact": "stop", "behaviors": [{"when": {"type": "near_enemy", "r": 2}, "do": {"type": "strike"}}]},
-  "fridge": {"category": "structure", "movement": "static", "impact": "stop", "mechanical_tags": ["cooling"]},
-  "piano": {"category": "structure", "movement": "static", "impact": "stop"},
-  "toilet": {"category": "structure", "movement": "static", "impact": "stop", "mechanical_tags": ["wide_hollow"]},
-  "tire": {"category": "projectile", "movement": "bounce", "impact": "stop", "mechanical_tags": ["rubber"]},
-  "banana": {"category": "projectile", "movement": "ballistic", "impact": "stop", "mechanical_tags": ["organic"]},
-  "watermelon": {"category": "projectile", "movement": "ballistic", "impact": "stop", "mechanical_tags": ["organic"]},
-  "boulder": {"category": "projectile", "movement": "ballistic", "impact": "stop"},
-  "magnet": {"category": "projectile", "movement": "ballistic", "impact": "stop", "behaviors": [{"when": {"type": "every", "s": 0.75}, "do": {"type": "pull"}}], "mechanical_tags": ["magnetic"]},
-  "sphere": {"category": "projectile", "movement": "ballistic", "impact": "stop"},
-  "chair": {"category": "structure", "movement": "static", "impact": "stop"},
-  "table": {"category": "structure", "movement": "static", "impact": "stop"},
-  "sofa": {"category": "structure", "movement": "static", "impact": "stop", "mechanical_tags": ["soft"]},
-  "traffic_cone": {"category": "structure", "movement": "static", "impact": "stop"},
-  "basketball": {"category": "projectile", "movement": "bounce", "impact": "stop", "mechanical_tags": ["rubber"]},
-  "log": {"category": "projectile", "movement": "ballistic", "impact": "stop"},
-  "crate": {"category": "structure", "movement": "static", "impact": "stop"},
-  "traffic_barrier": {"category": "structure", "movement": "static", "impact": "stop"},
-  "anchor": {"category": "projectile", "movement": "ballistic", "impact": "stop"},
-  "bell": {"category": "projectile", "movement": "ballistic", "impact": "stop"},
-  "hammer": {"category": "weapon", "movement": "static", "impact": "stop", "melee": true, "behaviors": [{"when": {"type": "on_fire"}, "do": {"type": "strike"}}]},
-  "boomerang": {"category": "projectile", "movement": "orbit_owner", "impact": "stop"},
-  "shopping_cart": {"category": "vehicle", "movement": "chase_enemy", "impact": "stop"},
-  "wheelchair": {"category": "vehicle", "movement": "chase_enemy", "impact": "stop"},
-  "bed": {"category": "structure", "movement": "static", "impact": "stop", "behaviors": [{"when": {"type": "on_hit"}, "do": {"type": "push", "profile": "bed_spring", "contact": true}}], "mechanical_tags": ["soft"]},
-  "tv": {"category": "structure", "movement": "static", "impact": "stop"},
-  "computer": {"category": "structure", "movement": "static", "impact": "stop"},
-  "microwave": {"category": "structure", "movement": "static", "impact": "stop"},
-  "washing_machine": {"category": "structure", "movement": "static", "impact": "stop"},
-  "trash_can": {"category": "structure", "movement": "static", "impact": "stop", "mechanical_tags": ["wide_hollow"]},
-  "street_light": {"category": "structure", "movement": "static", "impact": "stop"},
-  "stop_sign": {"category": "structure", "movement": "static", "impact": "stop"},
-  "bowling_ball": {"category": "projectile", "movement": "bounce", "impact": "stop", "mechanical_tags": ["rubber"]},
-  "soccer_ball": {"category": "projectile", "movement": "bounce", "impact": "stop", "mechanical_tags": ["rubber"]},
-  "brick": {"category": "projectile", "movement": "ballistic", "impact": "stop"},
-  "cinder_block": {"category": "structure", "movement": "static", "impact": "stop"},
-  "pan": {"category": "weapon", "movement": "static", "impact": "stop", "melee": true, "behaviors": [{"when": {"type": "on_fire"}, "do": {"type": "strike"}}], "held_protection": true, "impact_sound": "metal"},
-  "guitar": {"category": "weapon", "movement": "static", "impact": "stop", "melee": true, "behaviors": [{"when": {"type": "on_fire"}, "do": {"type": "strike"}}]},
-  "chains": {"category": "weapon", "movement": "static", "impact": "stop", "melee": true, "behaviors": [{"when": {"type": "on_fire"}, "do": {"type": "strike"}}]},
-  "bear_trap": {"category": "structure", "movement": "static", "impact": "stop", "behaviors": [{"when": {"type": "near_enemy", "r": 1.2}, "do": {"type": "freeze"}}, {"when": {"type": "near_enemy", "r": 1.2}, "do": {"type": "strike"}}]},
-  "landmine": {"category": "structure", "movement": "static", "impact": "stop", "behaviors": [{"when": {"type": "near_enemy", "r": 1.5}, "do": {"type": "explode"}}], "mechanical_tags": ["flammable"]},
-  "c4": {"category": "projectile", "movement": "ballistic", "impact": "stop", "behaviors": [{"when": {"type": "after", "s": 5}, "do": {"type": "explode"}}, {"when": {"type": "on_death"}, "do": {"type": "explode"}}], "mechanical_tags": ["flammable"]},
-  "molotov": {"category": "projectile", "movement": "ballistic", "impact": "stop", "behaviors": [{"when": {"type": "on_hit"}, "do": {"type": "ignite"}}, {"when": {"type": "on_hit"}, "do": {"type": "explode"}}], "mechanical_tags": ["flammable"]},
-  "crossbow": {"category": "weapon", "movement": "static", "impact": "stop", "projectile": "arrow", "behaviors": [{"when": {"type": "on_fire"}, "do": {"type": "shoot", "arg": {"thing": "arrow"}}}]},
-  "bow": {"category": "weapon", "movement": "static", "impact": "stop", "projectile": "arrow", "behaviors": [{"when": {"type": "on_fire"}, "do": {"type": "shoot", "arg": {"thing": "arrow"}}}]},
-  "flamethrower": {"category": "weapon", "movement": "static", "impact": "stop", "projectile": "sphere", "behaviors": [{"when": {"type": "on_fire"}, "do": {"type": "shoot", "arg": {"thing": "sphere", "mods": {"element": "fire", "scale": 0.3}, "movement": "straight"}}}]},
-  "mortar": {"category": "structure", "movement": "static", "impact": "stop", "projectile": "grenade", "behaviors": [{"when": {"type": "every", "s": 2}, "do": {"type": "shoot", "arg": {"thing": "grenade"}, "aim": "enemy"}}]},
-  "bull": {"category": "creature", "movement": "chase_enemy", "impact": "stop", "behaviors": [{"when": {"type": "near_enemy", "r": 1.8}, "do": {"type": "strike"}}]},
-  "bee": {"category": "creature", "movement": "fly", "impact": "stop", "behaviors": [{"when": {"type": "near_enemy", "r": 1.8}, "do": {"type": "strike"}}], "aerial": true},
-  "rat": {"category": "creature", "movement": "chase_enemy", "impact": "stop", "behaviors": [{"when": {"type": "near_enemy", "r": 1.8}, "do": {"type": "strike"}}]},
-  "zombie": {"category": "creature", "movement": "chase_enemy", "impact": "stop", "behaviors": [{"when": {"type": "near_enemy", "r": 1.8}, "do": {"type": "strike"}}]},
-  "skeleton": {"category": "creature", "movement": "chase_enemy", "impact": "stop", "behaviors": [{"when": {"type": "near_enemy", "r": 1.8}, "do": {"type": "strike"}}]},
-  "dummy": {"category": "creature", "movement": "static", "impact": "stop"},
-  "bucket": {"category": "structure", "movement": "static", "impact": "stop", "mechanical_tags": ["wide_hollow"]},
-  "pipe": {"category": "projectile", "movement": "ballistic", "impact": "stop", "mechanical_tags": ["wide_hollow"]},
-  "mattress": {"category": "structure", "movement": "static", "impact": "stop", "behaviors": [{"when": {"type": "on_hit"}, "do": {"type": "push", "profile": "bed_spring", "contact": true}}], "mechanical_tags": ["soft"]},
-  "fire_extinguisher": {"category": "structure", "movement": "static", "impact": "stop", "behaviors": [{"when": {"type": "on_hit"}, "do": {"type": "freeze"}}], "mechanical_tags": ["cooling"]},
-  "safe": {"category": "structure", "movement": "static", "impact": "stop"},
-  "vending_machine": {"category": "structure", "movement": "static", "impact": "stop"},
-  "shipping_container": {"category": "structure", "movement": "static", "impact": "stop"},
-  "pallet": {"category": "structure", "movement": "static", "impact": "stop"},
-  "wheelbarrow": {"category": "vehicle", "movement": "chase_enemy", "impact": "stop"},
-  "bicycle": {"category": "vehicle", "movement": "chase_enemy", "impact": "stop"},
-  "scooter": {"category": "vehicle", "movement": "chase_enemy", "impact": "stop"},
-  "forklift": {"category": "vehicle", "movement": "chase_enemy", "impact": "stop"},
-  "ambulance": {"category": "vehicle", "movement": "chase_enemy", "impact": "stop"},
-  "bus": {"category": "vehicle", "movement": "chase_enemy", "impact": "stop"},
-  "tractor": {"category": "vehicle", "movement": "chase_enemy", "impact": "stop"},
-  "traffic_light": {"category": "structure", "movement": "static", "impact": "stop"},
-  "lamp": {"category": "structure", "movement": "static", "impact": "stop"},
-  "bookshelf": {"category": "structure", "movement": "static", "impact": "stop"},
-  "bathtub": {"category": "structure", "movement": "static", "impact": "stop", "mechanical_tags": ["wide_hollow"]},
-  "rubber_duck": {"category": "projectile", "movement": "bounce", "impact": "stop", "mechanical_tags": ["rubber"]},
-  "bowling_pin": {"category": "projectile", "movement": "ballistic", "impact": "stop"},
-  "arrow": {"category": "projectile", "movement": "ballistic", "impact": "destroy"},
-  "bunker": {"category": "structure", "movement": "static", "impact": "stop", "enclosure": true}
+  "tower": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "pigeon": {
+    "category": "creature",
+    "movement": "fly",
+    "impact": "destroy"
+  },
+  "drone": {
+    "category": "vehicle",
+    "movement": "fly",
+    "impact": "stop"
+  },
+  "plane": {
+    "category": "vehicle",
+    "aerial": true,
+    "movement": "flyover",
+    "impact": "stop"
+  },
+  "monkey": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "shield": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "held_protection": true
+  },
+  "gorilla": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "bear": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "dog": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "wolf": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "horse": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "unicorn": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "shark": {
+    "category": "creature",
+    "movement": "fly",
+    "impact": "stop"
+  },
+  "eagle": {
+    "category": "creature",
+    "movement": "fly",
+    "impact": "stop"
+  },
+  "chicken": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "snake": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "spider": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "ant": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "trex": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "cat": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "rabbit": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "fox": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "boar": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "crocodile": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "elephant": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "lion": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "tiger": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "penguin": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "turtle": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "goat": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "deer": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "crab": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "scorpion": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "frog": {
+    "category": "creature",
+    "movement": "bounce",
+    "impact": "stop"
+  },
+  "helicopter": {
+    "category": "vehicle",
+    "movement": "fly",
+    "impact": "stop"
+  },
+  "tank": {
+    "category": "vehicle",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "projectile": "missile",
+    "behaviors": [
+      {
+        "when": {
+          "type": "every",
+          "s": 2.5
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "missile"
+          },
+          "aim": "enemy"
+        }
+      }
+    ]
+  },
+  "car": {
+    "category": "vehicle",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "motorcycle": {
+    "category": "vehicle",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "skateboard": {
+    "category": "vehicle",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "cannon": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "projectile": "missile",
+    "behaviors": [
+      {
+        "when": {
+          "type": "every",
+          "s": 2.5
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "missile"
+          },
+          "aim": "enemy"
+        }
+      }
+    ]
+  },
+  "catapult": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "projectile": "boulder",
+    "behaviors": [
+      {
+        "when": {
+          "type": "every",
+          "s": 2.5
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "boulder"
+          },
+          "aim": "enemy"
+        }
+      }
+    ]
+  },
+  "fan": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "every",
+          "s": 0.4
+        },
+        "do": {
+          "type": "push"
+        }
+      }
+    ],
+    "mechanical_tags": [
+      "airflow"
+    ]
+  },
+  "barrel": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_death"
+        },
+        "do": {
+          "type": "explode"
+        }
+      }
+    ],
+    "mechanical_tags": [
+      "flammable",
+      "wide_hollow"
+    ]
+  },
+  "gas_cylinder": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_death"
+        },
+        "do": {
+          "type": "explode"
+        }
+      }
+    ],
+    "mechanical_tags": [
+      "flammable"
+    ]
+  },
+  "anvil": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "cage": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "enclosure": true
+  },
+  "trampoline": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_hit"
+        },
+        "do": {
+          "type": "push",
+          "profile": "launch_pad",
+          "contact": true
+        }
+      }
+    ]
+  },
+  "spike_trap": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "near_enemy",
+          "r": 2
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ]
+  },
+  "fridge": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "mechanical_tags": [
+      "cooling"
+    ]
+  },
+  "piano": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "toilet": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "mechanical_tags": [
+      "wide_hollow"
+    ]
+  },
+  "tire": {
+    "category": "projectile",
+    "movement": "bounce",
+    "impact": "stop",
+    "mechanical_tags": [
+      "rubber"
+    ]
+  },
+  "banana": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "mechanical_tags": [
+      "organic"
+    ]
+  },
+  "watermelon": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "mechanical_tags": [
+      "organic"
+    ]
+  },
+  "boulder": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop"
+  },
+  "magnet": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "every",
+          "s": 0.75
+        },
+        "do": {
+          "type": "pull"
+        }
+      }
+    ],
+    "mechanical_tags": [
+      "magnetic"
+    ]
+  },
+  "sphere": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop"
+  },
+  "chair": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "table": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "sofa": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "mechanical_tags": [
+      "soft"
+    ]
+  },
+  "traffic_cone": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "basketball": {
+    "category": "projectile",
+    "movement": "bounce",
+    "impact": "stop",
+    "mechanical_tags": [
+      "rubber"
+    ]
+  },
+  "log": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop"
+  },
+  "crate": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "traffic_barrier": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "anchor": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop"
+  },
+  "bell": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop"
+  },
+  "hammer": {
+    "category": "weapon",
+    "movement": "static",
+    "impact": "stop",
+    "melee": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ]
+  },
+  "boomerang": {
+    "category": "projectile",
+    "movement": "orbit_owner",
+    "impact": "stop"
+  },
+  "shopping_cart": {
+    "category": "vehicle",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "wheelchair": {
+    "category": "vehicle",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "bed": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_hit"
+        },
+        "do": {
+          "type": "push",
+          "profile": "bed_spring",
+          "contact": true
+        }
+      }
+    ],
+    "mechanical_tags": [
+      "soft"
+    ]
+  },
+  "tv": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "computer": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "microwave": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "washing_machine": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "trash_can": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "mechanical_tags": [
+      "wide_hollow"
+    ]
+  },
+  "street_light": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "stop_sign": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "bowling_ball": {
+    "category": "projectile",
+    "movement": "bounce",
+    "impact": "stop",
+    "mechanical_tags": [
+      "rubber"
+    ]
+  },
+  "soccer_ball": {
+    "category": "projectile",
+    "movement": "bounce",
+    "impact": "stop",
+    "mechanical_tags": [
+      "rubber"
+    ]
+  },
+  "brick": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop"
+  },
+  "cinder_block": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "pan": {
+    "category": "weapon",
+    "movement": "static",
+    "impact": "stop",
+    "melee": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ],
+    "held_protection": true,
+    "impact_sound": "metal"
+  },
+  "guitar": {
+    "category": "weapon",
+    "movement": "static",
+    "impact": "stop",
+    "melee": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ]
+  },
+  "chains": {
+    "category": "weapon",
+    "movement": "static",
+    "impact": "stop",
+    "melee": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ]
+  },
+  "bear_trap": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "near_enemy",
+          "r": 1.2
+        },
+        "do": {
+          "type": "freeze"
+        }
+      },
+      {
+        "when": {
+          "type": "near_enemy",
+          "r": 1.2
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ]
+  },
+  "landmine": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "near_enemy",
+          "r": 1.5
+        },
+        "do": {
+          "type": "explode"
+        }
+      }
+    ],
+    "mechanical_tags": [
+      "flammable"
+    ]
+  },
+  "c4": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 5
+        },
+        "do": {
+          "type": "explode"
+        }
+      },
+      {
+        "when": {
+          "type": "on_death"
+        },
+        "do": {
+          "type": "explode"
+        }
+      }
+    ],
+    "mechanical_tags": [
+      "flammable"
+    ]
+  },
+  "molotov": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_hit"
+        },
+        "do": {
+          "type": "ignite"
+        }
+      },
+      {
+        "when": {
+          "type": "on_hit"
+        },
+        "do": {
+          "type": "explode"
+        }
+      }
+    ],
+    "mechanical_tags": [
+      "flammable"
+    ]
+  },
+  "crossbow": {
+    "category": "weapon",
+    "movement": "static",
+    "impact": "stop",
+    "projectile": "arrow",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "arrow"
+          }
+        }
+      }
+    ]
+  },
+  "bow": {
+    "category": "weapon",
+    "movement": "static",
+    "impact": "stop",
+    "projectile": "arrow",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "arrow"
+          }
+        }
+      }
+    ]
+  },
+  "flamethrower": {
+    "category": "weapon",
+    "movement": "static",
+    "impact": "stop",
+    "projectile": "sphere",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "sphere",
+            "mods": {
+              "element": "fire",
+              "scale": 0.3
+            },
+            "movement": "straight"
+          }
+        }
+      }
+    ]
+  },
+  "mortar": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "projectile": "grenade",
+    "behaviors": [
+      {
+        "when": {
+          "type": "every",
+          "s": 2
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "grenade"
+          },
+          "aim": "enemy"
+        }
+      }
+    ]
+  },
+  "bull": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "near_enemy",
+          "r": 1.8
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ]
+  },
+  "bee": {
+    "category": "creature",
+    "movement": "fly",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "near_enemy",
+          "r": 1.8
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ],
+    "aerial": true
+  },
+  "rat": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "near_enemy",
+          "r": 1.8
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ]
+  },
+  "zombie": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "near_enemy",
+          "r": 1.8
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ]
+  },
+  "skeleton": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "near_enemy",
+          "r": 1.8
+        },
+        "do": {
+          "type": "strike"
+        }
+      }
+    ]
+  },
+  "dummy": {
+    "category": "creature",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "bucket": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "mechanical_tags": [
+      "wide_hollow"
+    ]
+  },
+  "pipe": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "mechanical_tags": [
+      "wide_hollow"
+    ]
+  },
+  "mattress": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_hit"
+        },
+        "do": {
+          "type": "push",
+          "profile": "bed_spring",
+          "contact": true
+        }
+      }
+    ],
+    "mechanical_tags": [
+      "soft"
+    ]
+  },
+  "fire_extinguisher": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_hit"
+        },
+        "do": {
+          "type": "freeze"
+        }
+      }
+    ],
+    "mechanical_tags": [
+      "cooling"
+    ]
+  },
+  "safe": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "vending_machine": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "shipping_container": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "pallet": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "wheelbarrow": {
+    "category": "vehicle",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "bicycle": {
+    "category": "vehicle",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "scooter": {
+    "category": "vehicle",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "forklift": {
+    "category": "vehicle",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "ambulance": {
+    "category": "vehicle",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "bus": {
+    "category": "vehicle",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "tractor": {
+    "category": "vehicle",
+    "movement": "chase_enemy",
+    "impact": "stop"
+  },
+  "traffic_light": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "lamp": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "bookshelf": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop"
+  },
+  "bathtub": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "mechanical_tags": [
+      "wide_hollow"
+    ]
+  },
+  "rubber_duck": {
+    "category": "projectile",
+    "movement": "bounce",
+    "impact": "stop",
+    "mechanical_tags": [
+      "rubber"
+    ]
+  },
+  "bowling_pin": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop"
+  },
+  "arrow": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "destroy"
+  },
+  "bunker": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "enclosure": true
+  },
+  "duck": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "goose": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "turkey": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "pig": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "cow": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "sheep": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "donkey": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "camel": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "llama": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "giraffe": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "zebra": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "rhino": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "hippo": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "bison": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "panda": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "koala": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "capybara": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "otter": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "raccoon": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "hedgehog": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "armadillo": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "butterfly": {
+    "category": "creature",
+    "movement": "fly",
+    "impact": "stop",
+    "voxel_motion": true,
+    "aerial": true
+  },
+  "beetle": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "mantis": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "snail": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "octopus": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "raptor": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "dragon": {
+    "category": "creature",
+    "movement": "fly",
+    "impact": "stop",
+    "voxel_motion": true,
+    "aerial": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "every",
+          "s": 2.5
+        },
+        "do": {
+          "type": "shoot",
+          "aim": "enemy",
+          "arg": {
+            "thing": "sphere",
+            "movement": "straight",
+            "mods": {
+              "element": "fire",
+              "scale": 0.45
+            }
+          }
+        }
+      }
+    ]
+  },
+  "slime": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true
+  },
+  "ant_grenade": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 2.5
+        },
+        "do": {
+          "type": "burst_into",
+          "arg": {
+            "thing": "ant",
+            "mods": {
+              "count": 6
+            }
+          }
+        }
+      }
+    ]
+  },
+  "chicken_grenade": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 2.5
+        },
+        "do": {
+          "type": "burst_into",
+          "arg": {
+            "thing": "chicken",
+            "mods": {
+              "count": 6
+            }
+          }
+        }
+      }
+    ]
+  },
+  "duck_grenade": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 2.5
+        },
+        "do": {
+          "type": "burst_into",
+          "arg": {
+            "thing": "duck",
+            "mods": {
+              "count": 6
+            }
+          }
+        }
+      }
+    ]
+  },
+  "bee_grenade": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 2.5
+        },
+        "do": {
+          "type": "burst_into",
+          "arg": {
+            "thing": "bee",
+            "mods": {
+              "count": 6
+            }
+          }
+        }
+      }
+    ]
+  },
+  "spider_grenade": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 2.5
+        },
+        "do": {
+          "type": "burst_into",
+          "arg": {
+            "thing": "spider",
+            "mods": {
+              "count": 6
+            }
+          }
+        }
+      }
+    ]
+  },
+  "crab_grenade": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 2.5
+        },
+        "do": {
+          "type": "burst_into",
+          "arg": {
+            "thing": "crab",
+            "mods": {
+              "count": 6
+            }
+          }
+        }
+      }
+    ]
+  },
+  "frog_grenade": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 2.5
+        },
+        "do": {
+          "type": "burst_into",
+          "arg": {
+            "thing": "frog",
+            "mods": {
+              "count": 6
+            }
+          }
+        }
+      }
+    ]
+  },
+  "rat_grenade": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 2.5
+        },
+        "do": {
+          "type": "burst_into",
+          "arg": {
+            "thing": "rat",
+            "mods": {
+              "count": 6
+            }
+          }
+        }
+      }
+    ]
+  },
+  "pigeon_grenade": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 2.5
+        },
+        "do": {
+          "type": "burst_into",
+          "arg": {
+            "thing": "pigeon",
+            "mods": {
+              "count": 6
+            }
+          }
+        }
+      }
+    ]
+  },
+  "raptor_grenade": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 2.5
+        },
+        "do": {
+          "type": "burst_into",
+          "arg": {
+            "thing": "raptor",
+            "mods": {
+              "count": 3
+            }
+          }
+        }
+      }
+    ]
+  },
+  "slime_grenade": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 2.5
+        },
+        "do": {
+          "type": "burst_into",
+          "arg": {
+            "thing": "slime",
+            "mods": {
+              "count": 6
+            }
+          }
+        }
+      }
+    ]
+  },
+  "beetle_grenade": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 2.5
+        },
+        "do": {
+          "type": "burst_into",
+          "arg": {
+            "thing": "beetle",
+            "mods": {
+              "count": 6
+            }
+          }
+        }
+      }
+    ]
+  },
+  "nuclear_bomb": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 3.0
+        },
+        "do": {
+          "type": "anomaly",
+          "mode": "nuclear",
+          "radius": 14,
+          "damage": 180,
+          "color": "#d9b95b"
+        }
+      }
+    ]
+  },
+  "neutron_bomb": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 3.0
+        },
+        "do": {
+          "type": "anomaly",
+          "mode": "neutron",
+          "radius": 12,
+          "damage": 140,
+          "color": "#8cc8cf"
+        }
+      }
+    ]
+  },
+  "gravity_bomb": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 3.0
+        },
+        "do": {
+          "type": "anomaly",
+          "mode": "gravity",
+          "radius": 8,
+          "damage": 45,
+          "color": "#a38bc9"
+        }
+      }
+    ]
+  },
+  "hypothetical_gravity_bomb": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 3.0
+        },
+        "do": {
+          "type": "anomaly",
+          "mode": "hypothetical",
+          "radius": 9,
+          "damage": 35,
+          "color": "#cebd69"
+        }
+      }
+    ]
+  },
+  "singularity_bomb": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 3.0
+        },
+        "do": {
+          "type": "anomaly",
+          "mode": "singularity",
+          "radius": 10,
+          "damage": 85,
+          "color": "#8364aa"
+        }
+      }
+    ]
+  },
+  "repulsion_bomb": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 3.0
+        },
+        "do": {
+          "type": "anomaly",
+          "mode": "repulsion",
+          "radius": 9,
+          "damage": 25,
+          "color": "#a6c3cf"
+        }
+      }
+    ]
+  },
+  "frost_bomb": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 3.0
+        },
+        "do": {
+          "type": "anomaly",
+          "mode": "frost",
+          "radius": 7,
+          "damage": 20,
+          "color": "#95bec9"
+        }
+      }
+    ]
+  },
+  "inferno_bomb": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 3.0
+        },
+        "do": {
+          "type": "anomaly",
+          "mode": "inferno",
+          "radius": 6,
+          "damage": 55,
+          "color": "#d4864d"
+        }
+      }
+    ]
+  },
+  "storm_bomb": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 3.0
+        },
+        "do": {
+          "type": "anomaly",
+          "mode": "storm",
+          "radius": 8,
+          "damage": 55,
+          "color": "#aaa4cf"
+        }
+      }
+    ]
+  },
+  "emp_bomb": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 3.0
+        },
+        "do": {
+          "type": "anomaly",
+          "mode": "emp",
+          "radius": 7,
+          "damage": 0,
+          "color": "#8fa8b8"
+        }
+      }
+    ]
+  },
+  "meteor_bomb": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 3.0
+        },
+        "do": {
+          "type": "anomaly",
+          "mode": "meteor",
+          "radius": 9,
+          "damage": 0,
+          "color": "#b7845b"
+        }
+      }
+    ]
+  },
+  "cluster_bomb": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 3.0
+        },
+        "do": {
+          "type": "anomaly",
+          "mode": "cluster",
+          "radius": 5,
+          "damage": 0,
+          "color": "#8d9c72"
+        }
+      }
+    ]
+  },
+  "meteor_fragment": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_hit"
+        },
+        "do": {
+          "type": "explode"
+        }
+      }
+    ]
+  },
+  "cluster_fragment": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 1.0
+        },
+        "do": {
+          "type": "explode"
+        }
+      }
+    ]
+  },
+  "rift_knife": {
+    "category": "weapon",
+    "melee": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "strike"
+        }
+      },
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "anomaly",
+          "mode": "rift",
+          "radius": 4,
+          "damage": 65,
+          "color": "#ac85d2"
+        }
+      }
+    ]
+  },
+  "gravity_hammer": {
+    "category": "weapon",
+    "melee": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "strike"
+        }
+      },
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "anomaly",
+          "mode": "repulsion",
+          "radius": 4,
+          "damage": 25,
+          "color": "#a38bc9",
+          "weapon_pulse": true
+        }
+      }
+    ]
+  },
+  "thunder_hammer": {
+    "category": "weapon",
+    "melee": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "strike"
+        }
+      },
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "anomaly",
+          "mode": "storm",
+          "radius": 4,
+          "damage": 25,
+          "color": "#aaa4cf",
+          "weapon_pulse": true
+        }
+      }
+    ]
+  },
+  "frost_axe": {
+    "category": "weapon",
+    "melee": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "strike"
+        }
+      },
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "anomaly",
+          "mode": "frost",
+          "radius": 4,
+          "damage": 25,
+          "color": "#95bec9",
+          "weapon_pulse": true
+        }
+      }
+    ]
+  },
+  "inferno_sword": {
+    "category": "weapon",
+    "melee": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "strike"
+        }
+      },
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "anomaly",
+          "mode": "inferno",
+          "radius": 4,
+          "damage": 25,
+          "color": "#d4864d",
+          "weapon_pulse": true
+        }
+      }
+    ]
+  },
+  "ant_launcher": {
+    "category": "weapon",
+    "projectile": "ant",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "ant"
+          }
+        }
+      }
+    ]
+  },
+  "chicken_launcher": {
+    "category": "weapon",
+    "projectile": "chicken",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "chicken"
+          }
+        }
+      }
+    ]
+  },
+  "bee_launcher": {
+    "category": "weapon",
+    "projectile": "bee",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "shoot",
+          "arg": {
+            "thing": "bee"
+          }
+        }
+      }
+    ]
+  },
+  "cave_bat": {
+    "category": "creature",
+    "movement": "fly",
+    "impact": "stop",
+    "voxel_motion": true,
+    "aerial": true
+  }
 }

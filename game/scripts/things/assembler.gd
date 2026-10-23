@@ -29,6 +29,7 @@ const TRIGGERS: = {
 }
 const ACTIONS: = {
 	"burst_into": preload("res://scripts/things/action/action_burst_into.gd"), 
+	"anomaly": preload("res://scripts/things/action/action_anomaly.gd"),
 	"shoot": preload("res://scripts/things/action/action_shoot.gd"), 
 	"drop": preload("res://scripts/things/action/action_drop.gd"), 
 	"spawn": preload("res://scripts/things/action/action_spawn.gd"), 
@@ -61,6 +62,11 @@ static func build(node: Dictionary, role: String, lex: LexiconData, mount_depth:
 	thing.name = thing_id
 	thing.configure(node, role, def, lex)
 	thing.attach_model(ModelBuilder.build(thing_id, node.get("mods", {}), lex))
+	if bool(def.get("voxel_motion", false)):
+		var motion = load("res://scripts/things/voxel_creature_motion.gd").new()
+		motion.name = "VoxelCreatureMotion"
+		motion.setup(thing, bool(def.get("aerial", false)))
+		thing.add_child(motion)
 
 	var move_id: = movement_id(node, def, role_def, role, lex)
 	if not MOVES.has(move_id):

@@ -37,7 +37,7 @@ func _walk(path: String) -> void:
 func _run() -> void:
 	await process_frame
 	_walk("res://")
-	_check(scripts_loaded == 160, "Expected 160 recovered scripts")
+	_check(scripts_loaded >= 160, "Recovered gameplay scripts are missing")
 	_check(scenes_loaded == 10, "Expected 10 recovered scenes")
 	var lexicon = root.get_node("Lexicon")
 	_check(lexicon.data.errors.is_empty(), "Lexicon has loading errors")

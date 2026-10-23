@@ -913,6 +913,8 @@ func _fx(packet_epoch: int, kind: String, args: Array) -> void :
 		"ring": Fx.ring(_world, args[0], float(args[1]), args[2], float(args[3]))
 		"slash": Fx.slash(_world, args[0], args[1], float(args[2]), float(args[3]), str(args[4]), args[5], bool(args[6]))
 		"blast": Forge.explosion_at.emit(args[0], float(args[1]), float(args[2]))
+		"voxel_burst": ExpansionFx.burst(_world, args[0], float(args[1]), args[2], str(args[3]))
+		"voxel_rift": ExpansionFx.rift(_world, args[0], args[1], float(args[2]), args[3])
 		"fail": FeelSounds.play_at(_world, BuildSounds.fail(), args[0], Lexicon.balf("mechanics.failure_db"))
 		"hit": Forge.hit_landed.emit(int(args[0]), null, float(args[1]), bool(args[2]))
 		"use":
@@ -937,6 +939,10 @@ static func _valid_fx(kind: String, args: Array) -> bool:
 			and args[4] is String and args[5] is Color and args[6] is bool
 		"blast":
 			return args.size() == 3 and _vec3(args[0]) and _num(args[1]) and _num(args[2])
+		"voxel_burst":
+			return args.size() == 4 and _vec3(args[0]) and _num(args[1]) and args[2] is Color and args[3] is String
+		"voxel_rift":
+			return args.size() == 4 and _vec3(args[0]) and _vec3(args[1]) and _num(args[2]) and args[3] is Color
 		"fail":
 			return args.size() == 1 and _vec3(args[0])
 		"hit":

@@ -30,6 +30,7 @@ driver/enable_input=true
 Lexicon="*res://scripts/autoload/lexicon.gd"
 Session="*res://scripts/network/network_session.gd"
 Forge="*res://scripts/autoload/forge.gd"
+CreationCatalog="*res://scripts/ui/creation_catalog.gd"
 
 [display]
 

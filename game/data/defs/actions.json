@@ -1,16 +1,55 @@
 {
   "_comment": "Ações (DESIGN 3.4). takes_arg: recebe uma subárvore X. arg_role: papel de X (escolhe o movimento padrão dele). projectile: X é projétil do dono (recebe os modificadores que descem). default_arg 'owner_projectile': sem X, usa o projétil padrão do dono; senão fallback_arg. takes_n: recebe um número (split). descends: sem gatilho dito na frase, numa coisa que atira, a ação desce pro projétil (como os modificadores: 'ak que explode' = 'ak explosiva').",
-  "shoot":   { "takes_arg": true, "arg_role": "projectile", "projectile": true, "default_arg": "owner_projectile", "fallback_arg": "bullet" },
-  "drop":    { "takes_arg": true, "arg_role": "projectile", "default_arg": "owner_projectile", "fallback_arg": "bomb" },
-  "spawn":   { "takes_arg": true, "arg_role": "spawned", "fallback_arg": "wall" },
-  "summon":  { "takes_arg": true, "arg_role": "summoned", "fallback_arg": "plane" },
-  "explode": { "descends": true },
-  "anchor":  {},
-  "push":    { "descends": true },
-  "pull":    { "descends": true },
-  "freeze":  { "descends": true },
-  "ignite":  { "descends": true },
-  "split":   { "takes_n": true, "descends": true },
-  "strike":  {},
-  "burst_into": {"takes_arg": true, "arg_role": "spawned", "fallback_arg": "sphere"}
+  "shoot": {
+    "takes_arg": true,
+    "arg_role": "projectile",
+    "projectile": true,
+    "default_arg": "owner_projectile",
+    "fallback_arg": "bullet"
+  },
+  "drop": {
+    "takes_arg": true,
+    "arg_role": "projectile",
+    "default_arg": "owner_projectile",
+    "fallback_arg": "bomb"
+  },
+  "spawn": {
+    "takes_arg": true,
+    "arg_role": "spawned",
+    "fallback_arg": "wall"
+  },
+  "summon": {
+    "takes_arg": true,
+    "arg_role": "summoned",
+    "fallback_arg": "plane"
+  },
+  "explode": {
+    "descends": true
+  },
+  "anchor": {},
+  "push": {
+    "descends": true
+  },
+  "pull": {
+    "descends": true
+  },
+  "freeze": {
+    "descends": true
+  },
+  "ignite": {
+    "descends": true
+  },
+  "split": {
+    "takes_n": true,
+    "descends": true
+  },
+  "strike": {},
+  "burst_into": {
+    "takes_arg": true,
+    "arg_role": "spawned",
+    "fallback_arg": "sphere"
+  },
+  "anomaly": {
+    "descends": true
+  }
 }

@@ -9,6 +9,7 @@ tools/package.json
 recovered/
 clean-check/
 build/
+backups/
 analysis/
 game/.godot/
 game/.autoconverted/

@@ -1,6 +1,6 @@
 {
   "generator": "tools/models/gen_world_assets.py",
-  "new_definitions": 119,
+  "new_definitions": 183,
   "units": "meters",
   "notes": "Dimensões representativas; locomoção biologicamente inspirada com velocidades de combate balanceadas. Tubarão flutua na arena sem água. Unicórnio é fantasia. Não são modelos anatômicos científicos.",
   "sources": {
@@ -780,8 +780,392 @@
     {
       "id": "ant",
       "group": "creature",
-      "pieces": 24,
-      "reference": "Modelo procedural original de formiga estilizada, seis patas e duas antenas."
+      "pieces": 25,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "ant_grenade",
+      "group": "projectile",
+      "pieces": 11,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "ant_launcher",
+      "group": "weapon",
+      "pieces": 8,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "armadillo",
+      "group": "creature",
+      "pieces": 31,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "bee_grenade",
+      "group": "projectile",
+      "pieces": 11,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "bee_launcher",
+      "group": "weapon",
+      "pieces": 8,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "beetle",
+      "group": "creature",
+      "pieces": 28,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "beetle_grenade",
+      "group": "projectile",
+      "pieces": 11,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "bison",
+      "group": "creature",
+      "pieces": 19,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "butterfly",
+      "group": "creature",
+      "pieces": 18,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "camel",
+      "group": "creature",
+      "pieces": 19,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "capybara",
+      "group": "creature",
+      "pieces": 16,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "cave_bat",
+      "group": "creature",
+      "pieces": 18,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "chicken_grenade",
+      "group": "projectile",
+      "pieces": 11,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "chicken_launcher",
+      "group": "weapon",
+      "pieces": 8,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "cluster_bomb",
+      "group": "projectile",
+      "pieces": 7,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "cluster_fragment",
+      "group": "projectile",
+      "pieces": 7,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "cow",
+      "group": "creature",
+      "pieces": 20,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "crab_grenade",
+      "group": "projectile",
+      "pieces": 11,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "donkey",
+      "group": "creature",
+      "pieces": 16,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "dragon",
+      "group": "creature",
+      "pieces": 33,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "duck",
+      "group": "creature",
+      "pieces": 13,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "duck_grenade",
+      "group": "projectile",
+      "pieces": 11,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "emp_bomb",
+      "group": "projectile",
+      "pieces": 7,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "frog_grenade",
+      "group": "projectile",
+      "pieces": 11,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "frost_axe",
+      "group": "weapon",
+      "pieces": 5,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "frost_bomb",
+      "group": "projectile",
+      "pieces": 7,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "giraffe",
+      "group": "creature",
+      "pieces": 29,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "goose",
+      "group": "creature",
+      "pieces": 13,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "gravity_bomb",
+      "group": "projectile",
+      "pieces": 7,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "gravity_hammer",
+      "group": "weapon",
+      "pieces": 5,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "hedgehog",
+      "group": "creature",
+      "pieces": 31,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "hippo",
+      "group": "creature",
+      "pieces": 17,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "hypothetical_gravity_bomb",
+      "group": "projectile",
+      "pieces": 8,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "inferno_bomb",
+      "group": "projectile",
+      "pieces": 7,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "inferno_sword",
+      "group": "weapon",
+      "pieces": 17,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "koala",
+      "group": "creature",
+      "pieces": 20,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "llama",
+      "group": "creature",
+      "pieces": 17,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "mantis",
+      "group": "creature",
+      "pieces": 29,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "meteor_bomb",
+      "group": "projectile",
+      "pieces": 7,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "meteor_fragment",
+      "group": "projectile",
+      "pieces": 7,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "neutron_bomb",
+      "group": "projectile",
+      "pieces": 7,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "nuclear_bomb",
+      "group": "projectile",
+      "pieces": 11,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "octopus",
+      "group": "creature",
+      "pieces": 22,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "otter",
+      "group": "creature",
+      "pieces": 16,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "panda",
+      "group": "creature",
+      "pieces": 20,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "pig",
+      "group": "creature",
+      "pieces": 18,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "pigeon_grenade",
+      "group": "projectile",
+      "pieces": 11,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "raccoon",
+      "group": "creature",
+      "pieces": 32,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "raptor",
+      "group": "creature",
+      "pieces": 25,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "raptor_grenade",
+      "group": "projectile",
+      "pieces": 11,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "rat_grenade",
+      "group": "projectile",
+      "pieces": 11,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "repulsion_bomb",
+      "group": "projectile",
+      "pieces": 7,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "rhino",
+      "group": "creature",
+      "pieces": 19,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "rift_knife",
+      "group": "weapon",
+      "pieces": 13,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "sheep",
+      "group": "creature",
+      "pieces": 31,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "singularity_bomb",
+      "group": "projectile",
+      "pieces": 7,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "slime",
+      "group": "creature",
+      "pieces": 6,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "slime_grenade",
+      "group": "projectile",
+      "pieces": 11,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "snail",
+      "group": "creature",
+      "pieces": 11,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "spider_grenade",
+      "group": "projectile",
+      "pieces": 11,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "storm_bomb",
+      "group": "projectile",
+      "pieces": 7,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "thunder_hammer",
+      "group": "weapon",
+      "pieces": 5,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "turkey",
+      "group": "creature",
+      "pieces": 19,
+      "reference": "Arte original em blocos do Pacote Caos."
+    },
+    {
+      "id": "zebra",
+      "group": "creature",
+      "pieces": 28,
+      "reference": "Arte original em blocos do Pacote Caos."
     }
   ],
   "reviewed_existing_weapons": [

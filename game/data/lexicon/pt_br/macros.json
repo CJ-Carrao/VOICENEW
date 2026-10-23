@@ -577,12 +577,6 @@
       "parede de gelo"
     ]
   },
-  "chuva de meteoros": {
-    "to": "avião que solta pedregulhos de fogo",
-    "words": [
-      "chuva de meteoros"
-    ]
-  },
   "ataque aéreo": {
     "to": "laser que marca e chama avião que solta bombas",
     "words": [
@@ -623,12 +617,6 @@
     "to": "granada que explode ao bater",
     "words": [
       "granada de impacto"
-    ]
-  },
-  "granada de gelo": {
-    "to": "granada congelante",
-    "words": [
-      "granada de gelo"
     ]
   },
   "granada incendiária": {
@@ -1133,6 +1121,13 @@
     "to": "caixote que explode em zumbi",
     "words": [
       "caixa de susto"
+    ]
+  },
+  "granada zoologica": {
+    "to": "granada de galinhas",
+    "words": [
+      "granada zoológica",
+      "granada zoologica"
     ]
   }
 }

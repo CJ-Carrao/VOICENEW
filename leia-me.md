@@ -9,6 +9,14 @@ tags:
 
 # LAVOICE Lab
 
+## Atualizacao: Pacote Caos
+
+62 criacoes novas: 30 animais, 12 granadas que liberam criaturas, 12 bombas especiais e 8 armas. **F2** abre o catalogo dentro do jogo, com nomes, pedidos e efeitos. A lista completa esta em [[novidades]].
+
+A formiga foi refeita em blocos, e os novos animais receberam animacoes simples. Entre as adicoes estao granadas de formigas e galinhas, bombas nuclear, de neutrons, de gravidade e antigravidade, singularidade, meteoros, e a faca que corta o espaco. A versao anterior do executavel esta em `backups/before-chaos`.
+
+Tenha materia, fale o pedido com V, aguarde a montagem e clique para usar/arremessar. O teste de voz usa audio sintetizado; a compatibilidade do microfone fisico continua sujeita as configuracoes do computador.
+
 Base editavel recuperada da instalacao `F:\Games\LAVOICE`, com codigo, cenas, modelos, animacoes, sons, interface, dados, bot e sistemas de voz e multiplayer. O objetivo definido pelo usuario e preservar o jogo e permitir novas adicoes. A instalacao original nao foi modificada.
 
 ## Adicao: formiga

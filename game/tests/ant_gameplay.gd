@@ -42,7 +42,7 @@ func _run() -> void:
 	_check(ant_count == 1, "Expected exactly one spawned ant")
 	if ant != null:
 		_check(ant.category == "creature" and ant.is_active and not ant.is_dead, "Ant must be a live creature")
-		_check(ant.model_pieces.size() == 24, "Ant model did not load completely")
+		_check(ant.model_pieces.size() == 25, "Ant voxel model did not load completely")
 		_check(ant.get_node("Move").get_script().resource_path.ends_with("move_chase_enemy.gd"), "Ant must use terrestrial creature movement")
 		_check(game.player.matter < matter_before, "Creation did not spend matter")
 		var start: Vector3 = ant.global_position

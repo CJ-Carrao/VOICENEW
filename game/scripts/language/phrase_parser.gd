@@ -427,6 +427,9 @@ func _parse_action(owner: Dictionary, depth: int, pending: Dictionary, deferred_
 	var start: = _pos
 	var action_id: = _lex.action_for(_sense_id(_peek(), "action"), _lex.category_of(String(owner["thing"])))
 	_use()
+	# In a grenade request, "explode formigas" means releasing that payload.
+	if action_id == "explode" and _lex.category_of(String(owner["thing"])) == "projectile" and _starts_sn(_pos):
+		action_id = "burst_into"
 	var adef: = _lex.action_def(action_id)
 	var takes_arg: bool = adef.get("takes_arg", false)
 	var role: = String(adef.get("arg_role", "projectile"))

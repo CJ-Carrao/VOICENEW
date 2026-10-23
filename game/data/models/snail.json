@@ -1,0 +1,176 @@
+{
+  "_comment": "Arte original do Pacote Caos: silhueta em blocos, sem superficies arredondadas.",
+  "units": "meters",
+  "anchor": [
+    0,
+    0.35,
+    0
+  ],
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.2,
+        0.1,
+        0.5
+      ],
+      "pos": [
+        0,
+        0.06,
+        -0.025
+      ],
+      "color": "#a78e61",
+      "tag": "body"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.24,
+        0.27,
+        0.25
+      ],
+      "pos": [
+        0,
+        0.22,
+        0.08
+      ],
+      "color": "#9c8055",
+      "tag": "shell"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.18,
+        0.08,
+        0.18
+      ],
+      "pos": [
+        0,
+        0.39,
+        0.08
+      ],
+      "color": "#5d503e",
+      "tag": "shell"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.13,
+        0.025
+      ],
+      "pos": [
+        -0.065,
+        0.17,
+        -0.23
+      ],
+      "color": "#a78e61",
+      "tag": "antenna"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.04,
+        0.04,
+        0.04
+      ],
+      "pos": [
+        -0.065,
+        0.245,
+        -0.23
+      ],
+      "color": "#19212b",
+      "tag": "eye"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.025,
+        0.13,
+        0.025
+      ],
+      "pos": [
+        0.065,
+        0.17,
+        -0.23
+      ],
+      "color": "#a78e61",
+      "tag": "antenna"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.04,
+        0.04,
+        0.04
+      ],
+      "pos": [
+        0.065,
+        0.245,
+        -0.23
+      ],
+      "color": "#19212b",
+      "tag": "eye"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.015,
+        0.04,
+        0.045
+      ],
+      "pos": [
+        0.128,
+        0.14,
+        0.025
+      ],
+      "color": "#5d503e",
+      "tag": "shell"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.015,
+        0.04,
+        0.045
+      ],
+      "pos": [
+        0.128,
+        0.21,
+        0.025
+      ],
+      "color": "#5d503e",
+      "tag": "shell"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.015,
+        0.04,
+        0.045
+      ],
+      "pos": [
+        0.128,
+        0.14,
+        0.095
+      ],
+      "color": "#5d503e",
+      "tag": "shell"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.015,
+        0.04,
+        0.045
+      ],
+      "pos": [
+        0.128,
+        0.21,
+        0.095
+      ],
+      "color": "#5d503e",
+      "tag": "shell"
+    }
+  ]
+}

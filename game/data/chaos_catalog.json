@@ -1,0 +1,502 @@
+{
+  "title": "Pacote Caos",
+  "version": 1,
+  "creations": [
+    {
+      "id": "duck",
+      "name": "pato",
+      "phrase": "quero pato",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 13
+    },
+    {
+      "id": "goose",
+      "name": "ganso",
+      "phrase": "quero ganso",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 13
+    },
+    {
+      "id": "turkey",
+      "name": "peru",
+      "phrase": "quero peru",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 19
+    },
+    {
+      "id": "pig",
+      "name": "porco",
+      "phrase": "quero porco",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 18
+    },
+    {
+      "id": "cow",
+      "name": "vaca",
+      "phrase": "quero vaca",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 20
+    },
+    {
+      "id": "sheep",
+      "name": "ovelha",
+      "phrase": "quero ovelha",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 31
+    },
+    {
+      "id": "donkey",
+      "name": "burro",
+      "phrase": "quero burro",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 16
+    },
+    {
+      "id": "camel",
+      "name": "camelo",
+      "phrase": "quero camelo",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 19
+    },
+    {
+      "id": "llama",
+      "name": "lhama",
+      "phrase": "quero lhama",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 17
+    },
+    {
+      "id": "giraffe",
+      "name": "girafa",
+      "phrase": "quero girafa",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 29
+    },
+    {
+      "id": "zebra",
+      "name": "zebra",
+      "phrase": "quero zebra",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 28
+    },
+    {
+      "id": "rhino",
+      "name": "rinoceronte",
+      "phrase": "quero rinoceronte",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 19
+    },
+    {
+      "id": "hippo",
+      "name": "hipopótamo",
+      "phrase": "quero hipopótamo",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 17
+    },
+    {
+      "id": "bison",
+      "name": "bisão",
+      "phrase": "quero bisão",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 19
+    },
+    {
+      "id": "panda",
+      "name": "panda",
+      "phrase": "quero panda",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 20
+    },
+    {
+      "id": "koala",
+      "name": "coala",
+      "phrase": "quero coala",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 20
+    },
+    {
+      "id": "capybara",
+      "name": "capivara",
+      "phrase": "quero capivara",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 16
+    },
+    {
+      "id": "otter",
+      "name": "lontra",
+      "phrase": "quero lontra",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 16
+    },
+    {
+      "id": "raccoon",
+      "name": "guaxinim",
+      "phrase": "quero guaxinim",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 32
+    },
+    {
+      "id": "hedgehog",
+      "name": "ouriço",
+      "phrase": "quero ouriço",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 31
+    },
+    {
+      "id": "armadillo",
+      "name": "tatu",
+      "phrase": "quero tatu",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 31
+    },
+    {
+      "id": "cave_bat",
+      "name": "morcego",
+      "phrase": "quero morcego",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 18
+    },
+    {
+      "id": "butterfly",
+      "name": "borboleta",
+      "phrase": "quero borboleta",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 18
+    },
+    {
+      "id": "beetle",
+      "name": "besouro",
+      "phrase": "quero besouro",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 28
+    },
+    {
+      "id": "mantis",
+      "name": "louva a deus",
+      "phrase": "quero louva a deus",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 29
+    },
+    {
+      "id": "snail",
+      "name": "caracol",
+      "phrase": "quero caracol",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 11
+    },
+    {
+      "id": "octopus",
+      "name": "polvo",
+      "phrase": "quero polvo",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 22
+    },
+    {
+      "id": "raptor",
+      "name": "velociraptor",
+      "phrase": "quero velociraptor",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 25
+    },
+    {
+      "id": "dragon",
+      "name": "dragão",
+      "phrase": "quero dragão",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao; cospe fogo.",
+      "pieces": 33
+    },
+    {
+      "id": "slime",
+      "name": "slime",
+      "phrase": "quero slime",
+      "group": "Animais",
+      "effect": "Criatura em blocos com movimento e animacao.",
+      "pieces": 6
+    },
+    {
+      "id": "ant_grenade",
+      "name": "granada de formigas",
+      "phrase": "quero granada de formigas",
+      "group": "Granadas de criaturas",
+      "effect": "Explode depois de arremessada e libera 6 formigas vivos.",
+      "pieces": 11
+    },
+    {
+      "id": "chicken_grenade",
+      "name": "granada de galinhas",
+      "phrase": "quero granada de galinhas",
+      "group": "Granadas de criaturas",
+      "effect": "Explode depois de arremessada e libera 6 galinhas vivos.",
+      "pieces": 11
+    },
+    {
+      "id": "duck_grenade",
+      "name": "granada de patos",
+      "phrase": "quero granada de patos",
+      "group": "Granadas de criaturas",
+      "effect": "Explode depois de arremessada e libera 6 patos vivos.",
+      "pieces": 11
+    },
+    {
+      "id": "bee_grenade",
+      "name": "granada de abelhas",
+      "phrase": "quero granada de abelhas",
+      "group": "Granadas de criaturas",
+      "effect": "Explode depois de arremessada e libera 6 abelhas vivos.",
+      "pieces": 11
+    },
+    {
+      "id": "spider_grenade",
+      "name": "granada de aranhas",
+      "phrase": "quero granada de aranhas",
+      "group": "Granadas de criaturas",
+      "effect": "Explode depois de arremessada e libera 6 aranhas vivos.",
+      "pieces": 11
+    },
+    {
+      "id": "crab_grenade",
+      "name": "granada de caranguejos",
+      "phrase": "quero granada de caranguejos",
+      "group": "Granadas de criaturas",
+      "effect": "Explode depois de arremessada e libera 6 caranguejos vivos.",
+      "pieces": 11
+    },
+    {
+      "id": "frog_grenade",
+      "name": "granada de sapos",
+      "phrase": "quero granada de sapos",
+      "group": "Granadas de criaturas",
+      "effect": "Explode depois de arremessada e libera 6 sapos vivos.",
+      "pieces": 11
+    },
+    {
+      "id": "rat_grenade",
+      "name": "granada de ratos",
+      "phrase": "quero granada de ratos",
+      "group": "Granadas de criaturas",
+      "effect": "Explode depois de arremessada e libera 6 ratos vivos.",
+      "pieces": 11
+    },
+    {
+      "id": "pigeon_grenade",
+      "name": "granada de pombos",
+      "phrase": "quero granada de pombos",
+      "group": "Granadas de criaturas",
+      "effect": "Explode depois de arremessada e libera 6 pombos vivos.",
+      "pieces": 11
+    },
+    {
+      "id": "raptor_grenade",
+      "name": "granada de velociraptores",
+      "phrase": "quero granada de velociraptores",
+      "group": "Granadas de criaturas",
+      "effect": "Explode depois de arremessada e libera 3 velociraptores vivos.",
+      "pieces": 11
+    },
+    {
+      "id": "slime_grenade",
+      "name": "granada de slimes",
+      "phrase": "quero granada de slimes",
+      "group": "Granadas de criaturas",
+      "effect": "Explode depois de arremessada e libera 6 slimes vivos.",
+      "pieces": 11
+    },
+    {
+      "id": "beetle_grenade",
+      "name": "granada de besouros",
+      "phrase": "quero granada de besouros",
+      "group": "Granadas de criaturas",
+      "effect": "Explode depois de arremessada e libera 6 besouros vivos.",
+      "pieces": 11
+    },
+    {
+      "id": "nuclear_bomb",
+      "name": "bomba nuclear",
+      "phrase": "quero bomba nuclear",
+      "group": "Bombas especiais",
+      "effect": "Explosao ampla com cratera e cogumelo de blocos.",
+      "pieces": 11
+    },
+    {
+      "id": "neutron_bomb",
+      "name": "bomba de nêutrons",
+      "phrase": "quero bomba de nêutrons",
+      "group": "Bombas especiais",
+      "effect": "Pulso contra combatentes e criaturas, sem escavar terreno.",
+      "pieces": 7
+    },
+    {
+      "id": "gravity_bomb",
+      "name": "bomba de gravidade",
+      "phrase": "quero bomba de gravidade",
+      "group": "Bombas especiais",
+      "effect": "Puxa inimigos por tres segundos e causa dano de compressao.",
+      "pieces": 7
+    },
+    {
+      "id": "hypothetical_gravity_bomb",
+      "name": "bomba hipotética de gravidade",
+      "phrase": "quero bomba hipotética de gravidade",
+      "group": "Bombas especiais",
+      "effect": "Inverte a gravidade: levanta alvos e depois os repele.",
+      "pieces": 8
+    },
+    {
+      "id": "singularity_bomb",
+      "name": "bomba de singularidade",
+      "phrase": "quero bomba de singularidade",
+      "group": "Bombas especiais",
+      "effect": "Campo de atracao mais forte por quatro segundos.",
+      "pieces": 7
+    },
+    {
+      "id": "repulsion_bomb",
+      "name": "bomba de repulsão",
+      "phrase": "quero bomba de repulsão",
+      "group": "Bombas especiais",
+      "effect": "Onda de choque que lanca inimigos para fora.",
+      "pieces": 7
+    },
+    {
+      "id": "frost_bomb",
+      "name": "bomba criogênica",
+      "phrase": "quero bomba criogênica",
+      "group": "Bombas especiais",
+      "effect": "Congela os alvos proximos e causa dano frio.",
+      "pieces": 7
+    },
+    {
+      "id": "inferno_bomb",
+      "name": "bomba incendiária",
+      "phrase": "quero bomba incendiária",
+      "group": "Bombas especiais",
+      "effect": "Explode e aplica incendio na area.",
+      "pieces": 7
+    },
+    {
+      "id": "storm_bomb",
+      "name": "bomba de tempestade",
+      "phrase": "quero bomba de tempestade",
+      "group": "Bombas especiais",
+      "effect": "Descargas em blocos atingem os inimigos na area.",
+      "pieces": 7
+    },
+    {
+      "id": "emp_bomb",
+      "name": "bomba eletromagnética",
+      "phrase": "quero bomba eletromagnética",
+      "group": "Bombas especiais",
+      "effect": "Pulso que desacelera e desloca alvos, sem cratera.",
+      "pieces": 7
+    },
+    {
+      "id": "meteor_bomb",
+      "name": "bomba de meteoros",
+      "phrase": "quero bomba de meteoros",
+      "group": "Bombas especiais",
+      "effect": "Invoca seis fragmentos explosivos que caem do alto.",
+      "pieces": 7
+    },
+    {
+      "id": "cluster_bomb",
+      "name": "bomba de fragmentação",
+      "phrase": "quero bomba de fragmentação",
+      "group": "Bombas especiais",
+      "effect": "Libera seis minibombas, com explosoes secundarias.",
+      "pieces": 7
+    },
+    {
+      "id": "rift_knife",
+      "name": "faca que corta o espaço",
+      "phrase": "quero faca que corta o espaço",
+      "group": "Armas especiais",
+      "effect": "Abre uma fenda de ate 22 metros que corta inimigos e blocos.",
+      "pieces": 13
+    },
+    {
+      "id": "gravity_hammer",
+      "name": "martelo de gravidade",
+      "phrase": "quero martelo de gravidade",
+      "group": "Armas especiais",
+      "effect": "Golpe corpo a corpo acompanhado de pulso elemental.",
+      "pieces": 5
+    },
+    {
+      "id": "thunder_hammer",
+      "name": "martelo do trovão",
+      "phrase": "quero martelo do trovão",
+      "group": "Armas especiais",
+      "effect": "Golpe corpo a corpo acompanhado de pulso elemental.",
+      "pieces": 5
+    },
+    {
+      "id": "frost_axe",
+      "name": "machado de gelo",
+      "phrase": "quero machado de gelo",
+      "group": "Armas especiais",
+      "effect": "Golpe corpo a corpo acompanhado de pulso elemental.",
+      "pieces": 5
+    },
+    {
+      "id": "inferno_sword",
+      "name": "espada infernal",
+      "phrase": "quero espada infernal",
+      "group": "Armas especiais",
+      "effect": "Golpe corpo a corpo acompanhado de pulso elemental.",
+      "pieces": 17
+    },
+    {
+      "id": "ant_launcher",
+      "name": "lança formigas",
+      "phrase": "quero lança formigas",
+      "group": "Armas especiais",
+      "effect": "Dispara criaturas vivas; use um pente para recarregar.",
+      "pieces": 8
+    },
+    {
+      "id": "chicken_launcher",
+      "name": "lança galinhas",
+      "phrase": "quero lança galinhas",
+      "group": "Armas especiais",
+      "effect": "Dispara criaturas vivas; use um pente para recarregar.",
+      "pieces": 8
+    },
+    {
+      "id": "bee_launcher",
+      "name": "lança abelhas",
+      "phrase": "quero lança abelhas",
+      "group": "Armas especiais",
+      "effect": "Dispara criaturas vivas; use um pente para recarregar.",
+      "pieces": 8
+    }
+  ]
+}

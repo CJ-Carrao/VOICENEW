@@ -67,7 +67,38 @@ func _success() -> void:
 		if Time.get_ticks_msec() > replication_deadline:
 			_finish(false, "Match replication did not become active: " + session.last_error)
 			return
-	await create_timer(4.0).timeout
+	var chaos_test := OS.get_cmdline_user_args().has("--test-chaos")
+	if chaos_test:
+		await create_timer(3.3).timeout
+		if role == "host":
+			var forge = root.get_node("Forge")
+			forge.test_free_matter = true
+			forge.test_instant_builds = true
+			game.player.add_matter(300.0)
+			forge.request(1, "quero uma capivara")
+			forge.request(1, "quero uma bomba de gravidade")
+			await create_timer(0.5).timeout
+			var item = game.player.hands.current_item()
+			if item == null:
+				_finish(false, "Gravity bomb was not equipped")
+				return
+			var thrown = forge.spawn_child(item.node_data, "projectile", Vector3(0, 3, 0), Vector3.DOWN, item, 0.0, Vector3.ZERO, true)
+			await create_timer(0.1).timeout
+			if thrown == null:
+				_finish(false, "Gravity bomb projectile was not replicated")
+				return
+			thrown.get_node("Do_anomaly").run(thrown.context_here())
+		await create_timer(7.0 if role == "host" else 6.0).timeout
+		var capybaras := 0
+		for creation in game.get_node("Things").get_children():
+			if creation.get("thing_id") == "capybara":
+				capybaras += 1
+		var effects = load("res://scripts/fx/expansion_fx.gd")
+		if capybaras != 1 or effects.burst_count == 0:
+			_finish(false, "Chaos replication failed: capybaras=%d voxel_fx=%d" % [capybaras, effects.burst_count])
+			return
+	else:
+		await create_timer(4.0).timeout
 	var stats: Dictionary = session.replication.stats
 	var snapshot_count: int = stats.snapshots_sent if role == "host" else stats.snapshots_received
 	_finish(snapshot_count > 0, "ENet lobby and online match replication completed; snapshots=%d" % snapshot_count)
