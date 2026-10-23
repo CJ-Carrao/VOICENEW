@@ -64,6 +64,8 @@ func _run() -> void:
 	check(not armed.get("mods", {}).get("grafts", []).is_empty(), "Alligator lost its mounted weapon")
 	var shield_gun: Dictionary = parser.parse("quero uma arma que faça um escudo anti bomba de neutrons", lex).get("recipe", {})
 	check(not shield_gun.is_empty(), "Shield gun composition failed")
+	var speech_repaired: Dictionary = parser.parse("quero uma arma que fala um escudo anti bomba de neutrons", lex).get("recipe", {})
+	check(speech_repaired == shield_gun, "Offline speech confusion faça/fala lost the shield-production behavior")
 	var queen_recipe: Dictionary = parser.parse("quero uma formiga rainha que faça um ninho", lex).get("recipe", {})
 	check(is_equal_approx(cost_type.of(queen_recipe, lex), cost_type.of(recipe_type.new_node("queen_ant"), lex)), "Naming built-in nest production overcharged the queen")
 	var origin := Vector3(12, 2, 12)
