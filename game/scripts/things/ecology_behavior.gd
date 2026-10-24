@@ -32,14 +32,14 @@ func _living_queen() -> bool:
 		return true
 	if queen_ref != null:
 		var queen = queen_ref.get_ref()
-		return is_instance_valid(queen) and not queen.is_dead
+		return is_instance_valid(queen) and not queen.is_dead and not queen.is_captured and queen.team == thing.team
 	if is_instance_valid(thing.spawner) and thing.spawner is Thing and InnovationRules.tags(thing.spawner).has("queen"):
 		queen_ref = weakref(thing.spawner)
-		return not thing.spawner.is_dead
+		return not thing.spawner.is_dead and not thing.spawner.is_captured and thing.spawner.team == thing.team
 	if Forge.world != null:
 		for candidate in Forge.world.get_node("Things").get_children():
 			var queen := candidate as Thing
-			if queen != null and not queen.is_dead and queen.team == thing.team and InnovationRules.tags(queen).has(String(config.get("queen_tag", "ant_queen"))) and queen.center().distance_to(thing.center()) < 12.0:
+			if queen != null and not queen.is_dead and not queen.is_captured and queen.team == thing.team and InnovationRules.tags(queen).has(String(config.get("queen_tag", "ant_queen"))) and queen.center().distance_to(thing.center()) < 12.0:
 				queen_ref = weakref(queen)
 				return true
 	return false

@@ -11,7 +11,7 @@ func queue_action(action: String, pressed: bool = true, slot_index: int = -1) ->
 		_slot = slot_index
 	elif action == "use":
 		_pending["use_pressed" if pressed else "use_released"] = true
-	elif action in ["reload", "exit_pilot", "toggle_extract"] and pressed:
+	elif action in ["reload", "exit_pilot", "toggle_extract", "pickup", "drop_item"] and pressed:
 		_pending[action] = true
 
 
@@ -40,6 +40,8 @@ func capture(player: Player) -> PlayerInputFrame:
 	frame.use_pressed = Input.is_action_just_pressed("use")
 	frame.use_released = Input.is_action_just_released("use")
 	frame.reload = Input.is_action_just_pressed("reload")
+	frame.pickup = Input.is_action_just_pressed("pickup")
+	frame.drop_item = Input.is_action_just_pressed("drop_item")
 	frame.exit_pilot = Input.is_action_just_pressed("exit_pilot")
 	for key: String in _pending:
 		frame.set(key, true)

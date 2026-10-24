@@ -65,6 +65,10 @@ func _finish_vanish() -> void:
 		queue_free()
 
 var generation: int = 0
+var is_captured := false
+var ground_item := false
+var pickup_after_ms := 0
+var _capture_was_active := false
 
 var age: float = 0.0
 
@@ -358,7 +362,7 @@ func set_owner_info(player_id: int, owner_team: int, player: Node3D, created_by:
 
 
 func has_simulation_authority() -> bool:
-	return not network_replica and Session.has_authority() and ( not Session.is_online() or (Session.replication.is_active() and (Forge.world == null or Forge.world.gameplay_available())))
+	return not is_captured and not network_replica and Session.has_authority() and ( not Session.is_online() or (Session.replication.is_active() and (Forge.world == null or Forge.world.gameplay_available())))
 
 
 
@@ -416,6 +420,25 @@ func set_held(held: bool) -> void :
 	else:
 		set_collision_disabled(false)
 		_apply_role_layers()
+
+func set_captured(captured: bool) -> void:
+	if is_captured == captured: return
+	is_captured = captured
+	if captured:
+		_capture_was_active = is_active
+		is_active = false
+		set_held(true)
+		visible = false
+		process_mode = Node.PROCESS_MODE_DISABLED
+	else:
+		process_mode = Node.PROCESS_MODE_INHERIT
+		if not network_replica: is_active = _capture_was_active
+		set_held(false)
+		visible = true
+	for graft in grafts:
+		if is_instance_valid(graft):
+			graft.set_captured(captured)
+			if not captured: graft.set_held(is_held)
 
 
 

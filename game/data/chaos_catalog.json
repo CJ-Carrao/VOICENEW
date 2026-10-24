@@ -901,6 +901,15 @@
       "effect": "Animal em blocos: aceita mistura de cabeça, corpo, patas e cauda, dietas, armas e técnicas.",
       "pieces": 24,
       "base_cost": 140
+    },
+    {
+      "id": "capture_ball",
+      "name": "Pokébola",
+      "phrase": "quero uma pokebola",
+      "group": "Captura",
+      "effect": "Arremesse para tentar capturar. Criaturas feridas entram mais facilmente. E pega a bola e solta a arma atual; arremesse a bola cheia para liberar a criatura no seu time.",
+      "pieces": 10,
+      "base_cost": 38
     }
   ],
   "combinations": [

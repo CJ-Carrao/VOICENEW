@@ -27,16 +27,18 @@ var reload: bool = false
 var slot: int = -1
 var exit_pilot: bool = false
 var toggle_extract: bool = false
+var pickup: bool = false
+var drop_item: bool = false
 
 const FLAGS: = ["sprint", "jump_pressed", "jump_held", "crouch_pressed", "free_view", "face_aim", "aiming", "use_held", 
-	"use_pressed", "use_released", "reload", "exit_pilot", "toggle_extract"]
+	"use_pressed", "use_released", "reload", "exit_pilot", "toggle_extract", "pickup", "drop_item"]
 
 const VALUES: = 8
-const EVENTS: = ["jump_pressed", "crouch_pressed", "use_pressed", "use_released", "reload", "exit_pilot", "toggle_extract"]
+const EVENTS: = ["jump_pressed", "crouch_pressed", "use_pressed", "use_released", "reload", "exit_pilot", "toggle_extract", "pickup", "drop_item"]
 
 
 func has_events() -> bool:
-	return jump_pressed or crouch_pressed or use_pressed or use_released or reload or slot >= 0 or exit_pilot or toggle_extract
+	return jump_pressed or crouch_pressed or use_pressed or use_released or reload or slot >= 0 or exit_pilot or toggle_extract or pickup or drop_item
 
 
 func copy() -> PlayerInputFrame:

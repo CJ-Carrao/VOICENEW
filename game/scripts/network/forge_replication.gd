@@ -627,7 +627,7 @@ func _capture_state(thing: Thing) -> Dictionary:
 	var relation: = "world"
 	var slot: = -1
 	var parent_id: = 0
-	if thing.is_held:
+	if thing.is_held and not thing.is_captured:
 		relation = "hand"
 		var player: = thing.owner_player as Player
 		if player != null:
@@ -799,14 +799,14 @@ func _apply_state(state: Dictionary, baseline: bool) -> void :
 	if thing.owner_player == null:
 		thing.set_owner_info(int(entry.descriptor.owner_id), int(entry.descriptor.team), _world.get_player(int(entry.descriptor.owner_id)), null)
 	thing.matter = float(state.matter)
-	thing.set_held(state.relation != "world")
+	thing.set_held(state.relation != "world" or bool(state.gameplay.get("captured", false)))
 	thing.set_building(bool(state.building))
 	if state.relation == "world":
 		if thing.get_parent() is Thing or thing.get_parent() is Hands:
 			_world.add_thing(thing)
 
 
-		if baseline or not thing.network_pose_valid:
+		if baseline or not thing.network_pose_valid or thing.is_captured != bool(state.gameplay.get("captured", false)):
 			thing.receive_network_pose(state.transform, true)
 		thing.visible = bool(state.visible)
 	elif state.relation == "child":

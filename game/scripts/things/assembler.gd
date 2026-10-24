@@ -98,6 +98,11 @@ static func build(node: Dictionary, role: String, lex: LexiconData, mount_depth:
 	move.name = "Move"
 	move.setup(thing, lex)
 	thing.attach_move(move)
+	if bool(def.get("capture_ball", false)):
+		var ball = load("res://scripts/things/capture_ball.gd").new()
+		ball.name = "CaptureBall"
+		ball.setup(thing)
+		thing.add_child(ball)
 	var cursed := JujutsuRules.powers(node, lex)
 	if not cursed.is_empty():
 		var user = load("res://scripts/things/jujutsu_user.gd").new()

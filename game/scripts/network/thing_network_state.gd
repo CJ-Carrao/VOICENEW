@@ -13,6 +13,13 @@ static func capture(thing: Thing) -> Dictionary:
 	state["attachments"] = (thing.node_data.get("mods", {}) as Dictionary).get("attachments", []).duplicate()
 	state["ammo_override"] = thing.ammo_override.duplicate(true)
 	state["status"] = Status.snapshot(thing)
+	state["owner_id"] = thing.owner_id
+	state["team"] = thing.team
+	state["captured"] = thing.is_captured
+	state["ground_item"] = thing.ground_item
+	var ball = thing.get_node_or_null("CaptureBall")
+	if ball != null:
+		state["capture_ball"] = {"occupant_id": ball.occupant_id, "occupant_name": ball.occupant_name, "result": ball.result, "shake_left": ball.shake_left}
 	var cursed = thing.get_node_or_null("Jujutsu")
 	if cursed != null:
 		state["jujutsu"] = {"clock": cursed.clock, "exposure": cursed.exposure.duplicate(), "domain_until": cursed.domain_until, "domain_mode": cursed.domain_mode}
@@ -37,6 +44,10 @@ static func capture(thing: Thing) -> Dictionary:
 static func apply(thing: Thing, state: Dictionary) -> void :
 	if not thing.network_replica or state.is_empty():
 		return
+	var owner_id := int(state.get("owner_id", thing.owner_id))
+	var team := int(state.get("team", thing.team))
+	if owner_id != thing.owner_id or team != thing.team:
+		thing.set_owner_info(owner_id, team, Forge.world.get_player(owner_id) if Forge.world != null else null, null)
 	var attachments: Array = state.get("attachments", [])
 	var mods: Dictionary = thing.node_data.get_or_add("mods", {})
 	if attachments != mods.get("attachments", []):
@@ -47,6 +58,14 @@ static func apply(thing: Thing, state: Dictionary) -> void :
 			thing.set(key, state[key])
 	thing.ammo_override = (state.get("ammo_override", {}) as Dictionary).duplicate(true)
 	Status.apply_snapshot(thing, state.get("status", {}))
+	thing.set_captured(bool(state.get("captured", false)))
+	thing.ground_item = bool(state.get("ground_item", false))
+	var ball = thing.get_node_or_null("CaptureBall")
+	if ball != null and state.get("capture_ball") is Dictionary:
+		ball.occupant_id = int(state.capture_ball.get("occupant_id", 0))
+		ball.occupant_name = String(state.capture_ball.get("occupant_name", ""))
+		ball.result = String(state.capture_ball.get("result", "empty"))
+		ball.shake_left = float(state.capture_ball.get("shake_left", 0.0))
 	var cursed = thing.get_node_or_null("Jujutsu")
 	if cursed != null and state.get("jujutsu") is Dictionary:
 		var data: Dictionary = state.jujutsu

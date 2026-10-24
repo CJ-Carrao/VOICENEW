@@ -83,6 +83,8 @@ var _last_result: Dictionary = {}
 var _extract_banner: Label
 
 var _shape_banner: Label
+var _pickup_banner: Label
+var _pickup_tick := 0.0
 
 var _toast: RichTextLabel
 var _toast_left: float = 0.0
@@ -119,6 +121,7 @@ func _ready() -> void :
 	_scope = _overlay("Scope", SCOPE_SHADER)
 	_extract_banner = _make_banner("ExtractBanner", COLOR_MATTER, -132.0, -108.0)
 	_shape_banner = _make_banner("ShapeBanner", COLOR_CHALK, -160.0, -134.0)
+	_pickup_banner = _make_banner("PickupBanner", COLOR_CHALK, -188.0, -162.0)
 	_build_toast()
 	_build_ammo_panel()
 	_damage = DamageIndicator.new()
@@ -296,6 +299,16 @@ func show_request(player_id: int, text: String, result: Dictionary) -> void :
 
 
 func _process(delta: float) -> void :
+	_pickup_tick -= delta
+	if _pickup_tick <= 0.0 and _pickup_banner != null:
+		_pickup_tick = .12
+		var item := GroundItems.target(_player) if _player != null and _player.can_act() else null
+		_pickup_banner.visible = item != null
+		if item != null:
+			var name := Lexicon.data.thing_name(item.thing_id)
+			var ball = item.get_node_or_null("CaptureBall")
+			if ball != null and not ball.occupant_name.is_empty(): name += " · " + ball.occupant_name
+			_pickup_banner.text = "E · PEGAR " + name.to_upper() + "   (a arma atual cai no chão)"
 	_clock += delta
 	if _player != null:
 		_scope.visible = _player.is_scoped()
@@ -526,6 +539,9 @@ func _refresh_ammo(fired: bool = false) -> void :
 		_last_ammo = -1
 		return
 	_ammo_name.text = Lexicon.data.thing_name(id).to_upper()
+	if item != null and item.get_node_or_null("CaptureBall") != null:
+		var ball = item.get_node("CaptureBall")
+		_ammo_name.text += " · " + (ball.occupant_name.to_upper() if not ball.occupant_name.is_empty() else "VAZIA")
 	var magazine: = int(held.get("magazine", item.magazine if item != null else 0))
 	var capacity: = int(held.get("capacity", item.capacity if item != null else 0))
 	var ammo: = int(held.get("ammo", item.ammo if item != null else 0))

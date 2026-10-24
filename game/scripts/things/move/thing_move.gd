@@ -107,7 +107,7 @@ func _configure(_lex: LexiconData) -> void :
 
 func _physics_process(delta: float) -> void :
 	if thing == null or not thing.has_simulation_authority()\
-	or landed or not thing.is_active or thing.is_held or thing.is_dead:
+	or landed or not thing.is_active or thing.is_held or thing.is_dead or thing.ground_item:
 		return
 	step(delta)
 

@@ -111,14 +111,45 @@ func give(item: Thing, throwable: bool) -> void :
 		player.store_or_spill(dissolve(index))
 	_slots[index] = item
 	_throwable[index] = throwable
-	item.removed.connect(_on_item_removed)
-	item.ammo_changed.connect(items_changed.emit)
-	add_child(item)
+	if not item.removed.is_connected(_on_item_removed): item.removed.connect(_on_item_removed)
+	if not item.ammo_changed.is_connected(items_changed.emit): item.ammo_changed.connect(items_changed.emit)
+	if item.get_parent() == null: add_child(item)
+	elif item.get_parent() != self: item.reparent(self)
 	item.transform = rest_transform(item)
 	item.set_held(true)
 	if player.is_local:
 		_set_layers(item, 1 << (OWN_WEAPON_LAYER - 1))
 	select(index)
+
+func pickup(item: Thing = null) -> bool:
+	if not player.has_simulation_authority(): return false
+	if item == null: item = GroundItems.target(player)
+	if not GroundItems.can_pickup(player, item): return false
+	var previous := current_item()
+	if is_instance_valid(previous) and previous.is_building: return false
+	cancel_use()
+	drop_current()
+	Forge.transfer_owner(item, player)
+	item.ground_item = false
+	var throwable := item.get_node_or_null("CaptureBall") != null or Lexicon.data.placement_for(item.thing_id) in ["throwable", "load", "attach"]
+	give(item, throwable)
+	items_changed.emit()
+	return true
+
+func drop_current(at: Vector3 = Vector3.INF, velocity: Vector3 = Vector3.ZERO) -> Thing:
+	if not player.has_simulation_authority() or Forge.world == null: return null
+	var item := current_item()
+	if item == null or item.is_building: return null
+	cancel_use()
+	_slots[current] = null
+	if item.removed.is_connected(_on_item_removed): item.removed.disconnect(_on_item_removed)
+	if item.ammo_changed.is_connected(items_changed.emit): item.ammo_changed.disconnect(items_changed.emit)
+	if at == Vector3.INF:
+		var aim := player.aim()
+		at = player.head.global_position + aim.direction * .9 - player.up() * .35
+	GroundItems.drop(item, at, velocity)
+	items_changed.emit()
+	return item
 
 
 
@@ -393,7 +424,13 @@ func _throw(item: Thing, origin: Vector3, direction: Vector3) -> void :
 	if Session.is_online():
 		Session.creations.notify_fx("use", [player.player_id, item.network_id, "throw"])
 	used.emit(item, "throw")
-	Forge.spawn_child(item.node_data, "projectile", origin, direction, item, -1.0, Vector3.ZERO, true)
+	var ball = item.get_node_or_null("CaptureBall")
+	if ball != null:
+		drop_current(origin, direction * item.speed)
+		ball.begin_throw()
+		return
+	var thrown := Forge.spawn_child(item.node_data, "projectile", origin, direction, item, -1.0, Vector3.ZERO, true)
+	if thrown == null: return
 	item.charges -= 1
 	if item.charges <= 0:
 		item.remove()
@@ -478,6 +515,8 @@ func apply_network_commands(frame: PlayerInputFrame, authoritative: bool) -> voi
 	if not authoritative:
 		_holding_use = frame.use_held
 		return
+	if frame.pickup: pickup()
+	if frame.drop_item: drop_current()
 
 
 	if player.extracting:
@@ -551,7 +590,7 @@ func _refresh_creation_slots() -> void :
 		var previous: = item_at(index)
 		if previous == replica:
 			continue
-		if is_instance_valid(previous):
+		if is_instance_valid(previous) and previous.get_parent() == self:
 			previous.visible = false
 		_slots[index] = replica
 		if not is_instance_valid(replica):

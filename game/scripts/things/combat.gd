@@ -11,6 +11,7 @@ const COMBATANTS_GROUP: = "combatants"
 static func apply_damage(target: Object, amount: float, type: String, source: Thing) -> void :
 	if target == null or not is_instance_valid(target) or amount <= 0.0 or not target.has_method("take_damage"):
 		return
+	if target is Thing and target.is_captured: return
 	if not Forge.has_effect_authority() or (Session.is_online() and not (target is Thing or target is Player)):
 		return
 	if not InnovationRules.allows_target(source, target):

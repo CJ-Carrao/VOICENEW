@@ -728,6 +728,10 @@ func _unhandled_input(event: InputEvent) -> void :
 		aiming = false
 	elif event.is_action_pressed("reload"):
 		hands.reload()
+	elif event.is_action_pressed("pickup"):
+		hands.pickup()
+	elif event.is_action_pressed("drop_item"):
+		hands.drop_current()
 	elif event.is_action_pressed("slot_next"):
 
 		if view != null:
@@ -1125,7 +1129,7 @@ func _queue_network_action(event: InputEvent) -> bool:
 		return true
 	if event.is_action("aim"):
 		return true
-	for action in ["reload", "exit_pilot"]:
+	for action in ["reload", "exit_pilot", "pickup", "drop_item"]:
 		if event.is_action_pressed(action):
 			provider.queue_action(action)
 			return true

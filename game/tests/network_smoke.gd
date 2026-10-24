@@ -134,6 +134,67 @@ func _success() -> void:
 				_finish(false,"Adaptation state did not reach client")
 				return
 			await create_timer(.5).timeout
+	elif OS.get_cmdline_user_args().has("--test-capture"):
+		await create_timer(3.3).timeout
+		if role == "host":
+			var r = load("res://scripts/language/recipe.gd")
+			var a = load("res://scripts/things/assembler.gd")
+			var forge = root.get_node("Forge")
+			var caster = a.build(r.new_node("pistol"),"head",root.get_node("Lexicon").data)
+			caster.set_owner_info(1,1,game.get_player(1),null)
+			game.add_thing(caster)
+			var animal = forge.spawn_child(r.new_node("dog"),"spawned",Vector3(0,40,0),Vector3.FORWARD,caster,0.0)
+			await process_frame
+			var p = game.get_player(2)
+			var spot = p.head.global_position + Vector3.FORWARD
+			var ball = forge.spawn_child(r.new_node("capture_ball"),"projectile",spot,Vector3.FORWARD,caster,0.0)
+			await process_frame
+			caster.set_owner_info(2,2,p,null)
+			var gun = forge.spawn_child(r.new_node("pistol"),"spawned",spot,Vector3.FORWARD,caster,0.0)
+			if animal == null or ball == null or gun == null:
+				_finish(false,"Capture fixture failed to spawn")
+				return
+			gun.ammo = 7
+			p.hands.give(gun,false)
+			await process_frame
+			ball.get_node("GroundMotion").set_physics_process(false)
+			ball.velocity = Vector3.ZERO
+			ball.global_position = spot
+			if not ball.get_node("CaptureBall")._attempt(weakref(animal),0.0):
+				_finish(false,"Capture failed on host")
+				return
+			await create_timer(.8).timeout
+			ball.pickup_after_ms = 0
+			if not p.hands.pickup(ball):
+				_finish(false,"Second player could not pick up full ball")
+				return
+			await create_timer(1.5).timeout
+			p.hands._throw(ball,p.head.global_position + Vector3.FORWARD,Vector3.FORWARD)
+			await create_timer(3.0).timeout
+			if animal.is_captured or animal.owner_id != 2 or not gun.ground_item:
+				_finish(false,"Host release/ownership failed")
+				return
+		else:
+			var deadline := Time.get_ticks_msec() + 6500
+			var captured_seen := false
+			var held_seen := false
+			var released_seen := false
+			var dropped_seen := false
+			while Time.get_ticks_msec() < deadline:
+				for entry in session.creations.entries.values():
+					var item = entry.thing
+					if not is_instance_valid(item): continue
+					if item.thing_id == "dog":
+						if item.is_captured and not item.visible: captured_seen = true
+						if captured_seen and not item.is_captured and item.owner_id == 2 and item.team == 2 and item.visible: released_seen = true
+					if item.thing_id == "capture_ball" and item.is_held and item.owner_id == 2: held_seen = true
+					if item.thing_id == "pistol" and item.ground_item and not item.is_held and item.visible and item.ammo == 7: dropped_seen = true
+				if captured_seen and held_seen and released_seen and dropped_seen: break
+				await create_timer(.05).timeout
+			if not (captured_seen and held_seen and released_seen and dropped_seen):
+				_finish(false,"Client capture flow failed: %s/%s/%s/%s" % [captured_seen,held_seen,released_seen,dropped_seen])
+				return
+			await create_timer(.3).timeout
 	elif chaos_test:
 		await create_timer(3.3).timeout
 		if role == "host":

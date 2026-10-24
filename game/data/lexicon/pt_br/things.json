@@ -2997,5 +2997,18 @@
       "diplodocus"
     ],
     "forms": []
+  },
+  "capture_ball": {
+    "name": "Pokébola",
+    "words": [
+      "pokebola",
+      "pokébola",
+      "pokebolas",
+      "pokébolas",
+      "poke bola",
+      "bola de captura",
+      "esfera de captura"
+    ],
+    "forms": []
   }
 }
