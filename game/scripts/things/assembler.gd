@@ -96,6 +96,11 @@ static func build(node: Dictionary, role: String, lex: LexiconData, mount_depth:
 	move.name = "Move"
 	move.setup(thing, lex)
 	thing.attach_move(move)
+	if def.get("spatial_orb") is Dictionary:
+		var orb = load("res://scripts/things/spatial_orb.gd").new()
+		orb.name = "SpatialOrb"
+		orb.setup(thing, def.spatial_orb)
+		thing.add_child(orb)
 
 	var control: = String(node.get("control", "none"))
 	if not CONTROLS.has(control):

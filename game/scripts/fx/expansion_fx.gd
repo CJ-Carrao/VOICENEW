@@ -38,6 +38,9 @@ static func burst(parent: Node, at: Vector3, radius: float, color: Color, kind: 
 			else:
 				destination = Vector3(cos(angle) * radius * 0.55, radius * (0.85 + float(i % 3) * 0.07), sin(angle) * radius * 0.55)
 		var side := clampf(radius * 0.10, 0.05, 1.0)
+		if kind in ["blue", "black"]:
+			bit.position = destination
+			destination = Vector3.ZERO
 		bit.scale = Vector3.ONE * side * 0.25
 		var tween := root.create_tween().set_parallel(true)
 		tween.tween_property(bit, "position", destination, 0.7).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)

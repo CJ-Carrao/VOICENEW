@@ -28,7 +28,7 @@ func _process(_delta: float) -> void:
 		processed += 1
 		var target = row.target.get_ref()
 		if is_instance_valid(target) and not (target is Thing and target.is_dead):
-			Combat.apply_damage(target, row.damage, "explosive", source)
+			Combat.apply_damage(target, row.damage, String(row.get("type", "explosive")), source)
 			if is_instance_valid(target) and target.has_method("apply_knockback"):
 				target.call("apply_knockback", row.push)
 		if Time.get_ticks_usec() >= until: break

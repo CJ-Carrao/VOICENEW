@@ -685,6 +685,51 @@
       "effect": "Cria escudos no mundo. Cada disparo paga o escudo; limite de tres campos por equipe.",
       "pieces": 8,
       "base_cost": 65
+    },
+    {
+      "id": "black_hole",
+      "name": "buraco negro",
+      "phrase": "quero buraco negro",
+      "group": "Espaço",
+      "effect": "Atrai e comprime. Ao tocar um buraco branco, ambos se anulam numa explosao.",
+      "pieces": 25,
+      "base_cost": 150
+    },
+    {
+      "id": "white_hole",
+      "name": "buraco branco",
+      "phrase": "quero buraco branco",
+      "group": "Espaço",
+      "effect": "Repele. Ao tocar um buraco negro, ambos se anulam numa explosao.",
+      "pieces": 25,
+      "base_cost": 150
+    },
+    {
+      "id": "cursed_blue",
+      "name": "Azul",
+      "phrase": "quero azul",
+      "group": "Espaço",
+      "effect": "Atrai e esmaga. Ao colidir com Vermelho, forma Vazio Roxo.",
+      "pieces": 25,
+      "base_cost": 100
+    },
+    {
+      "id": "reversal_red",
+      "name": "Vermelho",
+      "phrase": "quero vermelho",
+      "group": "Espaço",
+      "effect": "Repele com o dobro da forca e dano por pulso do Azul. Colisao com Azul cria Vazio Roxo.",
+      "pieces": 25,
+      "base_cost": 160
+    },
+    {
+      "id": "hollow_purple",
+      "name": "Vazio Roxo",
+      "phrase": "quero vazio roxo",
+      "group": "Espaço",
+      "effect": "Projétil que atravessa alvos e abre um caminho nos blocos. Pedido direto ou fusao de Azul com Vermelho.",
+      "pieces": 25,
+      "base_cost": 290
     }
   ],
   "combinations": [

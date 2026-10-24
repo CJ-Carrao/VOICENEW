@@ -1,0 +1,386 @@
+{
+  "_comment": "Original spatial power: cubic core with two voxel rings.",
+  "units": "meters",
+  "anchor": [
+    0,
+    0,
+    0
+  ],
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.42,
+        0.42,
+        0.42
+      ],
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "color": "#f7f3dc",
+      "tag": "core"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        0.55,
+        0.0,
+        0
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        0.4763,
+        0.275,
+        0
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        0.275,
+        0.4763,
+        0
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        0.0,
+        0.55,
+        0
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        -0.275,
+        0.4763,
+        0
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        -0.4763,
+        0.275,
+        0
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        -0.55,
+        0.0,
+        0
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        -0.4763,
+        -0.275,
+        0
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        -0.275,
+        -0.4763,
+        0
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        -0.0,
+        -0.55,
+        0
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        0.275,
+        -0.4763,
+        0
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        0.4763,
+        -0.275,
+        0
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        0.55,
+        0,
+        0.0
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        0.4763,
+        0,
+        0.275
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        0.275,
+        0,
+        0.4763
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        0.0,
+        0,
+        0.55
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        -0.275,
+        0,
+        0.4763
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        -0.4763,
+        0,
+        0.275
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        -0.55,
+        0,
+        0.0
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        -0.4763,
+        0,
+        -0.275
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        -0.275,
+        0,
+        -0.4763
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        -0.0,
+        0,
+        -0.55
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        0.275,
+        0,
+        -0.4763
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.11,
+        0.11,
+        0.11
+      ],
+      "pos": [
+        0.4763,
+        0,
+        -0.275
+      ],
+      "color": "#ffd37b",
+      "tag": "orbit"
+    }
+  ]
+}

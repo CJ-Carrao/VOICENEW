@@ -76,7 +76,7 @@ func _build() -> void:
 	content.add_child(help)
 	var tabs := HBoxContainer.new()
 	content.add_child(tabs)
-	for pair in [["ANIMAIS", "Animais"], ["GRANADAS", "Granadas de criaturas"], ["BOMBAS", "Bombas especiais"], ["ARMAS", "Armas especiais"], ["DEFESAS", "Defesas"], ["ECOLOGIA", "Ecologia"], ["COMBINAR", "Combinações"]]:
+	for pair in [["ANIMAIS", "Animais"], ["GRANADAS", "Granadas de criaturas"], ["BOMBAS", "Bombas especiais"], ["ARMAS", "Armas especiais"], ["ESPAÇO", "Espaço"], ["DEFESAS", "Defesas"], ["ECOLOGIA", "Ecologia"], ["COMBINAR", "Combinações"]]:
 		var tab := Button.new()
 		tab.text = pair[0]
 		tab.size_flags_horizontal = Control.SIZE_EXPAND_FILL

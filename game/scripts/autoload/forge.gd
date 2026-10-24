@@ -357,13 +357,13 @@ static func side_offsets(count: int, footprint: float) -> PackedFloat32Array:
 
 func spawn_child(node: Dictionary, role: String, at: Vector3, direction: Vector3, spawner: Thing, 
 		launch_speed: float = -1.0, inherit: Vector3 = Vector3.ZERO, same_generation: bool = false, 
-		speed_mult: float = 1.0) -> Thing:
+		speed_mult: float = 1.0, replace_pair: bool = false) -> Thing:
 	if not has_effect_authority() or world == null or node.is_empty() or ( not same_generation and not _depth_allows(spawner)):
 		return null
 	if Session.is_online() and not Session.creations.descendant_allowed(spawner.owner_id, node):
 		return null
 	var heavy := ProductionBudget.complex(node, Lexicon.data)
-	if heavy and not production.reserve(spawner.owner_id, live_things(spawner.owner_id).size()):
+	if heavy and not replace_pair and not production.reserve(spawner.owner_id, live_things(spawner.owner_id).size()):
 		stats.production_paused += 1
 		return null
 	if not InnovationRules.authorize_spawn(spawner, node):

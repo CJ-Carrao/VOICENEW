@@ -68,7 +68,38 @@ func _success() -> void:
 			_finish(false, "Match replication did not become active: " + session.last_error)
 			return
 	var chaos_test := OS.get_cmdline_user_args().has("--test-chaos")
-	if chaos_test:
+	if OS.get_cmdline_user_args().has("--test-spatial"):
+		await create_timer(3.3).timeout
+		if role == "host":
+			var lex = root.get_node("Lexicon").data
+			var assembler = load("res://scripts/things/assembler.gd")
+			var recipe = load("res://scripts/language/recipe.gd")
+			var forge = root.get_node("Forge")
+			var caster = assembler.build(recipe.new_node("pistol"), "head", lex)
+			caster.set_owner_info(1, 1, game.get_player(1), game.get_player(1))
+			game.add_thing(caster)
+			forge.spawn_child(recipe.new_node("cursed_blue"), "projectile", Vector3(0, 40, 0), Vector3.FORWARD, caster, 0.0)
+			await create_timer(0.3).timeout
+			caster.set_owner_info(2, 2, game.get_player(2), game.get_player(2))
+			forge.spawn_child(recipe.new_node("reversal_red"), "projectile", Vector3(.4, 40, 0), Vector3.FORWARD, caster, 0.0)
+			for step in 30: await physics_frame
+			await create_timer(1.3).timeout
+		else:
+			var spatial_deadline := Time.get_ticks_msec() + 4000
+			while Time.get_ticks_msec() < spatial_deadline:
+				var arrived := false
+				for item in game.get_node("Things").get_children():
+					if item.thing_id == "hollow_purple" and not item.is_dead: arrived = true
+				if arrived: break
+				await create_timer(0.05).timeout
+		var purples := 0
+		for item in game.get_node("Things").get_children():
+			if item.thing_id == "hollow_purple" and not item.is_dead: purples += 1
+		if purples != 1:
+			_finish(false, "Spatial fusion was not replicated: purple count=" + str(purples))
+			return
+		await create_timer(1.0 if role == "host" else 2.0).timeout
+	elif chaos_test:
 		await create_timer(3.3).timeout
 		if role == "host":
 			var forge = root.get_node("Forge")

@@ -3669,6 +3669,46 @@
       "cost": 290,
       "weight_kg": 4,
       "hp": 40
+    },
+    "black_hole": {
+      "cost": 150,
+      "weight_kg": 2,
+      "hp": 70,
+      "speed": 12,
+      "lifetime": 7,
+      "impact_damage": 0
+    },
+    "white_hole": {
+      "cost": 150,
+      "weight_kg": 2,
+      "hp": 70,
+      "speed": 12,
+      "lifetime": 7,
+      "impact_damage": 0
+    },
+    "cursed_blue": {
+      "cost": 100,
+      "weight_kg": 2,
+      "hp": 70,
+      "speed": 12,
+      "lifetime": 6,
+      "impact_damage": 0
+    },
+    "reversal_red": {
+      "cost": 160,
+      "weight_kg": 2,
+      "hp": 70,
+      "speed": 12,
+      "lifetime": 6,
+      "impact_damage": 0
+    },
+    "hollow_purple": {
+      "cost": 290,
+      "weight_kg": 2,
+      "hp": 70,
+      "speed": 20,
+      "lifetime": 4,
+      "impact_damage": 0
     }
   },
   "grafts": {

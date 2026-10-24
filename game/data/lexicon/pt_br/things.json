@@ -2765,5 +2765,60 @@
       "bomba de especie"
     ],
     "forms": []
+  },
+  "black_hole": {
+    "name": "buraco negro",
+    "words": [
+      "buraco negro",
+      "esfera negra"
+    ],
+    "forms": []
+  },
+  "white_hole": {
+    "name": "buraco branco",
+    "words": [
+      "buraco branco",
+      "esfera branca"
+    ],
+    "forms": []
+  },
+  "cursed_blue": {
+    "name": "Azul",
+    "words": [
+      "azul",
+      "tecnica azul",
+      "técnica azul",
+      "lapso azul",
+      "lapso da tecnica amaldicoada azul",
+      "lapso da técnica amaldiçoada azul",
+      "azul do gojo"
+    ],
+    "forms": []
+  },
+  "reversal_red": {
+    "name": "Vermelho",
+    "words": [
+      "vermelho",
+      "vermelhor",
+      "tecnica vermelho",
+      "técnica vermelho",
+      "reversao vermelho",
+      "reversão da técnica amaldiçoada vermelho",
+      "vermelho do gojo"
+    ],
+    "forms": []
+  },
+  "hollow_purple": {
+    "name": "Vazio Roxo",
+    "words": [
+      "vazio roxo",
+      "fazio roxo",
+      "vásio roxo",
+      "roxo do gojo",
+      "tecnica roxa",
+      "técnica roxa",
+      "hollow purple"
+    ],
+    "forms": []
   }
 }

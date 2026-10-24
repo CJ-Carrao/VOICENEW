@@ -2813,5 +2813,75 @@
         }
       }
     ]
+  },
+  "black_hole": {
+    "category": "projectile",
+    "movement": "straight",
+    "impact": "stop",
+    "threat_type": "gravity",
+    "spatial_orb": {
+      "mode": "black",
+      "life": 7,
+      "radius": 7,
+      "force": 20,
+      "damage": 6,
+      "color": "#9b83c9"
+    }
+  },
+  "white_hole": {
+    "category": "projectile",
+    "movement": "straight",
+    "impact": "stop",
+    "threat_type": "gravity",
+    "spatial_orb": {
+      "mode": "white",
+      "life": 7,
+      "radius": 7,
+      "force": 24,
+      "damage": 7,
+      "color": "#ffd37b"
+    }
+  },
+  "cursed_blue": {
+    "category": "projectile",
+    "movement": "straight",
+    "impact": "stop",
+    "threat_type": "gravity",
+    "spatial_orb": {
+      "mode": "blue",
+      "life": 6,
+      "radius": 7,
+      "force": 18,
+      "damage": 5,
+      "color": "#80c8ff"
+    }
+  },
+  "reversal_red": {
+    "category": "projectile",
+    "movement": "straight",
+    "impact": "stop",
+    "threat_type": "gravity",
+    "spatial_orb": {
+      "mode": "red",
+      "life": 6,
+      "radius": 7,
+      "force": 36,
+      "damage": 10,
+      "color": "#ffb388"
+    }
+  },
+  "hollow_purple": {
+    "category": "projectile",
+    "movement": "straight",
+    "impact": "stop",
+    "threat_type": "spatial",
+    "spatial_orb": {
+      "mode": "purple",
+      "life": 4,
+      "radius": 7,
+      "force": 0,
+      "damage": 220,
+      "color": "#e3b6ff"
+    }
   }
 }
