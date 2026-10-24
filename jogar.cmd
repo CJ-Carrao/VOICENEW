@@ -1,2 +1,2 @@
 @echo off
-start "LAVOICE Lab" /D "%~dp0build" "%~dp0build\LAVOICE-Lab-Corrigido.exe" %*
+start "LAVOICE Lab" /D "%~dp0build" "%~dp0build\LAVOICE-Lab-Jujutsu.exe" %*

@@ -1,6 +1,6 @@
 # Técnicas de Jujutsu
 
-Use `jogar.cmd`. Os participantes do online precisam atualizar a versão. Fale com V ou digite com T; as técnicas estão na aba JUJUTSU do catálogo. Ferramentas ficam na mão: clique para atacar ou ativar um domínio. Infinito, cura, adaptação e defesas funcionam enquanto equipados. Animais usam as próprias técnicas automaticamente.
+Use `jogar.cmd`, que aponta para `build/LAVOICE-Lab-Jujutsu.exe`. A versão anterior aberta permanece preservada. Os participantes do online precisam atualizar a versão. Fale com V ou digite com T; as técnicas estão na aba JUJUTSU do catálogo. Ferramentas ficam na mão: clique para atacar ou ativar um domínio. Infinito, cura, adaptação e defesas funcionam enquanto equipados. Animais usam as próprias técnicas automaticamente.
 
 | Pedido | Matéria base | Regra no jogo |
 | --- | ---: | --- |
