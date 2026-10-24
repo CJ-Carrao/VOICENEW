@@ -195,6 +195,228 @@ func _success() -> void:
 				_finish(false,"Client capture flow failed: %s/%s/%s/%s" % [captured_seen,held_seen,released_seen,dropped_seen])
 				return
 			await create_timer(.3).timeout
+	elif OS.get_cmdline_user_args().has("--test-orders-builders"):
+		await create_timer(3.3).timeout
+		var volume = load("res://scripts/world/block_volume.gd").new()
+		volume.setup(777, Vector3i(32, 8, 24), Vector3(-4, 18, -3))
+		var soil: int = volume.add_type("soil", Color("72583d"))
+		var bedrock: int = volume.add_type("soil", Color("363636"), 2)
+		volume.blocks.fill(soil)
+		for x in 32:
+			for z in 24: volume.blocks[volume.index_of(Vector3i(x, 0, z))] = bedrock
+		game.add_child(volume)
+		volume.add_to_group("terrain")
+		volume.commit_base()
+		if role == "host":
+			var callback = session.world_sync._on_cells.bind(volume)
+			volume.cells_changed.connect(callback)
+			session.world_sync._watched[volume] = callback
+		var protected_cells: int = volume.blocks.count(bedrock)
+		if role == "host":
+			var a = load("res://scripts/things/assembler.gd")
+			var r = load("res://scripts/language/recipe.gd")
+			var forge = root.get_node("Forge")
+			var caster = a.build(r.new_node("pistol"), "head", root.get_node("Lexicon").data)
+			caster.set_owner_info(2, 2, game.get_player(2), game.get_player(2))
+			game.add_thing(caster)
+			for id in [1, 2]:
+				game.get_player(id).set_physics_process(false)
+				game.get_player(id).global_position = Vector3(20 if id == 1 else 0, 20, 8)
+			game.get_player(2).matter = 300.0
+			var workers := []
+			for species in ["beaver", "spider", "ant"]:
+				await create_timer(.12).timeout
+				var animal = forge.spawn_child(r.new_node(species), "spawned", Vector3(2, 20, 2), Vector3.FORWARD, caster, 0.0)
+				if animal == null:
+					_finish(false, "Cannot spawn builder fixture")
+					return
+				animal.move.set_physics_process(false)
+				animal.set_physics_process(false)
+				workers.append(animal)
+			var until := Time.get_ticks_msec() + 14000
+			while workers[0].get_node("AnimalOrders").mode != "follow" and Time.get_ticks_msec() < until: await create_timer(.05).timeout
+			if workers[0].get_node("AnimalOrders").mode != "follow":
+				_finish(false, "Remote universal animal command did not reach host")
+				return
+			var points := [Vector3(0, 20, -1.5), Vector3(-2, 20, 0), Vector3(2, 20, 0)]
+			for i in workers.size():
+				var builder = workers[i].get_node("CreatureBuilder")
+				var reply: Dictionary = builder.begin(points[i], Vector3.FORWARD)
+				if reply.get("blocked", false):
+					_finish(false, "Builder rejected site: " + str(reply))
+					return
+				workers[i].get_node("AnimalOrders").set_order("build", builder.work_point)
+				workers[i].global_position = builder.work_point + Vector3(2 if i == 0 else 0, 0, 2)
+			while Time.get_ticks_msec() < until:
+				var finished_jobs := 0
+				for animal in workers:
+					if animal.get_node("CreatureBuilder").completed > 0: finished_jobs += 1
+				if finished_jobs == 3: break
+				await create_timer(.05).timeout
+			for animal in workers:
+				if animal.get_node("CreatureBuilder").completed != 1:
+					_finish(false, "Online builder did not finish: " + str(animal.get_node("CreatureBuilder").snapshot()))
+					return
+			var dug: int = workers[2].get_node("CreatureBuilder").dug_total
+			if dug <= 0 or volume.blocks.count(bedrock) != protected_cells or not is_equal_approx(game.get_player(2).matter, 300.0 - 48.0 - dug * .3):
+				_finish(false, "Online digging or builder economy failed")
+				return
+			await create_timer(1.5).timeout
+			for product in get_nodes_in_group("creature_builder_products"): product.thing.take_damage(1000.0, "explosive", caster)
+			await create_timer(1.0).timeout
+		else:
+			var until := Time.get_ticks_msec() + 14000
+			var beaver = null
+			var ant = null
+			while (beaver == null or ant == null) and Time.get_ticks_msec() < until:
+				for item in game.get_node("Things").get_children():
+					if item.thing_id == "beaver": beaver = item
+					if item.thing_id == "ant": ant = item
+				await create_timer(.05).timeout
+			if beaver == null or ant == null:
+				_finish(false, "Builder animals did not replicate")
+				return
+			root.get_node("Forge").request(2, "castor me siga", false, true)
+			var seen := false
+			while not seen and Time.get_ticks_msec() < until:
+				var products := 0
+				for product in get_nodes_in_group("creature_builder_products"):
+					if not product.thing.is_dead: products += 1
+				seen = products == 2 and ant.get_node("CreatureBuilder").completed == 1 and not volume.network_changes.is_empty()
+				await create_timer(.05).timeout
+			if not seen or ant.get_node("CreatureBuilder").dug_total <= 0 or volume.blocks.count(bedrock) != protected_cells:
+				_finish(false, "Constructions, digging or progress did not replicate")
+				return
+			var removed := false
+			while not removed and Time.get_ticks_msec() < until:
+				removed = true
+				for product in get_nodes_in_group("creature_builder_products"):
+					if not product.thing.is_dead: removed = false
+				await create_timer(.05).timeout
+			if not removed:
+				_finish(false, "Construction destruction did not replicate")
+				return
+			await create_timer(.3).timeout
+	elif OS.get_cmdline_user_args().has("--test-creature-combos"):
+		await create_timer(3.3).timeout
+		var status = load("res://scripts/things/status.gd")
+		var effects = load("res://scripts/fx/pokemon_fx.gd")
+		if role == "host":
+			var a = load("res://scripts/things/assembler.gd")
+			var r = load("res://scripts/language/recipe.gd")
+			var caster = a.build(r.new_node("pistol"), "head", root.get_node("Lexicon").data)
+			caster.set_owner_info(2, 2, game.get_player(2), game.get_player(2))
+			game.add_thing(caster)
+			for id in [1, 2]:
+				game.get_player(id).set_physics_process(false)
+				game.get_player(id).global_position = Vector3(15 if id == 1 else 0, 20, 4)
+			for species in ["squirtle", "pikachu", "bulbasaur", "charmander"]:
+				await create_timer(.12).timeout
+				var animal = root.get_node("Forge").spawn_child(r.new_node(species), "spawned", Vector3(0, 20, 0), Vector3.FORWARD, caster, 0.0)
+				if animal == null:
+					_finish(false, "Cannot spawn combo companion")
+					return
+				animal.move.set_physics_process(false)
+				animal.set_physics_process(false)
+			caster.set_owner_info(1, 1, game.get_player(1), game.get_player(1))
+			await create_timer(.12).timeout
+			var victim = root.get_node("Forge").spawn_child(r.new_node("elephant"), "spawned", Vector3(0, 20, -5), Vector3.FORWARD, caster, 0.0)
+			if victim == null:
+				_finish(false, "Cannot spawn combo target")
+				return
+			victim.hp = 5000.0
+			victim.max_hp = 5000.0
+			victim.move.set_physics_process(false)
+			victim.set_physics_process(false)
+			var combos = load("res://scripts/things/creature_combos.gd")
+			var until := Time.get_ticks_msec() + 12000
+			while combos.count < 2 and Time.get_ticks_msec() < until: await create_timer(.05).timeout
+			if combos.count != 2 or victim.hp >= 4900.0 or status.snapshot(victim).has("entangled") or not status.snapshot(victim).has("combo_vine_lock"):
+				_finish(false, "Remote combo damage or state failed on host")
+				return
+			await create_timer(1.0).timeout
+		else:
+			var until := Time.get_ticks_msec() + 12000
+			var victim = null
+			var ready := false
+			while not ready and Time.get_ticks_msec() < until:
+				var found := 0
+				for item in game.get_node("Things").get_children():
+					if item.thing_id in ["squirtle", "pikachu", "bulbasaur", "charmander"]: found += 1
+					if item.thing_id == "elephant": victim = item
+				ready = found == 4 and victim != null
+				await create_timer(.05).timeout
+			if not ready:
+				_finish(false, "Combo companions did not replicate")
+				return
+			game.player.look_at_point(victim.center())
+			root.get_node("Forge").request(2, "squirtle jato de agua", false, true)
+			while not status.snapshot(victim).has("wet") and Time.get_ticks_msec() < until: await create_timer(.05).timeout
+			if not status.snapshot(victim).has("wet") or victim.get_node_or_null("Status/CreatureComboMarks") == null:
+				_finish(false, "Wet state or visual did not replicate")
+				return
+			root.get_node("Forge").request(2, "pikachu choque do trovao", false, true)
+			while (effects.combo_count < 1 or status.snapshot(victim).has("wet")) and Time.get_ticks_msec() < until: await create_timer(.05).timeout
+			if effects.last_combo != "conductive" or status.snapshot(victim).has("wet"):
+				_finish(false, "Conductive reaction did not replicate")
+				return
+			root.get_node("Forge").request(2, "bulbasaur chicote de cipo", false, true)
+			while not status.snapshot(victim).has("entangled") and Time.get_ticks_msec() < until: await create_timer(.05).timeout
+			if not status.movement_locked(victim):
+				_finish(false, "Vine binding did not replicate")
+				return
+			root.get_node("Forge").request(2, "charmander brasa", false, true)
+			while (effects.combo_count < 2 or status.snapshot(victim).has("entangled")) and Time.get_ticks_msec() < until: await create_timer(.05).timeout
+			if effects.combo_count != 2 or effects.last_combo != "vine_fire" or status.movement_locked(victim) or victim.hp >= 4900.0:
+				_finish(false, "Vine fire damage, release or effect did not replicate")
+				return
+			await create_timer(.3).timeout
+	elif OS.get_cmdline_user_args().has("--test-pokemon-evolution"):
+		await create_timer(3.3).timeout
+		if role == "host":
+			var a = load("res://scripts/things/assembler.gd")
+			var r = load("res://scripts/language/recipe.gd")
+			var caster = a.build(r.new_node("pistol"), "head", root.get_node("Lexicon").data)
+			caster.set_owner_info(2, 2, game.get_player(2), game.get_player(2))
+			game.add_thing(caster)
+			var actor = root.get_node("Forge").spawn_child(r.new_node("charmander"), "spawned", Vector3(0, 20, 0), Vector3.FORWARD, caster, 0.0)
+			if actor == null:
+				_finish(false, "Cannot spawn evolution fixture")
+				return
+			actor.move.set_physics_process(false)
+			actor.set_physics_process(false)
+			actor.hp = actor.max_hp * .4
+			actor.get_node("PokemonCompanion").experience = 180.0
+			for id in [1, 2]:
+				game.get_player(id).set_physics_process(false)
+				game.get_player(id).global_position = Vector3(12 if id == 1 else 0, 20, 3)
+			game.get_player(2).matter = 300.0
+			var until := Time.get_ticks_msec() + 10000
+			while actor.thing_id != "charizard" and Time.get_ticks_msec() < until: await create_timer(.05).timeout
+			if actor.thing_id != "charizard" or actor.get_node("PokemonCompanion").experience != 50.0 or not is_equal_approx(game.get_player(2).matter, 85.0):
+				_finish(false, "Remote evolution lost XP, form or matter on host")
+				return
+			await create_timer(1.0).timeout
+		else:
+			var until := Time.get_ticks_msec() + 10000
+			var actor = null
+			while actor == null and Time.get_ticks_msec() < until:
+				for item in game.get_node("Things").get_children():
+					var power = item.get_node_or_null("PokemonCompanion")
+					if item.thing_id == "charmander" and power != null and power.experience == 180.0: actor = item
+				await create_timer(.05).timeout
+			if actor == null:
+				_finish(false, "Initial Pokemon progression did not replicate")
+				return
+			var identity: int = actor.network_id
+			root.get_node("Forge").request(2, "charmander evolua", false, true)
+			while actor.thing_id != "charmeleon" and Time.get_ticks_msec() < until: await create_timer(.05).timeout
+			root.get_node("Forge").request(2, "charmeleon evolua", false, true)
+			while actor.thing_id != "charizard" and Time.get_ticks_msec() < until: await create_timer(.05).timeout
+			if actor.thing_id != "charizard" or actor.network_id != identity or actor.get_node("PokemonCompanion").experience != 50.0 or not actor.move.hovers() or not is_equal_approx(actor.hp / actor.max_hp, .4):
+				_finish(false, "Evolved form, flight or progression did not replicate")
+				return
+			await create_timer(.3).timeout
 	elif OS.get_cmdline_user_args().has("--test-pokemon"):
 		await create_timer(3.3).timeout
 		var effects = load("res://scripts/fx/pokemon_fx.gd")
@@ -314,15 +536,14 @@ func _success() -> void:
 			await create_timer(1.5).timeout
 		else:
 			var deadline := Time.get_ticks_msec() + 5000
-			while spoken.count < 2 and Time.get_ticks_msec() < deadline:
-				await create_timer(.05).timeout
-			if spoken.count != 2 or spoken.last_mode != "shrine":
-				_finish(false,"Domain dialogue did not reach second player")
-				return
-			await create_timer(.3).timeout
 			var found := false
-			for environment in get_nodes_in_group("domain_environments"):
-				if environment.mode == "shrine" and environment.get_node_or_null("MalevolentShrineAltar") != null: found = true
+			while not found and Time.get_ticks_msec() < deadline:
+				for environment in get_nodes_in_group("domain_environments"):
+					if environment.mode == "shrine" and environment.get_node_or_null("MalevolentShrineAltar") != null and environment.get_node_or_null("ClosedShrineBarrier") != null: found = true
+				await create_timer(.05).timeout
+			if spoken.count != 0:
+				_finish(false,"Domain dialogue should remain silent on the second player")
+				return
 			if not found:
 				_finish(false, "Persistent shrine environment did not reach the second player")
 				return

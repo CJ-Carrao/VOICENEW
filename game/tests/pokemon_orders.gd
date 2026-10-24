@@ -67,7 +67,7 @@ func _run() -> void:
 		for command: String in lex.defs.commands:
 			if not command.begins_with("pokemon_"): continue
 			var config: Dictionary = lex.defs.commands[command]
-			if config.get("pokemon") != id: continue
+			if config.get("pokemon") != id or not config.has("move"): continue
 			power.remaining = 0.0
 			var phrase: String = lex.lexicon.commands[command].words[0]
 			var before: float = enemy.hp

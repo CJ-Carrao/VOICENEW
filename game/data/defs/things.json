@@ -696,7 +696,8 @@
   "spider": {
     "category": "creature",
     "movement": "chase_enemy",
-    "impact": "stop"
+    "impact": "stop",
+    "builder": "web"
   },
   "ant": {
     "category": "creature",
@@ -706,7 +707,8 @@
     "ecology_tags": [
       "ant",
       "insect"
-    ]
+    ],
+    "builder": "tunnel"
   },
   "trex": {
     "category": "creature",
@@ -3302,6 +3304,11 @@
           "style": "quick",
           "element": "normal"
         }
+      },
+      "evolution": {
+        "next": "raichu",
+        "xp": 40,
+        "cost": 75
       }
     }
   },
@@ -3334,6 +3341,11 @@
           "style": "flame",
           "element": "fire"
         }
+      },
+      "evolution": {
+        "next": "charmeleon",
+        "xp": 40,
+        "cost": 75
       }
     }
   },
@@ -3366,6 +3378,11 @@
           "style": "bubble",
           "element": "water"
         }
+      },
+      "evolution": {
+        "next": "wartortle",
+        "xp": 40,
+        "cost": 75
       }
     }
   },
@@ -3398,7 +3415,295 @@
           "style": "leaf",
           "element": "grass"
         }
+      },
+      "evolution": {
+        "next": "ivysaur",
+        "xp": 40,
+        "cost": 75
       }
     }
+  },
+  "raichu": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "pokemon",
+      "raichu"
+    ],
+    "pokemon": {
+      "id": "raichu",
+      "element": "electric",
+      "moves": {
+        "thunderbolt": {
+          "name": "Choque do trovão",
+          "damage": 38,
+          "range": 18,
+          "cooldown": 3.5,
+          "style": "electric",
+          "element": "electric"
+        },
+        "quick_attack": {
+          "name": "Ataque rápido",
+          "damage": 25,
+          "range": 9,
+          "cooldown": 2.5,
+          "style": "quick",
+          "element": "normal"
+        }
+      },
+      "evolution": {
+        "next": "",
+        "xp": 40,
+        "cost": 75
+      }
+    }
+  },
+  "charmeleon": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "pokemon",
+      "charmeleon"
+    ],
+    "pokemon": {
+      "id": "charmeleon",
+      "element": "fire",
+      "moves": {
+        "ember": {
+          "name": "Brasa",
+          "damage": 29,
+          "range": 14,
+          "cooldown": 2.8,
+          "style": "fire",
+          "element": "fire"
+        },
+        "flamethrower": {
+          "name": "Lança-chamas",
+          "damage": 50,
+          "range": 17,
+          "cooldown": 5.5,
+          "style": "flame",
+          "element": "fire"
+        }
+      },
+      "evolution": {
+        "next": "charizard",
+        "xp": 90,
+        "cost": 140
+      }
+    }
+  },
+  "charizard": {
+    "category": "creature",
+    "movement": "fly",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "pokemon",
+      "charizard"
+    ],
+    "pokemon": {
+      "id": "charizard",
+      "element": "fire",
+      "moves": {
+        "ember": {
+          "name": "Brasa",
+          "damage": 36,
+          "range": 14,
+          "cooldown": 2.8,
+          "style": "fire",
+          "element": "fire"
+        },
+        "flamethrower": {
+          "name": "Lança-chamas",
+          "damage": 62,
+          "range": 17,
+          "cooldown": 5.5,
+          "style": "flame",
+          "element": "fire"
+        }
+      },
+      "evolution": {
+        "next": "",
+        "xp": 40,
+        "cost": 75
+      }
+    },
+    "aerial": true
+  },
+  "wartortle": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "pokemon",
+      "wartortle"
+    ],
+    "pokemon": {
+      "id": "wartortle",
+      "element": "water",
+      "moves": {
+        "water_gun": {
+          "name": "Jato de água",
+          "damage": 32,
+          "range": 17,
+          "cooldown": 3.2,
+          "style": "water",
+          "element": "water"
+        },
+        "bubble": {
+          "name": "Bolhas",
+          "damage": 25,
+          "range": 13,
+          "cooldown": 2.8,
+          "style": "bubble",
+          "element": "water"
+        }
+      },
+      "evolution": {
+        "next": "blastoise",
+        "xp": 90,
+        "cost": 140
+      }
+    }
+  },
+  "blastoise": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "pokemon",
+      "blastoise"
+    ],
+    "pokemon": {
+      "id": "blastoise",
+      "element": "water",
+      "moves": {
+        "water_gun": {
+          "name": "Jato de água",
+          "damage": 40,
+          "range": 17,
+          "cooldown": 3.2,
+          "style": "water",
+          "element": "water"
+        },
+        "bubble": {
+          "name": "Bolhas",
+          "damage": 31,
+          "range": 13,
+          "cooldown": 2.8,
+          "style": "bubble",
+          "element": "water"
+        }
+      },
+      "evolution": {
+        "next": "",
+        "xp": 40,
+        "cost": 75
+      }
+    }
+  },
+  "ivysaur": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "pokemon",
+      "ivysaur"
+    ],
+    "pokemon": {
+      "id": "ivysaur",
+      "element": "grass",
+      "moves": {
+        "vine_whip": {
+          "name": "Chicote de cipó",
+          "damage": 35,
+          "range": 11,
+          "cooldown": 3.3,
+          "style": "vine",
+          "element": "grass"
+        },
+        "razor_leaf": {
+          "name": "Folha navalha",
+          "damage": 40,
+          "range": 17,
+          "cooldown": 4.2,
+          "style": "leaf",
+          "element": "grass"
+        }
+      },
+      "evolution": {
+        "next": "venusaur",
+        "xp": 90,
+        "cost": 140
+      }
+    }
+  },
+  "venusaur": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "pokemon",
+      "venusaur"
+    ],
+    "pokemon": {
+      "id": "venusaur",
+      "element": "grass",
+      "moves": {
+        "vine_whip": {
+          "name": "Chicote de cipó",
+          "damage": 43,
+          "range": 11,
+          "cooldown": 3.3,
+          "style": "vine",
+          "element": "grass"
+        },
+        "razor_leaf": {
+          "name": "Folha navalha",
+          "damage": 50,
+          "range": 17,
+          "cooldown": 4.2,
+          "style": "leaf",
+          "element": "grass"
+        }
+      },
+      "evolution": {
+        "next": "",
+        "xp": 40,
+        "cost": 75
+      }
+    }
+  },
+  "beaver": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "mammal",
+      "beaver"
+    ],
+    "builder": "dam"
+  },
+  "beaver_dam": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "builder_product": "dam"
+  },
+  "spider_web": {
+    "category": "structure",
+    "movement": "static",
+    "impact": "stop",
+    "builder_product": "web"
   }
 }

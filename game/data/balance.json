@@ -1028,6 +1028,28 @@
       "speed_mult": 0,
       "element": ""
     },
+    "wet": {
+      "duration_s": 4.0,
+      "speed_mult": 1.0,
+      "element": "water"
+    },
+    "entangled": {
+      "duration_s": 1.6,
+      "speed_mult": 0.0,
+      "element": "grass"
+    },
+    "combo_vine_lock": {
+      "duration_s": 6.6,
+      "speed_mult": 1.0
+    },
+    "combo_shock_lock": {
+      "duration_s": 2.0,
+      "speed_mult": 1.0
+    },
+    "combo_fire_lock": {
+      "duration_s": 2.0,
+      "speed_mult": 1.0
+    },
     "frozen": {
       "duration_s": 2.5,
       "speed_mult": 0.3,
@@ -1040,7 +1062,18 @@
       "element": "fire"
     },
     "element_hit_duration_mult": 0.5,
-    "affects_own_team": false
+    "affects_own_team": false,
+    "webbed": {
+      "duration_s": 1.2,
+      "speed_mult": 0.35,
+      "element": ""
+    }
+  },
+  "creature_combos": {
+    "shock_mult": 0.5,
+    "shock_bonus_cap": 18.0,
+    "fire_mult": 0.35,
+    "fire_bonus_cap": 14.0
   },
   "control": {
     "_comment": "control auto (DESIGN 3.5): IA simples. Mira no inimigo mais perto, chega até approach_distance e usa (on_fire) a cada fire_interval_s se ele estiver a menos de fire_range. Na mão, 'automático' = segura e continua atirando.",
@@ -3972,6 +4005,76 @@
       "speed": 2.6,
       "weight_kg": 9,
       "impact_damage": 12
+    },
+    "raichu": {
+      "cost": 270,
+      "hp": 230,
+      "speed": 4.2,
+      "weight_kg": 9.125249999999998,
+      "impact_damage": 18
+    },
+    "charmeleon": {
+      "cost": 280,
+      "hp": 230,
+      "speed": 3.4,
+      "weight_kg": 13.333895999999996,
+      "impact_damage": 18
+    },
+    "charizard": {
+      "cost": 480,
+      "hp": 340,
+      "speed": 4.4,
+      "weight_kg": 33.514875,
+      "impact_damage": 25
+    },
+    "wartortle": {
+      "cost": 280,
+      "hp": 255,
+      "speed": 3.0,
+      "weight_kg": 14.048063999999997,
+      "impact_damage": 16
+    },
+    "blastoise": {
+      "cost": 480,
+      "hp": 370,
+      "speed": 2.7,
+      "weight_kg": 33.514875,
+      "impact_damage": 24
+    },
+    "ivysaur": {
+      "cost": 285,
+      "hp": 260,
+      "speed": 2.9,
+      "weight_kg": 14.414516999999998,
+      "impact_damage": 18
+    },
+    "venusaur": {
+      "cost": 485,
+      "hp": 380,
+      "speed": 2.5,
+      "weight_kg": 36.86400000000001,
+      "impact_damage": 25
+    },
+    "beaver": {
+      "cost": 28,
+      "hp": 100,
+      "speed": 2.3,
+      "weight_kg": 18,
+      "impact_damage": 9
+    },
+    "beaver_dam": {
+      "cost": 32,
+      "hp": 220,
+      "speed": 0,
+      "weight_kg": 45,
+      "impact_damage": 0
+    },
+    "spider_web": {
+      "cost": 16,
+      "hp": 40,
+      "speed": 0,
+      "weight_kg": 1,
+      "impact_damage": 0
     }
   },
   "grafts": {
@@ -4031,5 +4134,20 @@
       "spatial": 48,
       "kinetic": 14
     }
+  },
+  "animal_orders": {
+    "range_m": 60,
+    "tick_s": 0.2,
+    "guard_radius_m": 10,
+    "retaliation_s": 10
+  },
+  "creature_builders": {
+    "dam_seconds": 4,
+    "web_seconds": 2.5,
+    "work_tick_s": 0.25,
+    "dig_cell_cost": 0.3,
+    "dig_cells_per_job": 96,
+    "dig_team_cell_cap": 512,
+    "cooldown_s": 8
   }
 }

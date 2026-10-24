@@ -22625,5 +22625,15 @@
       "que extermina todos bulbassaur",
       "que extermina todos os animais da espécie bulbassaur"
     ]
+  },
+  "aggressive": {
+    "words": [
+      "agressivo",
+      "agressiva",
+      "agressivos",
+      "agressivas",
+      "que ataca tudo na sua frente",
+      "que ataque tudo na sua frente"
+    ]
   }
 }

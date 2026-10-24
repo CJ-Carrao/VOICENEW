@@ -11,7 +11,7 @@ tags:
 
 Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · Relacionado: [[Projetos/lavoice-lab/dinossauros|Dinossauros e misturas]] · [[Projetos/lavoice-lab/captura|Pokébola e itens no chão]] · [[Projetos/lavoice-lab/jujutsu|Técnicas de Jujutsu e domínios]]
 
-Abra `C:\Tony\Projetos\lavoice-lab\build\LAVOICE-Lab-Corrigido.exe` ou `jogar.cmd`. **F2** mostra 76 criações adicionadas e uma aba **COMBINAR** com exemplos. Segure **V**, fale e solte; **T** aceita os mesmos pedidos por texto. Espere a montagem terminar antes de usar. Para jogar online, todos precisam desta mesma versão.
+Abra `jogar.cmd` para usar a versão atual. **F2** mostra o catálogo e uma aba **COMBINAR** com exemplos. Segure **V**, fale e solte; **T** aceita os mesmos pedidos por texto. Espere a montagem terminar antes de usar. Para jogar online, todos precisam desta mesma versão. Veja também [[Projetos/lavoice-lab/animais-ordens|Ordens, animais agressivos e construções]].
 
 ## Pedidos para experimentar
 

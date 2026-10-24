@@ -350,6 +350,8 @@ func attach_move(component: ThingMove) -> void :
 
 
 func set_owner_info(player_id: int, owner_team: int, player: Node3D, created_by: Node3D) -> void :
+	var orders := get_node_or_null("AnimalOrders")
+	if orders != null and owner_id != player_id: orders.set_order("aggressive" if orders.mode == "aggressive" or bool(node_data.get("mods", {}).get("aggressive", false)) else "free", global_position if is_inside_tree() else Vector3.ZERO)
 	owner_id = player_id
 	team = owner_team
 	owner_player = player
@@ -423,6 +425,10 @@ func set_held(held: bool) -> void :
 
 func set_captured(captured: bool) -> void:
 	if is_captured == captured: return
+	var orders := get_node_or_null("AnimalOrders")
+	if orders != null:
+		if captured: orders.on_capture()
+		else: orders.on_release()
 	is_captured = captured
 	if captured:
 		_capture_was_active = is_active
@@ -889,10 +895,13 @@ func _arena_half_size() -> float:
 
 func _apply_role_layers() -> void :
 	collision_layer = PhysicsLayers.PROJECTILES if role == "projectile" and not is_anchored else PhysicsLayers.THINGS
-	collision_mask = PhysicsLayers.SOLID
+	if String(_def.get("builder_product", "")) == "web": collision_layer = PhysicsLayers.TRAPS
+	collision_mask = PhysicsLayers.SOLID & ~PhysicsLayers.TRAPS if category in ["creature", "vehicle", "structure"] else PhysicsLayers.SOLID
 
 
 func _vanish() -> void :
+	var builder := get_node_or_null("CreatureBuilder")
+	if builder != null: builder.cancel()
 
 	for child in get_children():
 		if child is Thing and not (child as Thing).is_dead:

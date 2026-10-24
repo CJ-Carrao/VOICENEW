@@ -253,7 +253,8 @@
       "charmander": "elimina todos: Charmander",
       "squirtle": "elimina todos: Squirtle",
       "bulbasaur": "elimina todos: Bulbasaur"
-    }
+    },
+    "aggressive": "agressivo"
   },
   "control": {
     "player": "pilotável",

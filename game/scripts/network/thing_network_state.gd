@@ -17,6 +17,12 @@ static func capture(thing: Thing) -> Dictionary:
 	state["team"] = thing.team
 	state["captured"] = thing.is_captured
 	state["ground_item"] = thing.ground_item
+	var orders = thing.get_node_or_null("AnimalOrders")
+	if orders != null: state["animal_orders"] = orders.snapshot()
+	var builder = thing.get_node_or_null("CreatureBuilder")
+	if builder != null: state["builder"] = builder.snapshot()
+	var pokemon = thing.get_node_or_null("PokemonCompanion")
+	if pokemon != null: state["pokemon"] = pokemon.snapshot()
 	var ball = thing.get_node_or_null("CaptureBall")
 	if ball != null:
 		state["capture_ball"] = {"occupant_id": ball.occupant_id, "occupant_name": ball.occupant_name, "result": ball.result, "shake_left": ball.shake_left}
@@ -44,10 +50,16 @@ static func capture(thing: Thing) -> Dictionary:
 static func apply(thing: Thing, state: Dictionary) -> void :
 	if not thing.network_replica or state.is_empty():
 		return
+	var pokemon = thing.get_node_or_null("PokemonCompanion")
+	if pokemon != null and state.get("pokemon") is Dictionary: pokemon.apply_snapshot(state.pokemon)
 	var owner_id := int(state.get("owner_id", thing.owner_id))
 	var team := int(state.get("team", thing.team))
 	if owner_id != thing.owner_id or team != thing.team:
 		thing.set_owner_info(owner_id, team, Forge.world.get_player(owner_id) if Forge.world != null else null, null)
+	var orders = thing.get_node_or_null("AnimalOrders")
+	if orders != null and state.get("animal_orders") is Dictionary: orders.apply_snapshot(state.animal_orders)
+	var builder = thing.get_node_or_null("CreatureBuilder")
+	if builder != null and state.get("builder") is Dictionary: builder.apply_snapshot(state.builder)
 	var attachments: Array = state.get("attachments", [])
 	var mods: Dictionary = thing.node_data.get_or_add("mods", {})
 	if attachments != mods.get("attachments", []):

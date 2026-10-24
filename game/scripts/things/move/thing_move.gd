@@ -109,6 +109,13 @@ func _physics_process(delta: float) -> void :
 	if thing == null or not thing.has_simulation_authority()\
 	or landed or not thing.is_active or thing.is_held or thing.is_dead or thing.ground_item:
 		return
+	if Status.movement_locked(thing):
+		thing.velocity = Vector3.ZERO
+		return
+	var orders := thing.get_node_or_null("AnimalOrders")
+	if orders != null and orders.active():
+		orders.drive(delta)
+		return
 	step(delta)
 
 
@@ -118,6 +125,9 @@ func step(_delta: float) -> void :
 
 
 func travel(motion: Vector3) -> void :
+	if Status.movement_locked(thing):
+		thing.velocity = Vector3.ZERO
+		return
 	if motion.length_squared() < 1e-10:
 		return
 	var collision_info: = thing.move_and_collide(motion * Status.speed_mult(thing))

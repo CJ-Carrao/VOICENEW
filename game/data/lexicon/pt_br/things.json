@@ -3148,5 +3148,77 @@
       "bulbassaur"
     ],
     "forms": []
+  },
+  "raichu": {
+    "name": "Raichu",
+    "words": [
+      "raichu"
+    ],
+    "forms": []
+  },
+  "charmeleon": {
+    "name": "Charmeleon",
+    "words": [
+      "charmeleon"
+    ],
+    "forms": []
+  },
+  "charizard": {
+    "name": "Charizard",
+    "words": [
+      "charizard"
+    ],
+    "forms": []
+  },
+  "wartortle": {
+    "name": "Wartortle",
+    "words": [
+      "wartortle"
+    ],
+    "forms": []
+  },
+  "blastoise": {
+    "name": "Blastoise",
+    "words": [
+      "blastoise"
+    ],
+    "forms": []
+  },
+  "ivysaur": {
+    "name": "Ivysaur",
+    "words": [
+      "ivysaur"
+    ],
+    "forms": []
+  },
+  "venusaur": {
+    "name": "Venusaur",
+    "words": [
+      "venusaur"
+    ],
+    "forms": []
+  },
+  "beaver": {
+    "name": "castor",
+    "words": [
+      "castor",
+      "castores",
+      "beaver"
+    ],
+    "forms": []
+  },
+  "beaver_dam": {
+    "name": "barragem de castor",
+    "words": [
+      "barragem de castor"
+    ],
+    "forms": []
+  },
+  "spider_web": {
+    "name": "teia de aranha",
+    "words": [
+      "teia de aranha"
+    ],
+    "forms": []
   }
 }

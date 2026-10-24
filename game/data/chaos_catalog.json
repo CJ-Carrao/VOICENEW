@@ -1036,6 +1036,78 @@
       "effect": "Comandos: Bulbasaur, chicote de cipó; Bulbasaur, folha navalha. Aceita captura e misturas.",
       "pieces": 27,
       "base_cost": 105
+    },
+    {
+      "id": "raichu",
+      "name": "Raichu",
+      "phrase": "quero um Raichu",
+      "group": "Pokémon",
+      "effect": "Forma evoluída. Aceita ordens, captura e misturas.",
+      "pieces": 30,
+      "base_cost": 270
+    },
+    {
+      "id": "charmeleon",
+      "name": "Charmeleon",
+      "phrase": "quero um Charmeleon",
+      "group": "Pokémon",
+      "effect": "Forma evoluída. Aceita ordens, captura e misturas.",
+      "pieces": 22,
+      "base_cost": 280
+    },
+    {
+      "id": "charizard",
+      "name": "Charizard",
+      "phrase": "quero um Charizard",
+      "group": "Pokémon",
+      "effect": "Forma evoluída. Aceita ordens, captura e misturas.",
+      "pieces": 31,
+      "base_cost": 480
+    },
+    {
+      "id": "wartortle",
+      "name": "Wartortle",
+      "phrase": "quero um Wartortle",
+      "group": "Pokémon",
+      "effect": "Forma evoluída. Aceita ordens, captura e misturas.",
+      "pieces": 25,
+      "base_cost": 280
+    },
+    {
+      "id": "blastoise",
+      "name": "Blastoise",
+      "phrase": "quero um Blastoise",
+      "group": "Pokémon",
+      "effect": "Forma evoluída. Aceita ordens, captura e misturas.",
+      "pieces": 31,
+      "base_cost": 480
+    },
+    {
+      "id": "ivysaur",
+      "name": "Ivysaur",
+      "phrase": "quero um Ivysaur",
+      "group": "Pokémon",
+      "effect": "Forma evoluída. Aceita ordens, captura e misturas.",
+      "pieces": 27,
+      "base_cost": 285
+    },
+    {
+      "id": "venusaur",
+      "name": "Venusaur",
+      "phrase": "quero um Venusaur",
+      "group": "Pokémon",
+      "effect": "Forma evoluída. Aceita ordens, captura e misturas.",
+      "pieces": 31,
+      "base_cost": 485
+    },
+    {
+      "id": "beaver",
+      "name": "Castor",
+      "phrase": "quero um castor",
+      "group": "Animais",
+      "effect": "Diga: castor, construa uma barragem. Aceita ordens, captura e misturas.",
+      "pieces": 23,
+      "base_cost": 28
     }
   ],
   "combinations": [

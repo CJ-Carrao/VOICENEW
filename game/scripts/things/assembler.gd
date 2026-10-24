@@ -98,6 +98,21 @@ static func build(node: Dictionary, role: String, lex: LexiconData, mount_depth:
 	move.name = "Move"
 	move.setup(thing, lex)
 	thing.attach_move(move)
+	if thing.category == "creature":
+		var orders = load("res://scripts/things/animal_orders.gd").new()
+		orders.name = "AnimalOrders"
+		orders.setup(thing)
+		thing.add_child(orders)
+	if def.has("builder"):
+		var builder = load("res://scripts/things/creature_builder.gd").new()
+		builder.name = "CreatureBuilder"
+		builder.setup(thing, String(def.builder))
+		thing.add_child(builder)
+	if def.has("builder_product"):
+		var product = load("res://scripts/things/builder_product.gd").new()
+		product.name = "BuilderProduct"
+		product.setup(thing, String(def.builder_product))
+		thing.add_child(product)
 	if bool(def.get("capture_ball", false)):
 		var ball = load("res://scripts/things/capture_ball.gd").new()
 		ball.name = "CaptureBall"

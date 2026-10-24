@@ -948,5 +948,9 @@
   "purge_species_bulbasaur": {
     "key": "target_species",
     "value": "bulbasaur"
+  },
+  "aggressive": {
+    "key": "aggressive",
+    "value": true
   }
 }

@@ -674,6 +674,8 @@ func _command(player_id: int, command: String) -> Dictionary:
 	if player == null:
 		return {}
 	var settings: Dictionary = Lexicon.data.defs.commands.get(command, {})
+	if settings.has("animal_order"):
+		return load("res://scripts/things/animal_orders.gd").request(player, settings)
 	if settings.has("pokemon"):
 		return load("res://scripts/things/pokemon_companion.gd").order(player, settings)
 	match command:

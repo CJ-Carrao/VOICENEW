@@ -176,7 +176,7 @@ func expand_domain() -> bool:
 	domain_until = clock + 6.0
 	domain_origin = center()
 	domain_up = thing.up()
-	if domain_mode == "void":
+	if domain_mode in ["void", "shrine"]:
 		# Center a nearby duel inside the sphere; never teleport a distant opponent into it.
 		var best := 16.0
 		for target in get_tree().get_nodes_in_group(Combat.COMBATANTS_GROUP):
@@ -189,7 +189,7 @@ func expand_domain() -> bool:
 	domain_clashing = false
 	domain_next_pulse = clock + .65
 	domain_members.clear()
-	if domain_mode == "void":
+	if domain_mode in ["void", "shrine"]:
 		var candidates := JujutsuRules.candidates(get_tree())
 		if is_instance_valid(thing.owner_player) and thing.is_held: candidates.append(thing.owner_player)
 		for member in candidates:
@@ -255,6 +255,12 @@ func _enemy(target: Object) -> bool:
 	if target is Thing and (target.is_dead or target.is_captured or target.is_held): return false
 	return Combat.affects(thing, target)
 
+func _domain_target(target: Object) -> bool:
+	# Area domains also affect the caster's creatures, but never the caster itself.
+	if target is Thing and is_instance_valid(target) and target != thing and target.category == "creature":
+		return not target.is_dead and not target.is_captured and not target.is_held
+	return _enemy(target)
+
 func _queue(target: Node3D, amount: float, kind: String) -> void:
 	if not is_instance_valid(jobs) or jobs.is_queued_for_deletion():
 		jobs = load("res://scripts/things/blast_work.gd").new()
@@ -270,7 +276,7 @@ func _domain() -> void:
 			domain_clashing = true
 			return
 	if clock < domain_until - 5.35: return # The barrier forms before sure-hit begins.
-	if domain_mode == "void":
+	if domain_mode in ["void", "shrine"]:
 		for reference in domain_members:
 			var member = reference.get_ref()
 			if not is_instance_valid(member) or (member is Thing and (member.is_dead or member.is_captured)): continue
@@ -278,21 +284,28 @@ func _domain() -> void:
 			var offset: Vector3 = Combat.center_of(member) - domain_origin
 			if offset.length() > 8.4:
 				member.global_position -= offset.normalized() * (offset.length() - 8.4)
-		_void_paralysis()
-		return
+		if domain_mode == "void":
+			_void_paralysis()
+			return
 	if clock < domain_next_pulse: return
 	domain_next_pulse = clock + .75
 	var applied := 0
-	for target in JujutsuRules.candidates(get_tree()):
-		if not _enemy(target) or domain_origin.distance_to(Combat.center_of(target)) > 9.0: continue
+	var candidates := JujutsuRules.candidates(get_tree())
+	if candidates.is_empty(): return
+	var scanned := 0
+	for step in candidates.size():
+		var target = candidates[(void_scan_cursor + step) % candidates.size()]
+		scanned += 1
+		if not _domain_target(target) or domain_origin.distance_to(Combat.center_of(target)) > 9.0: continue
 		if domain_mode == "shrine": _queue(target, 9.0, "domain_slash")
 		applied += 1
 		if applied >= 16: break
+	void_scan_cursor = (void_scan_cursor + scanned) % candidates.size()
 	if domain_mode == "shrine": _cut(domain_origin, domain_origin, 2.5, 35.0)
 
 func void_affects(target: Node3D) -> bool:
 	if not is_instance_valid(thing) or thing.is_dead or thing.is_captured or not thing.is_active or domain_mode != "void" or domain_until <= clock or domain_clashing: return false
-	if clock < domain_until - 5.35 or not _enemy(target) or domain_origin.distance_to(Combat.center_of(target)) > 9.0: return false
+	if clock < domain_until - 5.35 or not _domain_target(target) or domain_origin.distance_to(Combat.center_of(target)) > 9.0: return false
 	if JujutsuRules.field(target, "simple_domain") != null: return false
 	var adaptation = JujutsuRules.field(target, "adaptation")
 	return adaptation == null or not adaptation.adapted("domain_void")

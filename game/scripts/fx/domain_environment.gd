@@ -69,30 +69,31 @@ func _build() -> void:
 	for i in 48:
 		var a := TAU * i / 48.0
 		_box(ring, Vector3(.08, .07, 1.13), Vector3(cos(a) * 8.9, floor_y + .06, sin(a) * 8.9), energy, Vector3(0, -a, 0))
+	var sphere := SphereMesh.new()
+	sphere.radius = 9.0
+	sphere.height = 18.0
+	sphere.radial_segments = 48
+	sphere.rings = 24
+	var shell := MeshInstance3D.new()
+	shell.name = "ClosedVoidBarrier" if mode == "void" else "ClosedShrineBarrier"
+	shell.mesh = sphere
+	var shader := ShaderMaterial.new()
+	shader.shader = load("res://shaders/domain_void.gdshader")
+	shader.set_shader_parameter("shrine_interior", mode == "shrine")
+	shell.material_override = shader
+	shell.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	add_child(shell)
+	var barrier := StaticBody3D.new()
+	barrier.name = "VoidBarrierBody" if mode == "void" else "ShrineBarrierBody"
+	barrier.collision_layer = PhysicsLayers.WORLD
+	barrier.collision_mask = 0
+	barrier_shape = CollisionShape3D.new()
+	barrier_shape.shape = sphere.create_trimesh_shape()
+	barrier_shape.shape.backface_collision = true
+	barrier_shape.disabled = true
+	barrier.add_child(barrier_shape)
+	add_child(barrier)
 	if mode == "void":
-		var sphere := SphereMesh.new()
-		sphere.radius = 9.0
-		sphere.height = 18.0
-		sphere.radial_segments = 48
-		sphere.rings = 24
-		var shell := MeshInstance3D.new()
-		shell.name = "ClosedVoidBarrier"
-		shell.mesh = sphere
-		var shader := ShaderMaterial.new()
-		shader.shader = load("res://shaders/domain_void.gdshader")
-		shell.material_override = shader
-		shell.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-		add_child(shell)
-		var barrier := StaticBody3D.new()
-		barrier.name = "VoidBarrierBody"
-		barrier.collision_layer = PhysicsLayers.WORLD
-		barrier.collision_mask = 0
-		barrier_shape = CollisionShape3D.new()
-		barrier_shape.shape = sphere.create_trimesh_shape()
-		barrier_shape.shape.backface_collision = true
-		barrier_shape.disabled = true
-		barrier.add_child(barrier_shape)
-		add_child(barrier)
 		var stars := MultiMeshInstance3D.new()
 		stars.name = "InformationStreams"
 		var instances := MultiMesh.new()

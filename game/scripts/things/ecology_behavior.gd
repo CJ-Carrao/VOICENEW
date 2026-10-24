@@ -59,6 +59,8 @@ func _produce() -> void:
 
 
 func _hunt() -> void:
+	var orders := thing.get_node_or_null("AnimalOrders")
+	if orders != null and orders.active(): return
 	if Forge.world == null or thing.move == null:
 		return
 	thing.move.steering = true

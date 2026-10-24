@@ -44,16 +44,15 @@ func _run() -> void:
 	var before: int = callout.count
 	var response: Dictionary = forge.request(1, "expansão de domínio")
 	check(response.get("domain_expanded") == "void" and gojo.get_node("Jujutsu").domain_until > 0, "Command did not activate equipped Gojo domain")
-	check(callout.count == before + 1 and callout.last_text.contains("Vazio Infinito"), "Gojo announcement missing")
+	check(callout.count == before and callout.last_text.is_empty(), "Gojo domain should not announce dialogue")
+	check(root.find_children("DomainWords", "", true, false).is_empty() and root.find_children("DomainSubtitle", "", true, false).is_empty(), "Gojo domain should not create captions")
 	response = forge.request(1, "expansão de domínio")
-	check(response.get("blocked", false) and callout.count == before + 1, "Repeated voice command bypassed cooldown or spammed dialogue")
+	check(response.get("blocked", false) and callout.count == before, "Repeated voice command bypassed cooldown or spammed dialogue")
 	var sukuna = equip("malevolent_shrine")
 	response = forge.request(1, "expansao de dominio")
 	check(response.get("domain_expanded") == "shrine" and sukuna.get_node("Jujutsu").domain_until > 0, "Command did not choose equipped Sukuna domain")
-	check(callout.last_text.contains("Santuário Malevolente"), "Sukuna announcement missing")
-	for mode in ["void", "shrine"]:
-		var stream = load("res://assets/audio/domains/" + mode + ".wav") as AudioStream
-		check(stream != null and stream.get_length() > 1.0, "Spoken audio clip missing: " + mode)
+	check(callout.count == before and callout.last_text.is_empty(), "Sukuna domain should not announce dialogue")
+	check(root.find_children("DomainWords", "", true, false).is_empty() and root.find_children("DomainSubtitle", "", true, false).is_empty(), "Domains should not create captions")
 	var result := {"failures": failures, "announcements": callout.count, "last_line": callout.last_text}
 	var file := FileAccess.open(ProjectSettings.globalize_path("res://").path_join("../analysis/domain-command.json").simplify_path(), FileAccess.WRITE)
 	file.store_string(JSON.stringify(result, "  "))

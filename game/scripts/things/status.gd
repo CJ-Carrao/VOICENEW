@@ -20,11 +20,24 @@ var _shell: MeshInstance3D
 var _material: StandardMaterial3D
 var _void_sources: Dictionary = {}
 var _void_check_left := 0.0
+var _combo_marks: Node3D
+var _combo_signature := ""
 
 static func paralyzed(target: Node) -> bool:
 	if not is_instance_valid(target): return false
 	var status := of(target)
 	return status != null and float(status.remaining.get("void_overload", 0.0)) > 0.0
+
+static func movement_locked(target: Node) -> bool:
+	var status := of(target)
+	return status != null and (float(status.remaining.get("void_overload", 0.0)) > 0.0 or float(status.remaining.get("entangled", 0.0)) > 0.0)
+
+static func remove_effect(target: Node, kind: String) -> void:
+	var status := of(target)
+	if status == null: return
+	status.remaining.erase(kind)
+	status._sources.erase(kind)
+	status._refresh_presentation()
 
 static func apply_void(target: Node3D, source: Thing) -> void:
 	apply(target, "void_overload", source)
@@ -87,7 +100,7 @@ static func clear(target: Node) -> void :
 func _add(kind: String, duration: float, source: Thing) -> void :
 	remaining[kind] = maxf(float(remaining.get(kind, 0.0)), duration)
 	_sources[kind] = source
-	_update_shell(kind)
+	_refresh_presentation()
 
 
 func _speed_mult() -> float:
@@ -141,6 +154,42 @@ func _count_down(delta: float) -> void :
 		remaining[kind] = float(remaining[kind]) - delta
 		if float(remaining[kind]) <= 0.0:
 			remaining.erase(kind)
+	_refresh_presentation()
+
+func _refresh_presentation() -> void:
+	var visible_kind := ""
+	for kind in ["void_overload", "entangled", "webbed", "frozen", "burning", "wet"]:
+		if float(remaining.get(kind, 0.0)) > 0.0:
+			visible_kind = kind
+			break
+	if not visible_kind.is_empty(): _update_shell(visible_kind)
+	if _shell != null: _shell.visible = not visible_kind.is_empty()
+	var signature := ("wet" if float(remaining.get("wet", 0.0)) > 0.0 else "") + ("vines" if float(remaining.get("entangled", 0.0)) > 0.0 else "")
+	if signature == _combo_signature: return
+	_combo_signature = signature
+	if is_instance_valid(_combo_marks):
+		_combo_marks.hide()
+		_combo_marks.queue_free()
+	if signature.is_empty(): return
+	_combo_marks = Node3D.new()
+	_combo_marks.name = "CreatureComboMarks"
+	add_child(_combo_marks)
+	var size: Vector3 = _target.bounds.size if _target is Thing else Vector3.ONE
+	var cube := BoxMesh.new()
+	for effect in ["wet", "entangled"]:
+		if float(remaining.get(effect, 0.0)) <= 0.0: continue
+		var material := StandardMaterial3D.new()
+		material.albedo_color = Color("79c7dd") if effect == "wet" else Color("74965b")
+		for i in 8:
+			var piece := MeshInstance3D.new()
+			piece.mesh = cube
+			piece.material_override = material
+			piece.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+			_combo_marks.add_child(piece)
+			var angle := TAU * (i % 4) / 4.0
+			piece.position = Vector3(cos(angle) * (size.x * .5 + .06), size.y * (-.20 if i < 4 else .20), sin(angle) * (size.z * .5 + .06))
+			piece.rotation.y = -angle
+			piece.scale = Vector3(.07, .16, .07) if effect == "wet" else Vector3(.07, .08, (size.z if i % 2 == 0 else size.x) + .18)
 
 
 
@@ -148,6 +197,9 @@ func _update_shell(kind: String) -> void :
 	var element: = String(Lexicon.bal("status.%s.element" % kind, ""))
 	var tint: = Color.from_string(String((Lexicon.data.elements.get(element, {}) as Dictionary).get("tint", "#ffffff")), Color.WHITE)
 	if kind == "void_overload": tint = Color("aebce4")
+	if kind == "wet": tint = Color("79c7dd")
+	if kind == "entangled": tint = Color("74965b")
+	if kind == "webbed": tint = Color("d1d5c3")
 	if _shell == null:
 		_shell = MeshInstance3D.new()
 		var sphere: = SphereMesh.new()
@@ -194,4 +246,4 @@ static func apply_snapshot(target: Node3D, values: Dictionary) -> void :
 		target.add_child(status)
 	status.remaining = values.duplicate()
 	status.visible = true
-	status._update_shell(str(values.keys()[0]))
+	status._refresh_presentation()

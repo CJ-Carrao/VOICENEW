@@ -8,7 +8,7 @@ extends RefCounted
 const COMBATANTS_GROUP: = "combatants"
 
 
-static func apply_damage(target: Object, amount: float, type: String, source: Thing) -> void :
+static func apply_damage(target: Object, amount: float, type: String, source: Thing, delivery: String = "") -> void :
 	if target == null or not is_instance_valid(target) or amount <= 0.0 or not target.has_method("take_damage"):
 		return
 	if target is Thing and target.is_captured: return
@@ -16,15 +16,31 @@ static func apply_damage(target: Object, amount: float, type: String, source: Th
 		return
 	if not InnovationRules.allows_target(source, target):
 		return
+	var order_owner = load("res://scripts/things/animal_orders.gd").of(source)
+	if order_owner != null and order_owner.mode == "aggressive" and target == order_owner.thing.owner_player: return
 	var final: = amount
+	var combo := {}
+	if type in ["water", "electric", "fire"] or delivery == "vine":
+		combo = load("res://scripts/things/creature_combos.gd").prepare(target, source, type, delivery, amount)
+		final += float(combo.get("bonus", 0.0))
 	if source != null and target == source.owner_player:
 		final *= Lexicon.balf("combat.self_damage_mult")
 	final = JujutsuRules.damage(target, final, type, source)
 	if final <= 0.0: return
 	final = InnovationRules.protected_damage(target, final, type, source)
+	var previous: Variant = target.get("health") if target is Player else target.get("hp") if target is Thing else null
 	target.call("take_damage", final, type, source)
 	if not is_instance_valid(target):
 		return
+	if source != null and previous != null:
+		var current: Variant = target.get("health") if target is Player else target.get("hp")
+		if current != null:
+			var dealt := maxf(0.0, float(previous) - maxf(0.0, float(current)))
+			if dealt > 0.0 and target is Player and source.owner_player != target and source.team != target.team:
+				var attacker: Node3D = order_owner.thing if order_owner != null else source if source.category == "creature" else source.owner_player
+				if is_instance_valid(attacker): target.set_meta("animal_last_attacker", {"source": weakref(attacker), "at": Time.get_ticks_msec()})
+			load("res://scripts/things/pokemon_companion.gd").record_damage(source, target, dealt)
+			if dealt > 0.0 and not combo.is_empty(): load("res://scripts/things/creature_combos.gd").landed(target, source, combo)
 	_report_hit(target, final, source)
 	if target is Node3D and (target as Node3D).is_in_group(COMBATANTS_GROUP):
 		var node: = target as Node3D
@@ -64,6 +80,9 @@ static func hit_structure(target: Object, point: Vector3, shape_index: int, amou
 static func affects(source: Thing, target: Object) -> bool:
 	if not is_instance_valid(source) or target == source or not is_instance_valid(target):
 		return false
+	var orders = load("res://scripts/things/animal_orders.gd").of(source)
+	if orders != null and orders.active() and not orders.allows(target): return false
+	if orders != null and orders.mode == "aggressive": return InnovationRules.allows_target(source, target)
 	if not InnovationRules.target_diet(source).is_empty():
 		return InnovationRules.allows_target(source, target)
 	if bool(Lexicon.bal("status.affects_own_team", false)):
@@ -204,6 +223,8 @@ static func _crater(source: Thing, at: Vector3, radius: float, damage: float) ->
 
 
 static func nearest_target(source: Thing, from: Vector3, tree: SceneTree) -> Node3D:
+	var orders = load("res://scripts/things/animal_orders.gd").of(source)
+	if orders != null and orders.active(): return orders.combat_target()
 	var diet := InnovationRules.target_diet(source)
 	if diet.is_empty(): return nearest_enemy(from, source.team, tree)
 	if Forge.world == null: return null

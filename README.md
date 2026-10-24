@@ -32,6 +32,9 @@ Exemplos: “quero um cachorro com cara de tiranossauro rex”, “quero um Pika
 - Armas, bombas, defesas, colônias e dietas seletivas.
 - Mahoraga, Infinito, técnicas do Gojo e Sukuna e expansões de domínio.
 - Vazio Infinito com esfera fechada, interior cósmico e paralisia de inimigos; Santuário Malevolente com altar e cortes na área.
+- Evoluções dos Pokémon por experiência de combate e matéria, com comandos como “Pikachu, progresso” e “Pikachu, evolua”.
+- Combos entre criaturas: água com eletricidade, cipós com fogo e prisão temporária com proteção contra aprisionamento contínuo.
+- Ordens para todos os animais, modo agressivo que poupa o treinador, formigas escavando, castores construindo barragens e aranhas montando teias.
 - Partidas online. Todos os participantes precisam usar a mesma versão.
 
 ## Código e documentação
@@ -46,6 +49,7 @@ Para editar ou recompilar, é necessário preparar a engine e as dependências l
 - [Dinossauros e misturas](dinossauros.md)
 - [Brainrots](brainrots.md)
 - [Criatividade, defesas e colônias](criatividade.md)
+- [Ordens e animais construtores](animais-ordens.md)
 - [Próximas tarefas](tarefas.md)
 
 ## Créditos

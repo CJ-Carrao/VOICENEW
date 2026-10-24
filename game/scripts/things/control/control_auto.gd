@@ -27,6 +27,8 @@ func setup(owner_thing: Thing, lex: LexiconData) -> void :
 
 
 func _physics_process(delta: float) -> void :
+	var orders := thing.get_node_or_null("AnimalOrders")
+	if orders != null and orders.active(): return
 	if not thing.can_act() or thing.is_held:
 		return
 	var from: = thing.center()

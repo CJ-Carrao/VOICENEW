@@ -931,7 +931,7 @@ func _fx(packet_epoch: int, kind: String, args: Array) -> void :
 static func _valid_fx(kind: String, args: Array) -> bool:
 	match kind:
 		"pokemon_move":
-			return args.size() == 4 and _vec3(args[0]) and _vec3(args[1]) and args[2] is String and args[2] in ["electric", "quick", "fire", "flame", "water", "bubble", "vine", "leaf"] and args[3] is String and args[3].length() <= 64
+			return args.size() == 4 and _vec3(args[0]) and _vec3(args[1]) and args[2] is String and args[2] in ["electric", "quick", "fire", "flame", "water", "bubble", "vine", "leaf", "conductive", "vine_fire"] and args[3] is String and args[3].length() <= 64
 		"domain_callout":
 			return args.size() == 2 and _vec3(args[0]) and args[1] is String and args[1] in ["void", "shrine"]
 		"explosion":
