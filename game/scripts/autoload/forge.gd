@@ -669,6 +669,9 @@ func _command(player_id: int, command: String) -> Dictionary:
 	var player: = world.get_player(player_id)
 	if player == null:
 		return {}
+	var settings: Dictionary = Lexicon.data.defs.commands.get(command, {})
+	if settings.has("pokemon"):
+		return load("res://scripts/things/pokemon_companion.gd").order(player, settings)
 	match command:
 		"expand_domain":
 			var held := player.hands.current_item()

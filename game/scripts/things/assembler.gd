@@ -104,6 +104,14 @@ static func build(node: Dictionary, role: String, lex: LexiconData, mount_depth:
 		ball.setup(thing)
 		thing.add_child(ball)
 	var cursed := JujutsuRules.powers(node, lex)
+	var pokemon: Dictionary = def.get("pokemon", {})
+	if pokemon.is_empty() and anatomy.has("head"):
+		pokemon = lex.thing_def(String(anatomy.head)).get("pokemon", {})
+	if not pokemon.is_empty() and thing.category == "creature":
+		var companion = load("res://scripts/things/pokemon_companion.gd").new()
+		companion.name = "PokemonCompanion"
+		companion.setup(thing, pokemon)
+		thing.add_child(companion)
 	if not cursed.is_empty():
 		var user = load("res://scripts/things/jujutsu_user.gd").new()
 		user.name = "Jujutsu"

@@ -3939,6 +3939,34 @@
       "weight_kg": 90,
       "speed": 3.3,
       "impact_damage": 15
+    },
+    "pikachu": {
+      "cost": 100,
+      "hp": 145,
+      "speed": 3.8,
+      "weight_kg": 6,
+      "impact_damage": 12
+    },
+    "charmander": {
+      "cost": 105,
+      "hp": 160,
+      "speed": 3.0,
+      "weight_kg": 9,
+      "impact_damage": 13
+    },
+    "squirtle": {
+      "cost": 100,
+      "hp": 180,
+      "speed": 2.7,
+      "weight_kg": 9,
+      "impact_damage": 11
+    },
+    "bulbasaur": {
+      "cost": 105,
+      "hp": 185,
+      "speed": 2.6,
+      "weight_kg": 9,
+      "impact_damage": 12
     }
   },
   "grafts": {

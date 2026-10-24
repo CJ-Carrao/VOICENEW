@@ -163,7 +163,11 @@
       "species:ballerina_cappuccina": "caça só Ballerina Cappuccina",
       "species:patapim": "caça só Brr Brr Patapim",
       "species:lirili": "caça só Lirilì Larilà",
-      "species:chimpanzini": "caça só Chimpanzini Bananini"
+      "species:chimpanzini": "caça só Chimpanzini Bananini",
+      "species:pikachu": "caça só Pikachu",
+      "species:charmander": "caça só Charmander",
+      "species:squirtle": "caça só Squirtle",
+      "species:bulbasaur": "caça só Bulbasaur"
     },
     "target_species": {
       "pigeon": "elimina todos: pombo",
@@ -244,7 +248,11 @@
       "ballerina_cappuccina": "elimina todos: Ballerina Cappuccina",
       "patapim": "elimina todos: Brr Brr Patapim",
       "lirili": "elimina todos: Lirilì Larilà",
-      "chimpanzini": "elimina todos: Chimpanzini Bananini"
+      "chimpanzini": "elimina todos: Chimpanzini Bananini",
+      "pikachu": "elimina todos: Pikachu",
+      "charmander": "elimina todos: Charmander",
+      "squirtle": "elimina todos: Squirtle",
+      "bulbasaur": "elimina todos: Bulbasaur"
     }
   },
   "control": {

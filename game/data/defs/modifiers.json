@@ -916,5 +916,37 @@
   "purge_species_chimpanzini": {
     "key": "target_species",
     "value": "chimpanzini"
+  },
+  "diet_species_pikachu": {
+    "key": "diet",
+    "value": "species:pikachu"
+  },
+  "purge_species_pikachu": {
+    "key": "target_species",
+    "value": "pikachu"
+  },
+  "diet_species_charmander": {
+    "key": "diet",
+    "value": "species:charmander"
+  },
+  "purge_species_charmander": {
+    "key": "target_species",
+    "value": "charmander"
+  },
+  "diet_species_squirtle": {
+    "key": "diet",
+    "value": "species:squirtle"
+  },
+  "purge_species_squirtle": {
+    "key": "target_species",
+    "value": "squirtle"
+  },
+  "diet_species_bulbasaur": {
+    "key": "diet",
+    "value": "species:bulbasaur"
+  },
+  "purge_species_bulbasaur": {
+    "key": "target_species",
+    "value": "bulbasaur"
   }
 }

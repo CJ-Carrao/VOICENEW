@@ -3272,5 +3272,133 @@
       "brainrot",
       "chimpanzini"
     ]
+  },
+  "pikachu": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "pokemon",
+      "pikachu"
+    ],
+    "pokemon": {
+      "id": "pikachu",
+      "element": "electric",
+      "moves": {
+        "thunderbolt": {
+          "name": "Choque do trovão",
+          "damage": 30,
+          "range": 18,
+          "cooldown": 3.5,
+          "style": "electric",
+          "element": "electric"
+        },
+        "quick_attack": {
+          "name": "Ataque rápido",
+          "damage": 20,
+          "range": 9,
+          "cooldown": 2.5,
+          "style": "quick",
+          "element": "normal"
+        }
+      }
+    }
+  },
+  "charmander": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "pokemon",
+      "charmander"
+    ],
+    "pokemon": {
+      "id": "charmander",
+      "element": "fire",
+      "moves": {
+        "ember": {
+          "name": "Brasa",
+          "damage": 23,
+          "range": 14,
+          "cooldown": 2.8,
+          "style": "fire",
+          "element": "fire"
+        },
+        "flamethrower": {
+          "name": "Lança-chamas",
+          "damage": 40,
+          "range": 17,
+          "cooldown": 5.5,
+          "style": "flame",
+          "element": "fire"
+        }
+      }
+    }
+  },
+  "squirtle": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "pokemon",
+      "squirtle"
+    ],
+    "pokemon": {
+      "id": "squirtle",
+      "element": "water",
+      "moves": {
+        "water_gun": {
+          "name": "Jato de água",
+          "damage": 26,
+          "range": 17,
+          "cooldown": 3.2,
+          "style": "water",
+          "element": "water"
+        },
+        "bubble": {
+          "name": "Bolhas",
+          "damage": 20,
+          "range": 13,
+          "cooldown": 2.8,
+          "style": "bubble",
+          "element": "water"
+        }
+      }
+    }
+  },
+  "bulbasaur": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "pokemon",
+      "bulbasaur"
+    ],
+    "pokemon": {
+      "id": "bulbasaur",
+      "element": "grass",
+      "moves": {
+        "vine_whip": {
+          "name": "Chicote de cipó",
+          "damage": 28,
+          "range": 11,
+          "cooldown": 3.3,
+          "style": "vine",
+          "element": "grass"
+        },
+        "razor_leaf": {
+          "name": "Folha navalha",
+          "damage": 32,
+          "range": 17,
+          "cooldown": 4.2,
+          "style": "leaf",
+          "element": "grass"
+        }
+      }
+    }
   }
 }

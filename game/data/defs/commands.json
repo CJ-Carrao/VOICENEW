@@ -1,5 +1,37 @@
 {
   "_comment": "Comandos: pedidos que não criam nada, mexem no que o jogador já tem (DESIGN 9). recycle: desfaz a coisa da mão e a matéria volta pra esfera (o que não couber cai no chão como entulho).",
   "recycle": {},
-  "expand_domain": {}
+  "expand_domain": {},
+  "pokemon_pikachu_thunderbolt": {
+    "pokemon": "pikachu",
+    "move": "thunderbolt"
+  },
+  "pokemon_pikachu_quick_attack": {
+    "pokemon": "pikachu",
+    "move": "quick_attack"
+  },
+  "pokemon_charmander_ember": {
+    "pokemon": "charmander",
+    "move": "ember"
+  },
+  "pokemon_charmander_flamethrower": {
+    "pokemon": "charmander",
+    "move": "flamethrower"
+  },
+  "pokemon_squirtle_water_gun": {
+    "pokemon": "squirtle",
+    "move": "water_gun"
+  },
+  "pokemon_squirtle_bubble": {
+    "pokemon": "squirtle",
+    "move": "bubble"
+  },
+  "pokemon_bulbasaur_vine_whip": {
+    "pokemon": "bulbasaur",
+    "move": "vine_whip"
+  },
+  "pokemon_bulbasaur_razor_leaf": {
+    "pokemon": "bulbasaur",
+    "move": "razor_leaf"
+  }
 }

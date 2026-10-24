@@ -1000,6 +1000,42 @@
       "effect": "Criatura em blocos: mistura de partes, armas, dietas, técnicas e captura.",
       "pieces": 18,
       "base_cost": 75
+    },
+    {
+      "id": "pikachu",
+      "name": "Pikachu",
+      "phrase": "quero um Pikachu",
+      "group": "Pokémon",
+      "effect": "Comandos: Pikachu, choque do trovão; Pikachu, ataque rápido. Aceita captura e misturas.",
+      "pieces": 25,
+      "base_cost": 100
+    },
+    {
+      "id": "charmander",
+      "name": "Charmander",
+      "phrase": "quero um Charmander",
+      "group": "Pokémon",
+      "effect": "Comandos: Charmander, brasa; Charmander, lança-chamas. Aceita captura e misturas.",
+      "pieces": 21,
+      "base_cost": 105
+    },
+    {
+      "id": "squirtle",
+      "name": "Squirtle",
+      "phrase": "quero um Squirtle",
+      "group": "Pokémon",
+      "effect": "Comandos: Squirtle, jato de água; Squirtle, bolhas. Aceita captura e misturas.",
+      "pieces": 23,
+      "base_cost": 100
+    },
+    {
+      "id": "bulbasaur",
+      "name": "Bulbasaur",
+      "phrase": "quero um Bulbasaur",
+      "group": "Pokémon",
+      "effect": "Comandos: Bulbasaur, chicote de cipó; Bulbasaur, folha navalha. Aceita captura e misturas.",
+      "pieces": 27,
+      "base_cost": 105
     }
   ],
   "combinations": [

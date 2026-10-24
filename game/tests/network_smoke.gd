@@ -195,6 +195,55 @@ func _success() -> void:
 				_finish(false,"Client capture flow failed: %s/%s/%s/%s" % [captured_seen,held_seen,released_seen,dropped_seen])
 				return
 			await create_timer(.3).timeout
+	elif OS.get_cmdline_user_args().has("--test-pokemon"):
+		await create_timer(3.3).timeout
+		var effects = load("res://scripts/fx/pokemon_fx.gd")
+		if role == "host":
+			var r = load("res://scripts/language/recipe.gd")
+			var a = load("res://scripts/things/assembler.gd")
+			var caster = a.build(r.new_node("pistol"), "head", root.get_node("Lexicon").data)
+			caster.set_owner_info(2, 2, game.get_player(2), game.get_player(2))
+			game.add_thing(caster)
+			var forge = root.get_node("Forge")
+			var pikachu = forge.spawn_child(r.new_node("pikachu"), "spawned", Vector3(0, 20, 0), Vector3.FORWARD, caster, 0.0)
+			await process_frame
+			caster.set_owner_info(1, 1, game.get_player(1), game.get_player(1))
+			var prey = forge.spawn_child(r.new_node("squirtle"), "spawned", Vector3(0, 20, -7), Vector3.FORWARD, caster, 0.0)
+			if pikachu == null or prey == null:
+				_finish(false, "Pokemon network fixture could not spawn")
+				return
+			for animal in [pikachu, prey]:
+				animal.move.set_physics_process(false)
+				animal.set_physics_process(false)
+			for id in [1, 2]:
+				game.get_player(id).set_physics_process(false)
+				game.get_player(id).global_position = Vector3(12 if id == 1 else 0, 20, 3)
+			game.get_player(2).look_at_point(prey.center())
+			var hp: float = prey.hp
+			var until := Time.get_ticks_msec() + 6000
+			while effects.count == 0 and Time.get_ticks_msec() < until: await create_timer(.05).timeout
+			if effects.count != 1 or prey.hp >= hp or pikachu.get_node("PokemonCompanion").last_move != "thunderbolt":
+				_finish(false, "Remote Pokemon order did not execute on host")
+				return
+			await create_timer(1.0).timeout
+		else:
+			var until := Time.get_ticks_msec() + 6000
+			var ready := false
+			while not ready and Time.get_ticks_msec() < until:
+				var found := 0
+				for item in game.get_node("Things").get_children():
+					if item.thing_id in ["pikachu", "squirtle"]: found += 1
+				ready = found == 2
+				await create_timer(.05).timeout
+			if not ready:
+				_finish(false, "Pokemon models did not replicate")
+				return
+			root.get_node("Forge").request(2, "picachu use o choque do trovão")
+			while effects.count == 0 and Time.get_ticks_msec() < until: await create_timer(.05).timeout
+			if effects.count != 1 or effects.last_style != "electric":
+				_finish(false, "Pokemon attack effect did not reach remote player")
+				return
+			await create_timer(.3).timeout
 	elif OS.get_cmdline_user_args().has("--test-domain-command"):
 		await create_timer(3.3).timeout
 		var spoken = load("res://scripts/fx/domain_callout.gd")

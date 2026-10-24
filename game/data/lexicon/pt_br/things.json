@@ -3112,5 +3112,41 @@
       "chimpanzini"
     ],
     "forms": []
+  },
+  "pikachu": {
+    "name": "Pikachu",
+    "words": [
+      "pikachu",
+      "picachu",
+      "picaxu"
+    ],
+    "forms": []
+  },
+  "charmander": {
+    "name": "Charmander",
+    "words": [
+      "charmander",
+      "charmandar"
+    ],
+    "forms": []
+  },
+  "squirtle": {
+    "name": "Squirtle",
+    "words": [
+      "squirtle",
+      "squitle",
+      "squirtou",
+      "esquirtle"
+    ],
+    "forms": []
+  },
+  "bulbasaur": {
+    "name": "Bulbasaur",
+    "words": [
+      "bulbasaur",
+      "bulbassauro",
+      "bulbassaur"
+    ],
+    "forms": []
   }
 }
