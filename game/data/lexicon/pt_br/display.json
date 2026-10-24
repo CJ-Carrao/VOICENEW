@@ -298,7 +298,8 @@
   },
   "status": {
     "frozen": "❄ congelado",
-    "burning": "🔥 pegando fogo"
+    "burning": "🔥 pegando fogo",
+    "void_overload": "paralisado — Vazio Infinito"
   },
   "mounts": {
     "mount_front": "na frente",

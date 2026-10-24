@@ -772,6 +772,9 @@ func _refresh_status() -> void :
 	var status: = Status.of(_player)
 	if status != null:
 		for kind: String in status.remaining:
+			if kind == "void_overload":
+				parts.append("PARALISADO · VAZIO INFINITO")
+				continue
 			parts.append("%s %s s" % [Lexicon.data.label("status", kind).to_upper(), 
 				Lexicon.data.format_number(snappedf(float(status.remaining[kind]), 0.1))])
 	var pending: = _player.pending_ability()

@@ -18,6 +18,32 @@ var _sources: Dictionary = {}
 var _tick: float = 0.0
 var _shell: MeshInstance3D
 var _material: StandardMaterial3D
+var _void_sources: Dictionary = {}
+var _void_check_left := 0.0
+
+static func paralyzed(target: Node) -> bool:
+	if not is_instance_valid(target): return false
+	var status := of(target)
+	return status != null and float(status.remaining.get("void_overload", 0.0)) > 0.0
+
+static func apply_void(target: Node3D, source: Thing) -> void:
+	apply(target, "void_overload", source)
+	var status := of(target)
+	if status == null: return
+	status._void_sources[source.get_instance_id()] = weakref(source)
+	if target.has_method("release_input"): target.release_input()
+	if target is CharacterBody3D: target.velocity = Vector3.ZERO
+
+func _refresh_void() -> void:
+	if not remaining.has("void_overload"): return
+	for id in _void_sources.keys():
+		var source = _void_sources[id].get_ref()
+		var user = source.get_node_or_null("Jujutsu") if is_instance_valid(source) else null
+		if user == null or not user.void_affects(_target): _void_sources.erase(id)
+	if _void_sources.is_empty():
+		remaining.erase("void_overload")
+		_sources.erase("void_overload")
+	else: remaining["void_overload"] = .6
 
 
 
@@ -77,6 +103,10 @@ func _physics_process(delta: float) -> void :
 	if not is_instance_valid(_target) or (_target.has_method("is_alive") and not _target.call("is_alive")):
 		queue_free()
 		return
+	_void_check_left -= delta
+	if _void_check_left <= 0.0:
+		_void_check_left = .1
+		_refresh_void()
 	if remaining.has("burning"):
 		_tick += delta
 		var tick: = Lexicon.balf("status.burning.tick_s")
@@ -117,6 +147,7 @@ func _count_down(delta: float) -> void :
 func _update_shell(kind: String) -> void :
 	var element: = String(Lexicon.bal("status.%s.element" % kind, ""))
 	var tint: = Color.from_string(String((Lexicon.data.elements.get(element, {}) as Dictionary).get("tint", "#ffffff")), Color.WHITE)
+	if kind == "void_overload": tint = Color("aebce4")
 	if _shell == null:
 		_shell = MeshInstance3D.new()
 		var sphere: = SphereMesh.new()

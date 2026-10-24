@@ -20,12 +20,16 @@ func run(_ctx: ActionContext) -> void :
 
 
 func wait_for_production(node: Dictionary) -> bool:
+	if not is_instance_valid(thing) or Status.paralyzed(thing): return false
 	if not ProductionBudget.complex(node, Lexicon.data): return true
 	while not Forge.production.available(thing.owner_id, Forge.live_things(thing.owner_id).size()):
 		if not production_pending: Forge.stats.production_paused += 1
 		production_pending = true
 		await get_tree().process_frame
 		if not is_instance_valid(thing) or thing.is_dead or not thing.has_simulation_authority(): return false
+		if Status.paralyzed(thing):
+			production_pending = false
+			return false
 	production_pending = false
 	return true
 

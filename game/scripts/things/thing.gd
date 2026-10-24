@@ -950,8 +950,9 @@ func surface_touch(body: Node3D, at: Vector3, normal: Vector3) -> void :
 
 
 func can_act() -> bool:
-	if not has_simulation_authority() or not is_active or is_dead or is_building:
+	if not has_simulation_authority() or not is_active or is_dead or is_building or Status.paralyzed(self):
 		return false
+	if is_held and is_instance_valid(owner_player) and Status.paralyzed(owner_player): return false
 	if mount_host != null:
 		return is_instance_valid(mount_host) and mount_host.can_act() and mount_host.is_visible_in_tree()
 	return true

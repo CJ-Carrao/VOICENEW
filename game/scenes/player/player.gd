@@ -329,7 +329,7 @@ func apply_user_settings() -> void :
 
 
 func can_act() -> bool:
-	return is_alive() and not frozen and input_enabled
+	return is_alive() and not frozen and input_enabled and not Status.paralyzed(self)
 
 
 func has_simulation_authority() -> bool:
@@ -696,6 +696,7 @@ func _unhandled_input(event: InputEvent) -> void :
 	if not is_local or not input_enabled or frozen or not is_alive():
 		return
 	var motion: = event as InputEventMouseMotion
+	if motion == null and Status.paralyzed(self): return
 	var captured: = Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
 	if shaper.active and motion == null:
 		_shaper_input(event)
@@ -1193,6 +1194,7 @@ func _simulate_remote_frames(delta: float) -> void :
 
 
 func _apply_network_frame(frame: PlayerInputFrame, delta: float, replaying: bool) -> void :
+	if Status.paralyzed(self): frame = frame.neutralized()
 	_network_free_view = frame.free_view
 	view_yaw = frame.yaw
 	if not frame.free_view:

@@ -1023,6 +1023,11 @@
   },
   "status": {
     "_comment": "Efeitos que duram (DESIGN 3.4 freeze/ignite, 3.6 elementos). element: de onde vem a cor da casca (rules/elements.json). Acertar com coisa de fogo/gelo aplica o status do elemento por element_hit_duration_mult da duração. affects_own_team: status, empurrão e puxão pegam no próprio time?",
+    "void_overload": {
+      "duration_s": 0.6,
+      "speed_mult": 0,
+      "element": ""
+    },
     "frozen": {
       "duration_s": 2.5,
       "speed_mult": 0.3,

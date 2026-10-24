@@ -76,7 +76,7 @@ func _run() -> void:
 	user._domain()
 	check(victim.center().distance_to(origin) <= 8.5, "Closed Void did not retain its captured participant")
 	var status = load("res://scripts/things/status.gd").of(victim)
-	check(status != null and status.remaining.has("frozen"), "Void lost its sure-hit effect")
+	check(status != null and status.remaining.has("void_overload") and not victim.can_act(), "Void lost its paralysis effect")
 	var state = load("res://scripts/network/thing_network_state.gd").capture(void_item)
 	check(state.jujutsu.domain_origin == origin and state.jujutsu.domain_up.is_finite(), "Fixed origin missing from network state")
 	var shrine = spawn("quero santuario malevolente", origin + Vector3(0, 0, 4), 2)

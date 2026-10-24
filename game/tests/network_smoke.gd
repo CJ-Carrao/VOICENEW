@@ -248,6 +248,51 @@ func _success() -> void:
 				_finish(false, "Pokemon attack effect did not reach remote player")
 				return
 			await create_timer(.3).timeout
+	elif OS.get_cmdline_user_args().has("--test-void-duel"):
+		await create_timer(3.3).timeout
+		var status = load("res://scripts/things/status.gd")
+		if role == "host":
+			for id in [1, 2]:
+				game.get_player(id).set_physics_process(false)
+				game.get_player(id).global_position = Vector3(0, 20, 7 if id == 1 else -7)
+			var a = load("res://scripts/things/assembler.gd")
+			var r = load("res://scripts/language/recipe.gd")
+			var item = a.build(r.new_node("unlimited_void"), "head", root.get_node("Lexicon").data)
+			item.set_owner_info(1, 1, game.get_player(1), null)
+			game.get_player(1).hands.give(item, false)
+			item.activate()
+			session.creations.publish_creation(item, 0.0, true, 0.0)
+			if not root.get_node("Forge").request(1, "expansão de domínio", false, true).has("domain_expanded"):
+				_finish(false, "Could not expand Gojo domain in duel")
+				return
+			await create_timer(2.0).timeout
+			if not status.paralyzed(game.get_player(2)) or status.paralyzed(game.get_player(1)):
+				_finish(false, "Host did not paralyze only the opponent")
+				return
+			item.get_node("Jujutsu").cancel_domain()
+			await create_timer(2.0).timeout
+		else:
+			var until := Time.get_ticks_msec() + 5500
+			var caught := false
+			while Time.get_ticks_msec() < until:
+				if status.paralyzed(game.player):
+					caught = true
+					break
+				await create_timer(.05).timeout
+			if not caught or game.player.can_act():
+				_finish(false, "Paralysis did not replicate to second player's controls")
+				return
+			var inside := false
+			for environment in get_nodes_in_group("domain_environments"):
+				if environment.mode == "void" and game.player.center().distance_to(environment.global_position) < 9.0 and game.opponent.center().distance_to(environment.global_position) < 9.0: inside = true
+			if not inside:
+				_finish(false, "Remote sphere did not enclose both players")
+				return
+			while status.paralyzed(game.player) and Time.get_ticks_msec() < until: await create_timer(.05).timeout
+			if status.paralyzed(game.player) or not game.player.can_act():
+				_finish(false, "Remote controls did not recover after domain cancellation")
+				return
+			await create_timer(.3).timeout
 	elif OS.get_cmdline_user_args().has("--test-domain-command"):
 		await create_timer(3.3).timeout
 		var spoken = load("res://scripts/fx/domain_callout.gd")

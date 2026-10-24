@@ -20,7 +20,7 @@ def main():
         ('yuji_black_flash', 'Flash Negro', 'black_flash', 85, ['flash negro', 'kokusen', 'black flash'], 'Golpe concentrado de curto alcance, 55 de dano e recarga de 3 s.'),
         ('reverse_curse', 'Tecnica reversa', 'reverse', 100, ['tecnica reversa', 'tecnica amaldicoada reversa', 'cura reversa'], 'Recupera 6 de vida a cada 1,5 s, sem ressuscitar nem passar da vida maxima.'),
         ('malevolent_shrine', 'Santuario Malevolente', 'shrine', 280, ['santuario malevolente', 'santuario do sukuna', 'dominio do sukuna', 'expansao de dominio do sukuna'], 'Dominio de 9 m por 6 s: cortes de acerto garantido; disputa com outro dominio e resistencia do dominio simples.'),
-        ('unlimited_void', 'Vazio Infinito', 'void', 270, ['vazio infinito', 'dominio do gojo', 'expansao de dominio do gojo'], 'Dominio de 9 m: lentidao por 6 s; dominio simples, disputa de dominios e adaptacao sao respostas.'),
+        ('unlimited_void', 'Vazio Infinito', 'void', 270, ['vazio infinito', 'dominio do gojo', 'expansao de dominio do gojo'], 'Esfera de 9 m: paralisa movimento e ataques por 6 s; dominio simples, disputa de dominios e adaptacao sao respostas.'),
         ('simple_domain', 'Dominio Simples', 'simple_domain', 75, ['dominio simples', 'dominio antitecnica'], 'Reduz em 85% os cortes garantidos do dominio e protege da lentidao do Vazio Infinito.'),
         ('domain_amplification', 'Amplificacao de dominio', 'amplification', 110, ['amplificacao de dominio', 'amplificacao'], 'Permite ataques comuns atravessarem o Infinito, mas impede lancar outras tecnicas enquanto ativa.'),
     ]

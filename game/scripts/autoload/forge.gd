@@ -100,6 +100,8 @@ func request(player_id: int, text: String, record_unknowns: bool = true, command
 		result["warnings"].append("Pedido indisponível enquanto a sessão está sendo preparada.")
 		request_processed.emit(player_id, text, result)
 		return result
+	if world != null and Status.paralyzed(world.get_player(player_id)):
+		return _reject_result(player_id, text, result, "Você está paralisado pelo Vazio Infinito.")
 	if result["ok"] and (result["recipe"] as Dictionary).has("command"):
 		if world != null:
 			var warning: = _online_creation_warning(player_id, result["recipe"], 0.0)
@@ -160,7 +162,7 @@ func _online_creation_warning(player_id: int, recipe: Dictionary, cost: float, c
 	if not Session.is_online() or world == null:
 		return ""
 	var player: = world.get_player(player_id)
-	if player == null or not player.is_alive() or player.frozen:
+	if player == null or not player.is_alive() or player.frozen or Status.paralyzed(player):
 		return "Aguarde o jogador estar pronto para pedir."
 	if not check_economy:
 		return ""

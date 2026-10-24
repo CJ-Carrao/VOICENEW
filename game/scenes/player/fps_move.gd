@@ -122,6 +122,11 @@ func impact(impulse: Vector3) -> void :
 
 
 func step(delta: float, input: Dictionary, replaying: bool = false) -> void :
+	if Status.paralyzed(player):
+		player.velocity = Vector3.ZERO
+		_mantle.clear()
+		_go(State.STAND)
+		return
 	var frame: = player.gravity_frame
 	player.velocity = frame.transposed() * player.velocity
 	_step(delta, input, replaying)

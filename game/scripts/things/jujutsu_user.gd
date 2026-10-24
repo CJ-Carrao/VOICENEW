@@ -18,6 +18,7 @@ var domain_visual: Node3D
 var domain_members: Array[WeakRef] = []
 var domain_next_pulse := 0.0
 var wheel_angle := 0.0
+var void_scan_cursor := 0
 var jobs: Node
 var terrain_jobs: Node
 var wheel: Node3D
@@ -139,7 +140,7 @@ func _physics_process(delta: float) -> void:
 	if enabled("reverse") and clock >= next_attack:
 		next_attack = clock + 1.5
 		_heal()
-	if thing.category == "creature" and clock >= next_cast:
+	if thing.category == "creature" and thing.can_act() and clock >= next_cast:
 		var target := Combat.nearest_target(thing, center(), get_tree())
 		if target != null and center().distance_to(Combat.center_of(target)) < 24.0:
 			cast(ActionContext.make(center(), Combat.center_of(target) - center(), target))
@@ -175,6 +176,16 @@ func expand_domain() -> bool:
 	domain_until = clock + 6.0
 	domain_origin = center()
 	domain_up = thing.up()
+	if domain_mode == "void":
+		# Center a nearby duel inside the sphere; never teleport a distant opponent into it.
+		var best := 16.0
+		for target in get_tree().get_nodes_in_group(Combat.COMBATANTS_GROUP):
+			if not _enemy(target) or (target.has_method("is_alive") and not target.is_alive()): continue
+			var distance := center().distance_to(Combat.center_of(target))
+			if distance < best:
+				best = distance
+				domain_origin = (center() + Combat.center_of(target)) * .5
+	void_scan_cursor = 0
 	domain_clashing = false
 	domain_next_pulse = clock + .65
 	domain_members.clear()
@@ -201,7 +212,7 @@ func _exit_tree() -> void:
 	if is_instance_valid(domain_visual): domain_visual.close()
 
 func cast(ctx: ActionContext) -> void:
-	if clock < next_cast or not thing.has_simulation_authority(): return
+	if clock < next_cast or not thing.has_simulation_authority() or Status.paralyzed(thing): return
 	var origin := center()
 	var direction := ctx.direction
 	if thing.is_held and thing.owner_player is Player:
@@ -267,21 +278,44 @@ func _domain() -> void:
 			var offset: Vector3 = Combat.center_of(member) - domain_origin
 			if offset.length() > 8.4:
 				member.global_position -= offset.normalized() * (offset.length() - 8.4)
+		_void_paralysis()
+		return
 	if clock < domain_next_pulse: return
 	domain_next_pulse = clock + .75
 	var applied := 0
 	for target in JujutsuRules.candidates(get_tree()):
 		if not _enemy(target) or domain_origin.distance_to(Combat.center_of(target)) > 9.0: continue
 		if domain_mode == "shrine": _queue(target, 9.0, "domain_slash")
-		elif JujutsuRules.field(target, "simple_domain") == null:
-			var user = JujutsuRules.field(target, "adaptation")
-			if user != null:
-				user.observe("domain_void")
-				if user.adapted("domain_void"): continue
-			Status.apply(target, "frozen", thing, .3)
 		applied += 1
 		if applied >= 16: break
 	if domain_mode == "shrine": _cut(domain_origin, domain_origin, 2.5, 35.0)
+
+func void_affects(target: Node3D) -> bool:
+	if not is_instance_valid(thing) or thing.is_dead or thing.is_captured or not thing.is_active or domain_mode != "void" or domain_until <= clock or domain_clashing: return false
+	if clock < domain_until - 5.35 or not _enemy(target) or domain_origin.distance_to(Combat.center_of(target)) > 9.0: return false
+	if JujutsuRules.field(target, "simple_domain") != null: return false
+	var adaptation = JujutsuRules.field(target, "adaptation")
+	return adaptation == null or not adaptation.adapted("domain_void")
+
+func _void_lock(target: Node3D) -> void:
+	if not void_affects(target): return
+	var adaptation = JujutsuRules.field(target, "adaptation")
+	if adaptation != null:
+		adaptation.observe("domain_void")
+		if adaptation.adapted("domain_void"): return
+	Status.apply_void(target, thing)
+
+func _void_paralysis() -> void:
+	# Players are always processed first; crowds are admitted in bounded batches.
+	for target in get_tree().get_nodes_in_group(Combat.COMBATANTS_GROUP):
+		if is_instance_valid(target): _void_lock(target)
+	if Forge.world == null: return
+	var creatures := Forge.world.get_node("Things").get_children()
+	if creatures.is_empty(): return
+	for step in mini(16, creatures.size()):
+		var target = creatures[(void_scan_cursor + step) % creatures.size()]
+		if is_instance_valid(target) and target is Thing and target.category in ["creature", "vehicle"]: _void_lock(target)
+	void_scan_cursor = (void_scan_cursor + 16) % creatures.size()
 
 func _cut(from: Vector3, to: Vector3, radius: float, amount: float) -> void:
 	if not is_instance_valid(terrain_jobs) or terrain_jobs.is_queued_for_deletion():

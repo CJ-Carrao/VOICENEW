@@ -303,7 +303,7 @@ func _expression() -> String:
 	if player.extracting and player.extractor.pulling:
 		return String(e["extract"])
 	var status: = Status.of(player)
-	if status != null and status.remaining.has("frozen"):
+	if status != null and (status.remaining.has("frozen") or status.remaining.has("void_overload")):
 		return String(e["frozen"])
 	if status != null and status.remaining.has("burning"):
 		return String(e["burning"])

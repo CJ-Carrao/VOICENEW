@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		thing.move.travel(dash_direction * minf(delta, .05) * 14.0)
 
 func available() -> bool:
-	return is_instance_valid(thing) and thing.is_active and not thing.is_building and not thing.is_held and not thing.is_captured and not thing.is_dead and thing.has_simulation_authority()
+	return is_instance_valid(thing) and thing.is_active and not thing.is_building and not thing.is_held and not thing.is_captured and not thing.is_dead and thing.can_act()
 
 func _visible_target(target: Node3D) -> bool:
 	var query := PhysicsRayQueryParameters3D.create(thing.center(), Combat.center_of(target), PhysicsLayers.WORLD, [thing.get_rid()])
