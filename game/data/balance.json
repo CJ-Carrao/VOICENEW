@@ -3869,6 +3869,76 @@
       "lifetime": 0,
       "impact_damage": 0,
       "fire_cooldown": 0.8
+    },
+    "tung_sahur": {
+      "cost": 85,
+      "hp": 180,
+      "weight_kg": 90,
+      "speed": 2.6,
+      "impact_damage": 20
+    },
+    "tralalero": {
+      "cost": 95,
+      "hp": 170,
+      "weight_kg": 90,
+      "speed": 3.7,
+      "impact_damage": 17
+    },
+    "saturnita": {
+      "cost": 130,
+      "hp": 260,
+      "weight_kg": 90,
+      "speed": 1.8,
+      "impact_damage": 22
+    },
+    "bombardiro": {
+      "cost": 175,
+      "hp": 190,
+      "weight_kg": 170,
+      "speed": 4.2,
+      "impact_damage": 12
+    },
+    "udin": {
+      "cost": 100,
+      "hp": 230,
+      "weight_kg": 90,
+      "speed": 2.6,
+      "impact_damage": 24
+    },
+    "cappuccino_assassino": {
+      "cost": 110,
+      "hp": 140,
+      "weight_kg": 90,
+      "speed": 4.0,
+      "impact_damage": 26
+    },
+    "ballerina_cappuccina": {
+      "cost": 70,
+      "hp": 130,
+      "weight_kg": 90,
+      "speed": 3.5,
+      "impact_damage": 12
+    },
+    "patapim": {
+      "cost": 105,
+      "hp": 240,
+      "weight_kg": 90,
+      "speed": 2.1,
+      "impact_damage": 20
+    },
+    "lirili": {
+      "cost": 115,
+      "hp": 250,
+      "weight_kg": 90,
+      "speed": 2.0,
+      "impact_damage": 21
+    },
+    "chimpanzini": {
+      "cost": 75,
+      "hp": 150,
+      "weight_kg": 90,
+      "speed": 3.3,
+      "impact_damage": 15
     }
   },
   "grafts": {

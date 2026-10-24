@@ -153,7 +153,17 @@
       "species:spinosaurus": "caça só espinossauro",
       "species:ankylosaurus": "caça só anquilossauro",
       "species:parasaurolophus": "caça só parassaurolofo",
-      "species:diplodocus": "caça só diplodoco"
+      "species:diplodocus": "caça só diplodoco",
+      "species:tung_sahur": "caça só Tung Tung Tung Sahur",
+      "species:tralalero": "caça só Tralalero Tralala",
+      "species:saturnita": "caça só La Vaca Saturno Saturnita",
+      "species:bombardiro": "caça só Bombardiro Crocodilo",
+      "species:udin": "caça só Udin Din Din Dun",
+      "species:cappuccino_assassino": "caça só Cappuccino Assassino",
+      "species:ballerina_cappuccina": "caça só Ballerina Cappuccina",
+      "species:patapim": "caça só Brr Brr Patapim",
+      "species:lirili": "caça só Lirilì Larilà",
+      "species:chimpanzini": "caça só Chimpanzini Bananini"
     },
     "target_species": {
       "pigeon": "elimina todos: pombo",
@@ -224,7 +234,17 @@
       "cave_bat": "elimina todos: morcego",
       "queen_ant": "elimina todos: formiga rainha",
       "queen_bee": "elimina todos: abelha rainha",
-      "anteater": "elimina todos: tamanduá"
+      "anteater": "elimina todos: tamanduá",
+      "tung_sahur": "elimina todos: Tung Tung Tung Sahur",
+      "tralalero": "elimina todos: Tralalero Tralala",
+      "saturnita": "elimina todos: La Vaca Saturno Saturnita",
+      "bombardiro": "elimina todos: Bombardiro Crocodilo",
+      "udin": "elimina todos: Udin Din Din Dun",
+      "cappuccino_assassino": "elimina todos: Cappuccino Assassino",
+      "ballerina_cappuccina": "elimina todos: Ballerina Cappuccina",
+      "patapim": "elimina todos: Brr Brr Patapim",
+      "lirili": "elimina todos: Lirilì Larilà",
+      "chimpanzini": "elimina todos: Chimpanzini Bananini"
     }
   },
   "control": {

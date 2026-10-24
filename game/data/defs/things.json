@@ -3157,5 +3157,120 @@
     "movement": "ballistic",
     "impact": "stop",
     "capture_ball": true
+  },
+  "tung_sahur": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "brainrot",
+      "tung_sahur"
+    ]
+  },
+  "tralalero": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "brainrot",
+      "tralalero"
+    ]
+  },
+  "saturnita": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "brainrot",
+      "saturnita"
+    ]
+  },
+  "bombardiro": {
+    "category": "creature",
+    "movement": "fly",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "brainrot",
+      "bombardiro"
+    ],
+    "aerial": true,
+    "behaviors": [
+      {
+        "when": {
+          "type": "every",
+          "s": 4.5
+        },
+        "do": {
+          "type": "drop",
+          "arg": {
+            "thing": "grenade"
+          }
+        }
+      }
+    ]
+  },
+  "udin": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "brainrot",
+      "udin"
+    ]
+  },
+  "cappuccino_assassino": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "brainrot",
+      "cappuccino_assassino"
+    ]
+  },
+  "ballerina_cappuccina": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "brainrot",
+      "ballerina_cappuccina"
+    ]
+  },
+  "patapim": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "brainrot",
+      "patapim"
+    ]
+  },
+  "lirili": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "brainrot",
+      "lirili"
+    ]
+  },
+  "chimpanzini": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "brainrot",
+      "chimpanzini"
+    ]
   }
 }

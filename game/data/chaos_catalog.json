@@ -910,6 +910,96 @@
       "effect": "Arremesse para tentar capturar. Criaturas feridas entram mais facilmente. E pega a bola e solta a arma atual; arremesse a bola cheia para liberar a criatura no seu time.",
       "pieces": 10,
       "base_cost": 38
+    },
+    {
+      "id": "tung_sahur",
+      "name": "Tung Tung Tung Sahur",
+      "phrase": "quero um Tung Tung Tung Sahur",
+      "group": "Brainrots",
+      "effect": "Criatura em blocos: mistura de partes, armas, dietas, técnicas e captura.",
+      "pieces": 18,
+      "base_cost": 85
+    },
+    {
+      "id": "tralalero",
+      "name": "Tralalero Tralala",
+      "phrase": "quero um Tralalero Tralala",
+      "group": "Brainrots",
+      "effect": "Criatura em blocos: mistura de partes, armas, dietas, técnicas e captura.",
+      "pieces": 22,
+      "base_cost": 95
+    },
+    {
+      "id": "saturnita",
+      "name": "La Vaca Saturno Saturnita",
+      "phrase": "quero um La Vaca Saturno Saturnita",
+      "group": "Brainrots",
+      "effect": "Criatura em blocos: mistura de partes, armas, dietas, técnicas e captura.",
+      "pieces": 34,
+      "base_cost": 130
+    },
+    {
+      "id": "bombardiro",
+      "name": "Bombardiro Crocodilo",
+      "phrase": "quero um Bombardiro Crocodilo",
+      "group": "Brainrots",
+      "effect": "Crocodilo-avião: voa e solta uma granada a cada 4,5 s; aceita misturas e captura.",
+      "pieces": 21,
+      "base_cost": 175
+    },
+    {
+      "id": "udin",
+      "name": "Udin Din Din Dun",
+      "phrase": "quero um Udin Din Din Dun",
+      "group": "Brainrots",
+      "effect": "Criatura em blocos: mistura de partes, armas, dietas, técnicas e captura.",
+      "pieces": 21,
+      "base_cost": 100
+    },
+    {
+      "id": "cappuccino_assassino",
+      "name": "Cappuccino Assassino",
+      "phrase": "quero um Cappuccino Assassino",
+      "group": "Brainrots",
+      "effect": "Criatura em blocos: mistura de partes, armas, dietas, técnicas e captura.",
+      "pieces": 25,
+      "base_cost": 110
+    },
+    {
+      "id": "ballerina_cappuccina",
+      "name": "Ballerina Cappuccina",
+      "phrase": "quero um Ballerina Cappuccina",
+      "group": "Brainrots",
+      "effect": "Criatura em blocos: mistura de partes, armas, dietas, técnicas e captura.",
+      "pieces": 22,
+      "base_cost": 70
+    },
+    {
+      "id": "patapim",
+      "name": "Brr Brr Patapim",
+      "phrase": "quero um Brr Brr Patapim",
+      "group": "Brainrots",
+      "effect": "Criatura em blocos: mistura de partes, armas, dietas, técnicas e captura.",
+      "pieces": 18,
+      "base_cost": 105
+    },
+    {
+      "id": "lirili",
+      "name": "Lirilì Larilà",
+      "phrase": "quero um Lirilì Larilà",
+      "group": "Brainrots",
+      "effect": "Criatura em blocos: mistura de partes, armas, dietas, técnicas e captura.",
+      "pieces": 26,
+      "base_cost": 115
+    },
+    {
+      "id": "chimpanzini",
+      "name": "Chimpanzini Bananini",
+      "phrase": "quero um Chimpanzini Bananini",
+      "group": "Brainrots",
+      "effect": "Criatura em blocos: mistura de partes, armas, dietas, técnicas e captura.",
+      "pieces": 18,
+      "base_cost": 75
     }
   ],
   "combinations": [

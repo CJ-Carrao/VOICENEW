@@ -836,5 +836,85 @@
   "diet_species_diplodocus": {
     "key": "diet",
     "value": "species:diplodocus"
+  },
+  "diet_species_tung_sahur": {
+    "key": "diet",
+    "value": "species:tung_sahur"
+  },
+  "purge_species_tung_sahur": {
+    "key": "target_species",
+    "value": "tung_sahur"
+  },
+  "diet_species_tralalero": {
+    "key": "diet",
+    "value": "species:tralalero"
+  },
+  "purge_species_tralalero": {
+    "key": "target_species",
+    "value": "tralalero"
+  },
+  "diet_species_saturnita": {
+    "key": "diet",
+    "value": "species:saturnita"
+  },
+  "purge_species_saturnita": {
+    "key": "target_species",
+    "value": "saturnita"
+  },
+  "diet_species_bombardiro": {
+    "key": "diet",
+    "value": "species:bombardiro"
+  },
+  "purge_species_bombardiro": {
+    "key": "target_species",
+    "value": "bombardiro"
+  },
+  "diet_species_udin": {
+    "key": "diet",
+    "value": "species:udin"
+  },
+  "purge_species_udin": {
+    "key": "target_species",
+    "value": "udin"
+  },
+  "diet_species_cappuccino_assassino": {
+    "key": "diet",
+    "value": "species:cappuccino_assassino"
+  },
+  "purge_species_cappuccino_assassino": {
+    "key": "target_species",
+    "value": "cappuccino_assassino"
+  },
+  "diet_species_ballerina_cappuccina": {
+    "key": "diet",
+    "value": "species:ballerina_cappuccina"
+  },
+  "purge_species_ballerina_cappuccina": {
+    "key": "target_species",
+    "value": "ballerina_cappuccina"
+  },
+  "diet_species_patapim": {
+    "key": "diet",
+    "value": "species:patapim"
+  },
+  "purge_species_patapim": {
+    "key": "target_species",
+    "value": "patapim"
+  },
+  "diet_species_lirili": {
+    "key": "diet",
+    "value": "species:lirili"
+  },
+  "purge_species_lirili": {
+    "key": "target_species",
+    "value": "lirili"
+  },
+  "diet_species_chimpanzini": {
+    "key": "diet",
+    "value": "species:chimpanzini"
+  },
+  "purge_species_chimpanzini": {
+    "key": "target_species",
+    "value": "chimpanzini"
   }
 }

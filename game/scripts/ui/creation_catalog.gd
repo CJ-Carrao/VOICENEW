@@ -77,7 +77,7 @@ func _build() -> void:
 	var tabs := GridContainer.new()
 	tabs.columns = 6
 	content.add_child(tabs)
-	for pair in [["ANIMAIS", "Animais"], ["DINOS", "Dinossauros"], ["CAPTURA", "Captura"], ["GRANADAS", "Granadas de criaturas"], ["BOMBAS", "Bombas especiais"], ["ARMAS", "Armas especiais"], ["ESPAÇO", "Espaço"], ["JUJUTSU", "Jujutsu"], ["DEFESAS", "Defesas"], ["ECOLOGIA", "Ecologia"], ["COMBINAR", "Combinações"]]:
+	for pair in [["ANIMAIS", "Animais"], ["DINOS", "Dinossauros"], ["BRAINROTS", "Brainrots"], ["CAPTURA", "Captura"], ["GRANADAS", "Granadas de criaturas"], ["BOMBAS", "Bombas especiais"], ["ARMAS", "Armas especiais"], ["ESPAÇO", "Espaço"], ["JUJUTSU", "Jujutsu"], ["DEFESAS", "Defesas"], ["ECOLOGIA", "Ecologia"], ["COMBINAR", "Combinações"]]:
 		var tab := Button.new()
 		tab.text = pair[0]
 		tab.size_flags_horizontal = Control.SIZE_EXPAND_FILL

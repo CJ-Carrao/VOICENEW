@@ -3010,5 +3010,107 @@
       "esfera de captura"
     ],
     "forms": []
+  },
+  "tung_sahur": {
+    "name": "Tung Tung Tung Sahur",
+    "words": [
+      "tung tung tung sahur",
+      "tung tung sahur",
+      "tung sahur"
+    ],
+    "forms": []
+  },
+  "tralalero": {
+    "name": "Tralalero Tralala",
+    "words": [
+      "tralalero tralala",
+      "tralalelo tralala",
+      "tralalero",
+      "tralalelo"
+    ],
+    "forms": []
+  },
+  "saturnita": {
+    "name": "La Vaca Saturno Saturnita",
+    "words": [
+      "la vaca saturno saturnita",
+      "vaca saturno saturnita",
+      "vaca saturni sa tinita",
+      "vaca saturnita",
+      "vaca saturno"
+    ],
+    "forms": []
+  },
+  "bombardiro": {
+    "name": "Bombardiro Crocodilo",
+    "words": [
+      "bombardiro crocodilo",
+      "bombardino crocodilo",
+      "bombardiro crocodillo",
+      "bombardino crocodillo"
+    ],
+    "forms": []
+  },
+  "udin": {
+    "name": "Udin Din Din Dun",
+    "words": [
+      "udin din din dun",
+      "u din din din dun",
+      "u din din din din dun ma din din din dun",
+      "udindindum",
+      "udindindun",
+      "udin"
+    ],
+    "forms": []
+  },
+  "cappuccino_assassino": {
+    "name": "Cappuccino Assassino",
+    "words": [
+      "cappuccino assassino",
+      "capuchino assassino",
+      "capuccino assassino",
+      "cappucino assassino"
+    ],
+    "forms": []
+  },
+  "ballerina_cappuccina": {
+    "name": "Ballerina Cappuccina",
+    "words": [
+      "ballerina cappuccina",
+      "balerina capuchinha",
+      "bailarina capuchina",
+      "bailarina cappuccina",
+      "balerina capuccina",
+      "bailarina capuccino"
+    ],
+    "forms": []
+  },
+  "patapim": {
+    "name": "Brr Brr Patapim",
+    "words": [
+      "brr brr patapim",
+      "brr brrr patapim",
+      "brr patapim",
+      "patapim"
+    ],
+    "forms": []
+  },
+  "lirili": {
+    "name": "Lirilì Larilà",
+    "words": [
+      "lirilì larilà",
+      "lirili larila",
+      "lirili"
+    ],
+    "forms": []
+  },
+  "chimpanzini": {
+    "name": "Chimpanzini Bananini",
+    "words": [
+      "chimpanzini bananini",
+      "chimpanzini banana",
+      "chimpanzini"
+    ],
+    "forms": []
   }
 }
