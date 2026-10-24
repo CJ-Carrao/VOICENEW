@@ -2,7 +2,6 @@ extends CanvasLayer
 
 var panel: PanelContainer
 var entries: VBoxContainer
-var hint: Label
 var catalog: Dictionary = {}
 var previous_mouse := Input.MOUSE_MODE_VISIBLE
 var saved_player: Node
@@ -93,12 +92,6 @@ func _build() -> void:
 	scroll.add_child(entries)
 	_populate(active_group)
 	panel.hide()
-	hint = _text("F2  /  NOVAS CRIAÇÕES", 16, Color("#d5c8a8"))
-	hint.theme = theme
-	hint.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
-	hint.position = Vector2(-285, 110)
-	hint.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_child(hint)
 
 
 func _populate(group: String) -> void:
@@ -150,11 +143,6 @@ func toggle() -> void:
 			saved_player = Forge.world.player
 			previous_input = bool(saved_player.get("input_enabled"))
 			saved_player.set("input_enabled", false)
-		hint.hide()
-
-
-func _process(_delta: float) -> void:
-	hint.visible = not panel.visible and not _world_loading() and Input.mouse_mode != Input.MOUSE_MODE_HIDDEN
 
 
 func _input(event: InputEvent) -> void:
