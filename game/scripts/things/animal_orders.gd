@@ -154,7 +154,8 @@ func _physics_process(delta: float) -> void:
 			target_ref = weakref(attacker) if _enemy(attacker) and thing.global_position.distance_to(Combat.center_of(attacker)) < 30.0 else null
 		"evade": goal = _escape_point()
 		"aggressive":
-			goal = thing.global_position
+			# Keep searching ahead instead of freezing when the front cone is empty.
+			goal = thing.global_position - thing.global_basis.z * maxf(3.0, thing.speed)
 			target_ref = null
 			var best := 18.0
 			for candidate in Combat.in_radius(thing, thing.center(), best):

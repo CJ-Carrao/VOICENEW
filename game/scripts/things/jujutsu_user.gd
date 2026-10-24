@@ -1,4 +1,4 @@
-extends Node
+extends Node3D
 
 var thing: Thing
 var powers := {}
@@ -125,6 +125,9 @@ func _process(delta: float) -> void:
 		var turns := 0
 		for value in exposure.values(): turns += int(value)
 		wheel_angle = lerpf(wheel_angle, turns * PI * .25, 1.0 - exp(-8.0 * delta))
+		# Spatial parenting keeps movement, gravity and capture visibility on the body.
+		var above := thing.bounds.get_center() + Vector3.UP * (thing.bounds.size.y * .5 + .45)
+		wheel.position = above
 		wheel.rotation.y = wheel_angle
 		wheel.visible = thing.visible and not thing.is_captured
 

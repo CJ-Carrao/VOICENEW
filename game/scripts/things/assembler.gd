@@ -170,6 +170,9 @@ static func build(node: Dictionary, role: String, lex: LexiconData, mount_depth:
 			child.mount_host = thing
 			child.mount_socket = String(graft.get("socket", "mount_top"))
 			thing.add_child(child)
+			# Equipment is part of its carrier, never an obstacle to that carrier.
+			thing.add_collision_exception_with(child)
+			child.add_collision_exception_with(thing)
 			thing.grafts.append(child)
 			thing.weight += child.weight
 			thing.model_pieces.append_array(child.model_pieces)

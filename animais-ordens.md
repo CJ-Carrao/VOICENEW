@@ -34,7 +34,7 @@ As ordens usam o movimento que a criatura possui: aves voam, animais terrestres 
 
 Crie com **“quero um Mahoraga agressivo”**, **“quero um cachorro agressivo”** ou **“quero uma aranha agressiva”**. O modificador funciona em qualquer criatura, inclusive misturas.
 
-Ela procura criaturas, jogadores e criações destrutíveis à sua frente, em um raio de 18 m. Pode atacar seus outros animais; o próprio treinador fica fora da seleção e do dano direto de seus poderes e projéteis. Armas montadas seguem o alvo escolhido. A agressividade não aumenta vida, velocidade ou dano. Para controlá-la, dê outra ordem, como “Mahoraga, fique aqui”. A captura mantém o indivíduo; ao mudar de dono, a proteção passa a valer para o novo treinador.
+Ela procura criaturas, jogadores e criações destrutíveis à sua frente, em um raio de 18 m. Sem alvo, patrulha para a frente em vez de ficar parada; aves continuam voando. Armas montadas não colidem com o próprio portador. Pode atacar seus outros animais; o próprio treinador fica fora da seleção e do dano direto de seus poderes e projéteis. Armas montadas seguem o alvo escolhido. A agressividade não aumenta vida, velocidade ou dano. Para controlá-la, dê outra ordem, como “Mahoraga, fique aqui”. A captura mantém o indivíduo; ao mudar de dono, a proteção passa a valer para o novo treinador.
 
 ## Animais construindo
 
