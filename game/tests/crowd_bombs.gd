@@ -62,7 +62,13 @@ func _run() -> void:
 		cow.matter = 0.0
 		cows.append(weakref(cow))
 	await physics_frame
-	var nuclear = spawn(recipes.new_node("nuclear_bomb"), Vector3(0, 80, 0))
+	var original = spawn(recipes.new_node("nuclear_bomb"), Vector3(0, 80, 0))
+	var nuclear = root.get_node("Forge").spawn_child(original.node_data, "projectile", Vector3(0, 80, 0), Vector3.DOWN, original, 0.0, Vector3.ZERO, true)
+	original.remove()
+	nuclear.set_physics_process(false)
+	nuclear.move.set_physics_process(false)
+	await create_timer(0.3).timeout
+	check(not is_instance_valid(original), "Held nuclear bomb was not freed before detonation")
 	nuclear.get_node("Do_anomaly").run(nuclear.context_here())
 	await create_timer(2.0).timeout
 	var survivors := 0
@@ -70,7 +76,25 @@ func _run() -> void:
 		var cow = ref.get_ref()
 		if is_instance_valid(cow) and not cow.is_dead: survivors += 1
 	check(survivors == 0, "Crowded nuclear blast skipped creations: " + str(survivors))
+	var chain: Dictionary = parser.parse("quero um cachorro que atira gato que atira pombo que atira rato", lex)
+	check(chain.get("ok", false) and chain.get("unknown_words", []).is_empty(), "Dog/cat/pigeon/rat chain did not parse")
+	spawn(chain.recipe, Vector3(0, 1, 0))
+	await create_timer(6.0).timeout
+	var tiers := {}
+	for item in game.get_node("Things").get_children():
+		if not item.is_dead and item.thing_id in ["dog", "cat", "pigeon", "rat"]: tiers[item.thing_id] = true
+	check(tiers.size() == 4, "Nested chain did not produce all four animal species: " + str(tiers))
+	for i in 64:
+		var crowded = spawn(recipes.new_node("cow"), Vector3(float(i % 8) * 0.1, 1, float(i / 8) * 0.1))
+		crowded.hp = 1.0
+		crowded.matter = 0.0
+	var held = spawn(recipes.new_node("nuclear_bomb"), Vector3(0, 2, 0))
+	game.player.hands._throw(held, Vector3(0, 2, 0), Vector3.DOWN)
+	await create_timer(5.0).timeout
+	check(not is_instance_valid(held), "Actual thrown nuclear retained its held source")
 	var report := {"failures": failures, "species_checked": species_checked, "butterflies_before": 150, "butterflies_after": remaining, "nuclear_targets": 160, "nuclear_survivors": survivors}
+	report.nested_chain = tiers.keys()
+	report.real_throw_completed = true
 	var file := FileAccess.open(ProjectSettings.globalize_path("res://").path_join("../analysis/crowd-bombs.json").simplify_path(), FileAccess.WRITE)
 	file.store_string(JSON.stringify(report, "  "))
 	print("CROWD_BOMBS ", JSON.stringify(report))

@@ -21,7 +21,7 @@ func run(ctx: ActionContext) -> void :
 		(node.get_or_add("mods", {}) as Dictionary).merge(carried, true)
 	var target: Node3D = null
 	if spec.get("aim") == "enemy" or (thing.auto_aim and not thing.is_held):
-		target = ctx.target if ctx.target != null and InnovationRules.allows_target(thing, ctx.target) else Combat.nearest_target(thing, thing.center(), get_tree())
+		target = ctx.target if is_instance_valid(ctx.target) and InnovationRules.allows_target(thing, ctx.target) else Combat.nearest_target(thing, thing.center(), get_tree())
 		if target == null:
 			return
 		if not thing.is_held:

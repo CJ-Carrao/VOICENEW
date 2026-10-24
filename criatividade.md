@@ -61,6 +61,8 @@ Agora há clarão azul, fragmentos cúbicos, impacto próximo que quebra estrutu
 
 ## Verificação
 
+Referências de origem e de alvo agora são descartadas quando o objeto correspondente é apagado. O dano e os efeitos validam o alvo antes de testar seu tipo. A regressão inclui a cadeia cachorro → gato → pombo → rato e uma nuclear arremessada pelo sistema de mãos, com o objeto original já removido antes da detonação; os testes anteriores de multidões criavam a bomba diretamente no mundo.
+
 A bomba seletiva custa **290 de matéria base** e aceita qualquer uma das 69 espécies cadastradas. Exemplo: **“quero uma bomba que mate todas as borboletas”**; troque borboletas por elefantes, dragões ou outro animal do catálogo. Após arremessada, detona em três segundos e elimina os animais daquela espécie que existirem no mapa, de ambas as equipes, inclusive os distantes. Poupa outras espécies, jogadores e terreno. A eliminação é feita em pequenos grupos, sem gerar uma explosão por animal. Animais criados depois do pulso podem voltar a aparecer.
 
 Explosões comuns e nucleares que atingem multidões também distribuem o dano e a remoção dos corpos entre quadros. A explosão continua removendo blocos do terreno; animais atingidos não ficam limitados aos primeiros 128 resultados da consulta de colisão.

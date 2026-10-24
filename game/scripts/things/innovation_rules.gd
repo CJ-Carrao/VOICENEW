@@ -63,11 +63,14 @@ static func target_diet(source: Thing) -> String:
 		if not cursor.target_filter.is_empty(): return cursor.target_filter
 		var diet := String(cursor.node_data.get("mods", {}).get("diet", Lexicon.data.thing_def(cursor.thing_id).get("diet", "")))
 		if not diet.is_empty() or cursor.category == "creature": return diet
-		cursor = cursor.mount_host if is_instance_valid(cursor.mount_host) else cursor.spawner as Thing
+		# Release builds cannot safely cast a reference after the held item was freed.
+		var parent: Variant = cursor.mount_host if is_instance_valid(cursor.mount_host) else cursor.spawner
+		cursor = parent as Thing if is_instance_valid(parent) else null
 	return ""
 
 
 static func allows_target(source: Thing, target: Object) -> bool:
+	if not is_instance_valid(target): return false
 	var diet := target_diet(source)
 	return diet.is_empty() or (target is Thing and target != source and matches_diet(target, diet))
 
@@ -105,7 +108,7 @@ static func _best(target: Node3D, kind: String):
 
 
 static func protected_damage(target: Object, amount: float, kind: String, source: Thing) -> float:
-	if not target is Node3D or kind == "shield_strain":
+	if not is_instance_valid(target) or not target is Node3D or kind == "shield_strain":
 		return amount
 	var field = _best(target as Node3D, threat(source, kind))
 	if field == null:

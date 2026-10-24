@@ -38,7 +38,14 @@ var team: int = 0
 
 var owner_player: Node3D = null
 
-var spawner: Node3D = null
+var _spawner_ref: WeakRef
+var spawner: Node3D:
+	get:
+		if _spawner_ref == null: return null
+		var value = _spawner_ref.get_ref()
+		return value as Node3D if is_instance_valid(value) else null
+	set(value):
+		_spawner_ref = weakref(value) if is_instance_valid(value) else null
 var target_filter: String = ""
 var _effect_jobs := 0
 var _effect_cleanup := false

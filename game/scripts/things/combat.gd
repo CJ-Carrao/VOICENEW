@@ -9,9 +9,9 @@ const COMBATANTS_GROUP: = "combatants"
 
 
 static func apply_damage(target: Object, amount: float, type: String, source: Thing) -> void :
-	if not Forge.has_effect_authority() or (Session.is_online() and not (target is Thing or target is Player)):
-		return
 	if target == null or not is_instance_valid(target) or amount <= 0.0 or not target.has_method("take_damage"):
+		return
+	if not Forge.has_effect_authority() or (Session.is_online() and not (target is Thing or target is Player)):
 		return
 	if not InnovationRules.allows_target(source, target):
 		return
@@ -59,7 +59,7 @@ static func hit_structure(target: Object, point: Vector3, shape_index: int, amou
 
 
 static func affects(source: Thing, target: Object) -> bool:
-	if source == null or target == source or not is_instance_valid(target):
+	if not is_instance_valid(source) or target == source or not is_instance_valid(target):
 		return false
 	if not InnovationRules.target_diet(source).is_empty():
 		return InnovationRules.allows_target(source, target)

@@ -7,7 +7,14 @@ var point: Vector3 = Vector3.ZERO
 var direction: Vector3 = Vector3.FORWARD
 var normal: Vector3 = Vector3.UP
 
-var target: Node3D = null
+var _target_ref: WeakRef
+var target: Node3D:
+	get:
+		if _target_ref == null: return null
+		var value = _target_ref.get_ref()
+		return value as Node3D if is_instance_valid(value) else null
+	set(value):
+		_target_ref = weakref(value) if is_instance_valid(value) else null
 
 var shots: int = -1
 

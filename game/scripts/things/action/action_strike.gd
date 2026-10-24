@@ -91,7 +91,7 @@ func _direction(ctx: ActionContext, origin: Vector3) -> Vector3:
 	var holder: = thing.owner_player as Player
 	if thing.is_held and holder != null:
 		return - holder.camera.global_basis.z
-	var target: = ctx.target if ctx.target != null and InnovationRules.allows_target(thing, ctx.target) else Combat.nearest_target(thing, origin, get_tree())
+	var target: = ctx.target if is_instance_valid(ctx.target) and InnovationRules.allows_target(thing, ctx.target) else Combat.nearest_target(thing, origin, get_tree())
 	if target != null:
 		var to: = Combat.center_of(target) - origin
 		if to.length_squared() > 0.0001:

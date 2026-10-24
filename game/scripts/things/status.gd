@@ -22,6 +22,7 @@ var _material: StandardMaterial3D
 
 
 static func apply(target: Object, kind: String, source: Thing, duration_mult: float = 1.0) -> void :
+	if not is_instance_valid(target): return
 	if not Forge.has_effect_authority() or (Session.is_online() and not (target is Thing or target is Player)):
 		return
 	var config: Variant = Lexicon.bal("status." + kind)
