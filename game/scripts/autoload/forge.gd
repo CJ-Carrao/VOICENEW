@@ -36,7 +36,9 @@ const GROUP_GAP: = 0.5
 
 var world: Match = null
 
-var stats: = {"spawned": 0, "explosions": 0, "explosions_blocked": 0, "evicted": 0, "too_deep": 0}
+var stats: = {"spawned": 0, "explosions": 0, "explosions_blocked": 0, "evicted": 0, "too_deep": 0, "production_paused": 0}
+var production := preload("res://scripts/things/production_budget.gd").new()
+var _last_anomaly_ms := -1000
 
 var test_instant_builds: bool = false
 var test_free_matter: bool = false
@@ -57,6 +59,8 @@ var novelty_clock_offset_s: float = 0.0
 
 func attach_world(match_node: Match) -> void :
 	world = match_node
+	production.reset()
+	_last_anomaly_ms = -1000
 
 
 func detach_world(match_node: Match) -> void :
@@ -358,8 +362,13 @@ func spawn_child(node: Dictionary, role: String, at: Vector3, direction: Vector3
 		return null
 	if Session.is_online() and not Session.creations.descendant_allowed(spawner.owner_id, node):
 		return null
+	var heavy := ProductionBudget.complex(node, Lexicon.data)
+	if heavy and not production.reserve(spawner.owner_id, live_things(spawner.owner_id).size()):
+		stats.production_paused += 1
+		return null
 	if not InnovationRules.authorize_spawn(spawner, node):
 		return null
+	var started := Time.get_ticks_usec()
 	var creature := String(Lexicon.data.thing_def(String(node.get("thing", ""))).get("category", "")) in ["creature", "vehicle"]
 	var child_role := "spawned" if role == "projectile" and creature else role
 	var child: = Assembler.build(node, child_role, Lexicon.data)
@@ -387,6 +396,7 @@ func spawn_child(node: Dictionary, role: String, at: Vector3, direction: Vector3
 		Session.creations.publish_creation(child, 0.0, true, 0.0)
 	child.activate()
 	_appear(child)
+	if heavy: production.record_work(Time.get_ticks_usec() - started)
 	return child
 
 
@@ -396,8 +406,12 @@ func summon_child(node: Dictionary, target: Vector3, heading: Vector3, spawner: 
 		return null
 	if Session.is_online() and not Session.creations.descendant_allowed(spawner.owner_id, node):
 		return null
+	if not production.reserve(spawner.owner_id, live_things(spawner.owner_id).size()):
+		stats.production_paused += 1
+		return null
 	if not InnovationRules.authorize_spawn(spawner, node):
 		return null
+	var started := Time.get_ticks_usec()
 	var child: = Assembler.build(node, "summoned", Lexicon.data)
 	child.set_owner_info(spawner.owner_id, spawner.team, spawner.owner_player, spawner)
 	world.add_thing(child)
@@ -408,7 +422,24 @@ func summon_child(node: Dictionary, target: Vector3, heading: Vector3, spawner: 
 		Session.creations.publish_creation(child, 0.0, true, 0.0)
 	child.activate()
 	_appear(child)
+	production.record_work(Time.get_ticks_usec() - started)
 	return child
+
+
+func production_available(source: Thing) -> bool:
+	for component in source.get_children():
+		if component is ThingAction and component.production_pending: return false
+		if component is ThingAction and component.spec.get("type", "") in ["shoot", "drop", "spawn", "summon"]:
+			var node: Dictionary = source.ammo_override if not source.ammo_override.is_empty() else component.arg()
+			if not node.is_empty() and ProductionBudget.complex(node, Lexicon.data) and not production.available(source.owner_id, live_things(source.owner_id).size()): return false
+	return true
+
+
+func reserve_anomaly_effect() -> bool:
+	var now := Time.get_ticks_msec()
+	if now - _last_anomaly_ms < 170: return false
+	_last_anomaly_ms = now
+	return true
 
 
 

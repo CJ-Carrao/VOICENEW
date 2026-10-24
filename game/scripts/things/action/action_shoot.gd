@@ -56,6 +56,7 @@ func run(ctx: ActionContext) -> void :
 			Fx.muzzle_flash(Forge.fx_root(thing), origin, base_dir, Lexicon.balf("attachments_fx.flash_size") * sqrt(thing.power), 
 				thing.is_held)
 		for p in pellets:
+			if not await wait_for_production(node): return
 			var child: = Forge.spawn_child(node, "projectile", origin, _cone(base_dir, p, pellets), thing, -1.0, 
 				Vector3.ZERO, false, thing.shot_speed_mult)
 			if child != null:

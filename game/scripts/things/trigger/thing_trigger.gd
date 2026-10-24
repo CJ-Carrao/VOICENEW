@@ -20,7 +20,7 @@ func activate() -> void :
 
 
 func fire(ctx: ActionContext) -> void :
-	if action != null and is_instance_valid(thing) and thing.can_act():
+	if action != null and not action.production_pending and is_instance_valid(thing) and thing.can_act():
 		action.run(ctx)
 
 

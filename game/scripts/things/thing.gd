@@ -414,6 +414,8 @@ func set_building(building: bool) -> void :
 func fire(ctx: ActionContext) -> bool:
 	if not can_act() or loading:
 		return false
+	if not Forge.production_available(self):
+		return false
 	if magazine > 0:
 		if reload_left > 0.0:
 			return false

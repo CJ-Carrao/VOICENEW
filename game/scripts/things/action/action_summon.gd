@@ -18,5 +18,6 @@ func run(ctx: ActionContext) -> void :
 	var spacing: = Lexicon.balf("actions.spawn.side_spacing") * 2.0
 	var count: = arg_count()
 	for i in count:
+		if not await wait_for_production(node): return
 		var target: = Forge.ground_point(ctx.point + forward * (i - (count - 1) * 0.5) * spacing)
 		Forge.summon_child(node, target, across, thing)

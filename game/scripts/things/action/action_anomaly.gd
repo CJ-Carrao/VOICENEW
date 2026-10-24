@@ -1,6 +1,7 @@
 extends ThingAction
 
 static var executed: Dictionary = {}
+var _waiting_for_effect := false
 
 
 func run(ctx: ActionContext) -> void:
@@ -25,6 +26,11 @@ func run(ctx: ActionContext) -> void:
 		return
 	if thing.is_held or thing.explosion_spent:
 		return
+	if _waiting_for_effect: return
+	_waiting_for_effect = true
+	while not Forge.reserve_anomaly_effect():
+		await get_tree().create_timer(0.05).timeout
+		if not is_instance_valid(thing) or thing.is_dead or not thing.is_inside_tree(): return
 	thing.explosion_spent = true
 	_note(mode)
 	var at := thing.center()

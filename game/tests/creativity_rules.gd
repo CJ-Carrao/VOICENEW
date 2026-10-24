@@ -105,13 +105,14 @@ func _run() -> void:
 		var nest = nests[0]
 		var ai = nest.get_node("EcologyBehavior")
 		ai.set_physics_process(false)
-		for i in 12:
-			ai._produce()
-		await process_frame
 		var ants := 0
-		for item in game.get_node("Things").get_children():
-			if item.thing_id == "ant":
-				ants += 1
+		for attempt in 100:
+			ai._produce()
+			await create_timer(0.03).timeout
+			ants = 0
+			for item in game.get_node("Things").get_children():
+				if item.thing_id == "ant": ants += 1
+			if ants >= 12: break
 		check(ants == 12, "Nest unexpectedly capped its paid population: " + str(ants))
 		queen.die()
 		check(not ai._living_queen(), "Nest stays fertile after queen death")

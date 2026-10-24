@@ -99,7 +99,9 @@ func _run() -> void:
 		var source = _spawn(payload + "_grenade", origin)
 		await create_timer(0.06).timeout
 		source.get_node("Do_burst_into").run(source.context_here())
-		await process_frame
+		var delivery_deadline := Time.get_ticks_msec() + 3000
+		while is_instance_valid(source) and not source.is_dead and Time.get_ticks_msec() < delivery_deadline:
+			await create_timer(0.03).timeout
 		var count := 0
 		for child in game.get_node("Things").get_children():
 			if child.get("thing_id") == payload and not child.is_dead and child.is_active:
