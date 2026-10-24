@@ -19,3 +19,4 @@ game/gdre_export.log
 tools/__pycache__/
 game/Godot/
 game/LAVOICE-Lab/
+dist/
