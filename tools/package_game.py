@@ -3,6 +3,7 @@ from pathlib import Path
 import hashlib
 import json
 import struct
+import argparse
 
 ROOT = Path(__file__).resolve().parent.parent
 ENGINE = ROOT / "tools/runtime/lavoice-engine.bin"
@@ -10,9 +11,9 @@ PACK = ROOT / "build/LAVOICE-Lab.pck"
 OUTPUT = ROOT / "build/LAVOICE-Lab.exe"
 
 
-def build():
+def build(pack_path=PACK, output_path=OUTPUT):
     engine = bytearray(ENGINE.read_bytes())
-    pack = PACK.read_bytes()
+    pack = pack_path.read_bytes()
     if pack[:4] != b"GDPC":
         raise ValueError("Export is not a Godot PCK")
     pe_offset = struct.unpack_from("<I", engine, 0x3C)[0]
@@ -28,19 +29,23 @@ def build():
             break
     if not matched:
         raise ValueError("Preserved runtime has no PCK section")
-    OUTPUT.write_bytes(engine + pack + struct.pack("<Q4s", len(pack), b"GDPC"))
+    output_path.write_bytes(engine + pack + struct.pack("<Q4s", len(pack), b"GDPC"))
     receipt = {
-        "executable": OUTPUT.name,
-        "sha256": hashlib.sha256(OUTPUT.read_bytes()).hexdigest(),
-        "size": OUTPUT.stat().st_size,
+        "executable": output_path.name,
+        "sha256": hashlib.sha256(output_path.read_bytes()).hexdigest(),
+        "size": output_path.stat().st_size,
         "pack_sha256": hashlib.sha256(pack).hexdigest(),
         "runtime_sha256": hashlib.sha256(engine).hexdigest(),
         "engine_version": "4.7.2",
         "user_data_folder": "%APPDATA%/LAVOICE-Lab",
     }
-    (ROOT / "build/build-receipt.json").write_text(json.dumps(receipt, indent=2), encoding="utf-8")
+    output_path.with_suffix(".receipt.json").write_text(json.dumps(receipt, indent=2), encoding="utf-8")
     print(json.dumps(receipt, indent=2))
 
 
 if __name__ == "__main__":
-    build()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--pack", type=Path, default=PACK)
+    parser.add_argument("--output", type=Path, default=OUTPUT)
+    args = parser.parse_args()
+    build(args.pack, args.output)

@@ -169,7 +169,7 @@ func _clear_entries() -> void :
 
 
 static func _valid_config(config: Dictionary) -> bool:
-	for key in ["max_text_bytes", "max_spawn_bytes", "max_batch_bytes", "max_entities", "max_intent_lead"]:
+	for key in ["max_text_bytes", "max_spawn_bytes", "max_batch_bytes", "max_intent_lead"]:
 		var value: Variant = config.get(key)
 		if not (value is int or value is float) or not is_finite(float(value)) or float(value) < 1.0 or float(value) != floorf(float(value)):
 			return false
@@ -177,7 +177,8 @@ static func _valid_config(config: Dictionary) -> bool:
 		var value: Variant = config.get(key)
 		if not (value is int or value is float) or not is_finite(float(value)) or float(value) <= 0.0:
 			return false
-	return int(config.max_spawn_bytes) <= 65536 and int(config.max_batch_bytes) <= 65536 and int(config.max_entities) <= 128 and int(config.max_text_bytes) <= 4096
+	var cap: Variant = config.get("max_entities")
+	return (cap is int or cap is float) and is_finite(float(cap)) and float(cap) == floorf(float(cap)) and int(cap) >= 0 and int(config.max_spawn_bytes) <= 65536 and int(config.max_batch_bytes) <= 65536 and int(config.max_text_bytes) <= 4096
 
 
 func _next_request_id() -> int:
@@ -413,7 +414,7 @@ func creation_warning(player_id: int, recipe: Dictionary, cost: float, descendan
 			for old: Thing in Forge.live_things(player_id):
 				if old == held or held.is_ancestor_of(old):
 					reclaimed_live += 1
-	if entries.size() + count - reclaimed > int(_config.max_entities):
+	if int(_config.max_entities) > 0 and entries.size() + count - reclaimed > int(_config.max_entities):
 		return "Há criações demais nesta sessão. Recicle uma antes de pedir mais."
 	var cache_key: = str(descendant) + JSON.stringify(recipe, "", true)
 	if _preflight_cache.has(cache_key):
@@ -454,7 +455,8 @@ func _budget_warning(player_id: int, count: int, reclaimed_live: int, budget: Di
 
 
 	var live_after: = Forge.live_things(player_id).size() + int(budget.registered) * count - reclaimed_live
-	if live_after > int(Lexicon.balf("caps.live_entities_per_player")):
+	var live_cap := int(Lexicon.balf("caps.live_entities_per_player"))
+	if live_cap > 0 and live_after > live_cap:
 		return "Há criações e anexos demais em uso. Recicle uma criação antes de pedir mais."
 	if int(budget.spawn_bytes) > int(_config.max_spawn_bytes) or int(budget.state_bytes) > int(_config.max_batch_bytes):
 		return "A criação tem peças demais para esta sessão. Reduza os anexos ou simplifique o pedido."
@@ -482,7 +484,7 @@ func publish_creation(thing: Thing, seconds: float, activate_after: bool, cost: 
 		"role": thing.role, "owner_id": thing.owner_id, "team": thing.team, "generation": thing.generation, 
 		"matter_returns": thing.matter_returns, "seconds": seconds, "cost": cost, "activate_after": activate_after, 
 		"state": _capture_state(thing)}
-	if not _valid_descriptor(descriptor) or entries.size() >= int(_config.max_entities):
+	if not _valid_descriptor(descriptor) or (int(_config.max_entities) > 0 and entries.size() >= int(_config.max_entities)):
 		push_error("Creation exceeds the bounded multiplayer spawn envelope.")
 		return
 	_pending_host[thing.network_id] = thing
@@ -694,7 +696,7 @@ func prepare_epoch(value: int, peer: int) -> void :
 
 @rpc("authority", "call_remote", "reliable", 0)
 func _sync_begin(value: int, ids: Array) -> void :
-	if _session.has_authority() or not _session.is_ready() or value < epoch or value <= 0 or ids.size() > int(_config.max_entities):
+	if _session.has_authority() or not _session.is_ready() or value < epoch or value <= 0 or (int(_config.max_entities) > 0 and ids.size() > int(_config.max_entities)):
 		return
 	var seen: = {}
 	for id: Variant in ids:
@@ -743,14 +745,14 @@ func _states(packet_epoch: int, sequence: int, payload: PackedByteArray) -> void
 	if _session.has_authority() or packet_epoch != epoch or sequence <= _last_state_serial:
 		return
 	var states: Variant = PlayerReplication.decode_packet(payload, int(_config.max_batch_bytes))
-	if not states is Array or states.size() > int(_config.max_entities):
+	if not states is Array or (int(_config.max_entities) > 0 and states.size() > int(_config.max_entities)):
 		return
 	_last_state_serial = sequence
 	for state: Variant in states:
 		if not state is Dictionary or not _valid_state(state):
 			continue
 		var id: = int(state.id)
-		if _pending_states.size() < int(_config.max_entities) or _pending_states.has(id):
+		if int(_config.max_entities) == 0 or _pending_states.size() < int(_config.max_entities) or _pending_states.has(id):
 			_pending_states[id] = state
 			_apply_state(state, _ready_epoch != epoch)
 	_check_baseline_ready()

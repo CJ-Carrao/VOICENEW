@@ -14,6 +14,7 @@ var _speed: float = 0.0
 var _airborne: bool = false
 
 var _grounded: bool = false
+var _wander_time := 0.0
 
 
 func _configure(lex: LexiconData) -> void :
@@ -34,12 +35,17 @@ func hovers() -> bool:
 
 
 func step(delta: float) -> void :
+	_wander_time += delta
 	var up: = thing.up()
 	if not steering:
 		var enemy: = Combat.nearest_enemy(thing.center(), thing.team, get_tree())
 		var flat: = Gravity.flat(thing.velocity, up)
 		if enemy == null:
-			if _airborne:
+			if thing.category in ["creature", "vehicle"]:
+				var forward := Gravity.flat(-thing.global_basis.z, up).normalized()
+				flat = forward.rotated(up, sin(_wander_time * 0.4 + thing.get_instance_id() % 7) * delta * 0.6) * _speed * 0.65
+				if _airborne: thing.velocity = flat
+			elif _airborne:
 				thing.velocity = thing.velocity.move_toward(Vector3.ZERO, _speed * delta)
 			else:
 				flat = flat.move_toward(Vector3.ZERO, _speed * delta)

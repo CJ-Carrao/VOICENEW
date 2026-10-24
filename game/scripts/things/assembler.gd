@@ -61,6 +61,9 @@ static func build(node: Dictionary, role: String, lex: LexiconData, mount_depth:
 	var thing: = Thing.new()
 	thing.name = thing_id
 	thing.configure(node, role, def, lex)
+	var anatomy: Dictionary = node.get("mods", {}).get("anatomy", {})
+	if anatomy.has("legs"):
+		thing.speed = lex.thing_statf(String(anatomy.legs), "speed") * float(node.get("mods", {}).get("speed", 1.0))
 	thing.attach_model(ModelBuilder.build(thing_id, node.get("mods", {}), lex))
 	var protection := InnovationRules.profile(node, lex)
 	if not protection.is_empty():
@@ -79,7 +82,7 @@ static func build(node: Dictionary, role: String, lex: LexiconData, mount_depth:
 	if bool(def.get("voxel_motion", false)):
 		var motion = load("res://scripts/things/voxel_creature_motion.gd").new()
 		motion.name = "VoxelCreatureMotion"
-		motion.setup(thing, bool(def.get("aerial", false)))
+		motion.setup(thing, bool(def.get("aerial", false)) or anatomy.has("wings"))
 		thing.add_child(motion)
 
 	var move_id: = movement_id(node, def, role_def, role, lex)
@@ -167,6 +170,13 @@ static func merged_behaviors(node: Dictionary, def: Dictionary, role_def: Dictio
 			result.append(Recipe.behavior_from_data(behavior))
 	for behavior: Dictionary in explicit:
 		result.append(behavior)
+	var anatomy: Dictionary = node.get("mods", {}).get("anatomy", {})
+	if lex != null and anatomy.has("head"):
+		for behavior: Dictionary in lex.thing_def(String(anatomy.head)).get("behaviors", []):
+			var duplicate := false
+			for existing in result:
+				duplicate = duplicate or _key(existing) == _key(behavior)
+			if not duplicate: result.append(Recipe.behavior_from_data(behavior))
 	if lex != null:
 		var keys: = {}
 		for behavior in result:
@@ -221,6 +231,8 @@ static func _collect_unsupported(node: Dictionary, found: Array[String]) -> void
 static func movement_id(node: Dictionary, def: Dictionary, role_def: Dictionary, role: String, lex: LexiconData) -> String:
 	if node.get("movement") != null:
 		return String(node["movement"])
+	if node.get("mods", {}).get("anatomy", {}).has("wings"):
+		return "fly"
 	var pack: = lex.material_pack(node)
 	if pack.has("movement"):
 		return String(pack["movement"])

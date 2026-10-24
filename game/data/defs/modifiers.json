@@ -196,5 +196,285 @@
   "walking": {
     "key": "movement",
     "value": "chase_enemy"
+  },
+  "resist_rifle": {
+    "key": "shield_profile",
+    "value": "kinetic"
+  },
+  "diet_species_pigeon": {
+    "key": "diet",
+    "value": "species:pigeon"
+  },
+  "diet_species_monkey": {
+    "key": "diet",
+    "value": "species:monkey"
+  },
+  "diet_species_gorilla": {
+    "key": "diet",
+    "value": "species:gorilla"
+  },
+  "diet_species_bear": {
+    "key": "diet",
+    "value": "species:bear"
+  },
+  "diet_species_dog": {
+    "key": "diet",
+    "value": "species:dog"
+  },
+  "diet_species_wolf": {
+    "key": "diet",
+    "value": "species:wolf"
+  },
+  "diet_species_horse": {
+    "key": "diet",
+    "value": "species:horse"
+  },
+  "diet_species_unicorn": {
+    "key": "diet",
+    "value": "species:unicorn"
+  },
+  "diet_species_shark": {
+    "key": "diet",
+    "value": "species:shark"
+  },
+  "diet_species_eagle": {
+    "key": "diet",
+    "value": "species:eagle"
+  },
+  "diet_species_chicken": {
+    "key": "diet",
+    "value": "chicken"
+  },
+  "diet_species_snake": {
+    "key": "diet",
+    "value": "species:snake"
+  },
+  "diet_species_spider": {
+    "key": "diet",
+    "value": "species:spider"
+  },
+  "diet_species_ant": {
+    "key": "diet",
+    "value": "ant"
+  },
+  "diet_species_trex": {
+    "key": "diet",
+    "value": "species:trex"
+  },
+  "diet_species_cat": {
+    "key": "diet",
+    "value": "species:cat"
+  },
+  "diet_species_rabbit": {
+    "key": "diet",
+    "value": "species:rabbit"
+  },
+  "diet_species_fox": {
+    "key": "diet",
+    "value": "species:fox"
+  },
+  "diet_species_boar": {
+    "key": "diet",
+    "value": "species:boar"
+  },
+  "diet_species_crocodile": {
+    "key": "diet",
+    "value": "species:crocodile"
+  },
+  "diet_species_elephant": {
+    "key": "diet",
+    "value": "species:elephant"
+  },
+  "diet_species_lion": {
+    "key": "diet",
+    "value": "species:lion"
+  },
+  "diet_species_tiger": {
+    "key": "diet",
+    "value": "species:tiger"
+  },
+  "diet_species_penguin": {
+    "key": "diet",
+    "value": "species:penguin"
+  },
+  "diet_species_turtle": {
+    "key": "diet",
+    "value": "species:turtle"
+  },
+  "diet_species_goat": {
+    "key": "diet",
+    "value": "species:goat"
+  },
+  "diet_species_deer": {
+    "key": "diet",
+    "value": "species:deer"
+  },
+  "diet_species_crab": {
+    "key": "diet",
+    "value": "species:crab"
+  },
+  "diet_species_scorpion": {
+    "key": "diet",
+    "value": "species:scorpion"
+  },
+  "diet_species_frog": {
+    "key": "diet",
+    "value": "species:frog"
+  },
+  "diet_species_bull": {
+    "key": "diet",
+    "value": "species:bull"
+  },
+  "diet_species_bee": {
+    "key": "diet",
+    "value": "bee"
+  },
+  "diet_species_rat": {
+    "key": "diet",
+    "value": "rodent"
+  },
+  "diet_species_zombie": {
+    "key": "diet",
+    "value": "species:zombie"
+  },
+  "diet_species_skeleton": {
+    "key": "diet",
+    "value": "species:skeleton"
+  },
+  "diet_species_dummy": {
+    "key": "diet",
+    "value": "species:dummy"
+  },
+  "diet_species_duck": {
+    "key": "diet",
+    "value": "species:duck"
+  },
+  "diet_species_goose": {
+    "key": "diet",
+    "value": "species:goose"
+  },
+  "diet_species_turkey": {
+    "key": "diet",
+    "value": "species:turkey"
+  },
+  "diet_species_pig": {
+    "key": "diet",
+    "value": "species:pig"
+  },
+  "diet_species_cow": {
+    "key": "diet",
+    "value": "species:cow"
+  },
+  "diet_species_sheep": {
+    "key": "diet",
+    "value": "species:sheep"
+  },
+  "diet_species_donkey": {
+    "key": "diet",
+    "value": "species:donkey"
+  },
+  "diet_species_camel": {
+    "key": "diet",
+    "value": "species:camel"
+  },
+  "diet_species_llama": {
+    "key": "diet",
+    "value": "species:llama"
+  },
+  "diet_species_giraffe": {
+    "key": "diet",
+    "value": "species:giraffe"
+  },
+  "diet_species_zebra": {
+    "key": "diet",
+    "value": "species:zebra"
+  },
+  "diet_species_rhino": {
+    "key": "diet",
+    "value": "species:rhino"
+  },
+  "diet_species_hippo": {
+    "key": "diet",
+    "value": "species:hippo"
+  },
+  "diet_species_bison": {
+    "key": "diet",
+    "value": "species:bison"
+  },
+  "diet_species_panda": {
+    "key": "diet",
+    "value": "species:panda"
+  },
+  "diet_species_koala": {
+    "key": "diet",
+    "value": "species:koala"
+  },
+  "diet_species_capybara": {
+    "key": "diet",
+    "value": "species:capybara"
+  },
+  "diet_species_otter": {
+    "key": "diet",
+    "value": "species:otter"
+  },
+  "diet_species_raccoon": {
+    "key": "diet",
+    "value": "species:raccoon"
+  },
+  "diet_species_hedgehog": {
+    "key": "diet",
+    "value": "species:hedgehog"
+  },
+  "diet_species_armadillo": {
+    "key": "diet",
+    "value": "species:armadillo"
+  },
+  "diet_species_butterfly": {
+    "key": "diet",
+    "value": "species:butterfly"
+  },
+  "diet_species_beetle": {
+    "key": "diet",
+    "value": "species:beetle"
+  },
+  "diet_species_mantis": {
+    "key": "diet",
+    "value": "species:mantis"
+  },
+  "diet_species_snail": {
+    "key": "diet",
+    "value": "species:snail"
+  },
+  "diet_species_octopus": {
+    "key": "diet",
+    "value": "species:octopus"
+  },
+  "diet_species_raptor": {
+    "key": "diet",
+    "value": "species:raptor"
+  },
+  "diet_species_dragon": {
+    "key": "diet",
+    "value": "species:dragon"
+  },
+  "diet_species_slime": {
+    "key": "diet",
+    "value": "species:slime"
+  },
+  "diet_species_cave_bat": {
+    "key": "diet",
+    "value": "species:cave_bat"
+  },
+  "diet_species_queen_ant": {
+    "key": "diet",
+    "value": "species:queen_ant"
+  },
+  "diet_species_queen_bee": {
+    "key": "diet",
+    "value": "species:queen_bee"
+  },
+  "diet_species_anteater": {
+    "key": "diet",
+    "value": "species:anteater"
   }
 }

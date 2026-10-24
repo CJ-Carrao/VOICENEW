@@ -234,16 +234,23 @@ func _try_part(node: Dictionary, start: int) -> bool:
 	var section: = String(def.get("section", ""))
 	var end: = i + 1
 	var source: = ""
-	if not section.is_empty() and _is_gram(_at(i + 1), "of") and _has(_at(i + 2), "thing"):
-		source = _resolve_thing(_sense(_at(i + 2), "thing"), "head")
-		end = i + 3
+	if not section.is_empty() and _is_gram(_at(i + 1), "of"):
+		var donor_pos := i + 2
+		while (_has(_at(donor_pos), "filler") or _has(_at(donor_pos), "num")) and not _has(_at(donor_pos), "thing"):
+			donor_pos += 1
+		if _has(_at(donor_pos), "thing"):
+			source = _resolve_thing(_sense(_at(donor_pos), "thing"), "head")
+			end = donor_pos + 1
 	if not has_number and source.is_empty():
 		return false
 	var mods: Dictionary = node["mods"]
 	if has_number and not String(def.get("feeds", "")).is_empty():
 		mods[String(def["feeds"])] = int(_num(number))
 	if not source.is_empty():
-		if _lex.has_def("things", source) and _lex.is_weapon(String(node["thing"])):
+		if _lex.category_of(String(node["thing"])) == "creature" and _lex.category_of(source) == "creature" and def.has("anatomy"):
+			var anatomy: Dictionary = mods.get_or_add("anatomy", {})
+			anatomy[String(def.anatomy)] = source
+		elif _lex.has_def("things", source) and _lex.is_weapon(String(node["thing"])):
 			var parts: Dictionary = mods.get_or_add("parts", {})
 			parts[section] = source
 			var whole: Dictionary = mods.get("whole_parts", {})
@@ -350,7 +357,7 @@ func _try_graft(node: Dictionary, depth: int) -> bool:
 		counted = counted or _has(_at(head_pos), "num")
 		head_pos += 1
 	var plural: = bool(_sense(_at(head_pos), "thing").get("plural", false))
-	var child: = _parse_sn(depth, "head", false)
+	var child: = _parse_sn(depth + 1, "head", true)
 	_graft_depth -= 1
 	if child.is_empty():
 		return false

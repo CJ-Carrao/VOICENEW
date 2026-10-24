@@ -112,7 +112,7 @@ func _run() -> void:
 		for item in game.get_node("Things").get_children():
 			if item.thing_id == "ant":
 				ants += 1
-		check(ants == 8, "Nest population cap failed: " + str(ants))
+		check(ants == 12, "Nest unexpectedly capped its paid population: " + str(ants))
 		queen.die()
 		check(not ai._living_queen(), "Nest stays fertile after queen death")
 		before = game.player.matter_spendable()

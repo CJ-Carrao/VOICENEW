@@ -122,7 +122,11 @@ static func _pretty_node(node: Dictionary, lex: LexiconData) -> String:
 		text += " de " + _pretty_node(mods["ammo"], lex)
 	var tags: = PackedStringArray()
 	for key: String in mods:
-		if key == "grafts":
+		if key == "anatomy":
+			for section: String in mods[key]:
+				var names := {"head": "cabeça", "body": "corpo", "legs": "patas", "wings": "asas", "tail": "cauda"}
+				tags.append("%s de %s" % [names.get(section, section), lex.thing_name(String(mods[key][section]))])
+		elif key == "grafts":
 			for graft: Dictionary in mods[key]:
 				tags.append("com %s %s" % [_pretty_node(graft["node"], lex), lex.label("mounts", String(graft["socket"]))])
 		elif key == "mag" and mods[key] is Dictionary:

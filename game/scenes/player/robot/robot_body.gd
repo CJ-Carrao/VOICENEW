@@ -227,6 +227,8 @@ func _on_stepped(rise: float) -> void :
 static func hold_class(item: Thing) -> String:
 	if item == null:
 		return "none"
+	if bool(Lexicon.data.thing_def(item.thing_id).get("held_protection", false)):
+		return "shield"
 	if item.melee:
 		return "melee"
 	var holds: Dictionary = config()["holds"]
@@ -235,6 +237,8 @@ static func hold_class(item: Thing) -> String:
 
 
 static func hold_clip(item: Thing) -> String:
+	if bool(Lexicon.data.thing_def(item.thing_id).get("held_protection", false)):
+		return "Hold_Pistol"
 	var holds: Dictionary = config()["holds"]
 	var by_thing: Dictionary = holds["by_thing"]
 	if by_thing.has(item.thing_id):

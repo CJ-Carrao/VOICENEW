@@ -1,6 +1,6 @@
 # Criatividade, colônias e defesas
 
-Abra `C:\Tony\Projetos\lavoice-lab\build\LAVOICE-Lab.exe`. **F2** mostra 76 criações adicionadas e uma aba **COMBINAR** com exemplos. Segure **V**, fale e solte; **T** aceita os mesmos pedidos por texto. Espere a montagem terminar antes de usar.
+Abra `C:\Tony\Projetos\lavoice-lab\build\LAVOICE-Lab-Corrigido.exe` ou `jogar.cmd`. **F2** mostra 76 criações adicionadas e uma aba **COMBINAR** com exemplos. Segure **V**, fale e solte; **T** aceita os mesmos pedidos por texto. Espere a montagem terminar antes de usar. Para jogar online, todos precisam desta mesma versão.
 
 ## Pedidos para experimentar
 
@@ -16,6 +16,11 @@ Abra `C:\Tony\Projetos\lavoice-lab\build\LAVOICE-Lab.exe`. **F2** mostra 76 cria
 - Quero uma abelha rainha.
 - Quero uma colmeia.
 - Quero um galinheiro.
+- Quero um pato com uma pistola que atira formigas com uma pistola.
+- Quero um lobo que só coma capivaras.
+- Quero um pato com cabeça de um dragão.
+- Quero uma formiga com asas de borboleta.
+- Quero uma capivara misturada com um pato.
 
 Essas regras se combinam: criaturas podem carregar armas reais, casas podem andar e receber proteção, e animais podem receber dietas específicas. As armas acopladas em criaturas miram automaticamente, gastam munição e aumentam o custo da criação. A casa tem porta e interior oco. As possibilidades usam o vocabulário e as regras disponíveis no jogo; uma frase totalmente nova ainda pode precisar de uma nova regra.
 
@@ -39,11 +44,11 @@ Bombas fortes foram encarecidas: singularidade 220, hipotética de gravidade 145
 
 ## Colônias e predadores
 
-A formiga rainha custa **85** e constrói um ninho de **30**, usando a sua matéria. Um ninho por rainha. O ninho cria uma formiga a cada cinco segundos, pagando o custo dela, até **oito formigas vivas por ninho**. Formigas produzidas duram até 60 segundos. Sem matéria, a produção espera. Quando a rainha morre, o ninho para de produzir.
+A formiga rainha custa **85** e constrói um ninho de **30**, usando a sua matéria. Um ninho por rainha. O ninho cria uma formiga a cada cinco segundos, pagando o custo dela, sem limite de população e sem prazo para desaparecer. Sem matéria, a produção espera. Quando a rainha morre, o ninho para de produzir.
 
 O pato com a dieta “só coma formigas” procura formigas e rainhas, inclusive da sua própria equipe. Ele caminha até a presa e morde; poupa galinhas e outras espécies. Sem presas, para de caçar. O tamanduá já vem com essa dieta. Também existem dietas de insetos, ratos e galinhas.
 
-A abelha rainha mantém a colmeia, com até cinco abelhas produzidas. O galinheiro produz até quatro galinhas, sem exigir rainha. Toda produção ecológica paga matéria por animal.
+A abelha rainha mantém a colmeia. O galinheiro produz galinhas sem exigir rainha. Toda produção ecológica paga matéria por animal, sem limite de população. Dietas específicas aceitam todas as espécies cadastradas, além dos grupos de insetos, formigas, ratos e galinhas.
 
 ## Explosão de nêutrons
 
@@ -51,4 +56,4 @@ Agora há clarão azul, fragmentos cúbicos, impacto próximo que quebra estrutu
 
 ## Verificação
 
-Foram exercitados o catálogo de 76 modelos, as frases compostas, uso das nove armas especiais, efeitos das 12 bombas, granadas de criaturas, proteção e desgaste, gasto de matéria, população limitada, morte da rainha, dieta seletiva, disparo do jacaré armado, locomoção da casa e remoção de blocos pela bomba de nêutrons. Relatórios locais ficam em `analysis`.
+Os testes verificam o catálogo de 76 modelos, frases compostas, armas especiais, bombas, proteção, gasto de matéria, produção sem limite de população, morte da rainha, dieta seletiva, animais armados, locomoção da casa e remoção de blocos pela bomba de nêutrons. As regressões do documento têm um teste específico em `game/tests/reported_regressions.gd`; os relatórios locais ficam em `analysis`.

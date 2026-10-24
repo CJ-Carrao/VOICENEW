@@ -637,7 +637,7 @@
       "name": "ninho de formigas",
       "phrase": "quero ninho de formigas",
       "group": "Ecologia",
-      "effect": "Gera uma criatura a cada 5 s, consumindo materia. Precisa de rainha viva; producao limitada por ninho.",
+      "effect": "Gera uma criatura a cada 5 s, pagando materia. Precisa de rainha viva; sem limite de animais ou prazo para sumir.",
       "pieces": 7,
       "base_cost": 30
     },
@@ -655,7 +655,7 @@
       "name": "colmeia",
       "phrase": "quero colmeia",
       "group": "Ecologia",
-      "effect": "Gera uma criatura a cada 5 s, consumindo materia. Precisa de rainha viva; producao limitada por ninho.",
+      "effect": "Gera uma criatura a cada 5 s, pagando materia. Precisa de rainha viva; sem limite de animais ou prazo para sumir.",
       "pieces": 7,
       "base_cost": 30
     },
@@ -664,7 +664,7 @@
       "name": "galinheiro",
       "phrase": "quero galinheiro",
       "group": "Ecologia",
-      "effect": "Produz ate quatro galinhas vivas, pagando materia por cada uma.",
+      "effect": "Produz galinhas pagando materia por cada uma, sem limite de animais ou prazo para sumir.",
       "pieces": 27,
       "base_cost": 55
     },

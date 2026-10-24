@@ -162,7 +162,20 @@ func apply_network_state(data: Dictionary) -> void :
 
 
 func _process(delta: float) -> void :
-	if player.has_simulation_authority() or not pulling or not player.network_active:
+	if player.has_simulation_authority() or not player.network_active:
+		return
+	if player.is_local and player.network_role == "predicted":
+		# Immediate visual response; matter and actual cells remain host-authoritative.
+		pulling = false
+		if player.extracting and player.is_using_input() and player.can_act() and not player.is_full_of_matter():
+			var hit := target()
+			if not hit.is_empty():
+				var source: Object = hit.collider
+				_last_point = source.call("extract_point", int(hit.shape), hit.position)
+				_bit_color = source.call("extract_color", int(hit.shape), hit.position) if source.has_method("extract_color") else Color("ffc65c")
+				pulling = true
+	if not pulling:
+		_beam_left = 0.0
 		return
 	_beam_left -= delta
 	if _beam_left <= 0.0:

@@ -29,7 +29,9 @@ static func authorize_spawn(source: Thing, node: Dictionary) -> bool:
 			elif not protected and item.thing_id == id and item.spawner == source:
 				count += 1
 	var cap := 3 if protected else int(ecology.get("local_cap", 1 if id.ends_with("nest") else 8))
-	if count >= cap:
+	if not protected and String(def.get("category", "")) == "creature":
+		cap = 0
+	if cap > 0 and count >= cap:
 		return false
 	var player := source.owner_player as Player
 	if player == null or not player.is_alive():
@@ -43,6 +45,13 @@ static func authorize_spawn(source: Thing, node: Dictionary) -> bool:
 
 static func tags(thing: Thing) -> Array:
 	return Lexicon.data.thing_def(thing.thing_id).get("ecology_tags", [])
+
+static func matches_diet(thing: Thing, diet: String) -> bool:
+	if diet == "creature":
+		return thing.category == "creature"
+	if diet.begins_with("species:"):
+		return thing.thing_id == diet.trim_prefix("species:")
+	return tags(thing).has(diet)
 
 
 static func threat(source: Thing, damage_type: String) -> String:

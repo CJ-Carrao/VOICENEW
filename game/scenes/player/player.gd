@@ -122,6 +122,7 @@ var _network_revision: int = 0
 var _network_received_revision: int = -1
 var _network_ack_input: int = 0
 var _network_ack_event: int = 0
+var _predicted_extract_event: int = 0
 var _network_last_snapshot: int = -1
 var _network_free_view: bool = false
 var _network_use_held: bool = false
@@ -513,7 +514,7 @@ func is_full_of_matter() -> bool:
 
 
 func set_extracting(on: bool) -> void :
-	if on and not has_simulation_authority():
+	if on and not has_simulation_authority() and network_role != "predicted":
 		return
 	if extracting == on:
 		return
@@ -1092,6 +1093,7 @@ func set_network_active(active: bool, epoch: int = 0) -> void :
 		_network_event_seq = 0
 		_network_ack_input = 0
 		_network_ack_event = 0
+		_predicted_extract_event = 0
 		_network_last_snapshot = -1
 		_network_received_revision = -1
 		_network_target.clear()
@@ -1196,8 +1198,9 @@ func _apply_network_frame(frame: PlayerInputFrame, delta: float, replaying: bool
 	_network_use_held = frame.use_held and can_act()
 	_network_face_aim = frame.face_aim and can_act()
 	if not replaying:
-		if frame.toggle_extract and has_simulation_authority() and can_act() and piloting == null:
+		if frame.toggle_extract and (has_simulation_authority() or network_role == "predicted") and can_act() and piloting == null:
 			set_extracting( not extracting)
+			if network_role == "predicted": _predicted_extract_event = frame.event_seq
 		if piloting != null and has_simulation_authority():
 			(piloting.control as ControlPlayer).apply_input(frame)
 			if frame.use_pressed:
@@ -1322,13 +1325,15 @@ func _apply_replicated_values(snapshot: Dictionary) -> void :
 	frozen = bool(snapshot.get("frozen", frozen)) or (Session.is_online() and Forge.world != null and not Forge.world.gameplay_available())
 	if not is_local:
 		aiming = bool(snapshot.get("aiming", false))
-	_network_use_held = bool(snapshot.get("use_held", false))
+	if not is_local or network_role != "predicted":
+		_network_use_held = bool(snapshot.get("use_held", false))
 	_network_free_view = bool(snapshot.get("free_view", false))
 	_network_ground = bool((snapshot["move"] as Dictionary).get("on_floor", false))
 	_apply_pilot_replica(snapshot.get("pilot_ref", {}))
 	Status.apply_snapshot(self, snapshot.get("status", {}))
 	var was_extracting: = extracting
-	extracting = bool(snapshot.get("extracting", false))
+	if network_role != "predicted" or _network_ack_event >= _predicted_extract_event or frozen or not is_alive():
+		extracting = bool(snapshot.get("extracting", false))
 	if was_extracting != extracting: extracting_changed.emit(extracting)
 	extractor.apply_network_state(snapshot.get("extraction", {}))
 	hands.apply_network_state(snapshot.get("equipment", {}))

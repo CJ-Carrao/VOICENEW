@@ -9,6 +9,8 @@ tags:
 
 # LAVOICE Lab
 
+Atualização das correções: use `jogar.cmd` ou `build\LAVOICE-Lab-Corrigido.exe`. A lista de problemas relatados e suas correções está em [correcoes.txt.md](correcoes.txt.md). Todos os participantes de uma partida online precisam usar a mesma versão corrigida.
+
 ## Atualizacao: Pacote Caos
 
 62 criacoes novas: 30 animais, 12 granadas que liberam criaturas, 12 bombas especiais e 8 armas. **F2** abre o catalogo dentro do jogo, com nomes, pedidos e efeitos. A lista completa esta em [[novidades]].
@@ -29,7 +31,7 @@ Verificado no projeto e na build: pedido de uma formiga, montagem, gasto de mate
 
 ## Abrir
 
-- **Jogar:** abra `jogar.cmd`, ou `build\LAVOICE-Lab.exe`.
+- **Jogar:** abra `jogar.cmd`, ou `build\LAVOICE-Lab-Corrigido.exe`.
 - **Editar:** abra `editar.cmd`. O editor Godot 4.7.2 ja esta em `tools\godot`.
 - **Gerar outra versao depois de editar:** abra `recompilar.cmd`.
 - **Projeto:** `game\project.godot`.

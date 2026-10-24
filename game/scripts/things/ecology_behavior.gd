@@ -54,8 +54,8 @@ func _produce() -> void:
 	var ahead := Gravity.flat(-thing.global_basis.z, thing.up()).normalized()
 	var spot := Forge.ground_point(thing.global_position + ahead * (maxf(thing.bounds.size.x, thing.bounds.size.z) * 0.5 + 1.0), thing.up())
 	var child := Forge.spawn_child(Recipe.new_node(child_id), "spawned", spot, ahead, thing, 0.0)
-	if child != null and not Lexicon.data.thing_def(child_id).has("ecology"):
-		child.lifetime = float(config.get("child_lifetime", 60.0))
+	if child != null:
+		child.lifetime = 0.0
 
 
 func _hunt() -> void:
@@ -66,18 +66,23 @@ func _hunt() -> void:
 	var distance := INF
 	for candidate in Forge.world.get_node("Things").get_children():
 		var other := candidate as Thing
-		if other == null or other == thing or other.is_dead or other.is_held or not InnovationRules.tags(other).has(diet):
+		if other == null or other == thing or other.is_dead or other.is_held or not InnovationRules.matches_diet(other, diet):
 			continue
 		var current := thing.center().distance_to(other.center())
 		if current < distance and current < 30.0:
 			prey = other
 			distance = current
 	var up := thing.up()
+	var airborne := thing.move.hovers()
 	if prey == null:
-		thing.velocity = up * thing.velocity.dot(up)
+		thing.velocity = Vector3.ZERO if airborne else up * thing.velocity.dot(up)
 		return
-	var direction := Gravity.flat(prey.center() - thing.center(), up)
-	thing.velocity = direction.normalized() * maxf(thing.speed, 0.6) + up * thing.velocity.dot(up) if direction.length() > 0.65 else up * thing.velocity.dot(up)
+	var direction := prey.center() - thing.center()
+	if airborne:
+		thing.velocity = direction.normalized() * maxf(thing.speed, 0.6) if direction.length() > 0.65 else Vector3.ZERO
+	else:
+		direction = Gravity.flat(direction, up)
+		thing.velocity = direction.normalized() * maxf(thing.speed, 0.6) + up * thing.velocity.dot(up) if direction.length() > 0.65 else up * thing.velocity.dot(up)
 	if distance <= maxf(1.0, thing.bounds.size.z * 0.7) and clock >= next_bite:
 		next_bite = clock + 0.7
 		# Diet is an explicit ecological relationship, including prey of the same team.

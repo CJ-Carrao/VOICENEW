@@ -60,6 +60,7 @@ var mechanical_failures: int = 0
 var shot_pellets_min: int = 1
 var mechanical_recoil: float = 0.0
 var _contact_frames: Dictionary = {}
+var _impact_frames: Dictionary = {}
 var speed: float = 0.0
 
 var lifetime: float = 0.0
@@ -189,7 +190,7 @@ func configure(node: Dictionary, as_role: String, def: Dictionary, lex: LexiconD
 	surface_friction = float(lex.material_pack(node).get("friction", 1.0))
 	hp = max_hp
 	speed = lex.thing_statf(thing_id, "speed") * float(mods.get("speed", 1.0))
-	if role == "projectile":
+	if role == "projectile" and category not in ["creature", "vehicle"]:
 		lifetime = minf(lex.thing_statf(thing_id, "lifetime"), lex.balf("caps.projectile_max_life_s"))
 	impact = String(def.get("impact", "stop"))
 	impact_damage = lex.thing_statf(thing_id, "impact_damage") * scale_factor
@@ -559,6 +560,14 @@ func report_hit(collision_info: KinematicCollision3D) -> void :
 	var ctx: = ActionContext.make(collision_info.get_position(), velocity, who)
 	ctx.normal = collision_info.get_normal()
 	hit.emit(ctx)
+	if category in ["creature", "vehicle"]:
+		if collision_info.get_normal().dot(up()) > 0.5 or not Combat.affects(self, who):
+			return
+		var key := who.get_instance_id() if who != null else 0
+		var frame := Engine.get_physics_frames()
+		if frame - int(_impact_frames.get(key, -100000)) < Engine.physics_ticks_per_second * 0.7:
+			return
+		_impact_frames[key] = frame
 	if impact_damage > 0.0 and who != null and not Combat.hit_structure(who, collision_info.get_position(), 
 			collision_info.get_collider_shape_index(), impact_damage, "impact"):
 		Combat.apply_damage(who, impact_damage, damage_type, self)
@@ -805,6 +814,19 @@ func _physics_process(delta: float) -> void :
 		die()
 		return
 	var p: = global_position
+	if category in ["creature", "vehicle"]:
+		var half := Gravity.world_half() - Vector3.ONE * 2.0 if Gravity.active() else Vector3(_arena_limit - 2.0, 1000.0, _arena_limit - 2.0)
+		if half.x > 0.0 and half.z > 0.0 and (absf(p.x) > half.x or absf(p.z) > half.z or (Gravity.active() and absf(p.y) > half.y)):
+			global_position = p.clamp(-half, half)
+			var home := owner_player.global_position if is_instance_valid(owner_player) else Vector3.ZERO
+			var direction := Gravity.flat(home - global_position, up()).normalized()
+			velocity = direction * maxf(speed, 1.0)
+			face(direction, true)
+			if move != null: move.landed = false
+		if not Gravity.active() and p.y < _kill_y:
+			global_position = Forge.ground_point(owner_player.global_position if is_instance_valid(owner_player) else Vector3.ZERO) + up() * 0.2
+			velocity = Vector3.ZERO
+		return
 	if Gravity.active():
 		if not Gravity.inside_world(p, _arena_limit - _arena_half_size()):
 			remove()

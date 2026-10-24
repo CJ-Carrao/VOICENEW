@@ -360,7 +360,9 @@ func spawn_child(node: Dictionary, role: String, at: Vector3, direction: Vector3
 		return null
 	if not InnovationRules.authorize_spawn(spawner, node):
 		return null
-	var child: = Assembler.build(node, role, Lexicon.data)
+	var creature := String(Lexicon.data.thing_def(String(node.get("thing", ""))).get("category", "")) in ["creature", "vehicle"]
+	var child_role := "spawned" if role == "projectile" and creature else role
+	var child: = Assembler.build(node, child_role, Lexicon.data)
 	child.set_owner_info(spawner.owner_id, spawner.team, spawner.owner_player, spawner)
 	if same_generation:
 		child.set_generation(spawner.generation)
@@ -371,7 +373,11 @@ func spawn_child(node: Dictionary, role: String, at: Vector3, direction: Vector3
 	child.global_position = clamp_to_world(at, legal)
 	child.face(direction, child.upright)
 	child.add_collision_exception_with(spawner)
-	if spawner.is_held and spawner.owner_player is PhysicsBody3D:
+	var mount := spawner.mount_host
+	while is_instance_valid(mount):
+		child.add_collision_exception_with(mount)
+		mount = mount.mount_host
+	if (spawner.is_held or role == "projectile") and spawner.owner_player is PhysicsBody3D:
 		child.add_collision_exception_with(spawner.owner_player)
 	child.move.launch(direction, (child.speed if launch_speed < 0.0 else launch_speed) * speed_mult)
 	child.velocity += inherit
@@ -903,7 +909,7 @@ func _register(thing: Thing) -> void :
 	for graft in thing.grafts:
 		_register(graft)
 	var cap: = int(Lexicon.balf("caps.live_entities_per_player"))
-	while list.size() > cap:
+	while cap > 0 and list.size() > cap:
 		stats["evicted"] += 1
 		(list[0] as Thing).remove()
 	live_things_changed.emit(thing.owner_id)

@@ -48,6 +48,8 @@ static func build(thing_id: String, mods: Dictionary, lex: LexiconData) -> Dicti
 	var rear_id: = lex.part_source(thing_id, mods, "rear") if weapon else thing_id
 	var data: Dictionary = lex.models.get(rear_id if not weapon or lex.uses_weapon_section(rear_id, mods, "rear") else thing_id, {})
 	var pieces: Array = _weapon_pieces(thing_id, mods, lex) if weapon else data.get("pieces", [])
+	if not weapon and mods.get("anatomy") is Dictionary:
+		pieces = _anatomy_pieces(pieces, mods.anatomy, lex)
 	if pieces.is_empty():
 		pieces = [FALLBACK_PIECE]
 	var stretch: = axis_stretch(thing_id, mods, lex)
@@ -205,6 +207,52 @@ static func _sight_height(pieces: Array, mounts: Dictionary, mods: Dictionary, w
 
 
 
+
+
+static func _anatomy_group(piece: Dictionary) -> String:
+	var tag := String(piece.get("tag", "body")).to_lower()
+	if tag.contains("wing"): return "wings"
+	if tag.contains("tail"): return "tail"
+	if tag.contains("leg") or tag.contains("foot") or tag.contains("hoof") or tag.contains("paw"): return "legs"
+	if tag in ["head", "eye", "eyes", "beak", "snout", "mouth", "horn", "ear", "antenna", "mandible", "crown", "trunk", "tusk"]: return "head"
+	return "body"
+
+
+static func _anatomy_pieces(original: Array, anatomy: Dictionary, lex: LexiconData) -> Array:
+	if original.is_empty(): return original
+	var out := original.duplicate(true)
+	var full := _piece_box(original[0])
+	for piece: Dictionary in original:
+		full = full.merge(_piece_box(piece))
+	for section: String in anatomy:
+		var selected := []
+		for piece: Dictionary in lex.models.get(String(anatomy[section]), {}).get("pieces", []):
+			if _anatomy_group(piece) == section: selected.append(piece)
+		if selected.is_empty(): continue
+		var donor := _piece_box(selected[0])
+		for piece: Dictionary in selected: donor = donor.merge(_piece_box(piece))
+		var region := AABB()
+		var seen := false
+		var remaining := []
+		for piece: Dictionary in out:
+			if _anatomy_group(piece) == section:
+				region = region.merge(_piece_box(piece)) if seen else _piece_box(piece)
+				seen = true
+			else: remaining.append(piece)
+		if not seen:
+			region = AABB(full.get_center() - full.size * 0.4, full.size * 0.8)
+		var ratios := region.size.max(Vector3.ONE * 0.05) / donor.size.max(Vector3.ONE * 0.01)
+		var fit := clampf(ratios[ratios.min_axis_index()], 0.05, 12.0)
+		for raw: Dictionary in selected:
+			var piece := raw.duplicate(true)
+			var point := (_vec(piece.get("pos", [0, 0, 0])) - donor.get_center()) * fit + region.get_center()
+			piece["pos"] = [point.x, point.y, point.z]
+			var stretch := _vec(piece.get("_stretch", [1, 1, 1])) * fit
+			piece["_stretch"] = [stretch.x, stretch.y, stretch.z]
+			piece["source"] = String(anatomy[section])
+			remaining.append(piece)
+		out = remaining
+	return out
 
 
 static func mount_points(pieces: Array, weapon: bool, lex: LexiconData) -> Dictionary:

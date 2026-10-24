@@ -199,6 +199,25 @@
           ],
           "carry_pitch_deg": -20.0,
           "carry_yaw_deg": 0.0
+        },
+        "shield": {
+          "hip": [
+            0.46,
+            -0.4,
+            -0.55
+          ],
+          "ads": [
+            0.46,
+            -0.4,
+            -0.55
+          ],
+          "carry": [
+            0.45,
+            -0.45,
+            -0.4
+          ],
+          "carry_yaw_deg": 12,
+          "carry_pitch_deg": -5
         }
       }
     },
@@ -789,13 +808,13 @@
     "mouse_sensitivity": 0.0025
   },
   "caps": {
-    "tree_depth": 3,
-    "live_entities_per_player": 40,
+    "tree_depth": 8,
+    "live_entities_per_player": 0,
     "explosions_per_s": 6,
     "projectile_max_life_s": 10.0,
     "split_max": 8,
-    "graft_depth": 2,
-    "grafts_per_recipe": 8
+    "graft_depth": 4,
+    "grafts_per_recipe": 16
   },
   "parser": {
     "fuzzy_min_len": 4,
@@ -1039,7 +1058,7 @@
     "structure_impact_mult": 1.0,
     "structure_strike_mult": 1.5,
     "structure_explosion_mult": 4.0,
-    "projectiles_hit_own": false,
+    "projectiles_hit_own": true,
     "explosion_knockback": 9.0,
     "explosion_min_falloff": 0.3
   },
@@ -2391,7 +2410,7 @@
     "elephant": {
       "weight_kg": 4500,
       "cost": 85,
-      "hp": 300,
+      "hp": 220,
       "speed": 5,
       "impact_damage": 55
     },
@@ -3690,6 +3709,9 @@
       },
       "spatial": {
         "spatial": 0.25
+      },
+      "kinetic": {
+        "kinetic": 0.15
       }
     },
     "protection_costs": {
@@ -3697,7 +3719,8 @@
       "neutron": 26,
       "nuclear": 36,
       "gravity": 22,
-      "spatial": 48
+      "spatial": 48,
+      "kinetic": 14
     }
   }
 }

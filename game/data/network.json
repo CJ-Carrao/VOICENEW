@@ -16,7 +16,7 @@
     "max_text_bytes": 1024,
     "max_spawn_bytes": 65536,
     "max_batch_bytes": 65536,
-    "max_entities": 128,
+    "max_entities": 0,
     "state_hz": 10.0,
     "intents_per_second": 8.0,
     "intent_burst": 12.0,
@@ -26,7 +26,7 @@
     "fx_per_second": 240
   },
   "world": {
-    "state_hz": 10.0,
+    "state_hz": 30.0,
     "max_batch_bytes": 16384
   },
   "voip": {

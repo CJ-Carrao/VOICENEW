@@ -1,5 +1,5 @@
 class_name MoveFlyover
-extends MoveStraight
+extends MoveFly
 
 
 

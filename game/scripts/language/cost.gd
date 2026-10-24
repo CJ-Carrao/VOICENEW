@@ -50,6 +50,8 @@ static func _node(node: Dictionary, lex: LexiconData) -> float:
 
 	for gear: Variant in mods.get("attachments", []):
 		total += lex.thing_statf(String(gear), "cost")
+	for donor: Variant in mods.get("anatomy", {}).values():
+		total += lex.thing_statf(String(donor), "cost") * 0.4 * maxf(1.0, float(mods.get("count", 1)))
 	for graft: Dictionary in mods.get("grafts", []):
 		total += _node(graft["node"], lex) * maxf(1.0, float(mods.get("count", 1)))
 	for behavior: Dictionary in node.get("behaviors", []):

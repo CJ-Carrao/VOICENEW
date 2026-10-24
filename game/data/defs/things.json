@@ -616,7 +616,7 @@
   "pigeon": {
     "category": "creature",
     "movement": "fly",
-    "impact": "destroy"
+    "impact": "stop"
   },
   "drone": {
     "category": "vehicle",
@@ -2722,7 +2722,7 @@
     "ecology": {
       "produces": "ant",
       "interval": 5,
-      "local_cap": 8,
+      "local_cap": 0,
       "needs_queen": true,
       "queen_tag": "ant_queen",
       "child_lifetime": 60
@@ -2756,7 +2756,7 @@
     "ecology": {
       "produces": "bee",
       "interval": 5,
-      "local_cap": 5,
+      "local_cap": 0,
       "needs_queen": true,
       "queen_tag": "bee_queen",
       "child_lifetime": 60
@@ -2770,7 +2770,7 @@
     "ecology": {
       "produces": "chicken",
       "interval": 8,
-      "local_cap": 4,
+      "local_cap": 0,
       "child_lifetime": 60
     }
   },
