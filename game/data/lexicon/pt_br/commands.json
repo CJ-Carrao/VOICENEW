@@ -1,4 +1,29 @@
 {
   "_comment": "Como se fala cada comando (data/defs/commands.json). Pedido só com comando, sem coisa: 'recicla', 'quero desmontar'.",
-  "recycle": { "words": ["reciclar", "recicla", "recicle", "reciclagem", "desmontar", "desmonta", "desmonte", "desfazer", "desfaz", "desfaça"] }
+  "recycle": {
+    "words": [
+      "reciclar",
+      "recicla",
+      "recicle",
+      "reciclagem",
+      "desmontar",
+      "desmonta",
+      "desmonte",
+      "desfazer",
+      "desfaz",
+      "desfaça"
+    ]
+  },
+  "expand_domain": {
+    "words": [
+      "expansão de domínio",
+      "expansao de dominio",
+      "expandir domínio",
+      "expandir dominio",
+      "expanda o domínio",
+      "expanda o dominio",
+      "expande o domínio",
+      "expande o dominio"
+    ]
+  }
 }

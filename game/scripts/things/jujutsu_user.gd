@@ -139,6 +139,16 @@ func _heal() -> void:
 		target.health_changed.emit(target.health, target.max_health)
 	feedback("reverse", Color("a4ffbf"))
 
+func expand_domain() -> bool:
+	if not thing.can_act() or clock < next_cast or enabled("amplification"): return false
+	if not powers.has("shrine") and not powers.has("void"): return false
+	domain_mode = "shrine" if powers.has("shrine") else "void"
+	domain_until = clock + 6.0
+	next_cast = clock + 18.0
+	DomainCallout.announce(Forge.fx_root(thing), center(), domain_mode)
+	feedback(domain_mode, Color("ef6e7d") if domain_mode == "shrine" else Color("7489ff"))
+	return true
+
 func cast(ctx: ActionContext) -> void:
 	if clock < next_cast or not thing.has_simulation_authority(): return
 	var origin := center()
@@ -154,10 +164,7 @@ func cast(ctx: ActionContext) -> void:
 			if shot != null: next_cast = clock + (7.0 if key == "purple" else 4.0)
 			return
 	if powers.has("shrine") or powers.has("void"):
-		domain_mode = "shrine" if powers.has("shrine") else "void"
-		domain_until = clock + 6.0
-		next_cast = clock + 18.0
-		feedback(domain_mode, Color("ef6e7d") if domain_mode == "shrine" else Color("7489ff"))
+		expand_domain()
 		return
 	var mode := "world_cut" if powers.has("world_cut") else "cleave" if powers.has("cleave") else "fuga" if powers.has("fuga") else "black_flash" if powers.has("black_flash") else "adaptation"
 	if mode == "adaptation" and not powers.has("adaptation"): return

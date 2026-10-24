@@ -1,4 +1,5 @@
 {
   "_comment": "Comandos: pedidos que não criam nada, mexem no que o jogador já tem (DESIGN 9). recycle: desfaz a coisa da mão e a matéria volta pra esfera (o que não couber cai no chão como entulho).",
-  "recycle": {}
+  "recycle": {},
+  "expand_domain": {}
 }

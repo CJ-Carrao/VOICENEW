@@ -195,6 +195,33 @@ func _success() -> void:
 				_finish(false,"Client capture flow failed: %s/%s/%s/%s" % [captured_seen,held_seen,released_seen,dropped_seen])
 				return
 			await create_timer(.3).timeout
+	elif OS.get_cmdline_user_args().has("--test-domain-command"):
+		await create_timer(3.3).timeout
+		var spoken = load("res://scripts/fx/domain_callout.gd")
+		if role == "host":
+			var r = load("res://scripts/language/recipe.gd")
+			var a = load("res://scripts/things/assembler.gd")
+			var forge = root.get_node("Forge")
+			for id in ["unlimited_void", "malevolent_shrine"]:
+				var item = a.build(r.new_node(id),"head",root.get_node("Lexicon").data)
+				item.set_owner_info(1,1,game.get_player(1),null)
+				game.get_player(1).hands.give(item,false)
+				item.activate()
+				session.creations.publish_creation(item,0.0,true,0.0)
+				var reply = forge.request(1,"expansão de domínio")
+				if not reply.has("domain_expanded"):
+					_finish(false,"Host domain command failed")
+					return
+				await create_timer(.8).timeout
+			await create_timer(1.5).timeout
+		else:
+			var deadline := Time.get_ticks_msec() + 5000
+			while spoken.count < 2 and Time.get_ticks_msec() < deadline:
+				await create_timer(.05).timeout
+			if spoken.count != 2 or spoken.last_mode != "shrine":
+				_finish(false,"Domain dialogue did not reach second player")
+				return
+			await create_timer(.3).timeout
 	elif chaos_test:
 		await create_timer(3.3).timeout
 		if role == "host":

@@ -909,6 +909,7 @@ func _fx(packet_epoch: int, kind: String, args: Array) -> void :
 		stats.rejected += 1
 		return
 	match kind:
+		"domain_callout": DomainCallout.announce(_world, args[0], str(args[1]))
 		"explosion": Fx.explosion(_world, args[0], float(args[1]), args[2])
 		"number": Fx.damage_number(_world, args[0], float(args[1]))
 		"muzzle": Fx.muzzle_flash(_world, args[0], args[1], float(args[2]), bool(args[3]))
@@ -928,6 +929,8 @@ func _fx(packet_epoch: int, kind: String, args: Array) -> void :
 
 static func _valid_fx(kind: String, args: Array) -> bool:
 	match kind:
+		"domain_callout":
+			return args.size() == 2 and _vec3(args[0]) and args[1] is String and args[1] in ["void", "shrine"]
 		"explosion":
 			return args.size() == 3 and _vec3(args[0]) and _num(args[1]) and args[2] is Color
 		"number":

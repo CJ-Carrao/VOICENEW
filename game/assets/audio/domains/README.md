@@ -1,0 +1,1 @@
+Falas originais em português, geradas com a voz genérica pt-BR do Windows pelo script tools/generate_domain_lines.ps1. Os WAVs são distribuídos com o jogo e não exigem instalar uma voz no computador do jogador. O áudio usa o canal de efeitos e é reproduzido espacialmente na posição do personagem.

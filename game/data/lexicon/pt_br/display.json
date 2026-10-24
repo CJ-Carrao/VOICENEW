@@ -249,7 +249,8 @@
     "super_jump": "super pulo"
   },
   "commands": {
-    "recycle": "reciclar"
+    "recycle": "reciclar",
+    "expand_domain": "EXPANSÃO DE DOMÍNIO"
   },
   "sections_melee": {
     "rear": "cabo",

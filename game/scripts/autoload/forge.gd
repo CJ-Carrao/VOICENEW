@@ -670,6 +670,14 @@ func _command(player_id: int, command: String) -> Dictionary:
 	if player == null:
 		return {}
 	match command:
+		"expand_domain":
+			var held := player.hands.current_item()
+			var user = held.get_node_or_null("Jujutsu") if is_instance_valid(held) else null
+			if user == null or not (user.powers.has("shrine") or user.powers.has("void")):
+				return {"blocked": true, "warnings": ["Equipe o domínio do Gojo ou do Sukuna antes de expandir."]}
+			if not player.can_act() or held.is_building or not user.expand_domain():
+				return {"blocked": true, "warnings": ["Domínio indisponível: aguarde a montagem, a recarga ou o fim da amplificação."]}
+			return {"domain_expanded": user.domain_mode}
 		"recycle":
 			var held: = player.hands.current_item()
 			if held == null:
