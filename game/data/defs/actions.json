@@ -51,5 +51,8 @@
   },
   "anomaly": {
     "descends": true
+  },
+  "purge_species": {
+    "takes_arg": false
   }
 }

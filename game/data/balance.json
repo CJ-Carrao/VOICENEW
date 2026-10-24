@@ -1105,7 +1105,8 @@
       "split": 4.0,
       "strike": 3.0,
       "burst_into": 8,
-      "anomaly": 25
+      "anomaly": 25,
+      "purge_species": 0
     },
     "trigger_factor": {
       "on_fire": 1.0,
@@ -3663,6 +3664,11 @@
       "hp": 60,
       "weight_kg": 3,
       "fire_cooldown": 1.5
+    },
+    "species_bomb": {
+      "cost": 290,
+      "weight_kg": 4,
+      "hp": 40
     }
   },
   "grafts": {

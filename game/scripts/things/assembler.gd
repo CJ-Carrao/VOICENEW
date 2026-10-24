@@ -28,6 +28,7 @@ const TRIGGERS: = {
 	"on_command": preload("res://scripts/things/trigger/trigger_on_command.gd"), 
 }
 const ACTIONS: = {
+	"purge_species": preload("res://scripts/things/action/action_species_bomb.gd"),
 	"burst_into": preload("res://scripts/things/action/action_burst_into.gd"), 
 	"anomaly": preload("res://scripts/things/action/action_anomaly.gd"),
 	"shoot": preload("res://scripts/things/action/action_shoot.gd"), 

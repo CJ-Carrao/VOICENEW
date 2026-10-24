@@ -61,6 +61,10 @@ Agora há clarão azul, fragmentos cúbicos, impacto próximo que quebra estrutu
 
 ## Verificação
 
+A bomba seletiva custa **290 de matéria base** e aceita qualquer uma das 69 espécies cadastradas. Exemplo: **“quero uma bomba que mate todas as borboletas”**; troque borboletas por elefantes, dragões ou outro animal do catálogo. Após arremessada, detona em três segundos e elimina os animais daquela espécie que existirem no mapa, de ambas as equipes, inclusive os distantes. Poupa outras espécies, jogadores e terreno. A eliminação é feita em pequenos grupos, sem gerar uma explosão por animal. Animais criados depois do pulso podem voltar a aparecer.
+
+Explosões comuns e nucleares que atingem multidões também distribuem o dano e a remoção dos corpos entre quadros. A explosão continua removendo blocos do terreno; animais atingidos não ficam limitados aos primeiros 128 resultados da consulta de colisão.
+
 Criações em cadeia, como “minigun que atire aviões que atirem elefantes”, agora compartilham um ritmo de produção. Quando há muita coisa sendo criada, novos animais e veículos aguardam; os existentes permanecem. Disparos que precisam esperar não gastam munição. Granadas entregam toda a carga em etapas, e efeitos de bombas especiais são espaçados para reduzir picos de trabalho. A minigun com balas comuns mantém sua velocidade normal. Isso reduz a sobrecarga, mas populações muito grandes continuam exigindo mais do computador.
 
 Os testes verificam o catálogo de 76 modelos, frases compostas, armas especiais, bombas, proteção, gasto de matéria, produção sem limite de população, morte da rainha, dieta seletiva, animais armados, locomoção da casa e remoção de blocos pela bomba de nêutrons. As regressões do documento têm um teste específico em `game/tests/reported_regressions.gd`; os relatórios locais ficam em `analysis`.

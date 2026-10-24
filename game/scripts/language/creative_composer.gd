@@ -6,6 +6,9 @@ const SPOKEN_FORMS := ["faça", "faz", "crie", "gere", "construa", "fabrique", "
 
 static func prepare(text: String) -> String:
 	var out := Normalizer.fold(text)
+	var species_bomb := RegEx.new()
+	species_bomb.compile("\\bbomba(?=\\s+que\\s+(?:mate|mata|elimine|elimina|extermine|extermina)\\b)")
+	out = species_bomb.sub(out, "bomba seletiva", true)
 	var prey_article := RegEx.new()
 	prey_article.compile("\\b(que\\s+(?:(?:so|apenas|somente)\\s+)?(?:come|coma|comer|caca|cace|cacar|ataca|ataque|atacar)(?:\\s+(?:apenas|somente))?)\\s+(?:um|uma|uns|umas|o|a|os|as)\\s+")
 	out = prey_article.sub(out, "$1 ", true)

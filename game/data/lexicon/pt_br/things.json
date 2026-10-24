@@ -2756,5 +2756,14 @@
       "arma de escudos"
     ],
     "forms": []
+  },
+  "species_bomb": {
+    "name": "bomba seletiva",
+    "words": [
+      "bomba seletiva",
+      "bomba de espécie",
+      "bomba de especie"
+    ],
+    "forms": []
   }
 }

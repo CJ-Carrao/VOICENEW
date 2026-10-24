@@ -2797,5 +2797,21 @@
         }
       }
     ]
+  },
+  "species_bomb": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 3.0
+        },
+        "do": {
+          "type": "purge_species"
+        }
+      }
+    ]
   }
 }

@@ -158,6 +158,7 @@ static func explode(source: Thing, at: Vector3, radius: float, damage: float) ->
 	var min_falloff: = Lexicon.balf("combat.explosion_min_falloff")
 	var knockback: = Lexicon.balf("combat.explosion_knockback") * source.scale_factor
 	var seen: = {}
+	var hits := []
 	for found: Dictionary in source.get_world_3d().direct_space_state.intersect_shape(query, 128):
 		var target: Object = found["collider"]
 		if target == null or seen.has(target):
@@ -165,10 +166,28 @@ static func explode(source: Thing, at: Vector3, radius: float, damage: float) ->
 		seen[target] = true
 		var target_center: = center_of(target as Node3D)
 		var falloff: = lerpf(1.0, min_falloff, clampf(target_center.distance_to(at) / radius, 0.0, 1.0))
-		apply_damage(target, damage * falloff, "explosive", source)
-		if target.has_method("apply_knockback"):
-			var push: = (target_center - at).normalized() + Gravity.up_at(target_center, source.up()) * 0.3
-			target.call("apply_knockback", push.normalized() * knockback * falloff)
+		var push: = (target_center - at).normalized() + Gravity.up_at(target_center, source.up()) * 0.3
+		hits.append({"target": weakref(target), "damage": damage * falloff, "push": push.normalized() * knockback * falloff})
+	# Physics queries have a result cap; include every creation touched by a crowded blast.
+	if Forge.world != null:
+		for candidate in Forge.world.get_node("Things").get_children():
+			var target := candidate as Thing
+			if target == null or target == source or target.is_dead or seen.has(target): continue
+			var box: AABB = target.global_transform * target.bounds
+			if at.distance_to(at.clamp(box.position, box.end)) > radius: continue
+			var center := target.center()
+			var falloff := lerpf(1.0, min_falloff, clampf(center.distance_to(at) / radius, 0.0, 1.0))
+			hits.append({"target": weakref(target), "damage": damage * falloff, "push": Vector3.ZERO})
+	if hits.size() > 12:
+		var work = load("res://scripts/things/blast_work.gd").new()
+		work.setup(source, hits)
+		source.get_tree().root.add_child(work)
+	else:
+		for row: Dictionary in hits:
+			var target = row.target.get_ref()
+			if not is_instance_valid(target): continue
+			apply_damage(target, row.damage, "explosive", source)
+			if is_instance_valid(target) and target.has_method("apply_knockback"): target.call("apply_knockback", row.push)
 	_crater(source, at, radius, damage)
 
 

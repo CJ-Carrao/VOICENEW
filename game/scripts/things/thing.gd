@@ -40,6 +40,22 @@ var owner_player: Node3D = null
 
 var spawner: Node3D = null
 var target_filter: String = ""
+var _effect_jobs := 0
+var _effect_cleanup := false
+
+func hold_effect_job() -> void:
+	_effect_jobs += 1
+
+func release_effect_job() -> void:
+	_effect_jobs = maxi(0, _effect_jobs - 1)
+	if _effect_jobs == 0 and _effect_cleanup: queue_free()
+
+func _finish_vanish() -> void:
+	if _effect_jobs > 0:
+		_effect_cleanup = true
+		hide()
+	else:
+		queue_free()
 
 var generation: int = 0
 
@@ -862,11 +878,11 @@ func _vanish() -> void :
 		visible = false
 		return
 	if model == null or not is_inside_tree():
-		queue_free()
+		_finish_vanish()
 		return
 	var tween: = create_tween()
 	tween.tween_property(model, "scale", model.scale * 0.01, DEATH_SHRINK_TIME).set_ease(Tween.EASE_IN)
-	tween.tween_callback(queue_free)
+	tween.tween_callback(_finish_vanish)
 
 
 func set_generation(value: int) -> void :

@@ -476,5 +476,281 @@
   "diet_species_anteater": {
     "key": "diet",
     "value": "species:anteater"
+  },
+  "purge_species_pigeon": {
+    "key": "target_species",
+    "value": "pigeon"
+  },
+  "purge_species_monkey": {
+    "key": "target_species",
+    "value": "monkey"
+  },
+  "purge_species_gorilla": {
+    "key": "target_species",
+    "value": "gorilla"
+  },
+  "purge_species_bear": {
+    "key": "target_species",
+    "value": "bear"
+  },
+  "purge_species_dog": {
+    "key": "target_species",
+    "value": "dog"
+  },
+  "purge_species_wolf": {
+    "key": "target_species",
+    "value": "wolf"
+  },
+  "purge_species_horse": {
+    "key": "target_species",
+    "value": "horse"
+  },
+  "purge_species_unicorn": {
+    "key": "target_species",
+    "value": "unicorn"
+  },
+  "purge_species_shark": {
+    "key": "target_species",
+    "value": "shark"
+  },
+  "purge_species_eagle": {
+    "key": "target_species",
+    "value": "eagle"
+  },
+  "purge_species_chicken": {
+    "key": "target_species",
+    "value": "chicken"
+  },
+  "purge_species_snake": {
+    "key": "target_species",
+    "value": "snake"
+  },
+  "purge_species_spider": {
+    "key": "target_species",
+    "value": "spider"
+  },
+  "purge_species_ant": {
+    "key": "target_species",
+    "value": "ant"
+  },
+  "purge_species_trex": {
+    "key": "target_species",
+    "value": "trex"
+  },
+  "purge_species_cat": {
+    "key": "target_species",
+    "value": "cat"
+  },
+  "purge_species_rabbit": {
+    "key": "target_species",
+    "value": "rabbit"
+  },
+  "purge_species_fox": {
+    "key": "target_species",
+    "value": "fox"
+  },
+  "purge_species_boar": {
+    "key": "target_species",
+    "value": "boar"
+  },
+  "purge_species_crocodile": {
+    "key": "target_species",
+    "value": "crocodile"
+  },
+  "purge_species_elephant": {
+    "key": "target_species",
+    "value": "elephant"
+  },
+  "purge_species_lion": {
+    "key": "target_species",
+    "value": "lion"
+  },
+  "purge_species_tiger": {
+    "key": "target_species",
+    "value": "tiger"
+  },
+  "purge_species_penguin": {
+    "key": "target_species",
+    "value": "penguin"
+  },
+  "purge_species_turtle": {
+    "key": "target_species",
+    "value": "turtle"
+  },
+  "purge_species_goat": {
+    "key": "target_species",
+    "value": "goat"
+  },
+  "purge_species_deer": {
+    "key": "target_species",
+    "value": "deer"
+  },
+  "purge_species_crab": {
+    "key": "target_species",
+    "value": "crab"
+  },
+  "purge_species_scorpion": {
+    "key": "target_species",
+    "value": "scorpion"
+  },
+  "purge_species_frog": {
+    "key": "target_species",
+    "value": "frog"
+  },
+  "purge_species_bull": {
+    "key": "target_species",
+    "value": "bull"
+  },
+  "purge_species_bee": {
+    "key": "target_species",
+    "value": "bee"
+  },
+  "purge_species_rat": {
+    "key": "target_species",
+    "value": "rat"
+  },
+  "purge_species_zombie": {
+    "key": "target_species",
+    "value": "zombie"
+  },
+  "purge_species_skeleton": {
+    "key": "target_species",
+    "value": "skeleton"
+  },
+  "purge_species_dummy": {
+    "key": "target_species",
+    "value": "dummy"
+  },
+  "purge_species_duck": {
+    "key": "target_species",
+    "value": "duck"
+  },
+  "purge_species_goose": {
+    "key": "target_species",
+    "value": "goose"
+  },
+  "purge_species_turkey": {
+    "key": "target_species",
+    "value": "turkey"
+  },
+  "purge_species_pig": {
+    "key": "target_species",
+    "value": "pig"
+  },
+  "purge_species_cow": {
+    "key": "target_species",
+    "value": "cow"
+  },
+  "purge_species_sheep": {
+    "key": "target_species",
+    "value": "sheep"
+  },
+  "purge_species_donkey": {
+    "key": "target_species",
+    "value": "donkey"
+  },
+  "purge_species_camel": {
+    "key": "target_species",
+    "value": "camel"
+  },
+  "purge_species_llama": {
+    "key": "target_species",
+    "value": "llama"
+  },
+  "purge_species_giraffe": {
+    "key": "target_species",
+    "value": "giraffe"
+  },
+  "purge_species_zebra": {
+    "key": "target_species",
+    "value": "zebra"
+  },
+  "purge_species_rhino": {
+    "key": "target_species",
+    "value": "rhino"
+  },
+  "purge_species_hippo": {
+    "key": "target_species",
+    "value": "hippo"
+  },
+  "purge_species_bison": {
+    "key": "target_species",
+    "value": "bison"
+  },
+  "purge_species_panda": {
+    "key": "target_species",
+    "value": "panda"
+  },
+  "purge_species_koala": {
+    "key": "target_species",
+    "value": "koala"
+  },
+  "purge_species_capybara": {
+    "key": "target_species",
+    "value": "capybara"
+  },
+  "purge_species_otter": {
+    "key": "target_species",
+    "value": "otter"
+  },
+  "purge_species_raccoon": {
+    "key": "target_species",
+    "value": "raccoon"
+  },
+  "purge_species_hedgehog": {
+    "key": "target_species",
+    "value": "hedgehog"
+  },
+  "purge_species_armadillo": {
+    "key": "target_species",
+    "value": "armadillo"
+  },
+  "purge_species_butterfly": {
+    "key": "target_species",
+    "value": "butterfly"
+  },
+  "purge_species_beetle": {
+    "key": "target_species",
+    "value": "beetle"
+  },
+  "purge_species_mantis": {
+    "key": "target_species",
+    "value": "mantis"
+  },
+  "purge_species_snail": {
+    "key": "target_species",
+    "value": "snail"
+  },
+  "purge_species_octopus": {
+    "key": "target_species",
+    "value": "octopus"
+  },
+  "purge_species_raptor": {
+    "key": "target_species",
+    "value": "raptor"
+  },
+  "purge_species_dragon": {
+    "key": "target_species",
+    "value": "dragon"
+  },
+  "purge_species_slime": {
+    "key": "target_species",
+    "value": "slime"
+  },
+  "purge_species_cave_bat": {
+    "key": "target_species",
+    "value": "cave_bat"
+  },
+  "purge_species_queen_ant": {
+    "key": "target_species",
+    "value": "queen_ant"
+  },
+  "purge_species_queen_bee": {
+    "key": "target_species",
+    "value": "queen_bee"
+  },
+  "purge_species_anteater": {
+    "key": "target_species",
+    "value": "anteater"
   }
 }
