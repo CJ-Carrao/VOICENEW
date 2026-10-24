@@ -225,6 +225,9 @@ func _success() -> void:
 			if effects.count != 1 or prey.hp >= hp or pikachu.get_node("PokemonCompanion").last_move != "thunderbolt":
 				_finish(false, "Remote Pokemon order did not execute on host")
 				return
+			if game.get_player(2).hands.current_item() != null:
+				_finish(false, "Command-only voice created an item on the host")
+				return
 			await create_timer(1.0).timeout
 		else:
 			var until := Time.get_ticks_msec() + 6000
@@ -238,7 +241,8 @@ func _success() -> void:
 			if not ready:
 				_finish(false, "Pokemon models did not replicate")
 				return
-			root.get_node("Forge").request(2, "picachu use o choque do trovão")
+			root.get_node("Forge").request(2, "quero uma pistola", false, true)
+			root.get_node("Forge").request(2, "picachu ataque", false, true)
 			while effects.count == 0 and Time.get_ticks_msec() < until: await create_timer(.05).timeout
 			if effects.count != 1 or effects.last_style != "electric":
 				_finish(false, "Pokemon attack effect did not reach remote player")

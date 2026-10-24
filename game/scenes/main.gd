@@ -189,6 +189,7 @@ func _ready() -> void :
 
 	_hud.refresh_controls_help()
 	voice.transcribed.connect(_on_voice_transcribed)
+	voice.command_transcribed.connect(_on_voice_transcribed.bind(true))
 
 	voice.tapped.connect(_on_voice_tapped)
 	_ensure_voice_started()
@@ -605,11 +606,11 @@ func _on_console_submitted(text: String) -> void :
 
 
 
-func _on_voice_transcribed(text: String, seconds: float) -> void :
+func _on_voice_transcribed(text: String, seconds: float, commands_only: bool = false) -> void :
 	if not creations_available() or not player.can_act():
 		return
 	var matter_before: = player.matter_spendable()
-	var result: = Forge.request(player.player_id, text, VoiceFeedback.enabled())
+	var result: = Forge.request(player.player_id, text, VoiceFeedback.enabled(), commands_only)
 	if result.get("pending", false):
 		_voice_requests[int(result["request_id"])] = {"seconds": seconds, "quality": voice.engine_id(), "matter": matter_before}
 	else:

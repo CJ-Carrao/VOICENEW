@@ -545,6 +545,7 @@ func _build_controls(parent: VBoxContainer) -> void :
 	_talk_note = _dim("")
 	talk_box.add_child(_talk_note)
 	_row(grid, "PEDIR POR VOZ", talk_box)
+	_row(grid, "COMANDAR POR VOZ", _dim("B (segurar) — comandos como ‘Squirtle, ataque’. Não cria itens."))
 	var chat_box: = VBoxContainer.new()
 	chat_box.add_theme_constant_override("separation", 14)
 	chat_box.add_child(_header("CAPS LOCK (SEGURAR)"))

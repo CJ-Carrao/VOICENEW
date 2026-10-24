@@ -96,6 +96,9 @@ def main():
      phrases += [f'{alias} {verb}{form}' for verb in ['', 'use ', 'use o ', 'use a ', 'usa ', 'solta ', 'ataque com ', 'usar ']]
      phrases.append(f'{form} {alias}')
    cwords[key]=dict(words=list(dict.fromkeys(phrases)))
+   if move==moves[0][0]:
+    cwords[key]['words'] += [f'{a} {v}' for a in aliases for v in ['ataque','atacar','ataque agora','vai atacar']]
+    cwords[key]['words'] += [f'{v} {a} atacar' for a in aliases for v in ['mande o','manda o','mandar o']]
   diet='species:'+ident
   mods['diet_species_'+ident]=dict(key='diet',value=diet)
   mwords['diet_species_'+ident]=dict(words=[f'que {o}{v} {a}' for a in aliases for o in ['','só ','apenas '] for v in ['coma','come','ataque','ataca','cace','caça']])

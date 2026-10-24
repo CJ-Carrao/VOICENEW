@@ -81,11 +81,11 @@ func has_effect_authority() -> bool:
 	return has_gameplay_authority()
 
 
-func request(player_id: int, text: String, record_unknowns: bool = true) -> Dictionary:
+func request(player_id: int, text: String, record_unknowns: bool = true, commands_only: bool = false) -> Dictionary:
 	if Session.is_online() and not Session.has_authority():
 		if player_id != Session.local_player_id or not Session.creations.is_active():
 			return _blocked_request(player_id, text, "Aguarde a sessão ficar pronta para pedir.")
-		return Session.creations.submit_request(text, record_unknowns)
+		return Session.creations.submit_request(text, record_unknowns, commands_only)
 	var result: = PhraseParser.parse(text, Lexicon.data)
 	result["unsupported"] = []
 	result["cost"] = 0.0
@@ -93,6 +93,8 @@ func request(player_id: int, text: String, record_unknowns: bool = true) -> Dict
 	result["novelty_uses"] = 0
 	result["novelty_mult"] = 1.0
 	result["build_s"] = 0.0
+	if commands_only and (not result.get("ok", false) or not (result.get("recipe", {}) as Dictionary).has("command")):
+		return _reject_result(player_id, text, result, "B aceita apenas comandos, como 'Squirtle, ataque'. Use V para criar coisas.")
 	if not has_gameplay_authority() or (world != null and world.get_player(player_id) == null):
 		result["blocked"] = true
 		result["warnings"].append("Pedido indisponível enquanto a sessão está sendo preparada.")

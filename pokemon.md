@@ -2,7 +2,9 @@
 
 Quatro companheiros em blocos, na aba **Pokémon** do catálogo. Crie com “quero um Pikachu”, “quero um Charmander”, “quero um Squirtle” ou “quero um Bulbasaur”. Os nomes “picachu” e “squitle” também funcionam.
 
-Depois de invocar ou soltar da Pokébola, segure **V**, fale o comando e solte. Também funciona pelo console **T**.
+Depois de invocar ou soltar da Pokébola, segure **B**, fale o comando e solte. **B** aceita apenas comandos: uma frase de criação dita nessa tecla não cria nada. **V** continua sendo a tecla para criar por voz. Também funciona pelo console **T**.
+
+“Squirtle, ataque” ou “mande o Squirtle atacar” usam jato de água. “Pikachu, ataque”, “Charmander, ataque” e “Bulbasaur, ataque” usam respectivamente choque do trovão, brasa e chicote de cipó. Um toque rápido em **B** não ativa a coleta de blocos.
 
 | Pokémon | Comando | Dano base | Alcance | Recarga |
 | --- | --- | --- | --- | --- |

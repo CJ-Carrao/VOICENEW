@@ -14,6 +14,7 @@ extends Node
 signal state_changed(state: String)
 
 signal transcribed(text: String, seconds: float)
+signal command_transcribed(text: String, seconds: float)
 
 signal heard(samples: PackedFloat32Array)
 
@@ -76,6 +77,8 @@ var _task_level: float = 0.0
 var _task_gated: bool = false
 
 var _pressed_ms: int = -1
+var _command_only := false
+var _active_talk_action: StringName = &"talk"
 
 var _voip_waiting_tap: bool = false
 var _voip_streaming: bool = false
@@ -188,10 +191,12 @@ func set_playback_enabled(enabled: bool) -> void :
 
 
 
-func begin_talk(private: bool = false) -> bool:
+func begin_talk(private: bool = false, commands_only: bool = false) -> bool:
 	if state != "idle" or _chat_active or ( not private and (_chat_key_down or _talk_suppressed)):
 		return false
 	_private = private
+	_command_only = commands_only and not private
+	_active_talk_action = &"command_talk" if _command_only else &"talk"
 	_frames = _pre_roll.duplicate()
 	_pre_roll.clear()
 	_begin_voip_session(private, _pressed_ms >= 0)
@@ -217,6 +222,9 @@ func held_seconds() -> float:
 func is_private_talk() -> bool:
 	return _private and state in ["listening", "thinking"]
 
+func is_command_talk() -> bool:
+	return _command_only and not _private and state in ["listening", "thinking"]
+
 
 func is_chat_talk() -> bool:
 	return _chat_active
@@ -232,7 +240,7 @@ func set_chat_blocked(blocked: bool) -> void :
 func begin_chat() -> bool:
 	if _chat_active or not capture_available() or not _chat_allowed():
 		return false
-	_talk_suppressed = _talk_suppressed or _pressed_ms >= 0 or Input.is_action_pressed("talk")
+	_talk_suppressed = _talk_suppressed or _pressed_ms >= 0 or Input.is_action_pressed("talk") or Input.is_action_pressed("command_talk")
 	_pressed_ms = -1
 	_discard_creation_recording()
 	_cancel_voip()
@@ -313,7 +321,7 @@ func _input(event: InputEvent) -> void :
 	if event.is_action_released("voice_chat"):
 		_chat_key_down = false
 		end_chat()
-	elif event.is_action_released("talk") and not is_private_talk():
+	elif event.is_action_released(_active_talk_action) and not is_private_talk():
 		if _release_creation(): get_viewport().set_input_as_handled()
 
 
@@ -326,6 +334,7 @@ func inject(samples: PackedFloat32Array) -> void :
 	if state != "idle" and state != "off":
 		return
 	_private = false
+	_command_only = false
 	if not samples.is_empty():
 		voip_started.emit()
 		voip_frames.emit(samples)
@@ -368,22 +377,26 @@ func _unhandled_input(event: InputEvent) -> void :
 		_chat_key_down = false
 		end_chat()
 		return
-	if event.is_action_released("talk"):
+	if event.is_action_released(_active_talk_action):
 		if not is_private_talk() and _release_creation(): get_viewport().set_input_as_handled()
 		return
-	if not event.is_action_pressed("talk") or event.is_echo(): return
+	var commands_only := event.is_action_pressed("command_talk")
+	if (not event.is_action_pressed("talk") and not commands_only) or event.is_echo(): return
 	if _chat_active or _chat_key_down or _talk_suppressed:
 		_talk_suppressed = true
 		get_viewport().set_input_as_handled()
 		return
-	if not is_instance_valid(player) or get_tree().paused or not player.can_act(): return
+	if not is_instance_valid(player) or not player.input_enabled or get_tree().paused or not player.can_act(): return
+	if state not in ["idle", "off"]: return
 	_pressed_ms = Time.get_ticks_msec()
+	_active_talk_action = &"command_talk" if commands_only else &"talk"
+	_command_only = commands_only
 	if state == "off" and _capture != null:
 		_private = false
 		_voip_only_active = true
 		_begin_voip_session(false, true)
 	elif state == "idle":
-		begin_talk(false)
+		begin_talk(false, commands_only)
 	get_viewport().set_input_as_handled()
 
 
@@ -395,7 +408,7 @@ func _release_creation() -> bool:
 	if _pressed_ms < 0: return false
 	var held_s: = (Time.get_ticks_msec() - _pressed_ms) / 1000.0
 	_pressed_ms = -1
-	if held_s <= _tap_max_s() and not _private:
+	if held_s <= _tap_max_s() and not _private and not _command_only:
 		_cancel_voip()
 		if state == "listening":
 			_frames.clear()
@@ -619,7 +632,8 @@ func _finish_task(text: String, seconds: float) -> void :
 func _done(text: String, seconds: float, reason: String) -> void :
 	if not _private:
 		if reason.is_empty():
-			transcribed.emit(text, seconds)
+			if _command_only: command_transcribed.emit(text, seconds)
+			else: transcribed.emit(text, seconds)
 		else:
 			ignored.emit(reason)
 	utterance_done.emit(_info(text, seconds, reason))
@@ -627,7 +641,7 @@ func _done(text: String, seconds: float, reason: String) -> void :
 
 func _info(text: String, seconds: float, reason: String) -> Dictionary:
 	return {"text": text, "seconds": seconds, "samples": _samples, "level": last_level, "private": _private, 
-		"ignored": reason}
+		"ignored": reason, "commands_only": _command_only}
 
 
 

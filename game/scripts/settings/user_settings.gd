@@ -21,7 +21,7 @@ const ACTION_NAMES: = {
 	"move_right": "andar pra direita", "jump": "pular", "sprint": "correr", "use": "usar", "aim": "mirar", 
 	"slot_1": "slot 1", "slot_2": "slot 2", "slot_3": "slot 3", "slot_next": "próximo slot", 
 	"slot_prev": "slot anterior", "console": "console", "reload": "recarregar", "exit_pilot": "parar de pilotar", 
-	"debug": "debug", "voice_chat": "conversar sem criar (Caps Lock)", 
+	"debug": "debug", "voice_chat": "conversar sem criar (Caps Lock)", "command_talk": "dar comandos por voz (B)",
 }
 
 static var _cfg: ConfigFile

@@ -751,8 +751,8 @@ func _refresh_status() -> void :
 		match _voice.state:
 			"listening":
 
-				if _voice.held_seconds() > Lexicon.balf("extraction.tap_max_s") or _voice.is_private_talk():
-					parts.append("● OUVINDO")
+				if _voice.held_seconds() > Lexicon.balf("extraction.tap_max_s") or _voice.is_private_talk() or _voice.is_command_talk():
+					parts.append("● OUVINDO COMANDO [B]" if _voice.is_command_talk() else "● OUVINDO")
 			"thinking":
 				parts.append("● ENTENDENDO…")
 			"warming":

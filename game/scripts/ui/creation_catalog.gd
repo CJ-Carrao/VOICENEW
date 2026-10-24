@@ -71,7 +71,7 @@ func _build() -> void:
 	close.text = "FECHAR  [F2 / ESC]"
 	close.pressed.connect(toggle)
 	header.add_child(close)
-	var help := _text("Tenha matéria. Segure V, fale o pedido e solte. T abre o console de texto.", 18, Color("#c6bda8"))
+	var help := _text("V: criar por voz. B: dar comandos por voz. Segure enquanto fala e solte. T: console de texto.", 18, Color("#c6bda8"))
 	help.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	content.add_child(help)
 	var tabs := GridContainer.new()

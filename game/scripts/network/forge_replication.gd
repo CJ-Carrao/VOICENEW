@@ -186,11 +186,11 @@ func _next_request_id() -> int:
 	return _request_serial
 
 
-func submit_request(text: String, record_unknowns: bool = true) -> Dictionary:
+func submit_request(text: String, record_unknowns: bool = true, commands_only: bool = false) -> Dictionary:
 	if not is_active() or _session.has_authority():
 		return _blocked("A sessão ainda não está pronta para pedidos.")
 	var request_id: = _next_request_id()
-	_request_creation.rpc_id(1, epoch, request_id, text, record_unknowns)
+	_request_creation.rpc_id(1, epoch, request_id, text, record_unknowns, commands_only)
 	return {"pending": true, "request_id": request_id}
 
 
@@ -212,16 +212,16 @@ func submit_cancel() -> void :
 
 
 @rpc("any_peer", "call_remote", "reliable", 0)
-func _request_creation(packet_epoch: int, request_id: int, text: Variant, record_unknowns: Variant = true) -> void :
+func _request_creation(packet_epoch: int, request_id: int, text: Variant, record_unknowns: Variant = true, commands_only: Variant = false) -> void :
 	var player_id: = _accept_intent(packet_epoch, request_id)
 	if player_id == 0:
 		return
-	if not text is String or not record_unknowns is bool or text.strip_edges().is_empty() or text.to_utf8_buffer().size() > int(_config.max_text_bytes):
+	if not text is String or not record_unknowns is bool or not commands_only is bool or text.strip_edges().is_empty() or text.to_utf8_buffer().size() > int(_config.max_text_bytes):
 		_reject_intent(player_id, request_id, "O pedido está vazio ou excede o tamanho permitido.")
 		return
 	stats.requests += 1
 	_intent_context[player_id] = request_id
-	Forge.request(player_id, text, record_unknowns)
+	Forge.request(player_id, text, record_unknowns, commands_only)
 	_intent_context.erase(player_id)
 
 
