@@ -22,7 +22,7 @@ static func capture(thing: Thing) -> Dictionary:
 		state["capture_ball"] = {"occupant_id": ball.occupant_id, "occupant_name": ball.occupant_name, "result": ball.result, "shake_left": ball.shake_left}
 	var cursed = thing.get_node_or_null("Jujutsu")
 	if cursed != null:
-		state["jujutsu"] = {"clock": cursed.clock, "exposure": cursed.exposure.duplicate(), "domain_until": cursed.domain_until, "domain_mode": cursed.domain_mode}
+		state["jujutsu"] = {"clock": cursed.clock, "exposure": cursed.exposure.duplicate(), "domain_until": cursed.domain_until, "domain_mode": cursed.domain_mode, "domain_origin": cursed.domain_origin, "domain_up": cursed.domain_up, "domain_clashing": cursed.domain_clashing}
 	state["layer"] = thing.collision_layer
 	state["mask"] = thing.collision_mask
 	state["shapes"] = thing.collisions.map( func(shape: CollisionShape3D): return not shape.disabled)
@@ -73,6 +73,9 @@ static func apply(thing: Thing, state: Dictionary) -> void :
 		cursed.exposure = data.get("exposure", {}).duplicate()
 		cursed.domain_until = float(data.get("domain_until", 0.0))
 		cursed.domain_mode = String(data.get("domain_mode", ""))
+		cursed.domain_origin = data.get("domain_origin", thing.center())
+		cursed.domain_up = data.get("domain_up", Vector3.UP)
+		cursed.domain_clashing = bool(data.get("domain_clashing", false))
 	thing.collision_layer = int(state.get("layer", 0))
 	thing.collision_mask = int(state.get("mask", 0))
 	var shapes: Array = state.get("shapes", [])

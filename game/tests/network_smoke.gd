@@ -275,6 +275,12 @@ func _success() -> void:
 				_finish(false,"Domain dialogue did not reach second player")
 				return
 			await create_timer(.3).timeout
+			var found := false
+			for environment in get_nodes_in_group("domain_environments"):
+				if environment.mode == "shrine" and environment.get_node_or_null("MalevolentShrineAltar") != null: found = true
+			if not found:
+				_finish(false, "Persistent shrine environment did not reach the second player")
+				return
 	elif chaos_test:
 		await create_timer(3.3).timeout
 		if role == "host":

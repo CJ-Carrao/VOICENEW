@@ -1,0 +1,16 @@
+shader_type spatial;
+render_mode unshaded, cull_disabled, fog_disabled;
+
+float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+
+void fragment() {
+	vec2 grid = UV * vec2(160.0, 90.0);
+	float star = step(0.978, hash(floor(grid))) * pow(max(0.0, 1.0 - length(fract(grid) - 0.5) * 2.0), 9.0);
+	float horizon = exp(-abs(UV.y - 0.5) * 24.0);
+	float streams = pow(max(0.0, sin(UV.x * 170.0 + UV.y * 16.0 + TIME * 0.6)), 24.0);
+	vec3 sky = vec3(0.003, 0.005, 0.018) + vec3(0.08, 0.16, 0.36) * horizon;
+	sky += vec3(0.58, 0.75, 1.0) * star * 2.5 + vec3(0.16, 0.29, 0.62) * streams * horizon;
+	ALBEDO = FRONT_FACING ? vec3(0.008, 0.006, 0.014) : sky;
+	EMISSION = FRONT_FACING ? vec3(0.0) : sky * 0.8;
+	ROUGHNESS = 1.0;
+}

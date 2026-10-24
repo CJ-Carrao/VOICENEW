@@ -11,6 +11,13 @@ var next_cast := 0.0
 var fx_left := 0.0
 var domain_until := 0.0
 var domain_mode := ""
+var domain_origin := Vector3.ZERO
+var domain_up := Vector3.UP
+var domain_clashing := false
+var domain_visual: Node3D
+var domain_members: Array[WeakRef] = []
+var domain_next_pulse := 0.0
+var wheel_angle := 0.0
 var jobs: Node
 var terrain_jobs: Node
 var wheel: Node3D
@@ -43,19 +50,35 @@ func _ready() -> void:
 		wheel = Node3D.new()
 		wheel.name = "AdaptationWheel"
 		add_child(wheel)
+		var radius := thing.scale_factor if thing.thing_id == "mahoraga" else clampf(thing.bounds.size.x * .55, .38, .85)
 		var mesh := BoxMesh.new()
-		mesh.size = Vector3(.14, .14, .14)
+		var instances := MultiMesh.new()
+		instances.transform_format = MultiMesh.TRANSFORM_3D
+		instances.mesh = mesh
+		instances.instance_count = 40
 		var mat := StandardMaterial3D.new()
 		mat.albedo_color = Color("f5d98d")
 		mat.emission_enabled = true
 		mat.emission = mat.albedo_color
+		for i in 24:
+			var angle := i * TAU / 24.0
+			instances.set_instance_transform(i, _wheel_frame(angle, Vector3(.09, .10, radius * .29), radius))
 		for i in 8:
-			var bit := MeshInstance3D.new()
-			bit.mesh = mesh
-			bit.material_override = mat
-			bit.position = Vector3(cos(i * TAU / 8.0), 0, sin(i * TAU / 8.0)) * .6
-			wheel.add_child(bit)
-		wheel.position = thing.bounds.get_center() + thing.up() * (thing.bounds.size.y * .5 + .4)
+			var angle := i * TAU / 8.0
+			for tip in [false, true]:
+				var size := Vector3(.19, .19, .19) if tip else Vector3(radius * 1.12, .08, .08)
+				instances.set_instance_transform(24 + i * 2 + int(tip), _wheel_frame(angle, size, radius * (1.18 if tip else .58)))
+		var drawing := MultiMeshInstance3D.new()
+		drawing.name = "EightSpokedWheel"
+		drawing.multimesh = instances
+		drawing.material_override = mat
+		drawing.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		wheel.add_child(drawing)
+		wheel.position = thing.bounds.get_center() + Vector3.UP * (thing.bounds.size.y * .5 + .45)
+
+func _wheel_frame(angle: float, size: Vector3, radius: float) -> Transform3D:
+	var turn := Basis(Vector3.UP, -angle) * Basis.IDENTITY.scaled(size)
+	return Transform3D(turn, Vector3(cos(angle), 0, sin(angle)) * radius)
 
 func enabled(key: String) -> bool:
 	if not is_instance_valid(thing) or thing.is_dead or thing.is_building or not thing.is_active: return false
@@ -78,7 +101,6 @@ func observe(kind: String) -> void:
 	if not enabled("adaptation") or clock - float(observed_at.get(kind, -100.0)) < 0.8: return
 	observed_at[kind] = clock
 	exposure[kind] = mini(int(exposure.get(kind, 0)) + 1, 3)
-	if wheel != null: wheel.rotate_y(PI * .25)
 	feedback("adaptation", Color("f9d881"))
 
 func feedback(kind: String, color: Color, radius: float = 1.5) -> void:
@@ -89,6 +111,11 @@ func feedback(kind: String, color: Color, radius: float = 1.5) -> void:
 func _process(delta: float) -> void:
 	if not is_instance_valid(thing): return
 	if thing.network_replica: clock += delta
+	if domain_until > clock and thing.is_active and not thing.is_dead and not thing.is_captured:
+		if not is_instance_valid(domain_visual):
+			domain_visual = load("res://scripts/fx/domain_environment.gd").new()
+			Forge.fx_root(thing).add_child(domain_visual)
+			domain_visual.setup(self)
 	if outline != null:
 		outline.visible = enabled("infinity") or enabled("simple_domain") or enabled("amplification")
 		outline.global_position = center()
@@ -96,7 +123,9 @@ func _process(delta: float) -> void:
 	if wheel != null:
 		var turns := 0
 		for value in exposure.values(): turns += int(value)
-		wheel.rotation.y = turns * PI * .25
+		wheel_angle = lerpf(wheel_angle, turns * PI * .25, 1.0 - exp(-8.0 * delta))
+		wheel.rotation.y = wheel_angle
+		wheel.visible = thing.visible and not thing.is_captured
 
 func _physics_process(delta: float) -> void:
 	if not is_instance_valid(thing) or thing.is_dead or thing.is_building or not thing.is_active or not thing.has_simulation_authority(): return
@@ -144,10 +173,32 @@ func expand_domain() -> bool:
 	if not powers.has("shrine") and not powers.has("void"): return false
 	domain_mode = "shrine" if powers.has("shrine") else "void"
 	domain_until = clock + 6.0
+	domain_origin = center()
+	domain_up = thing.up()
+	domain_clashing = false
+	domain_next_pulse = clock + .65
+	domain_members.clear()
+	if domain_mode == "void":
+		var candidates := JujutsuRules.candidates(get_tree())
+		if is_instance_valid(thing.owner_player) and thing.is_held: candidates.append(thing.owner_player)
+		for member in candidates:
+			if not is_instance_valid(member) or not member is Node3D: continue
+			if member is Thing and (member.is_dead or member.is_captured or member.is_held): continue
+			if not member.has_method("take_damage"): continue
+			if Combat.center_of(member).distance_to(domain_origin) < 8.5: domain_members.append(weakref(member))
 	next_cast = clock + 18.0
 	DomainCallout.announce(Forge.fx_root(thing), center(), domain_mode)
 	feedback(domain_mode, Color("ef6e7d") if domain_mode == "shrine" else Color("7489ff"))
 	return true
+
+func cancel_domain() -> void:
+	domain_until = 0.0
+	domain_clashing = false
+	domain_members.clear()
+	if is_instance_valid(domain_visual): domain_visual.close()
+
+func _exit_tree() -> void:
+	if is_instance_valid(domain_visual): domain_visual.close()
 
 func cast(ctx: ActionContext) -> void:
 	if clock < next_cast or not thing.has_simulation_authority(): return
@@ -190,7 +241,7 @@ func cast(ctx: ActionContext) -> void:
 
 func _enemy(target: Object) -> bool:
 	if not is_instance_valid(target) or target == thing or target == thing.owner_player or not target.has_method("take_damage"): return false
-	if target is Thing and (target.is_dead or target.is_held): return false
+	if target is Thing and (target.is_dead or target.is_captured or target.is_held): return false
 	return Combat.affects(thing, target)
 
 func _queue(target: Node3D, amount: float, kind: String) -> void:
@@ -202,13 +253,25 @@ func _queue(target: Node3D, amount: float, kind: String) -> void:
 
 func _domain() -> void:
 	# Opposing domains cancel the sure-hit inside their overlap.
+	domain_clashing = false
 	for other in get_tree().get_nodes_in_group("jujutsu_users"):
-		if other != self and other.domain_until > other.clock and other.thing.team != thing.team and center().distance_to(other.center()) < 18.0: return
-	feedback(domain_mode, Color("f36f88") if domain_mode == "shrine" else Color("8e99ff"), 9.0)
-	if fmod(clock, .75) > .16: return
+		if other != self and is_instance_valid(other.thing) and not other.thing.is_dead and not other.thing.is_captured and other.domain_until > other.clock and other.thing.team != thing.team and domain_origin.distance_to(other.domain_origin) < 18.0:
+			domain_clashing = true
+			return
+	if clock < domain_until - 5.35: return # The barrier forms before sure-hit begins.
+	if domain_mode == "void":
+		for reference in domain_members:
+			var member = reference.get_ref()
+			if not is_instance_valid(member) or (member is Thing and (member.is_dead or member.is_captured)): continue
+			if member.has_method("is_alive") and not member.is_alive(): continue
+			var offset: Vector3 = Combat.center_of(member) - domain_origin
+			if offset.length() > 8.4:
+				member.global_position -= offset.normalized() * (offset.length() - 8.4)
+	if clock < domain_next_pulse: return
+	domain_next_pulse = clock + .75
 	var applied := 0
 	for target in JujutsuRules.candidates(get_tree()):
-		if not _enemy(target) or center().distance_to(Combat.center_of(target)) > 9.0: continue
+		if not _enemy(target) or domain_origin.distance_to(Combat.center_of(target)) > 9.0: continue
 		if domain_mode == "shrine": _queue(target, 9.0, "domain_slash")
 		elif JujutsuRules.field(target, "simple_domain") == null:
 			var user = JujutsuRules.field(target, "adaptation")
@@ -218,7 +281,7 @@ func _domain() -> void:
 			Status.apply(target, "frozen", thing, .3)
 		applied += 1
 		if applied >= 16: break
-	if domain_mode == "shrine": _cut(center(), center(), 2.5, 35.0)
+	if domain_mode == "shrine": _cut(domain_origin, domain_origin, 2.5, 35.0)
 
 func _cut(from: Vector3, to: Vector3, radius: float, amount: float) -> void:
 	if not is_instance_valid(terrain_jobs) or terrain_jobs.is_queued_for_deletion():

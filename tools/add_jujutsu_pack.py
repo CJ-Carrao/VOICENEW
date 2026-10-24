@@ -1,6 +1,7 @@
 """Original voxel models and composable techniques inspired by Jujutsu Kaisen."""
 import json
 from pathlib import Path
+from improve_jujutsu_visuals import mahoraga
 
 DATA = Path(__file__).resolve().parent.parent / 'game/data'
 def read(p): return json.loads((DATA / p).read_text(encoding='utf-8'))
@@ -31,10 +32,7 @@ def main():
         pieces = [box([.18,.32,.10],[0,0,0],color), box([.11,.07,.13],[0,.20,0],'#e7d9bd'), box([.08,.28,.08],[0,-.24,0],'#4d535c','grip')]
         for side in [-1,1]: pieces += [box([.06,.12,.14],[side*.16,.04,0],color,'rune'),box([.08,.06,.13],[side*.10,-.12,0],'#d4cfb8','rune')]
         if key == 'adaptation':
-            pieces = [box([.75,1.1,.42],[0,1.25,0],'#e2dfc9','body'), box([.48,.45,.4],[0,2.02,0],'#efebd9','head')]
-            for side in [-1,1]:
-                pieces += [box([.24,.95,.28],[side*.57,1.20,0],'#d9dac8','arm'), box([.27,.85,.32],[side*.24,.40,0],'#747773','leg'), box([.32,.20,.52],[side*.24,.05,-.1],'#5d625f','foot')]
-            pieces += [box([.12,.85,.12],[.64,.70,-.30],'#f0dfac','blade')]
+            pieces = mahoraga()['pieces']
         write('models/'+ident+'.json', dict(units='meters', anchor=[0,0,0], pieces=pieces))
         things[ident] = dict(category='creature' if key == 'adaptation' else 'tool', movement='chase_enemy' if key == 'adaptation' else 'static', impact='stop', jujutsu={key:True})
         if key == 'adaptation': things[ident].update(voxel_motion=True, ecology_tags=['mahoraga','shikigami'])
