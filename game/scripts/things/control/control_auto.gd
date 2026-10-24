@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void :
 	if not thing.can_act() or thing.is_held:
 		return
 	var from: = thing.center()
-	var enemy: = Combat.nearest_enemy(from, thing.team, get_tree())
+	var enemy: = Combat.nearest_target(thing, from, get_tree())
 	if enemy == null:
 		return
 	var to_enemy: = Combat.center_of(enemy) - from

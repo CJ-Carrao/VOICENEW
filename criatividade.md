@@ -21,6 +21,9 @@ Abra `C:\Tony\Projetos\lavoice-lab\build\LAVOICE-Lab-Corrigido.exe` ou `jogar.cm
 - Quero um pato com cabeça de um dragão.
 - Quero uma formiga com asas de borboleta.
 - Quero uma capivara misturada com um pato.
+- Quero um elefante que só ataque dragões.
+- Quero um dragão que só coma elefantes.
+- Quero um elefante que só ataque dragões com uma pistola.
 
 Essas regras se combinam: criaturas podem carregar armas reais, casas podem andar e receber proteção, e animais podem receber dietas específicas. As armas acopladas em criaturas miram automaticamente, gastam munição e aumentam o custo da criação. A casa tem porta e interior oco. As possibilidades usam o vocabulário e as regras disponíveis no jogo; uma frase totalmente nova ainda pode precisar de uma nova regra.
 
@@ -47,6 +50,8 @@ Bombas fortes foram encarecidas: singularidade 220, hipotética de gravidade 145
 A formiga rainha custa **85** e constrói um ninho de **30**, usando a sua matéria. Um ninho por rainha. O ninho cria uma formiga a cada cinco segundos, pagando o custo dela, sem limite de população e sem prazo para desaparecer. Sem matéria, a produção espera. Quando a rainha morre, o ninho para de produzir.
 
 O pato com a dieta “só coma formigas” procura formigas e rainhas, inclusive da sua própria equipe. Ele caminha até a presa e morde; poupa galinhas e outras espécies. Sem presas, para de caçar. O tamanduá já vem com essa dieta. Também existem dietas de insetos, ratos e galinhas.
+
+“Que só ataque”, “que só ataca”, “que só atacar”, “que só coma” e “que só comer” escolhem uma espécie alvo para qualquer uma das 69 espécies cadastradas. O animal procura a espécie pedida, caminha ou voa até ela e ataca quando está ao alcance do corpo. Animais grandes consideram o tamanho da presa para conseguir atingir, por exemplo, um dragão voando baixo. Um animal terrestre precisa que a presa esteja ao seu alcance, ou de uma arma para atingir alvos mais altos. Sem a espécie alvo, ele aguarda e poupa as outras criaturas e jogadores. As armas e habilidades acopladas respeitam a mesma seleção, inclusive os disparos que já saíram da arma. A regra também vale para alvos da própria equipe.
 
 A abelha rainha mantém a colmeia. O galinheiro produz galinhas sem exigir rainha. Toda produção ecológica paga matéria por animal, sem limite de população. Dietas específicas aceitam todas as espécies cadastradas, além dos grupos de insetos, formigas, ratos e galinhas.
 

@@ -363,6 +363,7 @@ func spawn_child(node: Dictionary, role: String, at: Vector3, direction: Vector3
 	var creature := String(Lexicon.data.thing_def(String(node.get("thing", ""))).get("category", "")) in ["creature", "vehicle"]
 	var child_role := "spawned" if role == "projectile" and creature else role
 	var child: = Assembler.build(node, child_role, Lexicon.data)
+	if not creature: child.target_filter = InnovationRules.target_diet(spawner)
 	child.set_owner_info(spawner.owner_id, spawner.team, spawner.owner_player, spawner)
 	if same_generation:
 		child.set_generation(spawner.generation)

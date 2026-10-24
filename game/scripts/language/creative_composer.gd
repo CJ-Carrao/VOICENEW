@@ -6,6 +6,9 @@ const SPOKEN_FORMS := ["faça", "faz", "crie", "gere", "construa", "fabrique", "
 
 static func prepare(text: String) -> String:
 	var out := Normalizer.fold(text)
+	var prey_article := RegEx.new()
+	prey_article.compile("\\b(que\\s+(?:(?:so|apenas|somente)\\s+)?(?:come|coma|comer|caca|cace|cacar|ataca|ataque|atacar)(?:\\s+(?:apenas|somente))?)\\s+(?:um|uma|uns|umas|o|a|os|as)\\s+")
+	out = prey_article.sub(out, "$1 ", true)
 	out = out.replace("misturado com", "com corpo de").replace("misturada com", "com corpo de")
 	var shield := RegEx.new()
 	shield.compile("\\b(?:ante|ant)\\s+bomba")

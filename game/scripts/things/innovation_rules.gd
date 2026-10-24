@@ -54,6 +54,24 @@ static func matches_diet(thing: Thing, diet: String) -> bool:
 	return tags(thing).has(diet)
 
 
+static func target_diet(source: Thing) -> String:
+	# Mounted weapons and their projectiles obey the carrier's species restriction.
+	var cursor := source
+	var seen := {}
+	while is_instance_valid(cursor) and not seen.has(cursor.get_instance_id()):
+		seen[cursor.get_instance_id()] = true
+		if not cursor.target_filter.is_empty(): return cursor.target_filter
+		var diet := String(cursor.node_data.get("mods", {}).get("diet", Lexicon.data.thing_def(cursor.thing_id).get("diet", "")))
+		if not diet.is_empty() or cursor.category == "creature": return diet
+		cursor = cursor.mount_host if is_instance_valid(cursor.mount_host) else cursor.spawner as Thing
+	return ""
+
+
+static func allows_target(source: Thing, target: Object) -> bool:
+	var diet := target_diet(source)
+	return diet.is_empty() or (target is Thing and target != source and matches_diet(target, diet))
+
+
 static func threat(source: Thing, damage_type: String) -> String:
 	if damage_type in ["neutron", "gravity", "spatial"]:
 		return damage_type

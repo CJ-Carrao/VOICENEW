@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void :
 	if _cooldown > 0.0:
 		return
 	var from: = thing.center()
-	var enemy: = Combat.nearest_enemy(from, thing.team, get_tree())
+	var enemy: = Combat.nearest_target(thing, from, get_tree())
 	if enemy != null and Combat.center_of(enemy).distance_to(from) <= param("r", 3.0):
 		_cooldown = _cooldown_time
 		fire(ActionContext.make(from, Combat.center_of(enemy) - from, enemy))

@@ -13,6 +13,8 @@ static func apply_damage(target: Object, amount: float, type: String, source: Th
 		return
 	if target == null or not is_instance_valid(target) or amount <= 0.0 or not target.has_method("take_damage"):
 		return
+	if not InnovationRules.allows_target(source, target):
+		return
 	var final: = amount
 	if source != null and target == source.owner_player:
 		final *= Lexicon.balf("combat.self_damage_mult")
@@ -59,6 +61,8 @@ static func hit_structure(target: Object, point: Vector3, shape_index: int, amou
 static func affects(source: Thing, target: Object) -> bool:
 	if source == null or target == source or not is_instance_valid(target):
 		return false
+	if not InnovationRules.target_diet(source).is_empty():
+		return InnovationRules.allows_target(source, target)
 	if bool(Lexicon.bal("status.affects_own_team", false)):
 		return true
 	var team: Variant = target.get("team")
@@ -175,6 +179,22 @@ static func _crater(source: Thing, at: Vector3, radius: float, damage: float) ->
 		var volume: = node as BlockVolume
 		volume.explode(at, radius, damage * volume.explosion_mult)
 
+
+
+static func nearest_target(source: Thing, from: Vector3, tree: SceneTree) -> Node3D:
+	var diet := InnovationRules.target_diet(source)
+	if diet.is_empty(): return nearest_enemy(from, source.team, tree)
+	if Forge.world == null: return null
+	var best: Thing
+	var distance := INF
+	for candidate in Forge.world.get_node("Things").get_children():
+		var other := candidate as Thing
+		if other == null or other == source or other.is_dead or other.is_held or not InnovationRules.matches_diet(other, diet): continue
+		var current := center_of(other).distance_squared_to(from)
+		if current < distance:
+			best = other
+			distance = current
+	return best
 
 
 static func nearest_enemy(from: Vector3, team: int, tree: SceneTree) -> Node3D:

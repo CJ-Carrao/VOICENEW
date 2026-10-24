@@ -59,7 +59,7 @@ func _physics_process(delta: float) -> void :
 		return
 	if not _weapon or not _automatic:
 		return
-	var target: = Combat.nearest_enemy(item.center(), item.team, get_tree())
+	var target: = Combat.nearest_target(item, item.center(), get_tree())
 	if target == null or item.center().distance_to(Combat.center_of(target)) > _range:
 		_warm = 0.0
 		return

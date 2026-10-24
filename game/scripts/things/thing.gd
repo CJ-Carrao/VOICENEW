@@ -39,6 +39,7 @@ var team: int = 0
 var owner_player: Node3D = null
 
 var spawner: Node3D = null
+var target_filter: String = ""
 
 var generation: int = 0
 
@@ -740,7 +741,7 @@ func travel_direction() -> Vector3:
 
 
 func context_here() -> ActionContext:
-	return ActionContext.make(center(), travel_direction(), Combat.nearest_enemy(center(), team, get_tree()))
+	return ActionContext.make(center(), travel_direction(), Combat.nearest_target(self, center(), get_tree()))
 
 
 func is_alive() -> bool:

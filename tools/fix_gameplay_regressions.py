@@ -34,7 +34,7 @@ def main():
         diet = {"ant": "ant", "chicken": "chicken", "rat": "rodent", "bee": "bee"}.get(ident, "species:" + ident)
         variants = []
         for noun in aliases:
-            for verb in ["come", "coma", "cace", "caça", "coma apenas", "come apenas"]:
+            for verb in ["come", "coma", "comer", "cace", "caça", "caçar", "ataque", "ataca", "atacar", "coma apenas", "come apenas", "ataque apenas", "ataca apenas", "coma somente", "ataque somente"]:
                 variants.extend([f"que só {verb} {noun}", f"que {verb} {noun}"])
         key = "diet_species_" + ident
         mods[key] = {"key": "diet", "value": diet}
@@ -44,7 +44,7 @@ def main():
                 accepted.append(variant)
                 seen.add(fold(variant))
         mod_words[key] = {"words": accepted}
-        display["mods"]["diet"][diet] = "come só " + words.get(ident, {}).get("name", ident)
+        display["mods"]["diet"][diet] = "caça só " + words.get(ident, {}).get("name", ident)
     balance["caps"].update(live_entities_per_player=0, tree_depth=8, graft_depth=4, grafts_per_recipe=16)
     balance["combat"]["projectiles_hit_own"] = True
     balance["things"]["elephant"]["hp"] = 220

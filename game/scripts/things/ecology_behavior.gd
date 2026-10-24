@@ -62,16 +62,7 @@ func _hunt() -> void:
 	if Forge.world == null or thing.move == null:
 		return
 	thing.move.steering = true
-	var prey: Thing
-	var distance := INF
-	for candidate in Forge.world.get_node("Things").get_children():
-		var other := candidate as Thing
-		if other == null or other == thing or other.is_dead or other.is_held or not InnovationRules.matches_diet(other, diet):
-			continue
-		var current := thing.center().distance_to(other.center())
-		if current < distance and current < 30.0:
-			prey = other
-			distance = current
+	var prey := Combat.nearest_target(thing, thing.center(), get_tree()) as Thing
 	var up := thing.up()
 	var airborne := thing.move.hovers()
 	if prey == null:
@@ -83,7 +74,14 @@ func _hunt() -> void:
 	else:
 		direction = Gravity.flat(direction, up)
 		thing.velocity = direction.normalized() * maxf(thing.speed, 0.6) + up * thing.velocity.dot(up) if direction.length() > 0.65 else up * thing.velocity.dot(up)
-	if distance <= maxf(1.0, thing.bounds.size.z * 0.7) and clock >= next_bite:
+	if direction.length_squared() > 0.01: thing.face(direction, true)
+	var own_box: AABB = thing.global_transform * thing.bounds
+	var prey_box: AABB = prey.global_transform * prey.bounds
+	var gap := (prey_box.position - own_box.end).max(own_box.position - prey_box.end).max(Vector3.ZERO).length()
+	var reach := clampf(thing.scale_factor * 0.65, 0.4, 2.0)
+	if gap <= reach and clock >= next_bite:
+		var query := PhysicsRayQueryParameters3D.create(thing.center(), prey.center(), PhysicsLayers.WORLD)
+		if not thing.get_world_3d().direct_space_state.intersect_ray(query).is_empty(): return
 		next_bite = clock + 0.7
 		# Diet is an explicit ecological relationship, including prey of the same team.
 		Combat.apply_damage(prey, maxf(7.0, thing.impact_damage * 2.0), "bite", thing)
