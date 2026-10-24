@@ -7,6 +7,7 @@ extends RefCounted
 
 
 const MOVES: = {
+	"walking_house": preload("res://scripts/things/move/move_walking_house.gd"),
 	"static": preload("res://scripts/things/move/move_static.gd"), 
 	"straight": preload("res://scripts/things/move/move_straight.gd"), 
 	"ballistic": preload("res://scripts/things/move/move_ballistic.gd"), 

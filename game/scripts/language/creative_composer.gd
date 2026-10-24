@@ -6,6 +6,9 @@ const SPOKEN_FORMS := ["faça", "faz", "crie", "gere", "construa", "fabrique", "
 
 static func prepare(text: String) -> String:
 	var out := Normalizer.fold(text)
+	var walking_home := RegEx.new()
+	walking_home.compile("\\b(?:casa|casinha)\\s+(?:que\\s+(?:anda|ande|caminha|caminhe)|andante|ambulante|movel|com\\s+pernas)\\b")
+	out = walking_home.sub(out, "casa ambulante", true)
 	var invoke := RegEx.new()
 	invoke.compile("^(?:eu\\s+)?(?:invoca|invoque|invocar)\\s+")
 	out = invoke.sub(out, "quero ")

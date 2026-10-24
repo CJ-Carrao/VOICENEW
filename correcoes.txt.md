@@ -5,7 +5,7 @@ O atalho `jogar.cmd` abre essa versão. A versão anterior fica preservada.
 Para online, todos os jogadores precisam usar a versão corrigida.
 
 - Dragão, morcego, borboleta, helicóptero, pomba, avião e abelha têm deslocamento horizontal e controle de altura; voadores não ficam presos no chão nem sobem indefinidamente.
-- A casa ambulante caminha mesmo sem adversário por perto.
+- A casa ambulante tem caminhada própria, mantém as pernas animadas e muda de direção ao encostar em paredes ou criaturas, sem depender de perseguir um adversário. “Casa que caminha”, “casa que anda”, “casa andante” e “casa com pernas” usam o mesmo modelo ambulante. O pedido e a montagem completos também são testados em `walking_house.gd`.
 - O pato não recebe dano de contato contínuo de aliados ou do chão enquanto come. A dieta procura a espécie pedida e poupa as demais; aceita as 69 espécies cadastradas. “Só coma formigas” inclui a rainha.
 - “Só ataque”, “só ataca” e “só atacar” também escolhem a espécie alvo, assim como “só coma” e “só comer”. O elefante persegue dragões e usa o alcance real dos corpos para atingir os que voam baixo. Armas, habilidades e projéteis obedecem à seleção; alvos de outras espécies são poupados, e alvos da mesma equipe podem ser caçados. Sem presa, o animal aguarda. A regra foi exercitada em 9.522 pedidos entre as 69 espécies e no ataque de cada uma delas.
 - Animais podem carregar armas que disparam outros animais armados. As armas e seus projéteis continuam funcionando nas combinações. Animais lançados ficam vivos e podem receber tiros.

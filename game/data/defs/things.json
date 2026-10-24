@@ -562,7 +562,7 @@
       {
         "when": {
           "type": "after",
-          "s": 3.0
+          "s": 3
         },
         "do": {
           "type": "explode"
@@ -2172,7 +2172,7 @@
       {
         "when": {
           "type": "after",
-          "s": 3.0
+          "s": 3
         },
         "do": {
           "type": "anomaly",
@@ -2193,7 +2193,7 @@
       {
         "when": {
           "type": "after",
-          "s": 3.0
+          "s": 3
         },
         "do": {
           "type": "anomaly",
@@ -2214,7 +2214,7 @@
       {
         "when": {
           "type": "after",
-          "s": 3.0
+          "s": 3
         },
         "do": {
           "type": "anomaly",
@@ -2235,7 +2235,7 @@
       {
         "when": {
           "type": "after",
-          "s": 3.0
+          "s": 3
         },
         "do": {
           "type": "anomaly",
@@ -2256,7 +2256,7 @@
       {
         "when": {
           "type": "after",
-          "s": 3.0
+          "s": 3
         },
         "do": {
           "type": "anomaly",
@@ -2277,7 +2277,7 @@
       {
         "when": {
           "type": "after",
-          "s": 3.0
+          "s": 3
         },
         "do": {
           "type": "anomaly",
@@ -2298,7 +2298,7 @@
       {
         "when": {
           "type": "after",
-          "s": 3.0
+          "s": 3
         },
         "do": {
           "type": "anomaly",
@@ -2319,7 +2319,7 @@
       {
         "when": {
           "type": "after",
-          "s": 3.0
+          "s": 3
         },
         "do": {
           "type": "anomaly",
@@ -2340,7 +2340,7 @@
       {
         "when": {
           "type": "after",
-          "s": 3.0
+          "s": 3
         },
         "do": {
           "type": "anomaly",
@@ -2361,7 +2361,7 @@
       {
         "when": {
           "type": "after",
-          "s": 3.0
+          "s": 3
         },
         "do": {
           "type": "anomaly",
@@ -2382,7 +2382,7 @@
       {
         "when": {
           "type": "after",
-          "s": 3.0
+          "s": 3
         },
         "do": {
           "type": "anomaly",
@@ -2403,7 +2403,7 @@
       {
         "when": {
           "type": "after",
-          "s": 3.0
+          "s": 3
         },
         "do": {
           "type": "anomaly",
@@ -2439,7 +2439,7 @@
       {
         "when": {
           "type": "after",
-          "s": 1.0
+          "s": 1
         },
         "do": {
           "type": "explode"
@@ -2689,7 +2689,7 @@
   },
   "walking_house": {
     "category": "vehicle",
-    "movement": "chase_enemy",
+    "movement": "walking_house",
     "impact": "stop",
     "enclosure": true,
     "voxel_motion": true
@@ -2806,7 +2806,7 @@
       {
         "when": {
           "type": "after",
-          "s": 3.0
+          "s": 3
         },
         "do": {
           "type": "purge_species"

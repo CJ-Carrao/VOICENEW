@@ -136,7 +136,7 @@ def main():
     modifier_words["walking"] = {"words": ["ambulante", "andante", "que anda", "que caminhe", "que caminha"]}
 
     add("house", "casa", ["casinha", "casa de blocos"], "structure", house(False), {"movement": "static", "impact": "stop", "enclosure": True}, {"cost": 38, "hp": 240, "weight_kg": 500}, "Casa oca com porta, janelas e teto em blocos.", "Defesas")
-    add("walking_house", "casa ambulante", ["casa que anda", "casa andante", "casa movel"], "vehicle", house(True), {"movement": "chase_enemy", "impact": "stop", "enclosure": True, "voxel_motion": True}, {"cost": 90, "hp": 240, "weight_kg": 600, "speed": 1.6, "impact_damage": 5}, "Casa com pernas; aceita protecoes, armas acopladas e controle remoto.", "Defesas")
+    add("walking_house", "casa ambulante", ["casa que anda", "casa andante", "casa movel"], "vehicle", house(True), {"movement": "walking_house", "impact": "stop", "enclosure": True, "voxel_motion": True}, {"cost": 90, "hp": 240, "weight_kg": 600, "speed": 1.6, "impact_damage": 5}, "Casa com pernas; aceita protecoes, armas acopladas e controle remoto.", "Defesas")
     for ident, name, nest_id, child_id, tint, queen_tag in [
         ("queen_ant", "formiga rainha", "ant_nest", "ant", "#9c7144", "ant_queen"),
         ("queen_bee", "abelha rainha", "beehive", "bee", "#c3a25a", "bee_queen"),

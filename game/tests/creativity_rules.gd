@@ -140,7 +140,7 @@ func _run() -> void:
 	check(not rules.authorize_spawn(producer, recipe_type.new_node("neutron_shield")), "Shield producer bypassed insufficient matter")
 	await clear()
 	var house = spawn("walking_house", game.player.global_position + game.player.up() * 4.0)
-	check(house.move.get_script().resource_path.ends_with("move_chase_enemy.gd") and house.speed > 0, "Walking house has no locomotion")
+	check(house.move.get_script().resource_path.ends_with("move_walking_house.gd") and house.speed > 0, "Walking house has no locomotion")
 	var gator = spawn("crocodile", origin + Vector3(3, 0, 0), 1, armed)
 	check(gator.grafts.size() > 0, "Armed alligator did not assemble a real weapon")
 	if not gator.grafts.is_empty():
