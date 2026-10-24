@@ -1,4 +1,15 @@
+---
+title: Pokémon e comandos de voz
+date: 2026-10-24
+updated: 2026-10-24
+tags:
+  - lavoice
+  - documentacao
+---
+
 # Pokémon e comandos
+
+Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · Relacionado: [[Projetos/lavoice-lab/captura|Pokébola e itens no chão]] · [[Projetos/lavoice-lab/jujutsu|Técnicas de Jujutsu e domínios]] · [[Projetos/lavoice-lab/tarefas|Próximas melhorias do jogo]]
 
 Quatro companheiros em blocos, na aba **Pokémon** do catálogo. Crie com “quero um Pikachu”, “quero um Charmander”, “quero um Squirtle” ou “quero um Bulbasaur”. Os nomes “picachu” e “squitle” também funcionam.
 

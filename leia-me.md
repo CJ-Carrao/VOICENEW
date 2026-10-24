@@ -5,15 +5,21 @@ tags:
   - lavoice
   - godot
   - desenvolvimento
+updated: 2026-10-24
 ---
 
 # LAVOICE Lab
 
-Atualização das correções: use `jogar.cmd` ou `build\LAVOICE-Lab-Corrigido.exe`. A lista de problemas relatados e suas correções está em [correcoes.txt.md](correcoes.txt.md). Todos os participantes de uma partida online precisam usar a mesma versão corrigida.
+Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · Relacionado: [[Projetos/lavoice-lab/criatividade|Criatividade, colônias e defesas]] · [[Projetos/lavoice-lab/correcoes.txt|Correções e testes do jogo]] · [[Projetos/lavoice-lab/tarefas|Próximas melhorias do jogo]]
+
+> [!info] Controles atuais
+> **V** cria por voz; **B** recebe somente comandos, como “Squirtle, ataque”; **T** abre o console. Use `jogar.cmd` para iniciar a versão atual. As seções de recuperação abaixo registram também versões anteriores.
+
+Atualização das correções: use `jogar.cmd` ou `build\LAVOICE-Lab-Jujutsu.exe`. A lista de problemas relatados e suas correções está em [[Projetos/lavoice-lab/correcoes.txt|correcoes.txt.md]]. Todos os participantes de uma partida online precisam usar a mesma versão corrigida.
 
 ## Atualizacao: Pacote Caos
 
-62 criacoes novas: 30 animais, 12 granadas que liberam criaturas, 12 bombas especiais e 8 armas. **F2** abre o catalogo dentro do jogo, com nomes, pedidos e efeitos. A lista completa esta em [[novidades]].
+62 criacoes novas: 30 animais, 12 granadas que liberam criaturas, 12 bombas especiais e 8 armas. **F2** abre o catalogo dentro do jogo, com nomes, pedidos e efeitos. A lista completa esta em [[Projetos/lavoice-lab/novidades|Pacote Caos e primeiras novidades]].
 
 A formiga foi refeita em blocos, e os novos animais receberam animacoes simples. Entre as adicoes estao granadas de formigas e galinhas, bombas nuclear, de neutrons, de gravidade e antigravidade, singularidade, meteoros, e a faca que corta o espaco. A versao anterior do executavel esta em `backups/before-chaos`.
 
@@ -31,7 +37,7 @@ Verificado no projeto e na build: pedido de uma formiga, montagem, gasto de mate
 
 ## Abrir
 
-- **Jogar:** abra `jogar.cmd`, ou `build\LAVOICE-Lab-Corrigido.exe`.
+- **Jogar:** abra `jogar.cmd`, ou `build\LAVOICE-Lab-Jujutsu.exe`.
 - **Editar:** abra `editar.cmd`. O editor Godot 4.7.2 ja esta em `tools\godot`.
 - **Gerar outra versao depois de editar:** abra `recompilar.cmd`.
 - **Projeto:** `game\project.godot`.
@@ -92,4 +98,4 @@ Contexto do vault: [[copia-de-jogo]], [[rea]], [[tony]].
 
 ## Atualização de criatividade
 
-O executável inclui 76 criações novas, combinações de armas e criaturas, casa ambulante, campos de proteção especializados e colônias com predadores. Consulte [criatividade.md](criatividade.md) e a aba COMBINAR do F2. A bomba de nêutrons agora remove blocos reais e faz uma cratera próxima.
+O executável inclui 76 criações novas, combinações de armas e criaturas, casa ambulante, campos de proteção especializados e colônias com predadores. Consulte [[Projetos/lavoice-lab/criatividade|criatividade.md]] e a aba COMBINAR do F2. A bomba de nêutrons agora remove blocos reais e faz uma cratera próxima.

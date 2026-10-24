@@ -1,4 +1,15 @@
+---
+title: Brainrots em blocos
+date: 2026-10-24
+updated: 2026-10-24
+tags:
+  - lavoice
+  - documentacao
+---
+
 # Brainrots
+
+Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · Relacionado: [[Projetos/lavoice-lab/dinossauros|Dinossauros e misturas]] · [[Projetos/lavoice-lab/captura|Pokébola e itens no chão]] · [[Projetos/lavoice-lab/criatividade|Criatividade, colônias e defesas]]
 
 Dez criaturas originais em blocos, no catálogo em **Brainrots**. Use “quero um” seguido pelo nome. Também aceitam as grafias informais usadas no pedido.
 

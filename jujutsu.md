@@ -1,4 +1,15 @@
+---
+title: Técnicas de Jujutsu e domínios
+date: 2026-10-24
+updated: 2026-10-24
+tags:
+  - lavoice
+  - documentacao
+---
+
 # Técnicas de Jujutsu
+
+Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · Relacionado: [[Projetos/lavoice-lab/espaco|Buracos negros, Azul, Vermelho e Vazio Roxo]] · [[Projetos/lavoice-lab/pokemon|Pokémon e comandos de voz]] · [[Projetos/lavoice-lab/captura|Pokébola e itens no chão]]
 
 Use `jogar.cmd`, que aponta para `build/LAVOICE-Lab-Jujutsu.exe`. A versão anterior aberta permanece preservada. Os participantes do online precisam atualizar a versão. Fale com V ou digite com T; as técnicas estão na aba JUJUTSU do catálogo. Ferramentas ficam na mão: clique para atacar ou ativar um domínio. Com o domínio do Gojo ou do Sukuna equipado, também diga ou digite “expansão de domínio” para ativá-lo. O personagem anuncia em áudio e legenda “Expansão de domínio! Vazio Infinito!” ou “Expansão de domínio! Santuário Malevolente!”, conforme a técnica equipada. O comando não cria um domínio gratuito e respeita a recarga. Infinito, cura, adaptação e defesas funcionam enquanto equipados. Animais usam as próprias técnicas automaticamente.
 

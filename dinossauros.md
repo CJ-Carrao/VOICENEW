@@ -1,4 +1,15 @@
+---
+title: Dinossauros e misturas
+date: 2026-10-24
+updated: 2026-10-24
+tags:
+  - lavoice
+  - documentacao
+---
+
 # Dinossauros e misturas
+
+Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · Relacionado: [[Projetos/lavoice-lab/criatividade|Criatividade, colônias e defesas]] · [[Projetos/lavoice-lab/brainrots|Brainrots em blocos]] · [[Projetos/lavoice-lab/pokemon|Pokémon e comandos de voz]]
 
 Abra `jogar.cmd` para usar a atualização. No online, todos precisam desta versão. O catálogo tem a aba DINOS.
 

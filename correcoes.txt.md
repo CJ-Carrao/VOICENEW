@@ -1,4 +1,15 @@
+---
+title: Correções e testes do jogo
+date: 2026-10-24
+updated: 2026-10-24
+tags:
+  - lavoice
+  - documentacao
+---
+
 # Correções da lista de problemas
+
+Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · Relacionado: [[Projetos/lavoice-lab/leia-me|Guia do LAVOICE Lab]] · [[Projetos/lavoice-lab/criatividade|Criatividade, colônias e defesas]] · [[Projetos/lavoice-lab/tarefas|Próximas melhorias do jogo]]
 
 Executável: `C:\Tony\Projetos\lavoice-lab\build\LAVOICE-Lab-Corrigido.exe`.
 O atalho `jogar.cmd` abre essa versão. A versão anterior fica preservada.

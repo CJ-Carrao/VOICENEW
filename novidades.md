@@ -5,11 +5,14 @@ tags:
   - lavoice
   - jogos
   - novidades
+updated: 2026-10-24
 ---
 
 # Pacote Caos
 
-76 criações novas no LAVOICE Lab: o pacote inicial de 62 ganhou 14 opções de defesa, construção e ecologia. Veja [criatividade.md](criatividade.md) para combinações, custos e colônias. A formiga anterior foi refeita com peças em blocos, seis patas e antenas.
+Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · Relacionado: [[Projetos/lavoice-lab/criatividade|Criatividade, colônias e defesas]] · [[Projetos/lavoice-lab/brainrots|Brainrots em blocos]] · [[Projetos/lavoice-lab/pokemon|Pokémon e comandos de voz]]
+
+76 criações novas no LAVOICE Lab: o pacote inicial de 62 ganhou 14 opções de defesa, construção e ecologia. Veja [[Projetos/lavoice-lab/criatividade|criatividade.md]] para combinações, custos e colônias. A formiga anterior foi refeita com peças em blocos, seis patas e antenas.
 
 ## Como usar
 
@@ -122,4 +125,4 @@ A faca abre um corte à distância que atinge inimigos e blocos. A bomba de grav
 - Os novos animais têm animações simples de patas, asas, antenas e cauda.
 - A versão anterior do executável foi guardada em `backups/before-chaos`.
 - O jogo original em `F:\Games\LAVOICE` foi preservado.
-- Detalhes do projeto em [[leia-me]] e [[copia-de-jogo]].
+- Detalhes do projeto em [[Projetos/lavoice-lab/leia-me|Guia do LAVOICE Lab]] e [[copia-de-jogo]].

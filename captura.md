@@ -1,4 +1,15 @@
+---
+title: Pokébola e itens no chão
+date: 2026-10-24
+updated: 2026-10-24
+tags:
+  - lavoice
+  - documentacao
+---
+
 # Pokébola e itens no chão
+
+Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · Relacionado: [[Projetos/lavoice-lab/pokemon|Pokémon e comandos de voz]] · [[Projetos/lavoice-lab/dinossauros|Dinossauros e misturas]] · [[Projetos/lavoice-lab/brainrots|Brainrots em blocos]]
 
 Abra `jogar.cmd`. Todos os jogadores do online precisam atualizar. A Pokébola está na aba CAPTURA do catálogo e custa 38 de matéria base, antes dos descontos de novidade.
 

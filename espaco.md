@@ -1,4 +1,15 @@
+---
+title: Buracos negros, Azul, Vermelho e Vazio Roxo
+date: 2026-10-24
+updated: 2026-10-24
+tags:
+  - lavoice
+  - documentacao
+---
+
 # Buracos, Azul, Vermelho e Vazio Roxo
+
+Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · Relacionado: [[Projetos/lavoice-lab/jujutsu|Técnicas de Jujutsu e domínios]] · [[Projetos/lavoice-lab/criatividade|Criatividade, colônias e defesas]]
 
 Abra `jogar.cmd` para usar o executável atualizado. Fale com V ou digite com T, espere a montagem e clique para lançar a criação. Todos na partida online precisam desta versão.
 
