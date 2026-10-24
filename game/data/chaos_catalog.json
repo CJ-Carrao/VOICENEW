@@ -730,6 +730,105 @@
       "effect": "Projétil que atravessa alvos e abre um caminho nos blocos. Pedido direto ou fusao de Azul com Vermelho.",
       "pieces": 25,
       "base_cost": 290
+    },
+    {
+      "id": "mahoraga",
+      "name": "Mahoraga",
+      "phrase": "quero mahoraga",
+      "group": "Jujutsu",
+      "effect": "Adapta apos tres exposicoes espacadas; ataques repetidos perdem 80% do dano. Aprende a atravessar o Infinito.",
+      "pieces": 9,
+      "base_cost": 240
+    },
+    {
+      "id": "gojo_infinity",
+      "name": "Infinito",
+      "phrase": "quero infinito",
+      "group": "Jujutsu",
+      "effect": "Barreira pessoal: bloqueia ataques comuns por 16 s, recarrega por 8 s. Adaptacao, amplificacao, dominios e corte do mundo sao respostas.",
+      "pieces": 7,
+      "base_cost": 120
+    },
+    {
+      "id": "sukuna_cleave",
+      "name": "Corte do Sukuna",
+      "phrase": "quero corte do sukuna",
+      "group": "Jujutsu",
+      "effect": "Corte de 24 m, 32 de dano; quebra blocos comuns, mas respeita paredes e Infinito.",
+      "pieces": 7,
+      "base_cost": 95
+    },
+    {
+      "id": "sukuna_world_cut",
+      "name": "Corte que corta o mundo",
+      "phrase": "quero corte que corta o mundo",
+      "group": "Jujutsu",
+      "effect": "100 de dano, corta o espaco e atravessa Infinito; recarga de 4,5 s.",
+      "pieces": 7,
+      "base_cost": 260
+    },
+    {
+      "id": "sukuna_fuga",
+      "name": "Fuga",
+      "phrase": "quero fuga",
+      "group": "Jujutsu",
+      "effect": "Linha de fogo de 24 m; varia o tipo de dano contra adaptacao a cortes.",
+      "pieces": 7,
+      "base_cost": 160
+    },
+    {
+      "id": "yuji_black_flash",
+      "name": "Flash Negro",
+      "phrase": "quero flash negro",
+      "group": "Jujutsu",
+      "effect": "Golpe concentrado de curto alcance, 55 de dano e recarga de 3 s.",
+      "pieces": 7,
+      "base_cost": 85
+    },
+    {
+      "id": "reverse_curse",
+      "name": "Tecnica reversa",
+      "phrase": "quero tecnica reversa",
+      "group": "Jujutsu",
+      "effect": "Recupera 6 de vida a cada 1,5 s, sem ressuscitar nem passar da vida maxima.",
+      "pieces": 7,
+      "base_cost": 100
+    },
+    {
+      "id": "malevolent_shrine",
+      "name": "Santuario Malevolente",
+      "phrase": "quero santuario malevolente",
+      "group": "Jujutsu",
+      "effect": "Dominio de 9 m por 6 s: cortes de acerto garantido; disputa com outro dominio e resistencia do dominio simples.",
+      "pieces": 7,
+      "base_cost": 280
+    },
+    {
+      "id": "unlimited_void",
+      "name": "Vazio Infinito",
+      "phrase": "quero vazio infinito",
+      "group": "Jujutsu",
+      "effect": "Dominio de 9 m: lentidao por 6 s; dominio simples, disputa de dominios e adaptacao sao respostas.",
+      "pieces": 7,
+      "base_cost": 270
+    },
+    {
+      "id": "simple_domain",
+      "name": "Dominio Simples",
+      "phrase": "quero dominio simples",
+      "group": "Jujutsu",
+      "effect": "Reduz em 85% os cortes garantidos do dominio e protege da lentidao do Vazio Infinito.",
+      "pieces": 7,
+      "base_cost": 75
+    },
+    {
+      "id": "domain_amplification",
+      "name": "Amplificacao de dominio",
+      "phrase": "quero amplificacao de dominio",
+      "group": "Jujutsu",
+      "effect": "Permite ataques comuns atravessarem o Infinito, mas impede lancar outras tecnicas enquanto ativa.",
+      "pieces": 7,
+      "base_cost": 110
     }
   ],
   "combinations": [

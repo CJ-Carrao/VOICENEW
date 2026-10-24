@@ -752,5 +752,61 @@
   "purge_species_anteater": {
     "key": "target_species",
     "value": "anteater"
+  },
+  "jj_adaptation": {
+    "key": "jj_adaptation",
+    "value": true
+  },
+  "jj_infinity": {
+    "key": "jj_infinity",
+    "value": true
+  },
+  "jj_cleave": {
+    "key": "jj_cleave",
+    "value": true
+  },
+  "jj_world_cut": {
+    "key": "jj_world_cut",
+    "value": true
+  },
+  "jj_fuga": {
+    "key": "jj_fuga",
+    "value": true
+  },
+  "jj_black_flash": {
+    "key": "jj_black_flash",
+    "value": true
+  },
+  "jj_reverse": {
+    "key": "jj_reverse",
+    "value": true
+  },
+  "jj_shrine": {
+    "key": "jj_shrine",
+    "value": true
+  },
+  "jj_void": {
+    "key": "jj_void",
+    "value": true
+  },
+  "jj_simple_domain": {
+    "key": "jj_simple_domain",
+    "value": true
+  },
+  "jj_amplification": {
+    "key": "jj_amplification",
+    "value": true
+  },
+  "jj_blue": {
+    "key": "jj_blue",
+    "value": true
+  },
+  "jj_red": {
+    "key": "jj_red",
+    "value": true
+  },
+  "jj_purple": {
+    "key": "jj_purple",
+    "value": true
   }
 }

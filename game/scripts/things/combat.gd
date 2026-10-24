@@ -18,6 +18,8 @@ static func apply_damage(target: Object, amount: float, type: String, source: Th
 	var final: = amount
 	if source != null and target == source.owner_player:
 		final *= Lexicon.balf("combat.self_damage_mult")
+	final = JujutsuRules.damage(target, final, type, source)
+	if final <= 0.0: return
 	final = InnovationRules.protected_damage(target, final, type, source)
 	target.call("take_damage", final, type, source)
 	if not is_instance_valid(target):

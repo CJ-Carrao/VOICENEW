@@ -126,6 +126,7 @@ static func protected_damage(target: Object, amount: float, kind: String, source
 
 
 static func force_multiplier(target: Node3D, source: Thing) -> float:
+	if JujutsuRules.force(target, source) == 0.0: return 0.0
 	var kind := String(Lexicon.data.thing_def(source.thing_id).get("threat_type", "gravity")) if is_instance_valid(source) else "gravity"
 	var field = _best(target, kind)
 	return multiplier(String(field.profile_id), kind) if field != null else 1.0

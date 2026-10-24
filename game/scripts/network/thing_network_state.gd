@@ -13,6 +13,9 @@ static func capture(thing: Thing) -> Dictionary:
 	state["attachments"] = (thing.node_data.get("mods", {}) as Dictionary).get("attachments", []).duplicate()
 	state["ammo_override"] = thing.ammo_override.duplicate(true)
 	state["status"] = Status.snapshot(thing)
+	var cursed = thing.get_node_or_null("Jujutsu")
+	if cursed != null:
+		state["jujutsu"] = {"clock": cursed.clock, "exposure": cursed.exposure.duplicate(), "domain_until": cursed.domain_until, "domain_mode": cursed.domain_mode}
 	state["layer"] = thing.collision_layer
 	state["mask"] = thing.collision_mask
 	state["shapes"] = thing.collisions.map( func(shape: CollisionShape3D): return not shape.disabled)
@@ -44,6 +47,13 @@ static func apply(thing: Thing, state: Dictionary) -> void :
 			thing.set(key, state[key])
 	thing.ammo_override = (state.get("ammo_override", {}) as Dictionary).duplicate(true)
 	Status.apply_snapshot(thing, state.get("status", {}))
+	var cursed = thing.get_node_or_null("Jujutsu")
+	if cursed != null and state.get("jujutsu") is Dictionary:
+		var data: Dictionary = state.jujutsu
+		cursed.clock = float(data.get("clock", 0.0))
+		cursed.exposure = data.get("exposure", {}).duplicate()
+		cursed.domain_until = float(data.get("domain_until", 0.0))
+		cursed.domain_mode = String(data.get("domain_mode", ""))
 	thing.collision_layer = int(state.get("layer", 0))
 	thing.collision_mask = int(state.get("mask", 0))
 	var shapes: Array = state.get("shapes", [])

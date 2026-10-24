@@ -99,6 +99,35 @@ func _success() -> void:
 			_finish(false, "Spatial fusion was not replicated: purple count=" + str(purples))
 			return
 		await create_timer(1.0 if role == "host" else 2.0).timeout
+	elif OS.get_cmdline_user_args().has("--test-jujutsu"):
+		await create_timer(3.3).timeout
+		if role == "host":
+			var r = load("res://scripts/language/recipe.gd")
+			var a = load("res://scripts/things/assembler.gd")
+			var caster = a.build(r.new_node("pistol"), "head", root.get_node("Lexicon").data)
+			caster.set_owner_info(1,1,game.get_player(1),game.get_player(1))
+			game.add_thing(caster)
+			var node = r.new_node("dog")
+			node.mods.jj_adaptation = true
+			var dog = root.get_node("Forge").spawn_child(node,"spawned",Vector3(0,40,0),Vector3.FORWARD,caster,0.0)
+			if dog == null:
+				_finish(false,"Cursed animal failed to spawn")
+				return
+			dog.get_node("Jujutsu").exposure.infinity = 3
+			await create_timer(2.5).timeout
+		else:
+			var deadline := Time.get_ticks_msec() + 4000
+			var found := false
+			while Time.get_ticks_msec() < deadline and not found:
+				for entry in session.creations.entries.values():
+					var animal = entry.thing
+					if is_instance_valid(animal) and animal.thing_id == "dog" and animal.get_node_or_null("Jujutsu") != null:
+						if animal.get_node("Jujutsu").exposure.get("infinity",0) == 3: found = true
+				await create_timer(.05).timeout
+			if not found:
+				_finish(false,"Adaptation state did not reach client")
+				return
+			await create_timer(.5).timeout
 	elif chaos_test:
 		await create_timer(3.3).timeout
 		if role == "host":

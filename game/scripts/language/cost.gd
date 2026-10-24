@@ -41,6 +41,9 @@ static func _node(node: Dictionary, lex: LexiconData) -> float:
 		total += float(lex.bal("cost.movement." + String(node["movement"]), 0.0))
 	total += float(lex.bal("cost.control." + String(node.get("control", "none")), 0.0))
 	for key: String in mods:
+		if key.begins_with("jj_"):
+			total += float(lex.bal("cost.mods." + key, 0.0)) * maxf(1.0, float(mods.get("count", 1)))
+			continue
 		if key == "shield_profile":
 			total += float(lex.bal("innovation.protection_costs." + String(mods[key]), 25.0)) * maxf(1.0, float(mods.get("count", 1)))
 			continue

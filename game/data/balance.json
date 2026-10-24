@@ -1145,7 +1145,21 @@
       "material": 4,
       "magnetic": 6,
       "unstable": 5,
-      "diet": 8
+      "diet": 8,
+      "jj_adaptation": 220,
+      "jj_infinity": 120,
+      "jj_cleave": 95,
+      "jj_world_cut": 260,
+      "jj_fuga": 160,
+      "jj_black_flash": 85,
+      "jj_reverse": 100,
+      "jj_shrine": 280,
+      "jj_void": 270,
+      "jj_simple_domain": 75,
+      "jj_amplification": 110,
+      "jj_blue": 100,
+      "jj_red": 160,
+      "jj_purple": 290
     },
     "_magazine_rounds": "o que vai dentro de um pente ('pente de granadas') custa como se fossem tantas criações:",
     "magazine_rounds": 4.0,
@@ -3708,6 +3722,94 @@
       "hp": 70,
       "speed": 20,
       "lifetime": 4,
+      "impact_damage": 0
+    },
+    "mahoraga": {
+      "cost": 240,
+      "hp": 380,
+      "weight_kg": 120,
+      "speed": 3.4,
+      "fire_cooldown": 1.0,
+      "impact_damage": 12
+    },
+    "gojo_infinity": {
+      "cost": 120,
+      "hp": 120,
+      "weight_kg": 1,
+      "speed": 0,
+      "fire_cooldown": 1.0,
+      "impact_damage": 0
+    },
+    "sukuna_cleave": {
+      "cost": 95,
+      "hp": 120,
+      "weight_kg": 1,
+      "speed": 0,
+      "fire_cooldown": 1.0,
+      "impact_damage": 0
+    },
+    "sukuna_world_cut": {
+      "cost": 260,
+      "hp": 120,
+      "weight_kg": 1,
+      "speed": 0,
+      "fire_cooldown": 1.0,
+      "impact_damage": 0
+    },
+    "sukuna_fuga": {
+      "cost": 160,
+      "hp": 120,
+      "weight_kg": 1,
+      "speed": 0,
+      "fire_cooldown": 1.0,
+      "impact_damage": 0
+    },
+    "yuji_black_flash": {
+      "cost": 85,
+      "hp": 120,
+      "weight_kg": 1,
+      "speed": 0,
+      "fire_cooldown": 1.0,
+      "impact_damage": 0
+    },
+    "reverse_curse": {
+      "cost": 100,
+      "hp": 120,
+      "weight_kg": 1,
+      "speed": 0,
+      "fire_cooldown": 1.0,
+      "impact_damage": 0
+    },
+    "malevolent_shrine": {
+      "cost": 280,
+      "hp": 120,
+      "weight_kg": 1,
+      "speed": 0,
+      "fire_cooldown": 1.0,
+      "impact_damage": 0
+    },
+    "unlimited_void": {
+      "cost": 270,
+      "hp": 120,
+      "weight_kg": 1,
+      "speed": 0,
+      "fire_cooldown": 1.0,
+      "impact_damage": 0
+    },
+    "simple_domain": {
+      "cost": 75,
+      "hp": 120,
+      "weight_kg": 1,
+      "speed": 0,
+      "fire_cooldown": 1.0,
+      "impact_damage": 0
+    },
+    "domain_amplification": {
+      "cost": 110,
+      "hp": 120,
+      "weight_kg": 1,
+      "speed": 0,
+      "fire_cooldown": 1.0,
       "impact_damage": 0
     }
   },

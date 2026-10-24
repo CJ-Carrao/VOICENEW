@@ -385,6 +385,22 @@ func damage_at(point: Vector3, amount: float, _shape_index: int = -1) -> void :
 
 
 
+func erase_sphere(center: Vector3, radius: float) -> void:
+	if not Session.has_authority(): return
+	var local := to_local(center)
+	var reach := ceili(clampf(radius, .1, 4.0) / size_m)
+	var c := cell_of(local)
+	var hit := []
+	for x in range(maxi(0, c.x - reach), mini(dims.x, c.x + reach + 1)):
+		for y in range(maxi(0, c.y - reach), mini(dims.y, c.y + reach + 1)):
+			for z in range(maxi(0, c.z - reach), mini(dims.z, c.z + reach + 1)):
+				var cell := Vector3i(x, y, z)
+				if cell_center(cell).distance_squared_to(local) <= radius * radius:
+					var index := index_of(cell)
+					if blocks[index] != AIR: hit.append(index)
+	# Erasure is spatial, independent of explosion resistance; permanent map cells remain protected.
+	if not hit.is_empty(): _deposit(remove_cells(hit), center)
+
 func explode(center: Vector3, radius: float, damage: float) -> float:
 	if not Session.has_authority():
 		return 0.0

@@ -2557,7 +2557,9 @@
       "faca que corta o espaço",
       "faca espacial",
       "faca dimensional",
-      "faca do espaço"
+      "faca do espaço",
+      "faca que corte o espaco",
+      "faca que corte espaco"
     ],
     "forms": []
   },
@@ -2818,6 +2820,111 @@
       "tecnica roxa",
       "técnica roxa",
       "hollow purple"
+    ],
+    "forms": []
+  },
+  "mahoraga": {
+    "name": "Mahoraga",
+    "words": [
+      "mahoraga",
+      "makora"
+    ],
+    "forms": []
+  },
+  "gojo_infinity": {
+    "name": "Infinito",
+    "words": [
+      "infinito",
+      "ilimitado",
+      "barreira do gojo",
+      "infinito do gojo",
+      "ilimitado do gojo"
+    ],
+    "forms": []
+  },
+  "sukuna_cleave": {
+    "name": "Corte do Sukuna",
+    "words": [
+      "corte do sukuna",
+      "corte de sukuna",
+      "desmantelar",
+      "desmantelamento",
+      "clivar",
+      "dismantle",
+      "cleave"
+    ],
+    "forms": []
+  },
+  "sukuna_world_cut": {
+    "name": "Corte que corta o mundo",
+    "words": [
+      "corte que corta o mundo",
+      "corte do mundo",
+      "corte mundial",
+      "corte espacial do sukuna"
+    ],
+    "forms": []
+  },
+  "sukuna_fuga": {
+    "name": "Fuga",
+    "words": [
+      "fuga",
+      "fuga do sukuna",
+      "flecha de fogo",
+      "chama divina"
+    ],
+    "forms": []
+  },
+  "yuji_black_flash": {
+    "name": "Flash Negro",
+    "words": [
+      "flash negro",
+      "kokusen",
+      "black flash"
+    ],
+    "forms": []
+  },
+  "reverse_curse": {
+    "name": "Tecnica reversa",
+    "words": [
+      "tecnica reversa",
+      "tecnica amaldicoada reversa",
+      "cura reversa"
+    ],
+    "forms": []
+  },
+  "malevolent_shrine": {
+    "name": "Santuario Malevolente",
+    "words": [
+      "santuario malevolente",
+      "santuario do sukuna",
+      "dominio do sukuna",
+      "expansao de dominio do sukuna"
+    ],
+    "forms": []
+  },
+  "unlimited_void": {
+    "name": "Vazio Infinito",
+    "words": [
+      "vazio infinito",
+      "dominio do gojo",
+      "expansao de dominio do gojo"
+    ],
+    "forms": []
+  },
+  "simple_domain": {
+    "name": "Dominio Simples",
+    "words": [
+      "dominio simples",
+      "dominio antitecnica"
+    ],
+    "forms": []
+  },
+  "domain_amplification": {
+    "name": "Amplificacao de dominio",
+    "words": [
+      "amplificacao de dominio",
+      "amplificacao"
     ],
     "forms": []
   }

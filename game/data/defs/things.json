@@ -2883,5 +2883,198 @@
       "damage": 220,
       "color": "#e3b6ff"
     }
+  },
+  "mahoraga": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "jujutsu": {
+      "adaptation": true
+    },
+    "voxel_motion": true,
+    "ecology_tags": [
+      "mahoraga",
+      "shikigami"
+    ]
+  },
+  "gojo_infinity": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "jujutsu": {
+      "infinity": true
+    },
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "jujutsu"
+        }
+      }
+    ]
+  },
+  "sukuna_cleave": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "jujutsu": {
+      "cleave": true
+    },
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "jujutsu"
+        }
+      }
+    ]
+  },
+  "sukuna_world_cut": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "jujutsu": {
+      "world_cut": true
+    },
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "jujutsu"
+        }
+      }
+    ]
+  },
+  "sukuna_fuga": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "jujutsu": {
+      "fuga": true
+    },
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "jujutsu"
+        }
+      }
+    ]
+  },
+  "yuji_black_flash": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "jujutsu": {
+      "black_flash": true
+    },
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "jujutsu"
+        }
+      }
+    ]
+  },
+  "reverse_curse": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "jujutsu": {
+      "reverse": true
+    },
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "jujutsu"
+        }
+      }
+    ]
+  },
+  "malevolent_shrine": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "jujutsu": {
+      "shrine": true
+    },
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "jujutsu"
+        }
+      }
+    ]
+  },
+  "unlimited_void": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "jujutsu": {
+      "void": true
+    },
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "jujutsu"
+        }
+      }
+    ]
+  },
+  "simple_domain": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "jujutsu": {
+      "simple_domain": true
+    },
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "jujutsu"
+        }
+      }
+    ]
+  },
+  "domain_amplification": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "jujutsu": {
+      "amplification": true
+    },
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "jujutsu"
+        }
+      }
+    ]
   }
 }

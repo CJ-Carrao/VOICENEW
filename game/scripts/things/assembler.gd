@@ -29,6 +29,7 @@ const TRIGGERS: = {
 	"on_command": preload("res://scripts/things/trigger/trigger_on_command.gd"), 
 }
 const ACTIONS: = {
+	"jujutsu": preload("res://scripts/things/action/action_jujutsu.gd"),
 	"purge_species": preload("res://scripts/things/action/action_species_bomb.gd"),
 	"burst_into": preload("res://scripts/things/action/action_burst_into.gd"), 
 	"anomaly": preload("res://scripts/things/action/action_anomaly.gd"),
@@ -97,6 +98,12 @@ static func build(node: Dictionary, role: String, lex: LexiconData, mount_depth:
 	move.name = "Move"
 	move.setup(thing, lex)
 	thing.attach_move(move)
+	var cursed := JujutsuRules.powers(node, lex)
+	if not cursed.is_empty():
+		var user = load("res://scripts/things/jujutsu_user.gd").new()
+		user.name = "Jujutsu"
+		user.setup(thing, cursed)
+		thing.add_child(user)
 	if def.get("spatial_orb") is Dictionary:
 		var orb = load("res://scripts/things/spatial_orb.gd").new()
 		orb.name = "SpatialOrb"

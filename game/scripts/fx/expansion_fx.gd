@@ -23,7 +23,7 @@ static func burst(parent: Node, at: Vector3, radius: float, color: Color, kind: 
 	material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	var cube := BoxMesh.new()
 	cube.size = Vector3.ONE
-	var count := 36 if kind == "nuclear" else 24
+	var count := 48 if kind == "purple" else 36 if kind in ["nuclear", "shrine", "void"] else 24
 	for i in count:
 		var bit := MeshInstance3D.new()
 		bit.mesh = cube
@@ -32,6 +32,13 @@ static func burst(parent: Node, at: Vector3, radius: float, color: Color, kind: 
 		root.add_child(bit)
 		var angle := TAU * float(i) / float(count)
 		var destination := Vector3(cos(angle), sin(float(i) * 2.4) * 0.4, sin(angle)) * radius
+		if kind == "purple":
+			bit.position = destination * .25
+			destination = Vector3(cos(angle) * (1.0 + .2 * (i % 3)), sin(angle * 3.0) * .65, sin(angle)) * radius
+		elif kind == "black_flash":
+			destination = Vector3(cos(angle), sin(angle), sin(i * 2.3) * .3) * radius
+		elif kind in ["shrine", "void", "simple_domain", "infinity"]:
+			destination = Vector3(cos(angle), sin(i * 1.9) * .18, sin(angle)) * radius
 		if kind == "nuclear":
 			if i < 12:
 				destination = Vector3(sin(angle) * radius * 0.1, float(i) / 12.0 * radius, cos(angle) * radius * 0.1)

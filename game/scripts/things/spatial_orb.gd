@@ -16,6 +16,33 @@ var terrain_left := 0.0
 var scan_cursor := 0
 var struck := {}
 var damage_work: Node
+var terrain_work: Node
+var terrain_from := Vector3.ZERO
+var aura: Node3D
+
+func _ready() -> void:
+	add_to_group(GROUP)
+	if mode == "purple":
+		aura = Node3D.new()
+		thing.model.add_child(aura)
+		var cube := BoxMesh.new()
+		cube.size = Vector3.ONE
+		var material := StandardMaterial3D.new()
+		material.albedo_color = Color("bc6bff")
+		material.emission_enabled = true
+		material.emission = Color("923bff")
+		material.emission_energy_multiplier = 3.0
+		for i in 36:
+			var bit := MeshInstance3D.new()
+			bit.mesh = cube
+			bit.material_override = material
+			var angle := TAU * (i % 12) / 12.0
+			var point := Vector3(cos(angle), sin(angle), 0) * 1.25
+			if i >= 24: point = Vector3(point.x, 0, point.y)
+			elif i >= 12: point = Vector3(0, point.x, point.y)
+			bit.position = point
+			bit.scale = Vector3.ONE * (.24 if i % 3 == 0 else .13)
+			aura.add_child(bit)
 
 func setup(owner_thing: Thing, settings: Dictionary) -> void:
 	thing = owner_thing
@@ -23,11 +50,9 @@ func setup(owner_thing: Thing, settings: Dictionary) -> void:
 	mode = String(config.mode)
 	process_physics_priority = -30
 
-func _ready() -> void:
-	add_to_group(GROUP)
-
 func activate() -> void:
 	previous = thing.center()
+	terrain_from = previous
 	thing.lifetime = float(config.get("life", 6.0))
 	thing.collision_mask = 0
 
@@ -35,6 +60,9 @@ func _process(delta: float) -> void:
 	if is_instance_valid(thing) and not thing.is_dead and thing.model != null:
 		thing.model.rotate_y(delta * 2.0)
 		thing.model.rotate_z(delta * 0.7)
+		if aura != null:
+			aura.rotation.y -= delta * 3.5
+			aura.scale = Vector3.ONE * (1.0 + sin(Time.get_ticks_msec() * .012) * .1)
 
 func _physics_process(delta: float) -> void:
 	if not is_instance_valid(thing) or thing.is_dead or not thing.is_active or thing.is_held or resolved or not thing.has_simulation_authority(): return
@@ -43,14 +71,19 @@ func _physics_process(delta: float) -> void:
 	if _collide(point): return
 	fx_left -= delta
 	if fx_left <= 0.0:
-		fx_left = 0.65
-		ExpansionFx.burst(Forge.fx_root(thing), point, 1.2, _color(), mode)
+		fx_left = 0.18 if mode == "purple" else .45
+		ExpansionFx.burst(Forge.fx_root(thing), point, 2.4 if mode == "purple" else 1.5, _color(), mode)
 	if mode == "purple":
 		_purple(previous, point)
 		terrain_left -= delta
 		if terrain_left <= 0.0:
 			terrain_left = 0.10
-			Combat._crater(thing, point, 2.0, 240.0)
+			if not is_instance_valid(terrain_work) or terrain_work.is_queued_for_deletion():
+				terrain_work = load("res://scripts/things/spatial_cut_work.gd").new()
+				terrain_work.setup(thing)
+				get_tree().root.add_child(terrain_work)
+			terrain_work.add_segment(terrain_from, point, clampf(2.2 * thing.scale_factor, 1.0, 4.0))
+			terrain_from = point
 	else:
 		pulse_left -= delta
 		if pulse_left <= 0.0:
