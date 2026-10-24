@@ -711,7 +711,12 @@
   "trex": {
     "category": "creature",
     "movement": "chase_enemy",
-    "impact": "stop"
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "dinosaur",
+      "trex"
+    ]
   },
   "cat": {
     "category": "creature",
@@ -3075,6 +3080,76 @@
           "type": "jujutsu"
         }
       }
+    ]
+  },
+  "triceratops": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "dinosaur",
+      "triceratops"
+    ]
+  },
+  "stegosaurus": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "dinosaur",
+      "stegosaurus"
+    ]
+  },
+  "brachiosaurus": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "dinosaur",
+      "brachiosaurus"
+    ]
+  },
+  "spinosaurus": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "dinosaur",
+      "spinosaurus"
+    ]
+  },
+  "ankylosaurus": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "dinosaur",
+      "ankylosaurus"
+    ]
+  },
+  "parasaurolophus": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "dinosaur",
+      "parasaurolophus"
+    ]
+  },
+  "diplodocus": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "dinosaur",
+      "diplodocus"
     ]
   }
 }

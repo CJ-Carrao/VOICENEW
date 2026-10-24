@@ -891,16 +891,18 @@
     ]
   },
   "trex": {
-    "name": "tiranossauro",
+    "name": "tiranossauro rex",
     "words": [
-      "tiranossauro",
       "tiranossauro rex",
+      "tiranossauro",
       "t rex",
-      "t-rex"
+      "t-rex",
+      "trex",
+      "tiranossauros rex",
+      "tiranossauros",
+      "tyrannosaurus rex"
     ],
-    "forms": [
-      "tiranossauros"
-    ]
+    "forms": []
   },
   "cat": {
     "name": "gato",
@@ -2288,7 +2290,10 @@
       "velociraptor",
       "velociraptores",
       "raptor",
-      "raptores"
+      "raptores",
+      "velociraptors",
+      "velocirraptor",
+      "velocirraptores"
     ],
     "forms": []
   },
@@ -2925,6 +2930,71 @@
     "words": [
       "amplificacao de dominio",
       "amplificacao"
+    ],
+    "forms": []
+  },
+  "triceratops": {
+    "name": "tricerátops",
+    "words": [
+      "triceratops",
+      "tricerátops",
+      "triceratope",
+      "triceratopes"
+    ],
+    "forms": []
+  },
+  "stegosaurus": {
+    "name": "estegossauro",
+    "words": [
+      "estegossauro",
+      "estegossauros",
+      "stegosaurus"
+    ],
+    "forms": []
+  },
+  "brachiosaurus": {
+    "name": "braquiossauro",
+    "words": [
+      "braquiossauro",
+      "braquiossauros",
+      "brachiosaurus"
+    ],
+    "forms": []
+  },
+  "spinosaurus": {
+    "name": "espinossauro",
+    "words": [
+      "espinossauro",
+      "espinossauros",
+      "spinosaurus"
+    ],
+    "forms": []
+  },
+  "ankylosaurus": {
+    "name": "anquilossauro",
+    "words": [
+      "anquilossauro",
+      "anquilossauros",
+      "ankylosaurus"
+    ],
+    "forms": []
+  },
+  "parasaurolophus": {
+    "name": "parassaurolofo",
+    "words": [
+      "parassaurolofo",
+      "parassaurolofos",
+      "parasaurolophus",
+      "parassauro"
+    ],
+    "forms": []
+  },
+  "diplodocus": {
+    "name": "diplodoco",
+    "words": [
+      "diplodoco",
+      "diplodocos",
+      "diplodocus"
     ],
     "forms": []
   }

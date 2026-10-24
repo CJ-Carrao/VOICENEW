@@ -93,7 +93,7 @@
       "species:eagle": "caça só águia",
       "species:snake": "caça só cobra",
       "species:spider": "caça só aranha",
-      "species:trex": "caça só tiranossauro",
+      "species:trex": "caça só tiranossauro rex",
       "species:cat": "caça só gato",
       "species:rabbit": "caça só coelho",
       "species:fox": "caça só raposa",
@@ -146,7 +146,14 @@
       "species:cave_bat": "caça só morcego",
       "species:queen_ant": "caça só formiga rainha",
       "species:queen_bee": "caça só abelha rainha",
-      "species:anteater": "caça só tamanduá"
+      "species:anteater": "caça só tamanduá",
+      "species:triceratops": "caça só tricerátops",
+      "species:stegosaurus": "caça só estegossauro",
+      "species:brachiosaurus": "caça só braquiossauro",
+      "species:spinosaurus": "caça só espinossauro",
+      "species:ankylosaurus": "caça só anquilossauro",
+      "species:parasaurolophus": "caça só parassaurolofo",
+      "species:diplodocus": "caça só diplodoco"
     },
     "target_species": {
       "pigeon": "elimina todos: pombo",

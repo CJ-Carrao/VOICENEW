@@ -74,9 +74,10 @@ func _build() -> void:
 	var help := _text("Tenha matéria. Segure V, fale o pedido e solte. T abre o console de texto.", 18, Color("#c6bda8"))
 	help.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	content.add_child(help)
-	var tabs := HBoxContainer.new()
+	var tabs := GridContainer.new()
+	tabs.columns = 6
 	content.add_child(tabs)
-	for pair in [["ANIMAIS", "Animais"], ["GRANADAS", "Granadas de criaturas"], ["BOMBAS", "Bombas especiais"], ["ARMAS", "Armas especiais"], ["ESPAÇO", "Espaço"], ["JUJUTSU", "Jujutsu"], ["DEFESAS", "Defesas"], ["ECOLOGIA", "Ecologia"], ["COMBINAR", "Combinações"]]:
+	for pair in [["ANIMAIS", "Animais"], ["DINOS", "Dinossauros"], ["GRANADAS", "Granadas de criaturas"], ["BOMBAS", "Bombas especiais"], ["ARMAS", "Armas especiais"], ["ESPAÇO", "Espaço"], ["JUJUTSU", "Jujutsu"], ["DEFESAS", "Defesas"], ["ECOLOGIA", "Ecologia"], ["COMBINAR", "Combinações"]]:
 		var tab := Button.new()
 		tab.text = pair[0]
 		tab.size_flags_horizontal = Control.SIZE_EXPAND_FILL

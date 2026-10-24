@@ -808,5 +808,33 @@
   "jj_purple": {
     "key": "jj_purple",
     "value": true
+  },
+  "diet_species_triceratops": {
+    "key": "diet",
+    "value": "species:triceratops"
+  },
+  "diet_species_stegosaurus": {
+    "key": "diet",
+    "value": "species:stegosaurus"
+  },
+  "diet_species_brachiosaurus": {
+    "key": "diet",
+    "value": "species:brachiosaurus"
+  },
+  "diet_species_spinosaurus": {
+    "key": "diet",
+    "value": "species:spinosaurus"
+  },
+  "diet_species_ankylosaurus": {
+    "key": "diet",
+    "value": "species:ankylosaurus"
+  },
+  "diet_species_parasaurolophus": {
+    "key": "diet",
+    "value": "species:parasaurolophus"
+  },
+  "diet_species_diplodocus": {
+    "key": "diet",
+    "value": "species:diplodocus"
   }
 }

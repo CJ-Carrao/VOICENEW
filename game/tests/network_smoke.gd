@@ -99,7 +99,7 @@ func _success() -> void:
 			_finish(false, "Spatial fusion was not replicated: purple count=" + str(purples))
 			return
 		await create_timer(1.0 if role == "host" else 2.0).timeout
-	elif OS.get_cmdline_user_args().has("--test-jujutsu"):
+	elif OS.get_cmdline_user_args().has("--test-jujutsu") or OS.get_cmdline_user_args().has("--test-dinosaurs"):
 		await create_timer(3.3).timeout
 		if role == "host":
 			var r = load("res://scripts/language/recipe.gd")
@@ -109,6 +109,7 @@ func _success() -> void:
 			game.add_thing(caster)
 			var node = r.new_node("dog")
 			node.mods.jj_adaptation = true
+			if OS.get_cmdline_user_args().has("--test-dinosaurs"): node.mods.anatomy = {"head": "trex"}
 			var dog = root.get_node("Forge").spawn_child(node,"spawned",Vector3(0,40,0),Vector3.FORWARD,caster,0.0)
 			if dog == null:
 				_finish(false,"Cursed animal failed to spawn")
@@ -122,7 +123,12 @@ func _success() -> void:
 				for entry in session.creations.entries.values():
 					var animal = entry.thing
 					if is_instance_valid(animal) and animal.thing_id == "dog" and animal.get_node_or_null("Jujutsu") != null:
-						if animal.get_node("Jujutsu").exposure.get("infinity",0) == 3: found = true
+						if animal.get_node("Jujutsu").exposure.get("infinity",0) == 3:
+							if not OS.get_cmdline_user_args().has("--test-dinosaurs"):
+								found = true
+							else:
+								for piece in animal.model_pieces:
+									if piece.get_meta("source", "") == "trex": found = true
 				await create_timer(.05).timeout
 			if not found:
 				_finish(false,"Adaptation state did not reach client")

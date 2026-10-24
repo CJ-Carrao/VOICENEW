@@ -279,7 +279,7 @@
       "group": "Granadas de criaturas",
       "effect": "Explode depois de arremessada e libera 6 formigas vivos.",
       "pieces": 11,
-      "base_cost": 35.0
+      "base_cost": 35
     },
     {
       "id": "chicken_grenade",
@@ -306,7 +306,7 @@
       "group": "Granadas de criaturas",
       "effect": "Explode depois de arremessada e libera 6 abelhas vivos.",
       "pieces": 11,
-      "base_cost": 35.0
+      "base_cost": 35
     },
     {
       "id": "spider_grenade",
@@ -351,7 +351,7 @@
       "group": "Granadas de criaturas",
       "effect": "Explode depois de arremessada e libera 6 pombos vivos.",
       "pieces": 11,
-      "base_cost": 41.0
+      "base_cost": 41
     },
     {
       "id": "raptor_grenade",
@@ -378,7 +378,7 @@
       "group": "Granadas de criaturas",
       "effect": "Explode depois de arremessada e libera 6 besouros vivos.",
       "pieces": 11,
-      "base_cost": 38.0
+      "base_cost": 38
     },
     {
       "id": "nuclear_bomb",
@@ -829,6 +829,78 @@
       "effect": "Permite ataques comuns atravessarem o Infinito, mas impede lancar outras tecnicas enquanto ativa.",
       "pieces": 7,
       "base_cost": 110
+    },
+    {
+      "id": "trex",
+      "name": "tiranossauro rex",
+      "phrase": "quero um tiranossauro rex",
+      "group": "Dinossauros",
+      "effect": "Animal em blocos: aceita mistura de cabeça, corpo, patas e cauda, dietas, armas e técnicas.",
+      "pieces": 25,
+      "base_cost": 130
+    },
+    {
+      "id": "triceratops",
+      "name": "tricerátops",
+      "phrase": "quero um tricerátops",
+      "group": "Dinossauros",
+      "effect": "Animal em blocos: aceita mistura de cabeça, corpo, patas e cauda, dietas, armas e técnicas.",
+      "pieces": 25,
+      "base_cost": 100
+    },
+    {
+      "id": "stegosaurus",
+      "name": "estegossauro",
+      "phrase": "quero um estegossauro",
+      "group": "Dinossauros",
+      "effect": "Animal em blocos: aceita mistura de cabeça, corpo, patas e cauda, dietas, armas e técnicas.",
+      "pieces": 29,
+      "base_cost": 95
+    },
+    {
+      "id": "brachiosaurus",
+      "name": "braquiossauro",
+      "phrase": "quero um braquiossauro",
+      "group": "Dinossauros",
+      "effect": "Animal em blocos: aceita mistura de cabeça, corpo, patas e cauda, dietas, armas e técnicas.",
+      "pieces": 22,
+      "base_cost": 145
+    },
+    {
+      "id": "spinosaurus",
+      "name": "espinossauro",
+      "phrase": "quero um espinossauro",
+      "group": "Dinossauros",
+      "effect": "Animal em blocos: aceita mistura de cabeça, corpo, patas e cauda, dietas, armas e técnicas.",
+      "pieces": 32,
+      "base_cost": 135
+    },
+    {
+      "id": "ankylosaurus",
+      "name": "anquilossauro",
+      "phrase": "quero um anquilossauro",
+      "group": "Dinossauros",
+      "effect": "Animal em blocos: aceita mistura de cabeça, corpo, patas e cauda, dietas, armas e técnicas.",
+      "pieces": 31,
+      "base_cost": 115
+    },
+    {
+      "id": "parasaurolophus",
+      "name": "parassaurolofo",
+      "phrase": "quero um parassaurolofo",
+      "group": "Dinossauros",
+      "effect": "Animal em blocos: aceita mistura de cabeça, corpo, patas e cauda, dietas, armas e técnicas.",
+      "pieces": 20,
+      "base_cost": 80
+    },
+    {
+      "id": "diplodocus",
+      "name": "diplodoco",
+      "phrase": "quero um diplodoco",
+      "group": "Dinossauros",
+      "effect": "Animal em blocos: aceita mistura de cabeça, corpo, patas e cauda, dietas, armas e técnicas.",
+      "pieces": 24,
+      "base_cost": 140
     }
   ],
   "combinations": [
