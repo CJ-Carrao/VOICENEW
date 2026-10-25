@@ -37,6 +37,8 @@ static func _node(node: Dictionary, lex: LexiconData) -> float:
 	* float(mods.get("height", 1.0)) * float(mods.get("length", 1.0)) * float(mods.get("speed", 1.0))\
 	* float(lex.barrels_of(id, mods)) / float(stock_barrels) * (1.0 if holds else maxf(1.0, float(mods.get("count", 1))))
 	var total: = _base(id, mods, lex) * size
+	total += load("res://scripts/things/fusion_rules.gd").price(node,lex)
+	total += load("res://scripts/things/creature_transform.gd").price(node,lex)
 	if node.get("movement") != null:
 		total += float(lex.bal("cost.movement." + String(node["movement"]), 0.0))
 	total += float(lex.bal("cost.control." + String(node.get("control", "none")), 0.0))

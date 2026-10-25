@@ -177,7 +177,7 @@ func _physics_process(delta: float) -> void:
 	if enabled("reverse") and clock >= next_attack:
 		next_attack = clock + 1.5
 		_heal()
-	if thing.category == "creature" and thing.can_act() and clock >= next_cast:
+	if thing.category == "creature" and thing.get_node_or_null("CoopBoss") == null and thing.can_act() and clock >= next_cast:
 		var target := Combat.nearest_target(thing, center(), get_tree())
 		if target != null and center().distance_to(Combat.center_of(target)) < 24.0:
 			cast(ActionContext.make(center(), Combat.center_of(target) - center(), target))

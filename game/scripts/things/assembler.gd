@@ -29,6 +29,7 @@ const TRIGGERS: = {
 	"on_command": preload("res://scripts/things/trigger/trigger_on_command.gd"), 
 }
 const ACTIONS: = {
+	"creative": preload("res://scripts/things/action/action_creative.gd"),
 	"jujutsu": preload("res://scripts/things/action/action_jujutsu.gd"),
 	"purge_species": preload("res://scripts/things/action/action_species_bomb.gd"),
 	"burst_into": preload("res://scripts/things/action/action_burst_into.gd"), 
@@ -98,11 +99,40 @@ static func build(node: Dictionary, role: String, lex: LexiconData, mount_depth:
 	move.name = "Move"
 	move.setup(thing, lex)
 	thing.attach_move(move)
+	if thing.category in ["creature","vehicle","structure"] and not def.get("coop_boss",false):
+		var tactics = load("res://scripts/things/creature_tactics.gd").new()
+		tactics.name = "CreatureTactics"
+		tactics.setup(thing)
+		thing.add_child(tactics)
+	if thing.category == "creature" and node.get("mods",{}).has("transform_to"):
+		var transformation = load("res://scripts/things/creature_transform.gd").new()
+		transformation.name = "CreatureTransform"
+		transformation.setup(thing)
+		thing.add_child(transformation)
+	if def.get("butterfly_shield",false):
+		var converter = load("res://scripts/things/butterfly_shield.gd").new()
+		converter.name = "ButterflyShield"
+		converter.setup(thing)
+		thing.add_child(converter)
+	if def.get("shield_cosmetic",false): thing.add_to_group("shield_butterflies")
 	if thing.category == "creature":
 		var orders = load("res://scripts/things/animal_orders.gd").new()
 		orders.name = "AnimalOrders"
 		orders.setup(thing)
 		thing.add_child(orders)
+		var effects = load("res://scripts/things/creative_effects.gd").new()
+		effects.name = "CreativeEffects"
+		effects.setup(thing)
+		thing.add_child(effects)
+		var bond = load("res://scripts/things/creature_bond.gd").new()
+		bond.name = "CreatureBond"
+		bond.setup(thing)
+		thing.add_child(bond)
+	if def.get("coop_boss",false):
+		var boss = load("res://scripts/things/coop_boss.gd").new()
+		boss.name = "CoopBoss"
+		boss.setup(thing)
+		thing.add_child(boss)
 	if bool(def.get("verity_companion", false)):
 		var helper = load("res://scripts/things/verity_companion.gd").new()
 		helper.name = "VerityCompanion"
@@ -132,6 +162,11 @@ static func build(node: Dictionary, role: String, lex: LexiconData, mount_depth:
 		companion.name = "PokemonCompanion"
 		companion.setup(thing, pokemon)
 		thing.add_child(companion)
+	if thing.category == "creature":
+		var fusion = load("res://scripts/things/fusion_powers.gd").new()
+		fusion.name = "FusionPowers"
+		fusion.setup(thing,String(pokemon.get("id","")),lex)
+		thing.add_child(fusion)
 	if not cursed.is_empty():
 		var user = load("res://scripts/things/jujutsu_user.gd").new()
 		user.name = "Jujutsu"
@@ -237,6 +272,13 @@ static func merged_behaviors(node: Dictionary, def: Dictionary, role_def: Dictio
 			for existing in result:
 				duplicate = duplicate or _key(existing) == _key(behavior)
 			if not duplicate: result.append(Recipe.behavior_from_data(behavior))
+	if lex != null:
+		for donor in load("res://scripts/things/fusion_rules.gd").donors(node,lex):
+			if not lex.thing_def(donor).get("fusion_behaviors",false): continue
+			for behavior: Dictionary in lex.thing_def(donor).get("behaviors",[]):
+				var duplicate := false
+				for existing in result: duplicate = duplicate or _key(existing) == _key(behavior)
+				if not duplicate: result.append(Recipe.behavior_from_data(behavior))
 	if lex != null:
 		var keys: = {}
 		for behavior in result:

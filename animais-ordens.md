@@ -1,7 +1,7 @@
 ---
 title: Ordens, animais agressivos e construções
 date: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-25
 tags:
   - lavoice
   - documentacao
@@ -12,6 +12,8 @@ tags:
 Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · Relacionado: [[Projetos/lavoice-lab/tarefas|Lista de tarefas]] · [[Projetos/lavoice-lab/criatividade|Criatividade e colônias]] · [[Projetos/lavoice-lab/pokemon|Pokémon, evoluções e combos]] · [[Projetos/lavoice-lab/captura|Captura]]
 
 Abra `jogar.cmd`. Crie animais com **V**; dê ordens com **B** ou pelo console **T**. As ordens funcionam nas 100 espécies atuais, incluindo dinossauros, Mahoraga, Pokémon, brainrots e criaturas com misturas.
+
+Criaturas livres ou seguindo o treinador agora revidam o agressor que realmente as feriu. A até 10 m do treinador, também podem defendê-lo de um ataque, desde que o agressor esteja visível e a até 18 m. Dietas e ordens explícitas têm prioridade. Transporte, reparos, proteção de companheiros, regras condicionais e transformações estão em [[Projetos/lavoice-lab/taticas-criaturas|Criaturas inteligentes e equipes]].
 
 ## Dar uma ordem
 

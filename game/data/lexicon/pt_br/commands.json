@@ -65259,5 +65259,3214 @@
       "todas as bolinhas sorridentes ataquem tudo na sua frente",
       "todas as bolinhas sorridentes fiquem agressivos"
     ]
+  },
+  "bond_care": {
+    "words": [
+      "cuidar da criatura",
+      "cuide da criatura",
+      "fazer carinho",
+      "carinho",
+      "alimentar criatura"
+    ]
+  },
+  "bond_pigeon_care": {
+    "words": [
+      "pombo carinho",
+      "pombo cuidar",
+      "pombo cuide",
+      "pomba carinho",
+      "pomba cuidar",
+      "pomba cuide",
+      "cuidar do pombo",
+      "cuidar da pombo",
+      "fazer carinho no pombo",
+      "fazer carinho na pombo",
+      "cuidar do pomba",
+      "cuidar da pomba",
+      "fazer carinho no pomba",
+      "fazer carinho na pomba"
+    ]
+  },
+  "bond_monkey_care": {
+    "words": [
+      "macaco carinho",
+      "macaco cuidar",
+      "macaco cuide",
+      "macaca carinho",
+      "macaca cuidar",
+      "macaca cuide",
+      "cuidar do macaco",
+      "cuidar da macaco",
+      "fazer carinho no macaco",
+      "fazer carinho na macaco",
+      "cuidar do macaca",
+      "cuidar da macaca",
+      "fazer carinho no macaca",
+      "fazer carinho na macaca"
+    ]
+  },
+  "bond_gorilla_care": {
+    "words": [
+      "gorila carinho",
+      "gorila cuidar",
+      "gorila cuide",
+      "grande símio carinho",
+      "grande símio cuidar",
+      "grande símio cuide",
+      "cuidar do gorila",
+      "cuidar da gorila",
+      "fazer carinho no gorila",
+      "fazer carinho na gorila",
+      "cuidar do grande símio",
+      "cuidar da grande símio",
+      "fazer carinho no grande símio",
+      "fazer carinho na grande símio"
+    ]
+  },
+  "bond_bear_care": {
+    "words": [
+      "urso carinho",
+      "urso cuidar",
+      "urso cuide",
+      "ursa carinho",
+      "ursa cuidar",
+      "ursa cuide",
+      "cuidar do urso",
+      "cuidar da urso",
+      "fazer carinho no urso",
+      "fazer carinho na urso",
+      "cuidar do ursa",
+      "cuidar da ursa",
+      "fazer carinho no ursa",
+      "fazer carinho na ursa"
+    ]
+  },
+  "bond_dog_care": {
+    "words": [
+      "cachorro carinho",
+      "cachorro cuidar",
+      "cachorro cuide",
+      "cachorra carinho",
+      "cachorra cuidar",
+      "cachorra cuide",
+      "cuidar do cachorro",
+      "cuidar da cachorro",
+      "fazer carinho no cachorro",
+      "fazer carinho na cachorro",
+      "cuidar do cachorra",
+      "cuidar da cachorra",
+      "fazer carinho no cachorra",
+      "fazer carinho na cachorra"
+    ]
+  },
+  "bond_wolf_care": {
+    "words": [
+      "lobo carinho",
+      "lobo cuidar",
+      "lobo cuide",
+      "loba carinho",
+      "loba cuidar",
+      "loba cuide",
+      "cuidar do lobo",
+      "cuidar da lobo",
+      "fazer carinho no lobo",
+      "fazer carinho na lobo",
+      "cuidar do loba",
+      "cuidar da loba",
+      "fazer carinho no loba",
+      "fazer carinho na loba"
+    ]
+  },
+  "bond_horse_care": {
+    "words": [
+      "cavalo carinho",
+      "cavalo cuidar",
+      "cavalo cuide",
+      "égua carinho",
+      "égua cuidar",
+      "égua cuide",
+      "cuidar do cavalo",
+      "cuidar da cavalo",
+      "fazer carinho no cavalo",
+      "fazer carinho na cavalo",
+      "cuidar do égua",
+      "cuidar da égua",
+      "fazer carinho no égua",
+      "fazer carinho na égua"
+    ]
+  },
+  "bond_unicorn_care": {
+    "words": [
+      "unicórnio carinho",
+      "unicórnio cuidar",
+      "unicórnio cuide",
+      "unicórnia carinho",
+      "unicórnia cuidar",
+      "unicórnia cuide",
+      "cuidar do unicórnio",
+      "cuidar da unicórnio",
+      "fazer carinho no unicórnio",
+      "fazer carinho na unicórnio",
+      "cuidar do unicórnia",
+      "cuidar da unicórnia",
+      "fazer carinho no unicórnia",
+      "fazer carinho na unicórnia"
+    ]
+  },
+  "bond_shark_care": {
+    "words": [
+      "tubarão carinho",
+      "tubarão cuidar",
+      "tubarão cuide",
+      "tubarão branco carinho",
+      "tubarão branco cuidar",
+      "tubarão branco cuide",
+      "cuidar do tubarão",
+      "cuidar da tubarão",
+      "fazer carinho no tubarão",
+      "fazer carinho na tubarão",
+      "cuidar do tubarão branco",
+      "cuidar da tubarão branco",
+      "fazer carinho no tubarão branco",
+      "fazer carinho na tubarão branco"
+    ]
+  },
+  "bond_eagle_care": {
+    "words": [
+      "águia carinho",
+      "águia cuidar",
+      "águia cuide",
+      "águia careca carinho",
+      "águia careca cuidar",
+      "águia careca cuide",
+      "cuidar do águia",
+      "cuidar da águia",
+      "fazer carinho no águia",
+      "fazer carinho na águia",
+      "cuidar do águia careca",
+      "cuidar da águia careca",
+      "fazer carinho no águia careca",
+      "fazer carinho na águia careca"
+    ]
+  },
+  "bond_chicken_care": {
+    "words": [
+      "galinha carinho",
+      "galinha cuidar",
+      "galinha cuide",
+      "galo carinho",
+      "galo cuidar",
+      "galo cuide",
+      "cuidar do galinha",
+      "cuidar da galinha",
+      "fazer carinho no galinha",
+      "fazer carinho na galinha",
+      "cuidar do galo",
+      "cuidar da galo",
+      "fazer carinho no galo",
+      "fazer carinho na galo"
+    ]
+  },
+  "bond_snake_care": {
+    "words": [
+      "cobra carinho",
+      "cobra cuidar",
+      "cobra cuide",
+      "serpente carinho",
+      "serpente cuidar",
+      "serpente cuide",
+      "cuidar do cobra",
+      "cuidar da cobra",
+      "fazer carinho no cobra",
+      "fazer carinho na cobra",
+      "cuidar do serpente",
+      "cuidar da serpente",
+      "fazer carinho no serpente",
+      "fazer carinho na serpente"
+    ]
+  },
+  "bond_spider_care": {
+    "words": [
+      "aranha carinho",
+      "aranha cuidar",
+      "aranha cuide",
+      "tarântula carinho",
+      "tarântula cuidar",
+      "tarântula cuide",
+      "cuidar do aranha",
+      "cuidar da aranha",
+      "fazer carinho no aranha",
+      "fazer carinho na aranha",
+      "cuidar do tarântula",
+      "cuidar da tarântula",
+      "fazer carinho no tarântula",
+      "fazer carinho na tarântula"
+    ]
+  },
+  "bond_ant_care": {
+    "words": [
+      "formiga carinho",
+      "formiga cuidar",
+      "formiga cuide",
+      "formiguinha carinho",
+      "formiguinha cuidar",
+      "formiguinha cuide",
+      "cuidar do formiga",
+      "cuidar da formiga",
+      "fazer carinho no formiga",
+      "fazer carinho na formiga",
+      "cuidar do formiguinha",
+      "cuidar da formiguinha",
+      "fazer carinho no formiguinha",
+      "fazer carinho na formiguinha"
+    ]
+  },
+  "bond_trex_care": {
+    "words": [
+      "tiranossauro rex carinho",
+      "tiranossauro rex cuidar",
+      "tiranossauro rex cuide",
+      "tiranossauro carinho",
+      "tiranossauro cuidar",
+      "tiranossauro cuide",
+      "cuidar do tiranossauro rex",
+      "cuidar da tiranossauro rex",
+      "fazer carinho no tiranossauro rex",
+      "fazer carinho na tiranossauro rex",
+      "cuidar do tiranossauro",
+      "cuidar da tiranossauro",
+      "fazer carinho no tiranossauro",
+      "fazer carinho na tiranossauro"
+    ]
+  },
+  "bond_cat_care": {
+    "words": [
+      "gato carinho",
+      "gato cuidar",
+      "gato cuide",
+      "gata carinho",
+      "gata cuidar",
+      "gata cuide",
+      "cuidar do gato",
+      "cuidar da gato",
+      "fazer carinho no gato",
+      "fazer carinho na gato",
+      "cuidar do gata",
+      "cuidar da gata",
+      "fazer carinho no gata",
+      "fazer carinho na gata"
+    ]
+  },
+  "bond_rabbit_care": {
+    "words": [
+      "coelho carinho",
+      "coelho cuidar",
+      "coelho cuide",
+      "coelha carinho",
+      "coelha cuidar",
+      "coelha cuide",
+      "cuidar do coelho",
+      "cuidar da coelho",
+      "fazer carinho no coelho",
+      "fazer carinho na coelho",
+      "cuidar do coelha",
+      "cuidar da coelha",
+      "fazer carinho no coelha",
+      "fazer carinho na coelha"
+    ]
+  },
+  "bond_fox_care": {
+    "words": [
+      "raposa carinho",
+      "raposa cuidar",
+      "raposa cuide",
+      "raposo carinho",
+      "raposo cuidar",
+      "raposo cuide",
+      "cuidar do raposa",
+      "cuidar da raposa",
+      "fazer carinho no raposa",
+      "fazer carinho na raposa",
+      "cuidar do raposo",
+      "cuidar da raposo",
+      "fazer carinho no raposo",
+      "fazer carinho na raposo"
+    ]
+  },
+  "bond_boar_care": {
+    "words": [
+      "javali carinho",
+      "javali cuidar",
+      "javali cuide",
+      "porco selvagem carinho",
+      "porco selvagem cuidar",
+      "porco selvagem cuide",
+      "cuidar do javali",
+      "cuidar da javali",
+      "fazer carinho no javali",
+      "fazer carinho na javali",
+      "cuidar do porco selvagem",
+      "cuidar da porco selvagem",
+      "fazer carinho no porco selvagem",
+      "fazer carinho na porco selvagem"
+    ]
+  },
+  "bond_crocodile_care": {
+    "words": [
+      "crocodilo carinho",
+      "crocodilo cuidar",
+      "crocodilo cuide",
+      "jacaré carinho",
+      "jacaré cuidar",
+      "jacaré cuide",
+      "cuidar do crocodilo",
+      "cuidar da crocodilo",
+      "fazer carinho no crocodilo",
+      "fazer carinho na crocodilo",
+      "cuidar do jacaré",
+      "cuidar da jacaré",
+      "fazer carinho no jacaré",
+      "fazer carinho na jacaré"
+    ]
+  },
+  "bond_elephant_care": {
+    "words": [
+      "elefante carinho",
+      "elefante cuidar",
+      "elefante cuide",
+      "elefanta carinho",
+      "elefanta cuidar",
+      "elefanta cuide",
+      "cuidar do elefante",
+      "cuidar da elefante",
+      "fazer carinho no elefante",
+      "fazer carinho na elefante",
+      "cuidar do elefanta",
+      "cuidar da elefanta",
+      "fazer carinho no elefanta",
+      "fazer carinho na elefanta"
+    ]
+  },
+  "bond_lion_care": {
+    "words": [
+      "leão carinho",
+      "leão cuidar",
+      "leão cuide",
+      "leoa carinho",
+      "leoa cuidar",
+      "leoa cuide",
+      "cuidar do leão",
+      "cuidar da leão",
+      "fazer carinho no leão",
+      "fazer carinho na leão",
+      "cuidar do leoa",
+      "cuidar da leoa",
+      "fazer carinho no leoa",
+      "fazer carinho na leoa"
+    ]
+  },
+  "bond_tiger_care": {
+    "words": [
+      "tigre carinho",
+      "tigre cuidar",
+      "tigre cuide",
+      "tigresa carinho",
+      "tigresa cuidar",
+      "tigresa cuide",
+      "cuidar do tigre",
+      "cuidar da tigre",
+      "fazer carinho no tigre",
+      "fazer carinho na tigre",
+      "cuidar do tigresa",
+      "cuidar da tigresa",
+      "fazer carinho no tigresa",
+      "fazer carinho na tigresa"
+    ]
+  },
+  "bond_penguin_care": {
+    "words": [
+      "pinguim carinho",
+      "pinguim cuidar",
+      "pinguim cuide",
+      "pinguim imperador carinho",
+      "pinguim imperador cuidar",
+      "pinguim imperador cuide",
+      "cuidar do pinguim",
+      "cuidar da pinguim",
+      "fazer carinho no pinguim",
+      "fazer carinho na pinguim",
+      "cuidar do pinguim imperador",
+      "cuidar da pinguim imperador",
+      "fazer carinho no pinguim imperador",
+      "fazer carinho na pinguim imperador"
+    ]
+  },
+  "bond_turtle_care": {
+    "words": [
+      "tartaruga carinho",
+      "tartaruga cuidar",
+      "tartaruga cuide",
+      "jabuti carinho",
+      "jabuti cuidar",
+      "jabuti cuide",
+      "cuidar do tartaruga",
+      "cuidar da tartaruga",
+      "fazer carinho no tartaruga",
+      "fazer carinho na tartaruga",
+      "cuidar do jabuti",
+      "cuidar da jabuti",
+      "fazer carinho no jabuti",
+      "fazer carinho na jabuti"
+    ]
+  },
+  "bond_goat_care": {
+    "words": [
+      "cabra carinho",
+      "cabra cuidar",
+      "cabra cuide",
+      "bode carinho",
+      "bode cuidar",
+      "bode cuide",
+      "cuidar do cabra",
+      "cuidar da cabra",
+      "fazer carinho no cabra",
+      "fazer carinho na cabra",
+      "cuidar do bode",
+      "cuidar da bode",
+      "fazer carinho no bode",
+      "fazer carinho na bode"
+    ]
+  },
+  "bond_deer_care": {
+    "words": [
+      "cervo carinho",
+      "cervo cuidar",
+      "cervo cuide",
+      "cerva carinho",
+      "cerva cuidar",
+      "cerva cuide",
+      "cuidar do cervo",
+      "cuidar da cervo",
+      "fazer carinho no cervo",
+      "fazer carinho na cervo",
+      "cuidar do cerva",
+      "cuidar da cerva",
+      "fazer carinho no cerva",
+      "fazer carinho na cerva"
+    ]
+  },
+  "bond_crab_care": {
+    "words": [
+      "caranguejo carinho",
+      "caranguejo cuidar",
+      "caranguejo cuide",
+      "siri carinho",
+      "siri cuidar",
+      "siri cuide",
+      "cuidar do caranguejo",
+      "cuidar da caranguejo",
+      "fazer carinho no caranguejo",
+      "fazer carinho na caranguejo",
+      "cuidar do siri",
+      "cuidar da siri",
+      "fazer carinho no siri",
+      "fazer carinho na siri"
+    ]
+  },
+  "bond_scorpion_care": {
+    "words": [
+      "escorpião carinho",
+      "escorpião cuidar",
+      "escorpião cuide",
+      "lacrau carinho",
+      "lacrau cuidar",
+      "lacrau cuide",
+      "cuidar do escorpião",
+      "cuidar da escorpião",
+      "fazer carinho no escorpião",
+      "fazer carinho na escorpião",
+      "cuidar do lacrau",
+      "cuidar da lacrau",
+      "fazer carinho no lacrau",
+      "fazer carinho na lacrau"
+    ]
+  },
+  "bond_frog_care": {
+    "words": [
+      "sapo carinho",
+      "sapo cuidar",
+      "sapo cuide",
+      "rã carinho",
+      "rã cuidar",
+      "rã cuide",
+      "cuidar do sapo",
+      "cuidar da sapo",
+      "fazer carinho no sapo",
+      "fazer carinho na sapo",
+      "cuidar do rã",
+      "cuidar da rã",
+      "fazer carinho no rã",
+      "fazer carinho na rã"
+    ]
+  },
+  "bond_bull_care": {
+    "words": [
+      "touro carinho",
+      "touro cuidar",
+      "touro cuide",
+      "boi carinho",
+      "boi cuidar",
+      "boi cuide",
+      "cuidar do touro",
+      "cuidar da touro",
+      "fazer carinho no touro",
+      "fazer carinho na touro",
+      "cuidar do boi",
+      "cuidar da boi",
+      "fazer carinho no boi",
+      "fazer carinho na boi"
+    ]
+  },
+  "bond_bee_care": {
+    "words": [
+      "abelha carinho",
+      "abelha cuidar",
+      "abelha cuide",
+      "vespa carinho",
+      "vespa cuidar",
+      "vespa cuide",
+      "cuidar do abelha",
+      "cuidar da abelha",
+      "fazer carinho no abelha",
+      "fazer carinho na abelha",
+      "cuidar do vespa",
+      "cuidar da vespa",
+      "fazer carinho no vespa",
+      "fazer carinho na vespa"
+    ]
+  },
+  "bond_rat_care": {
+    "words": [
+      "rato carinho",
+      "rato cuidar",
+      "rato cuide",
+      "rata carinho",
+      "rata cuidar",
+      "rata cuide",
+      "cuidar do rato",
+      "cuidar da rato",
+      "fazer carinho no rato",
+      "fazer carinho na rato",
+      "cuidar do rata",
+      "cuidar da rata",
+      "fazer carinho no rata",
+      "fazer carinho na rata"
+    ]
+  },
+  "bond_zombie_care": {
+    "words": [
+      "zumbi carinho",
+      "zumbi cuidar",
+      "zumbi cuide",
+      "morto-vivo carinho",
+      "morto-vivo cuidar",
+      "morto-vivo cuide",
+      "cuidar do zumbi",
+      "cuidar da zumbi",
+      "fazer carinho no zumbi",
+      "fazer carinho na zumbi",
+      "cuidar do morto-vivo",
+      "cuidar da morto-vivo",
+      "fazer carinho no morto-vivo",
+      "fazer carinho na morto-vivo"
+    ]
+  },
+  "bond_skeleton_care": {
+    "words": [
+      "esqueleto carinho",
+      "esqueleto cuidar",
+      "esqueleto cuide",
+      "caveira carinho",
+      "caveira cuidar",
+      "caveira cuide",
+      "cuidar do esqueleto",
+      "cuidar da esqueleto",
+      "fazer carinho no esqueleto",
+      "fazer carinho na esqueleto",
+      "cuidar do caveira",
+      "cuidar da caveira",
+      "fazer carinho no caveira",
+      "fazer carinho na caveira"
+    ]
+  },
+  "bond_dummy_care": {
+    "words": [
+      "boneco de treino carinho",
+      "boneco de treino cuidar",
+      "boneco de treino cuide",
+      "manequim carinho",
+      "manequim cuidar",
+      "manequim cuide",
+      "cuidar do boneco de treino",
+      "cuidar da boneco de treino",
+      "fazer carinho no boneco de treino",
+      "fazer carinho na boneco de treino",
+      "cuidar do manequim",
+      "cuidar da manequim",
+      "fazer carinho no manequim",
+      "fazer carinho na manequim"
+    ]
+  },
+  "bond_duck_care": {
+    "words": [
+      "pato carinho",
+      "pato cuidar",
+      "pato cuide",
+      "pata carinho",
+      "pata cuidar",
+      "pata cuide",
+      "cuidar do pato",
+      "cuidar da pato",
+      "fazer carinho no pato",
+      "fazer carinho na pato",
+      "cuidar do pata",
+      "cuidar da pata",
+      "fazer carinho no pata",
+      "fazer carinho na pata"
+    ]
+  },
+  "bond_goose_care": {
+    "words": [
+      "ganso carinho",
+      "ganso cuidar",
+      "ganso cuide",
+      "gansa carinho",
+      "gansa cuidar",
+      "gansa cuide",
+      "cuidar do ganso",
+      "cuidar da ganso",
+      "fazer carinho no ganso",
+      "fazer carinho na ganso",
+      "cuidar do gansa",
+      "cuidar da gansa",
+      "fazer carinho no gansa",
+      "fazer carinho na gansa"
+    ]
+  },
+  "bond_turkey_care": {
+    "words": [
+      "peru carinho",
+      "peru cuidar",
+      "peru cuide",
+      "perus carinho",
+      "perus cuidar",
+      "perus cuide",
+      "cuidar do peru",
+      "cuidar da peru",
+      "fazer carinho no peru",
+      "fazer carinho na peru",
+      "cuidar do perus",
+      "cuidar da perus",
+      "fazer carinho no perus",
+      "fazer carinho na perus"
+    ]
+  },
+  "bond_pig_care": {
+    "words": [
+      "porco carinho",
+      "porco cuidar",
+      "porco cuide",
+      "porca carinho",
+      "porca cuidar",
+      "porca cuide",
+      "cuidar do porco",
+      "cuidar da porco",
+      "fazer carinho no porco",
+      "fazer carinho na porco",
+      "cuidar do porca",
+      "cuidar da porca",
+      "fazer carinho no porca",
+      "fazer carinho na porca"
+    ]
+  },
+  "bond_cow_care": {
+    "words": [
+      "vaca carinho",
+      "vaca cuidar",
+      "vaca cuide",
+      "vacas carinho",
+      "vacas cuidar",
+      "vacas cuide",
+      "cuidar do vaca",
+      "cuidar da vaca",
+      "fazer carinho no vaca",
+      "fazer carinho na vaca",
+      "cuidar do vacas",
+      "cuidar da vacas",
+      "fazer carinho no vacas",
+      "fazer carinho na vacas"
+    ]
+  },
+  "bond_sheep_care": {
+    "words": [
+      "ovelha carinho",
+      "ovelha cuidar",
+      "ovelha cuide",
+      "ovelhas carinho",
+      "ovelhas cuidar",
+      "ovelhas cuide",
+      "cuidar do ovelha",
+      "cuidar da ovelha",
+      "fazer carinho no ovelha",
+      "fazer carinho na ovelha",
+      "cuidar do ovelhas",
+      "cuidar da ovelhas",
+      "fazer carinho no ovelhas",
+      "fazer carinho na ovelhas"
+    ]
+  },
+  "bond_donkey_care": {
+    "words": [
+      "burro carinho",
+      "burro cuidar",
+      "burro cuide",
+      "burros carinho",
+      "burros cuidar",
+      "burros cuide",
+      "cuidar do burro",
+      "cuidar da burro",
+      "fazer carinho no burro",
+      "fazer carinho na burro",
+      "cuidar do burros",
+      "cuidar da burros",
+      "fazer carinho no burros",
+      "fazer carinho na burros"
+    ]
+  },
+  "bond_camel_care": {
+    "words": [
+      "camelo carinho",
+      "camelo cuidar",
+      "camelo cuide",
+      "camelos carinho",
+      "camelos cuidar",
+      "camelos cuide",
+      "cuidar do camelo",
+      "cuidar da camelo",
+      "fazer carinho no camelo",
+      "fazer carinho na camelo",
+      "cuidar do camelos",
+      "cuidar da camelos",
+      "fazer carinho no camelos",
+      "fazer carinho na camelos"
+    ]
+  },
+  "bond_llama_care": {
+    "words": [
+      "lhama carinho",
+      "lhama cuidar",
+      "lhama cuide",
+      "lhamas carinho",
+      "lhamas cuidar",
+      "lhamas cuide",
+      "cuidar do lhama",
+      "cuidar da lhama",
+      "fazer carinho no lhama",
+      "fazer carinho na lhama",
+      "cuidar do lhamas",
+      "cuidar da lhamas",
+      "fazer carinho no lhamas",
+      "fazer carinho na lhamas"
+    ]
+  },
+  "bond_giraffe_care": {
+    "words": [
+      "girafa carinho",
+      "girafa cuidar",
+      "girafa cuide",
+      "girafas carinho",
+      "girafas cuidar",
+      "girafas cuide",
+      "cuidar do girafa",
+      "cuidar da girafa",
+      "fazer carinho no girafa",
+      "fazer carinho na girafa",
+      "cuidar do girafas",
+      "cuidar da girafas",
+      "fazer carinho no girafas",
+      "fazer carinho na girafas"
+    ]
+  },
+  "bond_zebra_care": {
+    "words": [
+      "zebra carinho",
+      "zebra cuidar",
+      "zebra cuide",
+      "zebras carinho",
+      "zebras cuidar",
+      "zebras cuide",
+      "cuidar do zebra",
+      "cuidar da zebra",
+      "fazer carinho no zebra",
+      "fazer carinho na zebra",
+      "cuidar do zebras",
+      "cuidar da zebras",
+      "fazer carinho no zebras",
+      "fazer carinho na zebras"
+    ]
+  },
+  "bond_rhino_care": {
+    "words": [
+      "rinoceronte carinho",
+      "rinoceronte cuidar",
+      "rinoceronte cuide",
+      "rinocerontes carinho",
+      "rinocerontes cuidar",
+      "rinocerontes cuide",
+      "cuidar do rinoceronte",
+      "cuidar da rinoceronte",
+      "fazer carinho no rinoceronte",
+      "fazer carinho na rinoceronte",
+      "cuidar do rinocerontes",
+      "cuidar da rinocerontes",
+      "fazer carinho no rinocerontes",
+      "fazer carinho na rinocerontes"
+    ]
+  },
+  "bond_hippo_care": {
+    "words": [
+      "hipopótamo carinho",
+      "hipopótamo cuidar",
+      "hipopótamo cuide",
+      "hipopótamos carinho",
+      "hipopótamos cuidar",
+      "hipopótamos cuide",
+      "cuidar do hipopótamo",
+      "cuidar da hipopótamo",
+      "fazer carinho no hipopótamo",
+      "fazer carinho na hipopótamo",
+      "cuidar do hipopótamos",
+      "cuidar da hipopótamos",
+      "fazer carinho no hipopótamos",
+      "fazer carinho na hipopótamos"
+    ]
+  },
+  "bond_bison_care": {
+    "words": [
+      "bisão carinho",
+      "bisão cuidar",
+      "bisão cuide",
+      "bisões carinho",
+      "bisões cuidar",
+      "bisões cuide",
+      "cuidar do bisão",
+      "cuidar da bisão",
+      "fazer carinho no bisão",
+      "fazer carinho na bisão",
+      "cuidar do bisões",
+      "cuidar da bisões",
+      "fazer carinho no bisões",
+      "fazer carinho na bisões"
+    ]
+  },
+  "bond_panda_care": {
+    "words": [
+      "panda carinho",
+      "panda cuidar",
+      "panda cuide",
+      "pandas carinho",
+      "pandas cuidar",
+      "pandas cuide",
+      "cuidar do panda",
+      "cuidar da panda",
+      "fazer carinho no panda",
+      "fazer carinho na panda",
+      "cuidar do pandas",
+      "cuidar da pandas",
+      "fazer carinho no pandas",
+      "fazer carinho na pandas"
+    ]
+  },
+  "bond_koala_care": {
+    "words": [
+      "coala carinho",
+      "coala cuidar",
+      "coala cuide",
+      "coalas carinho",
+      "coalas cuidar",
+      "coalas cuide",
+      "cuidar do coala",
+      "cuidar da coala",
+      "fazer carinho no coala",
+      "fazer carinho na coala",
+      "cuidar do coalas",
+      "cuidar da coalas",
+      "fazer carinho no coalas",
+      "fazer carinho na coalas"
+    ]
+  },
+  "bond_capybara_care": {
+    "words": [
+      "capivara carinho",
+      "capivara cuidar",
+      "capivara cuide",
+      "capivaras carinho",
+      "capivaras cuidar",
+      "capivaras cuide",
+      "cuidar do capivara",
+      "cuidar da capivara",
+      "fazer carinho no capivara",
+      "fazer carinho na capivara",
+      "cuidar do capivaras",
+      "cuidar da capivaras",
+      "fazer carinho no capivaras",
+      "fazer carinho na capivaras"
+    ]
+  },
+  "bond_otter_care": {
+    "words": [
+      "lontra carinho",
+      "lontra cuidar",
+      "lontra cuide",
+      "lontras carinho",
+      "lontras cuidar",
+      "lontras cuide",
+      "cuidar do lontra",
+      "cuidar da lontra",
+      "fazer carinho no lontra",
+      "fazer carinho na lontra",
+      "cuidar do lontras",
+      "cuidar da lontras",
+      "fazer carinho no lontras",
+      "fazer carinho na lontras"
+    ]
+  },
+  "bond_raccoon_care": {
+    "words": [
+      "guaxinim carinho",
+      "guaxinim cuidar",
+      "guaxinim cuide",
+      "guaxinins carinho",
+      "guaxinins cuidar",
+      "guaxinins cuide",
+      "cuidar do guaxinim",
+      "cuidar da guaxinim",
+      "fazer carinho no guaxinim",
+      "fazer carinho na guaxinim",
+      "cuidar do guaxinins",
+      "cuidar da guaxinins",
+      "fazer carinho no guaxinins",
+      "fazer carinho na guaxinins"
+    ]
+  },
+  "bond_hedgehog_care": {
+    "words": [
+      "ouriço carinho",
+      "ouriço cuidar",
+      "ouriço cuide",
+      "ouriços carinho",
+      "ouriços cuidar",
+      "ouriços cuide",
+      "cuidar do ouriço",
+      "cuidar da ouriço",
+      "fazer carinho no ouriço",
+      "fazer carinho na ouriço",
+      "cuidar do ouriços",
+      "cuidar da ouriços",
+      "fazer carinho no ouriços",
+      "fazer carinho na ouriços"
+    ]
+  },
+  "bond_armadillo_care": {
+    "words": [
+      "tatu carinho",
+      "tatu cuidar",
+      "tatu cuide",
+      "tatus carinho",
+      "tatus cuidar",
+      "tatus cuide",
+      "cuidar do tatu",
+      "cuidar da tatu",
+      "fazer carinho no tatu",
+      "fazer carinho na tatu",
+      "cuidar do tatus",
+      "cuidar da tatus",
+      "fazer carinho no tatus",
+      "fazer carinho na tatus"
+    ]
+  },
+  "bond_butterfly_care": {
+    "words": [
+      "borboleta carinho",
+      "borboleta cuidar",
+      "borboleta cuide",
+      "borboletas carinho",
+      "borboletas cuidar",
+      "borboletas cuide",
+      "cuidar do borboleta",
+      "cuidar da borboleta",
+      "fazer carinho no borboleta",
+      "fazer carinho na borboleta",
+      "cuidar do borboletas",
+      "cuidar da borboletas",
+      "fazer carinho no borboletas",
+      "fazer carinho na borboletas"
+    ]
+  },
+  "bond_beetle_care": {
+    "words": [
+      "besouro carinho",
+      "besouro cuidar",
+      "besouro cuide",
+      "besouros carinho",
+      "besouros cuidar",
+      "besouros cuide",
+      "cuidar do besouro",
+      "cuidar da besouro",
+      "fazer carinho no besouro",
+      "fazer carinho na besouro",
+      "cuidar do besouros",
+      "cuidar da besouros",
+      "fazer carinho no besouros",
+      "fazer carinho na besouros"
+    ]
+  },
+  "bond_mantis_care": {
+    "words": [
+      "louva a deus carinho",
+      "louva a deus cuidar",
+      "louva a deus cuide",
+      "louva-deus carinho",
+      "louva-deus cuidar",
+      "louva-deus cuide",
+      "cuidar do louva a deus",
+      "cuidar da louva a deus",
+      "fazer carinho no louva a deus",
+      "fazer carinho na louva a deus",
+      "cuidar do louva-deus",
+      "cuidar da louva-deus",
+      "fazer carinho no louva-deus",
+      "fazer carinho na louva-deus"
+    ]
+  },
+  "bond_snail_care": {
+    "words": [
+      "caracol carinho",
+      "caracol cuidar",
+      "caracol cuide",
+      "caracóis carinho",
+      "caracóis cuidar",
+      "caracóis cuide",
+      "cuidar do caracol",
+      "cuidar da caracol",
+      "fazer carinho no caracol",
+      "fazer carinho na caracol",
+      "cuidar do caracóis",
+      "cuidar da caracóis",
+      "fazer carinho no caracóis",
+      "fazer carinho na caracóis"
+    ]
+  },
+  "bond_octopus_care": {
+    "words": [
+      "polvo carinho",
+      "polvo cuidar",
+      "polvo cuide",
+      "polvos carinho",
+      "polvos cuidar",
+      "polvos cuide",
+      "cuidar do polvo",
+      "cuidar da polvo",
+      "fazer carinho no polvo",
+      "fazer carinho na polvo",
+      "cuidar do polvos",
+      "cuidar da polvos",
+      "fazer carinho no polvos",
+      "fazer carinho na polvos"
+    ]
+  },
+  "bond_raptor_care": {
+    "words": [
+      "velociraptor carinho",
+      "velociraptor cuidar",
+      "velociraptor cuide",
+      "velociraptores carinho",
+      "velociraptores cuidar",
+      "velociraptores cuide",
+      "cuidar do velociraptor",
+      "cuidar da velociraptor",
+      "fazer carinho no velociraptor",
+      "fazer carinho na velociraptor",
+      "cuidar do velociraptores",
+      "cuidar da velociraptores",
+      "fazer carinho no velociraptores",
+      "fazer carinho na velociraptores"
+    ]
+  },
+  "bond_dragon_care": {
+    "words": [
+      "dragão carinho",
+      "dragão cuidar",
+      "dragão cuide",
+      "dragões carinho",
+      "dragões cuidar",
+      "dragões cuide",
+      "cuidar do dragão",
+      "cuidar da dragão",
+      "fazer carinho no dragão",
+      "fazer carinho na dragão",
+      "cuidar do dragões",
+      "cuidar da dragões",
+      "fazer carinho no dragões",
+      "fazer carinho na dragões"
+    ]
+  },
+  "bond_slime_care": {
+    "words": [
+      "slime carinho",
+      "slime cuidar",
+      "slime cuide",
+      "slimes carinho",
+      "slimes cuidar",
+      "slimes cuide",
+      "cuidar do slime",
+      "cuidar da slime",
+      "fazer carinho no slime",
+      "fazer carinho na slime",
+      "cuidar do slimes",
+      "cuidar da slimes",
+      "fazer carinho no slimes",
+      "fazer carinho na slimes"
+    ]
+  },
+  "bond_cave_bat_care": {
+    "words": [
+      "morcego carinho",
+      "morcego cuidar",
+      "morcego cuide",
+      "morcegos carinho",
+      "morcegos cuidar",
+      "morcegos cuide",
+      "cuidar do morcego",
+      "cuidar da morcego",
+      "fazer carinho no morcego",
+      "fazer carinho na morcego",
+      "cuidar do morcegos",
+      "cuidar da morcegos",
+      "fazer carinho no morcegos",
+      "fazer carinho na morcegos"
+    ]
+  },
+  "bond_queen_ant_care": {
+    "words": [
+      "formiga rainha carinho",
+      "formiga rainha cuidar",
+      "formiga rainha cuide",
+      "rainha das formigas carinho",
+      "rainha das formigas cuidar",
+      "rainha das formigas cuide",
+      "cuidar do formiga rainha",
+      "cuidar da formiga rainha",
+      "fazer carinho no formiga rainha",
+      "fazer carinho na formiga rainha",
+      "cuidar do rainha das formigas",
+      "cuidar da rainha das formigas",
+      "fazer carinho no rainha das formigas",
+      "fazer carinho na rainha das formigas"
+    ]
+  },
+  "bond_queen_bee_care": {
+    "words": [
+      "abelha rainha carinho",
+      "abelha rainha cuidar",
+      "abelha rainha cuide",
+      "rainha das abelhas carinho",
+      "rainha das abelhas cuidar",
+      "rainha das abelhas cuide",
+      "cuidar do abelha rainha",
+      "cuidar da abelha rainha",
+      "fazer carinho no abelha rainha",
+      "fazer carinho na abelha rainha",
+      "cuidar do rainha das abelhas",
+      "cuidar da rainha das abelhas",
+      "fazer carinho no rainha das abelhas",
+      "fazer carinho na rainha das abelhas"
+    ]
+  },
+  "bond_anteater_care": {
+    "words": [
+      "tamanduá carinho",
+      "tamanduá cuidar",
+      "tamanduá cuide",
+      "tamandua carinho",
+      "tamandua cuidar",
+      "tamandua cuide",
+      "cuidar do tamanduá",
+      "cuidar da tamanduá",
+      "fazer carinho no tamanduá",
+      "fazer carinho na tamanduá",
+      "cuidar do tamandua",
+      "cuidar da tamandua",
+      "fazer carinho no tamandua",
+      "fazer carinho na tamandua"
+    ]
+  },
+  "bond_mahoraga_care": {
+    "words": [
+      "mahoraga carinho",
+      "mahoraga cuidar",
+      "mahoraga cuide",
+      "makora carinho",
+      "makora cuidar",
+      "makora cuide",
+      "cuidar do mahoraga",
+      "cuidar da mahoraga",
+      "fazer carinho no mahoraga",
+      "fazer carinho na mahoraga",
+      "cuidar do makora",
+      "cuidar da makora",
+      "fazer carinho no makora",
+      "fazer carinho na makora"
+    ]
+  },
+  "bond_triceratops_care": {
+    "words": [
+      "triceratops carinho",
+      "triceratops cuidar",
+      "triceratops cuide",
+      "tricerátops carinho",
+      "tricerátops cuidar",
+      "tricerátops cuide",
+      "cuidar do triceratops",
+      "cuidar da triceratops",
+      "fazer carinho no triceratops",
+      "fazer carinho na triceratops",
+      "cuidar do tricerátops",
+      "cuidar da tricerátops",
+      "fazer carinho no tricerátops",
+      "fazer carinho na tricerátops"
+    ]
+  },
+  "bond_stegosaurus_care": {
+    "words": [
+      "estegossauro carinho",
+      "estegossauro cuidar",
+      "estegossauro cuide",
+      "estegossauros carinho",
+      "estegossauros cuidar",
+      "estegossauros cuide",
+      "cuidar do estegossauro",
+      "cuidar da estegossauro",
+      "fazer carinho no estegossauro",
+      "fazer carinho na estegossauro",
+      "cuidar do estegossauros",
+      "cuidar da estegossauros",
+      "fazer carinho no estegossauros",
+      "fazer carinho na estegossauros"
+    ]
+  },
+  "bond_brachiosaurus_care": {
+    "words": [
+      "braquiossauro carinho",
+      "braquiossauro cuidar",
+      "braquiossauro cuide",
+      "braquiossauros carinho",
+      "braquiossauros cuidar",
+      "braquiossauros cuide",
+      "cuidar do braquiossauro",
+      "cuidar da braquiossauro",
+      "fazer carinho no braquiossauro",
+      "fazer carinho na braquiossauro",
+      "cuidar do braquiossauros",
+      "cuidar da braquiossauros",
+      "fazer carinho no braquiossauros",
+      "fazer carinho na braquiossauros"
+    ]
+  },
+  "bond_spinosaurus_care": {
+    "words": [
+      "espinossauro carinho",
+      "espinossauro cuidar",
+      "espinossauro cuide",
+      "espinossauros carinho",
+      "espinossauros cuidar",
+      "espinossauros cuide",
+      "cuidar do espinossauro",
+      "cuidar da espinossauro",
+      "fazer carinho no espinossauro",
+      "fazer carinho na espinossauro",
+      "cuidar do espinossauros",
+      "cuidar da espinossauros",
+      "fazer carinho no espinossauros",
+      "fazer carinho na espinossauros"
+    ]
+  },
+  "bond_ankylosaurus_care": {
+    "words": [
+      "anquilossauro carinho",
+      "anquilossauro cuidar",
+      "anquilossauro cuide",
+      "anquilossauros carinho",
+      "anquilossauros cuidar",
+      "anquilossauros cuide",
+      "cuidar do anquilossauro",
+      "cuidar da anquilossauro",
+      "fazer carinho no anquilossauro",
+      "fazer carinho na anquilossauro",
+      "cuidar do anquilossauros",
+      "cuidar da anquilossauros",
+      "fazer carinho no anquilossauros",
+      "fazer carinho na anquilossauros"
+    ]
+  },
+  "bond_parasaurolophus_care": {
+    "words": [
+      "parassaurolofo carinho",
+      "parassaurolofo cuidar",
+      "parassaurolofo cuide",
+      "parassaurolofos carinho",
+      "parassaurolofos cuidar",
+      "parassaurolofos cuide",
+      "cuidar do parassaurolofo",
+      "cuidar da parassaurolofo",
+      "fazer carinho no parassaurolofo",
+      "fazer carinho na parassaurolofo",
+      "cuidar do parassaurolofos",
+      "cuidar da parassaurolofos",
+      "fazer carinho no parassaurolofos",
+      "fazer carinho na parassaurolofos"
+    ]
+  },
+  "bond_diplodocus_care": {
+    "words": [
+      "diplodoco carinho",
+      "diplodoco cuidar",
+      "diplodoco cuide",
+      "diplodocos carinho",
+      "diplodocos cuidar",
+      "diplodocos cuide",
+      "cuidar do diplodoco",
+      "cuidar da diplodoco",
+      "fazer carinho no diplodoco",
+      "fazer carinho na diplodoco",
+      "cuidar do diplodocos",
+      "cuidar da diplodocos",
+      "fazer carinho no diplodocos",
+      "fazer carinho na diplodocos"
+    ]
+  },
+  "bond_tung_sahur_care": {
+    "words": [
+      "tung tung tung sahur carinho",
+      "tung tung tung sahur cuidar",
+      "tung tung tung sahur cuide",
+      "tung tung sahur carinho",
+      "tung tung sahur cuidar",
+      "tung tung sahur cuide",
+      "cuidar do tung tung tung sahur",
+      "cuidar da tung tung tung sahur",
+      "fazer carinho no tung tung tung sahur",
+      "fazer carinho na tung tung tung sahur",
+      "cuidar do tung tung sahur",
+      "cuidar da tung tung sahur",
+      "fazer carinho no tung tung sahur",
+      "fazer carinho na tung tung sahur"
+    ]
+  },
+  "bond_tralalero_care": {
+    "words": [
+      "tralalero tralala carinho",
+      "tralalero tralala cuidar",
+      "tralalero tralala cuide",
+      "tralalelo tralala carinho",
+      "tralalelo tralala cuidar",
+      "tralalelo tralala cuide",
+      "cuidar do tralalero tralala",
+      "cuidar da tralalero tralala",
+      "fazer carinho no tralalero tralala",
+      "fazer carinho na tralalero tralala",
+      "cuidar do tralalelo tralala",
+      "cuidar da tralalelo tralala",
+      "fazer carinho no tralalelo tralala",
+      "fazer carinho na tralalelo tralala"
+    ]
+  },
+  "bond_saturnita_care": {
+    "words": [
+      "la vaca saturno saturnita carinho",
+      "la vaca saturno saturnita cuidar",
+      "la vaca saturno saturnita cuide",
+      "vaca saturno saturnita carinho",
+      "vaca saturno saturnita cuidar",
+      "vaca saturno saturnita cuide",
+      "cuidar do la vaca saturno saturnita",
+      "cuidar da la vaca saturno saturnita",
+      "fazer carinho no la vaca saturno saturnita",
+      "fazer carinho na la vaca saturno saturnita",
+      "cuidar do vaca saturno saturnita",
+      "cuidar da vaca saturno saturnita",
+      "fazer carinho no vaca saturno saturnita",
+      "fazer carinho na vaca saturno saturnita"
+    ]
+  },
+  "bond_bombardiro_care": {
+    "words": [
+      "bombardiro crocodilo carinho",
+      "bombardiro crocodilo cuidar",
+      "bombardiro crocodilo cuide",
+      "bombardino crocodilo carinho",
+      "bombardino crocodilo cuidar",
+      "bombardino crocodilo cuide",
+      "cuidar do bombardiro crocodilo",
+      "cuidar da bombardiro crocodilo",
+      "fazer carinho no bombardiro crocodilo",
+      "fazer carinho na bombardiro crocodilo",
+      "cuidar do bombardino crocodilo",
+      "cuidar da bombardino crocodilo",
+      "fazer carinho no bombardino crocodilo",
+      "fazer carinho na bombardino crocodilo"
+    ]
+  },
+  "bond_udin_care": {
+    "words": [
+      "udin din din dun carinho",
+      "udin din din dun cuidar",
+      "udin din din dun cuide",
+      "u din din din dun carinho",
+      "u din din din dun cuidar",
+      "u din din din dun cuide",
+      "cuidar do udin din din dun",
+      "cuidar da udin din din dun",
+      "fazer carinho no udin din din dun",
+      "fazer carinho na udin din din dun",
+      "cuidar do u din din din dun",
+      "cuidar da u din din din dun",
+      "fazer carinho no u din din din dun",
+      "fazer carinho na u din din din dun"
+    ]
+  },
+  "bond_cappuccino_assassino_care": {
+    "words": [
+      "cappuccino assassino carinho",
+      "cappuccino assassino cuidar",
+      "cappuccino assassino cuide",
+      "capuchino assassino carinho",
+      "capuchino assassino cuidar",
+      "capuchino assassino cuide",
+      "cuidar do cappuccino assassino",
+      "cuidar da cappuccino assassino",
+      "fazer carinho no cappuccino assassino",
+      "fazer carinho na cappuccino assassino",
+      "cuidar do capuchino assassino",
+      "cuidar da capuchino assassino",
+      "fazer carinho no capuchino assassino",
+      "fazer carinho na capuchino assassino"
+    ]
+  },
+  "bond_ballerina_cappuccina_care": {
+    "words": [
+      "ballerina cappuccina carinho",
+      "ballerina cappuccina cuidar",
+      "ballerina cappuccina cuide",
+      "balerina capuchinha carinho",
+      "balerina capuchinha cuidar",
+      "balerina capuchinha cuide",
+      "cuidar do ballerina cappuccina",
+      "cuidar da ballerina cappuccina",
+      "fazer carinho no ballerina cappuccina",
+      "fazer carinho na ballerina cappuccina",
+      "cuidar do balerina capuchinha",
+      "cuidar da balerina capuchinha",
+      "fazer carinho no balerina capuchinha",
+      "fazer carinho na balerina capuchinha"
+    ]
+  },
+  "bond_patapim_care": {
+    "words": [
+      "brr brr patapim carinho",
+      "brr brr patapim cuidar",
+      "brr brr patapim cuide",
+      "brr brrr patapim carinho",
+      "brr brrr patapim cuidar",
+      "brr brrr patapim cuide",
+      "cuidar do brr brr patapim",
+      "cuidar da brr brr patapim",
+      "fazer carinho no brr brr patapim",
+      "fazer carinho na brr brr patapim",
+      "cuidar do brr brrr patapim",
+      "cuidar da brr brrr patapim",
+      "fazer carinho no brr brrr patapim",
+      "fazer carinho na brr brrr patapim"
+    ]
+  },
+  "bond_lirili_care": {
+    "words": [
+      "lirilì larilà carinho",
+      "lirilì larilà cuidar",
+      "lirilì larilà cuide",
+      "lirili larila carinho",
+      "lirili larila cuidar",
+      "lirili larila cuide",
+      "cuidar do lirilì larilà",
+      "cuidar da lirilì larilà",
+      "fazer carinho no lirilì larilà",
+      "fazer carinho na lirilì larilà",
+      "cuidar do lirili larila",
+      "cuidar da lirili larila",
+      "fazer carinho no lirili larila",
+      "fazer carinho na lirili larila"
+    ]
+  },
+  "bond_chimpanzini_care": {
+    "words": [
+      "chimpanzini bananini carinho",
+      "chimpanzini bananini cuidar",
+      "chimpanzini bananini cuide",
+      "chimpanzini banana carinho",
+      "chimpanzini banana cuidar",
+      "chimpanzini banana cuide",
+      "cuidar do chimpanzini bananini",
+      "cuidar da chimpanzini bananini",
+      "fazer carinho no chimpanzini bananini",
+      "fazer carinho na chimpanzini bananini",
+      "cuidar do chimpanzini banana",
+      "cuidar da chimpanzini banana",
+      "fazer carinho no chimpanzini banana",
+      "fazer carinho na chimpanzini banana"
+    ]
+  },
+  "bond_pikachu_care": {
+    "words": [
+      "pikachu carinho",
+      "pikachu cuidar",
+      "pikachu cuide",
+      "picachu carinho",
+      "picachu cuidar",
+      "picachu cuide",
+      "cuidar do pikachu",
+      "cuidar da pikachu",
+      "fazer carinho no pikachu",
+      "fazer carinho na pikachu",
+      "cuidar do picachu",
+      "cuidar da picachu",
+      "fazer carinho no picachu",
+      "fazer carinho na picachu"
+    ]
+  },
+  "bond_charmander_care": {
+    "words": [
+      "charmander carinho",
+      "charmander cuidar",
+      "charmander cuide",
+      "charmandar carinho",
+      "charmandar cuidar",
+      "charmandar cuide",
+      "cuidar do charmander",
+      "cuidar da charmander",
+      "fazer carinho no charmander",
+      "fazer carinho na charmander",
+      "cuidar do charmandar",
+      "cuidar da charmandar",
+      "fazer carinho no charmandar",
+      "fazer carinho na charmandar"
+    ]
+  },
+  "bond_squirtle_care": {
+    "words": [
+      "squirtle carinho",
+      "squirtle cuidar",
+      "squirtle cuide",
+      "squitle carinho",
+      "squitle cuidar",
+      "squitle cuide",
+      "cuidar do squirtle",
+      "cuidar da squirtle",
+      "fazer carinho no squirtle",
+      "fazer carinho na squirtle",
+      "cuidar do squitle",
+      "cuidar da squitle",
+      "fazer carinho no squitle",
+      "fazer carinho na squitle"
+    ]
+  },
+  "bond_bulbasaur_care": {
+    "words": [
+      "bulbasaur carinho",
+      "bulbasaur cuidar",
+      "bulbasaur cuide",
+      "bulbassauro carinho",
+      "bulbassauro cuidar",
+      "bulbassauro cuide",
+      "cuidar do bulbasaur",
+      "cuidar da bulbasaur",
+      "fazer carinho no bulbasaur",
+      "fazer carinho na bulbasaur",
+      "cuidar do bulbassauro",
+      "cuidar da bulbassauro",
+      "fazer carinho no bulbassauro",
+      "fazer carinho na bulbassauro"
+    ]
+  },
+  "bond_raichu_care": {
+    "words": [
+      "raichu carinho",
+      "raichu cuidar",
+      "raichu cuide",
+      "cuidar do raichu",
+      "cuidar da raichu",
+      "fazer carinho no raichu",
+      "fazer carinho na raichu"
+    ]
+  },
+  "bond_charmeleon_care": {
+    "words": [
+      "charmeleon carinho",
+      "charmeleon cuidar",
+      "charmeleon cuide",
+      "cuidar do charmeleon",
+      "cuidar da charmeleon",
+      "fazer carinho no charmeleon",
+      "fazer carinho na charmeleon"
+    ]
+  },
+  "bond_charizard_care": {
+    "words": [
+      "charizard carinho",
+      "charizard cuidar",
+      "charizard cuide",
+      "cuidar do charizard",
+      "cuidar da charizard",
+      "fazer carinho no charizard",
+      "fazer carinho na charizard"
+    ]
+  },
+  "bond_wartortle_care": {
+    "words": [
+      "wartortle carinho",
+      "wartortle cuidar",
+      "wartortle cuide",
+      "cuidar do wartortle",
+      "cuidar da wartortle",
+      "fazer carinho no wartortle",
+      "fazer carinho na wartortle"
+    ]
+  },
+  "bond_blastoise_care": {
+    "words": [
+      "blastoise carinho",
+      "blastoise cuidar",
+      "blastoise cuide",
+      "cuidar do blastoise",
+      "cuidar da blastoise",
+      "fazer carinho no blastoise",
+      "fazer carinho na blastoise"
+    ]
+  },
+  "bond_ivysaur_care": {
+    "words": [
+      "ivysaur carinho",
+      "ivysaur cuidar",
+      "ivysaur cuide",
+      "cuidar do ivysaur",
+      "cuidar da ivysaur",
+      "fazer carinho no ivysaur",
+      "fazer carinho na ivysaur"
+    ]
+  },
+  "bond_venusaur_care": {
+    "words": [
+      "venusaur carinho",
+      "venusaur cuidar",
+      "venusaur cuide",
+      "cuidar do venusaur",
+      "cuidar da venusaur",
+      "fazer carinho no venusaur",
+      "fazer carinho na venusaur"
+    ]
+  },
+  "bond_beaver_care": {
+    "words": [
+      "castor carinho",
+      "castor cuidar",
+      "castor cuide",
+      "castores carinho",
+      "castores cuidar",
+      "castores cuide",
+      "cuidar do castor",
+      "cuidar da castor",
+      "fazer carinho no castor",
+      "fazer carinho na castor",
+      "cuidar do castores",
+      "cuidar da castores",
+      "fazer carinho no castores",
+      "fazer carinho na castores"
+    ]
+  },
+  "bond_verity_care": {
+    "words": [
+      "verity carinho",
+      "verity cuidar",
+      "verity cuide",
+      "veriti carinho",
+      "veriti cuidar",
+      "veriti cuide",
+      "cuidar do verity",
+      "cuidar da verity",
+      "fazer carinho no verity",
+      "fazer carinho na verity",
+      "cuidar do veriti",
+      "cuidar da veriti",
+      "fazer carinho no veriti",
+      "fazer carinho na veriti"
+    ]
+  },
+  "bond_status": {
+    "words": [
+      "vinculo da criatura",
+      "como esta minha criatura",
+      "personalidade da criatura"
+    ]
+  },
+  "bond_pigeon_status": {
+    "words": [
+      "pombo vinculo",
+      "pombo personalidade",
+      "pomba vinculo",
+      "pomba personalidade"
+    ]
+  },
+  "bond_monkey_status": {
+    "words": [
+      "macaco vinculo",
+      "macaco personalidade",
+      "macaca vinculo",
+      "macaca personalidade"
+    ]
+  },
+  "bond_gorilla_status": {
+    "words": [
+      "gorila vinculo",
+      "gorila personalidade",
+      "grande símio vinculo",
+      "grande símio personalidade"
+    ]
+  },
+  "bond_bear_status": {
+    "words": [
+      "urso vinculo",
+      "urso personalidade",
+      "ursa vinculo",
+      "ursa personalidade"
+    ]
+  },
+  "bond_dog_status": {
+    "words": [
+      "cachorro vinculo",
+      "cachorro personalidade",
+      "cachorra vinculo",
+      "cachorra personalidade"
+    ]
+  },
+  "bond_wolf_status": {
+    "words": [
+      "lobo vinculo",
+      "lobo personalidade",
+      "loba vinculo",
+      "loba personalidade"
+    ]
+  },
+  "bond_horse_status": {
+    "words": [
+      "cavalo vinculo",
+      "cavalo personalidade",
+      "égua vinculo",
+      "égua personalidade"
+    ]
+  },
+  "bond_unicorn_status": {
+    "words": [
+      "unicórnio vinculo",
+      "unicórnio personalidade",
+      "unicórnia vinculo",
+      "unicórnia personalidade"
+    ]
+  },
+  "bond_shark_status": {
+    "words": [
+      "tubarão vinculo",
+      "tubarão personalidade",
+      "tubarão branco vinculo",
+      "tubarão branco personalidade"
+    ]
+  },
+  "bond_eagle_status": {
+    "words": [
+      "águia vinculo",
+      "águia personalidade",
+      "águia careca vinculo",
+      "águia careca personalidade"
+    ]
+  },
+  "bond_chicken_status": {
+    "words": [
+      "galinha vinculo",
+      "galinha personalidade",
+      "galo vinculo",
+      "galo personalidade"
+    ]
+  },
+  "bond_snake_status": {
+    "words": [
+      "cobra vinculo",
+      "cobra personalidade",
+      "serpente vinculo",
+      "serpente personalidade"
+    ]
+  },
+  "bond_spider_status": {
+    "words": [
+      "aranha vinculo",
+      "aranha personalidade",
+      "tarântula vinculo",
+      "tarântula personalidade"
+    ]
+  },
+  "bond_ant_status": {
+    "words": [
+      "formiga vinculo",
+      "formiga personalidade",
+      "formiguinha vinculo",
+      "formiguinha personalidade"
+    ]
+  },
+  "bond_trex_status": {
+    "words": [
+      "tiranossauro rex vinculo",
+      "tiranossauro rex personalidade",
+      "tiranossauro vinculo",
+      "tiranossauro personalidade"
+    ]
+  },
+  "bond_cat_status": {
+    "words": [
+      "gato vinculo",
+      "gato personalidade",
+      "gata vinculo",
+      "gata personalidade"
+    ]
+  },
+  "bond_rabbit_status": {
+    "words": [
+      "coelho vinculo",
+      "coelho personalidade",
+      "coelha vinculo",
+      "coelha personalidade"
+    ]
+  },
+  "bond_fox_status": {
+    "words": [
+      "raposa vinculo",
+      "raposa personalidade",
+      "raposo vinculo",
+      "raposo personalidade"
+    ]
+  },
+  "bond_boar_status": {
+    "words": [
+      "javali vinculo",
+      "javali personalidade",
+      "porco selvagem vinculo",
+      "porco selvagem personalidade"
+    ]
+  },
+  "bond_crocodile_status": {
+    "words": [
+      "crocodilo vinculo",
+      "crocodilo personalidade",
+      "jacaré vinculo",
+      "jacaré personalidade"
+    ]
+  },
+  "bond_elephant_status": {
+    "words": [
+      "elefante vinculo",
+      "elefante personalidade",
+      "elefanta vinculo",
+      "elefanta personalidade"
+    ]
+  },
+  "bond_lion_status": {
+    "words": [
+      "leão vinculo",
+      "leão personalidade",
+      "leoa vinculo",
+      "leoa personalidade"
+    ]
+  },
+  "bond_tiger_status": {
+    "words": [
+      "tigre vinculo",
+      "tigre personalidade",
+      "tigresa vinculo",
+      "tigresa personalidade"
+    ]
+  },
+  "bond_penguin_status": {
+    "words": [
+      "pinguim vinculo",
+      "pinguim personalidade",
+      "pinguim imperador vinculo",
+      "pinguim imperador personalidade"
+    ]
+  },
+  "bond_turtle_status": {
+    "words": [
+      "tartaruga vinculo",
+      "tartaruga personalidade",
+      "jabuti vinculo",
+      "jabuti personalidade"
+    ]
+  },
+  "bond_goat_status": {
+    "words": [
+      "cabra vinculo",
+      "cabra personalidade",
+      "bode vinculo",
+      "bode personalidade"
+    ]
+  },
+  "bond_deer_status": {
+    "words": [
+      "cervo vinculo",
+      "cervo personalidade",
+      "cerva vinculo",
+      "cerva personalidade"
+    ]
+  },
+  "bond_crab_status": {
+    "words": [
+      "caranguejo vinculo",
+      "caranguejo personalidade",
+      "siri vinculo",
+      "siri personalidade"
+    ]
+  },
+  "bond_scorpion_status": {
+    "words": [
+      "escorpião vinculo",
+      "escorpião personalidade",
+      "lacrau vinculo",
+      "lacrau personalidade"
+    ]
+  },
+  "bond_frog_status": {
+    "words": [
+      "sapo vinculo",
+      "sapo personalidade",
+      "rã vinculo",
+      "rã personalidade"
+    ]
+  },
+  "bond_bull_status": {
+    "words": [
+      "touro vinculo",
+      "touro personalidade",
+      "boi vinculo",
+      "boi personalidade"
+    ]
+  },
+  "bond_bee_status": {
+    "words": [
+      "abelha vinculo",
+      "abelha personalidade",
+      "vespa vinculo",
+      "vespa personalidade"
+    ]
+  },
+  "bond_rat_status": {
+    "words": [
+      "rato vinculo",
+      "rato personalidade",
+      "rata vinculo",
+      "rata personalidade"
+    ]
+  },
+  "bond_zombie_status": {
+    "words": [
+      "zumbi vinculo",
+      "zumbi personalidade",
+      "morto-vivo vinculo",
+      "morto-vivo personalidade"
+    ]
+  },
+  "bond_skeleton_status": {
+    "words": [
+      "esqueleto vinculo",
+      "esqueleto personalidade",
+      "caveira vinculo",
+      "caveira personalidade"
+    ]
+  },
+  "bond_dummy_status": {
+    "words": [
+      "boneco de treino vinculo",
+      "boneco de treino personalidade",
+      "manequim vinculo",
+      "manequim personalidade"
+    ]
+  },
+  "bond_duck_status": {
+    "words": [
+      "pato vinculo",
+      "pato personalidade",
+      "pata vinculo",
+      "pata personalidade"
+    ]
+  },
+  "bond_goose_status": {
+    "words": [
+      "ganso vinculo",
+      "ganso personalidade",
+      "gansa vinculo",
+      "gansa personalidade"
+    ]
+  },
+  "bond_turkey_status": {
+    "words": [
+      "peru vinculo",
+      "peru personalidade",
+      "perus vinculo",
+      "perus personalidade"
+    ]
+  },
+  "bond_pig_status": {
+    "words": [
+      "porco vinculo",
+      "porco personalidade",
+      "porca vinculo",
+      "porca personalidade"
+    ]
+  },
+  "bond_cow_status": {
+    "words": [
+      "vaca vinculo",
+      "vaca personalidade",
+      "vacas vinculo",
+      "vacas personalidade"
+    ]
+  },
+  "bond_sheep_status": {
+    "words": [
+      "ovelha vinculo",
+      "ovelha personalidade",
+      "ovelhas vinculo",
+      "ovelhas personalidade"
+    ]
+  },
+  "bond_donkey_status": {
+    "words": [
+      "burro vinculo",
+      "burro personalidade",
+      "burros vinculo",
+      "burros personalidade"
+    ]
+  },
+  "bond_camel_status": {
+    "words": [
+      "camelo vinculo",
+      "camelo personalidade",
+      "camelos vinculo",
+      "camelos personalidade"
+    ]
+  },
+  "bond_llama_status": {
+    "words": [
+      "lhama vinculo",
+      "lhama personalidade",
+      "lhamas vinculo",
+      "lhamas personalidade"
+    ]
+  },
+  "bond_giraffe_status": {
+    "words": [
+      "girafa vinculo",
+      "girafa personalidade",
+      "girafas vinculo",
+      "girafas personalidade"
+    ]
+  },
+  "bond_zebra_status": {
+    "words": [
+      "zebra vinculo",
+      "zebra personalidade",
+      "zebras vinculo",
+      "zebras personalidade"
+    ]
+  },
+  "bond_rhino_status": {
+    "words": [
+      "rinoceronte vinculo",
+      "rinoceronte personalidade",
+      "rinocerontes vinculo",
+      "rinocerontes personalidade"
+    ]
+  },
+  "bond_hippo_status": {
+    "words": [
+      "hipopótamo vinculo",
+      "hipopótamo personalidade",
+      "hipopótamos vinculo",
+      "hipopótamos personalidade"
+    ]
+  },
+  "bond_bison_status": {
+    "words": [
+      "bisão vinculo",
+      "bisão personalidade",
+      "bisões vinculo",
+      "bisões personalidade"
+    ]
+  },
+  "bond_panda_status": {
+    "words": [
+      "panda vinculo",
+      "panda personalidade",
+      "pandas vinculo",
+      "pandas personalidade"
+    ]
+  },
+  "bond_koala_status": {
+    "words": [
+      "coala vinculo",
+      "coala personalidade",
+      "coalas vinculo",
+      "coalas personalidade"
+    ]
+  },
+  "bond_capybara_status": {
+    "words": [
+      "capivara vinculo",
+      "capivara personalidade",
+      "capivaras vinculo",
+      "capivaras personalidade"
+    ]
+  },
+  "bond_otter_status": {
+    "words": [
+      "lontra vinculo",
+      "lontra personalidade",
+      "lontras vinculo",
+      "lontras personalidade"
+    ]
+  },
+  "bond_raccoon_status": {
+    "words": [
+      "guaxinim vinculo",
+      "guaxinim personalidade",
+      "guaxinins vinculo",
+      "guaxinins personalidade"
+    ]
+  },
+  "bond_hedgehog_status": {
+    "words": [
+      "ouriço vinculo",
+      "ouriço personalidade",
+      "ouriços vinculo",
+      "ouriços personalidade"
+    ]
+  },
+  "bond_armadillo_status": {
+    "words": [
+      "tatu vinculo",
+      "tatu personalidade",
+      "tatus vinculo",
+      "tatus personalidade"
+    ]
+  },
+  "bond_butterfly_status": {
+    "words": [
+      "borboleta vinculo",
+      "borboleta personalidade",
+      "borboletas vinculo",
+      "borboletas personalidade"
+    ]
+  },
+  "bond_beetle_status": {
+    "words": [
+      "besouro vinculo",
+      "besouro personalidade",
+      "besouros vinculo",
+      "besouros personalidade"
+    ]
+  },
+  "bond_mantis_status": {
+    "words": [
+      "louva a deus vinculo",
+      "louva a deus personalidade",
+      "louva-deus vinculo",
+      "louva-deus personalidade"
+    ]
+  },
+  "bond_snail_status": {
+    "words": [
+      "caracol vinculo",
+      "caracol personalidade",
+      "caracóis vinculo",
+      "caracóis personalidade"
+    ]
+  },
+  "bond_octopus_status": {
+    "words": [
+      "polvo vinculo",
+      "polvo personalidade",
+      "polvos vinculo",
+      "polvos personalidade"
+    ]
+  },
+  "bond_raptor_status": {
+    "words": [
+      "velociraptor vinculo",
+      "velociraptor personalidade",
+      "velociraptores vinculo",
+      "velociraptores personalidade"
+    ]
+  },
+  "bond_dragon_status": {
+    "words": [
+      "dragão vinculo",
+      "dragão personalidade",
+      "dragões vinculo",
+      "dragões personalidade"
+    ]
+  },
+  "bond_slime_status": {
+    "words": [
+      "slime vinculo",
+      "slime personalidade",
+      "slimes vinculo",
+      "slimes personalidade"
+    ]
+  },
+  "bond_cave_bat_status": {
+    "words": [
+      "morcego vinculo",
+      "morcego personalidade",
+      "morcegos vinculo",
+      "morcegos personalidade"
+    ]
+  },
+  "bond_queen_ant_status": {
+    "words": [
+      "formiga rainha vinculo",
+      "formiga rainha personalidade",
+      "rainha das formigas vinculo",
+      "rainha das formigas personalidade"
+    ]
+  },
+  "bond_queen_bee_status": {
+    "words": [
+      "abelha rainha vinculo",
+      "abelha rainha personalidade",
+      "rainha das abelhas vinculo",
+      "rainha das abelhas personalidade"
+    ]
+  },
+  "bond_anteater_status": {
+    "words": [
+      "tamanduá vinculo",
+      "tamanduá personalidade",
+      "tamandua vinculo",
+      "tamandua personalidade"
+    ]
+  },
+  "bond_mahoraga_status": {
+    "words": [
+      "mahoraga vinculo",
+      "mahoraga personalidade",
+      "makora vinculo",
+      "makora personalidade"
+    ]
+  },
+  "bond_triceratops_status": {
+    "words": [
+      "triceratops vinculo",
+      "triceratops personalidade",
+      "tricerátops vinculo",
+      "tricerátops personalidade"
+    ]
+  },
+  "bond_stegosaurus_status": {
+    "words": [
+      "estegossauro vinculo",
+      "estegossauro personalidade",
+      "estegossauros vinculo",
+      "estegossauros personalidade"
+    ]
+  },
+  "bond_brachiosaurus_status": {
+    "words": [
+      "braquiossauro vinculo",
+      "braquiossauro personalidade",
+      "braquiossauros vinculo",
+      "braquiossauros personalidade"
+    ]
+  },
+  "bond_spinosaurus_status": {
+    "words": [
+      "espinossauro vinculo",
+      "espinossauro personalidade",
+      "espinossauros vinculo",
+      "espinossauros personalidade"
+    ]
+  },
+  "bond_ankylosaurus_status": {
+    "words": [
+      "anquilossauro vinculo",
+      "anquilossauro personalidade",
+      "anquilossauros vinculo",
+      "anquilossauros personalidade"
+    ]
+  },
+  "bond_parasaurolophus_status": {
+    "words": [
+      "parassaurolofo vinculo",
+      "parassaurolofo personalidade",
+      "parassaurolofos vinculo",
+      "parassaurolofos personalidade"
+    ]
+  },
+  "bond_diplodocus_status": {
+    "words": [
+      "diplodoco vinculo",
+      "diplodoco personalidade",
+      "diplodocos vinculo",
+      "diplodocos personalidade"
+    ]
+  },
+  "bond_tung_sahur_status": {
+    "words": [
+      "tung tung tung sahur vinculo",
+      "tung tung tung sahur personalidade",
+      "tung tung sahur vinculo",
+      "tung tung sahur personalidade"
+    ]
+  },
+  "bond_tralalero_status": {
+    "words": [
+      "tralalero tralala vinculo",
+      "tralalero tralala personalidade",
+      "tralalelo tralala vinculo",
+      "tralalelo tralala personalidade"
+    ]
+  },
+  "bond_saturnita_status": {
+    "words": [
+      "la vaca saturno saturnita vinculo",
+      "la vaca saturno saturnita personalidade",
+      "vaca saturno saturnita vinculo",
+      "vaca saturno saturnita personalidade"
+    ]
+  },
+  "bond_bombardiro_status": {
+    "words": [
+      "bombardiro crocodilo vinculo",
+      "bombardiro crocodilo personalidade",
+      "bombardino crocodilo vinculo",
+      "bombardino crocodilo personalidade"
+    ]
+  },
+  "bond_udin_status": {
+    "words": [
+      "udin din din dun vinculo",
+      "udin din din dun personalidade",
+      "u din din din dun vinculo",
+      "u din din din dun personalidade"
+    ]
+  },
+  "bond_cappuccino_assassino_status": {
+    "words": [
+      "cappuccino assassino vinculo",
+      "cappuccino assassino personalidade",
+      "capuchino assassino vinculo",
+      "capuchino assassino personalidade"
+    ]
+  },
+  "bond_ballerina_cappuccina_status": {
+    "words": [
+      "ballerina cappuccina vinculo",
+      "ballerina cappuccina personalidade",
+      "balerina capuchinha vinculo",
+      "balerina capuchinha personalidade"
+    ]
+  },
+  "bond_patapim_status": {
+    "words": [
+      "brr brr patapim vinculo",
+      "brr brr patapim personalidade",
+      "brr brrr patapim vinculo",
+      "brr brrr patapim personalidade"
+    ]
+  },
+  "bond_lirili_status": {
+    "words": [
+      "lirilì larilà vinculo",
+      "lirilì larilà personalidade",
+      "lirili larila vinculo",
+      "lirili larila personalidade"
+    ]
+  },
+  "bond_chimpanzini_status": {
+    "words": [
+      "chimpanzini bananini vinculo",
+      "chimpanzini bananini personalidade",
+      "chimpanzini banana vinculo",
+      "chimpanzini banana personalidade"
+    ]
+  },
+  "bond_pikachu_status": {
+    "words": [
+      "pikachu vinculo",
+      "pikachu personalidade",
+      "picachu vinculo",
+      "picachu personalidade"
+    ]
+  },
+  "bond_charmander_status": {
+    "words": [
+      "charmander vinculo",
+      "charmander personalidade",
+      "charmandar vinculo",
+      "charmandar personalidade"
+    ]
+  },
+  "bond_squirtle_status": {
+    "words": [
+      "squirtle vinculo",
+      "squirtle personalidade",
+      "squitle vinculo",
+      "squitle personalidade"
+    ]
+  },
+  "bond_bulbasaur_status": {
+    "words": [
+      "bulbasaur vinculo",
+      "bulbasaur personalidade",
+      "bulbassauro vinculo",
+      "bulbassauro personalidade"
+    ]
+  },
+  "bond_raichu_status": {
+    "words": [
+      "raichu vinculo",
+      "raichu personalidade"
+    ]
+  },
+  "bond_charmeleon_status": {
+    "words": [
+      "charmeleon vinculo",
+      "charmeleon personalidade"
+    ]
+  },
+  "bond_charizard_status": {
+    "words": [
+      "charizard vinculo",
+      "charizard personalidade"
+    ]
+  },
+  "bond_wartortle_status": {
+    "words": [
+      "wartortle vinculo",
+      "wartortle personalidade"
+    ]
+  },
+  "bond_blastoise_status": {
+    "words": [
+      "blastoise vinculo",
+      "blastoise personalidade"
+    ]
+  },
+  "bond_ivysaur_status": {
+    "words": [
+      "ivysaur vinculo",
+      "ivysaur personalidade"
+    ]
+  },
+  "bond_venusaur_status": {
+    "words": [
+      "venusaur vinculo",
+      "venusaur personalidade"
+    ]
+  },
+  "bond_beaver_status": {
+    "words": [
+      "castor vinculo",
+      "castor personalidade",
+      "castores vinculo",
+      "castores personalidade"
+    ]
+  },
+  "bond_verity_status": {
+    "words": [
+      "verity vinculo",
+      "verity personalidade",
+      "veriti vinculo",
+      "veriti personalidade"
+    ]
+  },
+  "bond_pack": {
+    "words": [
+      "proteja seus companheiros",
+      "proteja os companheiros"
+    ]
+  },
+  "bond_pigeon_pack": {
+    "words": [
+      "pombo proteja seus companheiros",
+      "pomba proteja seus companheiros"
+    ]
+  },
+  "bond_monkey_pack": {
+    "words": [
+      "macaco proteja seus companheiros",
+      "macaca proteja seus companheiros"
+    ]
+  },
+  "bond_gorilla_pack": {
+    "words": [
+      "gorila proteja seus companheiros",
+      "grande símio proteja seus companheiros"
+    ]
+  },
+  "bond_bear_pack": {
+    "words": [
+      "urso proteja seus companheiros",
+      "ursa proteja seus companheiros"
+    ]
+  },
+  "bond_dog_pack": {
+    "words": [
+      "cachorro proteja seus companheiros",
+      "cachorra proteja seus companheiros"
+    ]
+  },
+  "bond_wolf_pack": {
+    "words": [
+      "lobo proteja seus companheiros",
+      "loba proteja seus companheiros"
+    ]
+  },
+  "bond_horse_pack": {
+    "words": [
+      "cavalo proteja seus companheiros",
+      "égua proteja seus companheiros"
+    ]
+  },
+  "bond_unicorn_pack": {
+    "words": [
+      "unicórnio proteja seus companheiros",
+      "unicórnia proteja seus companheiros"
+    ]
+  },
+  "bond_shark_pack": {
+    "words": [
+      "tubarão proteja seus companheiros",
+      "tubarão branco proteja seus companheiros"
+    ]
+  },
+  "bond_eagle_pack": {
+    "words": [
+      "águia proteja seus companheiros",
+      "águia careca proteja seus companheiros"
+    ]
+  },
+  "bond_chicken_pack": {
+    "words": [
+      "galinha proteja seus companheiros",
+      "galo proteja seus companheiros"
+    ]
+  },
+  "bond_snake_pack": {
+    "words": [
+      "cobra proteja seus companheiros",
+      "serpente proteja seus companheiros"
+    ]
+  },
+  "bond_spider_pack": {
+    "words": [
+      "aranha proteja seus companheiros",
+      "tarântula proteja seus companheiros"
+    ]
+  },
+  "bond_ant_pack": {
+    "words": [
+      "formiga proteja seus companheiros",
+      "formiguinha proteja seus companheiros"
+    ]
+  },
+  "bond_trex_pack": {
+    "words": [
+      "tiranossauro rex proteja seus companheiros",
+      "tiranossauro proteja seus companheiros"
+    ]
+  },
+  "bond_cat_pack": {
+    "words": [
+      "gato proteja seus companheiros",
+      "gata proteja seus companheiros"
+    ]
+  },
+  "bond_rabbit_pack": {
+    "words": [
+      "coelho proteja seus companheiros",
+      "coelha proteja seus companheiros"
+    ]
+  },
+  "bond_fox_pack": {
+    "words": [
+      "raposa proteja seus companheiros",
+      "raposo proteja seus companheiros"
+    ]
+  },
+  "bond_boar_pack": {
+    "words": [
+      "javali proteja seus companheiros",
+      "porco selvagem proteja seus companheiros"
+    ]
+  },
+  "bond_crocodile_pack": {
+    "words": [
+      "crocodilo proteja seus companheiros",
+      "jacaré proteja seus companheiros"
+    ]
+  },
+  "bond_elephant_pack": {
+    "words": [
+      "elefante proteja seus companheiros",
+      "elefanta proteja seus companheiros"
+    ]
+  },
+  "bond_lion_pack": {
+    "words": [
+      "leão proteja seus companheiros",
+      "leoa proteja seus companheiros"
+    ]
+  },
+  "bond_tiger_pack": {
+    "words": [
+      "tigre proteja seus companheiros",
+      "tigresa proteja seus companheiros"
+    ]
+  },
+  "bond_penguin_pack": {
+    "words": [
+      "pinguim proteja seus companheiros",
+      "pinguim imperador proteja seus companheiros"
+    ]
+  },
+  "bond_turtle_pack": {
+    "words": [
+      "tartaruga proteja seus companheiros",
+      "jabuti proteja seus companheiros"
+    ]
+  },
+  "bond_goat_pack": {
+    "words": [
+      "cabra proteja seus companheiros",
+      "bode proteja seus companheiros"
+    ]
+  },
+  "bond_deer_pack": {
+    "words": [
+      "cervo proteja seus companheiros",
+      "cerva proteja seus companheiros"
+    ]
+  },
+  "bond_crab_pack": {
+    "words": [
+      "caranguejo proteja seus companheiros",
+      "siri proteja seus companheiros"
+    ]
+  },
+  "bond_scorpion_pack": {
+    "words": [
+      "escorpião proteja seus companheiros",
+      "lacrau proteja seus companheiros"
+    ]
+  },
+  "bond_frog_pack": {
+    "words": [
+      "sapo proteja seus companheiros",
+      "rã proteja seus companheiros"
+    ]
+  },
+  "bond_bull_pack": {
+    "words": [
+      "touro proteja seus companheiros",
+      "boi proteja seus companheiros"
+    ]
+  },
+  "bond_bee_pack": {
+    "words": [
+      "abelha proteja seus companheiros",
+      "vespa proteja seus companheiros"
+    ]
+  },
+  "bond_rat_pack": {
+    "words": [
+      "rato proteja seus companheiros",
+      "rata proteja seus companheiros"
+    ]
+  },
+  "bond_zombie_pack": {
+    "words": [
+      "zumbi proteja seus companheiros",
+      "morto-vivo proteja seus companheiros"
+    ]
+  },
+  "bond_skeleton_pack": {
+    "words": [
+      "esqueleto proteja seus companheiros",
+      "caveira proteja seus companheiros"
+    ]
+  },
+  "bond_dummy_pack": {
+    "words": [
+      "boneco de treino proteja seus companheiros",
+      "manequim proteja seus companheiros"
+    ]
+  },
+  "bond_duck_pack": {
+    "words": [
+      "pato proteja seus companheiros",
+      "pata proteja seus companheiros"
+    ]
+  },
+  "bond_goose_pack": {
+    "words": [
+      "ganso proteja seus companheiros",
+      "gansa proteja seus companheiros"
+    ]
+  },
+  "bond_turkey_pack": {
+    "words": [
+      "peru proteja seus companheiros",
+      "perus proteja seus companheiros"
+    ]
+  },
+  "bond_pig_pack": {
+    "words": [
+      "porco proteja seus companheiros",
+      "porca proteja seus companheiros"
+    ]
+  },
+  "bond_cow_pack": {
+    "words": [
+      "vaca proteja seus companheiros",
+      "vacas proteja seus companheiros"
+    ]
+  },
+  "bond_sheep_pack": {
+    "words": [
+      "ovelha proteja seus companheiros",
+      "ovelhas proteja seus companheiros"
+    ]
+  },
+  "bond_donkey_pack": {
+    "words": [
+      "burro proteja seus companheiros",
+      "burros proteja seus companheiros"
+    ]
+  },
+  "bond_camel_pack": {
+    "words": [
+      "camelo proteja seus companheiros",
+      "camelos proteja seus companheiros"
+    ]
+  },
+  "bond_llama_pack": {
+    "words": [
+      "lhama proteja seus companheiros",
+      "lhamas proteja seus companheiros"
+    ]
+  },
+  "bond_giraffe_pack": {
+    "words": [
+      "girafa proteja seus companheiros",
+      "girafas proteja seus companheiros"
+    ]
+  },
+  "bond_zebra_pack": {
+    "words": [
+      "zebra proteja seus companheiros",
+      "zebras proteja seus companheiros"
+    ]
+  },
+  "bond_rhino_pack": {
+    "words": [
+      "rinoceronte proteja seus companheiros",
+      "rinocerontes proteja seus companheiros"
+    ]
+  },
+  "bond_hippo_pack": {
+    "words": [
+      "hipopótamo proteja seus companheiros",
+      "hipopótamos proteja seus companheiros"
+    ]
+  },
+  "bond_bison_pack": {
+    "words": [
+      "bisão proteja seus companheiros",
+      "bisões proteja seus companheiros"
+    ]
+  },
+  "bond_panda_pack": {
+    "words": [
+      "panda proteja seus companheiros",
+      "pandas proteja seus companheiros"
+    ]
+  },
+  "bond_koala_pack": {
+    "words": [
+      "coala proteja seus companheiros",
+      "coalas proteja seus companheiros"
+    ]
+  },
+  "bond_capybara_pack": {
+    "words": [
+      "capivara proteja seus companheiros",
+      "capivaras proteja seus companheiros"
+    ]
+  },
+  "bond_otter_pack": {
+    "words": [
+      "lontra proteja seus companheiros",
+      "lontras proteja seus companheiros"
+    ]
+  },
+  "bond_raccoon_pack": {
+    "words": [
+      "guaxinim proteja seus companheiros",
+      "guaxinins proteja seus companheiros"
+    ]
+  },
+  "bond_hedgehog_pack": {
+    "words": [
+      "ouriço proteja seus companheiros",
+      "ouriços proteja seus companheiros"
+    ]
+  },
+  "bond_armadillo_pack": {
+    "words": [
+      "tatu proteja seus companheiros",
+      "tatus proteja seus companheiros"
+    ]
+  },
+  "bond_butterfly_pack": {
+    "words": [
+      "borboleta proteja seus companheiros",
+      "borboletas proteja seus companheiros"
+    ]
+  },
+  "bond_beetle_pack": {
+    "words": [
+      "besouro proteja seus companheiros",
+      "besouros proteja seus companheiros"
+    ]
+  },
+  "bond_mantis_pack": {
+    "words": [
+      "louva a deus proteja seus companheiros",
+      "louva-deus proteja seus companheiros"
+    ]
+  },
+  "bond_snail_pack": {
+    "words": [
+      "caracol proteja seus companheiros",
+      "caracóis proteja seus companheiros"
+    ]
+  },
+  "bond_octopus_pack": {
+    "words": [
+      "polvo proteja seus companheiros",
+      "polvos proteja seus companheiros"
+    ]
+  },
+  "bond_raptor_pack": {
+    "words": [
+      "velociraptor proteja seus companheiros",
+      "velociraptores proteja seus companheiros"
+    ]
+  },
+  "bond_dragon_pack": {
+    "words": [
+      "dragão proteja seus companheiros",
+      "dragões proteja seus companheiros"
+    ]
+  },
+  "bond_slime_pack": {
+    "words": [
+      "slime proteja seus companheiros",
+      "slimes proteja seus companheiros"
+    ]
+  },
+  "bond_cave_bat_pack": {
+    "words": [
+      "morcego proteja seus companheiros",
+      "morcegos proteja seus companheiros"
+    ]
+  },
+  "bond_queen_ant_pack": {
+    "words": [
+      "formiga rainha proteja seus companheiros",
+      "rainha das formigas proteja seus companheiros"
+    ]
+  },
+  "bond_queen_bee_pack": {
+    "words": [
+      "abelha rainha proteja seus companheiros",
+      "rainha das abelhas proteja seus companheiros"
+    ]
+  },
+  "bond_anteater_pack": {
+    "words": [
+      "tamanduá proteja seus companheiros",
+      "tamandua proteja seus companheiros"
+    ]
+  },
+  "bond_mahoraga_pack": {
+    "words": [
+      "mahoraga proteja seus companheiros",
+      "makora proteja seus companheiros"
+    ]
+  },
+  "bond_triceratops_pack": {
+    "words": [
+      "triceratops proteja seus companheiros",
+      "tricerátops proteja seus companheiros"
+    ]
+  },
+  "bond_stegosaurus_pack": {
+    "words": [
+      "estegossauro proteja seus companheiros",
+      "estegossauros proteja seus companheiros"
+    ]
+  },
+  "bond_brachiosaurus_pack": {
+    "words": [
+      "braquiossauro proteja seus companheiros",
+      "braquiossauros proteja seus companheiros"
+    ]
+  },
+  "bond_spinosaurus_pack": {
+    "words": [
+      "espinossauro proteja seus companheiros",
+      "espinossauros proteja seus companheiros"
+    ]
+  },
+  "bond_ankylosaurus_pack": {
+    "words": [
+      "anquilossauro proteja seus companheiros",
+      "anquilossauros proteja seus companheiros"
+    ]
+  },
+  "bond_parasaurolophus_pack": {
+    "words": [
+      "parassaurolofo proteja seus companheiros",
+      "parassaurolofos proteja seus companheiros"
+    ]
+  },
+  "bond_diplodocus_pack": {
+    "words": [
+      "diplodoco proteja seus companheiros",
+      "diplodocos proteja seus companheiros"
+    ]
+  },
+  "bond_tung_sahur_pack": {
+    "words": [
+      "tung tung tung sahur proteja seus companheiros",
+      "tung tung sahur proteja seus companheiros"
+    ]
+  },
+  "bond_tralalero_pack": {
+    "words": [
+      "tralalero tralala proteja seus companheiros",
+      "tralalelo tralala proteja seus companheiros"
+    ]
+  },
+  "bond_saturnita_pack": {
+    "words": [
+      "la vaca saturno saturnita proteja seus companheiros",
+      "vaca saturno saturnita proteja seus companheiros"
+    ]
+  },
+  "bond_bombardiro_pack": {
+    "words": [
+      "bombardiro crocodilo proteja seus companheiros",
+      "bombardino crocodilo proteja seus companheiros"
+    ]
+  },
+  "bond_udin_pack": {
+    "words": [
+      "udin din din dun proteja seus companheiros",
+      "u din din din dun proteja seus companheiros"
+    ]
+  },
+  "bond_cappuccino_assassino_pack": {
+    "words": [
+      "cappuccino assassino proteja seus companheiros",
+      "capuchino assassino proteja seus companheiros"
+    ]
+  },
+  "bond_ballerina_cappuccina_pack": {
+    "words": [
+      "ballerina cappuccina proteja seus companheiros",
+      "balerina capuchinha proteja seus companheiros"
+    ]
+  },
+  "bond_patapim_pack": {
+    "words": [
+      "brr brr patapim proteja seus companheiros",
+      "brr brrr patapim proteja seus companheiros"
+    ]
+  },
+  "bond_lirili_pack": {
+    "words": [
+      "lirilì larilà proteja seus companheiros",
+      "lirili larila proteja seus companheiros"
+    ]
+  },
+  "bond_chimpanzini_pack": {
+    "words": [
+      "chimpanzini bananini proteja seus companheiros",
+      "chimpanzini banana proteja seus companheiros"
+    ]
+  },
+  "bond_pikachu_pack": {
+    "words": [
+      "pikachu proteja seus companheiros",
+      "picachu proteja seus companheiros"
+    ]
+  },
+  "bond_charmander_pack": {
+    "words": [
+      "charmander proteja seus companheiros",
+      "charmandar proteja seus companheiros"
+    ]
+  },
+  "bond_squirtle_pack": {
+    "words": [
+      "squirtle proteja seus companheiros",
+      "squitle proteja seus companheiros"
+    ]
+  },
+  "bond_bulbasaur_pack": {
+    "words": [
+      "bulbasaur proteja seus companheiros",
+      "bulbassauro proteja seus companheiros"
+    ]
+  },
+  "bond_raichu_pack": {
+    "words": [
+      "raichu proteja seus companheiros"
+    ]
+  },
+  "bond_charmeleon_pack": {
+    "words": [
+      "charmeleon proteja seus companheiros"
+    ]
+  },
+  "bond_charizard_pack": {
+    "words": [
+      "charizard proteja seus companheiros"
+    ]
+  },
+  "bond_wartortle_pack": {
+    "words": [
+      "wartortle proteja seus companheiros"
+    ]
+  },
+  "bond_blastoise_pack": {
+    "words": [
+      "blastoise proteja seus companheiros"
+    ]
+  },
+  "bond_ivysaur_pack": {
+    "words": [
+      "ivysaur proteja seus companheiros"
+    ]
+  },
+  "bond_venusaur_pack": {
+    "words": [
+      "venusaur proteja seus companheiros"
+    ]
+  },
+  "bond_beaver_pack": {
+    "words": [
+      "castor proteja seus companheiros",
+      "castores proteja seus companheiros"
+    ]
+  },
+  "bond_verity_pack": {
+    "words": [
+      "verity proteja seus companheiros",
+      "veriti proteja seus companheiros"
+    ]
+  },
+  "coop_invite": {
+    "words": [
+      "desafio cooperativo",
+      "invocar chefe cooperativo",
+      "quero enfrentar o chefe"
+    ]
+  },
+  "coop_accept": {
+    "words": [
+      "aceitar desafio",
+      "aceito desafio"
+    ]
+  },
+  "coop_cancel": {
+    "words": [
+      "cancelar desafio"
+    ]
+  },
+  "coop_status": {
+    "words": [
+      "status do desafio",
+      "progresso do chefe"
+    ]
+  },
+  "fusion_info": {
+    "words": [
+      "habilidades da fusao",
+      "poderes da fusao",
+      "quais poderes minha criatura tem"
+    ]
+  },
+  "bond_coop_chimera_care": {
+    "words": []
+  },
+  "bond_coop_chimera_status": {
+    "words": []
+  },
+  "bond_coop_chimera_pack": {
+    "words": []
+  },
+  "creature_tactics": {
+    "words": [
+      "aguia carregue um cachorro",
+      "elefante carregue uma torre",
+      "formigas consertem a armadura do elefante",
+      "cachorro proteja o pikachu se ele ficar ferido leve ele ate mim",
+      "cachorro se eu for atacado me proteja",
+      "cachorro se ficar com pouca vida recue",
+      "aguia solte a carga",
+      "cachorro cancele a regra",
+      "cachorro transforme agora",
+      "cachorro volte a forma original",
+      "quero um cachorro que vire tanque quando estiver com pouca vida",
+      "quero um cachorro que se transforme em tanque quando ficar com pouca vida",
+      "quero um cachorro que vire tanque quando tiver pouca vida"
+    ]
   }
 }

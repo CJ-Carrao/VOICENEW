@@ -68,7 +68,160 @@ func _success() -> void:
 			_finish(false, "Match replication did not become active: " + session.last_error)
 			return
 	var chaos_test := OS.get_cmdline_user_args().has("--test-chaos")
-	if OS.get_cmdline_user_args().has("--test-domain-clash"):
+	if OS.get_cmdline_user_args().has("--test-tactics"):
+		await create_timer(3.3).timeout
+		if role == "host":
+			var forge = root.get_node("Forge")
+			var lex = root.get_node("Lexicon").data
+			var recipe = load("res://scripts/language/recipe.gd")
+			var assembler = load("res://scripts/things/assembler.gd")
+			var source = assembler.build(recipe.new_node("pistol"),"head",lex)
+			source.set_owner_info(2,2,game.get_player(2),null)
+			game.add_thing(source)
+			for id in [1,2]: game.get_player(id).set_physics_process(false)
+			game.get_player(1).global_position = Vector3(10,40,-2)
+			game.get_player(2).global_position = Vector3(0,40,8)
+			game.get_player(2).add_matter(1000.0)
+			var actors := []
+			for i in 4:
+				await create_timer(.16).timeout
+				var node = recipe.new_node(["eagle","dog","cat","butterfly_shield"][i])
+				if i == 2: node.mods.transform_to = "tank"
+				var actor = forge.spawn_child(node,"spawned",[Vector3(0,40,0),Vector3(0,40,2),Vector3(8,40,0),Vector3(-8,40,0)][i],Vector3.FORWARD,source,0.0)
+				if actor == null: _finish(false,"Tactics fixture could not spawn: "+str(i)); return
+				actor.set_physics_process(false)
+				actor.move.set_physics_process(false)
+				actors.append(actor)
+			var until := Time.get_ticks_msec()+7000
+			while Time.get_ticks_msec() < until:
+				if actors[0].get_node("CreatureTactics").passenger() == actors[1] and actors[2].get_node("CreatureTactics").rule == "defend_owner": break
+				await create_timer(.05).timeout
+			if actors[0].get_node("CreatureTactics").passenger() != actors[1] or actors[2].get_node("CreatureTactics").rule != "defend_owner": _finish(false,"Remote transport/conditional commands failed"); return
+			actors[2].hp = actors[2].max_hp*.3
+			await create_timer(.12).timeout
+			actors[2].get_node("CreatureTransform").shot_left = 60.0
+			source.set_owner_info(1,1,game.get_player(1),null)
+			load("res://scripts/things/combat.gd").apply_damage(game.get_player(2),1,"melee",source)
+			var bullet = forge.spawn_child(recipe.new_node("bullet"),"projectile",Vector3(-5.5,40,8),Vector3.FORWARD,source,0.0)
+			if bullet == null: _finish(false,"Online converter bullet missing"); return
+			bullet.move.set_physics_process(false)
+			bullet.move.travel(Vector3(0,0,-16))
+			await create_timer(1.2).timeout
+			if actors[3].get_node("ButterflyShield").converted != 1 or not actors[1].get_node("AnimalOrders").automatic_active: _finish(false,"Host conversion/owner defense failed"); return
+			actors[0].get_node("CreatureTactics").unload()
+			actors[0].get_node("AnimalOrders").set_order("stay",actors[0].global_position)
+			actors[2].get_node("CreatureTransform").revert()
+			await create_timer(1.5).timeout
+		else:
+			var until := Time.get_ticks_msec()+14000
+			var sent := false
+			var carried := false
+			var released := false
+			var transformed := false
+			var reverted := false
+			var converted := false
+			var defended := false
+			var rule_seen := false
+			while Time.get_ticks_msec() < until:
+				var found := 0
+				for actor in game.get_node("Things").get_children():
+					if actor.thing_id in ["eagle","dog","cat","butterfly_shield"]: found += 1
+					if actor.thing_id == "dog":
+						if actor.get_node("CreatureTactics").carrier_id > 0: carried = true
+						elif carried: released = true
+						if actor.get_node("AnimalOrders").automatic_active: defended = true
+					if actor.thing_id == "cat":
+						if actor.get_node("CreatureTactics").rule == "defend_owner": rule_seen = true
+						if actor.get_node("CreatureTransform").active and actor.bounds.size.length() > 2.0: transformed = true
+						elif transformed: reverted = true
+					if actor.thing_id == "butterfly_shield" and actor.get_node("ButterflyShield").converted == 1: converted = true
+				if found == 4 and not sent:
+					session.creations.submit_request("aguia carregue cachorro",false,true)
+					session.creations.submit_request("gato se eu for atacado me proteja",false,true)
+					sent = true
+				if carried and released and transformed and reverted and converted and defended and rule_seen: break
+				await create_timer(.05).timeout
+			if not (carried and released and transformed and reverted and converted and defended and rule_seen): _finish(false,"Remote tactics states failed: %s" % str([carried,released,transformed,reverted,converted,defended,rule_seen])); return
+	elif OS.get_cmdline_user_args().has("--test-progression"):
+		await create_timer(3.3).timeout
+		var coop = load("res://scripts/things/coop_encounter.gd")
+		if role == "host":
+			var forge = root.get_node("Forge")
+			var lex = root.get_node("Lexicon").data
+			var recipe = load("res://scripts/language/recipe.gd")
+			var assembler = load("res://scripts/things/assembler.gd")
+			var source = assembler.build(recipe.new_node("pistol"),"head",lex)
+			source.set_owner_info(1,1,game.get_player(1),game.get_player(1))
+			game.add_thing(source)
+			var animals := []
+			for i in 3:
+				await create_timer(.15).timeout
+				var node: Dictionary = recipe.new_node("pikachu" if i == 0 else "dog" if i == 1 else "chicken")
+				if i == 0: node.mods.fusion_squirtle = true
+				var animal = forge.spawn_child(node,"spawned",Vector3(i*4,40,0),Vector3.FORWARD,source,0.0)
+				if animal == null: _finish(false,"Could not create progression fixture"); return
+				animal.set_physics_process(false)
+				animal.move.set_physics_process(false)
+				forge.transfer_owner(animal,game.get_player(2))
+				animals.append(animal)
+			animals[0].get_node("CreatureBond").trust = 75.0
+			var temporary = load("res://scripts/things/creative_effects.gd")
+			if not temporary.swap(animals[1].get_node("CreativeEffects"),animals[2].get_node("CreativeEffects"),source): _finish(false,"Online swap failed"); return
+			await create_timer(.7).timeout
+			animals[1].get_node("CreativeEffects").restore()
+			animals[2].get_node("CreativeEffects").restore()
+			if not animals[1].get_node("CreativeEffects").charm(source):
+				animals[1].get_node("CreativeEffects").immunity = 0
+				if not animals[1].get_node("CreativeEffects").charm(source): _finish(false,"Online conversion failed"); return
+			await create_timer(.7).timeout
+			animals[1].get_node("CreativeEffects").restore()
+			for player in game.get_players(): player.add_matter(1000)
+			coop.request(game.get_player(1),"invite")
+			var encounter = coop.of(game)
+			var until := Time.get_ticks_msec()+6000
+			while encounter.phase != "battle" and Time.get_ticks_msec() < until: await create_timer(.05).timeout
+			if encounter.phase != "battle": _finish(false,"Remote acceptance did not start coop"); return
+			var boss = encounter.boss_ref.get_ref()
+			if boss.max_hp != 950.0 or not coop.allied(1,2): _finish(false,"Boss scaling or alliance failed"); return
+			var before: float = game.get_player(2).health
+			load("res://scripts/things/combat.gd").apply_damage(game.get_player(2),50,"melee",source)
+			if game.get_player(2).health != before: _finish(false,"Coop friendly damage was not blocked"); return
+			await create_timer(1.5).timeout
+			boss.take_damage(10000,"world_cut",source)
+			await create_timer(1.0).timeout
+			if encounter.phase != "victory" or coop.allied(1,2): _finish(false,"Coop did not end cleanly"); return
+			await create_timer(1.0).timeout
+		else:
+			var until := Time.get_ticks_msec()+14000
+			var fused := false
+			var swapped := false
+			var restored := false
+			var converted := false
+			var returned := false
+			var accepted := false
+			var battle := false
+			var boss_seen := false
+			var victory := false
+			while Time.get_ticks_msec() < until:
+				for animal in game.get_node("Things").get_children():
+					if animal.thing_id == "coop_chimera" and animal.team == 99 and animal.max_hp == 950.0 and animal.get_node_or_null("CoopBoss") != null: boss_seen = true
+					if animal.thing_id == "pikachu": fused = animal.get_node("FusionPowers").companions.size() == 1 and animal.get_node("CreatureBond").trust == 75.0
+					if animal.thing_id == "dog":
+						if animal.node_data.get("mods",{}).get("anatomy",{}).get("head","") == "chicken": swapped = true
+						elif swapped: restored = true
+						if animal.team == 1: converted = true
+						elif converted and animal.team == 2: returned = true
+				var encounter = coop.of(game)
+				if encounter != null:
+					if encounter.phase == "waiting" and not accepted:
+						session.creations.submit_request("aceitar desafio",false,true)
+						accepted = true
+					if encounter.phase == "battle": battle = true
+					if encounter.phase == "victory": victory = true
+				if fused and swapped and restored and converted and returned and battle and victory and boss_seen: break
+				await create_timer(.05).timeout
+			if not (fused and swapped and restored and converted and returned and battle and victory and boss_seen): _finish(false,"Progression replication failed: %s" % str([fused,swapped,restored,converted,returned,battle,victory,boss_seen])); return
+	elif OS.get_cmdline_user_args().has("--test-domain-clash"):
 		await create_timer(3.3).timeout
 		var sword_fx = load("res://scripts/fx/space_sword.gd")
 		if role == "host":

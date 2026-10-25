@@ -352,6 +352,8 @@ func attach_move(component: ThingMove) -> void :
 
 
 func set_owner_info(player_id: int, owner_team: int, player: Node3D, created_by: Node3D) -> void :
+	var rig := get_node_or_null("CreatureTactics")
+	if rig != null and owner_id != player_id and not network_replica: rig.detach(); rig.cancel_rule()
 	var orders := get_node_or_null("AnimalOrders")
 	if orders != null and owner_id != player_id: orders.set_order("aggressive" if orders.mode == "aggressive" or bool(node_data.get("mods", {}).get("aggressive", false)) else "free", global_position if is_inside_tree() else Vector3.ZERO)
 	owner_id = player_id
@@ -427,6 +429,10 @@ func set_held(held: bool) -> void :
 
 func set_captured(captured: bool) -> void:
 	if is_captured == captured: return
+	var rig := get_node_or_null("CreatureTactics")
+	if captured and rig != null: rig.detach()
+	var temporary := get_node_or_null("CreativeEffects")
+	if captured and temporary != null and not network_replica: temporary.restore()
 	var orders := get_node_or_null("AnimalOrders")
 	if orders != null:
 		if captured: orders.on_capture()
@@ -584,12 +590,14 @@ func rebuild_equipment_model() -> void :
 		shape_node.queue_free()
 	collisions.clear()
 	model.queue_free()
-	attach_model(ModelBuilder.build(thing_id, mods, Lexicon.data))
+	var transformation := get_node_or_null("CreatureTransform")
+	attach_model(ModelBuilder.build(transformation.model_id() if transformation != null else thing_id, mods, Lexicon.data))
 	Hands._set_layers(model, visual_layers)
 	for graft in grafts:
 		if is_instance_valid(graft) and not graft.is_dead:
 			model_pieces.append_array(graft.model_pieces)
 			weight += graft.weight
+	if transformation != null: transformation.apply_stats()
 	set_held(is_held)
 	ammo_changed.emit()
 
@@ -904,6 +912,8 @@ func _apply_role_layers() -> void :
 
 
 func _vanish() -> void :
+	var rig := get_node_or_null("CreatureTactics")
+	if rig != null: rig.detach()
 	var builder := get_node_or_null("CreatureBuilder")
 	if builder != null: builder.cancel()
 

@@ -176,7 +176,7 @@ func _count_down(delta: float) -> void :
 
 func _refresh_presentation() -> void:
 	var visible_kind := ""
-	for kind in ["void_overload", "entangled", "webbed", "frozen", "burning", "wet"]:
+	for kind in ["void_overload", "entangled", "webbed", "frozen", "burning", "wet", "aged"]:
 		if float(remaining.get(kind, 0.0)) > 0.0:
 			visible_kind = kind
 			break
@@ -218,6 +218,7 @@ func _update_shell(kind: String) -> void :
 	if kind == "wet": tint = Color("79c7dd")
 	if kind == "entangled": tint = Color("74965b")
 	if kind == "webbed": tint = Color("d1d5c3")
+	if kind == "aged": tint = Color("b6a29a")
 	if _shell == null:
 		_shell = MeshInstance3D.new()
 		var sphere: = SphereMesh.new()

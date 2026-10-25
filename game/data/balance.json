@@ -1067,6 +1067,14 @@
       "duration_s": 1.2,
       "speed_mult": 0.35,
       "element": ""
+    },
+    "aged": {
+      "duration_s": 6.0,
+      "speed_mult": 0.55
+    },
+    "age_immunity": {
+      "duration_s": 14.0,
+      "speed_mult": 1.0
     }
   },
   "creature_combos": {
@@ -1200,7 +1208,8 @@
       "jj_purple": 290,
       "jj_ryu_beam": 220,
       "jj_yuta_beam": 200,
-      "jj_contact_cleave": 105
+      "jj_contact_cleave": 105,
+      "armored": 35
     },
     "_magazine_rounds": "o que vai dentro de um pente ('pente de granadas') custa como se fossem tantas criações:",
     "magazine_rounds": 4,
@@ -2052,6 +2061,36 @@
       },
       "muzzle": {
         "barrels": 1
+      }
+    },
+    "age_ray": {
+      "rear": {
+        "fire_interval_s": 5.0,
+        "magazine": 0,
+        "automatic": false
+      },
+      "front": {
+        "power": 1.0,
+        "knockback": 0.0
+      },
+      "muzzle": {
+        "barrels": 1,
+        "spread_deg": 0.0
+      }
+    },
+    "head_swap_ray": {
+      "rear": {
+        "fire_interval_s": 12.0,
+        "magazine": 0,
+        "automatic": false
+      },
+      "front": {
+        "power": 1.0,
+        "knockback": 0.0
+      },
+      "muzzle": {
+        "barrels": 1,
+        "spread_deg": 0.0
       }
     }
   },
@@ -4141,6 +4180,55 @@
       "speed": 25,
       "impact_damage": 0,
       "lifetime": 2.5
+    },
+    "age_ray": {
+      "cost": 95,
+      "hp": 45,
+      "weight_kg": 1.4,
+      "lifetime": 0,
+      "speed": 0,
+      "fire_cooldown": 5.0
+    },
+    "head_swap_ray": {
+      "cost": 145,
+      "hp": 45,
+      "weight_kg": 1.4,
+      "lifetime": 0,
+      "speed": 0,
+      "fire_cooldown": 12.0
+    },
+    "team_charm_grenade": {
+      "cost": 180,
+      "hp": 45,
+      "weight_kg": 1.4,
+      "lifetime": 10,
+      "speed": 15,
+      "fire_cooldown": 18.0
+    },
+    "coop_chimera": {
+      "cost": 300,
+      "hp": 600,
+      "speed": 4.5,
+      "weight_kg": 160,
+      "impact_damage": 0
+    },
+    "butterfly_shield": {
+      "cost": 100,
+      "hp": 70,
+      "weight_kg": 2
+    },
+    "advanced_butterfly_shield": {
+      "cost": 220,
+      "hp": 110,
+      "weight_kg": 2
+    },
+    "shield_butterfly": {
+      "cost": 0,
+      "hp": 1,
+      "speed": 2,
+      "lifetime": 3,
+      "impact_damage": 0,
+      "weight_kg": 0.01
     }
   },
   "grafts": {
@@ -4190,7 +4278,8 @@
       },
       "kinetic": {
         "kinetic": 0.15
-      }
+      },
+      "butterfly": {}
     },
     "protection_costs": {
       "blast": 14,

@@ -909,6 +909,7 @@ func _fx(packet_epoch: int, kind: String, args: Array) -> void :
 		stats.rejected += 1
 		return
 	match kind:
+		"coop_state": load("res://scripts/things/coop_encounter.gd").ensure(_world).apply_snapshot(args[0])
 		"space_sword": load("res://scripts/fx/space_sword.gd").play(_world, args[0], args[1], args[2], float(args[3]))
 		"jujutsu_impact": load("res://scripts/fx/jujutsu_impact.gd").play(_world, args[0], args[1], str(args[2]))
 		"pokemon_move": load("res://scripts/fx/pokemon_fx.gd").play(_world, args[0], args[1], str(args[2]), str(args[3]))
@@ -931,6 +932,7 @@ func _fx(packet_epoch: int, kind: String, args: Array) -> void :
 
 
 static func _valid_fx(kind: String, args: Array) -> bool:
+	if kind == "coop_state": return args.size() == 1 and args[0] is Dictionary and String(args[0].get("message", "")).length() <= 300 and args[0].get("members",[]) is Array and args[0].get("members",[]).size() <= 4
 	match kind:
 		"space_sword":
 			return args.size() == 4 and _vec3(args[0]) and _vec3(args[1]) and _vec3(args[2]) and _num(args[3]) and float(args[3]) >= 1.0 and float(args[3]) <= 8.0

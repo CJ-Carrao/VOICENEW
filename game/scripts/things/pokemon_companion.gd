@@ -57,10 +57,14 @@ func _target(reach: float) -> Node3D:
 func cast(move: String) -> Dictionary:
 	if not available() or not moves.has(move): return {"blocked": true, "warnings": ["Pokémon indisponível para atacar."]}
 	if remaining > 0.0: return {"blocked": true, "warnings": ["Aguarde %.1f s para outro golpe." % remaining]}
+	var fusion = thing.get_node_or_null("FusionPowers")
+	if fusion != null and fusion.companions.is_empty(): fusion = null
+	if fusion != null and fusion.remaining > 0.0: return {"blocked":true,"warnings":["A fusão está recarregando seus poderes."]}
 	var skill: Dictionary = moves[move]
 	var target := _target(float(skill.range) * clampf(thing.scale_factor, .6, 1.5))
 	if target == null: return {"blocked": true, "warnings": ["Nenhum alvo válido à vista e ao alcance de " + String(skill.name) + "."]}
 	remaining = float(skill.cooldown)
+	if fusion != null: fusion.remaining = maxf(2.5,remaining)
 	last_move = move
 	casts += 1
 	var at := Combat.center_of(target)
@@ -109,6 +113,8 @@ func progress_text() -> String:
 	return "%s: %.0f/%.0f XP · evolução para %s custa %.0f de matéria. Diga: %s, evolua." % [title, experience, float(evolution.xp), Lexicon.data.thing_name(evolution.next), float(evolution.cost), title]
 
 func evolve(player: Node3D) -> Dictionary:
+	var temporary = thing.get_node_or_null("CreativeEffects")
+	if temporary != null and (temporary.head_time > 0.0 or temporary.team_time > 0.0): return {"blocked":true,"warnings":["Aguarde o fim da troca temporária antes de evoluir."]}
 	if not available() or not thing.has_simulation_authority() or player.player_id != thing.owner_id or player.team != thing.team:
 		return {"blocked": true, "warnings": ["Pokémon indisponível para evoluir."]}
 	var next := String(evolution.get("next", ""))

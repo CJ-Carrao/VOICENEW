@@ -17,6 +17,14 @@ static func capture(thing: Thing) -> Dictionary:
 	state["team"] = thing.team
 	state["captured"] = thing.is_captured
 	state["ground_item"] = thing.ground_item
+	state["anatomy"] = thing.node_data.get("mods",{}).get("anatomy",{}).duplicate()
+	state["max_hp"] = thing.max_hp
+	for pair in [["tactics","CreatureTactics"],["transformation","CreatureTransform"],["butterfly_shield","ButterflyShield"]]:
+		var component = thing.get_node_or_null(pair[1])
+		if component != null: state[pair[0]] = component.snapshot()
+	for pair in [["fusion","FusionPowers"],["creative","CreativeEffects"],["bond","CreatureBond"],["coop_boss","CoopBoss"]]:
+		var component = thing.get_node_or_null(pair[1])
+		if component != null: state[pair[0]] = component.snapshot()
 	var orders = thing.get_node_or_null("AnimalOrders")
 	if orders != null: state["animal_orders"] = orders.snapshot()
 	var builder = thing.get_node_or_null("CreatureBuilder")
@@ -53,8 +61,20 @@ static func capture(thing: Thing) -> Dictionary:
 static func apply(thing: Thing, state: Dictionary) -> void :
 	if not thing.network_replica or state.is_empty():
 		return
+	for pair in [["tactics","CreatureTactics"],["transformation","CreatureTransform"],["butterfly_shield","ButterflyShield"]]:
+		var component = thing.get_node_or_null(pair[1])
+		if component != null and state.get(pair[0]) is Dictionary: component.apply_snapshot(state[pair[0]])
 	var pokemon = thing.get_node_or_null("PokemonCompanion")
 	if pokemon != null and state.get("pokemon") is Dictionary: pokemon.apply_snapshot(state.pokemon)
+	var anatomy: Dictionary = state.get("anatomy",{})
+	var anatomy_mods: Dictionary = thing.node_data.get_or_add("mods",{})
+	if anatomy != anatomy_mods.get("anatomy",{}):
+		anatomy_mods.anatomy = anatomy.duplicate()
+		thing.rebuild_equipment_model()
+	thing.max_hp = float(state.get("max_hp",thing.max_hp))
+	for pair in [["fusion","FusionPowers"],["creative","CreativeEffects"],["bond","CreatureBond"],["coop_boss","CoopBoss"]]:
+		var component = thing.get_node_or_null(pair[1])
+		if component != null and state.get(pair[0]) is Dictionary: component.apply_snapshot(state[pair[0]])
 	var owner_id := int(state.get("owner_id", thing.owner_id))
 	var team := int(state.get("team", thing.team))
 	if owner_id != thing.owner_id or team != thing.team:

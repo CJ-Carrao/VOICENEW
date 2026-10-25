@@ -254,7 +254,22 @@
       "squirtle": "elimina todos: Squirtle",
       "bulbasaur": "elimina todos: Bulbasaur"
     },
-    "aggressive": "agressivo"
+    "aggressive": "agressivo",
+    "fusion_mahoraga": "poder de Mahoraga",
+    "fusion_pikachu": "poder de Pikachu",
+    "fusion_charmander": "poder de Charmander",
+    "fusion_squirtle": "poder de Squirtle",
+    "fusion_bulbasaur": "poder de Bulbasaur",
+    "fusion_raichu": "poder de Raichu",
+    "fusion_charmeleon": "poder de Charmeleon",
+    "fusion_charizard": "poder de Charizard",
+    "fusion_wartortle": "poder de Wartortle",
+    "fusion_blastoise": "poder de Blastoise",
+    "fusion_ivysaur": "poder de Ivysaur",
+    "fusion_venusaur": "poder de Venusaur",
+    "fusion_dragon": "poder de dragão",
+    "armored": "armadura",
+    "transform_to": "transformação: {value}"
   },
   "control": {
     "player": "pilotável",
@@ -279,7 +294,16 @@
   },
   "commands": {
     "recycle": "reciclar",
-    "expand_domain": "EXPANSÃO DE DOMÍNIO"
+    "expand_domain": "EXPANSÃO DE DOMÍNIO",
+    "bond_care": "cuidar da criatura",
+    "bond_status": "vinculo da criatura",
+    "bond_pack": "proteja seus companheiros",
+    "coop_invite": "desafio cooperativo",
+    "coop_accept": "aceitar desafio",
+    "coop_cancel": "cancelar desafio",
+    "coop_status": "status do desafio",
+    "fusion_info": "habilidades da fusão",
+    "creature_tactics": "ordem de equipe"
   },
   "sections_melee": {
     "rear": "cabo",

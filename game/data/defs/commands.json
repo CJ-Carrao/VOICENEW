@@ -7853,5 +7853,1244 @@
     "animal_order": "aggressive",
     "species": "verity",
     "all": true
+  },
+  "bond_care": {
+    "bond": "care"
+  },
+  "bond_pigeon_care": {
+    "bond": "care",
+    "species": "pigeon"
+  },
+  "bond_monkey_care": {
+    "bond": "care",
+    "species": "monkey"
+  },
+  "bond_gorilla_care": {
+    "bond": "care",
+    "species": "gorilla"
+  },
+  "bond_bear_care": {
+    "bond": "care",
+    "species": "bear"
+  },
+  "bond_dog_care": {
+    "bond": "care",
+    "species": "dog"
+  },
+  "bond_wolf_care": {
+    "bond": "care",
+    "species": "wolf"
+  },
+  "bond_horse_care": {
+    "bond": "care",
+    "species": "horse"
+  },
+  "bond_unicorn_care": {
+    "bond": "care",
+    "species": "unicorn"
+  },
+  "bond_shark_care": {
+    "bond": "care",
+    "species": "shark"
+  },
+  "bond_eagle_care": {
+    "bond": "care",
+    "species": "eagle"
+  },
+  "bond_chicken_care": {
+    "bond": "care",
+    "species": "chicken"
+  },
+  "bond_snake_care": {
+    "bond": "care",
+    "species": "snake"
+  },
+  "bond_spider_care": {
+    "bond": "care",
+    "species": "spider"
+  },
+  "bond_ant_care": {
+    "bond": "care",
+    "species": "ant"
+  },
+  "bond_trex_care": {
+    "bond": "care",
+    "species": "trex"
+  },
+  "bond_cat_care": {
+    "bond": "care",
+    "species": "cat"
+  },
+  "bond_rabbit_care": {
+    "bond": "care",
+    "species": "rabbit"
+  },
+  "bond_fox_care": {
+    "bond": "care",
+    "species": "fox"
+  },
+  "bond_boar_care": {
+    "bond": "care",
+    "species": "boar"
+  },
+  "bond_crocodile_care": {
+    "bond": "care",
+    "species": "crocodile"
+  },
+  "bond_elephant_care": {
+    "bond": "care",
+    "species": "elephant"
+  },
+  "bond_lion_care": {
+    "bond": "care",
+    "species": "lion"
+  },
+  "bond_tiger_care": {
+    "bond": "care",
+    "species": "tiger"
+  },
+  "bond_penguin_care": {
+    "bond": "care",
+    "species": "penguin"
+  },
+  "bond_turtle_care": {
+    "bond": "care",
+    "species": "turtle"
+  },
+  "bond_goat_care": {
+    "bond": "care",
+    "species": "goat"
+  },
+  "bond_deer_care": {
+    "bond": "care",
+    "species": "deer"
+  },
+  "bond_crab_care": {
+    "bond": "care",
+    "species": "crab"
+  },
+  "bond_scorpion_care": {
+    "bond": "care",
+    "species": "scorpion"
+  },
+  "bond_frog_care": {
+    "bond": "care",
+    "species": "frog"
+  },
+  "bond_bull_care": {
+    "bond": "care",
+    "species": "bull"
+  },
+  "bond_bee_care": {
+    "bond": "care",
+    "species": "bee"
+  },
+  "bond_rat_care": {
+    "bond": "care",
+    "species": "rat"
+  },
+  "bond_zombie_care": {
+    "bond": "care",
+    "species": "zombie"
+  },
+  "bond_skeleton_care": {
+    "bond": "care",
+    "species": "skeleton"
+  },
+  "bond_dummy_care": {
+    "bond": "care",
+    "species": "dummy"
+  },
+  "bond_duck_care": {
+    "bond": "care",
+    "species": "duck"
+  },
+  "bond_goose_care": {
+    "bond": "care",
+    "species": "goose"
+  },
+  "bond_turkey_care": {
+    "bond": "care",
+    "species": "turkey"
+  },
+  "bond_pig_care": {
+    "bond": "care",
+    "species": "pig"
+  },
+  "bond_cow_care": {
+    "bond": "care",
+    "species": "cow"
+  },
+  "bond_sheep_care": {
+    "bond": "care",
+    "species": "sheep"
+  },
+  "bond_donkey_care": {
+    "bond": "care",
+    "species": "donkey"
+  },
+  "bond_camel_care": {
+    "bond": "care",
+    "species": "camel"
+  },
+  "bond_llama_care": {
+    "bond": "care",
+    "species": "llama"
+  },
+  "bond_giraffe_care": {
+    "bond": "care",
+    "species": "giraffe"
+  },
+  "bond_zebra_care": {
+    "bond": "care",
+    "species": "zebra"
+  },
+  "bond_rhino_care": {
+    "bond": "care",
+    "species": "rhino"
+  },
+  "bond_hippo_care": {
+    "bond": "care",
+    "species": "hippo"
+  },
+  "bond_bison_care": {
+    "bond": "care",
+    "species": "bison"
+  },
+  "bond_panda_care": {
+    "bond": "care",
+    "species": "panda"
+  },
+  "bond_koala_care": {
+    "bond": "care",
+    "species": "koala"
+  },
+  "bond_capybara_care": {
+    "bond": "care",
+    "species": "capybara"
+  },
+  "bond_otter_care": {
+    "bond": "care",
+    "species": "otter"
+  },
+  "bond_raccoon_care": {
+    "bond": "care",
+    "species": "raccoon"
+  },
+  "bond_hedgehog_care": {
+    "bond": "care",
+    "species": "hedgehog"
+  },
+  "bond_armadillo_care": {
+    "bond": "care",
+    "species": "armadillo"
+  },
+  "bond_butterfly_care": {
+    "bond": "care",
+    "species": "butterfly"
+  },
+  "bond_beetle_care": {
+    "bond": "care",
+    "species": "beetle"
+  },
+  "bond_mantis_care": {
+    "bond": "care",
+    "species": "mantis"
+  },
+  "bond_snail_care": {
+    "bond": "care",
+    "species": "snail"
+  },
+  "bond_octopus_care": {
+    "bond": "care",
+    "species": "octopus"
+  },
+  "bond_raptor_care": {
+    "bond": "care",
+    "species": "raptor"
+  },
+  "bond_dragon_care": {
+    "bond": "care",
+    "species": "dragon"
+  },
+  "bond_slime_care": {
+    "bond": "care",
+    "species": "slime"
+  },
+  "bond_cave_bat_care": {
+    "bond": "care",
+    "species": "cave_bat"
+  },
+  "bond_queen_ant_care": {
+    "bond": "care",
+    "species": "queen_ant"
+  },
+  "bond_queen_bee_care": {
+    "bond": "care",
+    "species": "queen_bee"
+  },
+  "bond_anteater_care": {
+    "bond": "care",
+    "species": "anteater"
+  },
+  "bond_mahoraga_care": {
+    "bond": "care",
+    "species": "mahoraga"
+  },
+  "bond_triceratops_care": {
+    "bond": "care",
+    "species": "triceratops"
+  },
+  "bond_stegosaurus_care": {
+    "bond": "care",
+    "species": "stegosaurus"
+  },
+  "bond_brachiosaurus_care": {
+    "bond": "care",
+    "species": "brachiosaurus"
+  },
+  "bond_spinosaurus_care": {
+    "bond": "care",
+    "species": "spinosaurus"
+  },
+  "bond_ankylosaurus_care": {
+    "bond": "care",
+    "species": "ankylosaurus"
+  },
+  "bond_parasaurolophus_care": {
+    "bond": "care",
+    "species": "parasaurolophus"
+  },
+  "bond_diplodocus_care": {
+    "bond": "care",
+    "species": "diplodocus"
+  },
+  "bond_tung_sahur_care": {
+    "bond": "care",
+    "species": "tung_sahur"
+  },
+  "bond_tralalero_care": {
+    "bond": "care",
+    "species": "tralalero"
+  },
+  "bond_saturnita_care": {
+    "bond": "care",
+    "species": "saturnita"
+  },
+  "bond_bombardiro_care": {
+    "bond": "care",
+    "species": "bombardiro"
+  },
+  "bond_udin_care": {
+    "bond": "care",
+    "species": "udin"
+  },
+  "bond_cappuccino_assassino_care": {
+    "bond": "care",
+    "species": "cappuccino_assassino"
+  },
+  "bond_ballerina_cappuccina_care": {
+    "bond": "care",
+    "species": "ballerina_cappuccina"
+  },
+  "bond_patapim_care": {
+    "bond": "care",
+    "species": "patapim"
+  },
+  "bond_lirili_care": {
+    "bond": "care",
+    "species": "lirili"
+  },
+  "bond_chimpanzini_care": {
+    "bond": "care",
+    "species": "chimpanzini"
+  },
+  "bond_pikachu_care": {
+    "bond": "care",
+    "species": "pikachu"
+  },
+  "bond_charmander_care": {
+    "bond": "care",
+    "species": "charmander"
+  },
+  "bond_squirtle_care": {
+    "bond": "care",
+    "species": "squirtle"
+  },
+  "bond_bulbasaur_care": {
+    "bond": "care",
+    "species": "bulbasaur"
+  },
+  "bond_raichu_care": {
+    "bond": "care",
+    "species": "raichu"
+  },
+  "bond_charmeleon_care": {
+    "bond": "care",
+    "species": "charmeleon"
+  },
+  "bond_charizard_care": {
+    "bond": "care",
+    "species": "charizard"
+  },
+  "bond_wartortle_care": {
+    "bond": "care",
+    "species": "wartortle"
+  },
+  "bond_blastoise_care": {
+    "bond": "care",
+    "species": "blastoise"
+  },
+  "bond_ivysaur_care": {
+    "bond": "care",
+    "species": "ivysaur"
+  },
+  "bond_venusaur_care": {
+    "bond": "care",
+    "species": "venusaur"
+  },
+  "bond_beaver_care": {
+    "bond": "care",
+    "species": "beaver"
+  },
+  "bond_verity_care": {
+    "bond": "care",
+    "species": "verity"
+  },
+  "bond_status": {
+    "bond": "status"
+  },
+  "bond_pigeon_status": {
+    "bond": "status",
+    "species": "pigeon"
+  },
+  "bond_monkey_status": {
+    "bond": "status",
+    "species": "monkey"
+  },
+  "bond_gorilla_status": {
+    "bond": "status",
+    "species": "gorilla"
+  },
+  "bond_bear_status": {
+    "bond": "status",
+    "species": "bear"
+  },
+  "bond_dog_status": {
+    "bond": "status",
+    "species": "dog"
+  },
+  "bond_wolf_status": {
+    "bond": "status",
+    "species": "wolf"
+  },
+  "bond_horse_status": {
+    "bond": "status",
+    "species": "horse"
+  },
+  "bond_unicorn_status": {
+    "bond": "status",
+    "species": "unicorn"
+  },
+  "bond_shark_status": {
+    "bond": "status",
+    "species": "shark"
+  },
+  "bond_eagle_status": {
+    "bond": "status",
+    "species": "eagle"
+  },
+  "bond_chicken_status": {
+    "bond": "status",
+    "species": "chicken"
+  },
+  "bond_snake_status": {
+    "bond": "status",
+    "species": "snake"
+  },
+  "bond_spider_status": {
+    "bond": "status",
+    "species": "spider"
+  },
+  "bond_ant_status": {
+    "bond": "status",
+    "species": "ant"
+  },
+  "bond_trex_status": {
+    "bond": "status",
+    "species": "trex"
+  },
+  "bond_cat_status": {
+    "bond": "status",
+    "species": "cat"
+  },
+  "bond_rabbit_status": {
+    "bond": "status",
+    "species": "rabbit"
+  },
+  "bond_fox_status": {
+    "bond": "status",
+    "species": "fox"
+  },
+  "bond_boar_status": {
+    "bond": "status",
+    "species": "boar"
+  },
+  "bond_crocodile_status": {
+    "bond": "status",
+    "species": "crocodile"
+  },
+  "bond_elephant_status": {
+    "bond": "status",
+    "species": "elephant"
+  },
+  "bond_lion_status": {
+    "bond": "status",
+    "species": "lion"
+  },
+  "bond_tiger_status": {
+    "bond": "status",
+    "species": "tiger"
+  },
+  "bond_penguin_status": {
+    "bond": "status",
+    "species": "penguin"
+  },
+  "bond_turtle_status": {
+    "bond": "status",
+    "species": "turtle"
+  },
+  "bond_goat_status": {
+    "bond": "status",
+    "species": "goat"
+  },
+  "bond_deer_status": {
+    "bond": "status",
+    "species": "deer"
+  },
+  "bond_crab_status": {
+    "bond": "status",
+    "species": "crab"
+  },
+  "bond_scorpion_status": {
+    "bond": "status",
+    "species": "scorpion"
+  },
+  "bond_frog_status": {
+    "bond": "status",
+    "species": "frog"
+  },
+  "bond_bull_status": {
+    "bond": "status",
+    "species": "bull"
+  },
+  "bond_bee_status": {
+    "bond": "status",
+    "species": "bee"
+  },
+  "bond_rat_status": {
+    "bond": "status",
+    "species": "rat"
+  },
+  "bond_zombie_status": {
+    "bond": "status",
+    "species": "zombie"
+  },
+  "bond_skeleton_status": {
+    "bond": "status",
+    "species": "skeleton"
+  },
+  "bond_dummy_status": {
+    "bond": "status",
+    "species": "dummy"
+  },
+  "bond_duck_status": {
+    "bond": "status",
+    "species": "duck"
+  },
+  "bond_goose_status": {
+    "bond": "status",
+    "species": "goose"
+  },
+  "bond_turkey_status": {
+    "bond": "status",
+    "species": "turkey"
+  },
+  "bond_pig_status": {
+    "bond": "status",
+    "species": "pig"
+  },
+  "bond_cow_status": {
+    "bond": "status",
+    "species": "cow"
+  },
+  "bond_sheep_status": {
+    "bond": "status",
+    "species": "sheep"
+  },
+  "bond_donkey_status": {
+    "bond": "status",
+    "species": "donkey"
+  },
+  "bond_camel_status": {
+    "bond": "status",
+    "species": "camel"
+  },
+  "bond_llama_status": {
+    "bond": "status",
+    "species": "llama"
+  },
+  "bond_giraffe_status": {
+    "bond": "status",
+    "species": "giraffe"
+  },
+  "bond_zebra_status": {
+    "bond": "status",
+    "species": "zebra"
+  },
+  "bond_rhino_status": {
+    "bond": "status",
+    "species": "rhino"
+  },
+  "bond_hippo_status": {
+    "bond": "status",
+    "species": "hippo"
+  },
+  "bond_bison_status": {
+    "bond": "status",
+    "species": "bison"
+  },
+  "bond_panda_status": {
+    "bond": "status",
+    "species": "panda"
+  },
+  "bond_koala_status": {
+    "bond": "status",
+    "species": "koala"
+  },
+  "bond_capybara_status": {
+    "bond": "status",
+    "species": "capybara"
+  },
+  "bond_otter_status": {
+    "bond": "status",
+    "species": "otter"
+  },
+  "bond_raccoon_status": {
+    "bond": "status",
+    "species": "raccoon"
+  },
+  "bond_hedgehog_status": {
+    "bond": "status",
+    "species": "hedgehog"
+  },
+  "bond_armadillo_status": {
+    "bond": "status",
+    "species": "armadillo"
+  },
+  "bond_butterfly_status": {
+    "bond": "status",
+    "species": "butterfly"
+  },
+  "bond_beetle_status": {
+    "bond": "status",
+    "species": "beetle"
+  },
+  "bond_mantis_status": {
+    "bond": "status",
+    "species": "mantis"
+  },
+  "bond_snail_status": {
+    "bond": "status",
+    "species": "snail"
+  },
+  "bond_octopus_status": {
+    "bond": "status",
+    "species": "octopus"
+  },
+  "bond_raptor_status": {
+    "bond": "status",
+    "species": "raptor"
+  },
+  "bond_dragon_status": {
+    "bond": "status",
+    "species": "dragon"
+  },
+  "bond_slime_status": {
+    "bond": "status",
+    "species": "slime"
+  },
+  "bond_cave_bat_status": {
+    "bond": "status",
+    "species": "cave_bat"
+  },
+  "bond_queen_ant_status": {
+    "bond": "status",
+    "species": "queen_ant"
+  },
+  "bond_queen_bee_status": {
+    "bond": "status",
+    "species": "queen_bee"
+  },
+  "bond_anteater_status": {
+    "bond": "status",
+    "species": "anteater"
+  },
+  "bond_mahoraga_status": {
+    "bond": "status",
+    "species": "mahoraga"
+  },
+  "bond_triceratops_status": {
+    "bond": "status",
+    "species": "triceratops"
+  },
+  "bond_stegosaurus_status": {
+    "bond": "status",
+    "species": "stegosaurus"
+  },
+  "bond_brachiosaurus_status": {
+    "bond": "status",
+    "species": "brachiosaurus"
+  },
+  "bond_spinosaurus_status": {
+    "bond": "status",
+    "species": "spinosaurus"
+  },
+  "bond_ankylosaurus_status": {
+    "bond": "status",
+    "species": "ankylosaurus"
+  },
+  "bond_parasaurolophus_status": {
+    "bond": "status",
+    "species": "parasaurolophus"
+  },
+  "bond_diplodocus_status": {
+    "bond": "status",
+    "species": "diplodocus"
+  },
+  "bond_tung_sahur_status": {
+    "bond": "status",
+    "species": "tung_sahur"
+  },
+  "bond_tralalero_status": {
+    "bond": "status",
+    "species": "tralalero"
+  },
+  "bond_saturnita_status": {
+    "bond": "status",
+    "species": "saturnita"
+  },
+  "bond_bombardiro_status": {
+    "bond": "status",
+    "species": "bombardiro"
+  },
+  "bond_udin_status": {
+    "bond": "status",
+    "species": "udin"
+  },
+  "bond_cappuccino_assassino_status": {
+    "bond": "status",
+    "species": "cappuccino_assassino"
+  },
+  "bond_ballerina_cappuccina_status": {
+    "bond": "status",
+    "species": "ballerina_cappuccina"
+  },
+  "bond_patapim_status": {
+    "bond": "status",
+    "species": "patapim"
+  },
+  "bond_lirili_status": {
+    "bond": "status",
+    "species": "lirili"
+  },
+  "bond_chimpanzini_status": {
+    "bond": "status",
+    "species": "chimpanzini"
+  },
+  "bond_pikachu_status": {
+    "bond": "status",
+    "species": "pikachu"
+  },
+  "bond_charmander_status": {
+    "bond": "status",
+    "species": "charmander"
+  },
+  "bond_squirtle_status": {
+    "bond": "status",
+    "species": "squirtle"
+  },
+  "bond_bulbasaur_status": {
+    "bond": "status",
+    "species": "bulbasaur"
+  },
+  "bond_raichu_status": {
+    "bond": "status",
+    "species": "raichu"
+  },
+  "bond_charmeleon_status": {
+    "bond": "status",
+    "species": "charmeleon"
+  },
+  "bond_charizard_status": {
+    "bond": "status",
+    "species": "charizard"
+  },
+  "bond_wartortle_status": {
+    "bond": "status",
+    "species": "wartortle"
+  },
+  "bond_blastoise_status": {
+    "bond": "status",
+    "species": "blastoise"
+  },
+  "bond_ivysaur_status": {
+    "bond": "status",
+    "species": "ivysaur"
+  },
+  "bond_venusaur_status": {
+    "bond": "status",
+    "species": "venusaur"
+  },
+  "bond_beaver_status": {
+    "bond": "status",
+    "species": "beaver"
+  },
+  "bond_verity_status": {
+    "bond": "status",
+    "species": "verity"
+  },
+  "bond_pack": {
+    "bond": "pack"
+  },
+  "bond_pigeon_pack": {
+    "bond": "pack",
+    "species": "pigeon"
+  },
+  "bond_monkey_pack": {
+    "bond": "pack",
+    "species": "monkey"
+  },
+  "bond_gorilla_pack": {
+    "bond": "pack",
+    "species": "gorilla"
+  },
+  "bond_bear_pack": {
+    "bond": "pack",
+    "species": "bear"
+  },
+  "bond_dog_pack": {
+    "bond": "pack",
+    "species": "dog"
+  },
+  "bond_wolf_pack": {
+    "bond": "pack",
+    "species": "wolf"
+  },
+  "bond_horse_pack": {
+    "bond": "pack",
+    "species": "horse"
+  },
+  "bond_unicorn_pack": {
+    "bond": "pack",
+    "species": "unicorn"
+  },
+  "bond_shark_pack": {
+    "bond": "pack",
+    "species": "shark"
+  },
+  "bond_eagle_pack": {
+    "bond": "pack",
+    "species": "eagle"
+  },
+  "bond_chicken_pack": {
+    "bond": "pack",
+    "species": "chicken"
+  },
+  "bond_snake_pack": {
+    "bond": "pack",
+    "species": "snake"
+  },
+  "bond_spider_pack": {
+    "bond": "pack",
+    "species": "spider"
+  },
+  "bond_ant_pack": {
+    "bond": "pack",
+    "species": "ant"
+  },
+  "bond_trex_pack": {
+    "bond": "pack",
+    "species": "trex"
+  },
+  "bond_cat_pack": {
+    "bond": "pack",
+    "species": "cat"
+  },
+  "bond_rabbit_pack": {
+    "bond": "pack",
+    "species": "rabbit"
+  },
+  "bond_fox_pack": {
+    "bond": "pack",
+    "species": "fox"
+  },
+  "bond_boar_pack": {
+    "bond": "pack",
+    "species": "boar"
+  },
+  "bond_crocodile_pack": {
+    "bond": "pack",
+    "species": "crocodile"
+  },
+  "bond_elephant_pack": {
+    "bond": "pack",
+    "species": "elephant"
+  },
+  "bond_lion_pack": {
+    "bond": "pack",
+    "species": "lion"
+  },
+  "bond_tiger_pack": {
+    "bond": "pack",
+    "species": "tiger"
+  },
+  "bond_penguin_pack": {
+    "bond": "pack",
+    "species": "penguin"
+  },
+  "bond_turtle_pack": {
+    "bond": "pack",
+    "species": "turtle"
+  },
+  "bond_goat_pack": {
+    "bond": "pack",
+    "species": "goat"
+  },
+  "bond_deer_pack": {
+    "bond": "pack",
+    "species": "deer"
+  },
+  "bond_crab_pack": {
+    "bond": "pack",
+    "species": "crab"
+  },
+  "bond_scorpion_pack": {
+    "bond": "pack",
+    "species": "scorpion"
+  },
+  "bond_frog_pack": {
+    "bond": "pack",
+    "species": "frog"
+  },
+  "bond_bull_pack": {
+    "bond": "pack",
+    "species": "bull"
+  },
+  "bond_bee_pack": {
+    "bond": "pack",
+    "species": "bee"
+  },
+  "bond_rat_pack": {
+    "bond": "pack",
+    "species": "rat"
+  },
+  "bond_zombie_pack": {
+    "bond": "pack",
+    "species": "zombie"
+  },
+  "bond_skeleton_pack": {
+    "bond": "pack",
+    "species": "skeleton"
+  },
+  "bond_dummy_pack": {
+    "bond": "pack",
+    "species": "dummy"
+  },
+  "bond_duck_pack": {
+    "bond": "pack",
+    "species": "duck"
+  },
+  "bond_goose_pack": {
+    "bond": "pack",
+    "species": "goose"
+  },
+  "bond_turkey_pack": {
+    "bond": "pack",
+    "species": "turkey"
+  },
+  "bond_pig_pack": {
+    "bond": "pack",
+    "species": "pig"
+  },
+  "bond_cow_pack": {
+    "bond": "pack",
+    "species": "cow"
+  },
+  "bond_sheep_pack": {
+    "bond": "pack",
+    "species": "sheep"
+  },
+  "bond_donkey_pack": {
+    "bond": "pack",
+    "species": "donkey"
+  },
+  "bond_camel_pack": {
+    "bond": "pack",
+    "species": "camel"
+  },
+  "bond_llama_pack": {
+    "bond": "pack",
+    "species": "llama"
+  },
+  "bond_giraffe_pack": {
+    "bond": "pack",
+    "species": "giraffe"
+  },
+  "bond_zebra_pack": {
+    "bond": "pack",
+    "species": "zebra"
+  },
+  "bond_rhino_pack": {
+    "bond": "pack",
+    "species": "rhino"
+  },
+  "bond_hippo_pack": {
+    "bond": "pack",
+    "species": "hippo"
+  },
+  "bond_bison_pack": {
+    "bond": "pack",
+    "species": "bison"
+  },
+  "bond_panda_pack": {
+    "bond": "pack",
+    "species": "panda"
+  },
+  "bond_koala_pack": {
+    "bond": "pack",
+    "species": "koala"
+  },
+  "bond_capybara_pack": {
+    "bond": "pack",
+    "species": "capybara"
+  },
+  "bond_otter_pack": {
+    "bond": "pack",
+    "species": "otter"
+  },
+  "bond_raccoon_pack": {
+    "bond": "pack",
+    "species": "raccoon"
+  },
+  "bond_hedgehog_pack": {
+    "bond": "pack",
+    "species": "hedgehog"
+  },
+  "bond_armadillo_pack": {
+    "bond": "pack",
+    "species": "armadillo"
+  },
+  "bond_butterfly_pack": {
+    "bond": "pack",
+    "species": "butterfly"
+  },
+  "bond_beetle_pack": {
+    "bond": "pack",
+    "species": "beetle"
+  },
+  "bond_mantis_pack": {
+    "bond": "pack",
+    "species": "mantis"
+  },
+  "bond_snail_pack": {
+    "bond": "pack",
+    "species": "snail"
+  },
+  "bond_octopus_pack": {
+    "bond": "pack",
+    "species": "octopus"
+  },
+  "bond_raptor_pack": {
+    "bond": "pack",
+    "species": "raptor"
+  },
+  "bond_dragon_pack": {
+    "bond": "pack",
+    "species": "dragon"
+  },
+  "bond_slime_pack": {
+    "bond": "pack",
+    "species": "slime"
+  },
+  "bond_cave_bat_pack": {
+    "bond": "pack",
+    "species": "cave_bat"
+  },
+  "bond_queen_ant_pack": {
+    "bond": "pack",
+    "species": "queen_ant"
+  },
+  "bond_queen_bee_pack": {
+    "bond": "pack",
+    "species": "queen_bee"
+  },
+  "bond_anteater_pack": {
+    "bond": "pack",
+    "species": "anteater"
+  },
+  "bond_mahoraga_pack": {
+    "bond": "pack",
+    "species": "mahoraga"
+  },
+  "bond_triceratops_pack": {
+    "bond": "pack",
+    "species": "triceratops"
+  },
+  "bond_stegosaurus_pack": {
+    "bond": "pack",
+    "species": "stegosaurus"
+  },
+  "bond_brachiosaurus_pack": {
+    "bond": "pack",
+    "species": "brachiosaurus"
+  },
+  "bond_spinosaurus_pack": {
+    "bond": "pack",
+    "species": "spinosaurus"
+  },
+  "bond_ankylosaurus_pack": {
+    "bond": "pack",
+    "species": "ankylosaurus"
+  },
+  "bond_parasaurolophus_pack": {
+    "bond": "pack",
+    "species": "parasaurolophus"
+  },
+  "bond_diplodocus_pack": {
+    "bond": "pack",
+    "species": "diplodocus"
+  },
+  "bond_tung_sahur_pack": {
+    "bond": "pack",
+    "species": "tung_sahur"
+  },
+  "bond_tralalero_pack": {
+    "bond": "pack",
+    "species": "tralalero"
+  },
+  "bond_saturnita_pack": {
+    "bond": "pack",
+    "species": "saturnita"
+  },
+  "bond_bombardiro_pack": {
+    "bond": "pack",
+    "species": "bombardiro"
+  },
+  "bond_udin_pack": {
+    "bond": "pack",
+    "species": "udin"
+  },
+  "bond_cappuccino_assassino_pack": {
+    "bond": "pack",
+    "species": "cappuccino_assassino"
+  },
+  "bond_ballerina_cappuccina_pack": {
+    "bond": "pack",
+    "species": "ballerina_cappuccina"
+  },
+  "bond_patapim_pack": {
+    "bond": "pack",
+    "species": "patapim"
+  },
+  "bond_lirili_pack": {
+    "bond": "pack",
+    "species": "lirili"
+  },
+  "bond_chimpanzini_pack": {
+    "bond": "pack",
+    "species": "chimpanzini"
+  },
+  "bond_pikachu_pack": {
+    "bond": "pack",
+    "species": "pikachu"
+  },
+  "bond_charmander_pack": {
+    "bond": "pack",
+    "species": "charmander"
+  },
+  "bond_squirtle_pack": {
+    "bond": "pack",
+    "species": "squirtle"
+  },
+  "bond_bulbasaur_pack": {
+    "bond": "pack",
+    "species": "bulbasaur"
+  },
+  "bond_raichu_pack": {
+    "bond": "pack",
+    "species": "raichu"
+  },
+  "bond_charmeleon_pack": {
+    "bond": "pack",
+    "species": "charmeleon"
+  },
+  "bond_charizard_pack": {
+    "bond": "pack",
+    "species": "charizard"
+  },
+  "bond_wartortle_pack": {
+    "bond": "pack",
+    "species": "wartortle"
+  },
+  "bond_blastoise_pack": {
+    "bond": "pack",
+    "species": "blastoise"
+  },
+  "bond_ivysaur_pack": {
+    "bond": "pack",
+    "species": "ivysaur"
+  },
+  "bond_venusaur_pack": {
+    "bond": "pack",
+    "species": "venusaur"
+  },
+  "bond_beaver_pack": {
+    "bond": "pack",
+    "species": "beaver"
+  },
+  "bond_verity_pack": {
+    "bond": "pack",
+    "species": "verity"
+  },
+  "coop_invite": {
+    "coop": "invite"
+  },
+  "coop_accept": {
+    "coop": "accept"
+  },
+  "coop_cancel": {
+    "coop": "cancel"
+  },
+  "coop_status": {
+    "coop": "status"
+  },
+  "fusion_info": {
+    "fusion_info": true
+  },
+  "bond_coop_chimera_care": {
+    "bond": "care",
+    "species": "coop_chimera"
+  },
+  "bond_coop_chimera_status": {
+    "bond": "status",
+    "species": "coop_chimera"
+  },
+  "bond_coop_chimera_pack": {
+    "bond": "pack",
+    "species": "coop_chimera"
+  },
+  "creature_tactics": {
+    "tactical": true
   }
 }

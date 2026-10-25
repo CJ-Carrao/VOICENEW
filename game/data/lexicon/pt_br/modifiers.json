@@ -22782,5 +22782,131 @@
       "que usa clivagem do sukuna",
       "que tem clivagem do sukuna"
     ]
+  },
+  "fusion_mahoraga": {
+    "words": [
+      "habilidade do mahoraga",
+      "habilidade de mahoraga",
+      "poder do mahoraga",
+      "poder de mahoraga",
+      "poderes do mahoraga"
+    ]
+  },
+  "fusion_pikachu": {
+    "words": [
+      "habilidade do pikachu",
+      "habilidade de pikachu",
+      "poder do pikachu",
+      "poder de pikachu",
+      "poderes do pikachu"
+    ]
+  },
+  "fusion_charmander": {
+    "words": [
+      "habilidade do charmander",
+      "habilidade de charmander",
+      "poder do charmander",
+      "poder de charmander",
+      "poderes do charmander"
+    ]
+  },
+  "fusion_squirtle": {
+    "words": [
+      "habilidade do squirtle",
+      "habilidade de squirtle",
+      "poder do squirtle",
+      "poder de squirtle",
+      "poderes do squirtle"
+    ]
+  },
+  "fusion_bulbasaur": {
+    "words": [
+      "habilidade do bulbasaur",
+      "habilidade de bulbasaur",
+      "poder do bulbasaur",
+      "poder de bulbasaur",
+      "poderes do bulbasaur"
+    ]
+  },
+  "fusion_raichu": {
+    "words": [
+      "habilidade do raichu",
+      "habilidade de raichu",
+      "poder do raichu",
+      "poder de raichu",
+      "poderes do raichu"
+    ]
+  },
+  "fusion_charmeleon": {
+    "words": [
+      "habilidade do charmeleon",
+      "habilidade de charmeleon",
+      "poder do charmeleon",
+      "poder de charmeleon",
+      "poderes do charmeleon"
+    ]
+  },
+  "fusion_charizard": {
+    "words": [
+      "habilidade do charizard",
+      "habilidade de charizard",
+      "poder do charizard",
+      "poder de charizard",
+      "poderes do charizard"
+    ]
+  },
+  "fusion_wartortle": {
+    "words": [
+      "habilidade do wartortle",
+      "habilidade de wartortle",
+      "poder do wartortle",
+      "poder de wartortle",
+      "poderes do wartortle"
+    ]
+  },
+  "fusion_blastoise": {
+    "words": [
+      "habilidade do blastoise",
+      "habilidade de blastoise",
+      "poder do blastoise",
+      "poder de blastoise",
+      "poderes do blastoise"
+    ]
+  },
+  "fusion_ivysaur": {
+    "words": [
+      "habilidade do ivysaur",
+      "habilidade de ivysaur",
+      "poder do ivysaur",
+      "poder de ivysaur",
+      "poderes do ivysaur"
+    ]
+  },
+  "fusion_venusaur": {
+    "words": [
+      "habilidade do venusaur",
+      "habilidade de venusaur",
+      "poder do venusaur",
+      "poder de venusaur",
+      "poderes do venusaur"
+    ]
+  },
+  "fusion_dragon": {
+    "words": [
+      "habilidade do dragão",
+      "habilidade de dragão",
+      "poder do dragão",
+      "poder de dragão",
+      "poderes do dragão"
+    ]
+  },
+  "armored": {
+    "words": [
+      "com armadura",
+      "armadurado",
+      "armadurada",
+      "blindado",
+      "blindada"
+    ]
   }
 }

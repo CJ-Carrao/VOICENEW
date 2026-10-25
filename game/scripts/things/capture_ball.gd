@@ -57,6 +57,7 @@ func _attempt(reference: WeakRef, roll: float = -1.0) -> bool:
 	if not is_instance_valid(thing) or thing.is_dead or not thing.has_simulation_authority() or occupant() != null: return false
 	var target = reference.get_ref()
 	if not is_instance_valid(target) or not target is Thing or target.is_dead or target.is_captured or target.is_held or target.is_building or target.category != "creature": return false
+	if target.get_node_or_null("CoopBoss") != null: result = "rejected"; return false
 	attempted = true
 	var life := clampf(target.hp / maxf(target.max_hp, 1.0), 0.0, 1.0)
 	var chance := clampf(.22 + (1.0 - life) * .55 + clampf(1.0 - target.bounds.size.length() / 8.0, 0.0, .20) + (.10 if target.team == thing.team else 0.0), .15, .90)
@@ -70,6 +71,8 @@ func _attempt(reference: WeakRef, roll: float = -1.0) -> bool:
 	occupant_ref = weakref(target)
 	occupant_id = target.network_id
 	occupant_name = Lexicon.data.thing_name(target.thing_id)
+	var temporary = target.get_node_or_null("CreativeEffects")
+	if temporary != null: temporary.restore()
 	Forge.transfer_owner(target, thing.owner_player as Player, thing)
 	target.set_captured(true)
 	result = "captured"

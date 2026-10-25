@@ -1899,7 +1899,8 @@
           }
         }
       }
-    ]
+    ],
+    "fusion_behaviors": true
   },
   "slime": {
     "category": "creature",
@@ -3811,5 +3812,93 @@
     "cursed_projectile": {
       "mode": "fuga"
     }
+  },
+  "age_ray": {
+    "category": "weapon",
+    "impact": "stop",
+    "movement": "static",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "creative",
+          "mode": "age"
+        }
+      }
+    ]
+  },
+  "head_swap_ray": {
+    "category": "weapon",
+    "impact": "stop",
+    "movement": "static",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "creative",
+          "mode": "swap"
+        }
+      }
+    ]
+  },
+  "team_charm_grenade": {
+    "category": "projectile",
+    "impact": "stop",
+    "movement": "ballistic",
+    "behaviors": [
+      {
+        "when": {
+          "type": "after",
+          "s": 2.0
+        },
+        "do": {
+          "type": "creative",
+          "mode": "charm"
+        }
+      }
+    ]
+  },
+  "coop_chimera": {
+    "category": "creature",
+    "movement": "fly",
+    "impact": "stop",
+    "voxel_motion": true,
+    "aerial": true,
+    "coop_boss": true,
+    "jujutsu": {
+      "adaptation": true
+    },
+    "ecology_tags": [
+      "dinosaur",
+      "boss"
+    ]
+  },
+  "butterfly_shield": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "butterfly_shield": true,
+    "butterfly_shield_advanced": false,
+    "shield_profile": "butterfly",
+    "shield_radius": 3.0
+  },
+  "advanced_butterfly_shield": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "butterfly_shield": true,
+    "butterfly_shield_advanced": true,
+    "shield_profile": "butterfly",
+    "shield_radius": 3.0
+  },
+  "shield_butterfly": {
+    "category": "projectile",
+    "movement": "fly",
+    "impact": "stop",
+    "shield_cosmetic": true
   }
 }

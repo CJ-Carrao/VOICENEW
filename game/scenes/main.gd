@@ -433,6 +433,10 @@ func _start_round(number: int) -> void :
 
 
 func _on_player_died(dead: Player) -> void :
+	var encounter := get_node_or_null("CoopEncounter")
+	if encounter != null and encounter.phase == "battle":
+		dead.frozen = true
+		return
 	if not Session.has_authority() or state not in ["fight", "online_play"]:
 		return
 	dead.frozen = true

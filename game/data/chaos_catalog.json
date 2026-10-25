@@ -1144,6 +1144,51 @@
       "effect": "Corte de contato em um alvo: ajusta o dano à resistência vital, limitado entre 32 e 70. Não atravessa Infinito. Recarga de 0,8 s.",
       "pieces": 6,
       "base_cost": 105
+    },
+    {
+      "id": "age_ray",
+      "name": "Raio de envelhecimento",
+      "phrase": "quero raio de envelhecimento",
+      "group": "Criatividade",
+      "effect": "Envelhece uma criatura por 6 s: lentidão de 45%, sem perda de habilidades. Recarga 5 s, alcance 24 m, proteção contra renovação.",
+      "pieces": 5,
+      "base_cost": 95
+    },
+    {
+      "id": "head_swap_ray",
+      "name": "Raio de troca de cabeças",
+      "phrase": "quero raio de troca de cabecas",
+      "group": "Criatividade",
+      "effect": "Troca a aparência das cabeças de duas criaturas inimigas na mira por 8 s, preservando vida, poderes e armas. Recarga 12 s.",
+      "pieces": 5,
+      "base_cost": 145
+    },
+    {
+      "id": "team_charm_grenade",
+      "name": "Granada de inversão de equipe",
+      "phrase": "quero granada de inversao de equipe",
+      "group": "Criatividade",
+      "effect": "Após 2 s, converte até 8 criaturas inimigas num raio de 5 m por 6 s. Equipe e dono originais retornam; captura encerra o efeito antes de transferir a posse.",
+      "pieces": 4,
+      "base_cost": 180
+    },
+    {
+      "id": "butterfly_shield",
+      "name": "Escudo de borboletas",
+      "phrase": "quero escudo de borboletas",
+      "group": "Defesas",
+      "base_cost": 100,
+      "pieces": 8,
+      "effect": "Converte projéteis comuns em borboletas inofensivas num raio de 3 m. Energia limitada, regeneração de 4/s. Até 25 de dano por projétil; reserva 20. Não converte bombas nem técnicas fortes."
+    },
+    {
+      "id": "advanced_butterfly_shield",
+      "name": "Escudo de borboletas avançado",
+      "phrase": "quero escudo de borboletas avancado",
+      "group": "Defesas",
+      "base_cost": 220,
+      "pieces": 8,
+      "effect": "Converte projéteis comuns em borboletas inofensivas num raio de 3 m. Energia limitada, regeneração de 4/s. Suporta projéteis de até 45 de dano; reserva 32. Não converte bombas nem técnicas fortes."
     }
   ],
   "combinations": [

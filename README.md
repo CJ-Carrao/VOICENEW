@@ -39,6 +39,11 @@ Exemplos: “quero um cachorro com cara de tiranossauro rex”, “quero um Pika
 - Raios do Ryu e Yuta com disputa de feixes, Verity e revisão dos golpes de Black Flash, Cleave, Dismantle e Fuga.
 - Clash de domínios com anulação dos acertos na área sobreposta, vitória ou empate e quebra das barreiras.
 - Espada espacial com fenda curva próxima, passagem pelo Infinito e corte real dos blocos.
+- Fusões com poderes herdados, raio de envelhecimento, troca temporária de cabeças e granada de inversão de equipe.
+- Confiança e medo das criaturas, cuidado e proteção de companheiros.
+- Chefe cooperativo com aceite dos participantes, aliança temporária, golpes anunciados e recompensa limitada.
+- Defesa automática do treinador e retaliação ao agressor, transporte de companheiros e torres, reparos por formigas e ordens condicionais.
+- Transformações com pouca vida que preservam armas e poderes; escudos que convertem tiros em borboletas, com energia limitada.
 - Partidas online. Todos os participantes precisam usar a mesma versão.
 
 ## Código e documentação
@@ -55,6 +60,8 @@ Para editar ou recompilar, é necessário preparar a engine e as dependências l
 - [Criatividade, defesas e colônias](criatividade.md)
 - [Ordens e animais construtores](animais-ordens.md)
 - [Próximas tarefas](tarefas.md)
+- [Fusões, armas criativas, vínculo e chefes](criatividade-completa.md)
+- [Equipes, regras por voz, defesa automática e transformações](taticas-criaturas.md)
 
 ## Créditos
 

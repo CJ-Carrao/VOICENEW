@@ -16,9 +16,17 @@ static func apply_damage(target: Object, amount: float, type: String, source: Th
 		return
 	if not InnovationRules.allows_target(source, target):
 		return
+	if is_instance_valid(source) and target.get("team") != null and load("res://scripts/things/coop_encounter.gd").allied(source.team,int(target.get("team"))): return
 	var order_owner = load("res://scripts/things/animal_orders.gd").of(source)
 	if order_owner != null and order_owner.mode == "aggressive" and target == order_owner.thing.owner_player: return
 	var final: = amount
+	if target is Thing:
+		var transformation = target.get_node_or_null("CreatureTransform")
+		if transformation != null: final *= transformation.damage_multiplier()
+		if bool(target.node_data.get("mods",{}).get("armored",false)): final *= .9
+	if target is Thing:
+		var boss = target.get_node_or_null("CoopBoss")
+		if boss != null: final *= boss.damage_multiplier()
 	var combo := {}
 	if type in ["water", "electric", "fire"] or delivery == "vine":
 		combo = load("res://scripts/things/creature_combos.gd").prepare(target, source, type, delivery, amount)
@@ -41,6 +49,9 @@ static func apply_damage(target: Object, amount: float, type: String, source: Th
 				if is_instance_valid(attacker): target.set_meta("animal_last_attacker", {"source": weakref(attacker), "at": Time.get_ticks_msec()})
 			load("res://scripts/things/pokemon_companion.gd").record_damage(source, target, dealt)
 			if dealt > 0.0 and not combo.is_empty(): load("res://scripts/things/creature_combos.gd").landed(target, source, combo)
+			if dealt > 0.0 and target is Thing and target.category == "creature" and source.team != target.team:
+				var creature_attacker: Node3D = order_owner.thing if order_owner != null else source if source.category == "creature" else source.owner_player if is_instance_valid(source.owner_player) else source
+				target.set_meta("animal_last_attacker",{"source":weakref(creature_attacker),"at":Time.get_ticks_msec()})
 	_report_hit(target, final, source)
 	if target is Node3D and (target as Node3D).is_in_group(COMBATANTS_GROUP):
 		var node: = target as Node3D
@@ -80,6 +91,7 @@ static func hit_structure(target: Object, point: Vector3, shape_index: int, amou
 static func affects(source: Thing, target: Object) -> bool:
 	if not is_instance_valid(source) or target == source or not is_instance_valid(target):
 		return false
+	if target.get("team") != null and load("res://scripts/things/coop_encounter.gd").allied(source.team,int(target.get("team"))): return false
 	var orders = load("res://scripts/things/animal_orders.gd").of(source)
 	if orders != null and orders.active() and not orders.allows(target): return false
 	if orders != null and orders.mode == "aggressive": return InnovationRules.allows_target(source, target)
@@ -248,7 +260,7 @@ static func nearest_enemy(from: Vector3, team: int, tree: SceneTree) -> Node3D:
 	var best_dist: = INF
 	for node in tree.get_nodes_in_group(COMBATANTS_GROUP):
 		var other: = node as Node3D
-		if other == null or int(other.get("team")) == team or not other.call("is_alive"):
+		if other == null or int(other.get("team")) == team or load("res://scripts/things/coop_encounter.gd").allied(team,int(other.get("team"))) or not other.call("is_alive"):
 			continue
 		var dist: = center_of(other).distance_squared_to(from)
 		if dist < best_dist:

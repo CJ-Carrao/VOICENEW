@@ -106,6 +106,8 @@ func _configure(_lex: LexiconData) -> void :
 
 
 func _physics_process(delta: float) -> void :
+	var rig := thing.get_node_or_null("CreatureTactics") if is_instance_valid(thing) else null
+	if rig != null and rig.being_carried(): return
 	if thing == null or not thing.has_simulation_authority()\
 	or landed or not thing.is_active or thing.is_held or thing.is_dead or thing.ground_item:
 		return
@@ -130,6 +132,7 @@ func travel(motion: Vector3) -> void :
 		return
 	if motion.length_squared() < 1e-10:
 		return
+	if load("res://scripts/things/butterfly_shield.gd").intercept(thing,thing.global_position,thing.global_position+motion*Status.speed_mult(thing)): return
 	var collision_info: = thing.move_and_collide(motion * Status.speed_mult(thing))
 	if collision_info == null:
 		return

@@ -964,5 +964,61 @@
   "jj_contact_cleave": {
     "key": "jj_contact_cleave",
     "value": true
+  },
+  "fusion_mahoraga": {
+    "key": "fusion_mahoraga",
+    "value": true
+  },
+  "fusion_pikachu": {
+    "key": "fusion_pikachu",
+    "value": true
+  },
+  "fusion_charmander": {
+    "key": "fusion_charmander",
+    "value": true
+  },
+  "fusion_squirtle": {
+    "key": "fusion_squirtle",
+    "value": true
+  },
+  "fusion_bulbasaur": {
+    "key": "fusion_bulbasaur",
+    "value": true
+  },
+  "fusion_raichu": {
+    "key": "fusion_raichu",
+    "value": true
+  },
+  "fusion_charmeleon": {
+    "key": "fusion_charmeleon",
+    "value": true
+  },
+  "fusion_charizard": {
+    "key": "fusion_charizard",
+    "value": true
+  },
+  "fusion_wartortle": {
+    "key": "fusion_wartortle",
+    "value": true
+  },
+  "fusion_blastoise": {
+    "key": "fusion_blastoise",
+    "value": true
+  },
+  "fusion_ivysaur": {
+    "key": "fusion_ivysaur",
+    "value": true
+  },
+  "fusion_venusaur": {
+    "key": "fusion_venusaur",
+    "value": true
+  },
+  "fusion_dragon": {
+    "key": "fusion_dragon",
+    "value": true
+  },
+  "armored": {
+    "key": "armored",
+    "value": true
   }
 }

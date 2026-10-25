@@ -1,7 +1,7 @@
 ---
 title: Próximas melhorias do jogo
 date: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-25
 tags:
   - lavoice
   - planejamento
@@ -11,9 +11,11 @@ tags:
 
 Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · Relacionado: [[Projetos/lavoice-lab/pokemon|Pokémon e comandos de voz]] · [[Projetos/lavoice-lab/criatividade|Criatividade, colônias e defesas]] · [[Projetos/lavoice-lab/leia-me|Guia do LAVOICE Lab]]
 
-Cada etapa só será marcada como concluída depois de implementada, testada e incluída no executável. Progresso: **4 de 8 etapas concluídas**. As etapas 3 e 5 foram feitas juntas por pedido do usuário. Próxima etapa pendente: **fusões com poderes combinados**.
+Cada etapa só é marcada como concluída depois de implementada, testada e incluída no executável. Progresso: **8 de 8 etapas concluídas**. Todas estão reunidas em `build/LAVOICE-Lab-Criaturas-Inteligentes.exe`, aberto por `jogar.cmd`. Os nomes de executáveis nas primeiras etapas registram a entrega original de cada uma. Comandos e regras atuais: [[Projetos/lavoice-lab/criatividade-completa|Fusões, armas criativas, vínculo e chefes]].
 
 **Fora desta etapa:** ambiente reagindo automaticamente a elementos e modo laboratório. Não abrir o jogo automaticamente; validar sem janela.
+
+Nova lista de ideias: também foram concluídas **6 (criaturas em equipe), 7 (ordens condicionais), 5 (escudos que convertem tiros) e 1 (transformações)**, além da retaliação e defesa automática do treinador. Guia: [[Projetos/lavoice-lab/taticas-criaturas|Criaturas inteligentes e equipes]].
 
 - [x] **1. Evoluções durante a partida**
   - Experiência por participação em combate, sem contar ataques a aliados ou criações próprias como experiência gratuita.
@@ -47,11 +49,13 @@ Cada etapa só será marcada como concluída depois de implementada, testada e i
   - Validado: espécies, restrições de dono, dieta, armas montadas, voo, captura, retaliação, proteção do dono e atualização de ordens em um grupo de 80 animais. Ordens e estado sincronizados entre dois jogadores.
   - Disponível em `build/LAVOICE-Lab-Ordens.exe`, aberto pelo `jogar.cmd`. Guia: [[Projetos/lavoice-lab/animais-ordens|Ordens e animais construtores]].
 
-- [ ] **4. Fusões com poderes combinados**
+- [x] **4. Fusões com poderes combinados**
   - Combinar habilidades das partes doadoras, com regra clara para cada parte.
   - Exemplos: Pikachu com corpo de dinossauro; borboleta com habilidade do Squirtle.
   - Mostrar habilidades resultantes e somar seus custos.
   - Limitar combinações repetidas e preservar a fusão na captura e na evolução.
+  - Concluída: poderes de Pokémon, Jujutsu e sopro do dragão por partes doadoras ou modificadores de habilidade; até três doadores diferentes, sem acumular repetidos. Custo adicional de 60% do doador, mínimo 35, além das partes. Consulta “habilidades da fusão”; golpes de Pokémon alternados com recarga compartilhada.
+  - Validado: custo, composição, golpe herdado, captura, evolução, preservação de vínculo e estado no segundo jogador.
 
 - [x] **5. Criaturas construindo coisas**
   - Formigas escavam túneis, castores constroem barragens e aranhas montam teias de armadilha.
@@ -63,24 +67,32 @@ Cada etapa só será marcada como concluída depois de implementada, testada e i
   - Validado: custo real, falta de matéria, blocos protegidos, limites, armadilhas contra inimigos, cancelamento por captura/morte/ordem nova, criação, progresso, remoção de terra e destruição em partida online.
   - Disponível em `build/LAVOICE-Lab-Ordens.exe`, aberto pelo `jogar.cmd`. O jogo não foi aberto em janela durante os testes.
 
-- [ ] **6. Armas com efeitos criativos**
+- [x] **6. Armas com efeitos criativos**
   - Raio que envelhece criaturas temporariamente.
   - Raio que troca cabeças entre criaturas.
   - Granada que inverte equipes por alguns segundos.
   - Definir alcance, recarga, custo e resistências; restaurar corretamente os efeitos temporários.
   - Evitar duplicar criaturas ou perder armas, equipe original e conteúdo de Pokébolas.
+  - Concluída: raio de envelhecimento (95), troca visual de cabeças (145) e granada de inversão de equipe (180). Durações de 6/8/6 s; alcance, recarga, imunidade contra repetição, paredes e resistências. Captura encerra os efeitos antes de transferir a posse.
+  - Validado: disparo real, lentidão, retorno das cabeças e equipes, vida e armas preservadas, posse após captura e replicação dos efeitos e retornos entre dois jogadores.
 
-- [ ] **7. Personalidade e vínculo das criaturas**
+- [x] **7. Personalidade e vínculo das criaturas**
   - Medo, confiança no treinador e proteção de companheiros.
   - Comando para cuidar da criatura e melhorar o vínculo.
   - Rejeição de ordens perigosas com indicação visível do motivo; evitar desobediência aleatória constante.
   - Preservar vínculo na captura e evolução; impedir que a personalidade quebre dietas e ordens explícitas.
+  - Concluída: estados tranquilo/confiante/assustado, medo por dano e confiança melhorada com cuidado. “Cuidar da criatura” custa 8, cura 5, aumenta vínculo em 10 e reduz medo em 25; recarga 4 s. “Vínculo da criatura” consulta o estado; vínculo 60 libera “proteja seus companheiros”. Só novas ordens perigosas podem ser recusadas quando a criatura está muito ferida e assustada, com motivo explicado.
+  - Validado: custo, recarga, proteção real de companheiros, medo, seguir sem desobediência aleatória, captura, evolução e sincronização do vínculo.
 
-- [ ] **8. Chefes de misturas em cooperação**
+- [x] **8. Chefes de misturas em cooperação**
   - Primeiro chefe: T-Rex com asas de dragão e adaptação do Mahoraga.
   - Os dois jogadores enfrentam o chefe juntos, com vida e dificuldade ajustadas ao grupo.
   - Golpes anunciados, janelas para contra-atacar e recompensas limitadas.
   - Invocação controlada e validação de vitória, derrota e desconexão de um jogador.
+  - Concluída: Quimera Adaptativa, T-Rex alado com adaptação do Mahoraga. “Desafio cooperativo” convida; o segundo jogador deve “aceitar desafio”. Custo 300, vida 600 solo/950 em dupla, dano ajustado e prazo de 180 s. Aviso 1,1 s antes de atacar; vulnerabilidade de 1,6 s. Recompensa única de 120 por participante e recarga de 60 s. Aliança temporária, sem mudança permanente dos times. Chefe não capturável ou conversível.
+  - Validado: início pago, aceite remoto, vida ajustada, proteção entre aliados, aviso, janela de resposta, vitória, recompensa única, derrota, cancelamento por desconexão e remoção do chefe/aliança.
+
+As quatro etapas finais passaram em `creative_progression.gd`, inclusive executando contra o pacote exportado. Regressões de evoluções, combos, ordens/construções e domínios passaram. `network_smoke.gd --test-progression` passou em dois processos. Verificações sem janela; aparência final a conferir na partida.
 
 ## Regra de conclusão de cada etapa
 

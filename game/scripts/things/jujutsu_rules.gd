@@ -5,6 +5,8 @@ const KEYS := ["adaptation", "infinity", "cleave", "contact_cleave", "world_cut"
 
 static func powers(node: Dictionary, lex: LexiconData) -> Dictionary:
 	var out: Dictionary = lex.thing_def(String(node.get("thing", ""))).get("jujutsu", {}).duplicate()
+	for donor in load("res://scripts/things/fusion_rules.gd").donors(node,lex):
+		out.merge(lex.thing_def(donor).get("jujutsu",{}))
 	for key in KEYS:
 		if node.get("mods", {}).get("jj_" + key, false): out[key] = true
 	return out

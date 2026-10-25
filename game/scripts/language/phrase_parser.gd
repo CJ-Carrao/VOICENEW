@@ -33,7 +33,15 @@ var _graft_count: int = 0
 
 
 static func parse(text: String, lex: LexiconData) -> Dictionary:
-	var result := PhraseParser.new()._run(CreativeComposer.prepare(text), lex)
+	var prepared := CreativeComposer.prepare(text)
+	var tactics = load("res://scripts/language/tactical_language.gd")
+	var command: Dictionary = tactics.command(prepared,lex)
+	if not command.is_empty(): return {"ok":true,"text":text,"normalized":prepared,"recipe":command,"pretty":"ORDEM PARA "+lex.thing_name(command.tactics.actor),"unknown_words":[],"ignored_words":[],"corrections":[],"notes":[],"warnings":[],"lexicon_version":lex.version}
+	var transformation: Dictionary = tactics.creation(prepared,lex)
+	var result := PhraseParser.new()._run(String(transformation.get("base",prepared)), lex)
+	if result.ok and not transformation.is_empty() and lex.category_of(String(result.recipe.get("thing",""))) == "creature":
+		result.recipe.mods.transform_to = transformation.form
+		result.pretty += " · vira "+lex.thing_name(transformation.form)+" com pouca vida"
 	result["text"] = text
 	return result
 

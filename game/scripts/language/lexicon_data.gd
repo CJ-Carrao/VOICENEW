@@ -324,6 +324,7 @@ func action_label(act: Dictionary) -> String:
 
 
 func mod_label(key: String, value: Variant, thing_id: String = "") -> String:
+	if key == "transform_to": return "transformação em "+thing_name(String(value))
 	var mods: Dictionary = (lexicon.get("display", {}) as Dictionary).get("mods", {})
 	var entry: Variant = mods.get(key, key)
 	if is_melee(thing_id) and mods.has(key + "_melee"):

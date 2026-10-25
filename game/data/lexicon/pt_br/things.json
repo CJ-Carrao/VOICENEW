@@ -3304,5 +3304,60 @@
     "name": "Flecha de fogo",
     "words": [],
     "forms": []
+  },
+  "age_ray": {
+    "name": "Raio de envelhecimento",
+    "words": [
+      "raio de envelhecimento",
+      "arma que envelhece",
+      "raio que envelhece criaturas"
+    ],
+    "forms": []
+  },
+  "head_swap_ray": {
+    "name": "Raio de troca de cabeças",
+    "words": [
+      "raio de troca de cabecas",
+      "raio que troca cabecas",
+      "arma que troca cabecas"
+    ],
+    "forms": []
+  },
+  "team_charm_grenade": {
+    "name": "Granada de inversão de equipe",
+    "words": [
+      "granada de inversao de equipe",
+      "granada que troca equipes",
+      "granada de confusao",
+      "granada que inverte equipes"
+    ],
+    "forms": []
+  },
+  "coop_chimera": {
+    "name": "Quimera Adaptativa",
+    "words": [],
+    "forms": []
+  },
+  "butterfly_shield": {
+    "name": "Escudo de borboletas",
+    "words": [
+      "escudo de borboletas",
+      "escudo que transforma balas em borboletas",
+      "escudo que transforma tiros em borboletas"
+    ],
+    "forms": []
+  },
+  "advanced_butterfly_shield": {
+    "name": "Escudo de borboletas avançado",
+    "words": [
+      "escudo de borboletas avancado",
+      "escudo que transforma tiros fortes em borboletas"
+    ],
+    "forms": []
+  },
+  "shield_butterfly": {
+    "name": "Borboleta do escudo",
+    "words": [],
+    "forms": []
   }
 }

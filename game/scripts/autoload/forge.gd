@@ -108,10 +108,12 @@ func request(player_id: int, text: String, record_unknowns: bool = true, command
 			if not warning.is_empty():
 				return _reject_result(player_id, text, result, warning)
 			cancel_draft(player_id)
-			result.merge(_command(player_id, String(result["recipe"]["command"])), true)
+			result.merge(_command(player_id, String(result["recipe"]["command"]),result["recipe"]), true)
 	elif result["ok"]:
 		var novelty: = novelty_of(player_id, result["recipe"])
 		result["base_cost"] = Cost.of(_priced(player_id, result["recipe"]), Lexicon.data)
+		var inherited: String = load("res://scripts/things/fusion_rules.gd").describe(result["recipe"],Lexicon.data)
+		if not inherited.is_empty(): result["warnings"].append(inherited)
 		result["novelty_uses"] = novelty["uses"]
 		result["novelty_mult"] = novelty["mult"]
 		result["cost"] = float(result["base_cost"]) * float(result["novelty_mult"])
@@ -211,6 +213,10 @@ func track_network_replica(thing: Thing, building: bool) -> void :
 
 
 func _track_network_live(thing: Thing) -> void :
+	for id in _live:
+		if int(id) != thing.owner_id and (_live[id] as Array).has(thing):
+			(_live[id] as Array).erase(thing)
+			live_things_changed.emit(int(id))
 	var live: Array = _live.get_or_add(thing.owner_id, [])
 	if not thing.removed.is_connected(_on_thing_removed):
 		thing.removed.connect(_on_thing_removed)
@@ -503,7 +509,18 @@ func fx_root(fallback: Node) -> Node:
 
 
 func live_things(player_id: int) -> Array:
-	return (_live.get(player_id, []) as Array).duplicate()
+	return (_live.get(player_id, []) as Array).filter(func(item): return is_instance_valid(item) and item.owner_id == player_id and not item.is_dead)
+
+func transfer_neutral(thing: Thing, team: int) -> void:
+	if not is_instance_valid(thing) or not Session.has_authority(): return
+	var previous := thing.owner_id
+	var family := [thing]
+	for item in family: family.append_array(item.grafts)
+	for item in family:
+		for list in _live.values(): list.erase(item)
+	thing.set_owner_info(0,team,null,null)
+	_register(thing)
+	live_things_changed.emit(previous)
 
 func transfer_owner(thing: Thing, player: Player, source: Thing = null) -> void:
 	if not is_instance_valid(thing) or not is_instance_valid(player) or not Session.has_authority(): return
@@ -669,11 +686,21 @@ func _transmute_hand(player_id: int, recipe: Dictionary, cost: float) -> Diction
 
 
 
-func _command(player_id: int, command: String) -> Dictionary:
+func _command(player_id: int, command: String, arguments: Dictionary = {}) -> Dictionary:
 	var player: = world.get_player(player_id)
 	if player == null:
 		return {}
 	var settings: Dictionary = Lexicon.data.defs.commands.get(command, {})
+	if command == "creature_tactics": return load("res://scripts/things/creature_tactics.gd").request(player,arguments.get("tactics",{}))
+	if settings.has("bond"):
+		return load("res://scripts/things/creature_bond.gd").request(player,settings)
+	if settings.has("coop"):
+		return load("res://scripts/things/coop_encounter.gd").request(player,String(settings.coop))
+	if settings.has("fusion_info"):
+		var selected = load("res://scripts/things/creature_bond.gd").select(player)
+		if selected == null: return {"blocked":true,"warnings":["Mire numa criatura sua a até 15 m."]}
+		var info: String = load("res://scripts/things/fusion_rules.gd").describe(selected.thing.node_data,Lexicon.data)
+		return {"warnings":[info if not info.is_empty() else "Essa criatura usa apenas suas habilidades originais."]}
 	if settings.has("animal_order"):
 		return load("res://scripts/things/animal_orders.gd").request(player, settings)
 	if settings.has("pokemon"):
@@ -980,8 +1007,10 @@ func _register(thing: Thing) -> void :
 
 
 func _on_thing_removed(thing: Thing) -> void :
-	var list: Array = _live.get(thing.owner_id, [])
-	list.erase(thing)
+	for id in _live:
+		if (_live[id] as Array).has(thing):
+			(_live[id] as Array).erase(thing)
+			if int(id) != thing.owner_id: live_things_changed.emit(int(id))
 	if thing.network_replica:
 		for graft: Thing in thing.grafts:
 			if is_instance_valid(graft):

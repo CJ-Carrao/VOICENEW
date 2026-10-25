@@ -55,6 +55,7 @@ func _run() -> void:
 	var species_checked := 0
 	for id in lex.defs.things:
 		if not lex.defs.things[id] is Dictionary or lex.defs.things[id].get("category") != "creature": continue
+		if lex.defs.things[id].get("coop_boss",false): continue # Encounter boss is not a summonable companion.
 		var item = assembler.build({"thing": id}, "head", lex)
 		check(item.get_node_or_null("AnimalOrders") != null, "Missing orders: " + id)
 		item.free()

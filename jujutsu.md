@@ -11,7 +11,7 @@ tags:
 
 Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · Relacionado: [[Projetos/lavoice-lab/espaco|Buracos negros, Azul, Vermelho e Vazio Roxo]] · [[Projetos/lavoice-lab/pokemon|Pokémon e comandos de voz]] · [[Projetos/lavoice-lab/captura|Pokébola e itens no chão]]
 
-Use `jogar.cmd`, que aponta para `build/LAVOICE-Lab-Dominios-Espada.exe`. A versão anterior aberta permanece preservada. Os participantes do online precisam atualizar a versão. Crie com V, dê comandos com B ou digite com T; as técnicas estão na aba JUJUTSU do catálogo. Ferramentas ficam na mão: clique para atacar ou ativar um domínio. Com o domínio do Gojo ou do Sukuna equipado, também diga ou digite “expansão de domínio” para ativá-lo. Os dois domínios são ativados sem fala nem legenda de anúncio. O comando não cria um domínio gratuito e respeita a recarga. Infinito, cura, adaptação e defesas funcionam enquanto equipados. Animais usam as próprias técnicas automaticamente.
+Use `jogar.cmd`, que aponta para `build/LAVOICE-Lab-Criaturas-Inteligentes.exe`. A versão anterior aberta permanece preservada. Os participantes do online precisam atualizar a versão. Crie com V, dê comandos com B ou digite com T; as técnicas estão na aba JUJUTSU do catálogo. Ferramentas ficam na mão: clique para atacar ou ativar um domínio. Com o domínio do Gojo ou do Sukuna equipado, também diga ou digite “expansão de domínio” para ativá-lo. Os dois domínios são ativados sem fala nem legenda de anúncio. O comando não cria um domínio gratuito e respeita a recarga. Infinito, cura, adaptação e defesas funcionam enquanto equipados. Animais usam as próprias técnicas automaticamente.
 
 ## Mahoraga e expansões refeitos
 
