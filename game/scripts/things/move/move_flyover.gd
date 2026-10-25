@@ -5,10 +5,15 @@ extends MoveFly
 
 var _altitude: float = 0.0
 
+func _autonomous() -> bool:
+	# A flyover keeps its launch heading; it must not inherit hover pursuit.
+	return false
+
 
 func _configure(lex: LexiconData) -> void :
 	super._configure(lex)
 	_altitude = lex.balf("movement.flyover_altitude")
+	_min_altitude = _altitude
 
 
 func launch(direction: Vector3, launch_speed: float) -> void :

@@ -69,6 +69,10 @@ func _physics_process(delta: float) -> void:
 	elapsed += delta
 	var point := thing.center()
 	if _collide(point): return
+	if mode == "red":
+		_red(point)
+		previous = point
+		return
 	fx_left -= delta
 	if fx_left <= 0.0:
 		fx_left = 0.18 if mode == "purple" else .45
@@ -139,10 +143,39 @@ func _candidates() -> Array:
 	return out
 
 func _allowed(target: Node) -> bool:
-	if not is_instance_valid(target) or target == thing or target == thing.owner_player: return false
+	if not is_instance_valid(target) or target == thing or target == thing.spawner or target == thing.owner_player: return false
 	if not target.has_method("take_damage"): return false
 	if target is Thing and (target.is_dead or target.is_held or target.get_node_or_null("SpatialOrb") != null): return false
 	return InnovationRules.allows_target(thing, target)
+
+func _red(point: Vector3) -> void:
+	var query := PhysicsRayQueryParameters3D.create(previous, point, PhysicsLayers.WORLD)
+	var hit := thing.get_world_3d().direct_space_state.intersect_ray(query) if previous.distance_squared_to(point) > .00001 else {}
+	var detonates := not hit.is_empty() or elapsed >= 1.8
+	if not hit.is_empty(): point = hit.position
+	for target in _candidates():
+		if not _allowed(target): continue
+		var at := Combat.center_of(target)
+		var near := Geometry3D.get_closest_point_to_segment(at, previous, point)
+		var radius: float = minf(1.5, target.bounds.size.length() * .25) if target is Thing else .6
+		if at.distance_to(near) <= .5 + radius: detonates = true; break
+	if not detonates: return
+	resolved = true
+	_field(point)
+	var count := 0
+	var rows := []
+	for target in _candidates():
+		if not _allowed(target) or Combat.center_of(target).distance_to(point) > 4.0: continue
+		rows.append({"target": weakref(target), "damage": 80.0 * (1.0 - .7 * Combat.center_of(target).distance_to(point) / 4.0), "push": Vector3.ZERO, "type": "gravity"})
+		count += 1
+		if count >= 16: break
+	if not rows.is_empty():
+		var work = load("res://scripts/things/blast_work.gd").new()
+		work.setup(thing, rows)
+		get_tree().root.add_child(work)
+	Combat._crater(thing, point, 3.0, 80.0)
+	load("res://scripts/fx/jujutsu_impact.gd").play(Forge.fx_root(thing), point, thing.travel_direction(), "red_burst")
+	thing.remove()
 
 func _field(at: Vector3) -> void:
 	var candidates := _candidates()

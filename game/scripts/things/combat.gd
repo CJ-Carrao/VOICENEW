@@ -158,7 +158,7 @@ static func area_status(source: Thing, at: Vector3, radius: float, kind: String)
 
 
 
-static func explode(source: Thing, at: Vector3, radius: float, damage: float) -> void :
+static func explode(source: Thing, at: Vector3, radius: float, damage: float, damage_type: String = "explosive") -> void :
 	if radius <= 0.0 or not source.is_inside_tree():
 		return
 	var scene: = Forge.fx_root(source)
@@ -200,6 +200,7 @@ static func explode(source: Thing, at: Vector3, radius: float, damage: float) ->
 			var center := target.center()
 			var falloff := lerpf(1.0, min_falloff, clampf(center.distance_to(at) / radius, 0.0, 1.0))
 			hits.append({"target": weakref(target), "damage": damage * falloff, "push": Vector3.ZERO})
+	for row: Dictionary in hits: row["type"] = damage_type
 	if hits.size() > 12:
 		var work = load("res://scripts/things/blast_work.gd").new()
 		work.setup(source, hits)
@@ -208,7 +209,7 @@ static func explode(source: Thing, at: Vector3, radius: float, damage: float) ->
 		for row: Dictionary in hits:
 			var target = row.target.get_ref()
 			if not is_instance_valid(target): continue
-			apply_damage(target, row.damage, "explosive", source)
+			apply_damage(target, row.damage, damage_type, source)
 			if is_instance_valid(target) and target.has_method("apply_knockback"): target.call("apply_knockback", row.push)
 	_crater(source, at, radius, damage)
 

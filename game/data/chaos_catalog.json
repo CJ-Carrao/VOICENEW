@@ -490,11 +490,11 @@
     },
     {
       "id": "rift_knife",
-      "name": "faca que corta o espaço",
-      "phrase": "quero faca que corta o espaço",
+      "name": "Espada que corta o espaço",
+      "phrase": "quero uma espada dimensional",
       "group": "Armas especiais",
-      "effect": "Abre uma fenda de ate 22 metros que corta inimigos e blocos.",
-      "pieces": 13,
+      "effect": "Golpe de lâmina: abre uma fenda curva perto do jogador, sem projétil ou laser. 48 de dano (até 72 carregado), atravessa Infinito e corta blocos no arco. Recarga de 0,85 s.",
+      "pieces": 7,
       "base_cost": 180
     },
     {
@@ -718,7 +718,7 @@
       "name": "Vermelho",
       "phrase": "quero vermelho",
       "group": "Espaço",
-      "effect": "Repele com o dobro da forca e dano por pulso do Azul. Colisao com Azul cria Vazio Roxo.",
+      "effect": "Projétil de repulsão: uma única detonação forte ao tocar um alvo ou o cenário. Pode fundir com Azul antes do impacto.",
       "pieces": 25,
       "base_cost": 160
     },
@@ -754,7 +754,7 @@
       "name": "Corte do Sukuna",
       "phrase": "quero corte do sukuna",
       "group": "Jujutsu",
-      "effect": "Corte de 24 m, 32 de dano; quebra blocos comuns, mas respeita paredes e Infinito.",
+      "effect": "Dismantle: corte branco que viaja a 36 m/s, 32 de dano. Pode ser esquivado e é bloqueado pelo cenário; recarga de 1,2 s.",
       "pieces": 7,
       "base_cost": 95
     },
@@ -763,7 +763,7 @@
       "name": "Corte que corta o mundo",
       "phrase": "quero corte que corta o mundo",
       "group": "Jujutsu",
-      "effect": "100 de dano, corta o espaco e atravessa Infinito; recarga de 4,5 s.",
+      "effect": "Prepara o corte espacial por 0,55 s. Corta o cenário e atravessa o Infinito, com 100 de dano e 4,5 s de recarga.",
       "pieces": 7,
       "base_cost": 260
     },
@@ -772,7 +772,7 @@
       "name": "Fuga",
       "phrase": "quero fuga",
       "group": "Jujutsu",
-      "effect": "Linha de fogo de 24 m; varia o tipo de dano contra adaptacao a cortes.",
+      "effect": "Fuga: prepara por 0,45 s e lança uma flecha de fogo a 25 m/s. Explode e incendeia no impacto; recarga de 5 s.",
       "pieces": 7,
       "base_cost": 160
     },
@@ -781,8 +781,8 @@
       "name": "Flash Negro",
       "phrase": "quero flash negro",
       "group": "Jujutsu",
-      "effect": "Golpe concentrado de curto alcance, 55 de dano e recarga de 3 s.",
-      "pieces": 7,
+      "effect": "Soco de contato: solte o clique na janela de precisão para um Black Flash. 18 de dano normal ou 45 preciso, raios pretos/vermelhos só no impacto; 0,8 s de recarga. Acerto preciso abre uma zona de 6 s.",
+      "pieces": 6,
       "base_cost": 85
     },
     {
@@ -1108,6 +1108,42 @@
       "effect": "Diga: castor, construa uma barragem. Aceita ordens, captura e misturas.",
       "pieces": 23,
       "base_cost": 28
+    },
+    {
+      "id": "ryu_beam_technique",
+      "name": "Raio do Ryu",
+      "phrase": "quero raio do ryu",
+      "group": "Jujutsu",
+      "effect": "Feixe carregado de 42 m; clique para disparar. Feixes adversários de frente disputam força por 1,2 s. Recarga de 7 s. Aceita composição com criaturas.",
+      "pieces": 6,
+      "base_cost": 220
+    },
+    {
+      "id": "yuta_beam_technique",
+      "name": "Raio do Yuta",
+      "phrase": "quero raio do yuta",
+      "group": "Jujutsu",
+      "effect": "Feixe carregado de 42 m; clique para disparar. Feixes adversários de frente disputam força por 1,2 s. Recarga de 7 s. Aceita composição com criaturas.",
+      "pieces": 6,
+      "base_cost": 200
+    },
+    {
+      "id": "verity",
+      "name": "Verity",
+      "phrase": "quero um verity",
+      "group": "Criaturas",
+      "effect": "Bolinha amarela sorridente. Flutua ao seu lado e aceita ordens, captura, armas e poderes. Perto do dono, cura 4 de vida a cada 4 s quando ele está abaixo de 60%; vários Veritys compartilham a recarga.",
+      "pieces": 46,
+      "base_cost": 85
+    },
+    {
+      "id": "sukuna_contact_cleave",
+      "name": "Cleave · contato",
+      "phrase": "quero cleave",
+      "group": "Jujutsu",
+      "effect": "Corte de contato em um alvo: ajusta o dano à resistência vital, limitado entre 32 e 70. Não atravessa Infinito. Recarga de 0,8 s.",
+      "pieces": 6,
+      "base_cost": 105
     }
   ],
   "combinations": [

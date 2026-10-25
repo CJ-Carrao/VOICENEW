@@ -68,7 +68,89 @@ func _success() -> void:
 			_finish(false, "Match replication did not become active: " + session.last_error)
 			return
 	var chaos_test := OS.get_cmdline_user_args().has("--test-chaos")
-	if OS.get_cmdline_user_args().has("--test-spatial"):
+	if OS.get_cmdline_user_args().has("--test-domain-clash"):
+		await create_timer(3.3).timeout
+		var sword_fx = load("res://scripts/fx/space_sword.gd")
+		if role == "host":
+			var lex = root.get_node("Lexicon").data
+			var assembler = load("res://scripts/things/assembler.gd")
+			var recipe = load("res://scripts/language/recipe.gd")
+			var forge = root.get_node("Forge")
+			var caster = assembler.build(recipe.new_node("pistol"), "head", lex)
+			game.add_thing(caster)
+			var users := []
+			for i in 2:
+				await create_timer(.15).timeout
+				caster.set_owner_info(i+1,i+1,game.get_player(i+1),game.get_player(i+1))
+				var id := "unlimited_void" if i == 0 else "malevolent_shrine"
+				var tool = forge.spawn_child(recipe.new_node(id), "spawned", Vector3(-3 if i == 0 else 3,40,0), Vector3.FORWARD, caster, 0.0)
+				if tool == null: _finish(false,"Cannot spawn clash domain"); return
+				tool.set_physics_process(false)
+				tool.move.set_physics_process(false)
+				users.append(tool.get_node("Jujutsu"))
+			for user in users:
+				if not user.expand_domain(): _finish(false,"Cannot expand clash domain"); return
+			await create_timer(.8).timeout
+			if not users[0].domain_clashing or not users[1].domain_clashing: _finish(false,"Host domains did not clash"); return
+			caster.set_owner_info(1,1,game.get_player(1),game.get_player(1))
+			var sword = forge.spawn_child(recipe.new_node("rift_knife"), "spawned", Vector3(0,40,8), Vector3.FORWARD, caster, 0.0)
+			if sword == null: _finish(false,"Cannot spawn online space sword"); return
+			sword.set_physics_process(false)
+			sword.get_node("Do_anomaly").run(load("res://scripts/things/action_context.gd").make(sword.center(),Vector3.FORWARD))
+			await create_timer(3.5).timeout
+			if users[0].domain_outcome != "tie" or users[1].domain_outcome != "tie": _finish(false,"Host clash did not resolve as a tie"); return
+			await create_timer(1.0).timeout
+		else:
+			var until := Time.get_ticks_msec()+7000
+			var seen := false
+			var ended := false
+			while Time.get_ticks_msec() < until:
+				var clashing := 0
+				var resolved := 0
+				for user in get_nodes_in_group("jujutsu_users"):
+					if user.domain_clashing and user.clash_elapsed > .1 and user.clash_axis.length() > .9: clashing += 1
+					if user.domain_outcome == "tie" and not user.domain_clashing and user.domain_until == 0: resolved += 1
+				seen = seen or clashing == 2
+				ended = resolved == 2
+				if seen and ended and sword_fx.casts > 0: break
+				await create_timer(.05).timeout
+			if not seen or not ended or sword_fx.casts == 0: _finish(false,"Client clash/sword replication failed: %s/%s/%s" % [seen,ended,sword_fx.casts]); return
+	elif OS.get_cmdline_user_args().has("--test-beams"):
+		await create_timer(3.3).timeout
+		if role == "host":
+			var lex = root.get_node("Lexicon").data
+			var assembler = load("res://scripts/things/assembler.gd")
+			var recipe = load("res://scripts/language/recipe.gd")
+			var action_context = load("res://scripts/things/action_context.gd")
+			var forge = root.get_node("Forge")
+			var caster = assembler.build(recipe.new_node("pistol"), "head", lex)
+			game.add_thing(caster)
+			for i in 2:
+				await create_timer(.15).timeout
+				caster.set_owner_info(i + 1, i + 1, game.get_player(i + 1), game.get_player(i + 1))
+				var direction := Vector3.RIGHT if i == 0 else Vector3.LEFT
+				var emitter = forge.spawn_child(recipe.new_node("ryu_beam_technique" if i == 0 else "yuta_beam_technique"), "spawned", Vector3(-12 if i == 0 else 12, 40, 0), direction, caster, 0.0)
+				if emitter == null: _finish(false, "Cannot create network beam emitter"); return
+				emitter.get_node("Jujutsu").cast(action_context.make(emitter.center(), direction))
+			await create_timer(1.0).timeout
+			var clashing := 0
+			for beam in get_nodes_in_group("cursed_beams"):
+				if beam.clashing: clashing += 1
+			if clashing != 2: _finish(false, "Host did not create beam clash"); return
+			await create_timer(4.0).timeout
+		else:
+			var until := Time.get_ticks_msec() + 7000
+			var seen := false
+			while not seen and Time.get_ticks_msec() < until:
+				var clashing := 0
+				for beam in get_nodes_in_group("cursed_beams"):
+					if beam.clashing and beam.origin.distance_to(beam.endpoint) > 1.0: clashing += 1
+				seen = clashing == 2
+				await create_timer(.05).timeout
+			if not seen: _finish(false, "Client did not receive both beam clash visuals"); return
+			while not get_nodes_in_group("cursed_beams").is_empty() and Time.get_ticks_msec() < until: await create_timer(.05).timeout
+			if not get_nodes_in_group("cursed_beams").is_empty(): _finish(false, "Client retained ended beam actors"); return
+	elif OS.get_cmdline_user_args().has("--test-spatial"):
 		await create_timer(3.3).timeout
 		if role == "host":
 			var lex = root.get_node("Lexicon").data
@@ -104,7 +186,9 @@ func _success() -> void:
 		if role == "host":
 			var r = load("res://scripts/language/recipe.gd")
 			var a = load("res://scripts/things/assembler.gd")
-			var caster = a.build(r.new_node("pistol"), "head", root.get_node("Lexicon").data)
+			var caster_node = r.new_node("pistol")
+			if OS.get_cmdline_user_args().has("--test-jujutsu"): caster_node.mods.jj_fuga = true
+			var caster = a.build(caster_node, "head", root.get_node("Lexicon").data)
 			caster.set_owner_info(1,1,game.get_player(1),game.get_player(1))
 			game.add_thing(caster)
 			var node = r.new_node("dog")
@@ -115,17 +199,24 @@ func _success() -> void:
 				_finish(false,"Cursed animal failed to spawn")
 				return
 			dog.get_node("Jujutsu").exposure.infinity = 3
+			if OS.get_cmdline_user_args().has("--test-jujutsu"):
+				caster.activate()
+				caster.global_position = Vector3(-10,40,0)
+				caster.get_node("Jujutsu").cast(load("res://scripts/things/action_context.gd").make(caster.center(), Vector3.RIGHT))
+				load("res://scripts/fx/jujutsu_impact.gd").play(game, Vector3(0,40,0), Vector3.RIGHT, "black_flash")
 			await create_timer(2.5).timeout
 		else:
 			var deadline := Time.get_ticks_msec() + 4000
 			var found := false
+			var projectile_seen := false
 			while Time.get_ticks_msec() < deadline and not found:
+				if not get_nodes_in_group("cursed_projectiles").is_empty(): projectile_seen = true
 				for entry in session.creations.entries.values():
 					var animal = entry.thing
 					if is_instance_valid(animal) and animal.thing_id == "dog" and animal.get_node_or_null("Jujutsu") != null:
 						if animal.get_node("Jujutsu").exposure.get("infinity",0) == 3:
 							if not OS.get_cmdline_user_args().has("--test-dinosaurs"):
-								found = true
+								found = projectile_seen and load("res://scripts/fx/jujutsu_impact.gd").last_style == "black_flash"
 							else:
 								for piece in animal.model_pieces:
 									if piece.get_meta("source", "") == "trex": found = true
@@ -276,7 +367,7 @@ func _success() -> void:
 			if beaver == null or ant == null:
 				_finish(false, "Builder animals did not replicate")
 				return
-			root.get_node("Forge").request(2, "castor me siga", false, true)
+			root.get_node("Forge").request(2, "castores me sigam", false, true)
 			var seen := false
 			while not seen and Time.get_ticks_msec() < until:
 				var products := 0

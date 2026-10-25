@@ -130,25 +130,38 @@ func _gravity_field(at: Vector3, radius: float, damage: float, mode: String, col
 
 
 func _cut_space(ctx: ActionContext) -> void:
+	var was_held := thing.is_held
+	await get_tree().create_timer(.10, false).timeout
+	if not is_instance_valid(thing) or not thing.can_act() or thing.is_captured or thing.is_held != was_held: return
 	var holder := thing.owner_player as Player
 	var origin := holder.head.global_position if thing.is_held and holder != null else thing.center()
 	var direction := - holder.camera.global_basis.z if thing.is_held and holder != null else ctx.direction
 	if direction.length_squared() < 0.001:
 		direction = - thing.global_basis.z
 	direction = direction.normalized()
-	var reach := clampf(float(spec.get("reach", 22.0)) * thing.scale_factor, 2.0, 32.0)
-	var damage := float(spec.get("damage", 65.0)) * thing.power
-	ExpansionFx.rift(Forge.fx_root(thing), origin, direction, reach, Color("ae73ff"))
-	for target in Combat.in_radius(thing, origin + direction * reach * 0.5, reach * 0.55 + 1.0):
-		if not Combat.affects(thing, target):
-			continue
-		var offset := Combat.center_of(target) - origin
-		var distance := offset.dot(direction)
-		if distance < 0.0 or distance > reach or (offset - direction * distance).length() > 1.1:
-			continue
-		Combat.apply_damage(target, damage, "spatial", thing)
-	# A narrow, bounded cut through blocks, distinct from a spherical explosion.
-	for node in get_tree().get_nodes_in_group(BlockVolume.GROUP):
-		var volume := node as BlockVolume
+	var reach := clampf(float(spec.get("reach", 4.2)) * thing.scale_factor, 2.0, 7.0)
+	var damage := float(spec.get("damage", 48.0)) * thing.power * lerpf(1.0, 1.5, clampf(ctx.charge, 0.0, 1.0))
+	var effect = load("res://scripts/fx/space_sword.gd")
+	var curve: PackedVector3Array = effect.points(origin, direction, thing.up(), reach)
+	effect.play(Forge.fx_root(thing), origin, direction, thing.up(), reach)
+	var rows := []
+	for target in JujutsuRules.candidates(get_tree()):
+		if not is_instance_valid(target) or target == thing or target == thing.owner_player or not target.has_method("take_damage") or not Combat.affects(thing, target): continue
+		if target is Thing and (target.is_dead or target.is_captured or target.is_held): continue
+		var at := Combat.center_of(target)
+		if (at - origin).dot(direction) < 0: continue
+		var radius: float = minf(1.5, target.bounds.size.length() * .25) if target is Thing else .6
+		var touched := false
 		for i in 8:
-			volume.explode(origin + direction * (float(i + 1) * reach / 8.0), 0.7, damage)
+			if Geometry3D.get_closest_point_to_segment(at, curve[i], curve[i+1]).distance_to(at) <= radius + .3: touched = true; break
+		if not touched: continue
+		rows.append({"target": weakref(target), "damage": damage, "push": Vector3.ZERO, "type": "world_cut"})
+		if rows.size() >= 8: break
+	if not rows.is_empty():
+		var work = load("res://scripts/things/blast_work.gd").new()
+		work.setup(thing, rows)
+		get_tree().root.add_child(work)
+	var terrain = load("res://scripts/things/spatial_cut_work.gd").new()
+	terrain.setup(thing)
+	get_tree().root.add_child(terrain)
+	for i in 8: terrain.add_segment(curve[i], curve[i+1], .28)

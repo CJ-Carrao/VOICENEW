@@ -8,7 +8,7 @@ Jogo de criatividade por voz para Windows, desenvolvido a partir do projeto LAVO
 2. Baixe o arquivo **VOICENEW-Windows.zip**.
 3. Extraia o ZIP inteiro e abra **jogar.cmd** dentro da pasta **VOICENEW**.
 
-Mantenha as pastas de voz, licenças e bibliotecas junto do executável. O pacote inclui os modelos necessários ao reconhecimento de voz offline. O repositório é privado: é preciso ter acesso para baixar os arquivos.
+Mantenha as pastas de voz, licenças e bibliotecas junto do executável. O pacote inclui os modelos necessários ao reconhecimento de voz offline. O repositório e os downloads são públicos.
 
 ## Controles principais
 
@@ -35,6 +35,10 @@ Exemplos: “quero um cachorro com cara de tiranossauro rex”, “quero um Pika
 - Evoluções dos Pokémon por experiência de combate e matéria, com comandos como “Pikachu, progresso” e “Pikachu, evolua”.
 - Combos entre criaturas: água com eletricidade, cipós com fogo e prisão temporária com proteção contra aprisionamento contínuo.
 - Ordens para todos os animais, modo agressivo que poupa o treinador, formigas escavando, castores construindo barragens e aranhas montando teias.
+- Ordens coletivas como “cachorros me sigam”, adaptação progressiva do Mahoraga e reversão de feitiço para cura.
+- Raios do Ryu e Yuta com disputa de feixes, Verity e revisão dos golpes de Black Flash, Cleave, Dismantle e Fuga.
+- Clash de domínios com anulação dos acertos na área sobreposta, vitória ou empate e quebra das barreiras.
+- Espada espacial com fenda curva próxima, passagem pelo Infinito e corte real dos blocos.
 - Partidas online. Todos os participantes precisam usar a mesma versão.
 
 ## Código e documentação

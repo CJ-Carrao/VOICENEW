@@ -9,6 +9,8 @@ var slashes: Node3D
 var light: OmniLight3D
 var start_clock := 0.0
 var barrier_shape: CollisionShape3D
+var shell_shader: ShaderMaterial
+var clash_seam: MultiMeshInstance3D
 
 func setup(user: Node) -> void:
 	user_ref = weakref(user)
@@ -78,6 +80,7 @@ func _build() -> void:
 	shell.name = "ClosedVoidBarrier" if mode == "void" else "ClosedShrineBarrier"
 	shell.mesh = sphere
 	var shader := ShaderMaterial.new()
+	shell_shader = shader
 	shader.shader = load("res://shaders/domain_void.gdshader")
 	shader.set_shader_parameter("shrine_interior", mode == "shrine")
 	shell.material_override = shader
@@ -122,6 +125,25 @@ func _build() -> void:
 	light.omni_range = 12.0
 	light.position.y = 3.0
 	add_child(light)
+	clash_seam = MultiMeshInstance3D.new()
+	clash_seam.name = "DomainClashSeam"
+	var seam := MultiMesh.new()
+	seam.transform_format = MultiMesh.TRANSFORM_3D
+	seam.use_colors = true
+	seam.mesh = BoxMesh.new()
+	seam.instance_count = 64
+	for i in 64:
+		var angle := i * TAU / 64.0
+		var point := Vector3(cos(angle), sin(angle), sin(i * 1.7) * .025) * 7.8
+		seam.set_instance_transform(i, Transform3D(Basis(Vector3.FORWARD, angle).scaled(Vector3(.09, .5, .10)), point))
+		seam.set_instance_color(i, Color("8db7ff") if i % 2 == 0 else Color("f6a18b"))
+	clash_seam.multimesh = seam
+	var seam_mat := StandardMaterial3D.new()
+	seam_mat.vertex_color_use_as_albedo = true
+	seam_mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	clash_seam.material_override = seam_mat
+	add_child(clash_seam)
+	clash_seam.hide()
 
 func _shrine(floor_y: float) -> void:
 	var altar := Node3D.new()
@@ -179,3 +201,13 @@ func _process(delta: float) -> void:
 		var bit := slashes.get_child(i) as Node3D
 		bit.visible = fmod(age * 2.5 + i * .31, 1.0) < .28
 	light.light_energy = 1.1 if user.domain_clashing else 1.8 + sin(age * 2.0) * .15
+	shell_shader.set_shader_parameter("clash_amount", 1.0 if user.domain_clashing else 0.0)
+	shell_shader.set_shader_parameter("clash_point", user.clash_point)
+	shell_shader.set_shader_parameter("clash_axis", user.clash_axis)
+	shell_shader.set_shader_parameter("clash_pressure", user.clash_pressure)
+	clash_seam.visible = user.domain_clashing
+	if user.domain_clashing:
+		clash_seam.global_position = user.clash_point + user.clash_axis * user.clash_pressure * 2.0
+		var up: Vector3 = user.domain_up
+		if absf(up.dot(user.clash_axis)) > .95: up = Vector3.RIGHT
+		clash_seam.global_basis = Basis.looking_at(user.clash_axis, up) * Basis(Vector3.FORWARD, sin(age * 8.0) * .025)

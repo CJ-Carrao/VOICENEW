@@ -113,11 +113,12 @@ func _run() -> void:
 	var enemy = _spawn("cow", origin, 2)
 	enemy.hp = 1000
 	enemy.max_hp = 1000
-	enemy.global_position = knife.center() + Vector3.FORWARD * 6.0 - enemy.bounds.get_center()
+	enemy.global_position = knife.center() + Vector3.FORWARD * 3.0 - enemy.bounds.get_center()
 	await create_timer(0.06).timeout
 	knife.get_node("Do_anomaly").run(load("res://scripts/things/action_context.gd").make(knife.center(), Vector3.FORWARD))
-	_check(enemy.hp < 1000, "Space knife did not damage a distant target")
-	results.append({"id": "rift_knife", "target_hp_at_6m": enemy.hp})
+	await create_timer(.25).timeout
+	_check(enemy.hp < 1000, "Space sword did not damage a nearby target")
+	results.append({"id": "rift_knife", "target_hp_at_3m": enemy.hp})
 	await _clear()
 	var report := {"effects": results, "failures": failures}
 	var file := FileAccess.open(ProjectSettings.globalize_path("res://").path_join("../analysis/chaos-effects.json").simplify_path(), FileAccess.WRITE)

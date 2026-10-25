@@ -3777,5 +3777,4081 @@
   "animal_order_beaver_aggressive": {
     "animal_order": "aggressive",
     "species": "beaver"
+  },
+  "animal_order_verity_follow": {
+    "animal_order": "follow",
+    "species": "verity"
+  },
+  "animal_order_verity_stay": {
+    "animal_order": "stay",
+    "species": "verity"
+  },
+  "animal_order_verity_guard": {
+    "animal_order": "guard",
+    "species": "verity"
+  },
+  "animal_order_verity_attack": {
+    "animal_order": "attack",
+    "species": "verity"
+  },
+  "animal_order_verity_evade": {
+    "animal_order": "evade",
+    "species": "verity"
+  },
+  "animal_order_verity_retaliate": {
+    "animal_order": "retaliate",
+    "species": "verity"
+  },
+  "animal_order_verity_free": {
+    "animal_order": "free",
+    "species": "verity"
+  },
+  "animal_order_verity_build": {
+    "animal_order": "build",
+    "species": "verity"
+  },
+  "animal_order_verity_aggressive": {
+    "animal_order": "aggressive",
+    "species": "verity"
+  },
+  "animal_group_follow": {
+    "animal_order": "follow",
+    "species": "",
+    "all": true
+  },
+  "animal_group_stay": {
+    "animal_order": "stay",
+    "species": "",
+    "all": true
+  },
+  "animal_group_guard": {
+    "animal_order": "guard",
+    "species": "",
+    "all": true
+  },
+  "animal_group_attack": {
+    "animal_order": "attack",
+    "species": "",
+    "all": true
+  },
+  "animal_group_evade": {
+    "animal_order": "evade",
+    "species": "",
+    "all": true
+  },
+  "animal_group_retaliate": {
+    "animal_order": "retaliate",
+    "species": "",
+    "all": true
+  },
+  "animal_group_free": {
+    "animal_order": "free",
+    "species": "",
+    "all": true
+  },
+  "animal_group_aggressive": {
+    "animal_order": "aggressive",
+    "species": "",
+    "all": true
+  },
+  "animal_group_pigeon_follow": {
+    "animal_order": "follow",
+    "species": "pigeon",
+    "all": true
+  },
+  "animal_group_pigeon_stay": {
+    "animal_order": "stay",
+    "species": "pigeon",
+    "all": true
+  },
+  "animal_group_pigeon_guard": {
+    "animal_order": "guard",
+    "species": "pigeon",
+    "all": true
+  },
+  "animal_group_pigeon_attack": {
+    "animal_order": "attack",
+    "species": "pigeon",
+    "all": true
+  },
+  "animal_group_pigeon_evade": {
+    "animal_order": "evade",
+    "species": "pigeon",
+    "all": true
+  },
+  "animal_group_pigeon_retaliate": {
+    "animal_order": "retaliate",
+    "species": "pigeon",
+    "all": true
+  },
+  "animal_group_pigeon_free": {
+    "animal_order": "free",
+    "species": "pigeon",
+    "all": true
+  },
+  "animal_group_pigeon_aggressive": {
+    "animal_order": "aggressive",
+    "species": "pigeon",
+    "all": true
+  },
+  "animal_group_monkey_follow": {
+    "animal_order": "follow",
+    "species": "monkey",
+    "all": true
+  },
+  "animal_group_monkey_stay": {
+    "animal_order": "stay",
+    "species": "monkey",
+    "all": true
+  },
+  "animal_group_monkey_guard": {
+    "animal_order": "guard",
+    "species": "monkey",
+    "all": true
+  },
+  "animal_group_monkey_attack": {
+    "animal_order": "attack",
+    "species": "monkey",
+    "all": true
+  },
+  "animal_group_monkey_evade": {
+    "animal_order": "evade",
+    "species": "monkey",
+    "all": true
+  },
+  "animal_group_monkey_retaliate": {
+    "animal_order": "retaliate",
+    "species": "monkey",
+    "all": true
+  },
+  "animal_group_monkey_free": {
+    "animal_order": "free",
+    "species": "monkey",
+    "all": true
+  },
+  "animal_group_monkey_aggressive": {
+    "animal_order": "aggressive",
+    "species": "monkey",
+    "all": true
+  },
+  "animal_group_gorilla_follow": {
+    "animal_order": "follow",
+    "species": "gorilla",
+    "all": true
+  },
+  "animal_group_gorilla_stay": {
+    "animal_order": "stay",
+    "species": "gorilla",
+    "all": true
+  },
+  "animal_group_gorilla_guard": {
+    "animal_order": "guard",
+    "species": "gorilla",
+    "all": true
+  },
+  "animal_group_gorilla_attack": {
+    "animal_order": "attack",
+    "species": "gorilla",
+    "all": true
+  },
+  "animal_group_gorilla_evade": {
+    "animal_order": "evade",
+    "species": "gorilla",
+    "all": true
+  },
+  "animal_group_gorilla_retaliate": {
+    "animal_order": "retaliate",
+    "species": "gorilla",
+    "all": true
+  },
+  "animal_group_gorilla_free": {
+    "animal_order": "free",
+    "species": "gorilla",
+    "all": true
+  },
+  "animal_group_gorilla_aggressive": {
+    "animal_order": "aggressive",
+    "species": "gorilla",
+    "all": true
+  },
+  "animal_group_bear_follow": {
+    "animal_order": "follow",
+    "species": "bear",
+    "all": true
+  },
+  "animal_group_bear_stay": {
+    "animal_order": "stay",
+    "species": "bear",
+    "all": true
+  },
+  "animal_group_bear_guard": {
+    "animal_order": "guard",
+    "species": "bear",
+    "all": true
+  },
+  "animal_group_bear_attack": {
+    "animal_order": "attack",
+    "species": "bear",
+    "all": true
+  },
+  "animal_group_bear_evade": {
+    "animal_order": "evade",
+    "species": "bear",
+    "all": true
+  },
+  "animal_group_bear_retaliate": {
+    "animal_order": "retaliate",
+    "species": "bear",
+    "all": true
+  },
+  "animal_group_bear_free": {
+    "animal_order": "free",
+    "species": "bear",
+    "all": true
+  },
+  "animal_group_bear_aggressive": {
+    "animal_order": "aggressive",
+    "species": "bear",
+    "all": true
+  },
+  "animal_group_dog_follow": {
+    "animal_order": "follow",
+    "species": "dog",
+    "all": true
+  },
+  "animal_group_dog_stay": {
+    "animal_order": "stay",
+    "species": "dog",
+    "all": true
+  },
+  "animal_group_dog_guard": {
+    "animal_order": "guard",
+    "species": "dog",
+    "all": true
+  },
+  "animal_group_dog_attack": {
+    "animal_order": "attack",
+    "species": "dog",
+    "all": true
+  },
+  "animal_group_dog_evade": {
+    "animal_order": "evade",
+    "species": "dog",
+    "all": true
+  },
+  "animal_group_dog_retaliate": {
+    "animal_order": "retaliate",
+    "species": "dog",
+    "all": true
+  },
+  "animal_group_dog_free": {
+    "animal_order": "free",
+    "species": "dog",
+    "all": true
+  },
+  "animal_group_dog_aggressive": {
+    "animal_order": "aggressive",
+    "species": "dog",
+    "all": true
+  },
+  "animal_group_wolf_follow": {
+    "animal_order": "follow",
+    "species": "wolf",
+    "all": true
+  },
+  "animal_group_wolf_stay": {
+    "animal_order": "stay",
+    "species": "wolf",
+    "all": true
+  },
+  "animal_group_wolf_guard": {
+    "animal_order": "guard",
+    "species": "wolf",
+    "all": true
+  },
+  "animal_group_wolf_attack": {
+    "animal_order": "attack",
+    "species": "wolf",
+    "all": true
+  },
+  "animal_group_wolf_evade": {
+    "animal_order": "evade",
+    "species": "wolf",
+    "all": true
+  },
+  "animal_group_wolf_retaliate": {
+    "animal_order": "retaliate",
+    "species": "wolf",
+    "all": true
+  },
+  "animal_group_wolf_free": {
+    "animal_order": "free",
+    "species": "wolf",
+    "all": true
+  },
+  "animal_group_wolf_aggressive": {
+    "animal_order": "aggressive",
+    "species": "wolf",
+    "all": true
+  },
+  "animal_group_horse_follow": {
+    "animal_order": "follow",
+    "species": "horse",
+    "all": true
+  },
+  "animal_group_horse_stay": {
+    "animal_order": "stay",
+    "species": "horse",
+    "all": true
+  },
+  "animal_group_horse_guard": {
+    "animal_order": "guard",
+    "species": "horse",
+    "all": true
+  },
+  "animal_group_horse_attack": {
+    "animal_order": "attack",
+    "species": "horse",
+    "all": true
+  },
+  "animal_group_horse_evade": {
+    "animal_order": "evade",
+    "species": "horse",
+    "all": true
+  },
+  "animal_group_horse_retaliate": {
+    "animal_order": "retaliate",
+    "species": "horse",
+    "all": true
+  },
+  "animal_group_horse_free": {
+    "animal_order": "free",
+    "species": "horse",
+    "all": true
+  },
+  "animal_group_horse_aggressive": {
+    "animal_order": "aggressive",
+    "species": "horse",
+    "all": true
+  },
+  "animal_group_unicorn_follow": {
+    "animal_order": "follow",
+    "species": "unicorn",
+    "all": true
+  },
+  "animal_group_unicorn_stay": {
+    "animal_order": "stay",
+    "species": "unicorn",
+    "all": true
+  },
+  "animal_group_unicorn_guard": {
+    "animal_order": "guard",
+    "species": "unicorn",
+    "all": true
+  },
+  "animal_group_unicorn_attack": {
+    "animal_order": "attack",
+    "species": "unicorn",
+    "all": true
+  },
+  "animal_group_unicorn_evade": {
+    "animal_order": "evade",
+    "species": "unicorn",
+    "all": true
+  },
+  "animal_group_unicorn_retaliate": {
+    "animal_order": "retaliate",
+    "species": "unicorn",
+    "all": true
+  },
+  "animal_group_unicorn_free": {
+    "animal_order": "free",
+    "species": "unicorn",
+    "all": true
+  },
+  "animal_group_unicorn_aggressive": {
+    "animal_order": "aggressive",
+    "species": "unicorn",
+    "all": true
+  },
+  "animal_group_shark_follow": {
+    "animal_order": "follow",
+    "species": "shark",
+    "all": true
+  },
+  "animal_group_shark_stay": {
+    "animal_order": "stay",
+    "species": "shark",
+    "all": true
+  },
+  "animal_group_shark_guard": {
+    "animal_order": "guard",
+    "species": "shark",
+    "all": true
+  },
+  "animal_group_shark_attack": {
+    "animal_order": "attack",
+    "species": "shark",
+    "all": true
+  },
+  "animal_group_shark_evade": {
+    "animal_order": "evade",
+    "species": "shark",
+    "all": true
+  },
+  "animal_group_shark_retaliate": {
+    "animal_order": "retaliate",
+    "species": "shark",
+    "all": true
+  },
+  "animal_group_shark_free": {
+    "animal_order": "free",
+    "species": "shark",
+    "all": true
+  },
+  "animal_group_shark_aggressive": {
+    "animal_order": "aggressive",
+    "species": "shark",
+    "all": true
+  },
+  "animal_group_eagle_follow": {
+    "animal_order": "follow",
+    "species": "eagle",
+    "all": true
+  },
+  "animal_group_eagle_stay": {
+    "animal_order": "stay",
+    "species": "eagle",
+    "all": true
+  },
+  "animal_group_eagle_guard": {
+    "animal_order": "guard",
+    "species": "eagle",
+    "all": true
+  },
+  "animal_group_eagle_attack": {
+    "animal_order": "attack",
+    "species": "eagle",
+    "all": true
+  },
+  "animal_group_eagle_evade": {
+    "animal_order": "evade",
+    "species": "eagle",
+    "all": true
+  },
+  "animal_group_eagle_retaliate": {
+    "animal_order": "retaliate",
+    "species": "eagle",
+    "all": true
+  },
+  "animal_group_eagle_free": {
+    "animal_order": "free",
+    "species": "eagle",
+    "all": true
+  },
+  "animal_group_eagle_aggressive": {
+    "animal_order": "aggressive",
+    "species": "eagle",
+    "all": true
+  },
+  "animal_group_chicken_follow": {
+    "animal_order": "follow",
+    "species": "chicken",
+    "all": true
+  },
+  "animal_group_chicken_stay": {
+    "animal_order": "stay",
+    "species": "chicken",
+    "all": true
+  },
+  "animal_group_chicken_guard": {
+    "animal_order": "guard",
+    "species": "chicken",
+    "all": true
+  },
+  "animal_group_chicken_attack": {
+    "animal_order": "attack",
+    "species": "chicken",
+    "all": true
+  },
+  "animal_group_chicken_evade": {
+    "animal_order": "evade",
+    "species": "chicken",
+    "all": true
+  },
+  "animal_group_chicken_retaliate": {
+    "animal_order": "retaliate",
+    "species": "chicken",
+    "all": true
+  },
+  "animal_group_chicken_free": {
+    "animal_order": "free",
+    "species": "chicken",
+    "all": true
+  },
+  "animal_group_chicken_aggressive": {
+    "animal_order": "aggressive",
+    "species": "chicken",
+    "all": true
+  },
+  "animal_group_snake_follow": {
+    "animal_order": "follow",
+    "species": "snake",
+    "all": true
+  },
+  "animal_group_snake_stay": {
+    "animal_order": "stay",
+    "species": "snake",
+    "all": true
+  },
+  "animal_group_snake_guard": {
+    "animal_order": "guard",
+    "species": "snake",
+    "all": true
+  },
+  "animal_group_snake_attack": {
+    "animal_order": "attack",
+    "species": "snake",
+    "all": true
+  },
+  "animal_group_snake_evade": {
+    "animal_order": "evade",
+    "species": "snake",
+    "all": true
+  },
+  "animal_group_snake_retaliate": {
+    "animal_order": "retaliate",
+    "species": "snake",
+    "all": true
+  },
+  "animal_group_snake_free": {
+    "animal_order": "free",
+    "species": "snake",
+    "all": true
+  },
+  "animal_group_snake_aggressive": {
+    "animal_order": "aggressive",
+    "species": "snake",
+    "all": true
+  },
+  "animal_group_spider_follow": {
+    "animal_order": "follow",
+    "species": "spider",
+    "all": true
+  },
+  "animal_group_spider_stay": {
+    "animal_order": "stay",
+    "species": "spider",
+    "all": true
+  },
+  "animal_group_spider_guard": {
+    "animal_order": "guard",
+    "species": "spider",
+    "all": true
+  },
+  "animal_group_spider_attack": {
+    "animal_order": "attack",
+    "species": "spider",
+    "all": true
+  },
+  "animal_group_spider_evade": {
+    "animal_order": "evade",
+    "species": "spider",
+    "all": true
+  },
+  "animal_group_spider_retaliate": {
+    "animal_order": "retaliate",
+    "species": "spider",
+    "all": true
+  },
+  "animal_group_spider_free": {
+    "animal_order": "free",
+    "species": "spider",
+    "all": true
+  },
+  "animal_group_spider_aggressive": {
+    "animal_order": "aggressive",
+    "species": "spider",
+    "all": true
+  },
+  "animal_group_ant_follow": {
+    "animal_order": "follow",
+    "species": "ant",
+    "all": true
+  },
+  "animal_group_ant_stay": {
+    "animal_order": "stay",
+    "species": "ant",
+    "all": true
+  },
+  "animal_group_ant_guard": {
+    "animal_order": "guard",
+    "species": "ant",
+    "all": true
+  },
+  "animal_group_ant_attack": {
+    "animal_order": "attack",
+    "species": "ant",
+    "all": true
+  },
+  "animal_group_ant_evade": {
+    "animal_order": "evade",
+    "species": "ant",
+    "all": true
+  },
+  "animal_group_ant_retaliate": {
+    "animal_order": "retaliate",
+    "species": "ant",
+    "all": true
+  },
+  "animal_group_ant_free": {
+    "animal_order": "free",
+    "species": "ant",
+    "all": true
+  },
+  "animal_group_ant_aggressive": {
+    "animal_order": "aggressive",
+    "species": "ant",
+    "all": true
+  },
+  "animal_group_trex_follow": {
+    "animal_order": "follow",
+    "species": "trex",
+    "all": true
+  },
+  "animal_group_trex_stay": {
+    "animal_order": "stay",
+    "species": "trex",
+    "all": true
+  },
+  "animal_group_trex_guard": {
+    "animal_order": "guard",
+    "species": "trex",
+    "all": true
+  },
+  "animal_group_trex_attack": {
+    "animal_order": "attack",
+    "species": "trex",
+    "all": true
+  },
+  "animal_group_trex_evade": {
+    "animal_order": "evade",
+    "species": "trex",
+    "all": true
+  },
+  "animal_group_trex_retaliate": {
+    "animal_order": "retaliate",
+    "species": "trex",
+    "all": true
+  },
+  "animal_group_trex_free": {
+    "animal_order": "free",
+    "species": "trex",
+    "all": true
+  },
+  "animal_group_trex_aggressive": {
+    "animal_order": "aggressive",
+    "species": "trex",
+    "all": true
+  },
+  "animal_group_cat_follow": {
+    "animal_order": "follow",
+    "species": "cat",
+    "all": true
+  },
+  "animal_group_cat_stay": {
+    "animal_order": "stay",
+    "species": "cat",
+    "all": true
+  },
+  "animal_group_cat_guard": {
+    "animal_order": "guard",
+    "species": "cat",
+    "all": true
+  },
+  "animal_group_cat_attack": {
+    "animal_order": "attack",
+    "species": "cat",
+    "all": true
+  },
+  "animal_group_cat_evade": {
+    "animal_order": "evade",
+    "species": "cat",
+    "all": true
+  },
+  "animal_group_cat_retaliate": {
+    "animal_order": "retaliate",
+    "species": "cat",
+    "all": true
+  },
+  "animal_group_cat_free": {
+    "animal_order": "free",
+    "species": "cat",
+    "all": true
+  },
+  "animal_group_cat_aggressive": {
+    "animal_order": "aggressive",
+    "species": "cat",
+    "all": true
+  },
+  "animal_group_rabbit_follow": {
+    "animal_order": "follow",
+    "species": "rabbit",
+    "all": true
+  },
+  "animal_group_rabbit_stay": {
+    "animal_order": "stay",
+    "species": "rabbit",
+    "all": true
+  },
+  "animal_group_rabbit_guard": {
+    "animal_order": "guard",
+    "species": "rabbit",
+    "all": true
+  },
+  "animal_group_rabbit_attack": {
+    "animal_order": "attack",
+    "species": "rabbit",
+    "all": true
+  },
+  "animal_group_rabbit_evade": {
+    "animal_order": "evade",
+    "species": "rabbit",
+    "all": true
+  },
+  "animal_group_rabbit_retaliate": {
+    "animal_order": "retaliate",
+    "species": "rabbit",
+    "all": true
+  },
+  "animal_group_rabbit_free": {
+    "animal_order": "free",
+    "species": "rabbit",
+    "all": true
+  },
+  "animal_group_rabbit_aggressive": {
+    "animal_order": "aggressive",
+    "species": "rabbit",
+    "all": true
+  },
+  "animal_group_fox_follow": {
+    "animal_order": "follow",
+    "species": "fox",
+    "all": true
+  },
+  "animal_group_fox_stay": {
+    "animal_order": "stay",
+    "species": "fox",
+    "all": true
+  },
+  "animal_group_fox_guard": {
+    "animal_order": "guard",
+    "species": "fox",
+    "all": true
+  },
+  "animal_group_fox_attack": {
+    "animal_order": "attack",
+    "species": "fox",
+    "all": true
+  },
+  "animal_group_fox_evade": {
+    "animal_order": "evade",
+    "species": "fox",
+    "all": true
+  },
+  "animal_group_fox_retaliate": {
+    "animal_order": "retaliate",
+    "species": "fox",
+    "all": true
+  },
+  "animal_group_fox_free": {
+    "animal_order": "free",
+    "species": "fox",
+    "all": true
+  },
+  "animal_group_fox_aggressive": {
+    "animal_order": "aggressive",
+    "species": "fox",
+    "all": true
+  },
+  "animal_group_boar_follow": {
+    "animal_order": "follow",
+    "species": "boar",
+    "all": true
+  },
+  "animal_group_boar_stay": {
+    "animal_order": "stay",
+    "species": "boar",
+    "all": true
+  },
+  "animal_group_boar_guard": {
+    "animal_order": "guard",
+    "species": "boar",
+    "all": true
+  },
+  "animal_group_boar_attack": {
+    "animal_order": "attack",
+    "species": "boar",
+    "all": true
+  },
+  "animal_group_boar_evade": {
+    "animal_order": "evade",
+    "species": "boar",
+    "all": true
+  },
+  "animal_group_boar_retaliate": {
+    "animal_order": "retaliate",
+    "species": "boar",
+    "all": true
+  },
+  "animal_group_boar_free": {
+    "animal_order": "free",
+    "species": "boar",
+    "all": true
+  },
+  "animal_group_boar_aggressive": {
+    "animal_order": "aggressive",
+    "species": "boar",
+    "all": true
+  },
+  "animal_group_crocodile_follow": {
+    "animal_order": "follow",
+    "species": "crocodile",
+    "all": true
+  },
+  "animal_group_crocodile_stay": {
+    "animal_order": "stay",
+    "species": "crocodile",
+    "all": true
+  },
+  "animal_group_crocodile_guard": {
+    "animal_order": "guard",
+    "species": "crocodile",
+    "all": true
+  },
+  "animal_group_crocodile_attack": {
+    "animal_order": "attack",
+    "species": "crocodile",
+    "all": true
+  },
+  "animal_group_crocodile_evade": {
+    "animal_order": "evade",
+    "species": "crocodile",
+    "all": true
+  },
+  "animal_group_crocodile_retaliate": {
+    "animal_order": "retaliate",
+    "species": "crocodile",
+    "all": true
+  },
+  "animal_group_crocodile_free": {
+    "animal_order": "free",
+    "species": "crocodile",
+    "all": true
+  },
+  "animal_group_crocodile_aggressive": {
+    "animal_order": "aggressive",
+    "species": "crocodile",
+    "all": true
+  },
+  "animal_group_elephant_follow": {
+    "animal_order": "follow",
+    "species": "elephant",
+    "all": true
+  },
+  "animal_group_elephant_stay": {
+    "animal_order": "stay",
+    "species": "elephant",
+    "all": true
+  },
+  "animal_group_elephant_guard": {
+    "animal_order": "guard",
+    "species": "elephant",
+    "all": true
+  },
+  "animal_group_elephant_attack": {
+    "animal_order": "attack",
+    "species": "elephant",
+    "all": true
+  },
+  "animal_group_elephant_evade": {
+    "animal_order": "evade",
+    "species": "elephant",
+    "all": true
+  },
+  "animal_group_elephant_retaliate": {
+    "animal_order": "retaliate",
+    "species": "elephant",
+    "all": true
+  },
+  "animal_group_elephant_free": {
+    "animal_order": "free",
+    "species": "elephant",
+    "all": true
+  },
+  "animal_group_elephant_aggressive": {
+    "animal_order": "aggressive",
+    "species": "elephant",
+    "all": true
+  },
+  "animal_group_lion_follow": {
+    "animal_order": "follow",
+    "species": "lion",
+    "all": true
+  },
+  "animal_group_lion_stay": {
+    "animal_order": "stay",
+    "species": "lion",
+    "all": true
+  },
+  "animal_group_lion_guard": {
+    "animal_order": "guard",
+    "species": "lion",
+    "all": true
+  },
+  "animal_group_lion_attack": {
+    "animal_order": "attack",
+    "species": "lion",
+    "all": true
+  },
+  "animal_group_lion_evade": {
+    "animal_order": "evade",
+    "species": "lion",
+    "all": true
+  },
+  "animal_group_lion_retaliate": {
+    "animal_order": "retaliate",
+    "species": "lion",
+    "all": true
+  },
+  "animal_group_lion_free": {
+    "animal_order": "free",
+    "species": "lion",
+    "all": true
+  },
+  "animal_group_lion_aggressive": {
+    "animal_order": "aggressive",
+    "species": "lion",
+    "all": true
+  },
+  "animal_group_tiger_follow": {
+    "animal_order": "follow",
+    "species": "tiger",
+    "all": true
+  },
+  "animal_group_tiger_stay": {
+    "animal_order": "stay",
+    "species": "tiger",
+    "all": true
+  },
+  "animal_group_tiger_guard": {
+    "animal_order": "guard",
+    "species": "tiger",
+    "all": true
+  },
+  "animal_group_tiger_attack": {
+    "animal_order": "attack",
+    "species": "tiger",
+    "all": true
+  },
+  "animal_group_tiger_evade": {
+    "animal_order": "evade",
+    "species": "tiger",
+    "all": true
+  },
+  "animal_group_tiger_retaliate": {
+    "animal_order": "retaliate",
+    "species": "tiger",
+    "all": true
+  },
+  "animal_group_tiger_free": {
+    "animal_order": "free",
+    "species": "tiger",
+    "all": true
+  },
+  "animal_group_tiger_aggressive": {
+    "animal_order": "aggressive",
+    "species": "tiger",
+    "all": true
+  },
+  "animal_group_penguin_follow": {
+    "animal_order": "follow",
+    "species": "penguin",
+    "all": true
+  },
+  "animal_group_penguin_stay": {
+    "animal_order": "stay",
+    "species": "penguin",
+    "all": true
+  },
+  "animal_group_penguin_guard": {
+    "animal_order": "guard",
+    "species": "penguin",
+    "all": true
+  },
+  "animal_group_penguin_attack": {
+    "animal_order": "attack",
+    "species": "penguin",
+    "all": true
+  },
+  "animal_group_penguin_evade": {
+    "animal_order": "evade",
+    "species": "penguin",
+    "all": true
+  },
+  "animal_group_penguin_retaliate": {
+    "animal_order": "retaliate",
+    "species": "penguin",
+    "all": true
+  },
+  "animal_group_penguin_free": {
+    "animal_order": "free",
+    "species": "penguin",
+    "all": true
+  },
+  "animal_group_penguin_aggressive": {
+    "animal_order": "aggressive",
+    "species": "penguin",
+    "all": true
+  },
+  "animal_group_turtle_follow": {
+    "animal_order": "follow",
+    "species": "turtle",
+    "all": true
+  },
+  "animal_group_turtle_stay": {
+    "animal_order": "stay",
+    "species": "turtle",
+    "all": true
+  },
+  "animal_group_turtle_guard": {
+    "animal_order": "guard",
+    "species": "turtle",
+    "all": true
+  },
+  "animal_group_turtle_attack": {
+    "animal_order": "attack",
+    "species": "turtle",
+    "all": true
+  },
+  "animal_group_turtle_evade": {
+    "animal_order": "evade",
+    "species": "turtle",
+    "all": true
+  },
+  "animal_group_turtle_retaliate": {
+    "animal_order": "retaliate",
+    "species": "turtle",
+    "all": true
+  },
+  "animal_group_turtle_free": {
+    "animal_order": "free",
+    "species": "turtle",
+    "all": true
+  },
+  "animal_group_turtle_aggressive": {
+    "animal_order": "aggressive",
+    "species": "turtle",
+    "all": true
+  },
+  "animal_group_goat_follow": {
+    "animal_order": "follow",
+    "species": "goat",
+    "all": true
+  },
+  "animal_group_goat_stay": {
+    "animal_order": "stay",
+    "species": "goat",
+    "all": true
+  },
+  "animal_group_goat_guard": {
+    "animal_order": "guard",
+    "species": "goat",
+    "all": true
+  },
+  "animal_group_goat_attack": {
+    "animal_order": "attack",
+    "species": "goat",
+    "all": true
+  },
+  "animal_group_goat_evade": {
+    "animal_order": "evade",
+    "species": "goat",
+    "all": true
+  },
+  "animal_group_goat_retaliate": {
+    "animal_order": "retaliate",
+    "species": "goat",
+    "all": true
+  },
+  "animal_group_goat_free": {
+    "animal_order": "free",
+    "species": "goat",
+    "all": true
+  },
+  "animal_group_goat_aggressive": {
+    "animal_order": "aggressive",
+    "species": "goat",
+    "all": true
+  },
+  "animal_group_deer_follow": {
+    "animal_order": "follow",
+    "species": "deer",
+    "all": true
+  },
+  "animal_group_deer_stay": {
+    "animal_order": "stay",
+    "species": "deer",
+    "all": true
+  },
+  "animal_group_deer_guard": {
+    "animal_order": "guard",
+    "species": "deer",
+    "all": true
+  },
+  "animal_group_deer_attack": {
+    "animal_order": "attack",
+    "species": "deer",
+    "all": true
+  },
+  "animal_group_deer_evade": {
+    "animal_order": "evade",
+    "species": "deer",
+    "all": true
+  },
+  "animal_group_deer_retaliate": {
+    "animal_order": "retaliate",
+    "species": "deer",
+    "all": true
+  },
+  "animal_group_deer_free": {
+    "animal_order": "free",
+    "species": "deer",
+    "all": true
+  },
+  "animal_group_deer_aggressive": {
+    "animal_order": "aggressive",
+    "species": "deer",
+    "all": true
+  },
+  "animal_group_crab_follow": {
+    "animal_order": "follow",
+    "species": "crab",
+    "all": true
+  },
+  "animal_group_crab_stay": {
+    "animal_order": "stay",
+    "species": "crab",
+    "all": true
+  },
+  "animal_group_crab_guard": {
+    "animal_order": "guard",
+    "species": "crab",
+    "all": true
+  },
+  "animal_group_crab_attack": {
+    "animal_order": "attack",
+    "species": "crab",
+    "all": true
+  },
+  "animal_group_crab_evade": {
+    "animal_order": "evade",
+    "species": "crab",
+    "all": true
+  },
+  "animal_group_crab_retaliate": {
+    "animal_order": "retaliate",
+    "species": "crab",
+    "all": true
+  },
+  "animal_group_crab_free": {
+    "animal_order": "free",
+    "species": "crab",
+    "all": true
+  },
+  "animal_group_crab_aggressive": {
+    "animal_order": "aggressive",
+    "species": "crab",
+    "all": true
+  },
+  "animal_group_scorpion_follow": {
+    "animal_order": "follow",
+    "species": "scorpion",
+    "all": true
+  },
+  "animal_group_scorpion_stay": {
+    "animal_order": "stay",
+    "species": "scorpion",
+    "all": true
+  },
+  "animal_group_scorpion_guard": {
+    "animal_order": "guard",
+    "species": "scorpion",
+    "all": true
+  },
+  "animal_group_scorpion_attack": {
+    "animal_order": "attack",
+    "species": "scorpion",
+    "all": true
+  },
+  "animal_group_scorpion_evade": {
+    "animal_order": "evade",
+    "species": "scorpion",
+    "all": true
+  },
+  "animal_group_scorpion_retaliate": {
+    "animal_order": "retaliate",
+    "species": "scorpion",
+    "all": true
+  },
+  "animal_group_scorpion_free": {
+    "animal_order": "free",
+    "species": "scorpion",
+    "all": true
+  },
+  "animal_group_scorpion_aggressive": {
+    "animal_order": "aggressive",
+    "species": "scorpion",
+    "all": true
+  },
+  "animal_group_frog_follow": {
+    "animal_order": "follow",
+    "species": "frog",
+    "all": true
+  },
+  "animal_group_frog_stay": {
+    "animal_order": "stay",
+    "species": "frog",
+    "all": true
+  },
+  "animal_group_frog_guard": {
+    "animal_order": "guard",
+    "species": "frog",
+    "all": true
+  },
+  "animal_group_frog_attack": {
+    "animal_order": "attack",
+    "species": "frog",
+    "all": true
+  },
+  "animal_group_frog_evade": {
+    "animal_order": "evade",
+    "species": "frog",
+    "all": true
+  },
+  "animal_group_frog_retaliate": {
+    "animal_order": "retaliate",
+    "species": "frog",
+    "all": true
+  },
+  "animal_group_frog_free": {
+    "animal_order": "free",
+    "species": "frog",
+    "all": true
+  },
+  "animal_group_frog_aggressive": {
+    "animal_order": "aggressive",
+    "species": "frog",
+    "all": true
+  },
+  "animal_group_bull_follow": {
+    "animal_order": "follow",
+    "species": "bull",
+    "all": true
+  },
+  "animal_group_bull_stay": {
+    "animal_order": "stay",
+    "species": "bull",
+    "all": true
+  },
+  "animal_group_bull_guard": {
+    "animal_order": "guard",
+    "species": "bull",
+    "all": true
+  },
+  "animal_group_bull_attack": {
+    "animal_order": "attack",
+    "species": "bull",
+    "all": true
+  },
+  "animal_group_bull_evade": {
+    "animal_order": "evade",
+    "species": "bull",
+    "all": true
+  },
+  "animal_group_bull_retaliate": {
+    "animal_order": "retaliate",
+    "species": "bull",
+    "all": true
+  },
+  "animal_group_bull_free": {
+    "animal_order": "free",
+    "species": "bull",
+    "all": true
+  },
+  "animal_group_bull_aggressive": {
+    "animal_order": "aggressive",
+    "species": "bull",
+    "all": true
+  },
+  "animal_group_bee_follow": {
+    "animal_order": "follow",
+    "species": "bee",
+    "all": true
+  },
+  "animal_group_bee_stay": {
+    "animal_order": "stay",
+    "species": "bee",
+    "all": true
+  },
+  "animal_group_bee_guard": {
+    "animal_order": "guard",
+    "species": "bee",
+    "all": true
+  },
+  "animal_group_bee_attack": {
+    "animal_order": "attack",
+    "species": "bee",
+    "all": true
+  },
+  "animal_group_bee_evade": {
+    "animal_order": "evade",
+    "species": "bee",
+    "all": true
+  },
+  "animal_group_bee_retaliate": {
+    "animal_order": "retaliate",
+    "species": "bee",
+    "all": true
+  },
+  "animal_group_bee_free": {
+    "animal_order": "free",
+    "species": "bee",
+    "all": true
+  },
+  "animal_group_bee_aggressive": {
+    "animal_order": "aggressive",
+    "species": "bee",
+    "all": true
+  },
+  "animal_group_rat_follow": {
+    "animal_order": "follow",
+    "species": "rat",
+    "all": true
+  },
+  "animal_group_rat_stay": {
+    "animal_order": "stay",
+    "species": "rat",
+    "all": true
+  },
+  "animal_group_rat_guard": {
+    "animal_order": "guard",
+    "species": "rat",
+    "all": true
+  },
+  "animal_group_rat_attack": {
+    "animal_order": "attack",
+    "species": "rat",
+    "all": true
+  },
+  "animal_group_rat_evade": {
+    "animal_order": "evade",
+    "species": "rat",
+    "all": true
+  },
+  "animal_group_rat_retaliate": {
+    "animal_order": "retaliate",
+    "species": "rat",
+    "all": true
+  },
+  "animal_group_rat_free": {
+    "animal_order": "free",
+    "species": "rat",
+    "all": true
+  },
+  "animal_group_rat_aggressive": {
+    "animal_order": "aggressive",
+    "species": "rat",
+    "all": true
+  },
+  "animal_group_zombie_follow": {
+    "animal_order": "follow",
+    "species": "zombie",
+    "all": true
+  },
+  "animal_group_zombie_stay": {
+    "animal_order": "stay",
+    "species": "zombie",
+    "all": true
+  },
+  "animal_group_zombie_guard": {
+    "animal_order": "guard",
+    "species": "zombie",
+    "all": true
+  },
+  "animal_group_zombie_attack": {
+    "animal_order": "attack",
+    "species": "zombie",
+    "all": true
+  },
+  "animal_group_zombie_evade": {
+    "animal_order": "evade",
+    "species": "zombie",
+    "all": true
+  },
+  "animal_group_zombie_retaliate": {
+    "animal_order": "retaliate",
+    "species": "zombie",
+    "all": true
+  },
+  "animal_group_zombie_free": {
+    "animal_order": "free",
+    "species": "zombie",
+    "all": true
+  },
+  "animal_group_zombie_aggressive": {
+    "animal_order": "aggressive",
+    "species": "zombie",
+    "all": true
+  },
+  "animal_group_skeleton_follow": {
+    "animal_order": "follow",
+    "species": "skeleton",
+    "all": true
+  },
+  "animal_group_skeleton_stay": {
+    "animal_order": "stay",
+    "species": "skeleton",
+    "all": true
+  },
+  "animal_group_skeleton_guard": {
+    "animal_order": "guard",
+    "species": "skeleton",
+    "all": true
+  },
+  "animal_group_skeleton_attack": {
+    "animal_order": "attack",
+    "species": "skeleton",
+    "all": true
+  },
+  "animal_group_skeleton_evade": {
+    "animal_order": "evade",
+    "species": "skeleton",
+    "all": true
+  },
+  "animal_group_skeleton_retaliate": {
+    "animal_order": "retaliate",
+    "species": "skeleton",
+    "all": true
+  },
+  "animal_group_skeleton_free": {
+    "animal_order": "free",
+    "species": "skeleton",
+    "all": true
+  },
+  "animal_group_skeleton_aggressive": {
+    "animal_order": "aggressive",
+    "species": "skeleton",
+    "all": true
+  },
+  "animal_group_dummy_follow": {
+    "animal_order": "follow",
+    "species": "dummy",
+    "all": true
+  },
+  "animal_group_dummy_stay": {
+    "animal_order": "stay",
+    "species": "dummy",
+    "all": true
+  },
+  "animal_group_dummy_guard": {
+    "animal_order": "guard",
+    "species": "dummy",
+    "all": true
+  },
+  "animal_group_dummy_attack": {
+    "animal_order": "attack",
+    "species": "dummy",
+    "all": true
+  },
+  "animal_group_dummy_evade": {
+    "animal_order": "evade",
+    "species": "dummy",
+    "all": true
+  },
+  "animal_group_dummy_retaliate": {
+    "animal_order": "retaliate",
+    "species": "dummy",
+    "all": true
+  },
+  "animal_group_dummy_free": {
+    "animal_order": "free",
+    "species": "dummy",
+    "all": true
+  },
+  "animal_group_dummy_aggressive": {
+    "animal_order": "aggressive",
+    "species": "dummy",
+    "all": true
+  },
+  "animal_group_duck_follow": {
+    "animal_order": "follow",
+    "species": "duck",
+    "all": true
+  },
+  "animal_group_duck_stay": {
+    "animal_order": "stay",
+    "species": "duck",
+    "all": true
+  },
+  "animal_group_duck_guard": {
+    "animal_order": "guard",
+    "species": "duck",
+    "all": true
+  },
+  "animal_group_duck_attack": {
+    "animal_order": "attack",
+    "species": "duck",
+    "all": true
+  },
+  "animal_group_duck_evade": {
+    "animal_order": "evade",
+    "species": "duck",
+    "all": true
+  },
+  "animal_group_duck_retaliate": {
+    "animal_order": "retaliate",
+    "species": "duck",
+    "all": true
+  },
+  "animal_group_duck_free": {
+    "animal_order": "free",
+    "species": "duck",
+    "all": true
+  },
+  "animal_group_duck_aggressive": {
+    "animal_order": "aggressive",
+    "species": "duck",
+    "all": true
+  },
+  "animal_group_goose_follow": {
+    "animal_order": "follow",
+    "species": "goose",
+    "all": true
+  },
+  "animal_group_goose_stay": {
+    "animal_order": "stay",
+    "species": "goose",
+    "all": true
+  },
+  "animal_group_goose_guard": {
+    "animal_order": "guard",
+    "species": "goose",
+    "all": true
+  },
+  "animal_group_goose_attack": {
+    "animal_order": "attack",
+    "species": "goose",
+    "all": true
+  },
+  "animal_group_goose_evade": {
+    "animal_order": "evade",
+    "species": "goose",
+    "all": true
+  },
+  "animal_group_goose_retaliate": {
+    "animal_order": "retaliate",
+    "species": "goose",
+    "all": true
+  },
+  "animal_group_goose_free": {
+    "animal_order": "free",
+    "species": "goose",
+    "all": true
+  },
+  "animal_group_goose_aggressive": {
+    "animal_order": "aggressive",
+    "species": "goose",
+    "all": true
+  },
+  "animal_group_turkey_follow": {
+    "animal_order": "follow",
+    "species": "turkey",
+    "all": true
+  },
+  "animal_group_turkey_stay": {
+    "animal_order": "stay",
+    "species": "turkey",
+    "all": true
+  },
+  "animal_group_turkey_guard": {
+    "animal_order": "guard",
+    "species": "turkey",
+    "all": true
+  },
+  "animal_group_turkey_attack": {
+    "animal_order": "attack",
+    "species": "turkey",
+    "all": true
+  },
+  "animal_group_turkey_evade": {
+    "animal_order": "evade",
+    "species": "turkey",
+    "all": true
+  },
+  "animal_group_turkey_retaliate": {
+    "animal_order": "retaliate",
+    "species": "turkey",
+    "all": true
+  },
+  "animal_group_turkey_free": {
+    "animal_order": "free",
+    "species": "turkey",
+    "all": true
+  },
+  "animal_group_turkey_aggressive": {
+    "animal_order": "aggressive",
+    "species": "turkey",
+    "all": true
+  },
+  "animal_group_pig_follow": {
+    "animal_order": "follow",
+    "species": "pig",
+    "all": true
+  },
+  "animal_group_pig_stay": {
+    "animal_order": "stay",
+    "species": "pig",
+    "all": true
+  },
+  "animal_group_pig_guard": {
+    "animal_order": "guard",
+    "species": "pig",
+    "all": true
+  },
+  "animal_group_pig_attack": {
+    "animal_order": "attack",
+    "species": "pig",
+    "all": true
+  },
+  "animal_group_pig_evade": {
+    "animal_order": "evade",
+    "species": "pig",
+    "all": true
+  },
+  "animal_group_pig_retaliate": {
+    "animal_order": "retaliate",
+    "species": "pig",
+    "all": true
+  },
+  "animal_group_pig_free": {
+    "animal_order": "free",
+    "species": "pig",
+    "all": true
+  },
+  "animal_group_pig_aggressive": {
+    "animal_order": "aggressive",
+    "species": "pig",
+    "all": true
+  },
+  "animal_group_cow_follow": {
+    "animal_order": "follow",
+    "species": "cow",
+    "all": true
+  },
+  "animal_group_cow_stay": {
+    "animal_order": "stay",
+    "species": "cow",
+    "all": true
+  },
+  "animal_group_cow_guard": {
+    "animal_order": "guard",
+    "species": "cow",
+    "all": true
+  },
+  "animal_group_cow_attack": {
+    "animal_order": "attack",
+    "species": "cow",
+    "all": true
+  },
+  "animal_group_cow_evade": {
+    "animal_order": "evade",
+    "species": "cow",
+    "all": true
+  },
+  "animal_group_cow_retaliate": {
+    "animal_order": "retaliate",
+    "species": "cow",
+    "all": true
+  },
+  "animal_group_cow_free": {
+    "animal_order": "free",
+    "species": "cow",
+    "all": true
+  },
+  "animal_group_cow_aggressive": {
+    "animal_order": "aggressive",
+    "species": "cow",
+    "all": true
+  },
+  "animal_group_sheep_follow": {
+    "animal_order": "follow",
+    "species": "sheep",
+    "all": true
+  },
+  "animal_group_sheep_stay": {
+    "animal_order": "stay",
+    "species": "sheep",
+    "all": true
+  },
+  "animal_group_sheep_guard": {
+    "animal_order": "guard",
+    "species": "sheep",
+    "all": true
+  },
+  "animal_group_sheep_attack": {
+    "animal_order": "attack",
+    "species": "sheep",
+    "all": true
+  },
+  "animal_group_sheep_evade": {
+    "animal_order": "evade",
+    "species": "sheep",
+    "all": true
+  },
+  "animal_group_sheep_retaliate": {
+    "animal_order": "retaliate",
+    "species": "sheep",
+    "all": true
+  },
+  "animal_group_sheep_free": {
+    "animal_order": "free",
+    "species": "sheep",
+    "all": true
+  },
+  "animal_group_sheep_aggressive": {
+    "animal_order": "aggressive",
+    "species": "sheep",
+    "all": true
+  },
+  "animal_group_donkey_follow": {
+    "animal_order": "follow",
+    "species": "donkey",
+    "all": true
+  },
+  "animal_group_donkey_stay": {
+    "animal_order": "stay",
+    "species": "donkey",
+    "all": true
+  },
+  "animal_group_donkey_guard": {
+    "animal_order": "guard",
+    "species": "donkey",
+    "all": true
+  },
+  "animal_group_donkey_attack": {
+    "animal_order": "attack",
+    "species": "donkey",
+    "all": true
+  },
+  "animal_group_donkey_evade": {
+    "animal_order": "evade",
+    "species": "donkey",
+    "all": true
+  },
+  "animal_group_donkey_retaliate": {
+    "animal_order": "retaliate",
+    "species": "donkey",
+    "all": true
+  },
+  "animal_group_donkey_free": {
+    "animal_order": "free",
+    "species": "donkey",
+    "all": true
+  },
+  "animal_group_donkey_aggressive": {
+    "animal_order": "aggressive",
+    "species": "donkey",
+    "all": true
+  },
+  "animal_group_camel_follow": {
+    "animal_order": "follow",
+    "species": "camel",
+    "all": true
+  },
+  "animal_group_camel_stay": {
+    "animal_order": "stay",
+    "species": "camel",
+    "all": true
+  },
+  "animal_group_camel_guard": {
+    "animal_order": "guard",
+    "species": "camel",
+    "all": true
+  },
+  "animal_group_camel_attack": {
+    "animal_order": "attack",
+    "species": "camel",
+    "all": true
+  },
+  "animal_group_camel_evade": {
+    "animal_order": "evade",
+    "species": "camel",
+    "all": true
+  },
+  "animal_group_camel_retaliate": {
+    "animal_order": "retaliate",
+    "species": "camel",
+    "all": true
+  },
+  "animal_group_camel_free": {
+    "animal_order": "free",
+    "species": "camel",
+    "all": true
+  },
+  "animal_group_camel_aggressive": {
+    "animal_order": "aggressive",
+    "species": "camel",
+    "all": true
+  },
+  "animal_group_llama_follow": {
+    "animal_order": "follow",
+    "species": "llama",
+    "all": true
+  },
+  "animal_group_llama_stay": {
+    "animal_order": "stay",
+    "species": "llama",
+    "all": true
+  },
+  "animal_group_llama_guard": {
+    "animal_order": "guard",
+    "species": "llama",
+    "all": true
+  },
+  "animal_group_llama_attack": {
+    "animal_order": "attack",
+    "species": "llama",
+    "all": true
+  },
+  "animal_group_llama_evade": {
+    "animal_order": "evade",
+    "species": "llama",
+    "all": true
+  },
+  "animal_group_llama_retaliate": {
+    "animal_order": "retaliate",
+    "species": "llama",
+    "all": true
+  },
+  "animal_group_llama_free": {
+    "animal_order": "free",
+    "species": "llama",
+    "all": true
+  },
+  "animal_group_llama_aggressive": {
+    "animal_order": "aggressive",
+    "species": "llama",
+    "all": true
+  },
+  "animal_group_giraffe_follow": {
+    "animal_order": "follow",
+    "species": "giraffe",
+    "all": true
+  },
+  "animal_group_giraffe_stay": {
+    "animal_order": "stay",
+    "species": "giraffe",
+    "all": true
+  },
+  "animal_group_giraffe_guard": {
+    "animal_order": "guard",
+    "species": "giraffe",
+    "all": true
+  },
+  "animal_group_giraffe_attack": {
+    "animal_order": "attack",
+    "species": "giraffe",
+    "all": true
+  },
+  "animal_group_giraffe_evade": {
+    "animal_order": "evade",
+    "species": "giraffe",
+    "all": true
+  },
+  "animal_group_giraffe_retaliate": {
+    "animal_order": "retaliate",
+    "species": "giraffe",
+    "all": true
+  },
+  "animal_group_giraffe_free": {
+    "animal_order": "free",
+    "species": "giraffe",
+    "all": true
+  },
+  "animal_group_giraffe_aggressive": {
+    "animal_order": "aggressive",
+    "species": "giraffe",
+    "all": true
+  },
+  "animal_group_zebra_follow": {
+    "animal_order": "follow",
+    "species": "zebra",
+    "all": true
+  },
+  "animal_group_zebra_stay": {
+    "animal_order": "stay",
+    "species": "zebra",
+    "all": true
+  },
+  "animal_group_zebra_guard": {
+    "animal_order": "guard",
+    "species": "zebra",
+    "all": true
+  },
+  "animal_group_zebra_attack": {
+    "animal_order": "attack",
+    "species": "zebra",
+    "all": true
+  },
+  "animal_group_zebra_evade": {
+    "animal_order": "evade",
+    "species": "zebra",
+    "all": true
+  },
+  "animal_group_zebra_retaliate": {
+    "animal_order": "retaliate",
+    "species": "zebra",
+    "all": true
+  },
+  "animal_group_zebra_free": {
+    "animal_order": "free",
+    "species": "zebra",
+    "all": true
+  },
+  "animal_group_zebra_aggressive": {
+    "animal_order": "aggressive",
+    "species": "zebra",
+    "all": true
+  },
+  "animal_group_rhino_follow": {
+    "animal_order": "follow",
+    "species": "rhino",
+    "all": true
+  },
+  "animal_group_rhino_stay": {
+    "animal_order": "stay",
+    "species": "rhino",
+    "all": true
+  },
+  "animal_group_rhino_guard": {
+    "animal_order": "guard",
+    "species": "rhino",
+    "all": true
+  },
+  "animal_group_rhino_attack": {
+    "animal_order": "attack",
+    "species": "rhino",
+    "all": true
+  },
+  "animal_group_rhino_evade": {
+    "animal_order": "evade",
+    "species": "rhino",
+    "all": true
+  },
+  "animal_group_rhino_retaliate": {
+    "animal_order": "retaliate",
+    "species": "rhino",
+    "all": true
+  },
+  "animal_group_rhino_free": {
+    "animal_order": "free",
+    "species": "rhino",
+    "all": true
+  },
+  "animal_group_rhino_aggressive": {
+    "animal_order": "aggressive",
+    "species": "rhino",
+    "all": true
+  },
+  "animal_group_hippo_follow": {
+    "animal_order": "follow",
+    "species": "hippo",
+    "all": true
+  },
+  "animal_group_hippo_stay": {
+    "animal_order": "stay",
+    "species": "hippo",
+    "all": true
+  },
+  "animal_group_hippo_guard": {
+    "animal_order": "guard",
+    "species": "hippo",
+    "all": true
+  },
+  "animal_group_hippo_attack": {
+    "animal_order": "attack",
+    "species": "hippo",
+    "all": true
+  },
+  "animal_group_hippo_evade": {
+    "animal_order": "evade",
+    "species": "hippo",
+    "all": true
+  },
+  "animal_group_hippo_retaliate": {
+    "animal_order": "retaliate",
+    "species": "hippo",
+    "all": true
+  },
+  "animal_group_hippo_free": {
+    "animal_order": "free",
+    "species": "hippo",
+    "all": true
+  },
+  "animal_group_hippo_aggressive": {
+    "animal_order": "aggressive",
+    "species": "hippo",
+    "all": true
+  },
+  "animal_group_bison_follow": {
+    "animal_order": "follow",
+    "species": "bison",
+    "all": true
+  },
+  "animal_group_bison_stay": {
+    "animal_order": "stay",
+    "species": "bison",
+    "all": true
+  },
+  "animal_group_bison_guard": {
+    "animal_order": "guard",
+    "species": "bison",
+    "all": true
+  },
+  "animal_group_bison_attack": {
+    "animal_order": "attack",
+    "species": "bison",
+    "all": true
+  },
+  "animal_group_bison_evade": {
+    "animal_order": "evade",
+    "species": "bison",
+    "all": true
+  },
+  "animal_group_bison_retaliate": {
+    "animal_order": "retaliate",
+    "species": "bison",
+    "all": true
+  },
+  "animal_group_bison_free": {
+    "animal_order": "free",
+    "species": "bison",
+    "all": true
+  },
+  "animal_group_bison_aggressive": {
+    "animal_order": "aggressive",
+    "species": "bison",
+    "all": true
+  },
+  "animal_group_panda_follow": {
+    "animal_order": "follow",
+    "species": "panda",
+    "all": true
+  },
+  "animal_group_panda_stay": {
+    "animal_order": "stay",
+    "species": "panda",
+    "all": true
+  },
+  "animal_group_panda_guard": {
+    "animal_order": "guard",
+    "species": "panda",
+    "all": true
+  },
+  "animal_group_panda_attack": {
+    "animal_order": "attack",
+    "species": "panda",
+    "all": true
+  },
+  "animal_group_panda_evade": {
+    "animal_order": "evade",
+    "species": "panda",
+    "all": true
+  },
+  "animal_group_panda_retaliate": {
+    "animal_order": "retaliate",
+    "species": "panda",
+    "all": true
+  },
+  "animal_group_panda_free": {
+    "animal_order": "free",
+    "species": "panda",
+    "all": true
+  },
+  "animal_group_panda_aggressive": {
+    "animal_order": "aggressive",
+    "species": "panda",
+    "all": true
+  },
+  "animal_group_koala_follow": {
+    "animal_order": "follow",
+    "species": "koala",
+    "all": true
+  },
+  "animal_group_koala_stay": {
+    "animal_order": "stay",
+    "species": "koala",
+    "all": true
+  },
+  "animal_group_koala_guard": {
+    "animal_order": "guard",
+    "species": "koala",
+    "all": true
+  },
+  "animal_group_koala_attack": {
+    "animal_order": "attack",
+    "species": "koala",
+    "all": true
+  },
+  "animal_group_koala_evade": {
+    "animal_order": "evade",
+    "species": "koala",
+    "all": true
+  },
+  "animal_group_koala_retaliate": {
+    "animal_order": "retaliate",
+    "species": "koala",
+    "all": true
+  },
+  "animal_group_koala_free": {
+    "animal_order": "free",
+    "species": "koala",
+    "all": true
+  },
+  "animal_group_koala_aggressive": {
+    "animal_order": "aggressive",
+    "species": "koala",
+    "all": true
+  },
+  "animal_group_capybara_follow": {
+    "animal_order": "follow",
+    "species": "capybara",
+    "all": true
+  },
+  "animal_group_capybara_stay": {
+    "animal_order": "stay",
+    "species": "capybara",
+    "all": true
+  },
+  "animal_group_capybara_guard": {
+    "animal_order": "guard",
+    "species": "capybara",
+    "all": true
+  },
+  "animal_group_capybara_attack": {
+    "animal_order": "attack",
+    "species": "capybara",
+    "all": true
+  },
+  "animal_group_capybara_evade": {
+    "animal_order": "evade",
+    "species": "capybara",
+    "all": true
+  },
+  "animal_group_capybara_retaliate": {
+    "animal_order": "retaliate",
+    "species": "capybara",
+    "all": true
+  },
+  "animal_group_capybara_free": {
+    "animal_order": "free",
+    "species": "capybara",
+    "all": true
+  },
+  "animal_group_capybara_aggressive": {
+    "animal_order": "aggressive",
+    "species": "capybara",
+    "all": true
+  },
+  "animal_group_otter_follow": {
+    "animal_order": "follow",
+    "species": "otter",
+    "all": true
+  },
+  "animal_group_otter_stay": {
+    "animal_order": "stay",
+    "species": "otter",
+    "all": true
+  },
+  "animal_group_otter_guard": {
+    "animal_order": "guard",
+    "species": "otter",
+    "all": true
+  },
+  "animal_group_otter_attack": {
+    "animal_order": "attack",
+    "species": "otter",
+    "all": true
+  },
+  "animal_group_otter_evade": {
+    "animal_order": "evade",
+    "species": "otter",
+    "all": true
+  },
+  "animal_group_otter_retaliate": {
+    "animal_order": "retaliate",
+    "species": "otter",
+    "all": true
+  },
+  "animal_group_otter_free": {
+    "animal_order": "free",
+    "species": "otter",
+    "all": true
+  },
+  "animal_group_otter_aggressive": {
+    "animal_order": "aggressive",
+    "species": "otter",
+    "all": true
+  },
+  "animal_group_raccoon_follow": {
+    "animal_order": "follow",
+    "species": "raccoon",
+    "all": true
+  },
+  "animal_group_raccoon_stay": {
+    "animal_order": "stay",
+    "species": "raccoon",
+    "all": true
+  },
+  "animal_group_raccoon_guard": {
+    "animal_order": "guard",
+    "species": "raccoon",
+    "all": true
+  },
+  "animal_group_raccoon_attack": {
+    "animal_order": "attack",
+    "species": "raccoon",
+    "all": true
+  },
+  "animal_group_raccoon_evade": {
+    "animal_order": "evade",
+    "species": "raccoon",
+    "all": true
+  },
+  "animal_group_raccoon_retaliate": {
+    "animal_order": "retaliate",
+    "species": "raccoon",
+    "all": true
+  },
+  "animal_group_raccoon_free": {
+    "animal_order": "free",
+    "species": "raccoon",
+    "all": true
+  },
+  "animal_group_raccoon_aggressive": {
+    "animal_order": "aggressive",
+    "species": "raccoon",
+    "all": true
+  },
+  "animal_group_hedgehog_follow": {
+    "animal_order": "follow",
+    "species": "hedgehog",
+    "all": true
+  },
+  "animal_group_hedgehog_stay": {
+    "animal_order": "stay",
+    "species": "hedgehog",
+    "all": true
+  },
+  "animal_group_hedgehog_guard": {
+    "animal_order": "guard",
+    "species": "hedgehog",
+    "all": true
+  },
+  "animal_group_hedgehog_attack": {
+    "animal_order": "attack",
+    "species": "hedgehog",
+    "all": true
+  },
+  "animal_group_hedgehog_evade": {
+    "animal_order": "evade",
+    "species": "hedgehog",
+    "all": true
+  },
+  "animal_group_hedgehog_retaliate": {
+    "animal_order": "retaliate",
+    "species": "hedgehog",
+    "all": true
+  },
+  "animal_group_hedgehog_free": {
+    "animal_order": "free",
+    "species": "hedgehog",
+    "all": true
+  },
+  "animal_group_hedgehog_aggressive": {
+    "animal_order": "aggressive",
+    "species": "hedgehog",
+    "all": true
+  },
+  "animal_group_armadillo_follow": {
+    "animal_order": "follow",
+    "species": "armadillo",
+    "all": true
+  },
+  "animal_group_armadillo_stay": {
+    "animal_order": "stay",
+    "species": "armadillo",
+    "all": true
+  },
+  "animal_group_armadillo_guard": {
+    "animal_order": "guard",
+    "species": "armadillo",
+    "all": true
+  },
+  "animal_group_armadillo_attack": {
+    "animal_order": "attack",
+    "species": "armadillo",
+    "all": true
+  },
+  "animal_group_armadillo_evade": {
+    "animal_order": "evade",
+    "species": "armadillo",
+    "all": true
+  },
+  "animal_group_armadillo_retaliate": {
+    "animal_order": "retaliate",
+    "species": "armadillo",
+    "all": true
+  },
+  "animal_group_armadillo_free": {
+    "animal_order": "free",
+    "species": "armadillo",
+    "all": true
+  },
+  "animal_group_armadillo_aggressive": {
+    "animal_order": "aggressive",
+    "species": "armadillo",
+    "all": true
+  },
+  "animal_group_butterfly_follow": {
+    "animal_order": "follow",
+    "species": "butterfly",
+    "all": true
+  },
+  "animal_group_butterfly_stay": {
+    "animal_order": "stay",
+    "species": "butterfly",
+    "all": true
+  },
+  "animal_group_butterfly_guard": {
+    "animal_order": "guard",
+    "species": "butterfly",
+    "all": true
+  },
+  "animal_group_butterfly_attack": {
+    "animal_order": "attack",
+    "species": "butterfly",
+    "all": true
+  },
+  "animal_group_butterfly_evade": {
+    "animal_order": "evade",
+    "species": "butterfly",
+    "all": true
+  },
+  "animal_group_butterfly_retaliate": {
+    "animal_order": "retaliate",
+    "species": "butterfly",
+    "all": true
+  },
+  "animal_group_butterfly_free": {
+    "animal_order": "free",
+    "species": "butterfly",
+    "all": true
+  },
+  "animal_group_butterfly_aggressive": {
+    "animal_order": "aggressive",
+    "species": "butterfly",
+    "all": true
+  },
+  "animal_group_beetle_follow": {
+    "animal_order": "follow",
+    "species": "beetle",
+    "all": true
+  },
+  "animal_group_beetle_stay": {
+    "animal_order": "stay",
+    "species": "beetle",
+    "all": true
+  },
+  "animal_group_beetle_guard": {
+    "animal_order": "guard",
+    "species": "beetle",
+    "all": true
+  },
+  "animal_group_beetle_attack": {
+    "animal_order": "attack",
+    "species": "beetle",
+    "all": true
+  },
+  "animal_group_beetle_evade": {
+    "animal_order": "evade",
+    "species": "beetle",
+    "all": true
+  },
+  "animal_group_beetle_retaliate": {
+    "animal_order": "retaliate",
+    "species": "beetle",
+    "all": true
+  },
+  "animal_group_beetle_free": {
+    "animal_order": "free",
+    "species": "beetle",
+    "all": true
+  },
+  "animal_group_beetle_aggressive": {
+    "animal_order": "aggressive",
+    "species": "beetle",
+    "all": true
+  },
+  "animal_group_mantis_follow": {
+    "animal_order": "follow",
+    "species": "mantis",
+    "all": true
+  },
+  "animal_group_mantis_stay": {
+    "animal_order": "stay",
+    "species": "mantis",
+    "all": true
+  },
+  "animal_group_mantis_guard": {
+    "animal_order": "guard",
+    "species": "mantis",
+    "all": true
+  },
+  "animal_group_mantis_attack": {
+    "animal_order": "attack",
+    "species": "mantis",
+    "all": true
+  },
+  "animal_group_mantis_evade": {
+    "animal_order": "evade",
+    "species": "mantis",
+    "all": true
+  },
+  "animal_group_mantis_retaliate": {
+    "animal_order": "retaliate",
+    "species": "mantis",
+    "all": true
+  },
+  "animal_group_mantis_free": {
+    "animal_order": "free",
+    "species": "mantis",
+    "all": true
+  },
+  "animal_group_mantis_aggressive": {
+    "animal_order": "aggressive",
+    "species": "mantis",
+    "all": true
+  },
+  "animal_group_snail_follow": {
+    "animal_order": "follow",
+    "species": "snail",
+    "all": true
+  },
+  "animal_group_snail_stay": {
+    "animal_order": "stay",
+    "species": "snail",
+    "all": true
+  },
+  "animal_group_snail_guard": {
+    "animal_order": "guard",
+    "species": "snail",
+    "all": true
+  },
+  "animal_group_snail_attack": {
+    "animal_order": "attack",
+    "species": "snail",
+    "all": true
+  },
+  "animal_group_snail_evade": {
+    "animal_order": "evade",
+    "species": "snail",
+    "all": true
+  },
+  "animal_group_snail_retaliate": {
+    "animal_order": "retaliate",
+    "species": "snail",
+    "all": true
+  },
+  "animal_group_snail_free": {
+    "animal_order": "free",
+    "species": "snail",
+    "all": true
+  },
+  "animal_group_snail_aggressive": {
+    "animal_order": "aggressive",
+    "species": "snail",
+    "all": true
+  },
+  "animal_group_octopus_follow": {
+    "animal_order": "follow",
+    "species": "octopus",
+    "all": true
+  },
+  "animal_group_octopus_stay": {
+    "animal_order": "stay",
+    "species": "octopus",
+    "all": true
+  },
+  "animal_group_octopus_guard": {
+    "animal_order": "guard",
+    "species": "octopus",
+    "all": true
+  },
+  "animal_group_octopus_attack": {
+    "animal_order": "attack",
+    "species": "octopus",
+    "all": true
+  },
+  "animal_group_octopus_evade": {
+    "animal_order": "evade",
+    "species": "octopus",
+    "all": true
+  },
+  "animal_group_octopus_retaliate": {
+    "animal_order": "retaliate",
+    "species": "octopus",
+    "all": true
+  },
+  "animal_group_octopus_free": {
+    "animal_order": "free",
+    "species": "octopus",
+    "all": true
+  },
+  "animal_group_octopus_aggressive": {
+    "animal_order": "aggressive",
+    "species": "octopus",
+    "all": true
+  },
+  "animal_group_raptor_follow": {
+    "animal_order": "follow",
+    "species": "raptor",
+    "all": true
+  },
+  "animal_group_raptor_stay": {
+    "animal_order": "stay",
+    "species": "raptor",
+    "all": true
+  },
+  "animal_group_raptor_guard": {
+    "animal_order": "guard",
+    "species": "raptor",
+    "all": true
+  },
+  "animal_group_raptor_attack": {
+    "animal_order": "attack",
+    "species": "raptor",
+    "all": true
+  },
+  "animal_group_raptor_evade": {
+    "animal_order": "evade",
+    "species": "raptor",
+    "all": true
+  },
+  "animal_group_raptor_retaliate": {
+    "animal_order": "retaliate",
+    "species": "raptor",
+    "all": true
+  },
+  "animal_group_raptor_free": {
+    "animal_order": "free",
+    "species": "raptor",
+    "all": true
+  },
+  "animal_group_raptor_aggressive": {
+    "animal_order": "aggressive",
+    "species": "raptor",
+    "all": true
+  },
+  "animal_group_dragon_follow": {
+    "animal_order": "follow",
+    "species": "dragon",
+    "all": true
+  },
+  "animal_group_dragon_stay": {
+    "animal_order": "stay",
+    "species": "dragon",
+    "all": true
+  },
+  "animal_group_dragon_guard": {
+    "animal_order": "guard",
+    "species": "dragon",
+    "all": true
+  },
+  "animal_group_dragon_attack": {
+    "animal_order": "attack",
+    "species": "dragon",
+    "all": true
+  },
+  "animal_group_dragon_evade": {
+    "animal_order": "evade",
+    "species": "dragon",
+    "all": true
+  },
+  "animal_group_dragon_retaliate": {
+    "animal_order": "retaliate",
+    "species": "dragon",
+    "all": true
+  },
+  "animal_group_dragon_free": {
+    "animal_order": "free",
+    "species": "dragon",
+    "all": true
+  },
+  "animal_group_dragon_aggressive": {
+    "animal_order": "aggressive",
+    "species": "dragon",
+    "all": true
+  },
+  "animal_group_slime_follow": {
+    "animal_order": "follow",
+    "species": "slime",
+    "all": true
+  },
+  "animal_group_slime_stay": {
+    "animal_order": "stay",
+    "species": "slime",
+    "all": true
+  },
+  "animal_group_slime_guard": {
+    "animal_order": "guard",
+    "species": "slime",
+    "all": true
+  },
+  "animal_group_slime_attack": {
+    "animal_order": "attack",
+    "species": "slime",
+    "all": true
+  },
+  "animal_group_slime_evade": {
+    "animal_order": "evade",
+    "species": "slime",
+    "all": true
+  },
+  "animal_group_slime_retaliate": {
+    "animal_order": "retaliate",
+    "species": "slime",
+    "all": true
+  },
+  "animal_group_slime_free": {
+    "animal_order": "free",
+    "species": "slime",
+    "all": true
+  },
+  "animal_group_slime_aggressive": {
+    "animal_order": "aggressive",
+    "species": "slime",
+    "all": true
+  },
+  "animal_group_cave_bat_follow": {
+    "animal_order": "follow",
+    "species": "cave_bat",
+    "all": true
+  },
+  "animal_group_cave_bat_stay": {
+    "animal_order": "stay",
+    "species": "cave_bat",
+    "all": true
+  },
+  "animal_group_cave_bat_guard": {
+    "animal_order": "guard",
+    "species": "cave_bat",
+    "all": true
+  },
+  "animal_group_cave_bat_attack": {
+    "animal_order": "attack",
+    "species": "cave_bat",
+    "all": true
+  },
+  "animal_group_cave_bat_evade": {
+    "animal_order": "evade",
+    "species": "cave_bat",
+    "all": true
+  },
+  "animal_group_cave_bat_retaliate": {
+    "animal_order": "retaliate",
+    "species": "cave_bat",
+    "all": true
+  },
+  "animal_group_cave_bat_free": {
+    "animal_order": "free",
+    "species": "cave_bat",
+    "all": true
+  },
+  "animal_group_cave_bat_aggressive": {
+    "animal_order": "aggressive",
+    "species": "cave_bat",
+    "all": true
+  },
+  "animal_group_queen_ant_follow": {
+    "animal_order": "follow",
+    "species": "queen_ant",
+    "all": true
+  },
+  "animal_group_queen_ant_stay": {
+    "animal_order": "stay",
+    "species": "queen_ant",
+    "all": true
+  },
+  "animal_group_queen_ant_guard": {
+    "animal_order": "guard",
+    "species": "queen_ant",
+    "all": true
+  },
+  "animal_group_queen_ant_attack": {
+    "animal_order": "attack",
+    "species": "queen_ant",
+    "all": true
+  },
+  "animal_group_queen_ant_evade": {
+    "animal_order": "evade",
+    "species": "queen_ant",
+    "all": true
+  },
+  "animal_group_queen_ant_retaliate": {
+    "animal_order": "retaliate",
+    "species": "queen_ant",
+    "all": true
+  },
+  "animal_group_queen_ant_free": {
+    "animal_order": "free",
+    "species": "queen_ant",
+    "all": true
+  },
+  "animal_group_queen_ant_aggressive": {
+    "animal_order": "aggressive",
+    "species": "queen_ant",
+    "all": true
+  },
+  "animal_group_queen_bee_follow": {
+    "animal_order": "follow",
+    "species": "queen_bee",
+    "all": true
+  },
+  "animal_group_queen_bee_stay": {
+    "animal_order": "stay",
+    "species": "queen_bee",
+    "all": true
+  },
+  "animal_group_queen_bee_guard": {
+    "animal_order": "guard",
+    "species": "queen_bee",
+    "all": true
+  },
+  "animal_group_queen_bee_attack": {
+    "animal_order": "attack",
+    "species": "queen_bee",
+    "all": true
+  },
+  "animal_group_queen_bee_evade": {
+    "animal_order": "evade",
+    "species": "queen_bee",
+    "all": true
+  },
+  "animal_group_queen_bee_retaliate": {
+    "animal_order": "retaliate",
+    "species": "queen_bee",
+    "all": true
+  },
+  "animal_group_queen_bee_free": {
+    "animal_order": "free",
+    "species": "queen_bee",
+    "all": true
+  },
+  "animal_group_queen_bee_aggressive": {
+    "animal_order": "aggressive",
+    "species": "queen_bee",
+    "all": true
+  },
+  "animal_group_anteater_follow": {
+    "animal_order": "follow",
+    "species": "anteater",
+    "all": true
+  },
+  "animal_group_anteater_stay": {
+    "animal_order": "stay",
+    "species": "anteater",
+    "all": true
+  },
+  "animal_group_anteater_guard": {
+    "animal_order": "guard",
+    "species": "anteater",
+    "all": true
+  },
+  "animal_group_anteater_attack": {
+    "animal_order": "attack",
+    "species": "anteater",
+    "all": true
+  },
+  "animal_group_anteater_evade": {
+    "animal_order": "evade",
+    "species": "anteater",
+    "all": true
+  },
+  "animal_group_anteater_retaliate": {
+    "animal_order": "retaliate",
+    "species": "anteater",
+    "all": true
+  },
+  "animal_group_anteater_free": {
+    "animal_order": "free",
+    "species": "anteater",
+    "all": true
+  },
+  "animal_group_anteater_aggressive": {
+    "animal_order": "aggressive",
+    "species": "anteater",
+    "all": true
+  },
+  "animal_group_mahoraga_follow": {
+    "animal_order": "follow",
+    "species": "mahoraga",
+    "all": true
+  },
+  "animal_group_mahoraga_stay": {
+    "animal_order": "stay",
+    "species": "mahoraga",
+    "all": true
+  },
+  "animal_group_mahoraga_guard": {
+    "animal_order": "guard",
+    "species": "mahoraga",
+    "all": true
+  },
+  "animal_group_mahoraga_attack": {
+    "animal_order": "attack",
+    "species": "mahoraga",
+    "all": true
+  },
+  "animal_group_mahoraga_evade": {
+    "animal_order": "evade",
+    "species": "mahoraga",
+    "all": true
+  },
+  "animal_group_mahoraga_retaliate": {
+    "animal_order": "retaliate",
+    "species": "mahoraga",
+    "all": true
+  },
+  "animal_group_mahoraga_free": {
+    "animal_order": "free",
+    "species": "mahoraga",
+    "all": true
+  },
+  "animal_group_mahoraga_aggressive": {
+    "animal_order": "aggressive",
+    "species": "mahoraga",
+    "all": true
+  },
+  "animal_group_triceratops_follow": {
+    "animal_order": "follow",
+    "species": "triceratops",
+    "all": true
+  },
+  "animal_group_triceratops_stay": {
+    "animal_order": "stay",
+    "species": "triceratops",
+    "all": true
+  },
+  "animal_group_triceratops_guard": {
+    "animal_order": "guard",
+    "species": "triceratops",
+    "all": true
+  },
+  "animal_group_triceratops_attack": {
+    "animal_order": "attack",
+    "species": "triceratops",
+    "all": true
+  },
+  "animal_group_triceratops_evade": {
+    "animal_order": "evade",
+    "species": "triceratops",
+    "all": true
+  },
+  "animal_group_triceratops_retaliate": {
+    "animal_order": "retaliate",
+    "species": "triceratops",
+    "all": true
+  },
+  "animal_group_triceratops_free": {
+    "animal_order": "free",
+    "species": "triceratops",
+    "all": true
+  },
+  "animal_group_triceratops_aggressive": {
+    "animal_order": "aggressive",
+    "species": "triceratops",
+    "all": true
+  },
+  "animal_group_stegosaurus_follow": {
+    "animal_order": "follow",
+    "species": "stegosaurus",
+    "all": true
+  },
+  "animal_group_stegosaurus_stay": {
+    "animal_order": "stay",
+    "species": "stegosaurus",
+    "all": true
+  },
+  "animal_group_stegosaurus_guard": {
+    "animal_order": "guard",
+    "species": "stegosaurus",
+    "all": true
+  },
+  "animal_group_stegosaurus_attack": {
+    "animal_order": "attack",
+    "species": "stegosaurus",
+    "all": true
+  },
+  "animal_group_stegosaurus_evade": {
+    "animal_order": "evade",
+    "species": "stegosaurus",
+    "all": true
+  },
+  "animal_group_stegosaurus_retaliate": {
+    "animal_order": "retaliate",
+    "species": "stegosaurus",
+    "all": true
+  },
+  "animal_group_stegosaurus_free": {
+    "animal_order": "free",
+    "species": "stegosaurus",
+    "all": true
+  },
+  "animal_group_stegosaurus_aggressive": {
+    "animal_order": "aggressive",
+    "species": "stegosaurus",
+    "all": true
+  },
+  "animal_group_brachiosaurus_follow": {
+    "animal_order": "follow",
+    "species": "brachiosaurus",
+    "all": true
+  },
+  "animal_group_brachiosaurus_stay": {
+    "animal_order": "stay",
+    "species": "brachiosaurus",
+    "all": true
+  },
+  "animal_group_brachiosaurus_guard": {
+    "animal_order": "guard",
+    "species": "brachiosaurus",
+    "all": true
+  },
+  "animal_group_brachiosaurus_attack": {
+    "animal_order": "attack",
+    "species": "brachiosaurus",
+    "all": true
+  },
+  "animal_group_brachiosaurus_evade": {
+    "animal_order": "evade",
+    "species": "brachiosaurus",
+    "all": true
+  },
+  "animal_group_brachiosaurus_retaliate": {
+    "animal_order": "retaliate",
+    "species": "brachiosaurus",
+    "all": true
+  },
+  "animal_group_brachiosaurus_free": {
+    "animal_order": "free",
+    "species": "brachiosaurus",
+    "all": true
+  },
+  "animal_group_brachiosaurus_aggressive": {
+    "animal_order": "aggressive",
+    "species": "brachiosaurus",
+    "all": true
+  },
+  "animal_group_spinosaurus_follow": {
+    "animal_order": "follow",
+    "species": "spinosaurus",
+    "all": true
+  },
+  "animal_group_spinosaurus_stay": {
+    "animal_order": "stay",
+    "species": "spinosaurus",
+    "all": true
+  },
+  "animal_group_spinosaurus_guard": {
+    "animal_order": "guard",
+    "species": "spinosaurus",
+    "all": true
+  },
+  "animal_group_spinosaurus_attack": {
+    "animal_order": "attack",
+    "species": "spinosaurus",
+    "all": true
+  },
+  "animal_group_spinosaurus_evade": {
+    "animal_order": "evade",
+    "species": "spinosaurus",
+    "all": true
+  },
+  "animal_group_spinosaurus_retaliate": {
+    "animal_order": "retaliate",
+    "species": "spinosaurus",
+    "all": true
+  },
+  "animal_group_spinosaurus_free": {
+    "animal_order": "free",
+    "species": "spinosaurus",
+    "all": true
+  },
+  "animal_group_spinosaurus_aggressive": {
+    "animal_order": "aggressive",
+    "species": "spinosaurus",
+    "all": true
+  },
+  "animal_group_ankylosaurus_follow": {
+    "animal_order": "follow",
+    "species": "ankylosaurus",
+    "all": true
+  },
+  "animal_group_ankylosaurus_stay": {
+    "animal_order": "stay",
+    "species": "ankylosaurus",
+    "all": true
+  },
+  "animal_group_ankylosaurus_guard": {
+    "animal_order": "guard",
+    "species": "ankylosaurus",
+    "all": true
+  },
+  "animal_group_ankylosaurus_attack": {
+    "animal_order": "attack",
+    "species": "ankylosaurus",
+    "all": true
+  },
+  "animal_group_ankylosaurus_evade": {
+    "animal_order": "evade",
+    "species": "ankylosaurus",
+    "all": true
+  },
+  "animal_group_ankylosaurus_retaliate": {
+    "animal_order": "retaliate",
+    "species": "ankylosaurus",
+    "all": true
+  },
+  "animal_group_ankylosaurus_free": {
+    "animal_order": "free",
+    "species": "ankylosaurus",
+    "all": true
+  },
+  "animal_group_ankylosaurus_aggressive": {
+    "animal_order": "aggressive",
+    "species": "ankylosaurus",
+    "all": true
+  },
+  "animal_group_parasaurolophus_follow": {
+    "animal_order": "follow",
+    "species": "parasaurolophus",
+    "all": true
+  },
+  "animal_group_parasaurolophus_stay": {
+    "animal_order": "stay",
+    "species": "parasaurolophus",
+    "all": true
+  },
+  "animal_group_parasaurolophus_guard": {
+    "animal_order": "guard",
+    "species": "parasaurolophus",
+    "all": true
+  },
+  "animal_group_parasaurolophus_attack": {
+    "animal_order": "attack",
+    "species": "parasaurolophus",
+    "all": true
+  },
+  "animal_group_parasaurolophus_evade": {
+    "animal_order": "evade",
+    "species": "parasaurolophus",
+    "all": true
+  },
+  "animal_group_parasaurolophus_retaliate": {
+    "animal_order": "retaliate",
+    "species": "parasaurolophus",
+    "all": true
+  },
+  "animal_group_parasaurolophus_free": {
+    "animal_order": "free",
+    "species": "parasaurolophus",
+    "all": true
+  },
+  "animal_group_parasaurolophus_aggressive": {
+    "animal_order": "aggressive",
+    "species": "parasaurolophus",
+    "all": true
+  },
+  "animal_group_diplodocus_follow": {
+    "animal_order": "follow",
+    "species": "diplodocus",
+    "all": true
+  },
+  "animal_group_diplodocus_stay": {
+    "animal_order": "stay",
+    "species": "diplodocus",
+    "all": true
+  },
+  "animal_group_diplodocus_guard": {
+    "animal_order": "guard",
+    "species": "diplodocus",
+    "all": true
+  },
+  "animal_group_diplodocus_attack": {
+    "animal_order": "attack",
+    "species": "diplodocus",
+    "all": true
+  },
+  "animal_group_diplodocus_evade": {
+    "animal_order": "evade",
+    "species": "diplodocus",
+    "all": true
+  },
+  "animal_group_diplodocus_retaliate": {
+    "animal_order": "retaliate",
+    "species": "diplodocus",
+    "all": true
+  },
+  "animal_group_diplodocus_free": {
+    "animal_order": "free",
+    "species": "diplodocus",
+    "all": true
+  },
+  "animal_group_diplodocus_aggressive": {
+    "animal_order": "aggressive",
+    "species": "diplodocus",
+    "all": true
+  },
+  "animal_group_tung_sahur_follow": {
+    "animal_order": "follow",
+    "species": "tung_sahur",
+    "all": true
+  },
+  "animal_group_tung_sahur_stay": {
+    "animal_order": "stay",
+    "species": "tung_sahur",
+    "all": true
+  },
+  "animal_group_tung_sahur_guard": {
+    "animal_order": "guard",
+    "species": "tung_sahur",
+    "all": true
+  },
+  "animal_group_tung_sahur_attack": {
+    "animal_order": "attack",
+    "species": "tung_sahur",
+    "all": true
+  },
+  "animal_group_tung_sahur_evade": {
+    "animal_order": "evade",
+    "species": "tung_sahur",
+    "all": true
+  },
+  "animal_group_tung_sahur_retaliate": {
+    "animal_order": "retaliate",
+    "species": "tung_sahur",
+    "all": true
+  },
+  "animal_group_tung_sahur_free": {
+    "animal_order": "free",
+    "species": "tung_sahur",
+    "all": true
+  },
+  "animal_group_tung_sahur_aggressive": {
+    "animal_order": "aggressive",
+    "species": "tung_sahur",
+    "all": true
+  },
+  "animal_group_tralalero_follow": {
+    "animal_order": "follow",
+    "species": "tralalero",
+    "all": true
+  },
+  "animal_group_tralalero_stay": {
+    "animal_order": "stay",
+    "species": "tralalero",
+    "all": true
+  },
+  "animal_group_tralalero_guard": {
+    "animal_order": "guard",
+    "species": "tralalero",
+    "all": true
+  },
+  "animal_group_tralalero_attack": {
+    "animal_order": "attack",
+    "species": "tralalero",
+    "all": true
+  },
+  "animal_group_tralalero_evade": {
+    "animal_order": "evade",
+    "species": "tralalero",
+    "all": true
+  },
+  "animal_group_tralalero_retaliate": {
+    "animal_order": "retaliate",
+    "species": "tralalero",
+    "all": true
+  },
+  "animal_group_tralalero_free": {
+    "animal_order": "free",
+    "species": "tralalero",
+    "all": true
+  },
+  "animal_group_tralalero_aggressive": {
+    "animal_order": "aggressive",
+    "species": "tralalero",
+    "all": true
+  },
+  "animal_group_saturnita_follow": {
+    "animal_order": "follow",
+    "species": "saturnita",
+    "all": true
+  },
+  "animal_group_saturnita_stay": {
+    "animal_order": "stay",
+    "species": "saturnita",
+    "all": true
+  },
+  "animal_group_saturnita_guard": {
+    "animal_order": "guard",
+    "species": "saturnita",
+    "all": true
+  },
+  "animal_group_saturnita_attack": {
+    "animal_order": "attack",
+    "species": "saturnita",
+    "all": true
+  },
+  "animal_group_saturnita_evade": {
+    "animal_order": "evade",
+    "species": "saturnita",
+    "all": true
+  },
+  "animal_group_saturnita_retaliate": {
+    "animal_order": "retaliate",
+    "species": "saturnita",
+    "all": true
+  },
+  "animal_group_saturnita_free": {
+    "animal_order": "free",
+    "species": "saturnita",
+    "all": true
+  },
+  "animal_group_saturnita_aggressive": {
+    "animal_order": "aggressive",
+    "species": "saturnita",
+    "all": true
+  },
+  "animal_group_bombardiro_follow": {
+    "animal_order": "follow",
+    "species": "bombardiro",
+    "all": true
+  },
+  "animal_group_bombardiro_stay": {
+    "animal_order": "stay",
+    "species": "bombardiro",
+    "all": true
+  },
+  "animal_group_bombardiro_guard": {
+    "animal_order": "guard",
+    "species": "bombardiro",
+    "all": true
+  },
+  "animal_group_bombardiro_attack": {
+    "animal_order": "attack",
+    "species": "bombardiro",
+    "all": true
+  },
+  "animal_group_bombardiro_evade": {
+    "animal_order": "evade",
+    "species": "bombardiro",
+    "all": true
+  },
+  "animal_group_bombardiro_retaliate": {
+    "animal_order": "retaliate",
+    "species": "bombardiro",
+    "all": true
+  },
+  "animal_group_bombardiro_free": {
+    "animal_order": "free",
+    "species": "bombardiro",
+    "all": true
+  },
+  "animal_group_bombardiro_aggressive": {
+    "animal_order": "aggressive",
+    "species": "bombardiro",
+    "all": true
+  },
+  "animal_group_udin_follow": {
+    "animal_order": "follow",
+    "species": "udin",
+    "all": true
+  },
+  "animal_group_udin_stay": {
+    "animal_order": "stay",
+    "species": "udin",
+    "all": true
+  },
+  "animal_group_udin_guard": {
+    "animal_order": "guard",
+    "species": "udin",
+    "all": true
+  },
+  "animal_group_udin_attack": {
+    "animal_order": "attack",
+    "species": "udin",
+    "all": true
+  },
+  "animal_group_udin_evade": {
+    "animal_order": "evade",
+    "species": "udin",
+    "all": true
+  },
+  "animal_group_udin_retaliate": {
+    "animal_order": "retaliate",
+    "species": "udin",
+    "all": true
+  },
+  "animal_group_udin_free": {
+    "animal_order": "free",
+    "species": "udin",
+    "all": true
+  },
+  "animal_group_udin_aggressive": {
+    "animal_order": "aggressive",
+    "species": "udin",
+    "all": true
+  },
+  "animal_group_cappuccino_assassino_follow": {
+    "animal_order": "follow",
+    "species": "cappuccino_assassino",
+    "all": true
+  },
+  "animal_group_cappuccino_assassino_stay": {
+    "animal_order": "stay",
+    "species": "cappuccino_assassino",
+    "all": true
+  },
+  "animal_group_cappuccino_assassino_guard": {
+    "animal_order": "guard",
+    "species": "cappuccino_assassino",
+    "all": true
+  },
+  "animal_group_cappuccino_assassino_attack": {
+    "animal_order": "attack",
+    "species": "cappuccino_assassino",
+    "all": true
+  },
+  "animal_group_cappuccino_assassino_evade": {
+    "animal_order": "evade",
+    "species": "cappuccino_assassino",
+    "all": true
+  },
+  "animal_group_cappuccino_assassino_retaliate": {
+    "animal_order": "retaliate",
+    "species": "cappuccino_assassino",
+    "all": true
+  },
+  "animal_group_cappuccino_assassino_free": {
+    "animal_order": "free",
+    "species": "cappuccino_assassino",
+    "all": true
+  },
+  "animal_group_cappuccino_assassino_aggressive": {
+    "animal_order": "aggressive",
+    "species": "cappuccino_assassino",
+    "all": true
+  },
+  "animal_group_ballerina_cappuccina_follow": {
+    "animal_order": "follow",
+    "species": "ballerina_cappuccina",
+    "all": true
+  },
+  "animal_group_ballerina_cappuccina_stay": {
+    "animal_order": "stay",
+    "species": "ballerina_cappuccina",
+    "all": true
+  },
+  "animal_group_ballerina_cappuccina_guard": {
+    "animal_order": "guard",
+    "species": "ballerina_cappuccina",
+    "all": true
+  },
+  "animal_group_ballerina_cappuccina_attack": {
+    "animal_order": "attack",
+    "species": "ballerina_cappuccina",
+    "all": true
+  },
+  "animal_group_ballerina_cappuccina_evade": {
+    "animal_order": "evade",
+    "species": "ballerina_cappuccina",
+    "all": true
+  },
+  "animal_group_ballerina_cappuccina_retaliate": {
+    "animal_order": "retaliate",
+    "species": "ballerina_cappuccina",
+    "all": true
+  },
+  "animal_group_ballerina_cappuccina_free": {
+    "animal_order": "free",
+    "species": "ballerina_cappuccina",
+    "all": true
+  },
+  "animal_group_ballerina_cappuccina_aggressive": {
+    "animal_order": "aggressive",
+    "species": "ballerina_cappuccina",
+    "all": true
+  },
+  "animal_group_patapim_follow": {
+    "animal_order": "follow",
+    "species": "patapim",
+    "all": true
+  },
+  "animal_group_patapim_stay": {
+    "animal_order": "stay",
+    "species": "patapim",
+    "all": true
+  },
+  "animal_group_patapim_guard": {
+    "animal_order": "guard",
+    "species": "patapim",
+    "all": true
+  },
+  "animal_group_patapim_attack": {
+    "animal_order": "attack",
+    "species": "patapim",
+    "all": true
+  },
+  "animal_group_patapim_evade": {
+    "animal_order": "evade",
+    "species": "patapim",
+    "all": true
+  },
+  "animal_group_patapim_retaliate": {
+    "animal_order": "retaliate",
+    "species": "patapim",
+    "all": true
+  },
+  "animal_group_patapim_free": {
+    "animal_order": "free",
+    "species": "patapim",
+    "all": true
+  },
+  "animal_group_patapim_aggressive": {
+    "animal_order": "aggressive",
+    "species": "patapim",
+    "all": true
+  },
+  "animal_group_lirili_follow": {
+    "animal_order": "follow",
+    "species": "lirili",
+    "all": true
+  },
+  "animal_group_lirili_stay": {
+    "animal_order": "stay",
+    "species": "lirili",
+    "all": true
+  },
+  "animal_group_lirili_guard": {
+    "animal_order": "guard",
+    "species": "lirili",
+    "all": true
+  },
+  "animal_group_lirili_attack": {
+    "animal_order": "attack",
+    "species": "lirili",
+    "all": true
+  },
+  "animal_group_lirili_evade": {
+    "animal_order": "evade",
+    "species": "lirili",
+    "all": true
+  },
+  "animal_group_lirili_retaliate": {
+    "animal_order": "retaliate",
+    "species": "lirili",
+    "all": true
+  },
+  "animal_group_lirili_free": {
+    "animal_order": "free",
+    "species": "lirili",
+    "all": true
+  },
+  "animal_group_lirili_aggressive": {
+    "animal_order": "aggressive",
+    "species": "lirili",
+    "all": true
+  },
+  "animal_group_chimpanzini_follow": {
+    "animal_order": "follow",
+    "species": "chimpanzini",
+    "all": true
+  },
+  "animal_group_chimpanzini_stay": {
+    "animal_order": "stay",
+    "species": "chimpanzini",
+    "all": true
+  },
+  "animal_group_chimpanzini_guard": {
+    "animal_order": "guard",
+    "species": "chimpanzini",
+    "all": true
+  },
+  "animal_group_chimpanzini_attack": {
+    "animal_order": "attack",
+    "species": "chimpanzini",
+    "all": true
+  },
+  "animal_group_chimpanzini_evade": {
+    "animal_order": "evade",
+    "species": "chimpanzini",
+    "all": true
+  },
+  "animal_group_chimpanzini_retaliate": {
+    "animal_order": "retaliate",
+    "species": "chimpanzini",
+    "all": true
+  },
+  "animal_group_chimpanzini_free": {
+    "animal_order": "free",
+    "species": "chimpanzini",
+    "all": true
+  },
+  "animal_group_chimpanzini_aggressive": {
+    "animal_order": "aggressive",
+    "species": "chimpanzini",
+    "all": true
+  },
+  "animal_group_pikachu_follow": {
+    "animal_order": "follow",
+    "species": "pikachu",
+    "all": true
+  },
+  "animal_group_pikachu_stay": {
+    "animal_order": "stay",
+    "species": "pikachu",
+    "all": true
+  },
+  "animal_group_pikachu_guard": {
+    "animal_order": "guard",
+    "species": "pikachu",
+    "all": true
+  },
+  "animal_group_pikachu_attack": {
+    "animal_order": "attack",
+    "species": "pikachu",
+    "all": true
+  },
+  "animal_group_pikachu_evade": {
+    "animal_order": "evade",
+    "species": "pikachu",
+    "all": true
+  },
+  "animal_group_pikachu_retaliate": {
+    "animal_order": "retaliate",
+    "species": "pikachu",
+    "all": true
+  },
+  "animal_group_pikachu_free": {
+    "animal_order": "free",
+    "species": "pikachu",
+    "all": true
+  },
+  "animal_group_pikachu_aggressive": {
+    "animal_order": "aggressive",
+    "species": "pikachu",
+    "all": true
+  },
+  "animal_group_charmander_follow": {
+    "animal_order": "follow",
+    "species": "charmander",
+    "all": true
+  },
+  "animal_group_charmander_stay": {
+    "animal_order": "stay",
+    "species": "charmander",
+    "all": true
+  },
+  "animal_group_charmander_guard": {
+    "animal_order": "guard",
+    "species": "charmander",
+    "all": true
+  },
+  "animal_group_charmander_attack": {
+    "animal_order": "attack",
+    "species": "charmander",
+    "all": true
+  },
+  "animal_group_charmander_evade": {
+    "animal_order": "evade",
+    "species": "charmander",
+    "all": true
+  },
+  "animal_group_charmander_retaliate": {
+    "animal_order": "retaliate",
+    "species": "charmander",
+    "all": true
+  },
+  "animal_group_charmander_free": {
+    "animal_order": "free",
+    "species": "charmander",
+    "all": true
+  },
+  "animal_group_charmander_aggressive": {
+    "animal_order": "aggressive",
+    "species": "charmander",
+    "all": true
+  },
+  "animal_group_squirtle_follow": {
+    "animal_order": "follow",
+    "species": "squirtle",
+    "all": true
+  },
+  "animal_group_squirtle_stay": {
+    "animal_order": "stay",
+    "species": "squirtle",
+    "all": true
+  },
+  "animal_group_squirtle_guard": {
+    "animal_order": "guard",
+    "species": "squirtle",
+    "all": true
+  },
+  "animal_group_squirtle_attack": {
+    "animal_order": "attack",
+    "species": "squirtle",
+    "all": true
+  },
+  "animal_group_squirtle_evade": {
+    "animal_order": "evade",
+    "species": "squirtle",
+    "all": true
+  },
+  "animal_group_squirtle_retaliate": {
+    "animal_order": "retaliate",
+    "species": "squirtle",
+    "all": true
+  },
+  "animal_group_squirtle_free": {
+    "animal_order": "free",
+    "species": "squirtle",
+    "all": true
+  },
+  "animal_group_squirtle_aggressive": {
+    "animal_order": "aggressive",
+    "species": "squirtle",
+    "all": true
+  },
+  "animal_group_bulbasaur_follow": {
+    "animal_order": "follow",
+    "species": "bulbasaur",
+    "all": true
+  },
+  "animal_group_bulbasaur_stay": {
+    "animal_order": "stay",
+    "species": "bulbasaur",
+    "all": true
+  },
+  "animal_group_bulbasaur_guard": {
+    "animal_order": "guard",
+    "species": "bulbasaur",
+    "all": true
+  },
+  "animal_group_bulbasaur_attack": {
+    "animal_order": "attack",
+    "species": "bulbasaur",
+    "all": true
+  },
+  "animal_group_bulbasaur_evade": {
+    "animal_order": "evade",
+    "species": "bulbasaur",
+    "all": true
+  },
+  "animal_group_bulbasaur_retaliate": {
+    "animal_order": "retaliate",
+    "species": "bulbasaur",
+    "all": true
+  },
+  "animal_group_bulbasaur_free": {
+    "animal_order": "free",
+    "species": "bulbasaur",
+    "all": true
+  },
+  "animal_group_bulbasaur_aggressive": {
+    "animal_order": "aggressive",
+    "species": "bulbasaur",
+    "all": true
+  },
+  "animal_group_raichu_follow": {
+    "animal_order": "follow",
+    "species": "raichu",
+    "all": true
+  },
+  "animal_group_raichu_stay": {
+    "animal_order": "stay",
+    "species": "raichu",
+    "all": true
+  },
+  "animal_group_raichu_guard": {
+    "animal_order": "guard",
+    "species": "raichu",
+    "all": true
+  },
+  "animal_group_raichu_attack": {
+    "animal_order": "attack",
+    "species": "raichu",
+    "all": true
+  },
+  "animal_group_raichu_evade": {
+    "animal_order": "evade",
+    "species": "raichu",
+    "all": true
+  },
+  "animal_group_raichu_retaliate": {
+    "animal_order": "retaliate",
+    "species": "raichu",
+    "all": true
+  },
+  "animal_group_raichu_free": {
+    "animal_order": "free",
+    "species": "raichu",
+    "all": true
+  },
+  "animal_group_raichu_aggressive": {
+    "animal_order": "aggressive",
+    "species": "raichu",
+    "all": true
+  },
+  "animal_group_charmeleon_follow": {
+    "animal_order": "follow",
+    "species": "charmeleon",
+    "all": true
+  },
+  "animal_group_charmeleon_stay": {
+    "animal_order": "stay",
+    "species": "charmeleon",
+    "all": true
+  },
+  "animal_group_charmeleon_guard": {
+    "animal_order": "guard",
+    "species": "charmeleon",
+    "all": true
+  },
+  "animal_group_charmeleon_attack": {
+    "animal_order": "attack",
+    "species": "charmeleon",
+    "all": true
+  },
+  "animal_group_charmeleon_evade": {
+    "animal_order": "evade",
+    "species": "charmeleon",
+    "all": true
+  },
+  "animal_group_charmeleon_retaliate": {
+    "animal_order": "retaliate",
+    "species": "charmeleon",
+    "all": true
+  },
+  "animal_group_charmeleon_free": {
+    "animal_order": "free",
+    "species": "charmeleon",
+    "all": true
+  },
+  "animal_group_charmeleon_aggressive": {
+    "animal_order": "aggressive",
+    "species": "charmeleon",
+    "all": true
+  },
+  "animal_group_charizard_follow": {
+    "animal_order": "follow",
+    "species": "charizard",
+    "all": true
+  },
+  "animal_group_charizard_stay": {
+    "animal_order": "stay",
+    "species": "charizard",
+    "all": true
+  },
+  "animal_group_charizard_guard": {
+    "animal_order": "guard",
+    "species": "charizard",
+    "all": true
+  },
+  "animal_group_charizard_attack": {
+    "animal_order": "attack",
+    "species": "charizard",
+    "all": true
+  },
+  "animal_group_charizard_evade": {
+    "animal_order": "evade",
+    "species": "charizard",
+    "all": true
+  },
+  "animal_group_charizard_retaliate": {
+    "animal_order": "retaliate",
+    "species": "charizard",
+    "all": true
+  },
+  "animal_group_charizard_free": {
+    "animal_order": "free",
+    "species": "charizard",
+    "all": true
+  },
+  "animal_group_charizard_aggressive": {
+    "animal_order": "aggressive",
+    "species": "charizard",
+    "all": true
+  },
+  "animal_group_wartortle_follow": {
+    "animal_order": "follow",
+    "species": "wartortle",
+    "all": true
+  },
+  "animal_group_wartortle_stay": {
+    "animal_order": "stay",
+    "species": "wartortle",
+    "all": true
+  },
+  "animal_group_wartortle_guard": {
+    "animal_order": "guard",
+    "species": "wartortle",
+    "all": true
+  },
+  "animal_group_wartortle_attack": {
+    "animal_order": "attack",
+    "species": "wartortle",
+    "all": true
+  },
+  "animal_group_wartortle_evade": {
+    "animal_order": "evade",
+    "species": "wartortle",
+    "all": true
+  },
+  "animal_group_wartortle_retaliate": {
+    "animal_order": "retaliate",
+    "species": "wartortle",
+    "all": true
+  },
+  "animal_group_wartortle_free": {
+    "animal_order": "free",
+    "species": "wartortle",
+    "all": true
+  },
+  "animal_group_wartortle_aggressive": {
+    "animal_order": "aggressive",
+    "species": "wartortle",
+    "all": true
+  },
+  "animal_group_blastoise_follow": {
+    "animal_order": "follow",
+    "species": "blastoise",
+    "all": true
+  },
+  "animal_group_blastoise_stay": {
+    "animal_order": "stay",
+    "species": "blastoise",
+    "all": true
+  },
+  "animal_group_blastoise_guard": {
+    "animal_order": "guard",
+    "species": "blastoise",
+    "all": true
+  },
+  "animal_group_blastoise_attack": {
+    "animal_order": "attack",
+    "species": "blastoise",
+    "all": true
+  },
+  "animal_group_blastoise_evade": {
+    "animal_order": "evade",
+    "species": "blastoise",
+    "all": true
+  },
+  "animal_group_blastoise_retaliate": {
+    "animal_order": "retaliate",
+    "species": "blastoise",
+    "all": true
+  },
+  "animal_group_blastoise_free": {
+    "animal_order": "free",
+    "species": "blastoise",
+    "all": true
+  },
+  "animal_group_blastoise_aggressive": {
+    "animal_order": "aggressive",
+    "species": "blastoise",
+    "all": true
+  },
+  "animal_group_ivysaur_follow": {
+    "animal_order": "follow",
+    "species": "ivysaur",
+    "all": true
+  },
+  "animal_group_ivysaur_stay": {
+    "animal_order": "stay",
+    "species": "ivysaur",
+    "all": true
+  },
+  "animal_group_ivysaur_guard": {
+    "animal_order": "guard",
+    "species": "ivysaur",
+    "all": true
+  },
+  "animal_group_ivysaur_attack": {
+    "animal_order": "attack",
+    "species": "ivysaur",
+    "all": true
+  },
+  "animal_group_ivysaur_evade": {
+    "animal_order": "evade",
+    "species": "ivysaur",
+    "all": true
+  },
+  "animal_group_ivysaur_retaliate": {
+    "animal_order": "retaliate",
+    "species": "ivysaur",
+    "all": true
+  },
+  "animal_group_ivysaur_free": {
+    "animal_order": "free",
+    "species": "ivysaur",
+    "all": true
+  },
+  "animal_group_ivysaur_aggressive": {
+    "animal_order": "aggressive",
+    "species": "ivysaur",
+    "all": true
+  },
+  "animal_group_venusaur_follow": {
+    "animal_order": "follow",
+    "species": "venusaur",
+    "all": true
+  },
+  "animal_group_venusaur_stay": {
+    "animal_order": "stay",
+    "species": "venusaur",
+    "all": true
+  },
+  "animal_group_venusaur_guard": {
+    "animal_order": "guard",
+    "species": "venusaur",
+    "all": true
+  },
+  "animal_group_venusaur_attack": {
+    "animal_order": "attack",
+    "species": "venusaur",
+    "all": true
+  },
+  "animal_group_venusaur_evade": {
+    "animal_order": "evade",
+    "species": "venusaur",
+    "all": true
+  },
+  "animal_group_venusaur_retaliate": {
+    "animal_order": "retaliate",
+    "species": "venusaur",
+    "all": true
+  },
+  "animal_group_venusaur_free": {
+    "animal_order": "free",
+    "species": "venusaur",
+    "all": true
+  },
+  "animal_group_venusaur_aggressive": {
+    "animal_order": "aggressive",
+    "species": "venusaur",
+    "all": true
+  },
+  "animal_group_beaver_follow": {
+    "animal_order": "follow",
+    "species": "beaver",
+    "all": true
+  },
+  "animal_group_beaver_stay": {
+    "animal_order": "stay",
+    "species": "beaver",
+    "all": true
+  },
+  "animal_group_beaver_guard": {
+    "animal_order": "guard",
+    "species": "beaver",
+    "all": true
+  },
+  "animal_group_beaver_attack": {
+    "animal_order": "attack",
+    "species": "beaver",
+    "all": true
+  },
+  "animal_group_beaver_evade": {
+    "animal_order": "evade",
+    "species": "beaver",
+    "all": true
+  },
+  "animal_group_beaver_retaliate": {
+    "animal_order": "retaliate",
+    "species": "beaver",
+    "all": true
+  },
+  "animal_group_beaver_free": {
+    "animal_order": "free",
+    "species": "beaver",
+    "all": true
+  },
+  "animal_group_beaver_aggressive": {
+    "animal_order": "aggressive",
+    "species": "beaver",
+    "all": true
+  },
+  "animal_group_verity_follow": {
+    "animal_order": "follow",
+    "species": "verity",
+    "all": true
+  },
+  "animal_group_verity_stay": {
+    "animal_order": "stay",
+    "species": "verity",
+    "all": true
+  },
+  "animal_group_verity_guard": {
+    "animal_order": "guard",
+    "species": "verity",
+    "all": true
+  },
+  "animal_group_verity_attack": {
+    "animal_order": "attack",
+    "species": "verity",
+    "all": true
+  },
+  "animal_group_verity_evade": {
+    "animal_order": "evade",
+    "species": "verity",
+    "all": true
+  },
+  "animal_group_verity_retaliate": {
+    "animal_order": "retaliate",
+    "species": "verity",
+    "all": true
+  },
+  "animal_group_verity_free": {
+    "animal_order": "free",
+    "species": "verity",
+    "all": true
+  },
+  "animal_group_verity_aggressive": {
+    "animal_order": "aggressive",
+    "species": "verity",
+    "all": true
   }
 }

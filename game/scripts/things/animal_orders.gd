@@ -18,6 +18,9 @@ func _ready() -> void:
 	add_to_group("ordered_animals")
 	process_physics_priority = -35
 	tick_left = float(thing.get_instance_id() % 11) * .018
+	if thing._def.get("default_order", "") == "follow":
+		mode = "follow"
+		tick_left = 0.0
 	if bool(thing.node_data.get("mods", {}).get("aggressive", false)):
 		mode = "aggressive"
 		tick_left = 0.0
@@ -52,6 +55,8 @@ static func request(player: Node3D, settings: Dictionary) -> Dictionary:
 	if not player.can_act(): return {"blocked": true, "warnings": ["Você não pode dar ordens agora."]}
 	var ray: Dictionary = player.look_ray()
 	var selected: Node
+	var recipients: Array[Node] = []
+	var group := bool(settings.get("all", false))
 	var best := INF
 	var species := String(settings.get("species", ""))
 	for orders in player.get_tree().get_nodes_in_group("ordered_animals"):
@@ -63,27 +68,48 @@ static func request(player: Node3D, settings: Dictionary) -> Dictionary:
 		var offset: Vector3 = at - ray.origin
 		var along: float = offset.dot(ray.direction)
 		var miss: float = (offset - ray.direction * along).length()
-		if species.is_empty() and (along < 0 or miss > maxf(1.2, orders.thing.bounds.size.length() * .5)): continue
+		if not group and species.is_empty() and (along < 0 or miss > maxf(1.2, orders.thing.bounds.size.length() * .5)): continue
 		var query := PhysicsRayQueryParameters3D.create(ray.origin, at, PhysicsLayers.WORLD)
 		if not player.get_world_3d().direct_space_state.intersect_ray(query).is_empty(): continue
+		recipients.append(orders)
 		var score := miss * 8.0 + distance
 		if score < best:
 			best = score
 			selected = orders
 	if selected == null: return {"blocked": true, "warnings": ["Aponte para um animal seu ou diga o nome dele. Ele precisa estar visível e a até 60 m."]}
+	if group:
+		var changed := 0
+		var ids := []
+		var warning := ""
+		for orders in recipients:
+			var reply := _apply_order(player, settings, orders, ray)
+			if not reply.get("blocked", false):
+				changed += 1
+				ids.append(orders.thing.network_id)
+			elif not reply.get("warnings", []).is_empty(): warning = reply.warnings[0]
+		if changed == 0: return {"blocked": true, "warnings": [warning]}
+		return {"animal_order": settings.animal_order, "animal_count": changed, "animal_network_ids": ids, "warnings": ["Ordem recebida por %d criaturas suas." % changed]}
+	return _apply_order(player, settings, selected, ray)
+
+static func _apply_order(player: Node3D, settings: Dictionary, selected: Node, ray: Dictionary) -> Dictionary:
 	var action := String(settings.animal_order)
 	var target: Node3D
 	if action == "attack":
 		var alignment := .45
-		for candidate in player.get_tree().get_nodes_in_group(Combat.COMBATANTS_GROUP):
-			if not selected._enemy(candidate): continue
+		var candidates := player.get_tree().get_nodes_in_group(Combat.COMBATANTS_GROUP)
+		if Forge.world != null: candidates.append_array(Forge.world.get_node("Things").get_children())
+		for candidate in candidates:
+			if not selected._enemy(candidate) or candidate.get("team") == selected.thing.team: continue
+			if candidate is Thing and candidate.category not in ["creature", "vehicle"]: continue
 			var direction: Vector3 = Combat.center_of(candidate) - ray.origin
 			if direction.length() > 60.0: continue
 			var value: float = direction.normalized().dot(ray.direction)
 			if value > alignment:
+				var query := PhysicsRayQueryParameters3D.create(ray.origin, Combat.center_of(candidate), PhysicsLayers.WORLD)
+				if not player.get_world_3d().direct_space_state.intersect_ray(query).is_empty(): continue
 				alignment = value
 				target = candidate
-		if target == null: return {"blocked": true, "warnings": ["Mire em um jogador inimigo que esse animal possa atacar. A dieta continua valendo."]}
+		if target == null: return {"blocked": true, "warnings": ["Mire num jogador ou criatura inimiga que esse animal possa atacar. A dieta continua valendo."]}
 	var aim: Dictionary = player.aim()
 	var at: Vector3 = aim.point if aim.get("collider") != null else player.global_position + ray.direction * 5.0
 	if action in ["follow", "stay", "retaliate", "evade", "free", "aggressive"]: at = selected.thing.global_position
@@ -96,7 +122,7 @@ static func request(player: Node3D, settings: Dictionary) -> Dictionary:
 		if reply.get("blocked", false): return reply
 		at = builder.work_point
 	selected.set_order(action, at, target)
-	var names := {"follow": "me siga", "stay": "fique aqui", "guard": "proteja a casa", "attack": "ataque o jogador", "evade": "fuja das bombas", "retaliate": "ataque só quem me atacar", "free": "volte ao normal", "build": "construa aqui", "aggressive": "agressivo · poupa você"}
+	var names := {"follow": "me siga", "stay": "fique aqui", "guard": "proteja a casa", "attack": "ataque o alvo", "evade": "fuja das bombas", "retaliate": "ataque só quem me atacar", "free": "volte ao normal", "build": "construa aqui", "aggressive": "agressivo · poupa você"}
 	selected.last_label = Lexicon.data.thing_name(selected.thing.thing_id) + ": " + String(names.get(action, action))
 	if action == "build": selected.last_label += " · " + selected.thing.get_node("CreatureBuilder").requirements()
 	ExpansionFx.burst(Forge.fx_root(player), selected.thing.center(), .5, Color("9dcdb4"), "animal_order")
@@ -107,7 +133,7 @@ func set_order(action: String, at: Vector3, target: Node3D = null) -> void:
 	if action != "build":
 		var builder := thing.get_node_or_null("CreatureBuilder")
 		if builder != null: builder.cancel()
-	mode = action
+	mode = String(thing._def.get("default_order", "free")) if action == "free" else action
 	point = at
 	goal = at
 	target_ref = weakref(target) if target != null else null
@@ -145,7 +171,10 @@ func _physics_process(delta: float) -> void:
 		goal = thing.global_position
 		return
 	match mode:
-		"follow": goal = owner.global_position
+		"follow":
+			goal = owner.global_position
+			if bool(thing._def.get("verity_companion", false)):
+				goal += owner.global_basis.x * 1.7 + thing.up() * 1.6
 		"stay", "guard": goal = point
 		"retaliate":
 			goal = owner.global_position
@@ -210,6 +239,7 @@ func drive(delta: float) -> void:
 	if not airborne: offset = Gravity.flat(offset, thing.up())
 	var distance := offset.length()
 	var stopping := 2.5 if mode in ["follow", "retaliate", "evade"] and combat_target() == null else .4
+	if mode == "follow" and bool(thing._def.get("verity_companion", false)): stopping = .45
 	if combat_target() != null: stopping = maxf(1.1, thing.bounds.size.length() * .3)
 	if distance <= stopping:
 		thing.velocity = Vector3.ZERO if airborne else thing.up() * thing.velocity.dot(thing.up())

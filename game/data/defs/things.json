@@ -2463,24 +2463,15 @@
           "type": "on_fire"
         },
         "do": {
-          "type": "strike"
-        }
-      },
-      {
-        "when": {
-          "type": "on_fire"
-        },
-        "do": {
           "type": "anomaly",
           "mode": "rift",
-          "radius": 4,
           "damage": 48,
-          "color": "#ac85d2",
-          "reach": 16
+          "reach": 4.2
         }
       }
     ],
-    "threat_type": "spatial"
+    "threat_type": "spatial",
+    "strike_style": "slash"
   },
   "gravity_hammer": {
     "category": "weapon",
@@ -2992,7 +2983,9 @@
           "type": "jujutsu"
         }
       }
-    ]
+    ],
+    "melee": true,
+    "strike_style": "thrust"
   },
   "reverse_curse": {
     "category": "tool",
@@ -3705,5 +3698,118 @@
     "movement": "static",
     "impact": "stop",
     "builder_product": "web"
+  },
+  "ryu_beam_technique": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "jujutsu": {
+      "ryu_beam": true
+    },
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "jujutsu"
+        }
+      }
+    ]
+  },
+  "ryu_beam_stream": {
+    "category": "projectile",
+    "movement": "static",
+    "impact": "stop",
+    "cursed_beam": {
+      "mode": "ryu",
+      "color": "#7a9bff",
+      "output": 1.1,
+      "damage": 11.0,
+      "range": 42,
+      "life": 3.5,
+      "charge": 0.4
+    }
+  },
+  "yuta_beam_technique": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "jujutsu": {
+      "yuta_beam": true
+    },
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "jujutsu"
+        }
+      }
+    ]
+  },
+  "yuta_beam_stream": {
+    "category": "projectile",
+    "movement": "static",
+    "impact": "stop",
+    "cursed_beam": {
+      "mode": "yuta",
+      "color": "#f18dcb",
+      "output": 1.0,
+      "damage": 10.0,
+      "range": 42,
+      "life": 3.5,
+      "charge": 0.4
+    }
+  },
+  "verity": {
+    "category": "creature",
+    "movement": "fly",
+    "aerial": true,
+    "impact": "stop",
+    "default_order": "follow",
+    "verity_companion": true,
+    "ecology_tags": [
+      "verity",
+      "orb",
+      "companion"
+    ]
+  },
+  "sukuna_contact_cleave": {
+    "category": "tool",
+    "movement": "static",
+    "impact": "stop",
+    "melee": true,
+    "strike_style": "thrust",
+    "jujutsu": {
+      "contact_cleave": true
+    },
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_fire"
+        },
+        "do": {
+          "type": "jujutsu"
+        }
+      }
+    ]
+  },
+  "sukuna_dismantle_wave": {
+    "category": "projectile",
+    "movement": "straight",
+    "impact": "stop",
+    "cursed_projectile": {
+      "mode": "dismantle"
+    }
+  },
+  "sukuna_fire_arrow": {
+    "category": "projectile",
+    "movement": "straight",
+    "impact": "stop",
+    "cursed_projectile": {
+      "mode": "fuga"
+    }
   }
 }

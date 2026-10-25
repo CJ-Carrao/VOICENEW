@@ -103,6 +103,11 @@ static func build(node: Dictionary, role: String, lex: LexiconData, mount_depth:
 		orders.name = "AnimalOrders"
 		orders.setup(thing)
 		thing.add_child(orders)
+	if bool(def.get("verity_companion", false)):
+		var helper = load("res://scripts/things/verity_companion.gd").new()
+		helper.name = "VerityCompanion"
+		helper.setup(thing)
+		thing.add_child(helper)
 	if def.has("builder"):
 		var builder = load("res://scripts/things/creature_builder.gd").new()
 		builder.name = "CreatureBuilder"
@@ -137,6 +142,16 @@ static func build(node: Dictionary, role: String, lex: LexiconData, mount_depth:
 		orb.name = "SpatialOrb"
 		orb.setup(thing, def.spatial_orb)
 		thing.add_child(orb)
+	if def.get("cursed_beam") is Dictionary:
+		var beam = load("res://scripts/things/cursed_beam.gd").new()
+		beam.name = "CursedBeam"
+		beam.setup(thing, def.cursed_beam)
+		thing.add_child(beam)
+	if def.get("cursed_projectile") is Dictionary:
+		var projectile = load("res://scripts/things/cursed_projectile.gd").new()
+		projectile.name = "CursedProjectile"
+		projectile.setup(thing, def.cursed_projectile)
+		thing.add_child(projectile)
 
 	var control: = String(node.get("control", "none"))
 	if not CONTROLS.has(control):

@@ -909,6 +909,8 @@ func _fx(packet_epoch: int, kind: String, args: Array) -> void :
 		stats.rejected += 1
 		return
 	match kind:
+		"space_sword": load("res://scripts/fx/space_sword.gd").play(_world, args[0], args[1], args[2], float(args[3]))
+		"jujutsu_impact": load("res://scripts/fx/jujutsu_impact.gd").play(_world, args[0], args[1], str(args[2]))
 		"pokemon_move": load("res://scripts/fx/pokemon_fx.gd").play(_world, args[0], args[1], str(args[2]), str(args[3]))
 		"domain_callout": DomainCallout.announce(_world, args[0], str(args[1]))
 		"explosion": Fx.explosion(_world, args[0], float(args[1]), args[2])
@@ -930,6 +932,10 @@ func _fx(packet_epoch: int, kind: String, args: Array) -> void :
 
 static func _valid_fx(kind: String, args: Array) -> bool:
 	match kind:
+		"space_sword":
+			return args.size() == 4 and _vec3(args[0]) and _vec3(args[1]) and _vec3(args[2]) and _num(args[3]) and float(args[3]) >= 1.0 and float(args[3]) <= 8.0
+		"jujutsu_impact":
+			return args.size() == 3 and _vec3(args[0]) and _vec3(args[1]) and args[2] is String and args[2] in ["punch", "black_flash", "cleave", "dismantle", "world_charge", "world_cut", "fuga_charge", "red_burst"]
 		"pokemon_move":
 			return args.size() == 4 and _vec3(args[0]) and _vec3(args[1]) and args[2] is String and args[2] in ["electric", "quick", "fire", "flame", "water", "bubble", "vine", "leaf", "conductive", "vine_fire"] and args[3] is String and args[3].length() <= 64
 		"domain_callout":

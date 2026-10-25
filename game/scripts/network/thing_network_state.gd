@@ -27,8 +27,11 @@ static func capture(thing: Thing) -> Dictionary:
 	if ball != null:
 		state["capture_ball"] = {"occupant_id": ball.occupant_id, "occupant_name": ball.occupant_name, "result": ball.result, "shake_left": ball.shake_left}
 	var cursed = thing.get_node_or_null("Jujutsu")
+	var beam = thing.get_node_or_null("CursedBeam")
+	if beam != null: state["cursed_beam"] = beam.snapshot()
 	if cursed != null:
 		state["jujutsu"] = {"clock": cursed.clock, "exposure": cursed.exposure.duplicate(), "domain_until": cursed.domain_until, "domain_mode": cursed.domain_mode, "domain_origin": cursed.domain_origin, "domain_up": cursed.domain_up, "domain_clashing": cursed.domain_clashing}
+		state.jujutsu.merge({"clash_elapsed": cursed.clash_elapsed, "clash_pressure": cursed.clash_pressure, "clash_point": cursed.clash_point, "clash_axis": cursed.clash_axis, "domain_outcome": cursed.domain_outcome})
 	state["layer"] = thing.collision_layer
 	state["mask"] = thing.collision_mask
 	state["shapes"] = thing.collisions.map( func(shape: CollisionShape3D): return not shape.disabled)
@@ -58,6 +61,8 @@ static func apply(thing: Thing, state: Dictionary) -> void :
 		thing.set_owner_info(owner_id, team, Forge.world.get_player(owner_id) if Forge.world != null else null, null)
 	var orders = thing.get_node_or_null("AnimalOrders")
 	if orders != null and state.get("animal_orders") is Dictionary: orders.apply_snapshot(state.animal_orders)
+	var beam = thing.get_node_or_null("CursedBeam")
+	if beam != null and state.get("cursed_beam") is Dictionary: beam.apply_snapshot(state.cursed_beam)
 	var builder = thing.get_node_or_null("CreatureBuilder")
 	if builder != null and state.get("builder") is Dictionary: builder.apply_snapshot(state.builder)
 	var attachments: Array = state.get("attachments", [])
@@ -88,6 +93,11 @@ static func apply(thing: Thing, state: Dictionary) -> void :
 		cursed.domain_origin = data.get("domain_origin", thing.center())
 		cursed.domain_up = data.get("domain_up", Vector3.UP)
 		cursed.domain_clashing = bool(data.get("domain_clashing", false))
+		cursed.clash_elapsed = float(data.get("clash_elapsed", 0.0))
+		cursed.clash_pressure = float(data.get("clash_pressure", 0.0))
+		cursed.clash_point = data.get("clash_point", cursed.domain_origin)
+		cursed.clash_axis = data.get("clash_axis", Vector3.RIGHT)
+		cursed.domain_outcome = String(data.get("domain_outcome", ""))
 	thing.collision_layer = int(state.get("layer", 0))
 	thing.collision_mask = int(state.get("mask", 0))
 	var shapes: Array = state.get("shapes", [])

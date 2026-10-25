@@ -1,7 +1,7 @@
 class_name JujutsuRules
 extends RefCounted
 
-const KEYS := ["adaptation", "infinity", "cleave", "world_cut", "fuga", "black_flash", "reverse", "shrine", "void", "simple_domain", "amplification", "blue", "red", "purple"]
+const KEYS := ["adaptation", "infinity", "cleave", "contact_cleave", "world_cut", "fuga", "black_flash", "reverse", "shrine", "void", "simple_domain", "amplification", "blue", "red", "purple", "ryu_beam", "yuta_beam"]
 
 static func powers(node: Dictionary, lex: LexiconData) -> Dictionary:
 	var out: Dictionary = lex.thing_def(String(node.get("thing", ""))).get("jujutsu", {}).duplicate()
@@ -45,13 +45,18 @@ static func damage(target: Object, amount: float, kind: String, source: Thing) -
 			return amount * 0.15
 	var defender = field(target, "adaptation")
 	if defender != null:
-		var factor := 0.2 if defender.adapted(kind) else 1.0
+		var factor: float = defender.resistance(kind)
 		defender.observe(kind)
 		return amount * factor
 	return amount
 
 static func force(target: Node3D, source: Thing) -> float:
 	if field(target, "infinity") != null and not bypasses(source, "gravity"): return 0.0
+	var defender = field(target, "adaptation")
+	if defender != null:
+		var factor: float = defender.resistance("gravity")
+		defender.observe("gravity")
+		return factor
 	return 1.0
 
 static func candidates(tree: SceneTree) -> Array:

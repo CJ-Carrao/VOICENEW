@@ -208,6 +208,8 @@ func configure(node: Dictionary, as_role: String, def: Dictionary, lex: LexiconD
 	_def = def
 	thing_id = String(node.get("thing", ""))
 	category = String(def.get("category", ""))
+	melee = bool(def.get("melee", false))
+	strike_style = String(def.get("strike_style", "slash"))
 	role = as_role
 	var mods: Dictionary = node.get("mods", {})
 	scale_factor = float(mods.get("scale", 1.0))
@@ -431,6 +433,8 @@ func set_captured(captured: bool) -> void:
 		else: orders.on_release()
 	is_captured = captured
 	if captured:
+		var cursed := get_node_or_null("Jujutsu")
+		if cursed != null: cursed.cancel_pending()
 		_capture_was_active = is_active
 		is_active = false
 		set_held(true)

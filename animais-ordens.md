@@ -11,18 +11,18 @@ tags:
 
 Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · Relacionado: [[Projetos/lavoice-lab/tarefas|Lista de tarefas]] · [[Projetos/lavoice-lab/criatividade|Criatividade e colônias]] · [[Projetos/lavoice-lab/pokemon|Pokémon, evoluções e combos]] · [[Projetos/lavoice-lab/captura|Captura]]
 
-Abra `jogar.cmd`. Crie animais com **V**; dê ordens com **B** ou pelo console **T**. As ordens funcionam nas 99 espécies atuais, incluindo dinossauros, Mahoraga, Pokémon, brainrots e criaturas com misturas.
+Abra `jogar.cmd`. Crie animais com **V**; dê ordens com **B** ou pelo console **T**. As ordens funcionam nas 100 espécies atuais, incluindo dinossauros, Mahoraga, Pokémon, brainrots e criaturas com misturas.
 
 ## Dar uma ordem
 
-Diga o nome do animal seguido da ordem, por exemplo **“cachorro, me siga”**. Se houver vários da mesma espécie, sua mira e a distância ajudam a escolher um. Também pode apontar diretamente para um animal seu e dizer só **“me siga”**. Uma ordem seleciona um indivíduo, visível e a até 60 m; a mensagem confirma quem a recebeu. Animais mortos, capturados, ainda em montagem ou de outro jogador não podem receber ordens.
+Diga o nome do animal seguido da ordem, por exemplo **“cachorro, me siga”**. Se houver vários da mesma espécie, sua mira e a distância ajudam a escolher um. Também pode apontar diretamente para um animal seu e dizer só **“me siga”**. No singular, uma ordem seleciona um indivíduo, visível e a até 60 m; a mensagem confirma quem a recebeu. Animais mortos, capturados, ainda em montagem ou de outro jogador não podem receber ordens.
 
 | Comando | Comportamento |
 | --- | --- |
 | Cachorro, me siga | Acompanha o treinador, mantendo espaço ao redor dele. |
 | Cachorro, fique aqui | Guarda a posição, sem perseguir ou disparar automaticamente. |
 | Cachorro, proteja minha casa | Mire na casa. Defende uma área de 10 m em torno dela; acompanha o ponto se for uma casa ambulante. Sem casa próxima, guarda sua posição atual. |
-| Cachorro, ataque aquele jogador | Mire em um jogador adversário. Persegue esse alvo; armas e habilidades usam o mesmo alvo. A dieta continua valendo. |
+| Cachorro, ataque aquele jogador | Mire em um jogador ou criatura adversária. Persegue esse alvo; armas e habilidades usam o mesmo alvo. A dieta continua valendo. |
 | Cachorro, fuja das bombas | Procura se afastar de bombas e granadas próximas. Sem ameaça próxima, acompanha você. |
 | Cachorro, ataque só quem me atacar | Reage ao último agressor do treinador, por até 10 s; depois volta a acompanhá-lo. |
 | Cachorro, volte ao normal | Cancela a ordem e retoma o comportamento original. |
@@ -51,3 +51,11 @@ Também funciona “castor, construa aqui” ou simplesmente “construa aqui”
 A matéria sai do treinador: escavação cobra por bloco; barragem e teia cobram ao concluir. Falta de matéria pausa o trabalho. Capturar, matar, remover o animal ou mandar outra ordem interrompe o trabalho sem criar construções depois. Terra já removida continua paga e removida. Barragens e teias prontas permanecem e podem ser destruídas; sua destruição libera espaço no limite de construções ativas.
 
 No online, o servidor decide alvos, gastos, construção, escavação e armadilhas. Ordens, progresso, produtos, mudanças no terreno e destruição são sincronizados. Todos precisam usar a mesma versão do jogo.
+
+## Comandos no plural
+
+Segure B e diga **“cachorros, me sigam”**: todos os seus cachorros visíveis e a até 60 m recebem a ordem. Também aceita “cachoros me sigam”, “cachorros me siga” e “todos os cachorros venham comigo”. O comando informa quantas criaturas receberam a ordem. No singular, “cachorro me siga” continua escolhendo apenas um indivíduo.
+
+Funciona nas 100 espécies: “pombos me sigam”, “dragões fiquem aqui”, “cachorros ataquem”, “cachorros protejam minha casa”, “cachorros fujam das bombas”, “cachorros ataquem só quem me atacar”, “cachorros voltem ao normal” e “cachorros sejam agressivos”. Com **“todos me sigam”**, você chama suas criaturas de todas as espécies. Capturadas, mortas, em montagem, distantes, ocultas ou de outro jogador ficam fora.
+
+Ao mandar atacar, mire no jogador ou criatura inimiga. A dieta continua valendo. Os comandos de golpes específicos de Pokémon continuam funcionando. Construções permanecem ordens individuais para escolher o local de trabalho de cada construtor.

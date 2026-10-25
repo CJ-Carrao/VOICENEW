@@ -34,7 +34,7 @@ Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · Relacionado: [[Projetos/lavoi
 - Quero uma bomba hipotética de gravidade.
 - Quero uma faca que corta o espaço.
 
-A faca abre um corte à distância que atinge inimigos e blocos. A bomba de gravidade atrai e comprime; a hipotética levanta e depois repele. A de nêutrons agora lança blocos, faz uma cratera curta e atinge criaturas mais longe. São mecânicas de ficção do jogo.
+A faca espacial agora é uma espada que abre uma fenda curva próxima, atingindo inimigos e blocos no arco do golpe. A bomba de gravidade atrai e comprime; a hipotética levanta e depois repele. A de nêutrons agora lança blocos, faz uma cratera curta e atinge criaturas mais longe. São mecânicas de ficção do jogo.
 
 ## Animais
 
@@ -109,7 +109,7 @@ A faca abre um corte à distância que atinge inimigos e blocos. A bomba de grav
 
 | Criação | Pedido | Efeito |
 | --- | --- | --- |
-| faca que corta o espaço | quero faca que corta o espaço | Abre uma fenda de ate 22 metros que corta inimigos e blocos. |
+| faca que corta o espaço | quero espada que corta o espaço | Golpe próximo com fenda curva: atravessa Infinito e corta inimigos e blocos no arco. |
 | martelo de gravidade | quero martelo de gravidade | Golpe corpo a corpo acompanhado de pulso elemental. |
 | martelo do trovão | quero martelo do trovão | Golpe corpo a corpo acompanhado de pulso elemental. |
 | machado de gelo | quero machado de gelo | Golpe corpo a corpo acompanhado de pulso elemental. |

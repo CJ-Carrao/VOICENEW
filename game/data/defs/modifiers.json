@@ -952,5 +952,17 @@
   "aggressive": {
     "key": "aggressive",
     "value": true
+  },
+  "jj_ryu_beam": {
+    "key": "jj_ryu_beam",
+    "value": true
+  },
+  "jj_yuta_beam": {
+    "key": "jj_yuta_beam",
+    "value": true
+  },
+  "jj_contact_cleave": {
+    "key": "jj_contact_cleave",
+    "value": true
   }
 }

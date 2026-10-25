@@ -46,7 +46,7 @@ func _run() -> void:
 	recipe = load("res://scripts/language/recipe.gd")
 	ctx = load("res://scripts/things/action_context.gd")
 	await create_timer(.5).timeout
-	var keys := ["mahoraga", "infinito", "corte do sukuna", "corte do mundo", "fuga", "flash negro", "cura reversa", "santuario malevolente", "vazio infinito", "dominio simples", "amplificacao de dominio"]
+	var keys := ["mahoraga", "infinito", "corte do sukuna", "corte do mundo", "fuga", "flash negro", "cura reversa", "reversão de feitiço", "feitiço reverso", "reversão de feitiço de cura", "técnica reversa de cura", "técnica de reversão", "santuario malevolente", "vazio infinito", "dominio simples", "amplificacao de dominio"]
 	for name in keys:
 		var parsed: Dictionary = parser.parse("quero " + name, lex)
 		check(parsed.get("ok", false) and parsed.unknown_words.is_empty() and parsed.ignored_words.is_empty(), "Technique not recognized: " + name)
@@ -88,7 +88,7 @@ func _run() -> void:
 	for attempt in 4:
 		user.clock = attempt * 1.1
 		user.cast(ctx.make(dog.center(), game.opponent.center() - dog.center(), game.opponent))
-		for step in 3: await process_frame
+		await create_timer(.2).timeout
 	check(user.adapted("infinity") and game.opponent.health < hp, "Adapted dog could not hit protected player")
 	evidence.adapted_dog_damage = hp - game.opponent.health
 	# Adaptation belongs to the attack type and is not instantaneous invulnerability.
@@ -104,6 +104,41 @@ func _run() -> void:
 	before = maho.hp
 	combat.apply_damage(maho, 10.0, "fire", dog)
 	check(is_equal_approx(before - maho.hp, 10.0), "Slash adaptation incorrectly made fire harmless")
+	# Every stage matters, and simultaneous pellets cannot instantly teach a technique.
+	for i in 4:
+		defender.clock = 10.0 + i
+		before = maho.hp
+		combat.apply_damage(maho, 10.0, "electric", dog)
+		var expected: float = [10.0, 7.5, 5.0, 2.0][i]
+		check(is_equal_approx(before - maho.hp, expected), "Adaptation did not resist progressively at stage " + str(i))
+	defender.clock = 20.0
+	for i in 8: defender.observe("bullet")
+	check(defender.exposure.get("bullet", 0) == 1, "Pellets instantly completed adaptation")
+	for i in 2:
+		defender.clock += 1.0
+		defender.observe("bullet")
+	check(defender.adapted("bullet"), "Separated bullets did not complete adaptation")
+	for i in 4:
+		defender.clock = 30.0 + i
+		var force: float = load("res://scripts/things/innovation_rules.gd").force_multiplier(maho, dog)
+		check(is_equal_approx(force, [1.0, .75, .5, .2][i]), "Gravity adaptation not applied to forces")
+	var status = load("res://scripts/things/status.gd")
+	defender.clock = 40.0
+	status.apply(maho, "frozen", dog)
+	check(status.speed_mult(maho) < 1.0, "Unadapted Mahoraga ignored ice")
+	for i in 2:
+		defender.clock += 1.0
+		status.of(maho)._physics_process(.1)
+	check(defender.adapted("ice") and is_equal_approx(status.speed_mult(maho), 1.0), "Mahoraga did not escape sustained freezing")
+	status.apply(maho, "frozen", dog)
+	check(is_equal_approx(status.speed_mult(maho), 1.0), "Adapted ice slowed Mahoraga again")
+	check(defender.resistance("burn") == defender.resistance("fire"), "Burn damage forgot fire adaptation")
+	maho.set_captured(true)
+	defender.clock = 50.0
+	defender.observe("water")
+	check(not defender.exposure.has("water"), "Captured Mahoraga kept learning")
+	maho.set_captured(false)
+	check(defender.adapted("electric") and defender.adapted("bullet"), "Capture erased learned adaptation")
 	await clear()
 	# Domain protection, normal Infinity bypass, and temporary defensive windows.
 	game.opponent.health = hp
@@ -123,13 +158,35 @@ func _run() -> void:
 	check(game.opponent.health < before, "Infinity has no recharge window")
 	await clear()
 	# Healing caps at maximum and cannot revive a dead creature.
-	var healer = spawn("quero um cachorro com cura reversa", Vector3(0,40,0))
+	for alias in ["reversão de feitiço", "feitiço reverso", "reversão de feitiço de cura", "técnica reversa de cura", "técnica de reversão"]:
+		var parsed: Dictionary = parser.parse("quero um cachorro com " + alias, lex)
+		check(parsed.get("ok", false) and parsed.unknown_words.is_empty() and parsed.ignored_words.is_empty() and parsed.recipe.mods.get("jj_reverse", false), "Healing modifier not recognized: " + alias)
+	var healer = spawn("quero um cachorro com reversão de feitiço", Vector3(0,40,0))
 	healer.move.set_physics_process(false)
 	healer.hp -= 10
 	healer.get_node("Jujutsu")._heal()
 	check(is_equal_approx(healer.hp, healer.max_hp - 4), "Reverse technique did not heal")
 	healer.get_node("Jujutsu")._heal()
 	check(healer.hp == healer.max_hp, "Reverse technique exceeded max HP")
+	healer.hp = 0
+	healer.get_node("Jujutsu")._heal()
+	check(healer.hp == 0, "Reverse technique revived a defeated creature")
+	var healing_tool = spawn("quero reversão de feitiço", Vector3(0,40,4))
+	healing_tool.set_held(true)
+	var healing = healing_tool.get_node("Jujutsu")
+	healing.set_physics_process(false)
+	game.player.health = game.player.max_health - 10
+	healing._physics_process(.15)
+	check(game.player.health == game.player.max_health - 4, "Equipped reversal did not heal player")
+	for i in 8: healing._physics_process(.15)
+	check(game.player.health == game.player.max_health - 4, "Healing ignored its cooldown")
+	for i in 4: healing._physics_process(.15)
+	check(game.player.health == game.player.max_health, "Healing did not cap at maximum player health")
+	healing_tool.set_held(false)
+	game.player.health -= 10
+	healing._heal()
+	check(game.player.health == game.player.max_health - 10, "Dropped reversal kept healing its former holder")
+	game.player.health = game.player.max_health
 	await clear()
 	# Purple must remove strong blocks continuously even between fast physics steps.
 	var volume = load("res://scripts/world/block_volume.gd").new()

@@ -70,6 +70,14 @@ static func apply(target: Object, kind: String, source: Thing, duration_mult: fl
 		return
 	if target.has_method("is_alive") and not target.call("is_alive"):
 		return
+	if kind in ["burning", "frozen", "entangled", "webbed"] and JujutsuRules.field(target, "infinity") != null and not JujutsuRules.bypasses(source, kind): return
+	var adaptation = JujutsuRules.field(target, "adaptation")
+	var phenomenon := adaptation_kind(kind)
+	if adaptation != null and not phenomenon.is_empty():
+		adaptation.observe(phenomenon)
+		if adaptation.adapted(phenomenon):
+			remove_effect(target, kind)
+			return
 	var status: = of(target as Node)
 	if status == null:
 		status = Status.new()
@@ -81,6 +89,9 @@ static func apply(target: Object, kind: String, source: Thing, duration_mult: fl
 
 static func of(target: Node) -> Status:
 	return target.get_node_or_null(NODE_NAME) as Status if target != null else null
+
+static func adaptation_kind(kind: String) -> String:
+	return String({"burning": "fire", "frozen": "ice", "entangled": "vines", "webbed": "web"}.get(kind, ""))
 
 
 
@@ -120,6 +131,13 @@ func _physics_process(delta: float) -> void :
 	if _void_check_left <= 0.0:
 		_void_check_left = .1
 		_refresh_void()
+		var adaptation = JujutsuRules.field(_target, "adaptation")
+		if adaptation != null:
+			for kind: String in remaining.keys():
+				var phenomenon := adaptation_kind(kind)
+				if phenomenon.is_empty(): continue
+				adaptation.observe(phenomenon)
+				if adaptation.adapted(phenomenon): remove_effect(_target, kind)
 	if remaining.has("burning"):
 		_tick += delta
 		var tick: = Lexicon.balf("status.burning.tick_s")

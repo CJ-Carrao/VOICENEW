@@ -2564,7 +2564,12 @@
       "faca dimensional",
       "faca do espaço",
       "faca que corte o espaco",
-      "faca que corte espaco"
+      "faca que corte espaco",
+      "espada que corta o espaço",
+      "espada que corta espaço",
+      "espada dimensional",
+      "espada espacial",
+      "espada que corta o espaco"
     ],
     "forms": []
   },
@@ -2848,15 +2853,13 @@
     "forms": []
   },
   "sukuna_cleave": {
-    "name": "Corte do Sukuna",
+    "name": "Dismantle · corte do Sukuna",
     "words": [
       "corte do sukuna",
       "corte de sukuna",
       "desmantelar",
       "desmantelamento",
-      "clivar",
-      "dismantle",
-      "cleave"
+      "dismantle"
     ],
     "forms": []
   },
@@ -2885,7 +2888,10 @@
     "words": [
       "flash negro",
       "kokusen",
-      "black flash"
+      "black flash",
+      "raio negro",
+      "raio negro do yuji",
+      "soco do yuji"
     ],
     "forms": []
   },
@@ -2894,7 +2900,12 @@
     "words": [
       "tecnica reversa",
       "tecnica amaldicoada reversa",
-      "cura reversa"
+      "cura reversa",
+      "reversao de feitico",
+      "feitico reverso",
+      "reversao de feitico de cura",
+      "tecnica reversa de cura",
+      "tecnica de reversao"
     ],
     "forms": []
   },
@@ -3219,6 +3230,79 @@
     "words": [
       "teia de aranha"
     ],
+    "forms": []
+  },
+  "ryu_beam_technique": {
+    "name": "Raio do Ryu",
+    "words": [
+      "raio do ryu",
+      "raio de ryu",
+      "granite blast",
+      "rajada de granito",
+      "disparo do ryu",
+      "raio do riu"
+    ],
+    "forms": []
+  },
+  "yuta_beam_technique": {
+    "name": "Raio do Yuta",
+    "words": [
+      "raio do yuta",
+      "raio de yuta",
+      "raio da rika",
+      "feixe do yuta",
+      "raio de amor",
+      "pure love beam",
+      "raio do iuta"
+    ],
+    "forms": []
+  },
+  "ryu_beam_stream": {
+    "name": "Feixe ativo · Raio do Ryu",
+    "words": [],
+    "forms": []
+  },
+  "yuta_beam_stream": {
+    "name": "Feixe ativo · Raio do Yuta",
+    "words": [],
+    "forms": []
+  },
+  "verity": {
+    "name": "Verity",
+    "words": [
+      "verity",
+      "veriti",
+      "verite",
+      "bolinha amarela",
+      "bolinha sorridente",
+      "assistente amarelo"
+    ],
+    "forms": [
+      "veritys",
+      "verities",
+      "bolinhas amarelas",
+      "bolinhas sorridentes"
+    ]
+  },
+  "sukuna_contact_cleave": {
+    "name": "Cleave · corte de contato",
+    "words": [
+      "cleave",
+      "clivar",
+      "clivagem",
+      "corte de contato do sukuna",
+      "clivagem do sukuna"
+    ],
+    "forms": []
+  },
+  "sukuna_dismantle_wave": {
+    "name": "Corte em movimento",
+    "words": [],
+    "forms": []
+  },
+  "sukuna_fire_arrow": {
+    "name": "Flecha de fogo",
+    "words": [],
     "forms": []
   }
 }

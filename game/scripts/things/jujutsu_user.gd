@@ -23,6 +23,18 @@ var jobs: Node
 var terrain_jobs: Node
 var wheel: Node3D
 var outline: Node3D
+var pending_attack := {}
+var zone_until := 0.0
+var black_flashes := 0
+var domain_peer: WeakRef
+var domain_caster: WeakRef
+var domain_start_health := 1.0
+var clash_elapsed := 0.0
+var clash_pressure := 0.0
+var clash_last_clock := 0.0
+var clash_point := Vector3.ZERO
+var clash_axis := Vector3.RIGHT
+var domain_outcome := ""
 
 func setup(owner_thing: Thing, settings: Dictionary) -> void:
 	thing = owner_thing
@@ -96,10 +108,20 @@ func center() -> Vector3:
 	return Combat.center_of(thing.owner_player) if thing.is_held and is_instance_valid(thing.owner_player) else thing.center()
 
 func adapted(kind: String) -> bool:
-	return enabled("adaptation") and int(exposure.get(kind, 0)) >= 3
+	return enabled("adaptation") and int(exposure.get(adaptation_kind(kind), 0)) >= 3
+
+func adaptation_kind(kind: String) -> String:
+	return "fire" if kind == "burn" else kind
+
+func resistance(kind: String) -> float:
+	if not enabled("adaptation"): return 1.0
+	var stage := clampi(int(exposure.get(adaptation_kind(kind), 0)), 0, 3)
+	return [1.0, .75, .5, .2][stage]
 
 func observe(kind: String) -> void:
+	kind = adaptation_kind(kind)
 	if not enabled("adaptation") or clock - float(observed_at.get(kind, -100.0)) < 0.8: return
+	if int(exposure.get(kind, 0)) >= 3 or thing.is_captured or not thing.has_simulation_authority(): return
 	observed_at[kind] = clock
 	exposure[kind] = mini(int(exposure.get(kind, 0)) + 1, 3)
 	feedback("adaptation", Color("f9d881"))
@@ -111,6 +133,17 @@ func feedback(kind: String, color: Color, radius: float = 1.5) -> void:
 
 func _process(delta: float) -> void:
 	if not is_instance_valid(thing): return
+	if powers.has("black_flash") and thing.is_held and thing.owner_player is Player:
+		var hands = thing.owner_player.hands
+		var level: float = hands.charge_level()
+		var precise: bool = hands.is_charging() and level >= (.35 if zone_until > clock else .45) and level <= .65
+		for piece in thing.model_pieces:
+			if piece.get_meta("tag", "") != "knuckle": continue
+			var material := piece.material_override as StandardMaterial3D
+			if material != null:
+				material.emission_enabled = precise
+				material.emission = Color("ef2646")
+				material.emission_energy_multiplier = 2.0
 	if thing.network_replica: clock += delta
 	if domain_until > clock and thing.is_active and not thing.is_dead and not thing.is_captured:
 		if not is_instance_valid(domain_visual):
@@ -134,6 +167,7 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if not is_instance_valid(thing) or thing.is_dead or thing.is_building or not thing.is_active or not thing.has_simulation_authority(): return
 	clock += delta
+	if not pending_attack.is_empty() and clock >= float(pending_attack.at): _resolve_attack()
 	fx_left -= delta
 	tick_left -= delta
 	if tick_left > 0.0: return
@@ -162,9 +196,10 @@ func _infinity() -> void:
 		feedback("infinity", Color("b2e9ff"))
 
 func _heal() -> void:
+	if not enabled("reverse") or thing.is_captured or not thing.has_simulation_authority(): return
 	var target: Node3D = thing.owner_player if thing.is_held and is_instance_valid(thing.owner_player) else thing
 	if target is Thing:
-		if target.hp >= target.max_hp: return
+		if target.is_dead or target.hp <= 0.0 or target.hp >= target.max_hp: return
 		target.hp = minf(target.max_hp, target.hp + 6.0)
 	elif target is Player:
 		if not target.is_alive() or target.health >= target.max_health: return
@@ -176,6 +211,12 @@ func expand_domain() -> bool:
 	if not thing.can_act() or clock < next_cast or enabled("amplification"): return false
 	if not powers.has("shrine") and not powers.has("void"): return false
 	domain_mode = "shrine" if powers.has("shrine") else "void"
+	domain_peer = null
+	domain_outcome = ""
+	clash_elapsed = 0.0
+	clash_pressure = 0.0
+	domain_caster = weakref(thing.owner_player if thing.is_held and is_instance_valid(thing.owner_player) else thing)
+	domain_start_health = load("res://scripts/things/domain_clash.gd").health(self)
 	domain_until = clock + 6.0
 	domain_origin = center()
 	domain_up = thing.up()
@@ -201,13 +242,18 @@ func expand_domain() -> bool:
 			if not member.has_method("take_damage"): continue
 			if Combat.center_of(member).distance_to(domain_origin) < 8.5: domain_members.append(weakref(member))
 	next_cast = clock + 18.0
+	load("res://scripts/things/domain_clash.gd").update(self)
 	DomainCallout.announce(Forge.fx_root(thing), center(), domain_mode)
 	feedback(domain_mode, Color("ef6e7d") if domain_mode == "shrine" else Color("7489ff"))
 	return true
 
-func cancel_domain() -> void:
+func cancel_domain(outcome: String = "") -> void:
+	if domain_until > clock and not outcome.is_empty():
+		ExpansionFx.burst(Forge.fx_root(thing), domain_origin, 8.5, Color("d3bedf"), "domain_break")
+	domain_outcome = outcome
 	domain_until = 0.0
 	domain_clashing = false
+	domain_peer = null
 	domain_members.clear()
 	if is_instance_valid(domain_visual): domain_visual.close()
 
@@ -215,7 +261,7 @@ func _exit_tree() -> void:
 	if is_instance_valid(domain_visual): domain_visual.close()
 
 func cast(ctx: ActionContext) -> void:
-	if clock < next_cast or not thing.has_simulation_authority() or Status.paralyzed(thing): return
+	if clock < next_cast or not pending_attack.is_empty() or not thing.can_act() or thing.is_captured: return
 	var origin := center()
 	var direction := ctx.direction
 	if thing.is_held and thing.owner_player is Player:
@@ -228,30 +274,99 @@ func cast(ctx: ActionContext) -> void:
 			var shot := Forge.spawn_child(Recipe.new_node(id), "projectile", origin + direction * 1.5, direction, thing, 20.0 if key == "purple" else 12.0, Vector3.ZERO, true)
 			if shot != null: next_cast = clock + (7.0 if key == "purple" else 4.0)
 			return
+	for key in ["ryu_beam", "yuta_beam"]:
+		if powers.has(key):
+			if get_tree().get_nodes_in_group("cursed_beams").size() >= 24: return
+			var beam := Forge.spawn_child(Recipe.new_node(key + "_stream"), "projectile", origin + direction.normalized() * 1.1, direction, thing, 0.0, Vector3.ZERO, true)
+			if beam != null:
+				beam.power = clampf(thing.power, .5, 2.0)
+				next_cast = clock + 7.0
+			return
 	if powers.has("shrine") or powers.has("void"):
 		expand_domain()
 		return
-	var mode := "world_cut" if powers.has("world_cut") else "cleave" if powers.has("cleave") else "fuga" if powers.has("fuga") else "black_flash" if powers.has("black_flash") else "adaptation"
+	var mode := "world_cut" if powers.has("world_cut") else "cleave" if powers.has("cleave") else "contact_cleave" if powers.has("contact_cleave") else "fuga" if powers.has("fuga") else "black_flash" if powers.has("black_flash") else "adaptation"
 	if mode == "adaptation" and not powers.has("adaptation"): return
-	var reach := 24.0 if mode in ["world_cut", "cleave", "fuga"] else 3.8
-	next_cast = clock + (4.5 if mode == "world_cut" else 3.0 if mode in ["fuga", "black_flash"] else 1.0)
-	var kind := "world_cut" if mode == "world_cut" else "fire" if mode == "fuga" else "melee" if mode in ["black_flash", "adaptation"] else "slash"
-	var amount := 100.0 if mode == "world_cut" else 65.0 if mode == "fuga" else 55.0 if mode == "black_flash" else 32.0 if mode == "cleave" else maxf(14.0, thing.impact_damage * 2.0)
-	var color := Color("ff9542") if mode == "fuga" else Color("ff4667")
-	ExpansionFx.rift(Forge.fx_root(thing), origin, direction, reach, color)
+	var delay := .55 if mode == "world_cut" else .45 if mode == "fuga" else .12
+	pending_attack = {"mode": mode, "at": clock + delay, "origin": origin, "direction": direction.normalized(), "held": thing.is_held, "charge": ctx.charge}
+	next_cast = clock + (4.5 if mode == "world_cut" else 5.0 if mode == "fuga" else 1.2 if mode == "cleave" else .8)
+	var fx = load("res://scripts/fx/jujutsu_impact.gd")
+	if mode in ["world_cut", "fuga"]: fx.play(Forge.fx_root(thing), origin + direction * .8, direction, "world_charge" if mode == "world_cut" else "fuga_charge")
+
+func cancel_pending() -> void: pending_attack.clear()
+
+func _resolve_attack() -> void:
+	var attack := pending_attack.duplicate()
+	pending_attack.clear()
+	if not thing.can_act() or thing.is_captured or bool(attack.held) != thing.is_held or enabled("amplification"): return
+	var origin: Vector3 = center()
+	var direction: Vector3 = attack.direction
+	if thing.is_held and thing.owner_player is Player:
+		origin = thing.owner_player.head.global_position
+		direction = -thing.owner_player.camera.global_basis.z
+	var mode := String(attack.mode)
+	if mode in ["cleave", "fuga"]:
+		if get_tree().get_nodes_in_group("cursed_projectiles").size() >= 48: return
+		var id := "sukuna_fire_arrow" if mode == "fuga" else "sukuna_dismantle_wave"
+		var shot := Forge.spawn_child(Recipe.new_node(id), "projectile", origin + direction * .7, direction, thing, -1.0, Vector3.ZERO, true)
+		if shot != null: shot.power = clampf(thing.power, .5, 2.0)
+		return
+	if mode == "world_cut":
+		ExpansionFx.rift(Forge.fx_root(thing), origin, direction, 24.0, Color("d4dcf1"))
+		var hits := 0
+		for target in JujutsuRules.candidates(get_tree()):
+			if not _enemy(target): continue
+			var offset: Vector3 = Combat.center_of(target) - origin
+			var along := offset.dot(direction)
+			var radius: float = minf(2.0, target.bounds.size.length() * .25) if target is Thing else .6
+			if along < 0 or along > 24.0 or (offset - direction * along).length() > 1.1 + radius: continue
+			_queue(target, 100.0, "world_cut")
+			hits += 1
+			if hits >= 16: break
+		_cut(origin, origin + direction * 24.0, 1.0, -1.0)
+		return
+	_melee(mode, origin, direction, float(attack.charge))
+
+func _melee(mode: String, origin: Vector3, direction: Vector3, charge: float) -> void:
+	var reach := clampf(thing.bounds.size.length() * .3 + 1.0, 2.0, 3.2) if not thing.is_held else 2.2
+	if mode == "adaptation": reach = maxf(reach, 3.2)
+	var best := INF
+	var chosen: Node3D
 	for target in JujutsuRules.candidates(get_tree()):
 		if not _enemy(target): continue
-		var offset: Vector3 = Combat.center_of(target) - origin
-		var along := offset.dot(direction)
-		if along < -.5 or along > reach or (offset - direction * along).length() > (1.5 if mode == "black_flash" else 1.1): continue
-		if mode != "world_cut":
-			var query := PhysicsRayQueryParameters3D.create(origin, Combat.center_of(target), PhysicsLayers.WORLD)
-			if not thing.get_world_3d().direct_space_state.intersect_ray(query).is_empty(): continue
-		_queue(target, amount, kind)
-		if mode == "black_flash": ExpansionFx.burst(Forge.fx_root(thing), Combat.center_of(target), 2.4, Color("e92547"), "black_flash")
-	if mode in ["cleave", "world_cut", "fuga"]:
-		_cut(origin, origin + direction * reach, 1.0 if mode != "fuga" else 1.8, -1.0 if mode == "world_cut" else amount * 2.0)
-		if mode == "fuga": ExpansionFx.burst(Forge.fx_root(thing), origin + direction * reach, 4.0, color, "fuga")
+		var at := Combat.center_of(target)
+		var offset := at - origin
+		if offset.normalized().dot(direction) < .55: continue
+		var contact := at
+		if target is Thing:
+			var bounds: AABB = target.global_transform * target.bounds
+			contact = origin.clamp(bounds.position, bounds.end)
+		var distance := origin.distance_to(contact)
+		if distance > reach or distance >= best: continue
+		var query := PhysicsRayQueryParameters3D.create(origin, at, PhysicsLayers.WORLD)
+		if not thing.get_world_3d().direct_space_state.intersect_ray(query).is_empty(): continue
+		chosen = target
+		best = distance
+	if chosen == null: return # No ranged lightning and no Black Flash on a missed punch.
+	var critical := false
+	if mode == "black_flash":
+		critical = randf() < (.45 if zone_until > clock else .25) if thing.category == "creature" else charge >= (.35 if zone_until > clock else .45) and charge <= .65
+	var amount := 45.0 if critical else 18.0 if mode == "black_flash" else maxf(14.0, thing.impact_damage * 2.0)
+	if mode == "contact_cleave":
+		var health: float = chosen.max_hp if chosen is Thing else chosen.max_health
+		amount = clampf(32.0 + health * .12, 32.0, 70.0)
+	var before: float = chosen.hp if chosen is Thing else chosen.health
+	Combat.apply_damage(chosen, amount * clampf(thing.power, .5, 2.0), "slash" if mode == "contact_cleave" else "melee", thing)
+	if not is_instance_valid(chosen): return
+	var after: float = chosen.hp if chosen is Thing else chosen.health
+	if after >= before: return
+	var fx = load("res://scripts/fx/jujutsu_impact.gd")
+	fx.play(Forge.fx_root(thing), Combat.center_of(chosen), direction, "black_flash" if critical else "cleave" if mode == "contact_cleave" else "punch")
+	if critical:
+		black_flashes += 1
+		zone_until = clock + 6.0
+	if chosen.has_method("apply_knockback"): chosen.apply_knockback(direction * (5.0 if critical else 2.0))
+	elif chosen is Thing: chosen.nudge(direction * (5.0 if critical else 2.0))
 
 func _enemy(target: Object) -> bool:
 	if not is_instance_valid(target) or target == thing or target == thing.owner_player or not target.has_method("take_damage"): return false
@@ -272,12 +387,8 @@ func _queue(target: Node3D, amount: float, kind: String) -> void:
 	jobs.rows.append({"target": weakref(target), "damage": amount, "push": Vector3.ZERO, "type": kind})
 
 func _domain() -> void:
-	# Opposing domains cancel the sure-hit inside their overlap.
-	domain_clashing = false
-	for other in get_tree().get_nodes_in_group("jujutsu_users"):
-		if other != self and is_instance_valid(other.thing) and not other.thing.is_dead and not other.thing.is_captured and other.domain_until > other.clock and other.thing.team != thing.team and domain_origin.distance_to(other.domain_origin) < 18.0:
-			domain_clashing = true
-			return
+	load("res://scripts/things/domain_clash.gd").update(self)
+	if domain_until <= clock: return
 	if clock < domain_until - 5.35: return # The barrier forms before sure-hit begins.
 	if domain_mode in ["void", "shrine"]:
 		for reference in domain_members:
@@ -300,14 +411,17 @@ func _domain() -> void:
 		var target = candidates[(void_scan_cursor + step) % candidates.size()]
 		scanned += 1
 		if not _domain_target(target) or domain_origin.distance_to(Combat.center_of(target)) > 9.0: continue
+		if domain_clashing and load("res://scripts/things/domain_clash.gd").contested(self, Combat.center_of(target)): continue
 		if domain_mode == "shrine": _queue(target, 9.0, "domain_slash")
 		applied += 1
 		if applied >= 16: break
 	void_scan_cursor = (void_scan_cursor + scanned) % candidates.size()
-	if domain_mode == "shrine": _cut(domain_origin, domain_origin, 2.5, 35.0)
+	if domain_mode == "shrine" and not (domain_clashing and load("res://scripts/things/domain_clash.gd").contested(self, domain_origin)):
+		_cut(domain_origin, domain_origin, 2.5, 35.0)
 
 func void_affects(target: Node3D) -> bool:
-	if not is_instance_valid(thing) or thing.is_dead or thing.is_captured or not thing.is_active or domain_mode != "void" or domain_until <= clock or domain_clashing: return false
+	if not is_instance_valid(thing) or thing.is_dead or thing.is_captured or not thing.is_active or domain_mode != "void" or domain_until <= clock: return false
+	if domain_clashing and load("res://scripts/things/domain_clash.gd").contested(self, Combat.center_of(target)): return false
 	if clock < domain_until - 5.35 or not _domain_target(target) or domain_origin.distance_to(Combat.center_of(target)) > 9.0: return false
 	if JujutsuRules.field(target, "simple_domain") != null: return false
 	var adaptation = JujutsuRules.field(target, "adaptation")

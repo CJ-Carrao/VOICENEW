@@ -1197,7 +1197,10 @@
       "jj_amplification": 110,
       "jj_blue": 100,
       "jj_red": 160,
-      "jj_purple": 290
+      "jj_purple": 290,
+      "jj_ryu_beam": 220,
+      "jj_yuta_beam": 200,
+      "jj_contact_cleave": 105
     },
     "_magazine_rounds": "o que vai dentro de um pente ('pente de granadas') custa como se fossem tantas criações:",
     "magazine_rounds": 4,
@@ -3582,7 +3585,7 @@
       "cost": 180,
       "weight_kg": 2,
       "hp": 70,
-      "fire_cooldown": 1,
+      "fire_cooldown": 0.85,
       "impact_damage": 18
     },
     "gravity_hammer": {
@@ -3807,7 +3810,7 @@
       "hp": 120,
       "weight_kg": 1,
       "speed": 0,
-      "fire_cooldown": 1,
+      "fire_cooldown": 0.8,
       "impact_damage": 0
     },
     "reverse_curse": {
@@ -4075,6 +4078,69 @@
       "speed": 0,
       "weight_kg": 1,
       "impact_damage": 0
+    },
+    "ryu_beam_technique": {
+      "cost": 220,
+      "hp": 120,
+      "weight_kg": 1,
+      "speed": 0,
+      "impact_damage": 0,
+      "fire_cooldown": 0.8
+    },
+    "ryu_beam_stream": {
+      "cost": 0,
+      "hp": 1,
+      "speed": 0,
+      "weight_kg": 0,
+      "impact_damage": 0,
+      "lifetime": 6
+    },
+    "yuta_beam_technique": {
+      "cost": 200,
+      "hp": 120,
+      "weight_kg": 1,
+      "speed": 0,
+      "impact_damage": 0,
+      "fire_cooldown": 0.8
+    },
+    "yuta_beam_stream": {
+      "cost": 0,
+      "hp": 1,
+      "speed": 0,
+      "weight_kg": 0,
+      "impact_damage": 0,
+      "lifetime": 6
+    },
+    "verity": {
+      "cost": 85,
+      "hp": 65,
+      "speed": 4.0,
+      "weight_kg": 2,
+      "impact_damage": 6
+    },
+    "sukuna_contact_cleave": {
+      "cost": 105,
+      "hp": 120,
+      "weight_kg": 1,
+      "speed": 0,
+      "impact_damage": 0,
+      "fire_cooldown": 0.8
+    },
+    "sukuna_dismantle_wave": {
+      "cost": 0,
+      "hp": 1,
+      "weight_kg": 0,
+      "speed": 36,
+      "impact_damage": 0,
+      "lifetime": 0.7
+    },
+    "sukuna_fire_arrow": {
+      "cost": 0,
+      "hp": 1,
+      "weight_kg": 0,
+      "speed": 25,
+      "impact_damage": 0,
+      "lifetime": 2.5
     }
   },
   "grafts": {

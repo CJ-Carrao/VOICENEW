@@ -15,7 +15,7 @@ Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · Relacionado: [[Projetos/lavoi
 > [!info] Controles atuais
 > **V** cria por voz; **B** recebe somente comandos, como “Squirtle, ataque”; **T** abre o console. Use `jogar.cmd` para iniciar a versão atual. As seções de recuperação abaixo registram também versões anteriores.
 
-Atualização das correções: use `jogar.cmd` ou `build\LAVOICE-Lab-Jujutsu.exe`. A lista de problemas relatados e suas correções está em [[Projetos/lavoice-lab/correcoes.txt|correcoes.txt.md]]. Todos os participantes de uma partida online precisam usar a mesma versão corrigida.
+Atualização das correções: use `jogar.cmd` ou `build\LAVOICE-Lab-Dominios-Espada.exe`. A lista de problemas relatados e suas correções está em [[Projetos/lavoice-lab/correcoes.txt|correcoes.txt.md]]. Todos os participantes de uma partida online precisam usar a mesma versão corrigida.
 
 ## Atualizacao: Pacote Caos
 
