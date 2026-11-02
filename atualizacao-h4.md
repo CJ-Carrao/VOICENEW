@@ -1,6 +1,8 @@
 ---
 title: Atualização original H-4 no LAVOICE Lab
 date: 2026-10-27
+updated: 2026-11-02
+publicacao: github-v0.3.0
 tags:
   - lavoice
   - atualizacao
@@ -45,7 +47,7 @@ A IA local de interpretação continua **protótipo separado**, sem opção no m
 - [x] Gerar executável e atualizar lançadores.
 - [x] Validar recursos, explosões e rede local sem abrir a janela do jogo.
 - [ ] Conferir visualmente com o usuário e testar microfone/rede entre PCs.
-- [ ] Publicar a H-4 no GitHub quando solicitado.
+- [x] Publicar a H-4 no GitHub quando solicitado — v0.3.0 em 02/11/2026.
 
 
 ## Extensões adaptadas à H-4 — 27/10/2026
@@ -72,3 +74,17 @@ Após o usuário perguntar pelo restante, a revisão foi estendida ao catálogo:
 Validação final sem janela: catálogo/rigs, armas, escudos, cortes e Vermelho também passaram usando o **EXE exportado**. Captura/rejeição, sete evoluções, transformações, táticas, progresso, poderes espaciais, fidelidade dos ataques JJK e clash de domínios passaram. Teste de rede com duas instâncias do novo EXE concluiu lobby e partida com replicação de táticas. Integridade dos 172 modelos oficiais e 137 animações preservada. Registros locais em `analysis/h4-rest-*.log`; eventual falha inicial do Verity foi corrigida antes do empacotamento. Testes automatizados não são aprovação visual do usuário nem medição de FPS com multidões.
 
 **Build atual:** `build/H4-Lab/LAVOICE-Lab-H4-v26.exe`, 122.048.244 bytes; SHA256 `a699816923a4dcc152527cc943b9517c429278195eddc93db593269276a7713f`. Lançadores e recompilação apontam para ela; builds anteriores preservadas. Gameplay `voicenew-h4-lab-26`, protocolo RPC 24. Todos no online precisam desta versão. Nenhuma janela do jogo foi aberta, e nenhuma release foi publicada. IA local continua fora do jogo/menu.
+
+
+## Publicação confirmada — 02/11/2026
+
+A pedido do usuário, código enviado à `main` e pacote Windows publicado como **v0.3.0**, marcado como release mais recente. Os registros anteriores de ausência de publicação descrevem as etapas de 27/10; este é o estado atual confirmado.
+
+- [Release v0.3.0](https://github.com/CJ-Carrao/VOICENEW/releases/tag/v0.3.0) · [Baixar o jogo completo](https://github.com/CJ-Carrao/VOICENEW/releases/download/v0.3.0/VOICENEW-Windows.zip).
+- Commit do código da build: `91693734f03e77debf4bc06a3464c1d796a8b675`.
+- ZIP: 564.034.400 bytes, 34 entradas; SHA256 `a234b41ff9d0ee60f3403db23d80c6a661de9789b3f874c51e7b6553c93153f8`. Arquivo `SHA256SUMS.txt` publicado junto. Tamanho e digest retornados pelo GitHub conferidos com o pacote local, e release consultada sem autenticação.
+- Inclui EXE v26, voz offline, licenças e bibliotecas; não inclui modelos GGUF ou ativação da IA experimental. Ferramentas e relatório do protótipo estão no código-fonte, separados da integração do jogo.
+- EXE conferido pelo recibo e teste automatizado repetido em 02/11: 101 criaturas animadas, 11 armas, quatro bombas nucleares, Vermelho com 32 alvos e corte em estrutura girada, sem falhas. ZIP validado por CRC. Sem abrir o jogo com janela.
+- `Jogar VOICENEW.lnk` (atalho local) e `Novo(a) Documento de Texto.txt` (nota do usuário) ficaram fora do envio. Instalações, ferramentas binárias, caches, modelos de IA e arquivos privados de análise também não entraram no Git.
+
+Extraia o pacote inteiro e execute `VOICENEW/jogar.cmd`. Todos os participantes online precisam desta build. Permanecem pendentes avaliação visual, microfone físico e rede entre PCs.
