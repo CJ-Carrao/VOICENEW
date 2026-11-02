@@ -1,0 +1,9 @@
+{
+  "_comment": "Parts of a thing. 'barrel'/'muzzle'/'tip' feed barrels; 'sight' is only descriptive. Melee uses the same 3 parts: handle (= stock, rear), blade/head (= body, front) and tip (= muzzle). The 3 gun parts: stock (behind the trigger), body (front) and barrel; 'with a bazooka body' / 'with the body of a bazooka' swaps the part.",
+  "barrel": { "words": ["barrel", "barrels", "muzzle", "muzzles", "nozzle", "nozzles", "mouth", "mouths"] },
+  "stock": { "words": ["stock", "stocks", "handle", "handles", "grip", "hilt", "butt", "rear", "back end"] },
+  "body": { "words": ["body", "bodies", "frame", "receiver", "chassis", "front end"] },
+  "blade": { "words": ["blade", "blades", "head", "heads", "edge"] },
+  "sight": { "words": ["sight", "sights"] },
+  "tip": { "words": ["tip", "tips", "point", "points"] }
+}

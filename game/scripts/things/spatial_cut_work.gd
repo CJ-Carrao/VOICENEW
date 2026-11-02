@@ -16,7 +16,7 @@ func add_segment(from: Vector3, to: Vector3, radius: float, damage: float = -1.0
 		var at := from.lerp(to, float(i + 1) / steps)
 		for node in get_tree().get_nodes_in_group(BlockVolume.GROUP):
 			var volume := node as BlockVolume
-			var box := AABB(volume.to_global(volume.origin), Vector3(volume.dims) * volume.size_m)
+			var box := volume.global_transform * AABB(volume.origin, Vector3(volume.dims) * volume.size_m)
 			if at.distance_to(at.clamp(box.position, box.end)) <= radius:
 				rows.append({"volume": weakref(volume), "at": at, "radius": radius, "damage": damage})
 

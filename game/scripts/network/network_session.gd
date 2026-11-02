@@ -47,10 +47,14 @@ var _peer_generations: Dictionary = {}
 var _assigned_player_id: = 2
 var _allow_joins: = true
 var _closing: = false
+var _peer_timeout_min_ms: = 15000
 
 
 func _ready() -> void :
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://data/network.json"))
+	if parsed is Dictionary:
+		_peer_timeout_min_ms = maxi(5000, int(roundf(float((parsed as Dictionary).get("scene_ready_timeout_seconds", 15.0)) * 1000.0)))
 	_ensure_api()
 	creations = ForgeReplication.new()
 	creations.name = "ForgeReplication"
@@ -76,7 +80,7 @@ func _process(_delta: float) -> void :
 	if is_online() and transport != null:
 		transport.poll()
 	if _role == "client" and state in ["connecting", "authenticating"] and Time.get_ticks_msec() >= _deadline_ms:
-		_fail("Tempo esgotado ao conectar. Confira o endereço, a porta e se o host está aberto.")
+		_fail(tr("Tempo esgotado ao conectar. Confira o endereço, a porta e se o host está aberto."))
 
 
 func is_online() -> bool:
@@ -143,7 +147,7 @@ func set_join_allowed(value: bool) -> void :
 	_allow_joins = value
 	if _role == "host" and not value:
 		for peer_id: int in _authenticating.keys():
-			_reject_peer(peer_id, "A sala já está escolhendo a arena.")
+			_reject_peer(peer_id, tr("A sala já está escolhendo a arena."))
 	_refresh_acceptance()
 
 
@@ -158,11 +162,11 @@ func _empty_roster() -> Dictionary:
 
 func status_text() -> String:
 	match state:
-		"offline": return "Treino local" if mode == "practice" else "Duelo local contra bot"
-		"hosting": return "Host aberto em %s · aguardando o segundo jogador" % endpoint
-		"connecting": return "Conectando a %s…" % endpoint
-		"authenticating": return "Conferindo versão, catálogo e regras…"
-		"ready": return "Conexão validada · %d jogadores conectados" % player_ids().size()
+		"offline": return tr("Treino local") if mode == "practice" else tr("Duelo local contra bot")
+		"hosting": return tr("Host aberto em %s · aguardando o segundo jogador") % endpoint
+		"connecting": return tr("Conectando a %s…") % endpoint
+		"authenticating": return tr("Conferindo versão, catálogo e regras…")
+		"ready": return tr("Conexão validada · %d jogadores conectados") % player_ids().size()
 		"failed", "disconnected": return last_error
 	return state
 
@@ -217,7 +221,7 @@ func start_host(port: int = DEFAULT_PORT, bind_address: String = DEFAULT_BIND) -
 	if diagnostics != null: diagnostics.begin_attempt()
 	endpoint = "%s:%d" % [bind_address, port]
 	if not _valid_port(port) or (bind_address != "*" and not bind_address.is_valid_ip_address()):
-		_fail("Porta ou endereço de escuta inválido.")
+		_fail(tr("Porta ou endereço de escuta inválido."))
 		return ERR_INVALID_PARAMETER
 	return _open_transport(transport.create_host(port, bind_address))
 
@@ -228,7 +232,7 @@ func start_client(address: String, port: int = DEFAULT_PORT) -> Error:
 	if diagnostics != null: diagnostics.begin_attempt()
 	endpoint = "%s:%d" % [address, port]
 	if not _valid_port(port) or address.strip_edges().is_empty() or address.length() > 253:
-		_fail("Endereço do host ou porta inválidos.")
+		_fail(tr("Endereço do host ou porta inválidos."))
 		return ERR_INVALID_PARAMETER
 	return _open_transport(transport.create_client(address, port))
 
@@ -310,7 +314,7 @@ func _open_transport(result: Dictionary) -> Error:
 			candidate.close()
 		var reason: = str(result.get("reason", ""))
 		if reason.is_empty():
-			reason = str(compatibility.get("error", "Não foi possível abrir a conexão (%s)." % error_string(error)))
+			reason = str(compatibility.get("error", tr("Não foi possível abrir a conexão (%s).") % error_string(error)))
 		_fail(reason)
 		return error if error != OK else ERR_CANT_CREATE
 	_peer = candidate
@@ -339,6 +343,7 @@ func _configure_enet_peer(peer_id: int) -> void :
 		var enet_peer: = (_peer as ENetMultiplayerPeer).get_peer(peer_id)
 		if enet_peer != null:
 			enet_peer.throttle_configure(5000, 2, 0)
+			enet_peer.set_timeout(32, _peer_timeout_min_ms, maxi(30000, _peer_timeout_min_ms * 2))
 
 
 func _on_peer_authenticating(peer_id: int) -> void :
@@ -401,6 +406,10 @@ func _on_auth_data(peer_id: int, bytes: PackedByteArray) -> void :
 		else:
 			_assigned_player_id = int(assigned)
 	if not reason.is_empty():
+		if OS.is_debug_build():
+
+			print("[Session] recusado: %s · local %s · remoto %s" % [reason, JSON.stringify(compatibility), 
+				JSON.stringify(payload)])
 		_reject_peer(peer_id, reason)
 		return
 
@@ -410,7 +419,7 @@ func _on_auth_data(peer_id: int, bytes: PackedByteArray) -> void :
 	_peer_generations[peer_id] = int(remote_generation)
 	_validated[peer_id] = true
 	if _api.complete_auth(peer_id) != OK:
-		_reject_peer(peer_id, "Não foi possível concluir a verificação de versão.")
+		_reject_peer(peer_id, tr("Não foi possível concluir a verificação de versão."))
 
 
 func _reject_peer(peer_id: int, reason: String) -> void :
@@ -497,7 +506,7 @@ func _on_auth_failed(peer_id: int) -> void :
 	_reserved_slots.erase(peer_id)
 	_peer_generations.erase(peer_id)
 	if _role == "client" and state not in ["failed", "disconnected"]:
-		_fail(last_error if not last_error.is_empty() else "Verificação recusada ou tempo esgotado. Confira se ambos usam a mesma versão.")
+		_fail(last_error if not last_error.is_empty() else tr("Verificação recusada ou tempo esgotado. Confira se ambos usam a mesma versão."))
 	elif _role == "host":
 		_refresh_acceptance()
 		changed.emit()
@@ -515,7 +524,7 @@ func _on_peer_disconnected(peer_id: int) -> void :
 	if _role == "host" and player_id > 1:
 		roster[player_id] = 0
 		state = "ready" if player_ids().size() > 1 else "hosting"
-		last_error = "O jogador %d desconectou." % player_id
+		last_error = tr("O jogador %d desconectou.") % player_id
 		roster_revision += 1
 		_refresh_acceptance()
 		_publish_roster()
@@ -526,12 +535,12 @@ func _on_peer_disconnected(peer_id: int) -> void :
 
 func _on_connection_failed() -> void :
 	if not _closing and _role == "client" and state not in ["failed", "disconnected"]:
-		_fail("Não foi possível conectar ao host. Confira o endereço e a porta.")
+		_fail(tr("Não foi possível conectar ao host. Confira o endereço e a porta."))
 
 
 func _on_server_disconnected() -> void :
 	if not _closing and _role == "client" and state not in ["failed", "disconnected"]:
-		_fail("A conexão com o host foi encerrada.", "disconnected")
+		_fail(tr("A conexão com o host foi encerrada."), "disconnected")
 
 
 func _fail(reason: String, failed_state: String = "failed") -> void :

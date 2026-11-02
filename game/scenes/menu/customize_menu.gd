@@ -18,6 +18,8 @@ const MUTED: = Color("#aaa69f")
 const VIEW: = Rect2(600, 150, 1300, 720)
 const SAVE_DELAY_S: = 0.6
 
+
+const WARM_FRAMES: = 3
 var is_open: = false
 var tool: = "brush"
 var color: = Color("#ff791c")
@@ -76,6 +78,9 @@ var _palette_nodes: Array[Control] = []
 var _drawer: Control
 var _drawer_button: Button
 var _sticker_buttons: Dictionary = {}
+
+var _library: GridContainer
+var _import_dialog: FileDialog
 var _sticker_count: Label
 var _placed_buttons: Array[Button] = []
 var _delete_button: Button
@@ -90,6 +95,13 @@ var _drag_before: Dictionary = {}
 var _slider_before: Dictionary = {}
 var _base_up: = Vector3.UP
 var _size_label: Label
+
+
+var _mobile: = false
+var _mob: Dictionary = {}
+var _chrome: Control
+var _touches: Dictionary = {}
+var _pinch_from: = 0.0
 var _hard_label: Label
 
 
@@ -98,6 +110,7 @@ func _ready() -> void :
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	_cfg = RobotPaint.config()
+	_mobile = OS.has_feature("mobile") or MobileDev.args().has("--mobile")
 	var intro: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/intro.json"))
 	var source_font: = load(str(intro.font)) as Font
 	_font = MainMenu._variation(source_font, 500, 0)
@@ -112,9 +125,15 @@ func _ready() -> void :
 	_canvas_root.size = PAPER
 	_canvas_root.theme = SKIN.create_theme(_font)
 	add_child(_canvas_root)
+	var probe: = DevProbe.now()
 	_build_studio()
+	DevProbe.done("pers_estudio", probe)
+	probe = DevProbe.now()
 	_build_panel(intro)
+	DevProbe.done("pers_painel", probe)
+	probe = DevProbe.now()
 	_build_slots()
+	DevProbe.done("pers_slots", probe)
 	_ui_sound = AudioStreamPlayer.new()
 	_ui_sound.bus = AudioMix.bus(AudioMix.INTERFACE)
 	_ui_sound.volume_db = -22.0
@@ -132,13 +151,40 @@ func open() -> void :
 	set_process(true)
 	set_process_unhandled_input(true)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	var probe: = DevProbe.now()
+	prepare()
+	DevProbe.done("pers_tela", probe)
+	probe = DevProbe.now()
+	slots = PaintSlots.load_from(slots_path)
+	_select_slot(slots.selected, false)
+	DevProbe.done("pers_slot", probe)
+	modulate.a = 0.0
+	create_tween().tween_property(self, "modulate:a", 1.0, 0.18)
+
+
+
+func prepare() -> void :
 	if canvas == null:
 		canvas = RobotPaintCanvas.new()
 		(display as Object).call("set_paint", canvas)
-	slots = PaintSlots.load_from(slots_path)
-	_select_slot(slots.selected, false)
-	modulate.a = 0.0
-	create_tween().tween_property(self, "modulate:a", 1.0, 0.18)
+
+
+
+
+
+func warm_render() -> void :
+	if is_open or visible:
+		return
+	modulate.a = 0.01
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	visible = true
+	for i in WARM_FRAMES:
+		await get_tree().process_frame
+	mouse_filter = Control.MOUSE_FILTER_STOP
+	_container.mouse_filter = Control.MOUSE_FILTER_STOP
+	if not is_open:
+		visible = false
 
 
 func close() -> void :
@@ -258,10 +304,12 @@ func _place_camera() -> void :
 
 
 func _process(delta: float) -> void :
+	var probe: = DevProbe.now()
 	if open_arms:
 		display.call("show_rest")
 	else:
 		display.call("animate", delta, 0.0, 1.0, "Idle")
+	DevProbe.done("pers_anima", probe)
 	if _save_left > 0.0:
 		_save_left -= delta
 		if _save_left <= 0.0:
@@ -269,14 +317,25 @@ func _process(delta: float) -> void :
 	if _notice_left > 0.0:
 		_notice_left -= delta
 		_notice.modulate.a = clampf(_notice_left * 3.0, 0.0, 1.0)
+	probe = DevProbe.now()
 	if canvas != null:
 		canvas.commit()
+	DevProbe.done("pers_commit", probe)
+	probe = DevProbe.now()
 	_draw_outline()
+	DevProbe.done("pers_contorno", probe)
 
 
 
 
 func _on_view_input(event: InputEvent) -> void :
+
+	if (event is InputEventScreenTouch or event is InputEventScreenDrag) and _touch_view(event):
+		accept_event()
+		return
+	if _touches.size() >= 2 and (event is InputEventMouseButton or event is InputEventMouseMotion):
+		accept_event()
+		return
 	var button: = event as InputEventMouseButton
 	if button != null:
 		if button.button_index == MOUSE_BUTTON_RIGHT:
@@ -419,7 +478,7 @@ func _commit_stroke(stroke: Dictionary, already_drawn: bool = false) -> void :
 	if not paint.add(stroke):
 		if already_drawn:
 			canvas.apply(paint)
-		_notify("LIMITE DE TINTA: APAGUE OU LIMPE PARA CONTINUAR")
+		_notify(tr("LIMITE DE TINTA: APAGUE OU LIMPE PARA CONTINUAR"))
 		return
 	if not already_drawn:
 		canvas.apply_stroke(stroke)
@@ -454,7 +513,7 @@ func _place_sticker(hit: Dictionary) -> void :
 	up = up.normalized().rotated(normal, deg_to_rad( - sticker_turn))
 	var before: = _snapshot()
 	if not paint.add_sticker(RobotPaint.sticker(sticker_id, hit["local"], normal, up, sticker_size, mirror)):
-		_notify("NO MÁXIMO %d FIGURINHAS: APAGUE UMA PARA COLAR OUTRA" % int(_cfg.get("max_stickers", 5)))
+		_notify(tr("NO MÁXIMO %d FIGURINHAS: APAGUE UMA PARA COLAR OUTRA") % int(_cfg.get("max_stickers", 5)))
 		return
 	_push_undo(before)
 	_arm("")
@@ -535,7 +594,7 @@ func _arm(id: String) -> void :
 		selected_sticker = -1
 		sticker_turn = 0.0
 		_hard_slider.set_value_no_signal(0.0)
-		_notify("CLIQUE NO ROBÔ PARA COLAR")
+		_notify(tr("CLIQUE NO ROBÔ PARA COLAR"))
 		_refresh_stickers()
 
 
@@ -617,7 +676,7 @@ func _changed() -> void :
 func _save_now() -> void :
 	_save_left = -1.0
 	if slots != null and not slots.save():
-		_notify("NÃO FOI POSSÍVEL SALVAR")
+		_notify(tr("NÃO FOI POSSÍVEL SALVAR"))
 
 
 
@@ -629,6 +688,7 @@ func _build_panel(intro: Dictionary) -> void :
 	_canvas_root.add_child(chrome)
 	_canvas_root.move_child(chrome, 0)
 	chrome.draw.connect(_draw_panel.bind(chrome))
+	_chrome = chrome
 	var logo_path: = str(intro.get("lavoice", {}).get("logo", ""))
 	if not logo_path.is_empty() and ResourceLoader.exists(logo_path):
 		var logo: = TextureRect.new()
@@ -639,15 +699,16 @@ func _build_panel(intro: Dictionary) -> void :
 		logo.size = Vector2(390, 78)
 		logo.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		_canvas_root.add_child(logo)
-	_label("PERSONALIZAÇÃO / LATARIA", Rect2(80, 168, 480, 30), 18, ACCENT, true)
-	_label("PINTURA", Rect2(76, 196, 490, 70), 52, INK, true)
-	_label("Idealizado por SOMYST", Rect2(760, 85, 1090, 30), 20, MUTED, true, HORIZONTAL_ALIGNMENT_RIGHT)
-	_label("PINTURA LIVRE / %d SLOTS" % PaintSlots.count(), Rect2(1380, 115, 470, 34), 24, INK, true, HORIZONTAL_ALIGNMENT_RIGHT)
-	_label("FERRAMENTA", Rect2(80, 288, 300, 26), 17, MUTED, true)
-	for spec: Array in [["brush", "PINCEL", 80, 145], ["erase", "BORRACHA", 233, 167], ["fill", "BALDE", 408, 132]]:
+		_mob["logo"] = logo
+	_mob["kicker"] = _label(tr("PERSONALIZAÇÃO / LATARIA"), Rect2(80, 168, 480, 30), 18, ACCENT, true)
+	_mob["title"] = _label(tr("PINTURA"), Rect2(76, 196, 490, 70), 52, INK, true)
+	_mob["credit"] = _label(tr("Idealizado por SOMYST"), Rect2(760, 85, 1090, 30), 20, MUTED, true, HORIZONTAL_ALIGNMENT_RIGHT)
+	_mob["slots_title"] = _label(tr("PINTURA LIVRE / %d SLOTS") % PaintSlots.count(), Rect2(1380, 115, 470, 34), 24, INK, true, HORIZONTAL_ALIGNMENT_RIGHT)
+	_mob["tool_label"] = _label(tr("FERRAMENTA"), Rect2(80, 288, 300, 26), 17, MUTED, true)
+	for spec: Array in [["brush", tr("PINCEL"), 80, 145], ["erase", tr("BORRACHA"), 233, 167], ["fill", tr("BALDE"), 408, 132]]:
 		var tool_id: = String(spec[0])
 		_tool_buttons[tool_id] = _button(String(spec[1]), Rect2(spec[2], 318, spec[3], 54), func() -> void : _set_tool(tool_id), false, 17)
-	_size_label = _label("TAMANHO", Rect2(80, 392, 300, 26), 17, MUTED, true)
+	_size_label = _label(tr("TAMANHO"), Rect2(80, 392, 300, 26), 17, MUTED, true)
 	_size_slider = _slider(Rect2(80, 420, 460, 30), float(_cfg.get("radius_min_m", 0.006)), float(_cfg.get("radius_max_m", 0.12)), radius)
 	_size_slider.value_changed.connect( func(value: float) -> void :
 		if tool != "sticker":
@@ -655,7 +716,7 @@ func _build_panel(intro: Dictionary) -> void :
 			return
 		sticker_size = value
 		_slider_step())
-	_hard_label = _label("DUREZA", Rect2(80, 460, 300, 26), 17, MUTED, true)
+	_hard_label = _label(tr("DUREZA"), Rect2(80, 460, 300, 26), 17, MUTED, true)
 	_hard_slider = _slider(Rect2(80, 488, 460, 30), 0.0, 1.0, hardness)
 	_hard_slider.value_changed.connect( func(value: float) -> void :
 		if tool != "sticker":
@@ -670,15 +731,15 @@ func _build_panel(intro: Dictionary) -> void :
 				_push_undo(_slider_before)
 				_changed()
 			_slider_before = {})
-	_mirror_check = _toggle("ESPELHAR", Rect2(72, 534, 200, 44), func(on: bool) -> void :
+	_mirror_check = _toggle(tr("ESPELHAR"), Rect2(72, 534, 200, 44), func(on: bool) -> void :
 		mirror = on
 		if tool == "sticker" and selected_sticker >= 0:
 			var before: = _snapshot()
 			_adjust_selected()
 			_push_undo(before)
 			_changed())
-	_toggle("BRAÇOS ABERTOS", Rect2(282, 534, 266, 44), func(on: bool) -> void : open_arms = on)
-	_palette_nodes.append(_label("COR", Rect2(80, 594, 200, 26), 17, MUTED, true))
+	_mob["arms"] = _toggle(tr("BRAÇOS ABERTOS"), Rect2(282, 534, 266, 44), func(on: bool) -> void : open_arms = on)
+	_palette_nodes.append(_label(tr("COR"), Rect2(80, 594, 200, 26), 17, MUTED, true))
 	var config: = RobotBody.config()
 	var palette: Array = config["player_colors"]
 	var names: Array = config["player_color_names"]
@@ -687,7 +748,7 @@ func _build_panel(intro: Dictionary) -> void :
 		swatch.position = Vector2(80 + (index % 8) * 58.0, 624 + (index / 8) * 56.0)
 		swatch.size = Vector2(52, 50)
 		swatch.set("swatch", Color(String(palette[index])))
-		swatch.set("color_name", String(names[index]))
+		swatch.set("color_name", tr(String(names[index])))
 		swatch.set("ui_font", _bold)
 		swatch.set("compact", true)
 		_canvas_root.add_child(swatch)
@@ -697,7 +758,9 @@ func _build_panel(intro: Dictionary) -> void :
 		swatch.mouse_entered.connect(swatch.queue_redraw)
 		swatch.mouse_exited.connect(swatch.queue_redraw)
 		_color_buttons.append(swatch)
-	_palette_nodes.append(_label("OUTRA COR", Rect2(80, 754, 150, 26), 17, MUTED, true))
+	_mob["other_label"] = _label(tr("OUTRA COR"), Rect2(80, 754, 150, 26), 17, MUTED, true)
+	_palette_nodes.append(_mob["other_label"])
+	var picker_probe: = DevProbe.now()
 	_custom_color = ColorPickerButton.new()
 	_custom_color.position = Vector2(220, 742)
 	_custom_color.size = Vector2(320, 48)
@@ -706,12 +769,17 @@ func _build_panel(intro: Dictionary) -> void :
 	_custom_color.color_changed.connect( func(value: Color) -> void : _set_color(value, false))
 	_canvas_root.add_child(_custom_color)
 	_palette_nodes.append(_custom_color)
+	DevProbe.done("pers_cor", picker_probe)
+	var drawer_probe: = DevProbe.now()
 	_build_sticker_drawer()
-	_drawer_button = _button("FIGURINHAS", Rect2(80, 878, 460, 54), toggle_stickers, false, 18)
-	_button("DESFAZER", Rect2(80, 812, 168, 52), undo, false, 16)
-	_button("REFAZER", Rect2(256, 812, 152, 52), redo, false, 16)
-	_button("LIMPAR", Rect2(416, 812, 124, 52), clear_paint, false, 16)
-	_button("VOLTAR", Rect2(80, 976, 210, 58), close, false, 22)
+	DevProbe.done("pers_figurinhas", drawer_probe)
+	_drawer_button = _button(tr("FIGURINHAS"), Rect2(80, 878, 460, 54), toggle_stickers, false, 18)
+
+	_drawer_button.visible = false
+	_mob["undo"] = _button(tr("DESFAZER"), Rect2(80, 812, 168, 52), undo, false, 16)
+	_mob["redo"] = _button(tr("REFAZER"), Rect2(256, 812, 152, 52), redo, false, 16)
+	_mob["clear"] = _button(tr("LIMPAR"), Rect2(416, 812, 124, 52), clear_paint, false, 16)
+	_mob["back"] = _button(tr("VOLTAR"), Rect2(80, 976, 210, 58), close, false, 22)
 	_hint = _label("", Rect2(620, 878, 1260, 26), 16, MUTED, false, HORIZONTAL_ALIGNMENT_RIGHT)
 	_notice = _label("", Rect2(620, 160, 1260, 30), 20, ACCENT, true, HORIZONTAL_ALIGNMENT_CENTER)
 	_notice.modulate.a = 0.0
@@ -727,36 +795,18 @@ func _build_sticker_drawer() -> void :
 	_drawer.size = Vector2(460, 210)
 	_drawer.visible = false
 	_canvas_root.add_child(_drawer)
-	_drawer.add_child(_small_label("FIGURINHAS DO JOGO", Vector2(0, 0), MUTED))
+	_drawer.add_child(_small_label(tr("SUAS FIGURINHAS"), Vector2(0, 0), MUTED))
 	var scroll: = ScrollContainer.new()
 	scroll.position = Vector2(0, 26)
 	scroll.size = Vector2(460, 92)
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	_drawer.add_child(scroll)
-	var grid: = GridContainer.new()
-	grid.columns = 5
-	grid.add_theme_constant_override("h_separation", 8)
-	grid.add_theme_constant_override("v_separation", 8)
-	scroll.add_child(grid)
-	var ids: = StickerCatalog.ids()
-	for id: String in ids:
-		var item: = Button.new()
-		item.custom_minimum_size = Vector2(84, 84)
-		item.icon = StickerCatalog.texture(id)
-		item.expand_icon = true
-		item.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		item.toggle_mode = true
-		item.tooltip_text = id
-		item.pressed.connect( func() -> void :
-			_sound(true)
-			_arm(id))
-		grid.add_child(item)
-		_sticker_buttons[id] = item
-	if ids.is_empty():
-		var empty: = Label.new()
-		empty.text = "Pasta assets/stickers vazia."
-		empty.add_theme_color_override("font_color", MUTED)
-		grid.add_child(empty)
+	_library = GridContainer.new()
+	_library.columns = 5
+	_library.add_theme_constant_override("h_separation", 8)
+	_library.add_theme_constant_override("v_separation", 8)
+	scroll.add_child(_library)
+	_refresh_library()
 	_sticker_count = _small_label("", Vector2(0, 124), MUTED)
 	_drawer.add_child(_sticker_count)
 	for i in int(_cfg.get("max_stickers", 5)):
@@ -773,7 +823,7 @@ func _build_sticker_drawer() -> void :
 		_drawer.add_child(placed)
 		_placed_buttons.append(placed)
 	_delete_button = BUTTON.new() as Button
-	_delete_button.text = "APAGAR"
+	_delete_button.text = tr("APAGAR")
 	_delete_button.position = Vector2(296, 150)
 	_delete_button.size = Vector2(164, 52)
 	_delete_button.set("ui_font", _bold)
@@ -782,6 +832,86 @@ func _build_sticker_drawer() -> void :
 		_sound(true)
 		delete_sticker())
 	_drawer.add_child(_delete_button)
+
+
+
+func _refresh_library() -> void :
+	for child in _library.get_children():
+		_library.remove_child(child)
+		child.queue_free()
+	_sticker_buttons.clear()
+	var add: = Button.new()
+	add.custom_minimum_size = Vector2(84, 84)
+	add.text = "+\nIMPORTAR"
+
+	add.add_theme_font_size_override("font_size", 14)
+	add.tooltip_text = "PNG, JPG ou WebP"
+	add.pressed.connect( func() -> void :
+		_sound(true)
+		import_sticker())
+	_library.add_child(add)
+	for id: String in StickerCatalog.ids():
+		var item: = Button.new()
+		item.custom_minimum_size = Vector2(84, 84)
+		item.icon = StickerCatalog.texture(id)
+		item.expand_icon = true
+		item.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		item.toggle_mode = true
+		item.pressed.connect( func() -> void :
+			_sound(true)
+			_arm(id))
+		var remove: = Button.new()
+		remove.text = "×"
+		remove.size = Vector2(26, 26)
+		remove.position = Vector2(58, 0)
+		remove.add_theme_font_size_override("font_size", 16)
+		remove.tooltip_text = "Tirar da gaveta"
+		remove.pressed.connect( func() -> void :
+			_sound(true)
+			remove_library_sticker(id))
+		item.add_child(remove)
+		_library.add_child(item)
+		_sticker_buttons[id] = item
+		item.set_pressed_no_signal(sticker_armed and sticker_id == id)
+
+
+
+func import_sticker() -> void :
+	var filters: = PackedStringArray(["*.png, *.jpg, *.jpeg, *.webp ; Imagens"])
+	if DisplayServer.has_feature(DisplayServer.FEATURE_NATIVE_DIALOG_FILE):
+		DisplayServer.file_dialog_show(tr("Importar figurinha"), "", "", false, DisplayServer.FILE_DIALOG_MODE_OPEN_FILE, 
+			filters, func(ok: bool, paths: PackedStringArray, _filter: int) -> void :
+				if ok and not paths.is_empty():
+					_import_path.call_deferred(paths[0]))
+		return
+	if _import_dialog == null:
+		_import_dialog = FileDialog.new()
+		_import_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
+		_import_dialog.access = FileDialog.ACCESS_FILESYSTEM
+		_import_dialog.filters = filters
+		_import_dialog.title = tr("Importar figurinha")
+		_import_dialog.file_selected.connect(_import_path)
+		add_child(_import_dialog)
+	_import_dialog.popup_centered_ratio(0.7)
+
+
+func _import_path(path: String) -> void :
+	var id: = StickerCatalog.import_file(path)
+	if id.is_empty():
+		_notify(tr("NÃO DEU PRA IMPORTAR: ") + StickerCatalog.last_error.to_upper())
+		return
+	_refresh_library()
+	_arm(id)
+
+
+func remove_library_sticker(id: String) -> void :
+	StickerCatalog.remove(id)
+	if sticker_id == id:
+		sticker_id = ""
+		sticker_armed = false
+	_refresh_library()
+	_refresh_stickers()
+	(display as Object).call("set_stickers", paint)
 
 
 func _small_label(value: String, at: Vector2, ink: Color) -> Label:
@@ -802,7 +932,7 @@ func toggle_stickers() -> void :
 	_drawer_button.queue_redraw()
 	if open:
 		_set_tool("sticker")
-		if paint.stickers.is_empty(): _notify("ESCOLHA UMA FIGURINHA E CLIQUE NO ROBÔ")
+		if paint.stickers.is_empty(): _notify(tr("ESCOLHA UMA FIGURINHA E CLIQUE NO ROBÔ"))
 	else:
 		_arm("")
 		selected_sticker = -1
@@ -814,7 +944,7 @@ func _refresh_stickers() -> void :
 	if _sticker_count == null:
 		return
 	var limit: = int(_cfg.get("max_stickers", 5))
-	_sticker_count.text = "COLADAS %d / %d%s" % [paint.stickers.size(), limit, "   ·   CLIQUE PARA ESCOLHER" if not paint.stickers.is_empty() else ""]
+	_sticker_count.text = tr("COLADAS %d / %d%s") % [paint.stickers.size(), limit, tr("   ·   CLIQUE PARA ESCOLHER") if not paint.stickers.is_empty() else ""]
 	for i in _placed_buttons.size():
 		var button: = _placed_buttons[i]
 		var exists: = i < paint.stickers.size()
@@ -826,12 +956,12 @@ func _refresh_stickers() -> void :
 
 
 func _build_slots() -> void :
-	_label("SLOTS", Rect2(640, 920, 120, 26), 17, MUTED, true)
+	_mob["slots_label"] = _label(tr("SLOTS"), Rect2(640, 920, 120, 26), 17, MUTED, true)
 	for i in PaintSlots.count():
 		var index: = i
 		var slot: = _button("%d" % (i + 1), Rect2(640 + i * 96, 948, 86, 56), func() -> void : _select_slot(index), false, 22)
 		_slot_buttons.append(slot)
-	_label("NOME", Rect2(1130, 920, 120, 26), 17, MUTED, true)
+	_mob["name_label"] = _label(tr("NOME"), Rect2(1130, 920, 120, 26), 17, MUTED, true)
 	_name_field = LineEdit.new()
 	_name_field.position = Vector2(1130, 952)
 	_name_field.size = Vector2(320, 50)
@@ -842,14 +972,14 @@ func _build_slots() -> void :
 		_refresh_slots()
 		_save_left = SAVE_DELAY_S)
 	_canvas_root.add_child(_name_field)
-	_label("PRÉVIA DA COR DO LOBBY", Rect2(1470, 920, 300, 26), 17, MUTED, true)
+	_mob["preview_label"] = _label(tr("PRÉVIA DA COR DO LOBBY"), Rect2(1470, 920, 300, 26), 17, MUTED, true)
 	_preview = OptionButton.new()
 	_preview.position = Vector2(1470, 952)
 	_preview.size = Vector2(250, 50)
-	_preview.add_item("SEM COR")
+	_preview.add_item(tr("SEM COR"))
 	var config: = RobotBody.config()
 	for color_name: String in config["player_color_names"]:
-		_preview.add_item(color_name)
+		_preview.add_item(tr(color_name))
 	_preview.item_selected.connect( func(index: int) -> void :
 		var rgb: = -1 if index == 0 else RobotColor.to_rgb24(Color(String(config["player_colors"][index - 1])))
 		display.call("set_color_rgb24", rgb))
@@ -884,7 +1014,7 @@ func _refresh_slots() -> void :
 
 
 func _refresh_ink() -> void :
-	_ink.text = "TINTA %d%%" % roundi(100.0 * paint.point_count() / maxf(float(_cfg.get("max_points", 8000)), 1.0))
+	_ink.text = tr("TINTA %d%%") % roundi(100.0 * paint.point_count() / maxf(float(_cfg.get("max_points", 8000)), 1.0))
 
 
 
@@ -900,9 +1030,11 @@ func _slider_step() -> void :
 
 func _set_tool(value: String) -> void :
 	tool = value
-	if _hint != null:
-		_hint.text = ("ESQUERDO COLA, ESCOLHE E ARRASTA   DIREITO GIRA   RODA APROXIMA   DEL APAGA   ESC SOLTA" if value == "sticker"
-			else "ESQUERDO PINTA   DIREITO GIRA   RODA APROXIMA   CTRL+Z DESFAZ   ESC VOLTA")
+	if _hint != null and _mobile:
+		_hint.text = tr("1 DEDO PINTA   ·   2 DEDOS GIRAM E APROXIMAM")
+	elif _hint != null:
+		_hint.text = (tr("ESQUERDO COLA, ESCOLHE E ARRASTA   DIREITO GIRA   RODA APROXIMA   DEL APAGA   ESC SOLTA") if value == "sticker"
+			else tr("ESQUERDO PINTA   DIREITO GIRA   RODA APROXIMA   CTRL+Z DESFAZ   ESC VOLTA"))
 	for id: String in _tool_buttons:
 		(_tool_buttons[id] as Button).set("primary", id == value)
 		(_tool_buttons[id] as Button).queue_redraw()
@@ -910,8 +1042,8 @@ func _set_tool(value: String) -> void :
 		toggle_stickers()
 
 	var sticking: = value == "sticker"
-	_size_label.text = "TAMANHO DA FIGURINHA" if sticking else "TAMANHO"
-	_hard_label.text = "GIRO" if sticking else "DUREZA"
+	_size_label.text = tr("TAMANHO DA FIGURINHA") if sticking else tr("TAMANHO")
+	_hard_label.text = tr("GIRO") if sticking else tr("DUREZA")
 	_size_slider.min_value = float(_cfg.get("sticker_size_min_m", 0.04)) if sticking else float(_cfg.get("radius_min_m", 0.006))
 	_size_slider.max_value = float(_cfg.get("sticker_size_max_m", 0.4)) if sticking else float(_cfg.get("radius_max_m", 0.12))
 	_size_slider.step = (_size_slider.max_value - _size_slider.min_value) / 100.0
@@ -984,16 +1116,190 @@ func _draw_panel(chrome: Control) -> void :
 
 func _draw() -> void :
 	if not visible: return
+	if _mobile:
+		_draw_mobile()
+		return
 	draw_rect(Rect2(Vector2.ZERO, size), Color(0.028, 0.029, 0.035, 0.8))
 
 
 func _fit() -> void :
+	if _mobile:
+		_layout_mobile()
+		return
 	_scale = minf(size.x / PAPER.x, size.y / PAPER.y)
 	_origin = (size - PAPER * _scale) * 0.5
 	if _canvas_root != null:
 		_canvas_root.scale = Vector2.ONE * _scale
 		_canvas_root.position = _origin
 	queue_redraw()
+
+
+
+
+const MOBILE_HEADER: = 78.0
+const MOBILE_FOOTER: = 76.0
+const MOBILE_GAP: = 10.0
+var _panel_rect: = Rect2()
+
+
+
+
+func _layout_mobile() -> void :
+	if _canvas_root == null or _mob.is_empty():
+		return
+	var w: = size.x
+	var h: = size.y
+	_canvas_root.scale = Vector2.ONE
+	_canvas_root.position = Vector2.ZERO
+	_canvas_root.size = size
+	_scale = 1.0
+	_origin = Vector2.ZERO
+	if _chrome != null: _chrome.visible = false
+	for key in ["credit", "slots_title", "tool_label", "slots_label", "name_label", "preview_label"]:
+		(_mob[key] as Control).visible = false
+	if _mob.has("logo"):
+		_place(_mob["logo"], Rect2(24, 12, 230, 56))
+	_text(_mob["title"], Rect2(270, 7, 500, 40), 30)
+	_text(_mob["kicker"], Rect2(270, 43, 500, 27), 17)
+
+	var pw: = clampf(w * 0.34, 440.0, 600.0)
+	var px: = w - pw - 20.0
+	var y: = MOBILE_HEADER + 12.0
+	_panel_rect = Rect2(px - 12.0, MOBILE_HEADER + 4.0, pw + 24.0, h - MOBILE_HEADER - 8.0)
+	var tw: = (pw - MOBILE_GAP * 2.0) / 3.0
+	var tools: = ["brush", "erase", "fill"]
+	for i in tools.size():
+		var tool_button: = _tool_buttons[tools[i]] as Button
+		_place(tool_button, Rect2(px + i * (tw + MOBILE_GAP), y, tw, 58))
+		tool_button.set("text_size", 20 if tw >= 170.0 else 16)
+	y += 58.0 + 12.0
+	_text(_size_label, Rect2(px, y, pw, 24), 17)
+	_place(_size_slider, Rect2(px, y + 22.0, pw, 40))
+	y += 66.0
+	_text(_hard_label, Rect2(px, y, pw, 24), 17)
+	_place(_hard_slider, Rect2(px, y + 22.0, pw, 40))
+	y += 70.0
+	_place(_mirror_check, Rect2(px - 8.0, y, pw * 0.45, 46))
+	_place(_mob["arms"], Rect2(px + pw * 0.45, y, pw * 0.55, 46))
+	for check: CheckButton in [_mirror_check, _mob["arms"]]:
+		check.add_theme_font_size_override("font_size", 18)
+	y += 54.0
+	_text(_palette_nodes[0], Rect2(px, y, pw, 24), 17)
+	y += 26.0
+	var sw: = (pw - MOBILE_GAP * 7.0) / 8.0
+	var sh: = minf(sw, 54.0)
+	for i in _color_buttons.size():
+		@warning_ignore("integer_division")
+		_place(_color_buttons[i], Rect2(px + (i % 8) * (sw + MOBILE_GAP), y + (i / 8) * (sh + 8.0), sw, sh))
+	y += sh * 2.0 + 8.0 + 10.0
+	_text(_mob["other_label"], Rect2(px, y + 12.0, 130, 26), 17)
+	_place(_custom_color, Rect2(px + 132.0, y, pw - 132.0, 50))
+	y += 60.0
+	var bw: = (pw - MOBILE_GAP * 2.0) / 3.0
+	var by: = maxf(y, h - MOBILE_FOOTER + 8.0)
+	for i in 3:
+		var action: = _mob[["undo", "redo", "clear"][i]] as Button
+		_place(action, Rect2(px + i * (bw + MOBILE_GAP), by, bw, 58))
+		action.set("text_size", 18 if bw >= 170.0 else 15)
+
+	var view: = Rect2(0, MOBILE_HEADER, px - 24.0, h - MOBILE_HEADER - MOBILE_FOOTER)
+	_place(_container, view)
+	_text(_hint, Rect2(view.position.x + 20.0, view.position.y + 8.0, view.size.x - 40.0, 26), 16)
+	_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+	_text(_notice, Rect2(view.position.x, view.position.y + 40.0, view.size.x, 30), 20)
+	_text(_ink, Rect2(view.end.x - 170.0, view.position.y + 8.0, 150, 26), 17)
+
+	var fy: = h - MOBILE_FOOTER + 8.0
+	_place(_mob["back"], Rect2(24, fy, 168, 58))
+	(_mob["back"] as Button).set("text_size", 22)
+	var fx: = 24.0 + 168.0 + 16.0
+	var room: = view.end.x - fx
+	var slot_w: = clampf(room * 0.08, 64.0, 76.0)
+	for i in _slot_buttons.size():
+		_place(_slot_buttons[i], Rect2(fx + i * (slot_w + 6.0), fy, slot_w, 58))
+		_slot_buttons[i].set("text_size", 22)
+		_slot_buttons[i].set("show_arrow", false)
+	fx += _slot_buttons.size() * (slot_w + 6.0) + 10.0
+	var rest: = view.end.x - fx
+	_place(_name_field, Rect2(fx, fy + 4.0, rest * 0.55 - 6.0, 50))
+	_name_field.add_theme_font_size_override("font_size", 20)
+
+	_preview.fit_to_longest_item = false
+	_preview.clip_text = true
+	_place(_preview, Rect2(fx + rest * 0.55, fy + 4.0, rest * 0.45, 50))
+	_preview.add_theme_font_size_override("font_size", 18)
+	queue_redraw()
+
+
+func _place(control: Control, rect: Rect2) -> void :
+	control.position = rect.position
+	control.size = rect.size
+
+
+func _text(label: Control, rect: Rect2, font_size: int) -> void :
+	_place(label, rect)
+	label.add_theme_font_size_override("font_size", font_size)
+
+
+func _draw_mobile() -> void :
+	draw_rect(Rect2(Vector2.ZERO, size), Color("#161619"))
+	draw_rect(Rect2(Vector2.ZERO, Vector2(size.x, MOBILE_HEADER)), Color("#202023"))
+	draw_line(Vector2(0, MOBILE_HEADER), Vector2(size.x, MOBILE_HEADER), Color("#454449"), 1)
+	draw_polyline(PackedVector2Array([Vector2(12, 0), Vector2(12, 64), Vector2(28, MOBILE_HEADER)]), ACCENT, 4, true)
+	var r: = _panel_rect
+	var card: = PackedVector2Array([r.position, Vector2(r.end.x - 12.0, r.position.y), Vector2(r.end.x, r.position.y + 12.0), 
+		r.end, Vector2(r.position.x + 12.0, r.end.y), Vector2(r.position.x, r.end.y - 12.0)])
+	draw_colored_polygon(card, Color("#202023"))
+	var outline: = card.duplicate()
+	outline.append(card[0])
+	draw_polyline(outline, Color("#454449"), 1.0, true)
+	draw_line(r.position, r.position + Vector2(120, 0), ACCENT, 3.0)
+	draw_line(Vector2(0, size.y - MOBILE_FOOTER), Vector2(r.position.x - 12.0, size.y - MOBILE_FOOTER), Color("#454449"), 1)
+
+
+
+func _touch_view(event: InputEvent) -> bool:
+	var touch: = event as InputEventScreenTouch
+	if touch != null:
+		if touch.pressed:
+			_touches[touch.index] = touch.position
+		else:
+			_touches.erase(touch.index)
+		if _touches.size() >= 2:
+			_cancel_stroke()
+			_pinch_from = _pinch_distance()
+		return _touches.size() >= 2
+	var drag: = event as InputEventScreenDrag
+	if drag == null or not _touches.has(drag.index):
+		return _touches.size() >= 2
+	_touches[drag.index] = drag.position
+	if _touches.size() < 2:
+		return false
+	var speed: = deg_to_rad(float(_cfg.camera.get("orbit_deg_per_px", 0.35)))
+	var shift: = drag.relative / float(_touches.size())
+	_yaw -= shift.x * speed
+	_pitch = clampf(_pitch + shift.y * speed, -0.5, 1.1)
+	var now: = _pinch_distance()
+	if _pinch_from > 1.0 and now > 1.0:
+		var cam: Dictionary = _cfg.get("camera", {})
+		_distance = clampf(_distance * _pinch_from / now, float(cam.get("min_m", 0.9)), float(cam.get("max_m", 3.6)))
+	_pinch_from = now
+	_place_camera()
+	return true
+
+
+func _pinch_distance() -> float:
+	var points: = _touches.values()
+	return (points[0] as Vector2).distance_to(points[1]) if points.size() >= 2 else 0.0
+
+
+
+func _cancel_stroke() -> void :
+	if _stroke.is_empty():
+		return
+	_stroke = {}
+	_applied = 0
+	canvas.apply(paint)
 
 
 func _label(value: String, rect: Rect2, fs: int, ink: Color, bold: = false, align: HorizontalAlignment = HORIZONTAL_ALIGNMENT_LEFT) -> Label:

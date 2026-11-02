@@ -9,97 +9,158 @@
   "generator": "tools/models/gen_world_assets.py",
   "pieces": [
     {
-      "shape": "cylinder",
-      "radius": 0.12,
-      "height": 0.06,
+      "shape": "box",
+      "size": [
+        0.36,
+        0.096,
+        0.36
+      ],
       "pos": [
         0,
-        0.03,
+        0.048,
         0
       ],
-      "color": "#2a2d32",
+      "color": "#4a4f55",
       "tag": "base"
     },
     {
       "shape": "cylinder",
-      "radius": 0.045,
-      "height": 2.72,
+      "radius": 0.04,
+      "height": 2.24,
       "pos": [
         0,
-        1.376,
+        1.12,
         0
       ],
-      "color": "#2a2d32",
+      "color": "#4a4f55",
       "tag": "pole"
     },
     {
       "shape": "box",
       "size": [
-        0.4,
+        0.2,
         0.96,
-        0.18
+        0.16
       ],
       "pos": [
         0,
-        2.688,
+        2.624,
         0
       ],
-      "color": "#2a2d32",
+      "color": "#1d1f22",
       "tag": "housing"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.116,
-      "height": 0.025,
+      "shape": "box",
+      "size": [
+        0.28,
+        1.088,
+        0.02
+      ],
       "pos": [
         0,
-        3.008,
-        -0.105
+        2.624,
+        0.084
       ],
-      "color": "#bd4036",
-      "rot": [
-        -90,
-        0,
-        0
-      ],
-      "tag": "light",
-      "glow": 0.4
+      "color": "#26292d",
+      "tag": "backplate"
     },
     {
       "shape": "cylinder",
-      "radius": 0.116,
-      "height": 0.025,
+      "radius": 0.056,
+      "height": 0.03,
       "pos": [
         0,
-        2.72,
-        -0.105
+        2.944,
+        -0.08
       ],
-      "color": "#dfba3e",
+      "color": "#e83a2a",
       "rot": [
         -90,
         0,
         0
       ],
       "tag": "light",
-      "glow": 0.4
+      "glow": 2.5
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.136,
+        0.015,
+        0.048
+      ],
+      "pos": [
+        0,
+        3.072,
+        -0.104
+      ],
+      "color": "#1d1f22",
+      "tag": "visor"
     },
     {
       "shape": "cylinder",
-      "radius": 0.116,
-      "height": 0.025,
+      "radius": 0.056,
+      "height": 0.03,
       "pos": [
         0,
-        2.432,
-        -0.105
+        2.64,
+        -0.08
       ],
-      "color": "#5bae67",
+      "color": "#5a4a14",
       "rot": [
         -90,
         0,
         0
       ],
-      "tag": "light",
-      "glow": 0.4
+      "tag": "light"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.136,
+        0.015,
+        0.048
+      ],
+      "pos": [
+        0,
+        2.768,
+        -0.104
+      ],
+      "color": "#1d1f22",
+      "tag": "visor"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.056,
+      "height": 0.03,
+      "pos": [
+        0,
+        2.336,
+        -0.08
+      ],
+      "color": "#173f22",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "light"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.136,
+        0.015,
+        0.048
+      ],
+      "pos": [
+        0,
+        2.464,
+        -0.104
+      ],
+      "color": "#1d1f22",
+      "tag": "visor"
     }
   ]
 }

@@ -10,47 +10,86 @@
   "pieces": [
     {
       "shape": "cylinder",
-      "radius": 0.0414,
-      "height": 0.21,
+      "radius": 0.045,
+      "height": 0.165,
       "pos": [
         0,
-        0.108,
+        0.09,
         0
       ],
-      "color": "#4a7042",
-      "tag": "body"
+      "color": "#3d6b3a",
+      "tag": "body",
+      "finish": "glass"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0414,
+      "height": 0.105,
+      "pos": [
+        0,
+        0.066,
+        0
+      ],
+      "color": "#c98a2a",
+      "tag": "liquid",
+      "finish": "glass"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.045,
+      "pos": [
+        0,
+        0.171,
+        0
+      ],
+      "color": "#3d6b3a",
+      "tag": "body",
+      "finish": "glass"
     },
     {
       "shape": "cylinder",
       "radius": 0.018,
-      "height": 0.075,
+      "height": 0.066,
       "pos": [
         0,
-        0.246,
+        0.225,
         0
       ],
-      "color": "#c5c9ce",
-      "tag": "neck"
+      "color": "#3d6b3a",
+      "tag": "neck",
+      "finish": "glass"
     },
     {
       "shape": "box",
       "size": [
-        0.063,
-        0.036,
-        0.025
+        0.027,
+        0.054,
+        0.0126
       ],
       "pos": [
         0,
-        0.291,
+        0.276,
         0
       ],
-      "color": "#d6dcd8",
+      "color": "#d9cdb0",
       "rot": [
         0,
         0,
-        15
+        12
       ],
       "tag": "rag"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0126,
+      "pos": [
+        0.0027,
+        0.306,
+        0
+      ],
+      "color": "#ff8a2a",
+      "tag": "flame",
+      "glow": 3.0
     }
   ]
 }

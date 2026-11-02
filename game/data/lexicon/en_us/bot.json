@@ -1,0 +1,62 @@
+{
+  "_comment": "Training bot requests (DESIGN 13). The bot picks a template, fills the {slots} with words from the lists, checks it with the parser and only sends what was understood. Empty-handed it picks from 'armed'; holding something, from 'any'; out of ammo, from 'reload'.",
+  "armed": [
+    "i want a {arma}",
+    "i want a {jeito} {arma}",
+    "i want a {arma} that shoots {municao}",
+    "i want a {jeito} {arma} that shoots {municao}",
+    "i want a {arma} that explodes",
+    "i want a {arma} that {efeito}",
+    "i want an automatic {arma}",
+    "i want a {arma} with a {acessorio}",
+    "i want a {tamanho} grenade",
+    "i want {numero} grenades",
+    "i want a {branca}",
+    "i want a {jeito_branca} {branca}",
+    "i want a {branca} that {efeito}"
+  ],
+  "any": [
+    "i want a {arma} that shoots a {voador} that drops {municao}",
+    "i want a tower that shoots {municao} at the enemy",
+    "i want a tower",
+    "i want {numero} walls",
+    "i want a wall",
+    "i want a bomber",
+    "i want a mine",
+    "i want a {voador} that drops bombs",
+    "i want to {habilidade}",
+    "i want a {jeito} {arma}",
+    "i want a tower that {efeito}",
+    "i want {numero} pigeons that orbit and shoot",
+    "i want a {voador} that chases the enemy and explodes",
+    "i want an automatic drone that shoots {municao}",
+    "i want a grenade that {efeito}",
+    "i want a grenade that splits into {numero}",
+    "i want a grenade that bounces",
+    "i want a {acessorio}",
+    "i want a {arma} with a {arma} body and {numero} barrels",
+    "i want a {voador} that strikes",
+    "i want a {arma} with a {branca} blade",
+    "i want a {branca}"
+  ],
+  "reload": [
+    "i want a magazine",
+    "i want a magazine",
+    "i want a {jeito_pente} magazine",
+    "i want a magazine of {municao}"
+  ],
+  "slots": {
+    "branca": ["katana", "sword", "axe", "sledgehammer", "bat", "spear", "chainsaw", "mace", "knife", "machete"],
+    "jeito_branca": ["fire", "ice", "giant", "explosive"],
+    "arma": ["pistol", "shotgun", "ak", "bazooka", "machine gun", "uzi", "mp5", "tommy gun", "m4", "sniper", "revolver", "desert eagle", "double barrel", "minigun", "grenade launcher", "rpg"],
+    "jeito": ["explosive", "fire", "ice", "guided", "fast", "triple"],
+    "municao": ["grenades", "pigeons", "walls", "bombs", "lasers", "missiles", "bullets"],
+    "voador": ["pigeon", "drone", "plane"],
+    "tamanho": ["giant", "small", "big"],
+    "numero": ["two", "three"],
+    "habilidade": ["run", "jump high", "fly"],
+    "efeito": ["freezes", "burns", "pushes", "pulls"],
+    "jeito_pente": ["fire", "ice", "explosive", "giant"],
+    "acessorio": ["scope", "red dot sight", "suppressor", "compensator", "vertical grip", "bipod", "laser sight", "flashlight"]
+  }
+}

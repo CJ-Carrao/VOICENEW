@@ -12,441 +12,1615 @@
       "shape": "box",
       "size": [
         1.5,
-        0.08,
+        0.056,
         1.5
       ],
       "pos": [
         0,
-        0.04,
+        0.028,
         0
       ],
-      "color": "#2a2d32",
+      "color": "#4a4f55",
       "tag": "base"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        -0.6,
-        0.22,
-        -0.6
+      "shape": "box",
+      "size": [
+        1.44,
+        0.024,
+        1.44
       ],
-      "color": "#c5c9ce",
-      "rot": [
+      "pos": [
         0,
-        0,
+        0.068,
         0
       ],
-      "tag": "spike"
+      "color": "#5d636a",
+      "tag": "base"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        -0.6,
-        0.22,
-        -0.3
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.088,
+        0.1875
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.5625,
+        0.12,
+        -0.5625
+      ],
+      "color": "#9aa1a8",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        -0.6,
-        0.22,
-        0.0
+      "shape": "box",
+      "size": [
+        0.1275,
+        0.088,
+        0.1275
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.5625,
+        0.2,
+        -0.5625
+      ],
+      "color": "#a4aab1",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        -0.6,
-        0.22,
-        0.3
+      "shape": "box",
+      "size": [
+        0.075,
+        0.088,
+        0.075
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.5625,
+        0.28,
+        -0.5625
+      ],
+      "color": "#aeb4b9",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        -0.6,
-        0.22,
-        0.6
+      "shape": "box",
+      "size": [
+        0.03,
+        0.088,
+        0.03
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.5625,
+        0.36,
+        -0.5625
+      ],
+      "color": "#bdc2c6",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.016,
+        0.1875
+      ],
       "pos": [
-        -0.3,
-        0.22,
-        -0.6
+        -0.5625,
+        0.08,
+        -0.5625
       ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        0
-      ],
-      "tag": "spike"
+      "color": "#3a3e44",
+      "tag": "bolt"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        -0.3,
-        0.22,
-        -0.3
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.088,
+        0.1875
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.5625,
+        0.12,
+        -0.1875
+      ],
+      "color": "#9aa1a8",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        -0.3,
-        0.22,
-        0.0
+      "shape": "box",
+      "size": [
+        0.1275,
+        0.088,
+        0.1275
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.5625,
+        0.2,
+        -0.1875
+      ],
+      "color": "#a4aab1",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        -0.3,
-        0.22,
-        0.3
+      "shape": "box",
+      "size": [
+        0.075,
+        0.088,
+        0.075
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.5625,
+        0.28,
+        -0.1875
+      ],
+      "color": "#aeb4b9",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        -0.3,
-        0.22,
-        0.6
+      "shape": "box",
+      "size": [
+        0.03,
+        0.088,
+        0.03
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.5625,
+        0.36,
+        -0.1875
+      ],
+      "color": "#bdc2c6",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.016,
+        0.1875
+      ],
       "pos": [
-        0.0,
-        0.22,
-        -0.6
+        -0.5625,
+        0.08,
+        -0.1875
       ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        0
-      ],
-      "tag": "spike"
+      "color": "#3a3e44",
+      "tag": "bolt"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        0.0,
-        0.22,
-        -0.3
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.088,
+        0.1875
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.5625,
+        0.12,
+        0.1875
+      ],
+      "color": "#9aa1a8",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        0.0,
-        0.22,
-        0.0
+      "shape": "box",
+      "size": [
+        0.1275,
+        0.088,
+        0.1275
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.5625,
+        0.2,
+        0.1875
+      ],
+      "color": "#a4aab1",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        0.0,
-        0.22,
-        0.3
+      "shape": "box",
+      "size": [
+        0.075,
+        0.088,
+        0.075
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.5625,
+        0.28,
+        0.1875
+      ],
+      "color": "#aeb4b9",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        0.0,
-        0.22,
-        0.6
+      "shape": "box",
+      "size": [
+        0.03,
+        0.088,
+        0.03
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.5625,
+        0.36,
+        0.1875
+      ],
+      "color": "#bdc2c6",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.016,
+        0.1875
+      ],
       "pos": [
-        0.3,
-        0.22,
-        -0.6
+        -0.5625,
+        0.08,
+        0.1875
       ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        0
-      ],
-      "tag": "spike"
+      "color": "#3a3e44",
+      "tag": "bolt"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        0.3,
-        0.22,
-        -0.3
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.088,
+        0.1875
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.5625,
+        0.12,
+        0.5625
+      ],
+      "color": "#9aa1a8",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        0.3,
-        0.22,
-        0.0
+      "shape": "box",
+      "size": [
+        0.1275,
+        0.088,
+        0.1275
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.5625,
+        0.2,
+        0.5625
+      ],
+      "color": "#a4aab1",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        0.3,
-        0.22,
-        0.3
+      "shape": "box",
+      "size": [
+        0.075,
+        0.088,
+        0.075
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.5625,
+        0.28,
+        0.5625
+      ],
+      "color": "#aeb4b9",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        0.3,
-        0.22,
-        0.6
+      "shape": "box",
+      "size": [
+        0.03,
+        0.088,
+        0.03
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.5625,
+        0.36,
+        0.5625
+      ],
+      "color": "#bdc2c6",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.016,
+        0.1875
+      ],
       "pos": [
-        0.6,
-        0.22,
-        -0.6
+        -0.5625,
+        0.08,
+        0.5625
       ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        0
-      ],
-      "tag": "spike"
+      "color": "#3a3e44",
+      "tag": "bolt"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        0.6,
-        0.22,
-        -0.3
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.088,
+        0.1875
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.1875,
+        0.12,
+        -0.5625
+      ],
+      "color": "#9aa1a8",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        0.6,
-        0.22,
-        0.0
+      "shape": "box",
+      "size": [
+        0.1275,
+        0.088,
+        0.1275
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.1875,
+        0.2,
+        -0.5625
+      ],
+      "color": "#a4aab1",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        0.6,
-        0.22,
-        0.3
+      "shape": "box",
+      "size": [
+        0.075,
+        0.088,
+        0.075
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.1875,
+        0.28,
+        -0.5625
+      ],
+      "color": "#aeb4b9",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
     },
     {
-      "shape": "cone",
-      "radius": 0.07,
-      "height": 0.32,
-      "pos": [
-        0.6,
-        0.22,
-        0.6
+      "shape": "box",
+      "size": [
+        0.03,
+        0.088,
+        0.03
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        -0.1875,
+        0.36,
+        -0.5625
+      ],
+      "color": "#bdc2c6",
       "rot": [
         0,
-        0,
+        45,
         0
       ],
-      "tag": "spike"
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.016,
+        0.1875
+      ],
+      "pos": [
+        -0.1875,
+        0.08,
+        -0.5625
+      ],
+      "color": "#3a3e44",
+      "tag": "bolt"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.088,
+        0.1875
+      ],
+      "pos": [
+        -0.1875,
+        0.12,
+        -0.1875
+      ],
+      "color": "#9aa1a8",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1275,
+        0.088,
+        0.1275
+      ],
+      "pos": [
+        -0.1875,
+        0.2,
+        -0.1875
+      ],
+      "color": "#a4aab1",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.075,
+        0.088,
+        0.075
+      ],
+      "pos": [
+        -0.1875,
+        0.28,
+        -0.1875
+      ],
+      "color": "#aeb4b9",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.088,
+        0.03
+      ],
+      "pos": [
+        -0.1875,
+        0.36,
+        -0.1875
+      ],
+      "color": "#bdc2c6",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.016,
+        0.1875
+      ],
+      "pos": [
+        -0.1875,
+        0.08,
+        -0.1875
+      ],
+      "color": "#3a3e44",
+      "tag": "bolt"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.088,
+        0.1875
+      ],
+      "pos": [
+        -0.1875,
+        0.12,
+        0.1875
+      ],
+      "color": "#9aa1a8",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1275,
+        0.088,
+        0.1275
+      ],
+      "pos": [
+        -0.1875,
+        0.2,
+        0.1875
+      ],
+      "color": "#a4aab1",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.075,
+        0.088,
+        0.075
+      ],
+      "pos": [
+        -0.1875,
+        0.28,
+        0.1875
+      ],
+      "color": "#aeb4b9",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.088,
+        0.03
+      ],
+      "pos": [
+        -0.1875,
+        0.36,
+        0.1875
+      ],
+      "color": "#bdc2c6",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.016,
+        0.1875
+      ],
+      "pos": [
+        -0.1875,
+        0.08,
+        0.1875
+      ],
+      "color": "#3a3e44",
+      "tag": "bolt"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.088,
+        0.1875
+      ],
+      "pos": [
+        -0.1875,
+        0.12,
+        0.5625
+      ],
+      "color": "#9aa1a8",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1275,
+        0.088,
+        0.1275
+      ],
+      "pos": [
+        -0.1875,
+        0.2,
+        0.5625
+      ],
+      "color": "#a4aab1",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.075,
+        0.088,
+        0.075
+      ],
+      "pos": [
+        -0.1875,
+        0.28,
+        0.5625
+      ],
+      "color": "#aeb4b9",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.088,
+        0.03
+      ],
+      "pos": [
+        -0.1875,
+        0.36,
+        0.5625
+      ],
+      "color": "#bdc2c6",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.016,
+        0.1875
+      ],
+      "pos": [
+        -0.1875,
+        0.08,
+        0.5625
+      ],
+      "color": "#3a3e44",
+      "tag": "bolt"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.088,
+        0.1875
+      ],
+      "pos": [
+        0.1875,
+        0.12,
+        -0.5625
+      ],
+      "color": "#9aa1a8",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1275,
+        0.088,
+        0.1275
+      ],
+      "pos": [
+        0.1875,
+        0.2,
+        -0.5625
+      ],
+      "color": "#a4aab1",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.075,
+        0.088,
+        0.075
+      ],
+      "pos": [
+        0.1875,
+        0.28,
+        -0.5625
+      ],
+      "color": "#aeb4b9",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.088,
+        0.03
+      ],
+      "pos": [
+        0.1875,
+        0.36,
+        -0.5625
+      ],
+      "color": "#bdc2c6",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.016,
+        0.1875
+      ],
+      "pos": [
+        0.1875,
+        0.08,
+        -0.5625
+      ],
+      "color": "#3a3e44",
+      "tag": "bolt"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.088,
+        0.1875
+      ],
+      "pos": [
+        0.1875,
+        0.12,
+        -0.1875
+      ],
+      "color": "#9aa1a8",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1275,
+        0.088,
+        0.1275
+      ],
+      "pos": [
+        0.1875,
+        0.2,
+        -0.1875
+      ],
+      "color": "#a4aab1",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.075,
+        0.088,
+        0.075
+      ],
+      "pos": [
+        0.1875,
+        0.28,
+        -0.1875
+      ],
+      "color": "#aeb4b9",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.088,
+        0.03
+      ],
+      "pos": [
+        0.1875,
+        0.36,
+        -0.1875
+      ],
+      "color": "#bdc2c6",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.016,
+        0.1875
+      ],
+      "pos": [
+        0.1875,
+        0.08,
+        -0.1875
+      ],
+      "color": "#3a3e44",
+      "tag": "bolt"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.088,
+        0.1875
+      ],
+      "pos": [
+        0.1875,
+        0.12,
+        0.1875
+      ],
+      "color": "#9aa1a8",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1275,
+        0.088,
+        0.1275
+      ],
+      "pos": [
+        0.1875,
+        0.2,
+        0.1875
+      ],
+      "color": "#a4aab1",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.075,
+        0.088,
+        0.075
+      ],
+      "pos": [
+        0.1875,
+        0.28,
+        0.1875
+      ],
+      "color": "#aeb4b9",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.088,
+        0.03
+      ],
+      "pos": [
+        0.1875,
+        0.36,
+        0.1875
+      ],
+      "color": "#bdc2c6",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.016,
+        0.1875
+      ],
+      "pos": [
+        0.1875,
+        0.08,
+        0.1875
+      ],
+      "color": "#3a3e44",
+      "tag": "bolt"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.088,
+        0.1875
+      ],
+      "pos": [
+        0.1875,
+        0.12,
+        0.5625
+      ],
+      "color": "#9aa1a8",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1275,
+        0.088,
+        0.1275
+      ],
+      "pos": [
+        0.1875,
+        0.2,
+        0.5625
+      ],
+      "color": "#a4aab1",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.075,
+        0.088,
+        0.075
+      ],
+      "pos": [
+        0.1875,
+        0.28,
+        0.5625
+      ],
+      "color": "#aeb4b9",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.088,
+        0.03
+      ],
+      "pos": [
+        0.1875,
+        0.36,
+        0.5625
+      ],
+      "color": "#bdc2c6",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.016,
+        0.1875
+      ],
+      "pos": [
+        0.1875,
+        0.08,
+        0.5625
+      ],
+      "color": "#3a3e44",
+      "tag": "bolt"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.088,
+        0.1875
+      ],
+      "pos": [
+        0.5625,
+        0.12,
+        -0.5625
+      ],
+      "color": "#9aa1a8",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1275,
+        0.088,
+        0.1275
+      ],
+      "pos": [
+        0.5625,
+        0.2,
+        -0.5625
+      ],
+      "color": "#a4aab1",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.075,
+        0.088,
+        0.075
+      ],
+      "pos": [
+        0.5625,
+        0.28,
+        -0.5625
+      ],
+      "color": "#aeb4b9",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.088,
+        0.03
+      ],
+      "pos": [
+        0.5625,
+        0.36,
+        -0.5625
+      ],
+      "color": "#bdc2c6",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.016,
+        0.1875
+      ],
+      "pos": [
+        0.5625,
+        0.08,
+        -0.5625
+      ],
+      "color": "#3a3e44",
+      "tag": "bolt"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.088,
+        0.1875
+      ],
+      "pos": [
+        0.5625,
+        0.12,
+        -0.1875
+      ],
+      "color": "#9aa1a8",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1275,
+        0.088,
+        0.1275
+      ],
+      "pos": [
+        0.5625,
+        0.2,
+        -0.1875
+      ],
+      "color": "#a4aab1",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.075,
+        0.088,
+        0.075
+      ],
+      "pos": [
+        0.5625,
+        0.28,
+        -0.1875
+      ],
+      "color": "#aeb4b9",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.088,
+        0.03
+      ],
+      "pos": [
+        0.5625,
+        0.36,
+        -0.1875
+      ],
+      "color": "#bdc2c6",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.016,
+        0.1875
+      ],
+      "pos": [
+        0.5625,
+        0.08,
+        -0.1875
+      ],
+      "color": "#3a3e44",
+      "tag": "bolt"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.088,
+        0.1875
+      ],
+      "pos": [
+        0.5625,
+        0.12,
+        0.1875
+      ],
+      "color": "#9aa1a8",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1275,
+        0.088,
+        0.1275
+      ],
+      "pos": [
+        0.5625,
+        0.2,
+        0.1875
+      ],
+      "color": "#a4aab1",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.075,
+        0.088,
+        0.075
+      ],
+      "pos": [
+        0.5625,
+        0.28,
+        0.1875
+      ],
+      "color": "#aeb4b9",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.088,
+        0.03
+      ],
+      "pos": [
+        0.5625,
+        0.36,
+        0.1875
+      ],
+      "color": "#bdc2c6",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.016,
+        0.1875
+      ],
+      "pos": [
+        0.5625,
+        0.08,
+        0.1875
+      ],
+      "color": "#3a3e44",
+      "tag": "bolt"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.088,
+        0.1875
+      ],
+      "pos": [
+        0.5625,
+        0.12,
+        0.5625
+      ],
+      "color": "#9aa1a8",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1275,
+        0.088,
+        0.1275
+      ],
+      "pos": [
+        0.5625,
+        0.2,
+        0.5625
+      ],
+      "color": "#a4aab1",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.075,
+        0.088,
+        0.075
+      ],
+      "pos": [
+        0.5625,
+        0.28,
+        0.5625
+      ],
+      "color": "#aeb4b9",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.088,
+        0.03
+      ],
+      "pos": [
+        0.5625,
+        0.36,
+        0.5625
+      ],
+      "color": "#bdc2c6",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spike",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1875,
+        0.016,
+        0.1875
+      ],
+      "pos": [
+        0.5625,
+        0.08,
+        0.5625
+      ],
+      "color": "#3a3e44",
+      "tag": "bolt"
     }
   ]
 }

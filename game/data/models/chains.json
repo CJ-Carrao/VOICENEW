@@ -14,262 +14,369 @@
     "muzzle": [
       0,
       0,
-      -0.42
+      -0.54
     ]
   },
   "units": "meters",
   "generator": "tools/models/gen_world_assets.py",
   "pieces": [
     {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.05,
+        0.084
+      ],
+      "pos": [
+        0,
+        0,
+        -0.588
+      ],
+      "color": "#6a7076",
+      "tag": "link",
+      "finish": "metal",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.014,
+        0.084
+      ],
+      "pos": [
+        0,
+        0,
+        -0.5109
+      ],
+      "color": "#9aa0a6",
+      "tag": "link",
+      "finish": "metal",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.05,
+        0.084
+      ],
+      "pos": [
+        0,
+        0,
+        -0.4337
+      ],
+      "color": "#6a7076",
+      "tag": "link",
+      "finish": "metal",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.014,
+        0.084
+      ],
+      "pos": [
+        0,
+        0,
+        -0.3566
+      ],
+      "color": "#9aa0a6",
+      "tag": "link",
+      "finish": "metal",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.05,
+        0.084
+      ],
+      "pos": [
+        0,
+        0,
+        -0.2794
+      ],
+      "color": "#6a7076",
+      "tag": "link",
+      "finish": "metal",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.014,
+        0.084
+      ],
+      "pos": [
+        0,
+        0,
+        -0.2023
+      ],
+      "color": "#9aa0a6",
+      "tag": "link",
+      "finish": "metal",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.05,
+        0.084
+      ],
+      "pos": [
+        0,
+        0,
+        -0.1251
+      ],
+      "color": "#6a7076",
+      "tag": "link",
+      "finish": "metal",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.014,
+        0.084
+      ],
+      "pos": [
+        0,
+        0,
+        -0.048
+      ],
+      "color": "#9aa0a6",
+      "tag": "link",
+      "finish": "metal",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.05,
+        0.084
+      ],
+      "pos": [
+        0,
+        0,
+        0.0291
+      ],
+      "color": "#6a7076",
+      "tag": "link",
+      "finish": "metal",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.014,
+        0.084
+      ],
+      "pos": [
+        0,
+        0,
+        0.1063
+      ],
+      "color": "#9aa0a6",
+      "tag": "link",
+      "finish": "metal",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.05,
+        0.084
+      ],
+      "pos": [
+        0,
+        0,
+        0.1834
+      ],
+      "color": "#6a7076",
+      "tag": "link",
+      "finish": "metal",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.014,
+        0.084
+      ],
+      "pos": [
+        0,
+        0,
+        0.2606
+      ],
+      "color": "#9aa0a6",
+      "tag": "link",
+      "finish": "metal",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.05,
+        0.084
+      ],
+      "pos": [
+        0,
+        0,
+        0.3377
+      ],
+      "color": "#6a7076",
+      "tag": "link",
+      "finish": "metal",
+      "section": "rear"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.014,
+        0.084
+      ],
+      "pos": [
+        0,
+        0,
+        0.4149
+      ],
+      "color": "#9aa0a6",
+      "tag": "link",
+      "finish": "metal",
+      "section": "rear"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.05,
+        0.084
+      ],
+      "pos": [
+        0,
+        0,
+        0.492
+      ],
+      "color": "#6a7076",
+      "tag": "link",
+      "finish": "metal",
+      "section": "rear"
+    },
+    {
       "shape": "torus",
       "radius": 0.04,
-      "inner_radius": 0.027,
+      "inner_radius": 0.026,
       "pos": [
         0,
         0,
         -0.6
       ],
-      "color": "#c5c9ce",
+      "color": "#9aa0a6",
       "rot": [
         90,
         0,
         0
       ],
-      "tag": "link",
-      "section": "front"
+      "tag": "ring",
+      "finish": "metal",
+      "section": "muzzle"
     },
     {
-      "shape": "torus",
-      "radius": 0.04,
-      "inner_radius": 0.027,
+      "shape": "box",
+      "size": [
+        0.034,
+        0.034,
+        0.192
+      ],
       "pos": [
         0,
         0,
-        -0.5077
+        0.528
       ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        0
-      ],
-      "tag": "link",
-      "section": "front"
-    },
-    {
-      "shape": "torus",
-      "radius": 0.04,
-      "inner_radius": 0.027,
-      "pos": [
-        0,
-        0,
-        -0.4154
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        90,
-        0,
-        0
-      ],
-      "tag": "link",
-      "section": "front"
-    },
-    {
-      "shape": "torus",
-      "radius": 0.04,
-      "inner_radius": 0.027,
-      "pos": [
-        0,
-        0,
-        -0.3231
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        0
-      ],
-      "tag": "link",
-      "section": "front"
-    },
-    {
-      "shape": "torus",
-      "radius": 0.04,
-      "inner_radius": 0.027,
-      "pos": [
-        0,
-        0,
-        -0.2308
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        90,
-        0,
-        0
-      ],
-      "tag": "link",
-      "section": "front"
-    },
-    {
-      "shape": "torus",
-      "radius": 0.04,
-      "inner_radius": 0.027,
-      "pos": [
-        0,
-        0,
-        -0.1385
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        0
-      ],
-      "tag": "link",
-      "section": "front"
-    },
-    {
-      "shape": "torus",
-      "radius": 0.04,
-      "inner_radius": 0.027,
-      "pos": [
-        0,
-        0,
-        -0.0462
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        90,
-        0,
-        0
-      ],
-      "tag": "link",
-      "section": "front"
-    },
-    {
-      "shape": "torus",
-      "radius": 0.04,
-      "inner_radius": 0.027,
-      "pos": [
-        0,
-        0,
-        0.0462
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        0
-      ],
-      "tag": "link",
-      "section": "front"
-    },
-    {
-      "shape": "torus",
-      "radius": 0.04,
-      "inner_radius": 0.027,
-      "pos": [
-        0,
-        0,
-        0.1385
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        90,
-        0,
-        0
-      ],
-      "tag": "link",
-      "section": "front"
-    },
-    {
-      "shape": "torus",
-      "radius": 0.04,
-      "inner_radius": 0.027,
-      "pos": [
-        0,
-        0,
-        0.2308
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        0
-      ],
-      "tag": "link",
-      "section": "front"
-    },
-    {
-      "shape": "torus",
-      "radius": 0.04,
-      "inner_radius": 0.027,
-      "pos": [
-        0,
-        0,
-        0.3231
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        90,
-        0,
-        0
-      ],
-      "tag": "link",
-      "section": "front"
-    },
-    {
-      "shape": "torus",
-      "radius": 0.04,
-      "inner_radius": 0.027,
-      "pos": [
-        0,
-        0,
-        0.4154
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        0
-      ],
-      "tag": "link",
+      "color": "#2a2a2e",
+      "tag": "handle",
+      "finish": "rubber",
       "section": "rear"
     },
     {
-      "shape": "torus",
-      "radius": 0.04,
-      "inner_radius": 0.027,
+      "shape": "box",
+      "size": [
+        0.036,
+        0.036,
+        0.01
+      ],
       "pos": [
         0,
         0,
-        0.5077
+        0.456
       ],
-      "color": "#c5c9ce",
-      "rot": [
-        90,
-        0,
-        0
-      ],
-      "tag": "link",
+      "color": "#8a2a22",
+      "tag": "handle",
+      "finish": "rubber",
       "section": "rear"
     },
     {
-      "shape": "torus",
-      "radius": 0.04,
-      "inner_radius": 0.027,
+      "shape": "box",
+      "size": [
+        0.036,
+        0.036,
+        0.01
+      ],
+      "pos": [
+        0,
+        0,
+        0.504
+      ],
+      "color": "#8a2a22",
+      "tag": "handle",
+      "finish": "rubber",
+      "section": "rear"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.036,
+        0.036,
+        0.01
+      ],
+      "pos": [
+        0,
+        0,
+        0.552
+      ],
+      "color": "#8a2a22",
+      "tag": "handle",
+      "finish": "rubber",
+      "section": "rear"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.036,
+        0.036,
+        0.01
+      ],
       "pos": [
         0,
         0,
         0.6
       ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        0
-      ],
-      "tag": "link",
+      "color": "#8a2a22",
+      "tag": "handle",
+      "finish": "rubber",
       "section": "rear"
     }
   ]

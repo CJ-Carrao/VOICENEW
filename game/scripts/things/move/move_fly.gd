@@ -52,6 +52,10 @@ func launch(direction: Vector3, launch_speed: float) -> void :
 	thing.velocity = dir.normalized() * launch_speed
 
 
+func portal_turned(turn: Basis) -> void :
+	_facing = turn * _facing
+
+
 func step(delta: float) -> void :
 	_time += delta
 	var ecology := thing.get_node_or_null("EcologyBehavior")

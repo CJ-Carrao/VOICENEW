@@ -9,48 +9,83 @@
   "generator": "tools/models/gen_world_assets.py",
   "pieces": [
     {
-      "shape": "box",
+      "shape": "wedge",
       "size": [
-        0.7,
-        0.2,
-        1.5
+        0.08,
+        0.5,
+        1.375
       ],
       "pos": [
-        0,
-        0.4,
-        0.1
+        -0.2,
+        0.55,
+        0.3
       ],
       "color": "#7a4b26",
-      "tag": "carriage"
+      "point": 1.0,
+      "rot": [
+        0,
+        180,
+        0
+      ],
+      "tag": "carriage",
+      "finish": "wood"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.45,
-      "height": 0.2925,
+      "shape": "torus",
+      "radius": 0.48,
+      "inner_radius": 0.4032,
       "pos": [
-        -0.495,
-        0.45,
-        0.15
+        -0.42,
+        0.48,
+        0
       ],
-      "color": "#141416",
+      "color": "#3a2a1a",
       "rot": [
         0,
         0,
         90
       ],
       "tag": "wheel",
-      "finish": "rubber"
+      "finish": "rubber",
+      "scale": [
+        1,
+        1.1718749999999993,
+        1
+      ]
+    },
+    {
+      "shape": "torus",
+      "radius": 0.4128,
+      "inner_radius": 0.3648,
+      "pos": [
+        -0.42,
+        0.48,
+        0
+      ],
+      "color": "#7a4b26",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal",
+      "scale": [
+        1,
+        1.8750000000000004,
+        1
+      ]
     },
     {
       "shape": "cylinder",
-      "radius": 0.225,
-      "height": 0.306,
+      "radius": 0.0672,
+      "height": 0.144,
       "pos": [
-        -0.495,
-        0.45,
-        0.15
+        -0.42,
+        0.48,
+        0
       ],
-      "color": "#c5c9ce",
+      "color": "#3b3f46",
       "rot": [
         0,
         0,
@@ -60,33 +95,167 @@
       "finish": "metal"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.45,
-      "height": 0.2925,
-      "pos": [
-        0.495,
-        0.45,
-        0.15
+      "shape": "box",
+      "size": [
+        0.0315,
+        0.7488,
+        0.024
       ],
-      "color": "#141416",
+      "pos": [
+        -0.42,
+        0.48,
+        0
+      ],
+      "color": "#7a4b26",
+      "rot": [
+        0.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0315,
+        0.7488,
+        0.024
+      ],
+      "pos": [
+        -0.42,
+        0.48,
+        0
+      ],
+      "color": "#7a4b26",
+      "rot": [
+        45.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0315,
+        0.7488,
+        0.024
+      ],
+      "pos": [
+        -0.42,
+        0.48,
+        0
+      ],
+      "color": "#7a4b26",
+      "rot": [
+        90.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0315,
+        0.7488,
+        0.024
+      ],
+      "pos": [
+        -0.42,
+        0.48,
+        0
+      ],
+      "color": "#7a4b26",
+      "rot": [
+        135.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        0.08,
+        0.5,
+        1.375
+      ],
+      "pos": [
+        0.2,
+        0.55,
+        0.3
+      ],
+      "color": "#7a4b26",
+      "point": 1.0,
+      "rot": [
+        0,
+        180,
+        0
+      ],
+      "tag": "carriage",
+      "finish": "wood"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.48,
+      "inner_radius": 0.4032,
+      "pos": [
+        0.42,
+        0.48,
+        0
+      ],
+      "color": "#3a2a1a",
       "rot": [
         0,
         0,
         90
       ],
       "tag": "wheel",
-      "finish": "rubber"
+      "finish": "rubber",
+      "scale": [
+        1,
+        1.1718749999999993,
+        1
+      ]
+    },
+    {
+      "shape": "torus",
+      "radius": 0.4128,
+      "inner_radius": 0.3648,
+      "pos": [
+        0.42,
+        0.48,
+        0
+      ],
+      "color": "#7a4b26",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal",
+      "scale": [
+        1,
+        1.8750000000000004,
+        1
+      ]
     },
     {
       "shape": "cylinder",
-      "radius": 0.225,
-      "height": 0.306,
+      "radius": 0.0672,
+      "height": 0.144,
       "pos": [
-        0.495,
-        0.45,
-        0.15
+        0.42,
+        0.48,
+        0
       ],
-      "color": "#c5c9ce",
+      "color": "#3b3f46",
       "rot": [
         0,
         0,
@@ -96,32 +265,200 @@
       "finish": "metal"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.19,
-      "height": 2.0,
+      "shape": "box",
+      "size": [
+        0.0315,
+        0.7488,
+        0.024
+      ],
+      "pos": [
+        0.42,
+        0.48,
+        0
+      ],
+      "color": "#7a4b26",
+      "rot": [
+        0.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0315,
+        0.7488,
+        0.024
+      ],
+      "pos": [
+        0.42,
+        0.48,
+        0
+      ],
+      "color": "#7a4b26",
+      "rot": [
+        45.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0315,
+        0.7488,
+        0.024
+      ],
+      "pos": [
+        0.42,
+        0.48,
+        0
+      ],
+      "color": "#7a4b26",
+      "rot": [
+        90.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0315,
+        0.7488,
+        0.024
+      ],
+      "pos": [
+        0.42,
+        0.48,
+        0
+      ],
+      "color": "#7a4b26",
+      "rot": [
+        135.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.36,
+        0.12,
+        1.125
+      ],
       "pos": [
         0,
-        0.9,
-        -0.25
+        0.32,
+        0.75
       ],
-      "color": "#2a2d32",
+      "color": "#7a4b26",
+      "rot": [
+        -14,
+        0,
+        0
+      ],
+      "tag": "trail",
+      "finish": "wood"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.05,
+      "height": 0.9,
+      "pos": [
+        0,
+        0.48,
+        0
+      ],
+      "color": "#3b3f46",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "axle"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.17,
+      "height": 1.7541,
+      "pos": [
+        0.0,
+        0.84,
+        -0.375
+      ],
+      "color": "#8a6a3a",
+      "rot": [
+        86.08,
+        180.0,
+        0
+      ],
+      "top_radius": 0.13,
+      "tag": "barrel"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.2,
+      "height": 0.2,
+      "pos": [
+        0,
+        0.77,
+        0.45
+      ],
+      "color": "#8a6a3a",
       "rot": [
         -90,
         0,
         0
       ],
-      "tag": "barrel"
+      "tag": "breech"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.12,
+      "pos": [
+        0,
+        0.76,
+        0.62
+      ],
+      "color": "#8a6a3a",
+      "tag": "cascabel"
     },
     {
       "shape": "cylinder",
-      "radius": 0.135,
-      "height": 0.025,
+      "radius": 0.16,
+      "height": 0.1,
       "pos": [
         0,
         0.9,
-        -1.2625
+        -1.2
       ],
-      "color": "#111318",
+      "color": "#6e552e",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "muzzle"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.1,
+      "height": 0.04,
+      "pos": [
+        0,
+        0.9,
+        -1.325
+      ],
+      "color": "#1e2024",
       "rot": [
         -90,
         0,

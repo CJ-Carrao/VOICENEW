@@ -57,7 +57,11 @@ static var _fps_overlay: CanvasLayer
 
 
 static func value(key: String) -> Variant:
-	var stored: Variant = UserSettings.get_value("video", key, DEFAULTS[key])
+	var fallback: Variant = DEFAULTS[key]
+	if OS.has_feature("mobile"):
+		fallback = PRESETS.low.get(key, DEFAULTS[key])
+		if key == "max_fps": fallback = 60
+	var stored: Variant = UserSettings.get_value("video", key, fallback)
 	return stored if typeof(stored) == typeof(DEFAULTS[key]) or (stored is int and DEFAULTS[key] is float) else DEFAULTS[key]
 
 
@@ -100,6 +104,13 @@ static func start(tree: SceneTree) -> void :
 	if _tree != tree:
 		_tree = tree
 		tree.node_added.connect(Callable(VideoSettings, "_on_node_added"))
+		if OS.is_debug_build():
+			for argument: String in MobileDev.args():
+				if argument.begins_with("--video=") and PRESETS.has(argument.trim_prefix("--video=")):
+					for key: String in PRESETS[argument.trim_prefix("--video=")]:
+						UserSettings._file().set_value("video", key, PRESETS[argument.trim_prefix("--video=")][key])
+			Callable(PerformanceRecorder, "attach").call_deferred(tree)
+			DevProbe.attach(tree)
 	apply_render()
 
 
@@ -189,6 +200,8 @@ static func _touch(node: Node) -> void :
 
 static func _apply_viewport(viewport: Viewport, root: bool) -> void :
 	var aa: = String(value("antialias"))
+	if OS.has_feature("mobile") and aa == "taa":
+		aa = "fxaa"
 	viewport.msaa_3d = {"msaa2": Viewport.MSAA_2X, "msaa4": Viewport.MSAA_4X}.get(aa, Viewport.MSAA_DISABLED)
 	viewport.screen_space_aa = Viewport.SCREEN_SPACE_AA_FXAA if aa == "fxaa" else Viewport.SCREEN_SPACE_AA_DISABLED
 	viewport.use_taa = aa == "taa"
@@ -199,6 +212,10 @@ static func _apply_viewport(viewport: Viewport, root: bool) -> void :
 
 	var scale: = clampf(float(value("render_scale")), 0.5, 1.0)
 	viewport.scaling_3d_scale = scale
+
+	if OS.has_feature("mobile"):
+		viewport.scaling_3d_mode = Viewport.SCALING_3D_MODE_BILINEAR
+		return
 	match String(value("upscaler")):
 		"fsr2":
 			viewport.scaling_3d_mode = Viewport.SCALING_3D_MODE_FSR2

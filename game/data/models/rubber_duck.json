@@ -2,7 +2,7 @@
   "_comment": "pato de borracha: medidas aproximadas de objeto comum, em metros.",
   "anchor": [
     0,
-    0.04,
+    0.032,
     0
   ],
   "units": "meters",
@@ -13,65 +13,141 @@
       "radius": 0.5,
       "pos": [
         0,
-        0.028,
-        0
+        0.024,
+        0.005
       ],
-      "color": "#eec945",
+      "color": "#f5d232",
       "tag": "body",
-      "_stretch": [
+      "scale": [
         0.07,
-        0.052000000000000005,
+        0.048,
         0.1
       ]
     },
     {
-      "shape": "sphere",
-      "radius": 0.024,
+      "shape": "cone",
+      "radius": 0.014,
+      "height": 0.0231,
       "pos": [
-        0,
-        0.0592,
-        -0.025
+        0.0,
+        0.0408,
+        0.0475
       ],
-      "color": "#eec945",
-      "tag": "head"
+      "color": "#f5d232",
+      "rot": [
+        40.44,
+        0.0,
+        0
+      ],
+      "tag": "tail"
     },
     {
-      "shape": "wedge",
-      "size": [
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.0608,
+        -0.02
+      ],
+      "color": "#f5d232",
+      "tag": "head",
+      "scale": [
+        0.049,
+        0.0416,
+        0.055
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.056,
+        -0.048
+      ],
+      "color": "#f0882a",
+      "tag": "beak",
+      "scale": [
         0.0315,
-        0.0096,
-        0.035
-      ],
-      "pos": [
-        0,
-        0.0544,
-        -0.053
-      ],
-      "color": "#db8a34",
-      "point": 0.5,
-      "tag": "beak"
+        0.008,
+        0.03
+      ]
     },
     {
       "shape": "sphere",
-      "radius": 0.004,
+      "radius": 0.0056,
       "pos": [
         -0.014,
-        0.068,
-        -0.036
+        0.0688,
+        -0.038
       ],
-      "color": "#2a2d32",
+      "color": "#f2efe8",
       "tag": "eye"
     },
     {
       "shape": "sphere",
-      "radius": 0.004,
+      "radius": 0.0035,
+      "pos": [
+        -0.0148,
+        0.0688,
+        -0.0405
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        -0.0308,
+        0.0256,
+        0.01
+      ],
+      "color": "#e1c12e",
+      "tag": "wing",
+      "scale": [
+        0.0098,
+        0.0176,
+        0.04
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0056,
       "pos": [
         0.014,
-        0.068,
-        -0.036
+        0.0688,
+        -0.038
       ],
-      "color": "#2a2d32",
+      "color": "#f2efe8",
       "tag": "eye"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0035,
+      "pos": [
+        0.0148,
+        0.0688,
+        -0.0405
+      ],
+      "color": "#151319",
+      "tag": "eye"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0.0308,
+        0.0256,
+        0.01
+      ],
+      "color": "#e1c12e",
+      "tag": "wing",
+      "scale": [
+        0.0098,
+        0.0176,
+        0.04
+      ]
     }
   ]
 }

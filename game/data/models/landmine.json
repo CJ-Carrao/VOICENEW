@@ -11,26 +11,128 @@
     {
       "shape": "cylinder",
       "radius": 0.15,
-      "height": 0.056,
+      "height": 0.044,
       "pos": [
         0,
-        0.028,
+        0.024,
         0
       ],
-      "color": "#65704b",
+      "color": "#5b6b3a",
+      "top_radius": 0.132,
       "tag": "body"
     },
     {
       "shape": "cylinder",
-      "radius": 0.09,
+      "radius": 0.06,
       "height": 0.024,
       "pos": [
         0,
-        0.068,
+        0.056,
         0
       ],
-      "color": "#2a2d32",
+      "color": "#4d5b31",
       "tag": "trigger"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.03,
+      "height": 0.012,
+      "pos": [
+        0,
+        0.072,
+        0
+      ],
+      "color": "#2a2f20",
+      "tag": "trigger"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.008,
+      "height": 0.01,
+      "pos": [
+        0.0,
+        0.0464,
+        0.108
+      ],
+      "color": "#2a2f20",
+      "tag": "bolt"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.008,
+      "height": 0.01,
+      "pos": [
+        0.0935,
+        0.0464,
+        0.054
+      ],
+      "color": "#2a2f20",
+      "tag": "bolt"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.008,
+      "height": 0.01,
+      "pos": [
+        0.0935,
+        0.0464,
+        -0.054
+      ],
+      "color": "#2a2f20",
+      "tag": "bolt"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.008,
+      "height": 0.01,
+      "pos": [
+        0.0,
+        0.0464,
+        -0.108
+      ],
+      "color": "#2a2f20",
+      "tag": "bolt"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.008,
+      "height": 0.01,
+      "pos": [
+        -0.0935,
+        0.0464,
+        -0.054
+      ],
+      "color": "#2a2f20",
+      "tag": "bolt"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.008,
+      "height": 0.01,
+      "pos": [
+        -0.0935,
+        0.0464,
+        0.054
+      ],
+      "color": "#2a2f20",
+      "tag": "bolt"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.15,
+      "inner_radius": 0.132,
+      "pos": [
+        0,
+        0.024,
+        0
+      ],
+      "color": "#49562e",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "rim"
     }
   ]
 }

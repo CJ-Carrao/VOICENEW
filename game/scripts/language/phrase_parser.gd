@@ -37,6 +37,8 @@ static func parse(text: String, lex: LexiconData) -> Dictionary:
 	var tactics = load("res://scripts/language/tactical_language.gd")
 	var command: Dictionary = tactics.command(prepared,lex)
 	if not command.is_empty(): return {"ok":true,"text":text,"normalized":prepared,"recipe":command,"pretty":"ORDEM PARA "+lex.thing_name(command.tactics.actor),"unknown_words":[],"ignored_words":[],"corrections":[],"notes":[],"warnings":[],"lexicon_version":lex.version}
+	var selective: Dictionary = tactics.species_bomb(prepared,lex)
+	if not selective.is_empty(): return {"ok":true,"text":text,"normalized":prepared,"recipe":selective,"pretty":Recipe.pretty(selective,lex),"unknown_words":[],"ignored_words":[],"corrections":[],"notes":[],"warnings":[],"lexicon_version":lex.version}
 	var transformation: Dictionary = tactics.creation(prepared,lex)
 	var result := PhraseParser.new()._run(String(transformation.get("base",prepared)), lex)
 	if result.ok and not transformation.is_empty() and lex.category_of(String(result.recipe.get("thing",""))) == "creature":
@@ -115,7 +117,8 @@ func _parse_sn(depth: int, role: String, relative: bool = true) -> Dictionary:
 	while _pos < _tokens.size():
 		var t: = _peek()
 
-		if _has(t, "thing") and not (_has(t, "num") and _starts_sn(_pos + 1)):
+
+		if _has(t, "thing") and not ((_has(t, "num") or _has(t, "mod")) and _starts_sn(_pos + 1)):
 			break
 		if _has(t, "filler"):
 			_pos += 1
@@ -124,6 +127,8 @@ func _parse_sn(depth: int, role: String, relative: bool = true) -> Dictionary:
 			_use()
 		elif _has(t, "mod"):
 			mods_before.append(_sense_id(t, "mod"))
+			_use()
+		elif _is_gram(t, "and") and not mods_before.is_empty() and _has(_at(_pos + 1), "mod"):
 			_use()
 		else:
 			break
@@ -176,6 +181,8 @@ func _parse_complements(node: Dictionary, deferred: Array[String], depth: int) -
 				continue
 			if _try_rounds_count(node, _pos):
 				continue
+			if _try_shoots_of(node, depth):
+				continue
 			var next: = _at(_pos + 1)
 			if _has(next, "part") and _has(_at(_pos + 2), "mod"):
 
@@ -195,7 +202,8 @@ func _parse_complements(node: Dictionary, deferred: Array[String], depth: int) -
 					continue
 
 
-				var holds_count: bool = _has(_peek(), "num") and bool(_lex.thing_def(String(node["thing"])).get("holds", false))
+
+				var holds_count: bool = _has(_peek(), "num") and not bool(_sense(_peek(), "num").get("article", false)) and bool(_lex.thing_def(String(node["thing"])).get("holds", false))
 				if holds_count and _starts_sn(_pos) and depth + 1 < _max_depth:
 					(node["mods"] as Dictionary)["ammo"] = _parse_sn(depth + 1, "projectile")
 					continue
@@ -231,9 +239,20 @@ func _try_part(node: Dictionary, start: int) -> bool:
 	var i: = start
 	if _is_gram(_at(i), "of"):
 		i += 1
+
+
+	if _lex.part_after_thing:
+		while _has(_at(i), "filler") and not (_has(_at(i), "num") and _has(_at(i + 1), "part")):
+			i += 1
 	var number: = _at(i)
 	var has_number: = _has(number, "num") and _has(_at(i + 1), "part")
 	if has_number:
+		i += 1
+
+	var before: = ""
+	if _lex.part_after_thing and not has_number and _has(_at(i), "thing") and _has(_at(i + 1), "part")\
+	and not String(_lex.part_def(_sense_id(_at(i + 1), "part")).get("section", "")).is_empty():
+		before = _resolve_thing(_sense(_at(i), "thing"), "head")
 		i += 1
 	var part: = _at(i)
 	if not _has(part, "part"):
@@ -241,14 +260,13 @@ func _try_part(node: Dictionary, start: int) -> bool:
 	var def: = _lex.part_def(_sense_id(part, "part"))
 	var section: = String(def.get("section", ""))
 	var end: = i + 1
-	var source: = ""
-	if not section.is_empty() and _is_gram(_at(i + 1), "of"):
-		var donor_pos := i + 2
-		while (_has(_at(donor_pos), "filler") or _has(_at(donor_pos), "num")) and not _has(_at(donor_pos), "thing"):
-			donor_pos += 1
-		if _has(_at(donor_pos), "thing"):
-			source = _resolve_thing(_sense(_at(donor_pos), "thing"), "head")
-			end = donor_pos + 1
+	var source: = before
+	var of_thing: = i + 2
+	while _lex.part_after_thing and (_has(_at(of_thing), "filler") or _has(_at(of_thing), "num")) and not _has(_at(of_thing), "thing"):
+		of_thing += 1
+	if source.is_empty() and not section.is_empty() and _is_gram(_at(i + 1), "of") and _has(_at(of_thing), "thing"):
+		source = _resolve_thing(_sense(_at(of_thing), "thing"), "head")
+		end = of_thing + 1
 	if not has_number and source.is_empty():
 		return false
 	var mods: Dictionary = node["mods"]
@@ -584,6 +602,33 @@ func _make_trigger(id: String, overrides: Dictionary) -> Dictionary:
 
 
 
+
+func _try_shoots_of(node: Dictionary, depth: int) -> bool:
+	if not _shoots_projectiles(node) or not _starts_sn(_pos + 1) or depth + 1 >= _max_depth:
+		return false
+	var saved_pos: = _pos
+	var saved_used: = _used.duplicate()
+	var saved_warnings: = _warnings.duplicate()
+	_use()
+	var shot: = _parse_sn(depth + 1, "projectile")
+	if _lex.category_of(String(shot.get("thing", ""))) != "projectile":
+		_pos = saved_pos
+		_used = saved_used
+		_warnings = saved_warnings
+		return false
+
+	var own: = String(_lex.thing_def(_lex.behavior_source(node)).get("projectile", ""))
+	if String(shot["thing"]) == own and (shot["mods"] as Dictionary).is_empty() and (shot["behaviors"] as Array).is_empty():
+		return true
+	var rule: = _default_rule("shoot", node)
+	var action: Dictionary = (rule["do"] as Dictionary).duplicate(true)
+	action["type"] = "shoot"
+	action["arg"] = shot
+	(node["behaviors"] as Array).append({"when": rule["when"], "do": action})
+	return true
+
+
+
 func _default_rule(action_id: String, owner: Dictionary) -> Dictionary:
 	var category: = _lex.category_of(String(owner["thing"]))
 	for rule: Dictionary in _lex.default_trigger_rules:
@@ -691,7 +736,9 @@ func _starts_sn(index: int) -> bool:
 		var t: = _tokens[i]
 		if _has(t, "thing"):
 			return true
-		if not (_has(t, "filler") or _has(t, "num") or _has(t, "mod")):
+
+		var joins_mods: = _is_gram(t, "and") and i > index and _has(_tokens[i - 1], "mod") and _has(_at(i + 1), "mod")
+		if not (_has(t, "filler") or _has(t, "num") or _has(t, "mod") or joins_mods):
 			return false
 		i += 1
 	return false

@@ -539,6 +539,21 @@
     "impact": "destroy",
     "damage_type": "laser"
   },
+  "portal": {
+    "category": "projectile",
+    "movement": "straight",
+    "impact": "destroy",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_hit"
+        },
+        "do": {
+          "type": "portal"
+        }
+      }
+    ]
+  },
   "missile": {
     "category": "projectile",
     "movement": "straight",
@@ -562,7 +577,7 @@
       {
         "when": {
           "type": "after",
-          "s": 3
+          "s": 3.0
         },
         "do": {
           "type": "explode"
@@ -571,6 +586,66 @@
     ]
   },
   "bomb": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_hit"
+        },
+        "do": {
+          "type": "explode"
+        }
+      }
+    ]
+  },
+  "atomic_bomb": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_hit"
+        },
+        "do": {
+          "type": "explode"
+        }
+      }
+    ]
+  },
+  "little_boy": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_hit"
+        },
+        "do": {
+          "type": "explode"
+        }
+      }
+    ]
+  },
+  "fat_man": {
+    "category": "projectile",
+    "movement": "ballistic",
+    "impact": "stop",
+    "behaviors": [
+      {
+        "when": {
+          "type": "on_hit"
+        },
+        "do": {
+          "type": "explode"
+        }
+      }
+    ]
+  },
+  "tsar_bomba": {
     "category": "projectile",
     "movement": "ballistic",
     "impact": "stop",
@@ -698,17 +773,6 @@
     "movement": "chase_enemy",
     "impact": "stop",
     "builder": "web"
-  },
-  "ant": {
-    "category": "creature",
-    "movement": "chase_enemy",
-    "impact": "stop",
-    "voxel_motion": true,
-    "ecology_tags": [
-      "ant",
-      "insect"
-    ],
-    "builder": "tunnel"
   },
   "trex": {
     "category": "creature",
@@ -1701,6 +1765,17 @@
     "movement": "static",
     "impact": "stop",
     "enclosure": true
+  },
+  "ant": {
+    "category": "creature",
+    "movement": "chase_enemy",
+    "impact": "stop",
+    "voxel_motion": true,
+    "ecology_tags": [
+      "ant",
+      "insect"
+    ],
+    "builder": "tunnel"
   },
   "duck": {
     "category": "creature",

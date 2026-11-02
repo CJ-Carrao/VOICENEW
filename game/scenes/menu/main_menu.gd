@@ -45,6 +45,11 @@ var _hover_at: float = -100.0
 var _motion: = ""
 var _motion_age: = 0.0
 var _motion_start: Dictionary = {}
+var _scan_lines: = PackedVector2Array()
+var _scan_k: = -1.0
+
+var _quit_as: = "quit"
+var _touch: = OS.has_feature("mobile") or MobileDev.args().has("--mobile")
 
 
 func setup(config: Dictionary, colors: Dictionary, font_path: String) -> void :
@@ -58,9 +63,12 @@ func setup(config: Dictionary, colors: Dictionary, font_path: String) -> void :
 	_font = _variation(base, 700, 0)
 	_font_small = _variation(base, 700, 2)
 	var labels: Dictionary = cfg["labels"]
+
+	if OS.has_feature("mobile") or MobileDev.args().has("--mobile"):
+		_quit_as = "howto"
 	for id in ORDER:
 
-		_items[id] = {"label": String(labels[id]), "sel": 0.0, "vel": 0.0, "rect": Rect2()}
+		_items[id] = {"label": String(labels[_quit_as if id == "quit" else id]), "sel": 0.0, "vel": 0.0, "rect": Rect2()}
 	set_anchors_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 
@@ -233,10 +241,12 @@ func _draw() -> void :
 
 func _draw_build_label(k: float) -> void :
 	var label: = String(cfg.get("build_label", "Build H-1"))
-	var font_size: = maxi(12, roundi(15.0 * k))
+
+	var font_size: = maxi(12, roundi((22.0 if _touch else 15.0) * k))
 	var width: = _font.get_string_size(label, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).x
 	var view: = get_viewport_rect().size
-	var color: = Color(String(_colors["text_dim"]))
+
+	var color: = Color(0.22, 0.16, 0.04, 0.8)
 	color.a *= clampf(_arrive("voice"), 0.0, 1.0)
 	draw_string(_font, Vector2(view.x - 61.0 * k - width, view.y - 14.0 * k), label, 
 		HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, color)
@@ -259,18 +269,24 @@ func _draw_panel(k: float) -> void :
 		colors.append(top.lerp(bottom, clampf(p.y / h, 0.0, 1.0)))
 	draw_polygon(outline, colors)
 
-	var scan_step: = float(_polish["scan_gap_px"]) * k
-	var scan_y: = scan_step
-	while scan_y < h:
-		var edge_x: = 0.0
-		for j in range(1, outline.size() - 1):
-			var a: = outline[j]
-			var b: = outline[j + 1]
-			if b.y > a.y and scan_y >= a.y and scan_y < b.y:
-				edge_x = lerpf(a.x, b.x, (scan_y - a.y) / (b.y - a.y))
-		if edge_x > 0.0:
-			draw_line(Vector2(0, scan_y), Vector2(edge_x, scan_y), Color(1, 1, 1, float(_polish["grain_alpha"])), 1.0)
-		scan_y += scan_step
+	if not is_equal_approx(_scan_k, k):
+		_scan_k = k
+		_scan_lines.clear()
+		var scan_step: = float(_polish["scan_gap_px"]) * k
+		var scan_y: = scan_step
+		while scan_y < h and scan_step > 0.25:
+			var edge_x: = 0.0
+			for j in range(1, outline.size() - 1):
+				var a: = outline[j]
+				var b: = outline[j + 1]
+				if b.y > a.y and scan_y >= a.y and scan_y < b.y:
+					edge_x = lerpf(a.x, b.x, (scan_y - a.y) / (b.y - a.y))
+			if edge_x > 0.0:
+				_scan_lines.append(Vector2(0, scan_y))
+				_scan_lines.append(Vector2(edge_x, scan_y))
+			scan_y += scan_step
+	if _scan_lines.size() >= 2:
+		draw_multiline(_scan_lines, Color(1, 1, 1, float(_polish["grain_alpha"])), 1.0)
 
 	for plate: Array in _layout.get("plates", []):
 		draw_colored_polygon(_pts(plate, k), Color(String(_colors["plate"])))
@@ -369,7 +385,7 @@ func _draw_buttons(k: float) -> void :
 			var font: = _font_big if id != "quit" else _font
 			var text_color: = Color(String(_colors["text"])).lerp(Color(String(_colors["text_dim"])), 0.0 if id != "quit" else 1.0 - clampf(sel, 0.0, 1.0))
 			var baseline: = rect.position.y + rect.size.y * 0.5 + text_size * 0.36
-			draw_string(font, Vector2(rect.position.x + float(spec["pad"]) * k, baseline), String(item["label"]), 
+			draw_string(font, Vector2(rect.position.x + float(spec["pad"]) * k, baseline), tr(String(item["label"])), 
 				HORIZONTAL_ALIGNMENT_LEFT, -1, int(text_size), Color(text_color, clampf(arrive * 1.5, 0.0, 1.0)))
 		y += height + float(spec["gap"]) * k
 
@@ -405,7 +421,7 @@ func _draw_voice(k: float) -> void :
 	draw_circle(dot_at, dot_r, accent)
 	var text_size: = float(spec["text"]) * k
 	draw_string(_font_small, Vector2(draw_rect_at.position.x + float(spec["text_x"]) * k, draw_rect_at.get_center().y + text_size * 0.36), 
-		String(item["label"]), HORIZONTAL_ALIGNMENT_LEFT, -1, int(text_size), Color(String(_colors["text"]), clampf(arrive * 1.5, 0.0, 1.0)))
+		tr(String(item["label"])), HORIZONTAL_ALIGNMENT_LEFT, -1, int(text_size), Color(String(_colors["text"]), clampf(arrive * 1.5, 0.0, 1.0)))
 
 
 func _press_amount(id: String) -> float:
@@ -420,7 +436,7 @@ func _press_amount(id: String) -> float:
 func _unhandled_input(event: InputEvent) -> void :
 	if not ready_for_input or not visible:
 		return
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and not _touch:
 		var hit: = _hit((event as InputEventMouseMotion).position)
 		if hit >= 0 and hit != _selected:
 			_select(hit)
@@ -429,8 +445,9 @@ func _unhandled_input(event: InputEvent) -> void :
 	and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT:
 		var hit: = _hit((event as InputEventMouseButton).position)
 		if hit >= 0:
-			_select(hit)
-			_activate()
+
+			if not _touch: _select(hit)
+			_activate(hit)
 			get_viewport().set_input_as_handled()
 	elif event.is_action_pressed("ui_down") or event.is_action_pressed("move_back"):
 		_select((_selected + 1) % ORDER.size())
@@ -453,12 +470,13 @@ func _hit(point: Vector2) -> int:
 	return -1
 
 
-func _activate() -> void :
-	if _selected < 0 or not ready_for_input or not visible or not _motion.is_empty():
+func _activate(index: int = -1) -> void :
+	if index < 0: index = _selected
+	if index < 0 or not ready_for_input or not visible or not _motion.is_empty():
 		return
-	var id: = ORDER[_selected]
+	var id: = ORDER[index]
 	_press = {"id": id, "at": _t}
-	chosen.emit(id)
+	chosen.emit(_quit_as if id == "quit" else id)
 
 
 func _select(index: int) -> void :

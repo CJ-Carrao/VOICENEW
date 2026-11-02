@@ -46,10 +46,10 @@ func _on_heard(samples: PackedFloat32Array) -> void :
 
 func _prompt() -> void :
 	if _samples.size() >= _phrases.size():
-		prompt_changed.emit("GRAVAÇÃO PRONTA: %d frases em voice_dataset/%s\n(Backspace refaz a última)" % [_samples.size(), folder])
+		prompt_changed.emit(tr("GRAVAÇÃO PRONTA: %d frases em voice_dataset/%s\n(Backspace refaz a última)") % [_samples.size(), folder])
 		print("[Voz] gravação pronta: ", ProjectSettings.globalize_path(_dir()))
 		return
-	prompt_changed.emit("GRAVANDO SUA VOZ %d/%d · segure %s e diga:\n“%s”" % [_samples.size() + 1, _phrases.size(), 
+	prompt_changed.emit(tr("GRAVANDO SUA VOZ %d/%d · segure %s e diga:\n“%s”") % [_samples.size() + 1, _phrases.size(), 
 		UserSettings.talk_key_name(), _phrases[_samples.size()]])
 
 

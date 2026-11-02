@@ -1,274 +1,9 @@
 {
-  "_comment": "Arte original do Pacote Caos: silhueta em blocos, sem superficies arredondadas.",
-  "units": "meters",
+  "_comment": "Variante Lab do arsenal H-4 sword; comportamento preservado.",
   "anchor": [
     0,
-    -0.025,
-    0.06
-  ],
-  "pieces": [
-    {
-      "shape": "box",
-      "size": [
-        0.075,
-        0.14,
-        0.075
-      ],
-      "pos": [
-        0,
-        -0.05,
-        0.075
-      ],
-      "color": "#3a4047",
-      "tag": "handle"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.09,
-        0.045,
-        0.07
-      ],
-      "pos": [
-        0,
-        -0.13,
-        0.075
-      ],
-      "color": "#d4864d",
-      "tag": "pommel"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.19,
-        0.045,
-        0.065
-      ],
-      "pos": [
-        0,
-        0,
-        -0.025
-      ],
-      "color": "#6c7580",
-      "tag": "guard"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.07,
-        0.035,
-        0.065
-      ],
-      "pos": [
-        0,
-        0,
-        -0.09
-      ],
-      "color": "#d1d8d9",
-      "tag": "blade"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.025,
-        0.042,
-        0.06
-      ],
-      "pos": [
-        0.034,
-        0,
-        -0.09
-      ],
-      "color": "#d4864d",
-      "tag": "blade",
-      "glow": 1.1
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.064,
-        0.035,
-        0.065
-      ],
-      "pos": [
-        0,
-        0,
-        -0.15
-      ],
-      "color": "#d1d8d9",
-      "tag": "blade"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.025,
-        0.042,
-        0.06
-      ],
-      "pos": [
-        0.031000000000000003,
-        0,
-        -0.15
-      ],
-      "color": "#d4864d",
-      "tag": "blade",
-      "glow": 1.1
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.05800000000000001,
-        0.035,
-        0.065
-      ],
-      "pos": [
-        0,
-        0,
-        -0.21
-      ],
-      "color": "#d1d8d9",
-      "tag": "blade"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.025,
-        0.042,
-        0.06
-      ],
-      "pos": [
-        0.028000000000000004,
-        0,
-        -0.21
-      ],
-      "color": "#d4864d",
-      "tag": "blade",
-      "glow": 1.1
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.052000000000000005,
-        0.035,
-        0.065
-      ],
-      "pos": [
-        0,
-        0,
-        -0.27
-      ],
-      "color": "#d1d8d9",
-      "tag": "blade"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.025,
-        0.042,
-        0.06
-      ],
-      "pos": [
-        0.025,
-        0,
-        -0.27
-      ],
-      "color": "#d4864d",
-      "tag": "blade",
-      "glow": 1.1
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.046000000000000006,
-        0.035,
-        0.065
-      ],
-      "pos": [
-        0,
-        0,
-        -0.32999999999999996
-      ],
-      "color": "#d1d8d9",
-      "tag": "blade"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.025,
-        0.042,
-        0.06
-      ],
-      "pos": [
-        0.022000000000000002,
-        0,
-        -0.32999999999999996
-      ],
-      "color": "#d4864d",
-      "tag": "blade",
-      "glow": 1.1
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.04000000000000001,
-        0.035,
-        0.065
-      ],
-      "pos": [
-        0,
-        0,
-        -0.39
-      ],
-      "color": "#d1d8d9",
-      "tag": "blade"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.025,
-        0.042,
-        0.06
-      ],
-      "pos": [
-        0.019000000000000003,
-        0,
-        -0.39
-      ],
-      "color": "#d4864d",
-      "tag": "blade",
-      "glow": 1.1
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.034,
-        0.035,
-        0.065
-      ],
-      "pos": [
-        0,
-        0,
-        -0.44999999999999996
-      ],
-      "color": "#d1d8d9",
-      "tag": "blade"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.025,
-        0.042,
-        0.06
-      ],
-      "pos": [
-        0.016,
-        0,
-        -0.44999999999999996
-      ],
-      "color": "#d4864d",
-      "tag": "blade",
-      "glow": 1.1
-    }
+    0,
+    0.1
   ],
   "joints": {
     "trigger": [
@@ -279,7 +14,284 @@
     "muzzle": [
       0,
       0,
-      -0.3
+      -0.73
     ]
-  }
+  },
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.0145,
+      "height": 0.2,
+      "pos": [
+        0,
+        0,
+        0.105
+      ],
+      "color": "#4a2e1c",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "handle",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0155,
+      "height": 0.008,
+      "pos": [
+        0,
+        0,
+        0.02
+      ],
+      "color": "#5b3a24",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "handle",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0155,
+      "height": 0.008,
+      "pos": [
+        0,
+        0,
+        0.105
+      ],
+      "color": "#5b3a24",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "handle",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0155,
+      "height": 0.008,
+      "pos": [
+        0,
+        0,
+        0.19
+      ],
+      "color": "#5b3a24",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "handle",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.03,
+      "height": 0.022,
+      "pos": [
+        0,
+        0,
+        0.222
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "pommel",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.011,
+      "height": 0.012,
+      "pos": [
+        0,
+        0,
+        0.24
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "pommel",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.22,
+        0.018,
+        0.018
+      ],
+      "pos": [
+        0,
+        0,
+        -0.004
+      ],
+      "color": "#2a2d32",
+      "tag": "guard",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.016,
+        0.024,
+        0.022
+      ],
+      "pos": [
+        -0.112,
+        0,
+        -0.004
+      ],
+      "color": "#2a2d32",
+      "tag": "guard",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.016,
+        0.024,
+        0.022
+      ],
+      "pos": [
+        0.112,
+        0,
+        -0.004
+      ],
+      "color": "#2a2d32",
+      "tag": "guard",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.006,
+        0.05,
+        0.239
+      ],
+      "pos": [
+        0,
+        0,
+        -0.1315
+      ],
+      "color": "#e88845",
+      "tag": "blade",
+      "finish": "metal",
+      "glow": 0.08
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0066,
+        0.011,
+        0.217
+      ],
+      "pos": [
+        0,
+        0,
+        -0.1315
+      ],
+      "color": "#e88845",
+      "tag": "blade",
+      "finish": "metal",
+      "glow": 0.08
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.006,
+        0.043,
+        0.242
+      ],
+      "pos": [
+        0,
+        0,
+        -0.37
+      ],
+      "color": "#e88845",
+      "tag": "blade",
+      "finish": "metal",
+      "glow": 0.08
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0066,
+        0.011,
+        0.22
+      ],
+      "pos": [
+        0,
+        0,
+        -0.37
+      ],
+      "color": "#e88845",
+      "tag": "blade",
+      "finish": "metal",
+      "glow": 0.08
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.006,
+        0.036,
+        0.242
+      ],
+      "pos": [
+        0,
+        0,
+        -0.61
+      ],
+      "color": "#e88845",
+      "tag": "blade",
+      "finish": "metal",
+      "glow": 0.08
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0055,
+        0.032,
+        0.1
+      ],
+      "pos": [
+        0,
+        0,
+        -0.78
+      ],
+      "color": "#b9c0c8",
+      "tag": "tip",
+      "finish": "metal"
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        0.0055,
+        0.032,
+        0.12
+      ],
+      "pos": [
+        0,
+        0,
+        -0.89
+      ],
+      "color": "#e4e8ee",
+      "point": 0.5,
+      "tag": "tip",
+      "finish": "metal"
+    }
+  ],
+  "lab_h4_base": "sword"
 }

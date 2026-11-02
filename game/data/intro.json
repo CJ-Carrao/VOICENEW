@@ -1,6 +1,6 @@
 {
   "_comment": "Intro do jogo (DESIGN 19, scenes/intro/). Tempos em segundos da música (o relógio é a posição da música), escolhidos pelos ataques dela: 12,82, 15,80 e 18,78 (a bateria entra), batida de 0,594 s. Tamanhos na tela base de 1280 × 720.",
-  "music": "res://assets/intro/music/time_to_pretend.ogg",
+  "music": "res://assets/intro/music/main_menu.ogg",
   "music_db": -1.0,
   "font": "res://assets/fonts/oxanium/Oxanium-Variable.ttf",
   "colors": { "text": "#F5F1E8", "muted": "#8f8a80", "accent": "#FF791C", "matter": "#ffb347" },
@@ -36,7 +36,7 @@
     "logo": "res://assets/intro/logos/caixa_preta_engine.svg",
     "height": 400,
     "threshold": 0.4,
-    "start_s": 12.82,
+    "start_s": 13.04,
     "launch_s": 0.8,
     "flight_s": [0.28, 0.5],
     "final_pause_s": 0.16,
@@ -50,7 +50,7 @@
     "logo": "res://assets/intro/logos/somyst_game_studio.svg",
     "height": 430,
     "threshold": 0.1,
-    "start_s": 15.8,
+    "start_s": 16.04,
     "wave_s": 0.5,
     "flight_s": [0.45, 0.75],
     "crisp_after_s": 0.25,
@@ -61,26 +61,45 @@
     "logo": "res://assets/intro/logos/lavoice.svg",
     "width": 920,
     "threshold": 0.4,
-    "start_s": 18.78,
+    "start_s": 19.04,
     "scatter_s": 0.75,
     "orbit": { "rx": [330, 560], "squash": 0.36, "speed": 2.1 },
     "letters": ["L", "A", "V", "O", "I", "C", "E"],
-    "first_letter_s": 19.96,
-    "letter_step_s": 0.594,
+    "first_letter_s": 20.04,
+    "letter_step_s": 0.5,
     "dive_s": 0.42,
-    "ball": { "above": 150, "radius": 30, "speed": 3.2, "rise": 46, "rise_at_s": 25.45 },
-    "slam_s": 25.9,
-    "shine_at_s": 26.3,
-    "shine_s": 0.9
+    "ball": { "above": 150, "radius": 30, "speed": 3.2, "rise": 46, "rise_at_s": 25.54 },
+    "slam_s": 26.04,
+    "shine_at_s": 26.54,
+    "shine_s": 0.9,
+    "mobile_tag": {
+      "text": "MOBILE",
+      "mask": "res://assets/intro/logos/mobile_tag.png",
+      "first_letter_s": 24.04,
+      "letter_step_s": 0.125,
+      "font_size": 36,
+      "weight": 700,
+      "spacing": 8,
+      "letter_gap_px": 12,
+      "gap_px": 18
+    }
   },
   "menu": {
     "background": {
-      "stream": "res://assets/menu/metropole.ogv",
-      "width": 1920,
-      "height": 1080,
-      "fps": 24,
-      "duration_s": 80.0,
-      "volume_db": -6.0
+      "_comment": "Fundo do menu e das telas por cima dele (lobby, pintura, opções): o amarelo da tela de carregamento. No celular, só no menu principal: o letreiro de neon (sign) e a cabeça do robô no chão (head). delay_s: segundos depois de o menu começar a montar (times.start_s). sign: lines (texto e cor de cada linha), flicker [linha, letra] que falha em rajadas, dead [linha, letra, bloco] queimados, power_on_s (quando o neon liga), surge_period_s (queda de energia geral). head: expressões sorteadas a cada change_min_s..change_max_s.",
+      "color": "#ffc928",
+      "edge_darken": 0.22,
+      "sign": {
+        "delay_s": 1.8, "top_frac": 0.1, "width_frac": 0.8, "aspect": 0.42, "seed": 7,
+        "lines": [{ "text": "TESTE", "color": "#fff1dc" }, { "text": "FECHADO", "color": "#ff6a1a" }],
+        "flicker": [[1, 2]], "dead": [[0, 3, 5], [0, 3, 6], [1, 5, 4], [1, 0, 9]],
+        "power_on_s": 1.15, "flicker_period_s": 4.3, "surge_period_s": 11.0, "core_white": 0.3, "glow_cells": 4.0, "glow_alpha": 0.42,
+        "plate": "#16171b", "plate_edge": "#30313a"
+      },
+      "head": {
+        "delay_s": 3.4, "fov": 28.0, "rest_tilt_deg": 14.0, "change_min_s": 2.5, "change_max_s": 5.0, "seed": 41,
+        "expressions": ["Happy", "VeryHappy", "Confused", "Sleepy", "Bored", "Surprised", "Dizzy", "Thinking", "WinkLeft", "WinkRight", "Sad", "Determined", "Neutral"]
+      }
     },
     "polish": {
       "hover_glint_s": 0.7,
@@ -102,14 +121,14 @@
     "_comment": "Menu principal (DESIGN 19.1, scenes/menu/main_menu.gd). Monta na virada da bateria (27,54 → 28,74) e acende no ápice (29,04): cada coisa chega numa batida (times.lands). A logo do LAVOICE voa do centro pro lugar dela entre logo_from_s e lands.logo. layout: medidas no papel de referência de 941 de altura (escala pela altura da tela). A música repete desde 0 s em todas as voltas, inclusive a primeira; a timeline visual continua crescente e não remonta a intro.",
     "logo_from_s": 27.54,
     "music_loop_s": 0.0,
-    "build_label": "Build H-2",
-    "labels": { "create": "CRIAR", "customize": "PERSONALIZAR", "practice": "TREINO", "settings": "CONFIGURAÇÕES", "quit": "SAIR", "voice": "TESTAR VOZ" },
+    "build_label": "Build H-4",
+    "labels": { "create": "CRIAR", "customize": "PERSONALIZAR", "practice": "TREINO", "settings": "CONFIGURAÇÕES", "quit": "SAIR", "howto": "COMO JOGAR", "voice": "TESTAR VOZ" },
     "times": {
       "start_s": 27.4,
       "lock_s": 29.04,
       "fly_s": 0.22,
-      "beat_s": 0.594,
-      "lands": { "panel": 27.68, "create": 28.0, "customize": 28.14, "practice": 28.28, "logo": 28.44, "settings": 28.58, "quit": 28.74, "voice": 28.88, "ignite": 29.04 }
+      "beat_s": 0.5,
+      "lands": { "panel": 27.665, "create": 27.915, "customize": 28.04, "practice": 28.165, "logo": 28.415, "settings": 28.54, "quit": 28.665, "voice": 28.79, "ignite": 29.04 }
     },
     "colors": {
       "panel_top": "#2a2a2d", "panel_bottom": "#19191b", "plate": "#ffffff0b", "panel_edge": "#3b3b40",
@@ -134,7 +153,7 @@
       "voice": { "rect": [52, 815, 340, 877], "cut": 14, "dot_r": 12, "dot_x": 37, "text_x": 80, "text": 22 }
     }
   },
-  "end": { "fade_s": 0.7, "skip_to_s": 27.38, "skip_hint_s": 2.0 },
+  "end": { "fade_s": 0.7, "skip_to_s": 27.38, "skip_hint_s": 2.0, "mobile_hold_s": 1.0 },
   "cinematic": {
     "mix_gain_db": -3.0,
     "quote_matter": {
@@ -143,7 +162,7 @@
       "mask_scale": 3,
       "mask_padding_px": 8,
       "mask_threshold": 0.08,
-      "start_s": 12.32,
+      "start_s": 12.54,
       "fly_s": 0.5,
       "text_fade_s": 0.12,
       "scatter_s": 0.1,

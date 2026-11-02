@@ -34,6 +34,10 @@
     "ui/confirm": {"db": -14, "min_interval_ms": 60},
     "ui/hover": {"db": -10, "pitch_var": 0.03, "min_interval_ms": 60},
     "ui/navigate": {"db": -12, "pitch_var": 0.02, "min_interval_ms": 40},
-    "music/match_loop": {"db": -8}
+    "music/match_loop": {"db": -8},
+    "portal/open": {"db": -2, "pitch_var": 0.04, "min_interval_ms": 60, "unit_size": 9},
+    "portal/link": {"db": -2, "pitch_var": 0.02, "min_interval_ms": 80, "unit_size": 10},
+    "portal/close": {"db": -3, "pitch_var": 0.05, "min_interval_ms": 60, "unit_size": 8},
+    "portal/pass": {"db": -6, "pitch_var": 0.06, "min_interval_ms": 120, "unit_size": 6}
   }
 }

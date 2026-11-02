@@ -123,7 +123,7 @@ func _die() -> void :
 
 
 func _update_label() -> void :
-	_label.text = "ALVO  %d" % ceili(hp)
+	_label.text = tr("ALVO  %d") % ceili(hp)
 	health_changed.emit(hp, max_hp)
 
 

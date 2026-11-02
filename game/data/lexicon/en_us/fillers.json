@@ -1,0 +1,11 @@
+{
+  "_comment": "Filler: words the grammar skips. start_only only counts as filler before the requested thing ('make a tower'); after that it is a verb ('tower that makes walls').",
+  "always": [
+    "i", "want", "wanna", "would", "like", "id", "i d", "need", "gimme", "give", "me", "my", "please", "pls", "plz",
+    "can", "could", "you", "hey", "yo", "ok", "okay", "so", "um", "uh", "uhh", "like", "just", "now", "quick", "quickly", "real",
+    "also", "too", "really", "very", "super", "hyper", "ultra", "extremely", "totally", "some", "this", "that one", "these", "those",
+    "a", "an", "the", "it", "its", "to", "for", "of the", "get", "got", "have", "has", "let", "lets", "let s", "go",
+    "goes", "going", "come", "comes", "out", "is", "are", "be", "will", "gonna"
+  ],
+  "start_only": ["make", "create", "build", "spawn me", "craft", "summon me", "bring", "bring me", "generate", "drop me"]
+}

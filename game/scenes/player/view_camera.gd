@@ -94,11 +94,23 @@ func _process(delta: float) -> void :
 	var height: = lerpf(_f("height_m"), _f("aim_height_m"), _aim_w)
 	var pivot: = eye.global_position + basis.x * shoulder * away + player.gravity_frame.y * height * away
 	var desired: = pivot + basis.z * current_distance
-	var query: = PhysicsRayQueryParameters3D.create(eye.global_position, desired, PhysicsLayers.WORLD | PhysicsLayers.THINGS, 
+	var from: = eye.global_position
+
+
+	var portals: = PortalSystem.find(get_tree())
+	var through: Dictionary = portals.through(from, desired) if portals != null else {}
+	if not through.is_empty():
+		var jump: Transform3D = (through["portal"] as Portal).transfer()
+		desired = jump * desired
+
+		from = jump * (through["point"] as Vector3)
+		from += (desired - from).normalized() * 0.05
+		basis = jump.basis * basis
+	var query: = PhysicsRayQueryParameters3D.create(from, desired, PhysicsLayers.WORLD | PhysicsLayers.THINGS, 
 		[player.get_rid()])
 	var hit: = get_world_3d().direct_space_state.intersect_ray(query)
 	if not hit.is_empty():
-		var back: Vector3 = (desired - eye.global_position).normalized()
+		var back: Vector3 = (desired - from).normalized()
 		desired = (hit["position"] as Vector3) - back * _f("wall_margin_m")
 	global_transform = Transform3D(basis, desired)
 	_fov_mult = lerpf(_fov_mult, _f("aim_fov_mult") if shoulder_aim else 1.0, 1.0 - exp( - _f("smoothing") * delta))

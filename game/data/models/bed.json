@@ -12,122 +12,174 @@
       "shape": "box",
       "size": [
         0.95,
-        0.24,
+        0.12,
         2.0
       ],
       "pos": [
         0,
-        0.42,
+        0.18,
         0
       ],
-      "color": "#6485a4",
-      "tag": "cushion",
-      "finish": "rubber"
+      "color": "#8a5a32",
+      "tag": "frame",
+      "finish": "wood"
     },
     {
       "shape": "box",
       "size": [
-        0.76,
-        0.072,
-        0.44
+        0.912,
+        0.18,
+        1.94
       ],
       "pos": [
         0,
-        0.576,
-        0.66
+        0.33,
+        0
       ],
-      "color": "#d6dcd8",
-      "tag": "pillow"
+      "color": "#eae7df",
+      "tag": "cushion"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.931,
+        0.06,
+        1.2
+      ],
+      "pos": [
+        0,
+        0.432,
+        -0.36
+      ],
+      "color": "#4f7fb0",
+      "tag": "blanket"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.931,
+        0.036,
+        0.16
+      ],
+      "pos": [
+        0,
+        0.45,
+        0.26
+      ],
+      "color": "#f3f1ec",
+      "tag": "sheet"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.468,
+        0.76
+      ],
+      "color": "#f6f4ef",
+      "tag": "pillow",
+      "scale": [
+        0.665,
+        0.12,
+        0.32
+      ]
     },
     {
       "shape": "box",
       "size": [
         0.95,
-        0.08,
-        2.0
+        0.66,
+        0.07
       ],
       "pos": [
         0,
-        0.27,
-        0
+        0.348,
+        1.0
       ],
-      "color": "#7a4b26",
-      "tag": "frame"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.07,
-        0.3,
-        0.07
-      ],
-      "pos": [
-        -0.418,
-        0.15,
-        -0.9
-      ],
-      "color": "#7a4b26",
-      "tag": "leg"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.07,
-        0.3,
-        0.07
-      ],
-      "pos": [
-        -0.418,
-        0.15,
-        0.9
-      ],
-      "color": "#7a4b26",
-      "tag": "leg"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.07,
-        0.3,
-        0.07
-      ],
-      "pos": [
-        0.418,
-        0.15,
-        -0.9
-      ],
-      "color": "#7a4b26",
-      "tag": "leg"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.07,
-        0.3,
-        0.07
-      ],
-      "pos": [
-        0.418,
-        0.15,
-        0.9
-      ],
-      "color": "#7a4b26",
-      "tag": "leg"
+      "color": "#8a5a32",
+      "tag": "headboard",
+      "finish": "wood"
     },
     {
       "shape": "box",
       "size": [
         0.95,
-        0.48,
-        0.08
+        0.36,
+        0.06
       ],
       "pos": [
         0,
-        0.39,
-        0.98
+        0.192,
+        -1.0
       ],
-      "color": "#7a4b26",
-      "tag": "headboard"
+      "color": "#8a5a32",
+      "tag": "footboard",
+      "finish": "wood"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.07,
+        0.18,
+        0.07
+      ],
+      "pos": [
+        -0.437,
+        0.09,
+        -0.94
+      ],
+      "color": "#6e4828",
+      "tag": "leg",
+      "finish": "wood"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.07,
+        0.18,
+        0.07
+      ],
+      "pos": [
+        -0.437,
+        0.09,
+        0.94
+      ],
+      "color": "#6e4828",
+      "tag": "leg",
+      "finish": "wood"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.07,
+        0.18,
+        0.07
+      ],
+      "pos": [
+        0.437,
+        0.09,
+        -0.94
+      ],
+      "color": "#6e4828",
+      "tag": "leg",
+      "finish": "wood"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.07,
+        0.18,
+        0.07
+      ],
+      "pos": [
+        0.437,
+        0.09,
+        0.94
+      ],
+      "color": "#6e4828",
+      "tag": "leg",
+      "finish": "wood"
     }
   ]
 }

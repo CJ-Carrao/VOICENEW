@@ -97,6 +97,11 @@ func current_item() -> Thing:
 
 
 
+func is_throwable() -> bool:
+	return not _throwable.is_empty() and current < _throwable.size() and _throwable[current] and current_item() != null
+
+
+
 func is_current(thing: Node) -> bool:
 	var item: = current_item()
 	return item != null and thing != null and (thing == item or item.is_ancestor_of(thing))
@@ -412,11 +417,16 @@ func present_network_use(item: Thing, kind: String) -> void :
 
 
 
+
 func reload() -> void :
 	if not player.has_simulation_authority():
 		return
 	var item: = current_item()
-	if item != null and player.can_act() and bool(Lexicon.bal("weapons._reload.manual_key", false)):
+	if item == null or not player.can_act():
+		return
+	if item.reset_free_shots():
+		used.emit(item, "reset")
+	elif bool(Lexicon.bal("weapons._reload.manual_key", false)):
 		item.reload()
 
 
@@ -634,7 +644,8 @@ func network_item_state(index: int = -1, include_geometry: bool = false) -> Dict
 		"grip_main": Vector3(grip) if grip != null else Vector3.ZERO, 
 		"sight": item.model.transform * Vector3(0.0, item.sight_y, 0.0) if item.model != null else Vector3.ZERO, 
 		"ammo": item.ammo, "capacity": item.capacity, "magazine": item.magazine, "charges": item.charges, 
-		"loading": item.loading, "reload_left": item.reload_left, "pose": item.transform}
+		"loading": item.loading, "reload_left": item.reload_left, "pose": item.transform, 
+		"throwable": index < _throwable.size() and _throwable[index]}
 
 
 	if include_geometry and item.network_id == 0:

@@ -21,7 +21,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if not is_instance_valid(thing) or thing.is_dead or thing.is_building:
+	if not is_instance_valid(thing) or thing.is_dead or thing.is_building or thing.is_captured or Status.paralyzed(thing):
 		if is_instance_valid(thing):
 			last_position = thing.global_position
 		return

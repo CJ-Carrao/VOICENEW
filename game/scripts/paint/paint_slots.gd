@@ -17,7 +17,7 @@ static func count() -> int:
 
 
 static func default_name(index: int) -> String:
-	return "PINTURA %d" % (index + 1)
+	return String(TranslationServer.translate("PINTURA %d")) % (index + 1)
 
 
 static func load_from(file_path: String = PATH) -> PaintSlots:
@@ -56,7 +56,11 @@ static func chosen_bytes() -> PackedByteArray:
 static func clean_name(value: Variant, index: int) -> String:
 	var text: = String(value).strip_edges().to_upper() if value is String else ""
 	text = text.substr(0, int(RobotPaint.config().get("slot_name_max", 18)))
-	return text if not text.is_empty() else default_name(index)
+
+	var source: = "PINTURA %d" % (index + 1)
+	if text.is_empty() or text == source or text == String(TranslationServer.translate("PINTURA %d")) % (index + 1):
+		return default_name(index)
+	return text
 
 
 func save() -> bool:

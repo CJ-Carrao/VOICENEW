@@ -186,7 +186,13 @@ static func from_data(data: Variant, sticker_data: Variant = []) -> RobotPaint:
 
 
 func encode() -> PackedByteArray:
-	var raw: = var_to_bytes({"s": to_data(), "k": stickers_data()})
+
+	var images: = {}
+	for sticker in stickers:
+		var id: = String(sticker["id"])
+		if not images.has(id) and StickerCatalog.has(id):
+			images[id] = StickerCatalog.bytes(id)
+	var raw: = var_to_bytes({"s": to_data(), "k": stickers_data(), "img": images})
 	var packed: = raw.compress(FileAccess.COMPRESSION_ZSTD)
 	var out: = PackedByteArray()
 	out.resize(4)
@@ -206,6 +212,11 @@ static func decode(bytes: PackedByteArray, max_bytes: int = 262144) -> RobotPain
 		return RobotPaint.new()
 	var data: Variant = bytes_to_var(raw)
 	if data is Dictionary:
+		var images: Variant = data.get("img", {})
+		if images is Dictionary and (images as Dictionary).size() <= int(config().get("max_stickers", 5)):
+			for id: Variant in images:
+				if id is String:
+					StickerCatalog.accept_remote(id, images[id])
 		return from_data(data.get("s"), data.get("k", []))
 	return from_data(data)
 

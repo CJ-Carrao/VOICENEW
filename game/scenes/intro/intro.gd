@@ -12,6 +12,7 @@ extends Control
 
 
 
+
 const CONFIG: = "res://data/intro.json"
 const NEXT_SCENE: = "res://scenes/main.tscn"
 const PENTATONIC: Array[int] = [0, 2, 4, 7, 9]
@@ -38,6 +39,7 @@ var _caixa: Sprite2D
 var _somyst: Sprite2D
 var _wordmark: Node2D
 var _pieces: Array[Dictionary] = []
+var _mobile_letters: Array[Dictionary] = []
 
 
 var _whole: Sprite2D
@@ -64,9 +66,22 @@ var _background: MenuBackground
 var _options: OptionsMenu
 var _lobby: LobbyMenu
 var _customize: CustomizeMenu
+var _howto: HowToPlay
+var _language: LanguageToggle
+
+var _howto_auto: = (OS.has_feature("mobile") or MobileDev.args().has("--mobile")) and not HowToPlay.seen()
+var _music_duck: Tween
+
+var _menu_idle_s: = 0.0
+
+var _warm_paths: Array[String] = []
+const PREBUILD_AFTER_S: = 2.5
 var _online_launch: = false
 var _voice: VoiceInput
 var _dev_choice: String = ""
+
+
+var _dev_choice_wait: = 0.0
 var _fx: IntroCinematicFX
 var _post: ColorRect
 var _post_material: ShaderMaterial
@@ -81,17 +96,26 @@ var _exit_visual: IntroExit
 var _fx_sounds: Dictionary = {}
 var _menu_logo_tween: Tween
 var _skip_hint: Label
+var _skip_mobile_track: Panel
+var _skip_mobile_fill: ColorRect
 var _skip_armed: = false
 var _skip_space_down: = false
 var _skip_timer: = 0.0
+var _mobile_skip_enabled: = false
+var _mobile_skip_pointer: = -1
+var _mobile_skip_progress: = 0.0
 
 
 func _ready() -> void :
 	var returning: = Match.return_to_menu
 	Match.return_to_menu = false
-	var args: = OS.get_cmdline_user_args()
+	var args: = MobileDev.args()
+	_mobile_skip_enabled = OS.has_feature("mobile") or args.has("--intro-mobile")
 	AudioMix.apply(get_tree())
 	VideoSettings.start(get_tree())
+	if OS.is_debug_build() and Array(args).any( func(arg: String) -> bool: return arg.begins_with("--lan-players=")):
+		load("res://scripts/dev/lan_boot.gd").start.call_deferred(get_tree(), args)
+		return
 	var dev_intro: = false
 	for arg in args:
 		if arg.begins_with("--intro"):
@@ -101,6 +125,7 @@ func _ready() -> void :
 		return
 	if not returning:
 		VideoSettings.apply_display()
+	_warm_resources()
 	_cfg = JSON.parse_string(FileAccess.get_file_as_string(CONFIG))
 	_cinema = _cfg["cinematic"]
 	set_anchors_preset(Control.PRESET_FULL_RECT)
@@ -118,6 +143,8 @@ func _ready() -> void :
 			_frames["path"] = arg.trim_prefix("--intro-png=")
 		elif arg.begins_with("--intro-escolher="):
 			_dev_choice = arg.trim_prefix("--intro-escolher=")
+		elif arg.begins_with("--intro-esperar="):
+			_dev_choice_wait = arg.trim_prefix("--intro-esperar=").to_float()
 	_clock = seek
 	if _music != null:
 		_music.play(seek)
@@ -138,7 +165,7 @@ func _build() -> void :
 	add_child(black)
 	_background = MenuBackground.new()
 	add_child(_background)
-	_background.setup(_cfg["menu"].get("background", {}), float(_cfg["menu"]["times"]["start_s"]))
+	_background.setup(_cfg["menu"].get("background", {}), float(_cfg["menu"]["times"]["start_s"]), _cfg["menu"].get("layout", {}))
 
 
 	_menu = MainMenu.new()
@@ -147,6 +174,11 @@ func _build() -> void :
 
 	_menu.moved.connect( func() -> void : UiSound.play_at(self, "navigate"))
 	_menu.chosen.connect(_on_menu_chosen)
+
+	_language = LanguageToggle.new()
+	add_child(_language)
+	_language.setup(MainMenu._variation(load(String(_cfg["font"])) as Font, 800, 1))
+	Lexicon.language_changed.connect(_on_language_changed)
 	_stage = Node2D.new()
 	add_child(_stage)
 	_quote = Node2D.new()
@@ -205,8 +237,8 @@ func _build() -> void :
 	_fade.color = Color(0, 0, 0, 0)
 	add_child(_fade)
 	_skip_hint = Label.new()
-	_skip_hint.text = "Para pular clique ESPAÇO"
-	_skip_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	_skip_hint.text = tr("Segure na tela para pular") if _mobile_skip_enabled else tr("Para pular clique ESPAÇO")
+	_skip_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER if _mobile_skip_enabled else HORIZONTAL_ALIGNMENT_RIGHT
 	_skip_hint.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_skip_hint.add_theme_font_override("font", _font(600, 0))
 	_skip_hint.add_theme_color_override("font_color", Color("#f5f1e8"))
@@ -215,6 +247,24 @@ func _build() -> void :
 	_skip_hint.modulate.a = 0.0
 	_skip_hint.hide()
 	add_child(_skip_hint)
+	if _mobile_skip_enabled:
+		_skip_mobile_track = Panel.new()
+		_skip_mobile_track.name = "MobileSkipProgress"
+		_skip_mobile_track.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		_skip_mobile_track.clip_contents = true
+		var track_style: = StyleBoxFlat.new()
+		track_style.bg_color = Color("#17191d")
+		track_style.border_color = Color(1.0, 1.0, 1.0, 0.28)
+		track_style.set_border_width_all(1)
+		track_style.set_corner_radius_all(5)
+		_skip_mobile_track.add_theme_stylebox_override("panel", track_style)
+		_skip_mobile_fill = ColorRect.new()
+		_skip_mobile_fill.name = "Fill"
+		_skip_mobile_fill.color = Color("#ff791c")
+		_skip_mobile_fill.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		_skip_mobile_track.add_child(_skip_mobile_fill)
+		_skip_mobile_track.hide()
+		add_child(_skip_mobile_track)
 
 	for i in 10:
 		var player: = AudioStreamPlayer.new()
@@ -222,7 +272,7 @@ func _build() -> void :
 		add_child(player)
 		_sounds.append(player)
 	var music_path: = String(_cfg.get("music", ""))
-	if ResourceLoader.exists(music_path):
+	if not music_path.is_empty() and ResourceLoader.exists(music_path):
 		_music = AudioStreamPlayer.new()
 		_music.bus = AudioMix.bus(AudioMix.MUSIC)
 		var stream: = (load(music_path) as AudioStream).duplicate() as AudioStream
@@ -434,6 +484,10 @@ func _plan_lavoice() -> void :
 	var canvas: = Vector2(float(layout["canvas"]["width"]), float(layout["canvas"]["height"]))
 	var k: = float(l["width"]) / canvas.x
 	var display: = canvas * k
+
+	var mobile_cfg: Dictionary = l.get("mobile_tag", {})
+	var with_mobile: = OS.has_feature("mobile") or MobileDev.args().has("--intro-mobile")
+	var mobile_plan: = _prepare_mobile_tag(mobile_cfg, display) if with_mobile else {}
 	var letters: Array = l["letters"]
 	var accent: = Color(String(_cfg["colors"]["accent"]))
 	_wordmark = Node2D.new()
@@ -468,18 +522,31 @@ func _plan_lavoice() -> void :
 	_whole_material = ShaderMaterial.new()
 	_whole_material.shader = shader
 	_whole.material = _whole_material
-	var formation: = IntroBlocks.sample(full, display, _blocks.count, float(l["threshold"]), false)
+	var formation_image: = full
+	var formation_display: = display
+	if not mobile_plan.is_empty():
+		formation_image = _combine_mobile_mask(full, mobile_plan)
+		formation_display = mobile_plan["composite_size"]
+		_build_mobile_sprites(mobile_plan, display)
+	var formation: = IntroBlocks.sample(formation_image, formation_display, _blocks.count, float(l["threshold"]), false)
 	formation.groups.resize(formation.points.size())
 	piece_images.sort_custom( func(a: Dictionary, b: Dictionary) -> bool: return int(a["group"]) > int(b["group"]))
 	for i in formation.points.size():
-		var at: = (formation.points[i] + display * 0.5) / k
-		formation.groups[i] = _piece_group(at, piece_images)
+		var at: = formation.points[i] + formation_display * 0.5
+		if not mobile_plan.is_empty() and at.y >= float(mobile_plan["top"]):
+			formation.groups[i] = 8 + _mobile_letter_at(at, mobile_plan)
+		else:
+			var logo_point: = Vector2(at.x, at.y - (float(mobile_plan.get("logo_top", 0.0)) if not mobile_plan.is_empty() else 0.0)) / k
+			formation.groups[i] = _piece_group(logo_point, piece_images)
 	var start: = float(l["start_s"])
 	_letter_times.resize(letters.size())
 	for li in letters.size():
 		_letter_times[li] = float(l["first_letter_s"]) + li * float(l["letter_step_s"])
+	var mobile_letter_times: = PackedFloat32Array()
+	for mi in _mobile_letters.size():
+		mobile_letter_times.append(float(mobile_cfg.get("first_letter_s", _letter_times[-1] + 0.9)) + mi * float(mobile_cfg.get("letter_step_s", 0.16)))
 	var slam: = float(l["slam_s"])
-	_blocks.finale(formation, start, l, _letter_times)
+	_blocks.finale(formation, start, l, _letter_times, mobile_letter_times)
 	var motion: = _blocks.capture_plan()
 	_at(start, func() -> void :
 		_blocks.use_plan(motion)
@@ -491,6 +558,14 @@ func _plan_lavoice() -> void :
 			_blocks.vanish_group(group, _clock, 0.07)
 			_click(0.9 * pow(2.0, PENTATONIC[group % 5] / 12.0 + floorf(group / 5.0)), -6.0)
 			_dust(_group_center(group), Color.WHITE, 16, 0.6))
+	for mi in mobile_letter_times.size():
+		var mobile_index: = mi
+		var mobile_group: = 8 + mi
+		_at(mobile_letter_times[mobile_index], func() -> void :
+			_show_mobile_group(mobile_group)
+			_blocks.vanish_group(mobile_group, _clock, 0.07)
+			_click(0.72 * pow(2.0, PENTATONIC[mobile_index % 5] / 12.0), -9.0)
+			_dust(_mobile_group_center(mobile_index), Color.WHITE, 8, 0.35))
 	_at(slam, func() -> void :
 		_show_group(7, 2.0)
 		_blocks.vanish_group(7, _clock, 0.05)
@@ -502,6 +577,103 @@ func _plan_lavoice() -> void :
 	_ball_glow.set_meta("from", start + 0.5)
 	_ball_glow.set_meta("to", slam)
 	_at(float(_cfg["menu"]["times"]["start_s"]), func() -> void : Input.mouse_mode = Input.MOUSE_MODE_VISIBLE)
+
+
+
+func _prepare_mobile_tag(config: Dictionary, display: Vector2) -> Dictionary:
+	var text: = String(config.get("text", tr("MOBILE")))
+	var path: = String(config.get("mask", "res://assets/intro/logos/mobile_tag.png"))
+	if text != "MOBILE" or not ResourceLoader.exists(path):
+		push_error("A máscara Oxanium do título MOBILE está ausente ou não corresponde ao texto configurado.")
+		return {}
+	var image: = _logo_image(path)
+	var regions: = _mobile_glyph_regions(image)
+	if regions.size() != text.length():
+		push_error("A máscara Oxanium de MOBILE deve conter seis letras separadas.")
+		return {}
+	var gap: = float(config.get("gap_px", 18.0))
+	var logo_height: = roundi(display.y)
+	var logo_top: = roundi((gap + image.get_height()) * 0.5)
+	var total_height: = logo_height + roundi(gap) + image.get_height()
+	var size: = Vector2(roundi(display.x), total_height)
+	var left: = roundi((size.x - image.get_width()) * 0.5)
+	var top: = logo_top + logo_height + roundi(gap)
+	return {"image": image, "regions": regions, "left": left, "top": top, "logo_top": logo_top, 
+		"gap": gap, "composite_size": size}
+
+
+func _combine_mobile_mask(logo: Image, plan: Dictionary) -> Image:
+	var size: Vector2 = plan["composite_size"]
+	var canvas: = Image.create(roundi(size.x), roundi(size.y), false, Image.FORMAT_RGBA8)
+	var logo_image: = logo.duplicate() as Image
+	logo_image.resize(roundi(size.x), roundi(_cfg["lavoice"]["width"] * logo.get_height() / float(logo.get_width())), Image.INTERPOLATE_CUBIC)
+	var logo_top: = int(plan["logo_top"])
+	canvas.blend_rect(logo_image, Rect2i(Vector2i.ZERO, logo_image.get_size()), Vector2i(0, logo_top))
+	var tag_image: Image = plan["image"]
+	canvas.blend_rect(tag_image, Rect2i(Vector2i.ZERO, tag_image.get_size()), Vector2i(int(plan["left"]), int(plan["top"])))
+	return canvas
+
+
+func _build_mobile_sprites(plan: Dictionary, display: Vector2) -> void :
+	var image: Image = plan["image"]
+	for index in plan["regions"].size():
+		var rect: Rect2i = plan["regions"][index]
+		var glyph: = image.get_region(rect)
+		glyph.generate_mipmaps()
+		var sprite: = Sprite2D.new()
+		sprite.texture = ImageTexture.create_from_image(glyph)
+		sprite.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+		sprite.position = Vector2(float(plan["left"]) + rect.position.x + rect.size.x * 0.5 - display.x * 0.5, 
+			display.y * 0.5 + float(plan["gap"]) + rect.position.y + rect.size.y * 0.5)
+		sprite.modulate.a = 0.0
+		_wordmark.add_child(sprite)
+		_mobile_letters.append({"node": sprite, "group": 8 + index, "shown": INF})
+
+
+static func _mobile_glyph_regions(image: Image) -> Array[Rect2i]:
+	var spans: Array[Vector2i] = []
+	var start: = -1
+	for x in image.get_width():
+		var occupied: = false
+		for y in image.get_height():
+			if image.get_pixel(x, y).a > 0.1:
+				occupied = true
+				break
+		if occupied and start < 0:
+			start = x
+		elif not occupied and start >= 0:
+			spans.append(Vector2i(start, x))
+			start = -1
+	if start >= 0:
+		spans.append(Vector2i(start, image.get_width()))
+	var regions: Array[Rect2i] = []
+	for span in spans:
+		var top: = image.get_height()
+		var bottom: = -1
+		for x in range(span.x, span.y):
+			for y in image.get_height():
+				if image.get_pixel(x, y).a > 0.1:
+					top = mini(top, y)
+					bottom = maxi(bottom, y)
+		if bottom >= top:
+			regions.append(Rect2i(span.x, top, span.y - span.x, bottom - top + 1))
+	return regions
+
+
+func _mobile_letter_at(at: Vector2, plan: Dictionary) -> int:
+	var local: = at - Vector2(float(plan["left"]), float(plan["top"]))
+	var point: = Vector2i(floori(local.x), floori(local.y))
+	var nearest: = 0
+	var best: = INF
+	for index in plan["regions"].size():
+		var rect: Rect2i = plan["regions"][index]
+		if rect.has_point(point):
+			return index
+		var distance: = Vector2(rect.get_center()).distance_squared_to(local)
+		if distance < best:
+			best = distance
+			nearest = index
+	return nearest
 
 
 static func _piece_group(at: Vector2, pieces: Array[Dictionary]) -> int:
@@ -538,6 +710,18 @@ func _show_group(group: int, pop: float) -> void :
 		if int(piece["group"]) == group:
 			piece["shown"] = _clock
 			piece["pop"] = pop
+
+
+func _show_mobile_group(group: int) -> void :
+	for item: Dictionary in _mobile_letters:
+		if int(item["group"]) == group:
+			item["shown"] = _clock
+
+
+func _mobile_group_center(index: int) -> Vector2:
+	if index < 0 or index >= _mobile_letters.size():
+		return Vector2.ZERO
+	return (_mobile_letters[index]["node"] as Sprite2D).position
 
 
 func _schedule_clicks(launches: PackedFloat32Array, clicks: float) -> void :
@@ -599,20 +783,37 @@ func _process(delta: float) -> void :
 		return
 	_advance_clock(delta)
 	var t: = _clock
+	var probe: = DevProbe.now()
 	_background.update_clock(t)
+	DevProbe.done("intro_fundo", probe)
+	probe = DevProbe.now()
 	_dispatch_to(t)
+	DevProbe.done("intro_roteiro", probe)
 	_menu.music_time = t - _music_epoch
+	probe = DevProbe.now()
 	_menu.update(t, delta)
+	DevProbe.done("intro_menu", probe)
 	var view: = get_viewport_rect().size
 	_update_skip_hint(view, delta)
 	_quote.position = view * 0.5
 	_update_quote(t)
 	_update_camera(t, view)
 	_update_logo_flight(t)
+	probe = DevProbe.now()
 	_update_stage(t, delta, view)
+	DevProbe.done("intro_palco", probe)
 	if not _dev_choice.is_empty() and _menu.ready_for_input:
+		_dev_choice_wait -= delta
+	if not _dev_choice.is_empty() and _menu.ready_for_input and _dev_choice_wait <= 0.0:
 		_on_menu_chosen(_dev_choice)
 		_dev_choice = ""
+	elif _howto_auto and _dev_choice.is_empty() and _menu.ready_for_input and not _leaving:
+		_howto_auto = false
+		_on_menu_chosen("howto")
+	probe = DevProbe.now()
+	_prebuild_customize(delta)
+	DevProbe.done("intro_preconstroi", probe)
+	_language.set_shown(_menu.ready_for_input and _menu.is_processing_unhandled_input() and not _leaving)
 	_blocks.visible = t < float(_cfg["lavoice"]["slam_s"]) + 0.2
 	if _blocks.visible:
 		_blocks.update(t)
@@ -645,6 +846,8 @@ func _advance_clock(delta: float) -> void :
 
 func _update_quote(t: float) -> void :
 	var q: Dictionary = _cfg["quote"]
+	if not _quote.visible and t > float(q["fade_out_at_s"]) + float(q["fade_out_s"]) + 0.2:
+		return
 	var fade: = float(q["word_fade_s"])
 	var out: = 1.0 - _smooth((t - float(q["fade_out_at_s"])) / float(q["fade_out_s"]))
 	var source: Dictionary = _cinema["quote_matter"]
@@ -672,11 +875,14 @@ func _update_quote(t: float) -> void :
 
 
 func _update_stage(t: float, _delta: float, _view: Vector2) -> void :
+	_update_mobile_tag(t)
 
 	for key: String in _crisp:
 		var c: Dictionary = _crisp[key]
 		var alpha: = _smooth((t - float(c["in"])) / float(c["in_s"])) * (1.0 - _smooth((t - float(c["out"])) / float(c["out_s"])))
-		(c["node"] as Sprite2D).modulate.a = alpha
+		var crisp_node: = c["node"] as Sprite2D
+		crisp_node.modulate.a = alpha
+		crisp_node.visible = alpha > 0.001
 
 	if not _orb.is_empty():
 		var lit: = _smooth((t - float(_orb["from"])) / 0.5)
@@ -694,6 +900,7 @@ func _update_stage(t: float, _delta: float, _view: Vector2) -> void :
 			_glow.modulate.a = maxf(_glow.modulate.a, 0.8 * carry)
 		elif t > final_land:
 			_glow.modulate.a = 0.0
+		_glow.visible = _glow.modulate.a > 0.001
 
 	var ball_from: = float(_ball_glow.get_meta("from", INF))
 	var ball_to: = float(_ball_glow.get_meta("to", INF))
@@ -735,6 +942,20 @@ func _update_stage(t: float, _delta: float, _view: Vector2) -> void :
 		shine_material.set_shader_parameter("flash", clampf(1.0 - since_shown / (0.18 * pop), 0.0, 1.0))
 		shine_material.set_shader_parameter("shine_x", shine_x if shine_x < INF else -100000.0)
 		shine_material.set_shader_parameter("strength", shine_strength)
+
+
+func _update_mobile_tag(t: float) -> void :
+	if _mobile_letters.is_empty():
+		return
+	for item: Dictionary in _mobile_letters:
+		var age: = t - float(item["shown"])
+		var sprite: = item["node"] as Sprite2D
+		if age < 0.0:
+			sprite.modulate.a = 0.0
+			continue
+		var bounce: = 0.12 * exp(-9.0 * age) * cos(25.0 * age) if age < 0.5 else 0.0
+		sprite.modulate.a = _smooth(age / 0.06)
+		sprite.scale = Vector2.ONE * (1.0 + bounce)
 
 
 
@@ -784,6 +1005,8 @@ func _on_menu_chosen(id: String) -> void :
 			_open_lobby("maps")
 		"customize":
 			_open_customize()
+		"howto":
+			_open_howto()
 		"settings", "voice":
 			_open_options()
 			if id == "voice": _options.show_voice_test()
@@ -814,6 +1037,8 @@ func _open_lobby(start_page: String = "home") -> void :
 	if _menu_logo_tween != null and _menu_logo_tween.is_valid(): _menu_logo_tween.kill()
 	_stage.visible = false
 	_post.visible = false
+	if _background != null:
+		_background.set_overlay(true)
 	if start_page == "maps":
 		_lobby.open_maps("practice")
 	else:
@@ -822,17 +1047,101 @@ func _open_lobby(start_page: String = "home") -> void :
 
 
 func _open_customize() -> void :
-	if _customize == null:
-		_customize = CustomizeMenu.new()
-		add_child(_customize)
-		move_child(_customize, _exit_visual.get_index())
-		_customize.closed.connect(_close_lobby)
+	_ensure_customize()
 	_menu.set_process_unhandled_input(false)
 	_menu.dismiss()
 	if _menu_logo_tween != null and _menu_logo_tween.is_valid(): _menu_logo_tween.kill()
 	_stage.visible = false
 	_post.visible = false
+	if _background != null:
+		_background.set_overlay(true)
 	_customize.open()
+
+
+
+
+func _on_language_changed(_lang: String) -> void :
+	if _background != null:
+		_background.relabel()
+	for screen: Control in [_lobby, _customize, _options, _howto]:
+		if screen != null:
+			screen.queue_free()
+	_lobby = null
+	_customize = null
+	_options = null
+	_howto = null
+
+	if _voice != null:
+		_voice.queue_free()
+		_voice = null
+	_menu_idle_s = 0.0
+	_menu.queue_redraw()
+
+
+
+func _open_howto() -> void :
+	if _howto == null:
+		_howto = HowToPlay.new()
+		add_child(_howto)
+		move_child(_howto, _exit_visual.get_index())
+		_howto.closed.connect( func() -> void :
+			_duck_music(false)
+			_menu.set_process_unhandled_input(true)
+			if _background != null: _background.set_overlay(false))
+	_menu.set_process_unhandled_input(false)
+	if _background != null: _background.set_overlay(true)
+	_duck_music(true)
+	_howto.open()
+
+
+func _duck_music(down: bool) -> void :
+	if _music == null:
+		return
+	if _music_duck != null and _music_duck.is_valid(): _music_duck.kill()
+	_music_duck = create_tween()
+	_music_duck.tween_property(_music, "volume_db", _music_db - (14.0 if down else 0.0), 0.4)
+
+
+
+
+func _ensure_customize() -> void :
+	if _customize != null:
+		return
+	var probe: = DevProbe.now()
+	_customize = CustomizeMenu.new()
+	add_child(_customize)
+	move_child(_customize, _exit_visual.get_index())
+	_customize.closed.connect(_close_lobby)
+	DevProbe.done("pers_criar", probe)
+
+
+
+
+
+func _warm_resources() -> void :
+	_warm_paths = [String(RobotBody.config()["model"]), RobotPaintCanvas.BAKED_PATH]
+	for path: String in _warm_paths:
+		if ResourceLoader.exists(path) and not ResourceLoader.has_cached(path):
+			ResourceLoader.load_threaded_request(path)
+
+
+
+func _warm_ready() -> bool:
+	for path: String in _warm_paths:
+		if ResourceLoader.load_threaded_get_status(path) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
+			return false
+	return true
+
+
+func _prebuild_customize(delta: float) -> void :
+	if _customize != null or _menu == null or not _menu.ready_for_input or _leaving or not _warm_ready():
+		_menu_idle_s = 0.0
+		return
+	_menu_idle_s += delta
+	if _menu_idle_s >= PREBUILD_AFTER_S:
+		_ensure_customize()
+		_customize.prepare()
+		_customize.warm_render()
 
 
 func _close_lobby() -> void :
@@ -841,7 +1150,8 @@ func _close_lobby() -> void :
 	_stage.modulate.a = 0.0
 	_menu_logo_tween = create_tween()
 	_menu_logo_tween.tween_property(_stage, "modulate:a", 1.0, 0.28).set_delay(0.1)
-	_post.visible = true
+	if _background != null:
+		_background.set_overlay(false)
 	_menu.set_process_unhandled_input(true)
 
 
@@ -855,8 +1165,11 @@ func _open_options() -> void :
 		add_child(_options)
 		_options.bind(_voice, null)
 		_options.use_menu_context()
-		_options.closed.connect( func() -> void : _menu.set_process_unhandled_input(true))
+		_options.closed.connect( func() -> void :
+			_menu.set_process_unhandled_input(true)
+			if _background != null: _background.set_overlay(false))
 	_menu.set_process_unhandled_input(false)
+	if _background != null: _background.set_overlay(true)
 	_options.open()
 
 
@@ -865,9 +1178,21 @@ func _open_options() -> void :
 func _update_skip_hint(view: Vector2, delta: float) -> void :
 	if _clock >= float(_cfg["end"]["skip_to_s"]) or _leaving:
 		_skip_armed = false
+		_mobile_skip_pointer = -1
+		_mobile_skip_progress = 0.0
 		_skip_hint.hide()
+		if _skip_mobile_track != null:
+			_skip_mobile_track.hide()
 		return
-	if _skip_armed:
+	if _mobile_skip_enabled and _mobile_skip_pointer != -1:
+		_skip_armed = true
+		_skip_timer = float(_cfg["end"]["skip_hint_s"])
+		var hold_s: = maxf(0.1, float(_cfg["end"].get("mobile_hold_s", 1.0)))
+		_mobile_skip_progress = minf(1.0, _mobile_skip_progress + delta / hold_s)
+		if _mobile_skip_progress >= 1.0:
+			_skip_progress_to_music_turn()
+			return
+	if _skip_armed and not (_mobile_skip_enabled and _mobile_skip_pointer != -1):
 		_skip_timer = maxf(0.0, _skip_timer - delta)
 		if _skip_timer <= 0.0:
 			_skip_armed = false
@@ -876,11 +1201,24 @@ func _update_skip_hint(view: Vector2, delta: float) -> void :
 			_skip_hint.modulate.a = move_toward(_skip_hint.modulate.a, 0.0, delta * 7.0)
 			if _skip_hint.modulate.a <= 0.0:
 				_skip_hint.hide()
+				if _skip_mobile_track != null:
+					_skip_mobile_track.hide()
 		return
 	var k: = view.y / 720.0
-	_skip_hint.size = Vector2(490, 32) * k
-	_skip_hint.position = view - Vector2(530, 58) * k
-	_skip_hint.add_theme_font_size_override("font_size", maxi(14, roundi(20.0 * k)))
+	if _mobile_skip_enabled:
+		_skip_hint.size = Vector2(maxf(0.0, view.x - 40.0 * k), 44.0 * k)
+		_skip_hint.position = Vector2(20.0 * k, view.y - 108.0 * k)
+		_skip_hint.add_theme_font_size_override("font_size", maxi(18, roundi(28.0 * k)))
+		var track_size: = Vector2(210.0, 12.0) * k
+		_skip_mobile_track.size = track_size
+		_skip_mobile_track.position = view - Vector2(32.0, 38.0) * k - track_size
+		_skip_mobile_fill.position = Vector2(2.0, 2.0) * k
+		_skip_mobile_fill.size = Vector2(maxf(0.0, track_size.x - 4.0 * k) * _mobile_skip_progress, maxf(0.0, track_size.y - 4.0 * k))
+		_skip_mobile_track.show()
+	else:
+		_skip_hint.size = Vector2(490, 32) * k
+		_skip_hint.position = view - Vector2(530, 58) * k
+		_skip_hint.add_theme_font_size_override("font_size", maxi(14, roundi(20.0 * k)))
 	_skip_hint.modulate.a = move_toward(_skip_hint.modulate.a, 1.0, delta * 7.0)
 
 
@@ -892,6 +1230,14 @@ func _unhandled_input(event: InputEvent) -> void :
 	var skip_to: = float(_cfg["end"]["skip_to_s"])
 	if _clock >= skip_to:
 		return
+	if _mobile_skip_enabled and event is InputEventScreenTouch:
+		_handle_mobile_skip_touch(event as InputEventScreenTouch)
+		return
+	if _mobile_skip_enabled and event is InputEventMouseButton:
+		var mouse_button: = event as InputEventMouseButton
+		if mouse_button.button_index == MOUSE_BUTTON_LEFT:
+			_handle_mobile_skip_pointer(-2, mouse_button.pressed)
+			return
 
 
 	var pressed: = false
@@ -919,16 +1265,50 @@ func _unhandled_input(event: InputEvent) -> void :
 		return
 
 	if is_space:
-		_skip_armed = false
-		_skip_hint.hide()
-		_skip_hint.modulate.a = 0.0
-		_clock = skip_to
-		_last_music_position = skip_to
-		if _music != null:
-			_music.seek(skip_to)
-			_seek_target = skip_to
+		_skip_progress_to_music_turn()
 	else:
 		_skip_timer = float(_cfg["end"]["skip_hint_s"])
+
+
+func _handle_mobile_skip_touch(event: InputEventScreenTouch) -> void :
+	_handle_mobile_skip_pointer(event.index, event.pressed)
+
+
+func _handle_mobile_skip_pointer(pointer_index: int, pressed: bool) -> void :
+	get_viewport().set_input_as_handled()
+	if pressed:
+		if _mobile_skip_pointer != -1:
+			return
+		_mobile_skip_pointer = pointer_index
+		_mobile_skip_progress = 0.0
+		_skip_armed = true
+		_skip_timer = float(_cfg["end"]["skip_hint_s"])
+		_skip_hint.text = tr("Segure na tela para pular")
+		_skip_hint.show()
+		if _skip_mobile_track != null:
+			_skip_mobile_track.show()
+	else:
+		if pointer_index == _mobile_skip_pointer:
+			_mobile_skip_pointer = -1
+			_mobile_skip_progress = 0.0
+			if _skip_mobile_fill != null:
+				_skip_mobile_fill.size.x = 0.0
+
+
+func _skip_progress_to_music_turn() -> void :
+	var skip_to: = float(_cfg["end"]["skip_to_s"])
+	_skip_armed = false
+	_mobile_skip_pointer = -1
+	_mobile_skip_progress = 0.0
+	_skip_hint.hide()
+	_skip_hint.modulate.a = 0.0
+	if _skip_mobile_track != null:
+		_skip_mobile_track.hide()
+	_clock = skip_to
+	_last_music_position = skip_to
+	if _music != null:
+		_music.seek(skip_to)
+		_seek_target = skip_to
 
 
 func _leave(seconds: float) -> void :
@@ -961,7 +1341,6 @@ func _update_leave(_t: float) -> void :
 	_fade.color.a = _smooth(clampf((u - 0.35) / 0.65, 0.0, 1.0))
 	if _music != null:
 		_music.volume_db = lerpf(_music_db, -60.0, u * u)
-	_background.fade_audio(u * u)
 	if u >= 1.0:
 		_go_next()
 
@@ -979,7 +1358,8 @@ func _go_next(_unused: String = "") -> void :
 
 
 	if Session.is_online():
-		get_tree().change_scene_to_file(NEXT_SCENE)
+		if get_tree().change_scene_to_file(NEXT_SCENE) != OK:
+			_going = false
 		return
 	var screen: = LoadingScreen.open(get_tree())
 	Arena.build_async = true
@@ -1022,7 +1402,6 @@ func _cancel_lobby_leave() -> void :
 	_fade.color.a = 0.0
 	_exit_visual.visible = false
 	if _music != null: _music.volume_db = _music_db
-	_background.fade_audio(0.0)
 	if _lobby != null:
 		_lobby.process_mode = Node.PROCESS_MODE_INHERIT
 		_lobby.cancel_launch()
@@ -1122,5 +1501,36 @@ func _update_camera(t: float, view: Vector2) -> void :
 	var squash: = _squash_amp * exp(-7.0 * since) * cos(22.0 * since) if since >= 0.0 and since < 3.0 else 0.0
 	_stage.scale = Vector2(1.0 + squash, 1.0 - squash) * (1.0 + zoom + push)
 	_flash.color = Color(flash_color.lerp(Color.WHITE, 0.5), flash * float(_cinema["impact_flash"]))
-	_post_material.set_shader_parameter("bloom", float(fx["bloom"]) + flash * float(fx["impact_bloom"]))
-	_post_material.set_shader_parameter("aberration_px", chroma * float(fx["aberration_px"]))
+	var overlay_open: = _leaving or (_lobby != null and _lobby.is_open) or (_customize != null and _customize.is_open)\
+	or (_options != null and _options.is_open)
+	var post_needed: = not overlay_open and (bool(VideoSettings.value("glow")) or flash > 0.001 or chroma > 0.001)
+	_post.visible = post_needed
+	if post_needed:
+		_post_material.set_shader_parameter("bloom", float(fx["bloom"]) + flash * float(fx["impact_bloom"]))
+		_post_material.set_shader_parameter("aberration_px", chroma * float(fx["aberration_px"]))
+
+
+func _notification(what: int) -> void :
+	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		if _cfg.is_empty() or _leaving or _going:
+			return
+		if (_options != null and _options.is_open) or (_lobby != null and _lobby.is_open) or (_customize != null and _customize.is_open):
+			_emit_ui_cancel()
+		elif _clock < float(_cfg.get("end", {}).get("skip_to_s", 0.0)):
+			_skip_progress_to_music_turn()
+	elif what == NOTIFICATION_APPLICATION_PAUSED:
+		if _background != null:
+			_background.set_overlay(true)
+	elif what == NOTIFICATION_APPLICATION_RESUMED:
+		var sub_open: = (_lobby != null and _lobby.is_open) or (_customize != null and _customize.is_open) or (_options != null and _options.is_open)
+		if _background != null and not sub_open:
+			_background.set_overlay(false)
+
+
+static func _emit_ui_cancel() -> void :
+	for state: bool in [true, false]:
+		var ev: = InputEventAction.new()
+		ev.action = &"ui_cancel"
+		ev.pressed = state
+		ev.strength = 1.0 if state else 0.0
+		Input.parse_input_event(ev)

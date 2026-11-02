@@ -3,6 +3,8 @@ extends Button
 
 
 var primary: = false
+
+var show_arrow: = true
 var ui_font: Font
 var text_size: = 28
 var accent: = Color("#f2601a")
@@ -10,6 +12,7 @@ var _hover: = 0.0
 var _press: = 0.0
 var _sweep: = 1.0
 var _was_engaged: = false
+var _touch: = OS.has_feature("mobile") or MobileDev.args().has("--mobile")
 
 
 func _ready() -> void :
@@ -26,7 +29,8 @@ func _ready() -> void :
 
 
 func _process(delta: float) -> void :
-	var engaged: = not disabled and (is_hovered() or has_focus())
+
+	var engaged: = not disabled and ((is_pressed() and _touch) or ( not _touch and (is_hovered() or has_focus())))
 	if engaged and not _was_engaged:
 		_sweep = 0.0
 		if is_hovered() and is_visible_in_tree(): UiSound.play_at(self, "hover")
@@ -85,8 +89,8 @@ func _draw() -> void :
 	var fs: = text_size
 	while font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, fs).x > size.x - 64.0 and fs > 18: fs -= 1
 	var baseline: = r.position.y + (r.size.y - font.get_height(fs)) * 0.5 + font.get_ascent(fs)
-	draw_string(font, Vector2(r.position.x + 24, baseline), text, HORIZONTAL_ALIGNMENT_LEFT, size.x - 64, fs, color)
-	if primary and not disabled:
+	draw_string(font, Vector2(r.position.x + 24, baseline), tr(text), HORIZONTAL_ALIGNMENT_LEFT, size.x - 64, fs, color)
+	if primary and not disabled and show_arrow:
 		var x: = r.end.x - 25.0 + _hover * 2.0
 		var y: = r.get_center().y
 		draw_polyline(PackedVector2Array([Vector2(x - 5, y - 6), Vector2(x + 1, y), Vector2(x - 5, y + 6)]), color, 2.0, true)

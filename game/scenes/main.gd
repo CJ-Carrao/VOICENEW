@@ -83,6 +83,8 @@ var _console_open: = false
 var _options_open: = false
 var _paused_by_menu: = false
 var _voice_started: = false
+
+var _spectator: SpectatorCamera
 var _voice_requests: Dictionary = {}
 
 
@@ -105,7 +107,7 @@ func _enter_tree() -> void :
 	if not next_mode.is_empty():
 		mode = next_mode
 		next_mode = ""
-	var args: = OS.get_cmdline_user_args()
+	var args: = MobileDev.args()
 	for arg in args:
 		if arg == "--treino" or arg.begins_with("--gravar-voz") or arg == "--calibrar":
 			mode = "practice"
@@ -153,7 +155,7 @@ func _configure_fighter(fighter: Player, id: int) -> void :
 	fighter.team = id
 	fighter.peer_id = Session.peer_for_player(id)
 	fighter.is_local = id == Session.local_player_id
-	fighter.display_name = "VOCÊ" if fighter.is_local else ("JOGADOR %d" % id if Session.is_online() else "BOT")
+	fighter.display_name = tr("VOCÊ") if fighter.is_local else (tr("JOGADOR %d") % id if Session.is_online() else tr("BOT"))
 	if Session.is_online():
 		var palette: Array = RobotBody.config()["player_colors"]
 		var rgb24: = Session.lobby.color_for_player(id)
@@ -178,6 +180,9 @@ func _ready() -> void :
 	_place_dummy()
 	for fighter: Player in get_players():
 		fighter.died.connect(_on_player_died)
+	player.died.connect(_on_local_died)
+	player.revived.connect(_stop_spectating)
+	state_changed.connect( func() -> void : if state != "online_play": _stop_spectating())
 	if Session.is_online():
 		for candidate: Node in get_tree().get_nodes_in_group(Combat.COMBATANTS_GROUP):
 			if candidate is Player and not _players.has((candidate as Player).player_id):
@@ -186,6 +191,16 @@ func _ready() -> void :
 	_hud.bind_player(player)
 	_hud.bind_match(self)
 	_hud.bind_voice(voice)
+	if OS.has_feature("mobile") or MobileDev.args().has("--mobile"):
+		if not OS.has_feature("mobile"):
+			Input.emulate_touch_from_mouse = true
+
+		voice.player = player
+		var touch: = TouchControls.new()
+		_hud.get_node("Root").add_child(touch)
+		touch.bind(player, _hud.console, _hud.options, _refresh_local_input)
+		if MobileDev.args().has("--editar-botoes"):
+			touch.begin_edit.call_deferred()
 
 	_hud.refresh_controls_help()
 	voice.transcribed.connect(_on_voice_transcribed)
@@ -449,6 +464,44 @@ func _on_player_died(dead: Player) -> void :
 
 
 
+
+func _on_local_died(_dead: Player) -> void :
+	if not Session.is_online() or state != "online_play" or _online_humans() < int(Lexicon.balf("spectator.min_players")):
+		return
+	await get_tree().create_timer(Lexicon.balf("spectator.delay_s")).timeout
+	if player.is_alive() or state != "online_play" or _spectator != null:
+		return
+	_spectator = SpectatorCamera.new()
+	_spectator.name = "Spectator"
+	add_child(_spectator)
+	if player.view != null:
+		player.view.suspended = true
+	var eye: Camera3D = get_viewport().get_camera_3d()
+	_spectator.start(eye.global_transform if eye != null else player.camera.global_transform, Arena.active_size * 0.5)
+	_hud.show_spectating(true)
+
+
+func _stop_spectating() -> void :
+	if _spectator == null:
+		return
+	_spectator.queue_free()
+	_spectator = null
+	if player.view != null:
+		player.view.suspended = false
+	player.camera.make_current()
+	_hud.show_spectating(false)
+
+
+
+func _online_humans() -> int:
+	var count: = 0
+	for id: int in _players:
+		if Session.peer_for_player(id) > 0:
+			count += 1
+	return count
+
+
+
 func _round_in_progress() -> bool:
 	return state in ["countdown", "fight", "online_play"]
 
@@ -507,6 +560,7 @@ func _wait_for_world() -> void :
 	var screen: = LoadingScreen.current
 	if screen != null:
 		screen.set_progress(0.35 + 0.65 * arena.world_progress())
+	SoundBank.warm_all()
 	var painted: = player.robot == null or player.robot.paint_ready()
 	if not arena.is_world_ready() or not painted:
 		_hold_bodies(true)
@@ -583,6 +637,16 @@ func _process(delta: float) -> void :
 			_start_round(round_number + 1)
 
 
+func _notification(what: int) -> void :
+	if what == NOTIFICATION_WM_GO_BACK_REQUEST and not _waiting_world:
+		for pressed: bool in [true, false]:
+			var ev: = InputEventAction.new()
+			ev.action = &"ui_cancel"
+			ev.pressed = pressed
+			ev.strength = 1.0 if pressed else 0.0
+			Input.parse_input_event(ev)
+
+
 func _unhandled_input(event: InputEvent) -> void :
 	if event.is_action_pressed("debug"):
 		_hud.toggle_debug()
@@ -622,7 +686,7 @@ func _on_voice_transcribed(text: String, seconds: float, commands_only: bool = f
 
 
 func _ensure_voice_started() -> void :
-	if not _voice_started and creations_available() and voice_enabled and not OS.get_cmdline_user_args().has("--sem-voz"):
+	if not _voice_started and creations_available() and voice_enabled and not MobileDev.args().has("--sem-voz"):
 		_voice_started = true
 		voice.setup(player, Lexicon.data)
 
@@ -686,10 +750,17 @@ func _set_mouse_captured(captured: bool) -> void :
 
 
 func _run_dev_args() -> void :
+	var had_loading_screen: = _waiting_world or LoadingScreen.current != null
+	for arg in MobileDev.args():
+		if arg.begins_with("--touch-scale=") or arg.begins_with("--escala-toque="):
+			UserSettings.set_value("touch", "scale", arg.split("=")[1].to_float())
+	while _waiting_world:
+		await get_tree().process_frame
 	var screenshot_path: = ""
 	var uses: = 0
 	var aim_down: = false
 	var open_options: = false
+	var options_page: = ""
 	var calibrate: = false
 	var extract: = false
 	var die: = false
@@ -699,7 +770,7 @@ func _run_dev_args() -> void :
 	var frame_gap: = 0.1
 	var phrases: Array[String] = []
 	var voice_files: Array[String] = []
-	for arg in OS.get_cmdline_user_args():
+	for arg in MobileDev.args():
 		if arg.begins_with("--say="):
 			phrases.append(arg.trim_prefix("--say="))
 		elif arg.begins_with("--voz="):
@@ -710,8 +781,10 @@ func _run_dev_args() -> void :
 			_hud.toggle_debug()
 		elif arg == "--mirar":
 			aim_down = true
-		elif arg == "--opcoes":
+		elif arg.begins_with("--opcoes"):
 			open_options = true
+			if arg.contains("="):
+				options_page = arg.split("=")[1]
 		elif arg == "--calibrar":
 			calibrate = true
 		elif arg.begins_with("--ver-robo"):
@@ -724,6 +797,8 @@ func _run_dev_args() -> void :
 			_dev_walk(arg.trim_prefix("--andar="))
 		elif arg.begins_with("--materia="):
 			player.add_matter(arg.trim_prefix("--materia=").to_float())
+		elif arg.begins_with("--portais"):
+			_dev_portals(arg.trim_prefix("--portais").trim_prefix("="))
 		elif arg.begins_with("--extrair"):
 			extract = true
 			extract_from = arg.trim_prefix("--extrair").trim_prefix("=")
@@ -731,6 +806,9 @@ func _run_dev_args() -> void :
 			_start_recording(arg.trim_prefix("--gravar-voz").trim_prefix("=").to_int())
 		elif arg.begins_with("--screenshot="):
 			screenshot_path = arg.trim_prefix("--screenshot=")
+		elif arg.begins_with("--touch-scale=") or arg.begins_with("--escala-toque="):
+			var s_val: = arg.split("=")[1].to_float()
+			UserSettings.set_value("touch", "scale", s_val)
 		elif arg.begins_with("--wait="):
 			wait = arg.trim_prefix("--wait=").to_float()
 		elif arg.begins_with("--quadros="):
@@ -756,6 +834,11 @@ func _run_dev_args() -> void :
 			Input.action_press("move_forward")
 			Input.action_press("sprint")
 			get_tree().create_timer(after if after > 0.0 else 0.7).timeout.connect( func() -> void : _dev_tap("crouch"))
+		elif arg.begins_with("--gravar-tutorial="):
+			var recorder: = TutorialRecorder.new()
+			add_child(recorder)
+			recorder.setup(self, player, arg.trim_prefix("--gravar-tutorial="))
+			recorder.run.call_deferred()
 		elif arg.begins_with("--girar="):
 			var rate: = deg_to_rad(arg.trim_prefix("--girar=").to_float())
 			get_tree().process_frame.connect( func() -> void : player.yaw = wrapf(player.yaw + rate * get_process_delta_time(), - PI, PI))
@@ -776,16 +859,24 @@ func _run_dev_args() -> void :
 		player.aiming = true
 	for i in uses:
 		await get_tree().create_timer(DEV_USE_GAP).timeout
+
+		while Forge.is_building(player.player_id):
+			await get_tree().process_frame
 		if player.shaper.active:
 
 			player.shaper.confirm()
 			continue
 		player.hands.use_pressed()
 		player.hands.use_released()
+	if _waiting_world or LoadingScreen.current != null or had_loading_screen:
+		while _waiting_world or LoadingScreen.current != null:
+			await get_tree().process_frame
+		if had_loading_screen:
+			await get_tree().create_timer(0.6).timeout
 	if die:
 		player.take_damage(100000.0, "kinetic", null)
 	if open_options:
-		_hud.options.open()
+		_hud.options.open(options_page)
 	if calibrate:
 		_start_calibration()
 	if not screenshot_path.is_empty():
@@ -796,6 +887,201 @@ func _run_dev_args() -> void :
 			_take_screenshot(screenshot_path)
 
 
+
+
+
+
+
+func _dev_portals(spec: String) -> void :
+	var parts: = spec.split(",")
+	var mode: = parts[0]
+	var walk: = parts.has("andar")
+
+	while LoadingScreen.current != null:
+		await get_tree().process_frame
+	await get_tree().create_timer(0.3).timeout
+	var system: = PortalSystem.of(get_tree())
+	var space: = player.get_world_3d().direct_space_state
+	if mode.begins_with("morro"):
+		_dev_portals_hill(system, space, walk, mode == "morro_encosta")
+		return
+	if mode == "efeito":
+		_dev_portals_show(system, space)
+		return
+	var stress: = mode == "estresse"
+	if stress:
+		mode = "parede"
+	var eye: = player.global_position + Vector3.UP * 1.1
+	var walls: Array[Dictionary] = []
+	for i in 24:
+		var dir: = Vector3.FORWARD.rotated(Vector3.UP, TAU * i / 24.0)
+		var hit: = space.intersect_ray(PhysicsRayQueryParameters3D.create(eye, eye + dir * 40.0, PhysicsLayers.WORLD | PhysicsLayers.THINGS))
+		if not hit.is_empty() and absf((hit["normal"] as Vector3).y) < 0.2:
+			walls.append({"point": hit["position"], "normal": hit["normal"], "dir": dir, 
+				"dist": eye.distance_to(hit["position"])})
+	walls.sort_custom( func(a: Dictionary, b: Dictionary) -> bool: return a["dist"] < b["dist"])
+	var opened: Array[String] = []
+	var first: Dictionary = {}
+	for wall in walls:
+		if mode == "chao" and opened.size() == 1:
+			pass
+		elif not first.is_empty() and (wall["dir"] as Vector3).dot(first["dir"]) > 0.5:
+			continue
+		var slot: = opened.size() if mode != "chao" else 1
+		var point: Vector3 = wall["point"]
+		if mode == "quina" and slot == 0:
+
+			var base: = space.intersect_ray(PhysicsRayQueryParameters3D.create(point + (wall["normal"] as Vector3) * 0.05, 
+				point + (wall["normal"] as Vector3) * 0.05 + Vector3.DOWN * 4.0, PhysicsLayers.WORLD))
+			if not base.is_empty():
+				point.y = (base["position"] as Vector3).y
+		if system.open(player.player_id, slot, point, wall["normal"], Vector3.UP, 1.0, eye) != null:
+			opened.append("parede a %.1f m" % wall["dist"])
+			first = wall
+			if mode == "chao" or opened.size() == 2:
+				break
+		else:
+			print("[Portais] dev: parede a %.1f m recusada: %s" % [wall["dist"], system.last_reject])
+	if mode == "chao":
+		var ahead: = player.global_position - player.global_basis.z * 3.0 + Vector3.UP * 2.0
+		var floor_hit: = space.intersect_ray(PhysicsRayQueryParameters3D.create(ahead, ahead + Vector3.DOWN * 6.0, PhysicsLayers.WORLD))
+		if not floor_hit.is_empty() and system.open(player.player_id, 0, floor_hit["position"], floor_hit["normal"], - player.global_basis.z) != null:
+			opened.append("chão a 3 m")
+	print("[Portais] dev: ", ", ".join(opened) if not opened.is_empty() else "nenhuma superfície serviu")
+	var a: = system.portals_of(player.player_id)[0] as Portal
+	if a != null:
+
+		var spot: = a.global_position + a.global_basis.z * 2.5 + Vector3.UP * 3.0
+		var ground: = space.intersect_ray(PhysicsRayQueryParameters3D.create(spot, spot + Vector3.DOWN * 8.0, PhysicsLayers.WORLD))
+		if not ground.is_empty() and absf(a.global_basis.z.y) < 0.8:
+			player.global_position = ground["position"]
+			player.velocity = Vector3.ZERO
+
+		player.look_at_point(a.global_position)
+		if walk:
+			Input.action_press("move_forward")
+	if stress:
+		if mode == "parede" and system.portals_of(player.player_id)[1] != null:
+
+			var ahead: = a.global_position + a.global_basis.z * 4.0 + Vector3.UP * 3.0
+			var ground: = space.intersect_ray(PhysicsRayQueryParameters3D.create(ahead, ahead + Vector3.DOWN * 10.0, PhysicsLayers.WORLD))
+			if not ground.is_empty():
+				system.open(player.player_id, 1, ground["position"], ground["normal"], - a.global_basis.z, 1.0, ahead)
+		_dev_portals_stress(system, space)
+
+
+
+
+func _dev_portals_show(system: PortalSystem, space: PhysicsDirectSpaceState3D) -> void :
+	var eye: = player.global_position + Vector3.UP * 1.4
+	var best: Dictionary = {}
+	for i in 24:
+		var dir: = Vector3.FORWARD.rotated(Vector3.UP, TAU * i / 24.0)
+		var hit: = space.intersect_ray(PhysicsRayQueryParameters3D.create(eye, eye + dir * 30.0, PhysicsLayers.WORLD))
+		if not hit.is_empty() and absf((hit["normal"] as Vector3).y) < 0.2 and not (hit["collider"] as Node).is_in_group(PortalSystem.NO_PORTAL_GROUP):
+			if best.is_empty() or eye.distance_to(hit["position"]) < eye.distance_to(best["position"]):
+				best = hit
+	if best.is_empty():
+		return
+	var normal: Vector3 = best["normal"]
+	var wall: Vector3 = best["position"]
+	player.global_position = Vector3(wall.x, player.global_position.y, wall.z) + Vector3(normal.x, 0.0, normal.z).normalized() * 3.2
+	player.velocity = Vector3.ZERO
+	await get_tree().create_timer(0.4).timeout
+	var at: = Vector3(wall.x, player.global_position.y + 1.2, wall.z)
+	player.look_at_point(at)
+	system.open(player.player_id, 0, at, normal, Vector3.UP, 1.0, player.camera.global_position)
+	await get_tree().create_timer(1.6).timeout
+	var behind: = player.global_position + Vector3(normal.x, 0.0, normal.z).normalized() * 3.0 + Vector3.UP * 2.0
+	var ground: = space.intersect_ray(PhysicsRayQueryParameters3D.create(behind, behind + Vector3.DOWN * 6.0, PhysicsLayers.WORLD))
+	if not ground.is_empty():
+		system.open(player.player_id, 1, ground["position"], ground["normal"], - normal, 1.0, behind)
+	await get_tree().create_timer(2.2).timeout
+	system.close_owner(player.player_id)
+
+
+
+
+func _dev_portals_stress(system: PortalSystem, space: PhysicsDirectSpaceState3D) -> void :
+	var problems: = 0
+	var steps: = 0
+	var trail: Array[String] = []
+	for portal: Portal in system.portals_of(player.player_id):
+		if portal == null:
+			continue
+		var center: = portal.global_position
+		var env_faces: PackedVector3Array = (portal.environment.get_child(0) as CollisionShape3D).shape.get_faces()
+		print("[Portais] estresse: %s em %s normal %s, cópia: %d corpos %s, %d faces" % [portal.name, center, portal.global_basis.z, 
+			portal.environment.bodies.size(), portal.environment.bodies, env_faces.size() / 3])
+		for offset: float in [0.25, 0.6, 1.1]:
+			var radius: = maxf(portal.size.x, portal.size.y) * 0.5 + offset
+			for turn in 24:
+				var angle: = TAU * turn / 16.0 * (1.0 if offset != 0.6 else -1.0)
+				var target: = center + Vector3(cos(angle), 0.0, sin(angle)) * radius
+				player.look_at_point(target + Vector3.UP * 1.0)
+				Input.action_press("move_forward")
+				for tick in 24:
+					await get_tree().physics_frame
+					steps += 1
+					var at: = player.global_position
+					var top: = at + Vector3.UP * 2.5
+					var ground: = space.intersect_ray(PhysicsRayQueryParameters3D.create(top, top + Vector3.DOWN * 8.0, PhysicsLayers.WORLD))
+					var owned: = system._passing.has(player.get_instance_id())
+					var owner_now: Variant = (system._passing.get(player.get_instance_id(), {}) as Dictionary).get("portal")
+					trail.append("  %s dono=%s chão=%s" % [at, owner_now.name if owner_now != null else "-", player.is_on_floor()])
+					if trail.size() > 14:
+						trail.pop_front()
+					if not owned and not ground.is_empty() and at.y < (ground["position"] as Vector3).y - 0.35:
+						problems += 1
+						print("[Portais] estresse: EMBAIXO DO CHÃO em %s (chão %.2f), perto de %s, raio %.2f" % [at, (ground["position"] as Vector3).y, portal.name, radius])
+						print("""
+""".join(trail))
+						player.global_position = (ground["position"] as Vector3) + Vector3.UP * 0.2
+						player.velocity = Vector3.ZERO
+					elif at.y < -20.0:
+						problems += 1
+						print("[Portais] estresse: FORA DO MUNDO em %s" % at)
+						player.global_position = center + portal.global_basis.z * 2.0
+						player.velocity = Vector3.ZERO
+				Input.action_release("move_forward")
+	print("[Portais] estresse: %d problemas em %d passos" % [problems, steps])
+
+
+
+
+func _dev_portals_hill(system: PortalSystem, space: PhysicsDirectSpaceState3D, walk: bool, slope: bool) -> void :
+	var hill: = Vector3(40.0, 0.0, -40.0)
+	var opened: Array[Portal] = []
+	for offset: float in [-1.6, 1.6]:
+		var above: = hill + (Vector3(offset * 2.0, 12.0, 6.0) if slope else Vector3(offset, 12.0, 2.0))
+		var hit: = space.intersect_ray(PhysicsRayQueryParameters3D.create(above, above + Vector3.DOWN * 20.0, PhysicsLayers.WORLD))
+		if hit.is_empty():
+			continue
+		var portal: = system.open(player.player_id, opened.size(), hit["position"], hit["normal"], Vector3.FORWARD, 1.0, 
+			(hit["position"] as Vector3) + Vector3(0.0, 3.0, 4.0))
+		print("[Portais] dev morro: ", "abriu" if portal != null else "recusou: " + system.last_reject, " em ", hit["position"])
+		if portal != null:
+			opened.append(portal)
+	if opened.is_empty():
+		return
+	player.velocity = Vector3.ZERO
+	if slope:
+
+		var start: = opened[0].global_position + Vector3(0.0, 4.0, 4.0)
+		var ground: = space.intersect_ray(PhysicsRayQueryParameters3D.create(start, start + Vector3.DOWN * 10.0, PhysicsLayers.WORLD))
+		player.global_position = ground["position"] if not ground.is_empty() else start
+		player.look_at_point(opened[0].global_position + Vector3.UP * 0.5)
+	else:
+		player.global_position = opened[0].global_position + Vector3.UP * 2.0
+		player.look_at_point(opened[1].global_position)
+	if walk:
+		Input.action_press("move_forward")
+	var lowest: = INF
+	for i in 600:
+		await get_tree().physics_frame
+		lowest = minf(lowest, player.global_position.y)
+		if i % 30 == 0:
+			print("[Portais] dev morro: t=%.1f y=%.2f mais baixo=%.2f" % [i / 60.0, player.global_position.y, lowest])
 
 
 func _dev_robot_camera(view: String) -> void :
@@ -863,7 +1149,7 @@ func _dev_extract(blueprint: String) -> void :
 
 func _start_recording(count: int) -> void :
 	if not voice.is_on():
-		_hud.show_voice_prompt("Sem voz, sem gravação: %s" % voice.off_reason)
+		_hud.show_voice_prompt(tr("Sem voz, sem gravação: %s") % voice.off_reason)
 		return
 	var recorder: = VoiceRecorder.new()
 	recorder.name = "VoiceRecorder"
@@ -875,7 +1161,7 @@ func _start_recording(count: int) -> void :
 
 func _start_calibration() -> void :
 	if not voice.is_on():
-		_hud.show_voice_prompt("Sem voz, sem calibração: %s" % voice.off_reason)
+		_hud.show_voice_prompt(tr("Sem voz, sem calibração: %s") % voice.off_reason)
 		return
 	var calibration: = VoiceCalibration.new()
 	calibration.name = "VoiceCalibration"

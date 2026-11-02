@@ -39,7 +39,7 @@ func run():
   for step in 45: await physics_frame
   var horizontal = Vector2(item.global_position.x-start.x,item.global_position.z-start.z).length()
   check(horizontal > 0.4, "House did not stroll: " + phrase)
-  check(item.get_node("VoxelCreatureMotion").parts.size() >= 4, "House has no animated legs")
+  check(item.creature_animator != null and item.creature_animator.gait_legs.size() == 4, "House has no animated legs")
   evidence.append({"phrase":phrase,"horizontal_m":horizontal})
   item.remove()
   await process_frame

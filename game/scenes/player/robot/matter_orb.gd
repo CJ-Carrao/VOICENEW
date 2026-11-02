@@ -7,6 +7,8 @@ extends Node3D
 
 
 const GROUP: = "matter_orbs"
+static var _bit_cube: BoxMesh
+static var _bit_cube_size: = -1.0
 
 var player: Player
 var _cfg: Dictionary
@@ -22,6 +24,8 @@ var _clock: float = 0.0
 var _anchor: = Vector3.ZERO
 var _anchor_ready: bool = false
 
+
+static var _bit_materials: Dictionary = {}
 
 func setup(owner_player: Player) -> void :
 	player = owner_player
@@ -74,20 +78,28 @@ func world_point() -> Vector3:
 
 
 func absorb(from: Vector3, color: Color) -> void :
-	var bit: = MeshInstance3D.new()
-	bit.name = "MatterBit"
-	var cube: = BoxMesh.new()
-	cube.size = Vector3.ONE * float(_cfg.get("bit_m", 0.05))
-	var material: = StandardMaterial3D.new()
-	material.albedo_color = color
-	material.emission_enabled = true
-	material.emission = color * 0.4
-	cube.material = material
-	bit.mesh = cube
-	bit.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	var root: = Forge.fx_root(player)
 	if root == null:
 		return
+	var bit_size: = float(_cfg.get("bit_m", 0.05))
+	if _bit_cube == null or not is_equal_approx(_bit_cube_size, bit_size):
+		_bit_cube = BoxMesh.new()
+		_bit_cube.size = Vector3.ONE * bit_size
+		_bit_cube_size = bit_size
+	var bit: = MeshInstance3D.new()
+	bit.name = "MatterBit"
+	var key: = color.to_html()
+	var material: = _bit_materials.get(key) as StandardMaterial3D
+	if material == null:
+
+		material = StandardMaterial3D.new()
+		material.albedo_color = color
+		material.emission_enabled = true
+		material.emission = color * 0.4
+		_bit_materials[key] = material
+	bit.mesh = _bit_cube
+	bit.material_override = material
+	bit.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	root.add_child(bit)
 	bit.global_position = from
 	var flight: = float(_cfg.get("bit_flight_s", 0.35))

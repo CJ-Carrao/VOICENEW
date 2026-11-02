@@ -15,11 +15,14 @@ const POINT_BLANK: = 0.6
 const TRAIL_COLOR: = Color(0.92, 0.95, 1.0)
 
 const PROJECTILE_VERTICAL_DEG: = 85.0
+var _running: = false
 
 
 func run(ctx: ActionContext) -> void :
-	if not thing.has_simulation_authority():
+	if _running or not thing.has_simulation_authority():
 		return
+	if thing.creature_animator != null:
+		thing.creature_animator.on_attack()
 	var cfg: = "actions.strike."
 	if thing.is_held and not thing.automatic:
 		await get_tree().create_timer(Lexicon.balf(cfg + "windup_s"), false).timeout
@@ -29,6 +32,7 @@ func run(ctx: ActionContext) -> void :
 			return
 	if not thing.is_inside_tree():
 		return
+	_running = true
 	var origin: = _origin()
 	var direction: = _direction(ctx, origin)
 	var reach: = thing.strike_reach()
@@ -64,6 +68,7 @@ func run(ctx: ActionContext) -> void :
 		Fx.muzzle_flash(fx_root, at - to.normalized() * TARGET_RADIUS, - to.normalized(), 0.3, false)
 		_knock(target, to, push)
 	_strike_world(origin, direction, reach, damage)
+	_running = false
 
 
 

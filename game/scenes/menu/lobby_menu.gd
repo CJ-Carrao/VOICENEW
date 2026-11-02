@@ -75,6 +75,12 @@ var _retired_page: Control
 var _panel_pieces: Array[PackedVector2Array] = []
 
 
+var _paper: = PAPER
+var _mobile: = false
+
+var _keyboard_lift: = 0.0
+
+
 func _ready() -> void :
 	name = "LobbyMenu"
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -83,6 +89,7 @@ func _ready() -> void :
 	var source_font: = load(str(config.font)) as Font
 	_font = MainMenu._variation(source_font, 500, 0)
 	_bold = MainMenu._variation(source_font, 800, 0)
+	_mobile = OS.has_feature("mobile") or MobileDev.args().has("--mobile")
 	_canvas = Control.new()
 	_canvas.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_canvas.size = PAPER
@@ -158,19 +165,19 @@ func _build_chrome() -> void :
 		_canvas.add_child(logo)
 	else:
 		_label(_canvas, "LAVOICE", Rect2(80, 64, 420, 70), 56, INK, true)
-	_eyebrow = _label(_canvas, "MULTIPLAYER / CONEXÃO DIRETA", Rect2(80, 198, 480, 30), 18, ACCENT, true)
-	_title = _label(_canvas, "JOGAR", Rect2(76, 239, 490, 74), 52, INK, true)
-	_tagline = _label(_canvas, "Idealizado por SOMYST", Rect2(760, 85, 1090, 30), 20, MUTED, true, HORIZONTAL_ALIGNMENT_RIGHT)
-	_build_label = _label(_canvas, str(config["menu"].get("build_label", "Build H-1")), Rect2(1570, 1050, 280, 24), 17, MUTED, false, HORIZONTAL_ALIGNMENT_RIGHT)
-	_mode_label = _label(_canvas, "FFA / ATÉ 4 JOGADORES", Rect2(1380, 139, 470, 34), 24, INK, true, HORIZONTAL_ALIGNMENT_RIGHT)
+	_eyebrow = _label(_canvas, tr("MULTIPLAYER / CONEXÃO DIRETA"), Rect2(80, 198, 480, 30), 18, ACCENT, true)
+	_title = _label(_canvas, tr("JOGAR"), Rect2(76, 239, 490, 74), 52, INK, true)
+	_tagline = _label(_canvas, tr("Idealizado por SOMYST"), Rect2(760, 85, 1090, 30), 20, MUTED, true, HORIZONTAL_ALIGNMENT_RIGHT)
+	_build_label = _label(_canvas, str(config["menu"].get("build_label", "Build H-1")), Rect2(1570, 1046 if _mobile else 1050, 280, 32 if _mobile else 24), 24 if _mobile else 17, MUTED, false, HORIZONTAL_ALIGNMENT_RIGHT)
+	_mode_label = _label(_canvas, tr("FFA / ATÉ 4 JOGADORES"), Rect2(1380, 139, 470, 34), 24, INK, true, HORIZONTAL_ALIGNMENT_RIGHT)
 	for i in NetworkSession.MAX_PLAYERS:
-		_names.append(_label(_canvas, "VAGA LIVRE", Rect2(0, 840, 280, 36), 23, INK, true, HORIZONTAL_ALIGNMENT_CENTER))
-		_player_states.append(_label(_canvas, "AGUARDANDO", Rect2(0, 879, 280, 26), 16, MUTED, false, HORIZONTAL_ALIGNMENT_CENTER))
+		_names.append(_label(_canvas, tr("VAGA LIVRE"), Rect2(0, 840, 280, 36), 23, INK, true, HORIZONTAL_ALIGNMENT_CENTER))
+		_player_states.append(_label(_canvas, tr("AGUARDANDO"), Rect2(0, 879, 280, 26), 16, MUTED, false, HORIZONTAL_ALIGNMENT_CENTER))
 		for label: Label in [_names[i], _player_states[i]]:
 			label.add_theme_color_override("font_outline_color", Color("#121215"))
 			label.add_theme_constant_override("outline_size", 3)
-	_back = _button(_canvas, "VOLTAR", Rect2(80, 976, 210, 58), _go_back, false, 22)
-	_key_hint = _label(_canvas, "ESC  VOLTAR     TAB  NAVEGAR", Rect2(1120, 992, 730, 28), 17, MUTED, false, HORIZONTAL_ALIGNMENT_RIGHT)
+	_back = _button(_canvas, tr("VOLTAR"), Rect2(80, 976, 210, 58), _go_back, false, 22)
+	_key_hint = _label(_canvas, tr("ESC  VOLTAR     TAB  NAVEGAR"), Rect2(1120, 992, 730, 28), 17, MUTED, false, HORIZONTAL_ALIGNMENT_RIGHT)
 
 
 func _show_page(value: String) -> void :
@@ -181,7 +188,7 @@ func _show_page(value: String) -> void :
 	_rebuild_age = 0.0
 	_page_root = Control.new()
 	_page_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_page_root.size = PAPER
+	_page_root.size = _paper
 	_canvas.add_child(_page_root)
 	_note = null
 	_status = null
@@ -196,8 +203,8 @@ func _show_page(value: String) -> void :
 	_color_request_pending = -2
 	_release_color_button = null
 	_back.disabled = false
-	_back.text = "VOLTAR"
-	_eyebrow.text = "MULTIPLAYER / CONEXÃO DIRETA"
+	_back.text = tr("VOLTAR")
+	_eyebrow.text = tr("MULTIPLAYER / CONEXÃO DIRETA")
 	match page:
 		"home": _build_home()
 		"host": _build_host()
@@ -265,44 +272,44 @@ func _animate_shell(target: float, seconds: float) -> void :
 
 
 func _build_home() -> void :
-	_title.text = "JOGAR"
-	var first: = _button(_page_root, "CRIAR SALA", Rect2(80, 424, 460, 86), func(): _show_page("host"), true, 32)
-	_button(_page_root, "ENTRAR EM SALA", Rect2(80, 530, 460, 80), func(): _show_page("join"), false, 30)
-	_label(_page_root, "Use alguma VPN como (RADMIN) ou conecte via P2P", Rect2(84, 644, 450, 115), 21, MUTED)
-	_label(_page_root, "JOGAR SOZINHO", Rect2(84, 795, 445, 28), 17, MUTED, true)
+	_title.text = tr("JOGAR")
+	var first: = _button(_page_root, tr("CRIAR SALA"), Rect2(80, 424, 460, 86), func(): _show_page("host"), true, 32)
+	_button(_page_root, tr("ENTRAR EM SALA"), Rect2(80, 530, 460, 80), func(): _show_page("join"), false, 30)
+	_label(_page_root, tr("Use alguma VPN como (RADMIN) ou conecte via P2P"), Rect2(84, 644, 450, 115), 21, MUTED)
+	_label(_page_root, tr("JOGAR SOZINHO"), Rect2(84, 795, 445, 28), 17, MUTED, true)
 
-	_button(_page_root, "DUELO CONTRA BOT", Rect2(80, 839, 460, 72), func():
+	_button(_page_root, tr("DUELO CONTRA BOT"), Rect2(80, 839, 460, 72), func():
 		_map_mode = "duel"
 		_show_page("maps"), false, 25)
 	_queue_focus(first)
 
 
 func _build_host() -> void :
-	_title.text = "CRIAR SALA"
-	_label(_page_root, "Abra uma sala e convide até três pessoas pelo endereço.", Rect2(80, 328, 460, 85), 23, MUTED)
-	_label(_page_root, "PORTA", Rect2(84, 461, 450, 28), 18, INK, true)
+	_title.text = tr("CRIAR SALA")
+	_label(_page_root, tr("Abra uma sala e convide até três pessoas pelo endereço."), Rect2(80, 328, 460, 85), 23, MUTED)
+	_label(_page_root, tr("PORTA"), Rect2(84, 461, 450, 28), 18, INK, true)
 	_port = _field(Rect2(80, 506, 460, 66), str(UserSettings.get_value("network", "port", NetworkSession.DEFAULT_PORT)))
 	_port.max_length = 5
 	_port.text_submitted.connect( func(_value: String): _create_room())
-	_button(_page_root, "ABRIR SALA", Rect2(80, 608, 460, 86), _create_room, true, 30)
+	_button(_page_root, tr("ABRIR SALA"), Rect2(80, 608, 460, 86), _create_room, true, 30)
 	_note = _label(_page_root, "", Rect2(84, 730, 450, 150), 21, MUTED)
 	_queue_focus(_port)
 
 
 func _build_join() -> void :
-	_title.text = "ENTRAR EM SALA"
-	_label(_page_root, "Peça o endereço a quem criou a sala.", Rect2(80, 328, 460, 72), 23, MUTED)
-	_label(_page_root, "ENDEREÇO", Rect2(84, 426, 450, 28), 18, INK, true)
+	_title.text = tr("ENTRAR EM SALA")
+	_label(_page_root, tr("Peça o endereço a quem criou a sala."), Rect2(80, 328, 460, 72), 23, MUTED)
+	_label(_page_root, tr("ENDEREÇO"), Rect2(84, 426, 450, 28), 18, INK, true)
 	_address = _field(Rect2(80, 467, 460, 66), str(UserSettings.get_value("network", "address", "")))
-	_address.placeholder_text = "Ex.: 192.168.1.20"
+	_address.placeholder_text = tr("Ex.: 192.168.1.20")
 	_address.max_length = 300
 	_address.text_submitted.connect( func(_value: String): _join_room())
-	_label(_page_root, "PORTA", Rect2(84, 557, 450, 28), 18, INK, true)
+	_label(_page_root, tr("PORTA"), Rect2(84, 557, 450, 28), 18, INK, true)
 	_port = _field(Rect2(80, 598, 460, 66), str(UserSettings.get_value("network", "port", NetworkSession.DEFAULT_PORT)))
 	_port.max_length = 5
 	_port.text_submitted.connect( func(_value: String): _join_room())
-	_button(_page_root, "CONECTAR", Rect2(80, 705, 460, 86), _join_room, true, 30)
-	_note = _label(_page_root, "Pode colar o endereço completo, incluindo a porta.", Rect2(84, 822, 450, 98), 20, MUTED)
+	_button(_page_root, tr("CONECTAR"), Rect2(80, 705, 460, 86), _join_room, true, 30)
+	_note = _label(_page_root, tr("Pode colar o endereço completo, incluindo a porta."), Rect2(84, 822, 450, 98), 20, MUTED)
 	_queue_focus(_address)
 
 
@@ -317,28 +324,36 @@ func _layout_chrome() -> void :
 		stage.visible = full
 		if not full and stage.has_method("cancel_arrival"): stage.call("cancel_arrival")
 		stage.position = Vector2.ZERO if full else Vector2(580, 170)
-		stage.size = PAPER if full else Vector2(1280, 730)
+		stage.size = _paper if full else Vector2(1280.0 + _extra(), 730)
 		if stage.has_method("set_compact"): stage.call("set_compact", not full)
 		if stage.has_method("set_arena"):
 			var map: = _current_map()
-			stage.call("set_arena", String(map.get("name", "ARENA ORIGINAL")), String(map.get("image", "res://assets/menu/arena_original.png")))
+			stage.call("set_arena", String(map.get("name", tr("ARENA ORIGINAL"))), String(map.get("image", "res://assets/menu/arena_original.png")))
 	_logo.position = Vector2(58, 52) if full else Vector2(78, 60)
 	_logo.size = Vector2(276, 58) if full else Vector2(390, 78)
-	_title.position = Vector2(540, 45) if full else Vector2(76, 239)
+	_title.position = Vector2(540.0 + _middle(), 45) if full else Vector2(76, 239)
 	_title.size = Vector2(840, 64) if full else Vector2(490, 74)
 	_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER if full else HORIZONTAL_ALIGNMENT_LEFT
 	_title.add_theme_font_size_override("font_size", 42 if full else 52)
-	_eyebrow.position = Vector2(540, 114) if full else Vector2(80, 198)
+	_eyebrow.position = Vector2(540.0 + _middle(), 114) if full else Vector2(80, 198)
 	_eyebrow.size = Vector2(840, 30) if full else Vector2(480, 30)
 	_eyebrow.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER if full else HORIZONTAL_ALIGNMENT_LEFT
 	_tagline.visible = not full
-	_mode_label.text = ("TREINO" if _map_mode == "practice" else "DUELO CONTRA BOT") if page == "maps" else "FFA / ATÉ 4 JOGADORES"
-	_mode_label.position = Vector2(1420, 70) if full else Vector2(1380, 139)
+	_mode_label.text = (tr("TREINO") if _map_mode == "practice" else tr("DUELO CONTRA BOT")) if page == "maps" else tr("FFA / ATÉ 4 JOGADORES")
+	_mode_label.position = Vector2(1420.0 + _extra(), 70) if full else Vector2(1380.0 + _extra(), 139)
+	_tagline.position.x = 760.0 + _extra()
+	_build_label.position.x = 1570.0 + _extra()
+	_key_hint.position.x = 1120.0 + _extra()
 	_mode_label.size.x = 430
 	_mode_label.add_theme_font_size_override("font_size", 19 if full else 24)
 	_back.position = Vector2(60, 978) if full else Vector2(80, 976)
 	_back.size = Vector2(260, 64) if full else Vector2(210, 58)
-	_key_hint.visible = not full
+	if _mobile:
+
+		_back.position = Vector2(60, 960) if full else Vector2(80, 958)
+		_back.size = Vector2(300, 84)
+		_back.set("text_size", 28)
+	_key_hint.visible = not full and not _mobile
 	for i in _names.size():
 
 		_names[i].visible = full and (page != "maps" or i + 1 == Session.local_player_id)
@@ -348,22 +363,22 @@ func _layout_chrome() -> void :
 
 
 func _build_room() -> void :
-	_title.text = "ESCOLHA SUA COR"
-	_eyebrow.text = "01 / PREPARE SEU ROBÔ"
+	_title.text = tr("ESCOLHA SUA COR")
+	_eyebrow.text = tr("01 / PREPARE SEU ROBÔ")
 	_build_color_picker()
-	_status = _label(_page_root, "Abrindo sala…", Rect2(60, 925, 500, 32), 20, INK)
+	_status = _label(_page_root, tr("Abrindo sala…"), Rect2(60, 925, 500, 32), 20, INK)
 	_addresses = OptionButton.new()
-	_addresses.position = Vector2(360, 990)
+	_addresses.position = Vector2(390 if _mobile else 360, 990)
 	_addresses.size = Vector2(410, 50)
 	_style_input(_addresses)
 	_addresses.add_theme_font_size_override("font_size", 20)
 	_page_root.add_child(_addresses)
-	_button(_page_root, "COPIAR", Rect2(785, 990, 150, 50), _copy_address, false, 18)
-	_ready_button = _button(_page_root, "ESTOU PRONTO", Rect2(1410, 972, 450, 74), _toggle_ready, true, 27)
-	_retry_button = _button(_page_root, "TENTAR NOVAMENTE", Rect2(1410, 972, 450, 74), _retry, true, 24)
+	_button(_page_root, tr("COPIAR"), Rect2(815 if _mobile else 785, 990, 150, 50), _copy_address, false, 18)
+	_ready_button = _button(_page_root, tr("ESTOU PRONTO"), Rect2(1410.0 + _extra(), 972, 450, 74), _toggle_ready, true, 27)
+	_retry_button = _button(_page_root, tr("TENTAR NOVAMENTE"), Rect2(1410.0 + _extra(), 972, 450, 74), _retry, true, 24)
 	_retry_button.visible = false
-	_note = _label(_page_root, "Escolha uma cor livre e confirme seu robô.", Rect2(610, 925, 1250, 32), 19, MUTED, false, HORIZONTAL_ALIGNMENT_RIGHT)
-	_back.text = "SAIR DA SALA"
+	_note = _label(_page_root, tr("Escolha uma cor livre e confirme seu robô."), Rect2(610, 925, 1250.0 + _extra(), 32), 19, MUTED, false, HORIZONTAL_ALIGNMENT_RIGHT)
+	_back.text = tr("SAIR DA SALA")
 	_refresh_addresses()
 	_focus_color_choice.call_deferred()
 
@@ -386,7 +401,7 @@ func _build_color_picker() -> void :
 	var config: = RobotBody.config()
 	var palette: Array = config["player_colors"]
 	var names: Array = config["player_color_names"]
-	_color_hint = _label(_page_root, "ESCOLHA UMA COR", Rect2(700, 661, 520, 28), 18, INK, true, HORIZONTAL_ALIGNMENT_CENTER)
+	_color_hint = _label(_page_root, tr("ESCOLHA UMA COR"), Rect2(700.0 + _middle(), 661, 520, 28), 18, INK, true, HORIZONTAL_ALIGNMENT_CENTER)
 	_color_hint.add_theme_color_override("font_outline_color", Color("#121215"))
 	_color_hint.add_theme_constant_override("outline_size", 3)
 	for index in palette.size():
@@ -394,10 +409,14 @@ func _build_color_picker() -> void :
 		button.name = "ColorOption%d" % index
 		button.set_meta("lobby_color_index", index)
 		button.set_meta("lobby_color_rgb24", RobotColor.to_rgb24(Color(String(palette[index]))))
-		button.position = Vector2(730 + (index % 8) * 58.0, 700 + (index / 8) * 56.0)
+		button.position = Vector2(730.0 + _middle() + (index % 8) * 58.0, 700 + (index / 8) * 56.0)
 		button.size = Vector2(52, 50)
+		if _mobile:
+
+			button.position = Vector2(680.0 + _middle() + (index % 8) * 70.0, 696 + (index / 8) * 68.0)
+			button.size = Vector2(64, 62)
 		button.set("swatch", Color(String(palette[index])))
-		button.set("color_name", String(names[index]))
+		button.set("color_name", tr(String(names[index])))
 		button.set("ui_font", _bold)
 		button.set("compact", true)
 		_page_root.add_child(button)
@@ -411,26 +430,27 @@ func _build_color_picker() -> void :
 			_sound(false))
 		button.focus_exited.connect(button.queue_redraw)
 		_color_buttons.append(button)
-	_release_color_button = _button(_page_root, "LIBERAR COR", Rect2(842, 824, 236, 52), _release_color, false, 19)
+	_release_color_button = _button(_page_root, tr("LIBERAR COR"), Rect2(842.0 + _middle(), 836 if _mobile else 824, 236, 62 if _mobile else 52), _release_color, false, 19)
 	_build_paint_choice()
 
 
 
 func _build_paint_choice() -> void :
-	var hint: = _label(_page_root, "SUA PINTURA", Rect2(1222, 672, 320, 28), 18, INK, true)
+	var paint_x: = 1262.0 + _middle() if _mobile else 1222.0 + _middle()
+	var hint: = _label(_page_root, tr("SUA PINTURA"), Rect2(paint_x, 672, 320, 28), 18, INK, true)
 	hint.add_theme_color_override("font_outline_color", Color("#121215"))
 	hint.add_theme_constant_override("outline_size", 3)
 	_paint_choice = OptionButton.new()
 	_paint_choice.name = "PaintChoice"
-	_paint_choice.position = Vector2(1222, 704)
-	_paint_choice.size = Vector2(320, 52)
+	_paint_choice.position = Vector2(paint_x, 704)
+	_paint_choice.size = Vector2(320, 62 if _mobile else 52)
 	_style_input(_paint_choice)
 	_paint_choice.add_theme_font_size_override("font_size", 20)
 	_page_root.add_child(_paint_choice)
 	var slots: = PaintSlots.load_from()
-	_paint_choice.add_item("SEM PINTURA")
+	_paint_choice.add_item(tr("SEM PINTURA"))
 	for i in PaintSlots.count():
-		_paint_choice.add_item(slots.names[i] if not slots.paints[i].is_empty() else "%s (VAZIO)" % slots.names[i])
+		_paint_choice.add_item(slots.names[i] if not slots.paints[i].is_empty() else tr("%s (VAZIO)") % slots.names[i])
 		_paint_choice.set_item_disabled(i + 1, slots.paints[i].is_empty())
 	var remembered: = int(UserSettings.get_value("paint", "lobby_slot", -1))
 	if remembered < 0 or remembered >= PaintSlots.count() or slots.paints[remembered].is_empty(): remembered = -1
@@ -461,11 +481,11 @@ func _update_paints() -> void :
 
 
 func _color_name(rgb24: int) -> String:
-	if rgb24 < 0: return "SEM COR"
+	if rgb24 < 0: return tr("SEM COR")
 	var config: = RobotBody.config()
 	for i in (config["player_colors"] as Array).size():
 		if RobotColor.to_rgb24(Color(String(config["player_colors"][i]))) == rgb24:
-			return String(config["player_color_names"][i])
+			return tr(String(config["player_color_names"][i]))
 	return "#%06X" % rgb24
 
 
@@ -497,7 +517,7 @@ func _refresh_color_options() -> void :
 	elif _color_request_pending >= 0 and Session.lobby.color_owner(_color_request_pending) > 0:
 		_color_request_pending = -2
 		_feedback_left = 3.0
-		_error("Outro jogador escolheu essa cor primeiro. Escolha uma cor livre.")
+		_error(tr("Outro jogador escolheu essa cor primeiro. Escolha uma cor livre."))
 	for index in _color_buttons.size():
 		var button: = _color_buttons[index]
 		var owner: = Session.lobby.color_owner(int(button.get_meta("lobby_color_rgb24")))
@@ -505,26 +525,26 @@ func _refresh_color_options() -> void :
 		button.set("local_id", local_id)
 		button.disabled = not connected or _locked or Session.lobby.transition_locked or _color_request_pending != -2 or (owner > 0 and owner != local_id)
 		var color_name: = String(button.get("color_name"))
-		var state: = "Sua cor. Clique para liberar." if owner == local_id else ("Reservada por P%d." % owner if owner > 0 else "Livre. Clique para escolher.")
+		var state: = tr("Sua cor. Clique para liberar.") if owner == local_id else (tr("Reservada por P%d.") % owner if owner > 0 else tr("Livre. Clique para escolher."))
 		button.text = "%s — %s" % [color_name, state]
 		button.tooltip_text = button.text
 		button.queue_redraw()
 	if _color_hint != null:
-		_color_hint.text = "SUA COR: " + _color_name(selected) if selected >= 0 else "ESCOLHA UMA COR"
-		if _color_request_pending != -2: _color_hint.text = "Confirmando sua escolha…"
+		_color_hint.text = tr("SUA COR: ") + _color_name(selected) if selected >= 0 else tr("ESCOLHA UMA COR")
+		if _color_request_pending != -2: _color_hint.text = tr("Confirmando sua escolha…")
 	var blocked: = not connected or _locked or Session.lobby.transition_locked or _color_request_pending != -2
 	_release_color_button.disabled = blocked or selected < 0
 
 
 func _build_arena() -> void :
-	_title.text = "ESCOLHA A ARENA"
-	_eyebrow.text = "02 / CONFIRME O DESTINO"
+	_title.text = tr("ESCOLHA A ARENA")
+	_eyebrow.text = tr("02 / CONFIRME O DESTINO")
 	_status = _label(_page_root, "", Rect2(60, 925, 500, 32), 21, INK, true)
-	_note = _label(_page_root, "Todos confirmam para entrar na partida.", Rect2(620, 925, 1240, 32), 19, MUTED, false, HORIZONTAL_ALIGNMENT_RIGHT)
-	_ready_button = _button(_page_root, "CANCELAR PRONTO", Rect2(1035, 972, 345, 74), _toggle_ready, false, 25)
-	_start_button = _button(_page_root, "CONFIRMAR ARENA", Rect2(1410, 972, 450, 74), _vote_arena, true, 27)
+	_note = _label(_page_root, tr("Todos confirmam para entrar na partida."), Rect2(620, 925, 1240.0 + _extra(), 32), 19, MUTED, false, HORIZONTAL_ALIGNMENT_RIGHT)
+	_ready_button = _button(_page_root, tr("CANCELAR PRONTO"), Rect2(1035.0 + _extra(), 972, 345, 74), _toggle_ready, false, 25)
+	_start_button = _button(_page_root, tr("CONFIRMAR ARENA"), Rect2(1410.0 + _extra(), 972, 450, 74), _vote_arena, true, 27)
 	_start_button.disabled = true
-	_back.text = "VOLTAR À SALA"
+	_back.text = tr("VOLTAR À SALA")
 	_queue_focus(_back)
 
 
@@ -532,13 +552,13 @@ func _build_arena() -> void :
 func _build_maps() -> void :
 	var maps: = _maps()
 	_map_index = clampi(_map_index, 0, maxi(0, maps.size() - 1))
-	_title.text = "ESCOLHA O MAPA"
-	_eyebrow.text = "TREINO / QUALQUER MAPA" if _map_mode == "practice" else "JOGAR SOZINHO"
+	_title.text = tr("ESCOLHA O MAPA")
+	_eyebrow.text = tr("TREINO / QUALQUER MAPA") if _map_mode == "practice" else tr("JOGAR SOZINHO")
 
 	_status = _label(_page_root, "", Rect2(60, 925, 620, 32), 21, INK, true)
-	_start_button = _button(_page_root, "TREINAR NESTE MAPA" if _map_mode == "practice" else "JOGAR NESTE MAPA", 
-		Rect2(1410, 972, 450, 74), _confirm_map, true, 25)
-	_back.text = "VOLTAR"
+	_start_button = _button(_page_root, tr("TREINAR NESTE MAPA") if _map_mode == "practice" else tr("JOGAR NESTE MAPA"), 
+		Rect2(1410.0 + _extra(), 972, 450, 74), _confirm_map, true, 25)
+	_back.text = tr("VOLTAR")
 	_refresh_map()
 	_queue_focus(_start_button if maps.size() > 0 else _back)
 
@@ -587,11 +607,11 @@ func _show_voted_map() -> void :
 
 
 func _build_versus() -> void :
-	_title.text = "IMAGINAÇÃO EM JOGO"
+	_title.text = tr("IMAGINAÇÃO EM JOGO")
 	var chosen: = Session.lobby.chosen_map
 	var maps: = _maps()
-	_eyebrow.text = "03 / " + (String((maps[chosen] as Dictionary).get("name", "ARENA")) if chosen >= 0 and chosen < maps.size() else "ARENA ORIGINAL")
-	_note = _label(_page_root, "Entrando na arena…", Rect2(560, 950, 800, 55), 27, INK, true, HORIZONTAL_ALIGNMENT_CENTER)
+	_eyebrow.text = "03 / " + (String((maps[chosen] as Dictionary).get("name", tr("ARENA"))) if chosen >= 0 and chosen < maps.size() else tr("ARENA ORIGINAL"))
+	_note = _label(_page_root, tr("Entrando na arena…"), Rect2(560.0 + _middle(), 950, 800, 55), 27, INK, true, HORIZONTAL_ALIGNMENT_CENTER)
 	_back.disabled = true
 
 
@@ -612,13 +632,13 @@ func _join_room() -> void :
 	var parts: = target.rsplit(":", true, 1)
 	if parts.size() == 2 and parts[1].is_valid_int() and (target.count(":") == 1 or target.begins_with("[")):
 		if parts[1].to_int() < 1 or parts[1].to_int() > 65535:
-			_error("Use uma porta entre 1 e 65535.")
+			_error(tr("Use uma porta entre 1 e 65535."))
 			_address.grab_focus()
 			return
 		target = parts[0].trim_prefix("[").trim_suffix("]")
 		_port.text = parts[1]
 	if target.is_empty() or target.length() > 253 or target.contains(" ") or target.contains("/"):
-		_error("Informe o IP ou o nome do computador que abriu a sala.")
+		_error(tr("Informe o IP ou o nome do computador que abriu a sala."))
 		_address.grab_focus()
 		return
 	var port: = _validated_port()
@@ -637,7 +657,7 @@ func _join_room() -> void :
 func _validated_port() -> int:
 	var value: = _port.text.strip_edges()
 	if not value.is_valid_int() or value.to_int() < 1 or value.to_int() > 65535:
-		_error("Use uma porta entre 1 e 65535.")
+		_error(tr("Use uma porta entre 1 e 65535."))
 		_port.grab_focus()
 		return 0
 	return value.to_int()
@@ -661,7 +681,7 @@ func _refresh_addresses() -> void :
 func _copy_address() -> void :
 	if _addresses == null or _addresses.item_count == 0: return
 	DisplayServer.clipboard_set(_addresses.get_item_text(maxi(_addresses.selected, 0)))
-	_note.text = "Endereço copiado. Envie para seus convidados."
+	_note.text = tr("Endereço copiado. Envie para seus convidados.")
 	_note.add_theme_color_override("font_color", INK)
 	_feedback_left = 3.0
 
@@ -705,12 +725,12 @@ func _refresh_room() -> void :
 		var was_locked: = _start_button.disabled
 		_start_button.disabled = _locked or Session.lobby.transition_locked
 		if was_locked and not _start_button.disabled: _queue_focus(_start_button)
-		_start_button.text = "RETIRAR VOTO" if voted else "CONFIRMAR ARENA"
+		_start_button.text = tr("RETIRAR VOTO") if voted else tr("CONFIRMAR ARENA")
 		_start_button.set("primary", not voted)
 		_ready_button.disabled = _locked
 		_back.disabled = _locked
-		_back.text = "VOLTAR À SALA"
-		_note.text = "Preparando a seleção…" if Session.lobby.transition_locked else ("Voto confirmado. Esperando os outros jogadores…" if voted else "Clique no mapa e confirme. O mais votado vence.")
+		_back.text = tr("VOLTAR À SALA")
+		_note.text = tr("Preparando a seleção…") if Session.lobby.transition_locked else (tr("Voto confirmado. Esperando os outros jogadores…") if voted else tr("Clique no mapa e confirme. O mais votado vence."))
 		_show_voted_map()
 		return
 	if page != "room" or _status == null: return
@@ -723,24 +743,24 @@ func _refresh_room() -> void :
 	if is_instance_valid(_paint_choice):
 		_paint_choice.disabled = connecting or failed or _locked or local_ready or not Session.lobby.synchronized or Session.lobby.transition_locked
 		if Session.lobby.synchronized and _paint_sent_generation != Session.generation and not local_ready: _send_paint_choice()
-	_status.text = "%d / 4 CONECTADOS" % count if Session.state in ["hosting", "ready"] else Session.status_text()
+	_status.text = tr("%d / 4 CONECTADOS") % count if Session.state in ["hosting", "ready"] else Session.status_text()
 	_status.add_theme_color_override("font_color", Color("#ffab83") if failed else INK)
 	_ready_button.visible = not failed
 	_ready_button.disabled = connecting or _locked or (Session.lobby.transition_locked and not local_ready) or not Session.lobby.synchronized or not color_selected or _color_request_pending != -2
-	_ready_button.text = "CANCELAR PRONTO" if local_ready else "ESTOU PRONTO"
+	_ready_button.text = tr("CANCELAR PRONTO") if local_ready else tr("ESTOU PRONTO")
 	_ready_button.set("primary", not local_ready)
 	_retry_button.visible = failed
-	_back.text = "CANCELAR" if connecting else "SAIR DA SALA"
+	_back.text = tr("CANCELAR") if connecting else tr("SAIR DA SALA")
 	_back.disabled = _locked
 	if _feedback_left <= 0:
 		_note.add_theme_color_override("font_color", MUTED)
-		if failed: _note.text = "A conexão terminou. Tente novamente ou volte."
-		elif connecting: _note.text = "Conferindo conexão e versão do jogo…"
-		elif Session.lobby.transition_locked: _note.text = "Voltando aos totens…"
-		elif Session.lobby.all_ready(): _note.text = "Todos prontos! Abrindo a seleção da arena…"
-		elif not color_selected: _note.text = "Escolha uma cor livre. Ela ficará reservada para você."
-		elif count < 2: _note.text = "Aguardando alguém entrar. A sala comporta quatro jogadores."
-		else: _note.text = "Quando todos estiverem prontos, a seleção da arena abrirá."
+		if failed: _note.text = tr("A conexão terminou. Tente novamente ou volte.")
+		elif connecting: _note.text = tr("Conferindo conexão e versão do jogo…")
+		elif Session.lobby.transition_locked: _note.text = tr("Voltando aos totens…")
+		elif Session.lobby.all_ready(): _note.text = tr("Todos prontos! Abrindo a seleção da arena…")
+		elif not color_selected: _note.text = tr("Escolha uma cor livre. Ela ficará reservada para você.")
+		elif count < 2: _note.text = tr("Aguardando alguém entrar. A sala comporta quatro jogadores.")
+		else: _note.text = tr("Quando todos estiverem prontos, a seleção da arena abrirá.")
 
 
 func _update_players() -> void :
@@ -758,15 +778,15 @@ func _update_players() -> void :
 		var id: = i + 1
 		var present: = bool(occupied.get(id, false))
 		var ready: = _in_room() and bool(Session.lobby.ready_players.get(id, false))
-		_names[i].text = ("VOCÊ" if id == local_id else ("ANFITRIÃO" if id == 1 else "JOGADOR %d" % id)) if present else "VAGA LIVRE"
+		_names[i].text = (tr("VOCÊ") if id == local_id else (tr("ANFITRIÃO") if id == 1 else tr("JOGADOR %d") % id)) if present else tr("VAGA LIVRE")
 		var rgb24: = Session.lobby.color_for_player(id) if _in_room() else -1
 		var color_name: = _color_name(rgb24)
-		_player_states[i].text = (("PRONTO · " if ready else "") + color_name) if present else "AGUARDANDO CONEXÃO"
+		_player_states[i].text = ((tr("PRONTO · ") if ready else "") + color_name) if present else tr("AGUARDANDO CONEXÃO")
 		if page == "arena" and present:
 			var vote_maps: = _maps()
 			var picked: = int(Session.lobby.map_votes.get(id, 0))
 			var map_name: = String((vote_maps[picked] as Dictionary).get("name", "")) if picked >= 0 and picked < vote_maps.size() else ""
-			_player_states[i].text = ("VOTOU · " + map_name) if bool(Session.lobby.vote_players.get(id, false)) else "ESCOLHENDO ARENA"
+			_player_states[i].text = (tr("VOTOU · ") + map_name) if bool(Session.lobby.vote_players.get(id, false)) else tr("ESCOLHENDO ARENA")
 		_player_states[i].add_theme_color_override("font_color", ACCENT if ready else MUTED)
 
 
@@ -792,7 +812,7 @@ func cancel_launch() -> void :
 	_launch_epoch = -1
 	_show_page("room")
 	if _note != null:
-		_note.text = "A conexão mudou. Confira a sala antes de iniciar de novo."
+		_note.text = tr("A conexão mudou. Confira a sala antes de iniciar de novo.")
 
 
 func _go_back() -> void :
@@ -867,6 +887,9 @@ func _focus_control(control: Control) -> void :
 
 func _queue_focus(control: Control) -> void :
 
+	if _mobile and control is LineEdit:
+		return
+
 
 	_focus_instance.call_deferred(control.get_instance_id())
 
@@ -882,7 +905,8 @@ func _label(parent: Control, value: String, rect: Rect2, fs: int, color: Color, 
 	label.position = rect.position
 	label.size = rect.size
 	label.add_theme_font_override("font", _bold if bold else _font)
-	label.add_theme_font_size_override("font_size", fs)
+
+	label.add_theme_font_size_override("font_size", maxi(fs, mini(26, roundi(fs * 1.3))) if _mobile else fs)
 	label.add_theme_color_override("font_color", color)
 	label.horizontal_alignment = align
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -945,12 +969,49 @@ func _sound(pressed: bool) -> void :
 
 
 func _fit() -> void :
-	_scale = minf(size.x / PAPER.x, size.y / PAPER.y)
-	_origin = (size - PAPER * _scale) * 0.5
+	var previous: = _paper
+	_paper = Vector2(maxf(PAPER.x, PAPER.y * size.x / size.y), PAPER.y) if size.y > 0.0 else PAPER
+	_scale = minf(size.x / _paper.x, size.y / _paper.y)
+	_origin = (size - _paper * _scale) * 0.5
 	if _canvas != null:
 		_canvas.scale = Vector2.ONE * _scale
-		_canvas.position = _origin
+		_canvas.position = _origin + Vector2(0, - _keyboard_lift)
+		_canvas.size = _paper
+	if _chrome != null:
+		_chrome.size = _paper
+		_layout_chrome()
+
+	if is_open and not _closing and not previous.is_equal_approx(_paper) and _page_root != null:
+		_show_page(page)
 	queue_redraw()
+
+
+
+func _extra() -> float:
+	return _paper.x - PAPER.x
+
+
+func _middle() -> float:
+	return (_paper.x - PAPER.x) * 0.5
+
+
+
+func _follow_keyboard() -> void :
+	if not _mobile:
+		return
+	var lift: = 0.0
+	var focused: = get_viewport().gui_get_focus_owner() if is_inside_tree() else null
+	var keyboard: = float(DisplayServer.virtual_keyboard_get_height())
+	if focused is LineEdit and keyboard > 0.0 and is_ancestor_of(focused):
+		var window: = float(DisplayServer.window_get_size().y)
+		var screen_to_view: = size.y / window if window > 0.0 else 1.0
+		var top: = size.y - keyboard * screen_to_view
+		var bottom: = (focused as LineEdit).get_global_rect().end.y + _keyboard_lift + 24.0
+		lift = maxf(0.0, bottom - top)
+	if absf(lift - _keyboard_lift) > 0.5:
+		_keyboard_lift = lift
+		if _canvas != null:
+			_canvas.position = _origin + Vector2(0, - _keyboard_lift)
 
 
 func _process(delta: float) -> void :
@@ -964,10 +1025,11 @@ func _process(delta: float) -> void :
 			_assembly_sound.play()
 	_elapsed += delta
 	_presentation_age += delta
+	_follow_keyboard()
 	if _in_room() and stage != null and stage.has_method("get_slot_screen_position"):
 		for i in _names.size():
 			var at: Vector2 = stage.call("get_slot_screen_position", i + 1)
-			_names[i].position = Vector2(clampf(at.x - 140.0, 20.0, 1620.0), 849.0 if page == "room" else clampf(at.y, 170.0, 839.0))
+			_names[i].position = Vector2(clampf(stage.position.x + at.x - 140.0, 20.0, 1620.0 + _extra()), 849.0 if page == "room" else clampf(at.y, 170.0, 839.0))
 			_player_states[i].position = _names[i].position + Vector2(0, 35)
 	if page == "versus" and not _launch_emitted:
 		if not _launch_valid():
@@ -983,9 +1045,9 @@ func _process(delta: float) -> void :
 
 func _draw_chrome() -> void :
 	if not _in_room(): return
-	_chrome.draw_rect(Rect2(0, 0, 1920, 158), Color(0.075, 0.075, 0.085, 0.96))
-	_chrome.draw_rect(Rect2(0, 912, 1920, 168), Color(0.075, 0.075, 0.085, 0.96))
-	_chrome.draw_line(Vector2(60, 911), Vector2(1860, 911), Color("#555057"), 1.0)
+	_chrome.draw_rect(Rect2(0, 0, _paper.x, 158), Color(0.075, 0.075, 0.085, 0.96))
+	_chrome.draw_rect(Rect2(0, 912, _paper.x, 168), Color(0.075, 0.075, 0.085, 0.96))
+	_chrome.draw_line(Vector2(60, 911), Vector2(_paper.x - 60.0, 911), Color("#555057"), 1.0)
 	_chrome.draw_line(Vector2(60, 910), Vector2(320, 910), ACCENT, 3.0)
 	_chrome.draw_polyline(PackedVector2Array([Vector2(0, 146), Vector2(352, 146), Vector2(378, 120)]), ACCENT, 4.0, true)
 
@@ -1009,7 +1071,7 @@ func _draw() -> void :
 	draw_polyline(PackedVector2Array([Vector2(666, 0), Vector2(620, 49), Vector2(620, 183)]), accent, 6, true)
 	draw_polyline(PackedVector2Array([Vector2(592, 366), Vector2(592, 555), Vector2(582, 565)]), accent, 4, true)
 	draw_line(Vector2(80, 954), Vector2(520, 954), Color(0.27, 0.26, 0.28, _shell_amount), 1.0)
-	draw_line(Vector2(750, 970), Vector2(1850, 970), Color(1, 1, 1, 0.12 * _shell_amount), 1.0)
+	draw_line(Vector2(750, 970), Vector2(1850.0 + _extra(), 970), Color(1, 1, 1, 0.12 * _shell_amount), 1.0)
 	draw_set_transform(Vector2.ZERO)
 
 

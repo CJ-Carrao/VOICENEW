@@ -11,400 +11,590 @@
     {
       "shape": "box",
       "size": [
-        0.52,
-        0.05,
-        0.735
-      ],
-      "pos": [
-        0,
-        0.4085,
-        0
-      ],
-      "color": "#2a2d32",
-      "tag": "frame"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.507,
-        0.08,
-        0.4725
+        0.455,
+        0.06,
+        0.441
       ],
       "pos": [
         0,
         0.475,
-        -0.08
+        -0.0525
       ],
-      "color": "#397c9e",
+      "color": "#3a6f9e",
       "tag": "seat"
     },
     {
       "shape": "box",
       "size": [
-        0.507,
-        0.4085,
-        0.06
+        0.455,
+        0.399,
+        0.05
       ],
       "pos": [
         0,
-        0.7125,
+        0.722,
         0.189
       ],
-      "color": "#397c9e",
+      "color": "#3a6f9e",
       "tag": "back"
     },
     {
       "shape": "torus",
-      "radius": 0.29,
-      "inner_radius": 0.26,
+      "radius": 0.3,
+      "inner_radius": 0.252,
       "pos": [
-        -0.312,
-        0.29,
-        0.1
+        -0.299,
+        0.3,
+        0.084
       ],
-      "color": "#141416",
+      "color": "#1a1a1d",
       "rot": [
         0,
         0,
         90
       ],
-      "tag": "wheel"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.06,
-      "height": 0.06,
-      "pos": [
-        -0.312,
-        0.08,
-        -0.3675
-      ],
-      "color": "#141416",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "caster"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.05,
-        0.04,
-        0.4
-      ],
-      "pos": [
-        -0.26,
-        0.665,
-        -0.05
-      ],
-      "color": "#2a2d32",
-      "tag": "armrest"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.018,
-        0.55,
-        0.012
-      ],
-      "pos": [
-        -0.312,
-        0.29,
-        0.1
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        0
-      ],
-      "tag": "spoke"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.018,
-        0.55,
-        0.012
-      ],
-      "pos": [
-        -0.312,
-        0.29,
-        0.1
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        30,
-        0,
-        0
-      ],
-      "tag": "spoke"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.018,
-        0.55,
-        0.012
-      ],
-      "pos": [
-        -0.312,
-        0.29,
-        0.1
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        60,
-        0,
-        0
-      ],
-      "tag": "spoke"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.018,
-        0.55,
-        0.012
-      ],
-      "pos": [
-        -0.312,
-        0.29,
-        0.1
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        90,
-        0,
-        0
-      ],
-      "tag": "spoke"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.018,
-        0.55,
-        0.012
-      ],
-      "pos": [
-        -0.312,
-        0.29,
-        0.1
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        120,
-        0,
-        0
-      ],
-      "tag": "spoke"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.018,
-        0.55,
-        0.012
-      ],
-      "pos": [
-        -0.312,
-        0.29,
-        0.1
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        150,
-        0,
-        0
-      ],
-      "tag": "spoke"
+      "tag": "wheel",
+      "finish": "rubber",
+      "scale": [
+        1,
+        0.8333333333333336,
+        1
+      ]
     },
     {
       "shape": "torus",
-      "radius": 0.29,
-      "inner_radius": 0.26,
+      "radius": 0.258,
+      "inner_radius": 0.228,
       "pos": [
-        0.312,
-        0.29,
-        0.1
+        -0.299,
+        0.3,
+        0.084
       ],
-      "color": "#141416",
+      "color": "#a8adb3",
       "rot": [
         0,
         0,
         90
       ],
-      "tag": "wheel"
+      "tag": "rim",
+      "finish": "metal",
+      "scale": [
+        1,
+        1.3333333333333321,
+        1
+      ]
     },
     {
       "shape": "cylinder",
-      "radius": 0.06,
-      "height": 0.06,
+      "radius": 0.042,
+      "height": 0.064,
       "pos": [
-        0.312,
-        0.08,
-        -0.3675
+        -0.299,
+        0.3,
+        0.084
       ],
-      "color": "#141416",
+      "color": "#76797d",
       "rot": [
         0,
         0,
         90
       ],
-      "tag": "caster"
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.468,
+        0.015
+      ],
+      "pos": [
+        -0.299,
+        0.3,
+        0.084
+      ],
+      "color": "#a8adb3",
+      "rot": [
+        0.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.468,
+        0.015
+      ],
+      "pos": [
+        -0.299,
+        0.3,
+        0.084
+      ],
+      "color": "#a8adb3",
+      "rot": [
+        60.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.468,
+        0.015
+      ],
+      "pos": [
+        -0.299,
+        0.3,
+        0.084
+      ],
+      "color": "#a8adb3",
+      "rot": [
+        120.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.26,
+      "inner_radius": 0.245,
+      "pos": [
+        -0.325,
+        0.3,
+        0.084
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "push_ring"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.07,
+      "height": 0.04,
+      "pos": [
+        -0.195,
+        0.07,
+        -0.378
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0434,
+      "height": 0.0416,
+      "pos": [
+        -0.195,
+        0.07,
+        -0.378
+      ],
+      "color": "#b9bec4",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0154,
+      "height": 0.044,
+      "pos": [
+        -0.195,
+        0.07,
+        -0.378
+      ],
+      "color": "#828589",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.015,
+      "height": 0.403,
+      "pos": [
+        -0.2015,
+        0.2875,
+        -0.3045
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        21.48,
+        -5.05,
+        0
+      ],
+      "tag": "frame"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.016,
+      "height": 0.4565,
+      "pos": [
+        -0.221,
+        0.703,
+        0.1995
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        2.64,
+        0.0,
+        0
+      ],
+      "tag": "frame"
     },
     {
       "shape": "box",
       "size": [
         0.05,
         0.04,
-        0.4
+        0.357
       ],
       "pos": [
-        0.26,
+        -0.234,
         0.665,
-        -0.05
+        -0.042
       ],
-      "color": "#2a2d32",
+      "color": "#1e2024",
       "tag": "armrest"
     },
     {
-      "shape": "box",
-      "size": [
-        0.018,
-        0.55,
-        0.012
-      ],
+      "shape": "cylinder",
+      "radius": 0.025,
+      "height": 0.1,
       "pos": [
-        0.312,
-        0.29,
-        0.1
+        -0.221,
+        0.931,
+        0.273
       ],
-      "color": "#c5c9ce",
+      "color": "#1a1a1d",
       "rot": [
-        0,
+        -90,
         0,
         0
       ],
-      "tag": "spoke"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.018,
-        0.55,
-        0.012
-      ],
-      "pos": [
-        0.312,
-        0.29,
-        0.1
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        30,
-        0,
-        0
-      ],
-      "tag": "spoke"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.018,
-        0.55,
-        0.012
-      ],
-      "pos": [
-        0.312,
-        0.29,
-        0.1
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        60,
-        0,
-        0
-      ],
-      "tag": "spoke"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.018,
-        0.55,
-        0.012
-      ],
-      "pos": [
-        0.312,
-        0.29,
-        0.1
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        90,
-        0,
-        0
-      ],
-      "tag": "spoke"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.018,
-        0.55,
-        0.012
-      ],
-      "pos": [
-        0.312,
-        0.29,
-        0.1
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        120,
-        0,
-        0
-      ],
-      "tag": "spoke"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.018,
-        0.55,
-        0.012
-      ],
-      "pos": [
-        0.312,
-        0.29,
-        0.1
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        150,
-        0,
-        0
-      ],
-      "tag": "spoke"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.5525,
-        0.04,
-        0.04
-      ],
-      "pos": [
-        0,
-        0.9025,
-        0.399
-      ],
-      "color": "#bd4036",
       "tag": "handle"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.13,
+        0.02,
+        0.12
+      ],
+      "pos": [
+        -0.091,
+        0.14,
+        -0.441
+      ],
+      "color": "#1e2024",
+      "tag": "footrest"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.3,
+      "inner_radius": 0.252,
+      "pos": [
+        0.299,
+        0.3,
+        0.084
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber",
+      "scale": [
+        1,
+        0.8333333333333336,
+        1
+      ]
+    },
+    {
+      "shape": "torus",
+      "radius": 0.258,
+      "inner_radius": 0.228,
+      "pos": [
+        0.299,
+        0.3,
+        0.084
+      ],
+      "color": "#a8adb3",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal",
+      "scale": [
+        1,
+        1.3333333333333321,
+        1
+      ]
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.042,
+      "height": 0.064,
+      "pos": [
+        0.299,
+        0.3,
+        0.084
+      ],
+      "color": "#76797d",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.468,
+        0.015
+      ],
+      "pos": [
+        0.299,
+        0.3,
+        0.084
+      ],
+      "color": "#a8adb3",
+      "rot": [
+        0.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.468,
+        0.015
+      ],
+      "pos": [
+        0.299,
+        0.3,
+        0.084
+      ],
+      "color": "#a8adb3",
+      "rot": [
+        60.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.014,
+        0.468,
+        0.015
+      ],
+      "pos": [
+        0.299,
+        0.3,
+        0.084
+      ],
+      "color": "#a8adb3",
+      "rot": [
+        120.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.26,
+      "inner_radius": 0.245,
+      "pos": [
+        0.325,
+        0.3,
+        0.084
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "push_ring"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.07,
+      "height": 0.04,
+      "pos": [
+        0.195,
+        0.07,
+        -0.378
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0434,
+      "height": 0.0416,
+      "pos": [
+        0.195,
+        0.07,
+        -0.378
+      ],
+      "color": "#b9bec4",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0154,
+      "height": 0.044,
+      "pos": [
+        0.195,
+        0.07,
+        -0.378
+      ],
+      "color": "#828589",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.015,
+      "height": 0.403,
+      "pos": [
+        0.2015,
+        0.2875,
+        -0.3045
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        21.48,
+        5.05,
+        0
+      ],
+      "tag": "frame"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.016,
+      "height": 0.4565,
+      "pos": [
+        0.221,
+        0.703,
+        0.1995
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        2.64,
+        0.0,
+        0
+      ],
+      "tag": "frame"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.04,
+        0.357
+      ],
+      "pos": [
+        0.234,
+        0.665,
+        -0.042
+      ],
+      "color": "#1e2024",
+      "tag": "armrest"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.025,
+      "height": 0.1,
+      "pos": [
+        0.221,
+        0.931,
+        0.273
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "handle"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.13,
+        0.02,
+        0.12
+      ],
+      "pos": [
+        0.091,
+        0.14,
+        -0.441
+      ],
+      "color": "#1e2024",
+      "tag": "footrest"
     }
   ]
 }

@@ -1,133 +1,329 @@
 {
-  "_comment": "Arte original do Pacote Caos: silhueta em blocos, sem superficies arredondadas.",
-  "units": "meters",
+  "_comment": "Variante Lab do modelo H-4 atomic_bomb; efeito e custo preservados.",
   "anchor": [
     0,
-    0.12,
+    0,
     0
   ],
+  "units": "meters",
+  "generator": "tools/models/art_core.py",
   "pieces": [
     {
-      "shape": "box",
-      "size": [
-        0.055,
-        0.29,
-        0.055
-      ],
+      "shape": "capsule",
+      "radius": 0.16,
+      "height": 0.7,
       "pos": [
-        -0.12,
-        0.16,
-        0
+        0.0,
+        0.0,
+        -0.03
       ],
       "color": "#303b46",
+      "rot": [
+        90.0,
+        0.0,
+        0
+      ],
+      "tag": "body"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.14,
+      "height": 0.14,
+      "pos": [
+        0.0,
+        0.0,
+        0.33
+      ],
+      "color": "#303b46",
+      "rot": [
+        90.0,
+        0.0,
+        0
+      ],
+      "top_radius": 0.06,
       "tag": "body"
     },
     {
       "shape": "box",
       "size": [
-        0.055,
-        0.055,
-        0.29
+        0.34,
+        0.34,
+        0.07
       ],
       "pos": [
         0,
-        0.16,
+        0,
         -0.12
       ],
-      "color": "#303b46",
-      "tag": "body"
+      "color": "#cebd69",
+      "tag": "stripe",
+      "decal": true
     },
     {
       "shape": "box",
       "size": [
-        0.055,
-        0.29,
-        0.055
-      ],
-      "pos": [
-        0.12,
-        0.16,
-        0
-      ],
-      "color": "#303b46",
-      "tag": "body"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.055,
-        0.055,
-        0.29
-      ],
-      "pos": [
-        0,
-        0.16,
-        0.12
-      ],
-      "color": "#303b46",
-      "tag": "body"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.29,
         0.05,
-        0.29
+        0.1,
+        0.072
       ],
       "pos": [
         0,
-        0.025,
-        0
-      ],
-      "color": "#303b46",
-      "tag": "body"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.29,
-        0.05,
-        0.29
-      ],
-      "pos": [
         0,
-        0.295,
-        0
-      ],
-      "color": "#303b46",
-      "tag": "body"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.13,
-        0.13,
-        0.13
-      ],
-      "pos": [
-        0,
-        0.16,
-        0
+        -0.12
       ],
       "color": "#cebd69",
-      "tag": "core",
-      "glow": 1.3
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "stripe",
+      "decal": true
     },
     {
       "shape": "box",
       "size": [
-        0.09,
-        0.09,
-        0.09
+        0.05,
+        0.1,
+        0.072
       ],
       "pos": [
         0,
-        0.25,
+        0,
+        -0.12
+      ],
+      "color": "#cebd69",
+      "rot": [
+        0,
+        0,
+        120
+      ],
+      "tag": "stripe",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.1,
+        0.072
+      ],
+      "pos": [
+        0,
+        0,
+        -0.12
+      ],
+      "color": "#cebd69",
+      "rot": [
+        0,
+        0,
+        240
+      ],
+      "tag": "stripe",
+      "decal": true
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.03,
+      "height": 0.05,
+      "pos": [
+        0.0,
+        0.0,
+        -0.385
+      ],
+      "color": "#8a9098",
+      "rot": [
+        90.0,
+        180.0,
         0
       ],
-      "color": "#f0ce64",
-      "tag": "core",
-      "glow": 1.0
+      "tag": "head",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.012,
+        0.2,
+        0.14
+      ],
+      "pos": [
+        0.0,
+        0.1,
+        0.4
+      ],
+      "color": "#44502d",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.012,
+        0.2,
+        0.14
+      ],
+      "pos": [
+        0.1,
+        0.0,
+        0.4
+      ],
+      "color": "#44502d",
+      "rot": [
+        0,
+        0,
+        -90
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.012,
+        0.2,
+        0.14
+      ],
+      "pos": [
+        0.0,
+        -0.1,
+        0.4
+      ],
+      "color": "#44502d",
+      "rot": [
+        0,
+        0,
+        -180
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.012,
+        0.2,
+        0.14
+      ],
+      "pos": [
+        -0.1,
+        -0.0,
+        0.4
+      ],
+      "color": "#44502d",
+      "rot": [
+        0,
+        0,
+        -270
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.012,
+        0.14,
+        0.14
+      ],
+      "pos": [
+        0.1018,
+        0.1018,
+        0.4
+      ],
+      "color": "#44502d",
+      "rot": [
+        0,
+        0,
+        -45
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.012,
+        0.14,
+        0.14
+      ],
+      "pos": [
+        0.1018,
+        -0.1018,
+        0.4
+      ],
+      "color": "#44502d",
+      "rot": [
+        0,
+        0,
+        -135
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.012,
+        0.14,
+        0.14
+      ],
+      "pos": [
+        -0.1018,
+        -0.1018,
+        0.4
+      ],
+      "color": "#44502d",
+      "rot": [
+        0,
+        0,
+        -225
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.012,
+        0.14,
+        0.14
+      ],
+      "pos": [
+        -0.1018,
+        0.1018,
+        0.4
+      ],
+      "color": "#44502d",
+      "rot": [
+        0,
+        0,
+        -315
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.055,
+        0.055,
+        0.015
+      ],
+      "pos": [
+        0,
+        0,
+        -0.201
+      ],
+      "color": "#cebd69",
+      "tag": "indicator",
+      "decal": true
     }
-  ]
+  ],
+  "lab_h4_base": "atomic_bomb"
 }

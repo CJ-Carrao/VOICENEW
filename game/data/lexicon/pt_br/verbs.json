@@ -155,6 +155,21 @@
       "congelam"
     ]
   },
+  "portal": {
+    "action": "portal",
+    "words": [
+      "abre portal",
+      "abrir portal",
+      "abrem portal",
+      "abre portais",
+      "abre um portal",
+      "teleporta",
+      "teleportar",
+      "teleportam",
+      "teletransporta",
+      "teletransportar"
+    ]
+  },
   "ignite": {
     "action": "ignite",
     "words": [

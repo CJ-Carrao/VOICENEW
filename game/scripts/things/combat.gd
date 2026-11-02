@@ -108,20 +108,28 @@ static func in_radius(source: Thing, at: Vector3, radius: float) -> Array[Node3D
 	var found: Array[Node3D] = []
 	if radius <= 0.0 or not source.is_inside_tree():
 		return found
-	var shape: = SphereShape3D.new()
+	var shape := SphereShape3D.new()
 	shape.radius = radius
-	var query: = PhysicsShapeQueryParameters3D.new()
+	var query := PhysicsShapeQueryParameters3D.new()
 	query.shape = shape
 	query.transform = Transform3D(Basis.IDENTITY, at)
 	query.collision_mask = PhysicsLayers.DAMAGEABLE
 	query.exclude = [source.get_rid()]
-	for hit: Dictionary in source.get_world_3d().direct_space_state.intersect_shape(query, 128):
-		var node: = hit["collider"] as Node3D
-		if node != null and not found.has(node):
+	var hits := source.get_world_3d().direct_space_state.intersect_shape(query, 128)
+	var seen := {}
+	for hit: Dictionary in hits:
+		var node := hit["collider"] as Node3D
+		if node != null and not seen.has(node):
+			seen[node] = true
 			found.append(node)
+	# Match native blast coverage, including newly spawned bodies before physics sync.
+	if Forge.world != null:
+		for candidate in Forge.world.get_node("Things").get_children():
+			var target := candidate as Thing
+			if target == null or target == source or target.is_dead or target.is_captured or seen.has(target): continue
+			var box: AABB = target.global_transform * target.bounds
+			if at.distance_to(at.clamp(box.position, box.end)) <= radius: found.append(target)
 	return found
-
-
 
 
 static func floor_friction(body: CharacterBody3D) -> float:
@@ -177,8 +185,12 @@ static func explode(source: Thing, at: Vector3, radius: float, damage: float, da
 	if not Forge.allow_explosion(source.owner_id):
 		Fx.explosion(scene, at, radius * 0.25, Color(0.6, 0.6, 0.6))
 		return
+	var probe: = DevProbe.now()
 	Fx.explosion(scene, at, radius, explosion_color(source.element))
+	DevProbe.done("explosao_fx", probe)
+	probe = DevProbe.now()
 	Forge.explosion_at.emit(at, radius, damage)
+	DevProbe.done("explosao_sinal", probe)
 	if Session.is_online():
 		Session.creations.notify_fx("blast", [at, radius, damage])
 
@@ -192,6 +204,7 @@ static func explode(source: Thing, at: Vector3, radius: float, damage: float, da
 	var min_falloff: = Lexicon.balf("combat.explosion_min_falloff")
 	var knockback: = Lexicon.balf("combat.explosion_knockback") * source.scale_factor
 	var seen: = {}
+	probe = DevProbe.now()
 	var hits := []
 	for found: Dictionary in source.get_world_3d().direct_space_state.intersect_shape(query, 128):
 		var target: Object = found["collider"]
@@ -223,7 +236,10 @@ static func explode(source: Thing, at: Vector3, radius: float, damage: float, da
 			if not is_instance_valid(target): continue
 			apply_damage(target, row.damage, damage_type, source)
 			if is_instance_valid(target) and target.has_method("apply_knockback"): target.call("apply_knockback", row.push)
+	DevProbe.done("explosao_dano", probe)
+	probe = DevProbe.now()
 	_crater(source, at, radius, damage)
+	DevProbe.done("explosao_cratera", probe)
 
 
 

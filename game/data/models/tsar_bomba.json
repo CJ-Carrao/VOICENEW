@@ -1,0 +1,340 @@
+{
+  "_comment": "Tsar Bomba.",
+  "anchor": [
+    0,
+    0,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/art_core.py",
+  "pieces": [
+    {
+      "shape": "capsule",
+      "radius": 0.22,
+      "height": 1.46,
+      "pos": [
+        0.0,
+        0.0,
+        -0.09
+      ],
+      "color": "#c9cdd0",
+      "rot": [
+        90.0,
+        0.0,
+        0
+      ],
+      "tag": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0,
+        -0.62
+      ],
+      "color": "#cdd1d4",
+      "tag": "head",
+      "scale": [
+        0.44,
+        0.44,
+        0.5
+      ]
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.225,
+      "height": 0.04,
+      "pos": [
+        0,
+        0,
+        -0.38
+      ],
+      "color": "#8d9092",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "body",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.225,
+      "height": 0.04,
+      "pos": [
+        0,
+        0,
+        -0.05
+      ],
+      "color": "#8d9092",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "body",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.225,
+      "height": 0.04,
+      "pos": [
+        0,
+        0,
+        0.28
+      ],
+      "color": "#8d9092",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "body",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.46,
+        0.46,
+        0.12
+      ],
+      "pos": [
+        0,
+        0,
+        -0.22
+      ],
+      "color": "#b3262a",
+      "tag": "stripe",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.12,
+        0.13
+      ],
+      "pos": [
+        0,
+        0,
+        -0.22
+      ],
+      "color": "#f2d04a",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "stripe",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.12,
+        0.13
+      ],
+      "pos": [
+        0,
+        0,
+        -0.22
+      ],
+      "color": "#f2d04a",
+      "rot": [
+        0,
+        0,
+        72
+      ],
+      "tag": "stripe",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.12,
+        0.13
+      ],
+      "pos": [
+        0,
+        0,
+        -0.22
+      ],
+      "color": "#f2d04a",
+      "rot": [
+        0,
+        0,
+        144
+      ],
+      "tag": "stripe",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.12,
+        0.13
+      ],
+      "pos": [
+        0,
+        0,
+        -0.22
+      ],
+      "color": "#f2d04a",
+      "rot": [
+        0,
+        0,
+        216
+      ],
+      "tag": "stripe",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.12,
+        0.13
+      ],
+      "pos": [
+        0,
+        0,
+        -0.22
+      ],
+      "color": "#f2d04a",
+      "rot": [
+        0,
+        0,
+        288
+      ],
+      "tag": "stripe",
+      "decal": true
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.2,
+      "height": 0.2,
+      "pos": [
+        0.0,
+        0.0,
+        0.6
+      ],
+      "color": "#b1b4b7",
+      "rot": [
+        90.0,
+        0.0,
+        0
+      ],
+      "top_radius": 0.12,
+      "tag": "body"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.14,
+      "height": 0.14,
+      "pos": [
+        0,
+        0,
+        0.76
+      ],
+      "color": "#4a4f55",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "tail",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0192,
+        0.5,
+        0.35
+      ],
+      "pos": [
+        0.0,
+        0.25,
+        0.62
+      ],
+      "color": "#a1a4a6",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0192,
+        0.5,
+        0.35
+      ],
+      "pos": [
+        0.25,
+        0.0,
+        0.62
+      ],
+      "color": "#a1a4a6",
+      "rot": [
+        0,
+        0,
+        -90
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0192,
+        0.5,
+        0.35
+      ],
+      "pos": [
+        0.0,
+        -0.25,
+        0.62
+      ],
+      "color": "#a1a4a6",
+      "rot": [
+        0,
+        0,
+        -180
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0192,
+        0.5,
+        0.35
+      ],
+      "pos": [
+        -0.25,
+        -0.0,
+        0.62
+      ],
+      "color": "#a1a4a6",
+      "rot": [
+        0,
+        0,
+        -270
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    }
+  ]
+}

@@ -12,161 +12,174 @@
       "shape": "box",
       "size": [
         0.21,
-        0.025,
-        0.8
+        0.02,
+        0.56
       ],
       "pos": [
         0,
         0.1,
         0
       ],
-      "color": "#7a4b26",
+      "color": "#b9773f",
       "tag": "deck",
       "finish": "wood"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.03,
-      "height": 0.0195,
+      "shape": "box",
+      "size": [
+        0.2016,
+        0.005,
+        0.56
+      ],
       "pos": [
-        -0.0945,
-        0.03,
-        -0.24
-      ],
-      "color": "#141416",
-      "rot": [
         0,
-        0,
-        90
+        0.112,
+        0
       ],
-      "tag": "wheel",
-      "finish": "rubber"
+      "color": "#1e2024",
+      "tag": "grip_tape"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.015,
-      "height": 0.0204,
+      "shape": "box",
+      "size": [
+        0.21,
+        0.02,
+        0.112
+      ],
       "pos": [
-        -0.0945,
+        0,
+        0.12,
+        -0.336
+      ],
+      "color": "#b9773f",
+      "rot": [
+        20,
+        0,
+        0
+      ],
+      "tag": "deck",
+      "finish": "wood"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.147,
         0.03,
-        -0.24
+        0.05
+      ],
+      "pos": [
+        0,
+        0.07,
+        -0.224
       ],
       "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "hub",
+      "tag": "truck",
       "finish": "metal"
     },
     {
       "shape": "cylinder",
       "radius": 0.03,
-      "height": 0.0195,
+      "height": 0.035,
       "pos": [
-        -0.0945,
-        0.03,
-        0.24
+        -0.0798,
+        0.04,
+        -0.224
       ],
-      "color": "#141416",
+      "color": "#e8e1c8",
       "rot": [
         0,
         0,
         90
       ],
-      "tag": "wheel",
-      "finish": "rubber"
+      "tag": "wheel"
     },
     {
       "shape": "cylinder",
-      "radius": 0.015,
-      "height": 0.0204,
+      "radius": 0.03,
+      "height": 0.035,
       "pos": [
-        -0.0945,
-        0.03,
-        0.24
+        0.0798,
+        0.04,
+        -0.224
       ],
-      "color": "#c5c9ce",
+      "color": "#e8e1c8",
       "rot": [
         0,
         0,
         90
       ],
-      "tag": "hub",
+      "tag": "wheel"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.21,
+        0.02,
+        0.112
+      ],
+      "pos": [
+        0,
+        0.12,
+        0.336
+      ],
+      "color": "#b9773f",
+      "rot": [
+        -20,
+        0,
+        0
+      ],
+      "tag": "deck",
+      "finish": "wood"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.147,
+        0.03,
+        0.05
+      ],
+      "pos": [
+        0,
+        0.07,
+        0.224
+      ],
+      "color": "#c5c9ce",
+      "tag": "truck",
       "finish": "metal"
     },
     {
       "shape": "cylinder",
       "radius": 0.03,
-      "height": 0.0195,
+      "height": 0.035,
       "pos": [
-        0.0945,
-        0.03,
-        -0.24
+        -0.0798,
+        0.04,
+        0.224
       ],
-      "color": "#141416",
+      "color": "#e8e1c8",
       "rot": [
         0,
         0,
         90
       ],
-      "tag": "wheel",
-      "finish": "rubber"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.015,
-      "height": 0.0204,
-      "pos": [
-        0.0945,
-        0.03,
-        -0.24
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "hub",
-      "finish": "metal"
+      "tag": "wheel"
     },
     {
       "shape": "cylinder",
       "radius": 0.03,
-      "height": 0.0195,
+      "height": 0.035,
       "pos": [
-        0.0945,
-        0.03,
-        0.24
+        0.0798,
+        0.04,
+        0.224
       ],
-      "color": "#141416",
+      "color": "#e8e1c8",
       "rot": [
         0,
         0,
         90
       ],
-      "tag": "wheel",
-      "finish": "rubber"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.015,
-      "height": 0.0204,
-      "pos": [
-        0.0945,
-        0.03,
-        0.24
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "hub",
-      "finish": "metal"
+      "tag": "wheel"
     }
   ]
 }

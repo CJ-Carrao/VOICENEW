@@ -3,7 +3,9 @@
   "decimal_separator": ",",
   "formats": {
     "ability": "HABILIDADE {name} · {d} s",
-    "command": "{name}"
+    "command": "{name}",
+    "ammo": "{name} de {ammo}",
+    "graft": "com {name} {mount}"
   },
   "triggers": {
     "on_fire": "",
@@ -25,6 +27,7 @@
     "push": "empurra",
     "pull": "puxa",
     "freeze": "congela",
+    "portal": "abre portal",
     "ignite": "incendeia",
     "split": "divide em {n}",
     "strike": "golpeia",

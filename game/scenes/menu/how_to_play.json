@@ -1,0 +1,127 @@
+{
+  "_comment": "Textos do COMO JOGAR (scenes/menu/how_to_play.gd): uma aba por passo, cada uma com o seu vídeo. pointers = destaques de botão (segundo do vídeo + retângulo em fração da tela), gerados por tools/mobile/make_tutorial_videos.py. voice: o aviso de como a voz funciona neste aparelho.",
+  "title": "COMO JOGAR",
+  "subtitle": "Você começa sem nada. Tudo que existe na partida, você pede falando.",
+  "next": "PRÓXIMO",
+  "back": "VOLTAR",
+  "ok": "JOGAR",
+  "steps": [
+    {
+      "title": "EXTRAIA",
+      "text": "Toque em EXTRAIR (o cubo) pra ligar o modo extração. Depois segure o botão principal mirando numa construção: os blocos se soltam e viram matéria na esfera da sua mão. Sem matéria, nada se cria.",
+      "video": "res://assets/tutorial/extrair.ogv",
+      "pointers": [
+        {
+          "at": 1.2,
+          "rect": [
+            0.1255,
+            0.4269,
+            0.0615,
+            0.1093
+          ]
+        },
+        {
+          "at": 2.13,
+          "rect": [
+            0.8151,
+            0.662,
+            0.1146,
+            0.2037
+          ]
+        }
+      ],
+      "pointers_en_us": [
+        {
+          "at": 1.2,
+          "rect": [
+            0.1255,
+            0.4269,
+            0.0615,
+            0.1093
+          ]
+        },
+        {
+          "at": 2.13,
+          "rect": [
+            0.8151,
+            0.662,
+            0.1146,
+            0.2037
+          ]
+        }
+      ],
+      "video_en_us": "res://assets/tutorial/en_us/extrair.ogv"
+    },
+    {
+      "title": "FALE",
+      "text": "Segure FALAR, diga o que você quer e solte. Pode ser simples ou absurdo, do jeito que imaginar: “quero uma pistola que atira um pombo que caga granada”. Sem voz, toque em DIGITAR (no alto).",
+      "video": "res://assets/tutorial/falar.ogv",
+      "pointers": [
+        {
+          "at": 0.83,
+          "rect": [
+            0.2057,
+            0.4954,
+            0.0781,
+            0.1389
+          ]
+        }
+      ],
+      "voice_note": true,
+      "pointers_en_us": [
+        {
+          "at": 0.83,
+          "rect": [
+            0.2057,
+            0.4954,
+            0.0781,
+            0.1389
+          ]
+        }
+      ],
+      "video_en_us": "res://assets/tutorial/en_us/falar.ogv"
+    },
+    {
+      "title": "CRIE",
+      "text": "O jogo entende a frase e monta a criação peça por peça, com a matéria da esfera. Ela funciona de verdade: o botão principal usa o que está na mão. Quando quebra, a matéria volta pro mundo.",
+      "video": "res://assets/tutorial/criar.ogv",
+      "pointers": [
+        {
+          "at": 5.83,
+          "rect": [
+            0.8151,
+            0.662,
+            0.1146,
+            0.2037
+          ]
+        }
+      ],
+      "pointers_en_us": [
+        {
+          "at": 5.83,
+          "rect": [
+            0.8151,
+            0.662,
+            0.1146,
+            0.2037
+          ]
+        }
+      ],
+      "video_en_us": "res://assets/tutorial/en_us/criar.ogv"
+    }
+  ],
+  "voice": {
+    "android_online": {
+      "title": "A VOZ PRECISA DE INTERNET NESTE CELULAR",
+      "text": "No Android 11 ou anterior, quem entende a sua fala é o reconhecimento de voz do Google, pela internet (o áudio da frase vai pro Google). Sem conexão, use DIGITAR. Do Android 12 em diante, a voz funciona sem internet."
+    },
+    "android_offline": {
+      "title": "A VOZ FUNCIONA SEM INTERNET",
+      "text": "A sua fala é reconhecida no próprio celular. Se o jogo avisar que falta o idioma, baixe Português (Brasil) nas configurações de voz do sistema. Você também pode usar DIGITAR."
+    },
+    "pc": {
+      "title": "A VOZ FUNCIONA SEM INTERNET",
+      "text": "A sua fala é reconhecida no próprio PC. Segure V pra falar; T abre o console pra digitar."
+    }
+  }
+}

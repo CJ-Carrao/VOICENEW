@@ -19,6 +19,8 @@ func _run() -> void:
 	for argument in OS.get_cmdline_user_args():
 		if argument.begins_with("--test-role="):
 			role = argument.trim_prefix("--test-role=")
+		if argument.begins_with("--test-port="):
+			port = clampi(int(argument.trim_prefix("--test-port=")), 1024, 65535)
 	session = root.get_node("Session")
 	session.lobby.match_requested.connect(_success)
 	var error: int = session.start_host(port, "127.0.0.1") if role == "host" else session.start_client("127.0.0.1", port)

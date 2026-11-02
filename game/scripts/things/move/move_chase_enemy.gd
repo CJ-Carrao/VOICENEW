@@ -39,6 +39,7 @@ func step(delta: float) -> void :
 	var up: = thing.up()
 	if not steering:
 		var enemy: = Combat.nearest_enemy(thing.center(), thing.team, get_tree())
+		visual_target = enemy
 		var flat: = Gravity.flat(thing.velocity, up)
 		if enemy == null:
 			if thing.category in ["creature", "vehicle"]:

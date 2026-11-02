@@ -119,7 +119,7 @@ static func _pretty_node(node: Dictionary, lex: LexiconData) -> String:
 	if mods.has("count"):
 		text = "%d× %s" % [int(mods["count"]), text]
 	if mods.get("ammo") is Dictionary:
-		text += " de " + _pretty_node(mods["ammo"], lex)
+		text = lex.label("formats", "ammo").replace("{name}", text).replace("{ammo}", _pretty_node(mods["ammo"], lex))
 	var tags: = PackedStringArray()
 	for key: String in mods:
 		if key == "anatomy":
@@ -128,7 +128,8 @@ static func _pretty_node(node: Dictionary, lex: LexiconData) -> String:
 				tags.append("%s de %s" % [names.get(section, section), lex.thing_name(String(mods[key][section]))])
 		elif key == "grafts":
 			for graft: Dictionary in mods[key]:
-				tags.append("com %s %s" % [_pretty_node(graft["node"], lex), lex.label("mounts", String(graft["socket"]))])
+				tags.append(lex.label("formats", "graft").replace("{name}", _pretty_node(graft["node"], lex))
+					.replace("{mount}", lex.label("mounts", String(graft["socket"]))))
 		elif key == "mag" and mods[key] is Dictionary:
 			tags.append(_pretty_node(mods[key], lex))
 		elif key != "count" and key != "ammo" and key != "whole_parts":

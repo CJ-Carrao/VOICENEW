@@ -325,16 +325,28 @@ func _update_camera_and_board() -> void :
 	var tilt: = lerpf(deg_to_rad(8.3), deg_to_rad(5.99), _camera_amount)
 	var focus: = _camera.position + Vector3(0, - sin(tilt), cos(tilt)) * 9.5
 	_camera.position += Vector3(_arrival_view.x, _arrival_view.y, _arrival_view.z)
-	_camera.fov = 64.0 + _arrival_view.w
+	_set_fov(64.0 + _arrival_view.w, 16.0 / 9.0)
 	_camera.look_at(focus)
 	_board.pose(angle, anticipation)
 	_board.set_phase(presentation)
 	_board.visible = not _compact
 	_floor.visible = not _compact
 	if _compact:
-		_camera.fov = 64.0
+		_set_fov(64.0, 1280.0 / 730.0)
 		_camera.position = Vector3(2.25, 1.55, -4.6)
 		_camera.look_at(Vector3(2.25, 0.9, 0.15))
+
+
+
+func _set_fov(horizontal_deg: float, reference: float) -> void :
+	var aspect: = size.x / size.y if size.y > 0.0 else reference
+	if aspect <= reference + 0.001:
+		_camera.keep_aspect = Camera3D.KEEP_WIDTH
+		_camera.fov = horizontal_deg
+		return
+	_camera.keep_aspect = Camera3D.KEEP_HEIGHT
+	_camera.fov = rad_to_deg(2.0 * atan(tan(deg_to_rad(horizontal_deg) * 0.5) / reference))
+
 
 func _render_actor(actor: Dictionary, delta: float) -> void :
 	var i: int = actor["slot"]

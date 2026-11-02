@@ -20,43 +20,52 @@
         0.035,
         0
       ],
-      "color": "#a65c40",
+      "color": "#b5523a",
       "tag": "body"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.0184,
-      "height": 0.006,
+      "shape": "box",
+      "size": [
+        0.0633,
+        0.021,
+        0.048
+      ],
       "pos": [
         0,
-        0.072,
+        0.0616,
         -0.072
       ],
-      "color": "#2a2d32",
+      "color": "#6a2a1e",
       "tag": "hole"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.0184,
-      "height": 0.006,
+      "shape": "box",
+      "size": [
+        0.0633,
+        0.021,
+        0.048
+      ],
       "pos": [
         0,
-        0.072,
+        0.0616,
         0.0
       ],
-      "color": "#2a2d32",
+      "color": "#6a2a1e",
       "tag": "hole"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.0184,
-      "height": 0.006,
+      "shape": "box",
+      "size": [
+        0.0633,
+        0.021,
+        0.048
+      ],
       "pos": [
         0,
-        0.072,
+        0.0616,
         0.072
       ],
-      "color": "#2a2d32",
+      "color": "#6a2a1e",
       "tag": "hole"
     }
   ]

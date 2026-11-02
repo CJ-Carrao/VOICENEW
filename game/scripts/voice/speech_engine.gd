@@ -15,6 +15,39 @@ const LOOP_MIN_WORDS: = 2
 var error: String = ""
 
 
+signal availability_changed(available: bool, reason: String)
+signal listening_ready(delay_seconds: float)
+signal recognition_finished(text: String, seconds: float, reason: String)
+
+
+func owns_microphone() -> bool:
+	return false
+
+
+func start_listening() -> bool:
+	return false
+
+
+func stop_listening() -> void :
+	pass
+
+
+func cancel_listening() -> void :
+	pass
+
+
+func microphone_permission() -> bool:
+	return true
+
+
+func request_microphone_permission() -> void :
+	pass
+
+
+func open_offline_settings() -> void :
+	pass
+
+
 func is_available(_config: Dictionary) -> bool:
 	return false
 
@@ -96,6 +129,7 @@ static func to_wav(samples: PackedFloat32Array) -> AudioStreamWAV:
 
 
 
+
 static func to_mono_16k(frames: PackedVector2Array, mix_rate: float) -> PackedFloat32Array:
 	var count: = frames.size()
 	var out: = PackedFloat32Array()
@@ -104,11 +138,20 @@ static func to_mono_16k(frames: PackedVector2Array, mix_rate: float) -> PackedFl
 	var ratio: = mix_rate / SAMPLE_RATE
 	var total: = int(count / ratio)
 	out.resize(total)
+	if ratio <= 1.0:
+		for i in total:
+			var src: = i * ratio
+			var a: = int(src)
+			var b: = mini(a + 1, count - 1)
+			var left: = (frames[a].x + frames[a].y) * 0.5
+			var right: = (frames[b].x + frames[b].y) * 0.5
+			out[i] = lerpf(left, right, src - a)
+		return out
 	for i in total:
-		var src: = i * ratio
-		var a: = int(src)
-		var b: = mini(a + 1, count - 1)
-		var left: = (frames[a].x + frames[a].y) * 0.5
-		var right: = (frames[b].x + frames[b].y) * 0.5
-		out[i] = lerpf(left, right, src - a)
+		var start: = int(i * ratio)
+		var stop: = mini(maxi(int((i + 1) * ratio), start + 1), count)
+		var sum: = 0.0
+		for k in range(start, stop):
+			sum += frames[k].x + frames[k].y
+		out[i] = sum * 0.5 / float(stop - start)
 	return out

@@ -9,218 +9,92 @@
   "generator": "tools/models/gen_world_assets.py",
   "pieces": [
     {
-      "shape": "torus",
+      "shape": "cylinder",
       "radius": 0.06,
-      "inner_radius": 0.0408,
+      "height": 1.0,
       "pos": [
         0,
         0.06,
-        -0.48
+        0
       ],
-      "color": "#c5c9ce",
+      "color": "#7d858d",
       "rot": [
-        90,
+        -90,
         0,
         0
       ],
-      "tag": "rim"
+      "tag": "wall",
+      "finish": "metal"
     },
     {
-      "shape": "torus",
-      "radius": 0.06,
-      "inner_radius": 0.0408,
+      "shape": "cylinder",
+      "radius": 0.0672,
+      "height": 0.08,
       "pos": [
         0,
         0.06,
-        0.48
+        -0.44
       ],
-      "color": "#c5c9ce",
+      "color": "#5d646c",
       "rot": [
-        90,
+        -90,
         0,
         0
       ],
-      "tag": "rim"
+      "tag": "rim",
+      "finish": "metal"
     },
     {
-      "shape": "box",
-      "size": [
-        0.0168,
-        0.0168,
-        1.0
-      ],
+      "shape": "cylinder",
+      "radius": 0.0432,
+      "height": 0.01,
       "pos": [
-        0.0504,
+        0,
         0.06,
+        -0.5
+      ],
+      "color": "#1e2024",
+      "rot": [
+        -90,
+        0,
         0
       ],
-      "color": "#2a2d32",
-      "tag": "wall"
+      "tag": "hole"
     },
     {
-      "shape": "box",
-      "size": [
-        0.0168,
-        0.0168,
-        1.0
-      ],
+      "shape": "cylinder",
+      "radius": 0.0672,
+      "height": 0.08,
       "pos": [
-        0.0436,
-        0.0852,
-        0
-      ],
-      "color": "#2a2d32",
-      "tag": "wall"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.0168,
-        0.0168,
-        1.0
-      ],
-      "pos": [
-        0.0252,
-        0.1036,
-        0
-      ],
-      "color": "#2a2d32",
-      "tag": "wall"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.0168,
-        0.0168,
-        1.0
-      ],
-      "pos": [
-        0.0,
-        0.1104,
-        0
-      ],
-      "color": "#2a2d32",
-      "tag": "wall"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.0168,
-        0.0168,
-        1.0
-      ],
-      "pos": [
-        -0.0252,
-        0.1036,
-        0
-      ],
-      "color": "#2a2d32",
-      "tag": "wall"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.0168,
-        0.0168,
-        1.0
-      ],
-      "pos": [
-        -0.0436,
-        0.0852,
-        0
-      ],
-      "color": "#2a2d32",
-      "tag": "wall"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.0168,
-        0.0168,
-        1.0
-      ],
-      "pos": [
-        -0.0504,
+        0,
         0.06,
+        0.44
+      ],
+      "color": "#5d646c",
+      "rot": [
+        -90,
+        0,
         0
       ],
-      "color": "#2a2d32",
-      "tag": "wall"
+      "tag": "rim",
+      "finish": "metal"
     },
     {
-      "shape": "box",
-      "size": [
-        0.0168,
-        0.0168,
-        1.0
-      ],
+      "shape": "cylinder",
+      "radius": 0.0432,
+      "height": 0.01,
       "pos": [
-        -0.0436,
-        0.0348,
+        0,
+        0.06,
+        0.5
+      ],
+      "color": "#1e2024",
+      "rot": [
+        -90,
+        0,
         0
       ],
-      "color": "#2a2d32",
-      "tag": "wall"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.0168,
-        0.0168,
-        1.0
-      ],
-      "pos": [
-        -0.0252,
-        0.0164,
-        0
-      ],
-      "color": "#2a2d32",
-      "tag": "wall"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.0168,
-        0.0168,
-        1.0
-      ],
-      "pos": [
-        -0.0,
-        0.0096,
-        0
-      ],
-      "color": "#2a2d32",
-      "tag": "wall"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.0168,
-        0.0168,
-        1.0
-      ],
-      "pos": [
-        0.0252,
-        0.0164,
-        0
-      ],
-      "color": "#2a2d32",
-      "tag": "wall"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.0168,
-        0.0168,
-        1.0
-      ],
-      "pos": [
-        0.0436,
-        0.0348,
-        0
-      ],
-      "color": "#2a2d32",
-      "tag": "wall"
+      "tag": "hole"
     }
   ]
 }

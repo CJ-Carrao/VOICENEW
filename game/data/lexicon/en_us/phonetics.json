@@ -1,0 +1,28 @@
+{
+  "_comment": "How words SOUND in English, for the parser's 'ear': when the speech recognizer writes a word that does not exist ('grenaid', 'pidgin'), it is compared by sound with the game words ('grenade', 'pigeon'). Each rule is [regex, replacement], applied in order on the normalized word (lowercase, no accents). This is a light set: English recognizers usually output real words.",
+  "initial_soft_pairs": [],
+  "rules": [
+    ["ph", "f"],
+    ["ck", "k"],
+    ["c(?=[eiy])", "s"],
+    ["c", "k"],
+    ["q", "k"],
+    ["x", "ks"],
+    ["dg(?=[eiy])", "j"],
+    ["g(?=[eiy])", "j"],
+    ["wh", "w"],
+    ["kn", "n"],
+    ["wr", "r"],
+    ["gh", ""],
+    ["(?<=.)e$", ""],
+    ["ai", "a"],
+    ["ay", "a"],
+    ["ee", "i"],
+    ["ea", "i"],
+    ["oo", "u"],
+    ["y", "i"],
+    ["z", "s"],
+    ["(.)\\1", "$1"]
+  ],
+  "join_after": ["a", "an", "the"]
+}

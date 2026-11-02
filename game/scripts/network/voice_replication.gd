@@ -29,8 +29,17 @@ class ReceiveStream extends RefCounted:
 	var played_samples: = 0
 	var peak_rms: = 0.0
 
+	var spurt_started_ms: = 0
+	var spurt_packets: = 0
+	var spurt_lost: = 0
+	var spurt_plc: = 0
+	var spurt_overflow: = 0
+	var spurt_skips_from: = 0
+
 var epoch: int = 0
 var active_speaker: int = 0
+var _tx_started_ms: = 0
+var _tx_packets: = 0
 var last_received_rms: float = 0.0
 var received_samples: = PackedFloat32Array()
 var stats: Dictionary = {
@@ -170,6 +179,31 @@ func _process(_delta: float) -> void :
 				stream.draining = false
 			else:
 				active_speaker = speaker_id
+		if stream.spurt_packets > 0 and not stream.spurt_open and stream.queue.is_empty():
+			_note_spurt(speaker_id, stream)
+
+
+
+
+func _note_spurt(speaker_id: int, stream: ReceiveStream) -> void :
+	var seconds: = (Time.get_ticks_msec() - stream.spurt_started_ms) / 1000.0
+	var skips: = (stream.playback.get_skips() - stream.spurt_skips_from) if stream.playback != null else 0
+	var total: = stream.spurt_packets + stream.spurt_lost
+	var lost_pct: = 100.0 * stream.spurt_lost / maxf(total, 1.0)
+	var verdict: = "ok"
+	if lost_pct >= 5.0:
+		verdict = "REDE perdendo pacotes: voz picotada/metálica (Wi-Fi/Radmin/conexão de quem fala ou do host)"
+	elif stream.spurt_plc > 0 or skips > 0:
+		verdict = "remendos/buracos no tocador: atraso ou oscilação da rede (ou PC de quem ouve engasgando)"
+	elif stream.spurt_overflow > 0:
+		verdict = "fila cheia: áudio chegou rápido demais (relógio do microfone de quem fala fora da taxa)"
+	VoiceDiagnostics.note("chat", "ouvi o jogador %d: %.1f s · %d pacotes · %d perdidos (%.0f%%) · %d remendados · %d quadros sem áudio no tocador · %d jogados fora · pico até agora %.3f · %s" % [
+		speaker_id, seconds, stream.spurt_packets, stream.spurt_lost, lost_pct, stream.spurt_plc, skips, stream.spurt_overflow, 
+		stream.peak_rms, verdict])
+	stream.spurt_packets = 0
+	stream.spurt_lost = 0
+	stream.spurt_plc = 0
+	stream.spurt_overflow = 0
 
 
 func _stream_for(speaker_id: int) -> ReceiveStream:
@@ -274,6 +308,8 @@ func _can_receive(packet_epoch: int) -> bool:
 func _on_voip_started() -> void :
 	_tx_buffer.clear()
 	_tx_active = _can_transmit()
+	_tx_started_ms = Time.get_ticks_msec()
+	_tx_packets = 0
 
 
 func _on_voip_frames(samples: PackedFloat32Array) -> void :
@@ -283,6 +319,8 @@ func _on_voip_frames(samples: PackedFloat32Array) -> void :
 		if not _can_transmit():
 			return
 		_tx_active = true
+		_tx_started_ms = Time.get_ticks_msec()
+		_tx_packets = 0
 	if not _can_transmit():
 		_tx_active = false
 		_tx_buffer.clear()
@@ -298,6 +336,8 @@ func _on_voip_ended() -> void :
 	if not _tx_active:
 		_tx_buffer.clear()
 		return
+	VoiceDiagnostics.note("chat", "falei pros outros: %.1f s segurando · %d pacotes enviados (cada um ouve; o resumo de quem ouviu está no arquivo dele)" % [
+		(Time.get_ticks_msec() - _tx_started_ms) / 1000.0, _tx_packets + _tx_buffer.size() / maxi(_frame_samples, 1)])
 	_tx_active = false
 	if not _can_transmit():
 		_tx_buffer.clear()
@@ -326,6 +366,7 @@ func _send_frame(samples: PackedFloat32Array, is_final: bool) -> void :
 		return
 	_send_seq += 1
 	stats.sent_packets += 1
+	_tx_packets += 1
 	stats.sent_bytes += pcm_bytes.size()
 	stats.max_packet_bytes = maxi(int(stats.max_packet_bytes), pcm_bytes.size())
 	if _session.has_authority():
@@ -371,6 +412,7 @@ func _enqueue_jitter_frame(stream: ReceiveStream, frame: PackedFloat32Array) -> 
 	while stream.queue.size() > _max_buffer_frames:
 		stream.queue.pop_front()
 		stats.dropped_overflow += 1
+		stream.spurt_overflow += 1
 
 
 func _conceal_loss(stream: ReceiveStream, gap: int) -> void :
@@ -384,6 +426,7 @@ func _conceal_loss(stream: ReceiveStream, gap: int) -> void :
 			plc[i] = base * decay
 		_enqueue_jitter_frame(stream, plc)
 		stats.plc_frames += 1
+		stream.spurt_plc += 1
 	stream.last_sample = 0.0
 
 
@@ -431,10 +474,15 @@ func _accept_packet(speaker_id: int, sequence: int, pcm_bytes: PackedByteArray, 
 	if not _consume_token(stream):
 		stats.rejected += 1
 		return false
+	if stream.spurt_packets == 0:
+		stream.spurt_started_ms = Time.get_ticks_msec()
+		stream.spurt_skips_from = stream.playback.get_skips() if stream.playback != null else 0
+	stream.spurt_packets += 1
 	if stream.sequence > 0 and stream.spurt_open:
 		var gap: = sequence - stream.sequence - 1
 		if gap > 0:
 			stats.lost_packets += gap
+			stream.spurt_lost += gap
 			_conceal_loss(stream, gap)
 	stream.sequence = sequence
 	stream.spurt_open = not is_final

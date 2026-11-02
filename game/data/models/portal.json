@@ -1,0 +1,7 @@
+{
+  "anchor": [0, 0, 0],
+  "pieces": [
+    { "shape": "box", "size": [0.09, 0.16, 0.02], "pos": [0, 0, 0], "rot": [90, 0, 0], "color": "#bdf3ff", "glow": 2.5, "tag": "body" },
+    { "shape": "box", "size": [0.13, 0.22, 0.01], "pos": [0, 0, 0], "rot": [90, 0, 0], "color": "#5fd8ff", "glow": 1.2, "tag": "body" }
+  ]
+}

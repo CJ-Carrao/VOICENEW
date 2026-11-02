@@ -5,10 +5,10 @@
 [ext_resource type="Script" uid="uid://dw5yvgo7m5upw" path="res://scenes/ui/hud_bar.gd" id="3"]
 [ext_resource type="PackedScene" path="res://scenes/ui/console.tscn" id="4"]
 
-[node name="HUD" type="CanvasLayer" unique_id=1900378860]
+[node name="HUD" type="CanvasLayer" unique_id=1420260466]
 script = ExtResource("1")
 
-[node name="Root" type="Control" parent="." unique_id=1316177509]
+[node name="Root" type="Control" parent="." unique_id=2109959024]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Crosshair" type="Control" parent="Root" unique_id=980658242]
+[node name="Crosshair" type="Control" parent="Root" unique_id=2090674715]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -33,7 +33,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("2")
 
-[node name="TopCenter" type="PanelContainer" parent="Root" unique_id=308119320]
+[node name="TopCenter" type="PanelContainer" parent="Root" unique_id=1142282035]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -45,25 +45,25 @@ offset_bottom = 70.0
 grow_horizontal = 2
 mouse_filter = 2
 
-[node name="VBox" type="VBoxContainer" parent="Root/TopCenter" unique_id=721283371]
+[node name="VBox" type="VBoxContainer" parent="Root/TopCenter" unique_id=113812983]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 2
 
-[node name="RoundLabel" type="Label" parent="Root/TopCenter/VBox" unique_id=899435480]
+[node name="RoundLabel" type="Label" parent="Root/TopCenter/VBox" unique_id=1391281803]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"TagLabel"
 horizontal_alignment = 1
 
-[node name="Scoreboard" type="Label" parent="Root/TopCenter/VBox" unique_id=175996442]
+[node name="Scoreboard" type="Label" parent="Root/TopCenter/VBox" unique_id=270315258]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"BigLabel"
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 
-[node name="OpponentBar" type="Control" parent="Root/TopCenter/VBox" unique_id=1328930149]
+[node name="OpponentBar" type="Control" parent="Root/TopCenter/VBox" unique_id=1123638236]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
@@ -72,13 +72,13 @@ script = ExtResource("3")
 fill = Color(1, 0.294, 0.227, 1)
 chamfer = 3.0
 
-[node name="OpponentLabel" type="Label" parent="Root/TopCenter/VBox" unique_id=780384910]
+[node name="OpponentLabel" type="Label" parent="Root/TopCenter/VBox" unique_id=949649221]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"DimLabel"
 horizontal_alignment = 1
 
-[node name="Banner" type="Label" parent="Root" unique_id=294804754]
+[node name="Banner" type="Label" parent="Root" unique_id=1620285203]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -100,7 +100,7 @@ theme_override_font_sizes/font_size = 46
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VoicePrompt" type="Label" parent="Root" unique_id=1320749492]
+[node name="VoicePrompt" type="Label" parent="Root" unique_id=1544096750]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -123,7 +123,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="RightColumn" type="VBoxContainer" parent="Root" unique_id=1211421313]
+[node name="RightColumn" type="VBoxContainer" parent="Root" unique_id=1398769527]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -135,48 +135,48 @@ offset_bottom = 216.0
 grow_horizontal = 0
 mouse_filter = 2
 
-[node name="CreationsPanel" type="PanelContainer" parent="Root/RightColumn" unique_id=24841658]
+[node name="CreationsPanel" type="PanelContainer" parent="Root/RightColumn" unique_id=2051533460]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 mouse_filter = 2
 
-[node name="VBox" type="VBoxContainer" parent="Root/RightColumn/CreationsPanel" unique_id=1980413735]
+[node name="VBox" type="VBoxContainer" parent="Root/RightColumn/CreationsPanel" unique_id=81544251]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 2
 
-[node name="Title" type="Label" parent="Root/RightColumn/CreationsPanel/VBox" unique_id=1565731246]
+[node name="Title" type="Label" parent="Root/RightColumn/CreationsPanel/VBox" unique_id=1599672638]
 layout_mode = 2
 theme_type_variation = &"TagLabel"
 text = "CRIAÇÕES"
 horizontal_alignment = 2
 
-[node name="CreationsList" type="VBoxContainer" parent="Root/RightColumn/CreationsPanel/VBox" unique_id=966711507]
+[node name="CreationsList" type="VBoxContainer" parent="Root/RightColumn/CreationsPanel/VBox" unique_id=1425757255]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 0
 
-[node name="CreationsEmpty" type="Label" parent="Root/RightColumn/CreationsPanel/VBox/CreationsList" unique_id=1175162988]
+[node name="CreationsEmpty" type="Label" parent="Root/RightColumn/CreationsPanel/VBox/CreationsList" unique_id=1852754164]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="DebugPanel" type="PanelContainer" parent="Root/RightColumn" unique_id=478048135]
+[node name="DebugPanel" type="PanelContainer" parent="Root/RightColumn" unique_id=1588562425]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
 
-[node name="DebugText" type="Label" parent="Root/RightColumn/DebugPanel" unique_id=978706237]
+[node name="DebugText" type="Label" parent="Root/RightColumn/DebugPanel" unique_id=1880531355]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
 text = "debug"
 autowrap_mode = 3
 
-[node name="Vitals" type="PanelContainer" parent="Root" unique_id=1150761288]
+[node name="Vitals" type="PanelContainer" parent="Root" unique_id=1666329364]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -189,23 +189,23 @@ grow_vertical = 0
 mouse_filter = 2
 theme_type_variation = &"AccentPanel"
 
-[node name="VBox" type="VBoxContainer" parent="Root/Vitals" unique_id=2072703729]
+[node name="VBox" type="VBoxContainer" parent="Root/Vitals" unique_id=1947577963]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 3
 
-[node name="HealthRow" type="HBoxContainer" parent="Root/Vitals/VBox" unique_id=508902116]
+[node name="HealthRow" type="HBoxContainer" parent="Root/Vitals/VBox" unique_id=1823567638]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Title" type="Label" parent="Root/Vitals/VBox/HealthRow" unique_id=1466274304]
+[node name="Title" type="Label" parent="Root/Vitals/VBox/HealthRow" unique_id=1607309362]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 theme_type_variation = &"DimLabel"
 text = "VIDA"
 
-[node name="HealthLabel" type="Label" parent="Root/Vitals/VBox/HealthRow" unique_id=1853780294]
+[node name="HealthLabel" type="Label" parent="Root/Vitals/VBox/HealthRow" unique_id=374133996]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"BigLabel"
@@ -213,7 +213,7 @@ theme_override_font_sizes/font_size = 22
 text = "100"
 horizontal_alignment = 2
 
-[node name="HealthBar" type="Control" parent="Root/Vitals/VBox" unique_id=1657332524]
+[node name="HealthBar" type="Control" parent="Root/Vitals/VBox" unique_id=383075823]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
@@ -222,18 +222,18 @@ script = ExtResource("3")
 low_below = 0.3
 segments = 4
 
-[node name="MatterRow" type="HBoxContainer" parent="Root/Vitals/VBox" unique_id=1695141434]
+[node name="MatterRow" type="HBoxContainer" parent="Root/Vitals/VBox" unique_id=1951266632]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Title" type="Label" parent="Root/Vitals/VBox/MatterRow" unique_id=977037609]
+[node name="Title" type="Label" parent="Root/Vitals/VBox/MatterRow" unique_id=2050391482]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 theme_type_variation = &"DimLabel"
 text = "MATÉRIA"
 
-[node name="MatterLabel" type="Label" parent="Root/Vitals/VBox/MatterRow" unique_id=997969760]
+[node name="MatterLabel" type="Label" parent="Root/Vitals/VBox/MatterRow" unique_id=1431548953]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.776, 0.36, 1)
@@ -241,7 +241,7 @@ theme_override_font_sizes/font_size = 15
 text = "0 / 300"
 horizontal_alignment = 2
 
-[node name="MatterBar" type="Control" parent="Root/Vitals/VBox" unique_id=1854550155]
+[node name="MatterBar" type="Control" parent="Root/Vitals/VBox" unique_id=1486006530]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 7)
 layout_mode = 2
@@ -250,7 +250,7 @@ script = ExtResource("3")
 fill = Color(1, 0.776, 0.36, 1)
 chamfer = 4.0
 
-[node name="Slots" type="HBoxContainer" parent="Root" unique_id=1562449362]
+[node name="Slots" type="HBoxContainer" parent="Root" unique_id=1302936590]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
@@ -268,7 +268,7 @@ mouse_filter = 2
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="Status" type="Label" parent="Root" unique_id=687510943]
+[node name="Status" type="Label" parent="Root" unique_id=219314759]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
@@ -288,6 +288,6 @@ theme_override_font_sizes/font_size = 15
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Console" parent="Root" unique_id=1647961642 instance=ExtResource("4")]
+[node name="Console" parent="Root" unique_id=952718778 instance=ExtResource("4")]
 unique_name_in_owner = true
 layout_mode = 1

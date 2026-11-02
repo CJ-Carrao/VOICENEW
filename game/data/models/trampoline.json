@@ -10,27 +10,26 @@
   "pieces": [
     {
       "shape": "cylinder",
-      "radius": 1.128,
-      "height": 0.05,
+      "radius": 1.032,
+      "height": 0.03,
       "pos": [
         0,
-        0.484,
+        0.495,
         0
       ],
-      "color": "#253846",
-      "tag": "mat",
-      "finish": "rubber"
+      "color": "#18191c",
+      "tag": "mat"
     },
     {
       "shape": "torus",
       "radius": 1.2,
-      "inner_radius": 1.104,
+      "inner_radius": 1.032,
       "pos": [
         0,
-        0.484,
+        0.506,
         0
       ],
-      "color": "#3683a5",
+      "color": "#2f7be5",
       "rot": [
         0,
         0,
@@ -39,100 +38,592 @@
       "tag": "rim"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.4675,
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
       "pos": [
         0.0,
-        0.2365,
-        1.008
+        0.495,
+        1.08
       ],
-      "color": "#2a2d32",
-      "tag": "leg"
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "spring"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.4675,
-      "pos": [
-        0.7128,
-        0.2365,
-        0.7128
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
       ],
-      "color": "#2a2d32",
-      "tag": "leg"
+      "pos": [
+        0.2795,
+        0.495,
+        1.0432
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        15,
+        0
+      ],
+      "tag": "spring"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.4675,
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
       "pos": [
-        1.008,
-        0.2365,
+        0.54,
+        0.495,
+        0.9353
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        30,
+        0
+      ],
+      "tag": "spring"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
+      "pos": [
+        0.7637,
+        0.495,
+        0.7637
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        45,
+        0
+      ],
+      "tag": "spring"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
+      "pos": [
+        0.9353,
+        0.495,
+        0.54
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        60,
+        0
+      ],
+      "tag": "spring"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
+      "pos": [
+        1.0432,
+        0.495,
+        0.2795
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        75,
+        0
+      ],
+      "tag": "spring"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
+      "pos": [
+        1.08,
+        0.495,
         0.0
       ],
-      "color": "#2a2d32",
-      "tag": "leg"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.4675,
-      "pos": [
-        0.7128,
-        0.2365,
-        -0.7128
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        90,
+        0
       ],
-      "color": "#2a2d32",
-      "tag": "leg"
+      "tag": "spring"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.4675,
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
+      "pos": [
+        1.0432,
+        0.495,
+        -0.2795
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        105,
+        0
+      ],
+      "tag": "spring"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
+      "pos": [
+        0.9353,
+        0.495,
+        -0.54
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        120,
+        0
+      ],
+      "tag": "spring"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
+      "pos": [
+        0.7637,
+        0.495,
+        -0.7637
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        135,
+        0
+      ],
+      "tag": "spring"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
+      "pos": [
+        0.54,
+        0.495,
+        -0.9353
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        150,
+        0
+      ],
+      "tag": "spring"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
+      "pos": [
+        0.2795,
+        0.495,
+        -1.0432
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        165,
+        0
+      ],
+      "tag": "spring"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
       "pos": [
         0.0,
-        0.2365,
-        -1.008
+        0.495,
+        -1.08
       ],
-      "color": "#2a2d32",
-      "tag": "leg"
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        180,
+        0
+      ],
+      "tag": "spring"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.4675,
-      "pos": [
-        -0.7128,
-        0.2365,
-        -0.7128
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
       ],
-      "color": "#2a2d32",
-      "tag": "leg"
+      "pos": [
+        -0.2795,
+        0.495,
+        -1.0432
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        195,
+        0
+      ],
+      "tag": "spring"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.4675,
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
       "pos": [
-        -1.008,
-        0.2365,
+        -0.54,
+        0.495,
+        -0.9353
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        210,
+        0
+      ],
+      "tag": "spring"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
+      "pos": [
+        -0.7637,
+        0.495,
+        -0.7637
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        225,
+        0
+      ],
+      "tag": "spring"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
+      "pos": [
+        -0.9353,
+        0.495,
+        -0.54
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        240,
+        0
+      ],
+      "tag": "spring"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
+      "pos": [
+        -1.0432,
+        0.495,
+        -0.2795
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        255,
+        0
+      ],
+      "tag": "spring"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
+      "pos": [
+        -1.08,
+        0.495,
         -0.0
       ],
-      "color": "#2a2d32",
-      "tag": "leg"
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        270,
+        0
+      ],
+      "tag": "spring"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
+      "pos": [
+        -1.0432,
+        0.495,
+        0.2795
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        285,
+        0
+      ],
+      "tag": "spring"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
+      "pos": [
+        -0.9353,
+        0.495,
+        0.54
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        300,
+        0
+      ],
+      "tag": "spring"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
+      "pos": [
+        -0.7637,
+        0.495,
+        0.7637
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        315,
+        0
+      ],
+      "tag": "spring"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
+      "pos": [
+        -0.54,
+        0.495,
+        0.9353
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        330,
+        0
+      ],
+      "tag": "spring"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.02,
+        0.144
+      ],
+      "pos": [
+        -0.2795,
+        0.495,
+        1.0432
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        0,
+        345,
+        0
+      ],
+      "tag": "spring"
     },
     {
       "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.4675,
+      "radius": 0.03,
+      "height": 0.495,
       "pos": [
-        -0.7128,
-        0.2365,
-        0.7128
+        0.0,
+        0.2475,
+        1.104
       ],
-      "color": "#2a2d32",
-      "tag": "leg"
+      "color": "#3b3f46",
+      "rot": [
+        0.0,
+        0.0,
+        0
+      ],
+      "tag": "leg",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.03,
+      "height": 0.495,
+      "pos": [
+        0.9561,
+        0.2475,
+        0.552
+      ],
+      "color": "#3b3f46",
+      "rot": [
+        0.0,
+        0.0,
+        0
+      ],
+      "tag": "leg",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.03,
+      "height": 0.495,
+      "pos": [
+        0.9561,
+        0.2475,
+        -0.552
+      ],
+      "color": "#3b3f46",
+      "rot": [
+        0.0,
+        0.0,
+        0
+      ],
+      "tag": "leg",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.03,
+      "height": 0.495,
+      "pos": [
+        0.0,
+        0.2475,
+        -1.104
+      ],
+      "color": "#3b3f46",
+      "rot": [
+        0.0,
+        0.0,
+        0
+      ],
+      "tag": "leg",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.03,
+      "height": 0.495,
+      "pos": [
+        -0.9561,
+        0.2475,
+        -0.552
+      ],
+      "color": "#3b3f46",
+      "rot": [
+        0.0,
+        0.0,
+        0
+      ],
+      "tag": "leg",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.03,
+      "height": 0.495,
+      "pos": [
+        -0.9561,
+        0.2475,
+        0.552
+      ],
+      "color": "#3b3f46",
+      "rot": [
+        0.0,
+        0.0,
+        0
+      ],
+      "tag": "leg",
+      "finish": "metal"
     }
   ]
 }

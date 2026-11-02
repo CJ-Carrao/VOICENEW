@@ -82,7 +82,7 @@ func _ready() -> void :
 	_root.add_child(_stripe)
 	var font: = MainMenu._variation(load("res://assets/fonts/oxanium/Oxanium-Variable.ttf") as Font, 800, 6)
 	_label = Label.new()
-	_label.text = "CARREGANDO"
+	_label.text = tr("CARREGANDO")
 	_label.add_theme_font_override("font", font)
 	_label.add_theme_color_override("font_color", Color.WHITE)
 	_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER

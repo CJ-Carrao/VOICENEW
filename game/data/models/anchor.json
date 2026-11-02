@@ -9,27 +9,15 @@
   "generator": "tools/models/gen_world_assets.py",
   "pieces": [
     {
-      "shape": "cylinder",
-      "radius": 0.045,
-      "height": 0.64,
-      "pos": [
-        0,
-        0.4,
-        0
-      ],
-      "color": "#2a2d32",
-      "tag": "shaft"
-    },
-    {
       "shape": "torus",
-      "radius": 0.09,
-      "inner_radius": 0.06,
+      "radius": 0.08,
+      "inner_radius": 0.056,
       "pos": [
         0,
-        0.752,
+        0.736,
         0
       ],
-      "color": "#2a2d32",
+      "color": "#3e4248",
       "rot": [
         90,
         0,
@@ -38,90 +26,206 @@
       "tag": "ring"
     },
     {
-      "shape": "box",
-      "size": [
-        0.455,
-        0.05,
-        0.06
-      ],
+      "shape": "cylinder",
+      "radius": 0.026,
+      "height": 0.64,
       "pos": [
         0,
-        0.52,
+        0.384,
         0
       ],
-      "color": "#2a2d32",
-      "tag": "stock"
+      "color": "#3e4248",
+      "tag": "shaft"
     },
     {
       "shape": "box",
       "size": [
-        0.325,
-        0.05,
-        0.07
+        0.455,
+        0.032,
+        0.0325
       ],
       "pos": [
-        -0.156,
-        0.144,
+        0,
+        0.624,
         0
       ],
-      "color": "#2a2d32",
+      "color": "#3e4248",
+      "tag": "stock"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0292,
+      "height": 0.1061,
+      "pos": [
+        -0.2626,
+        0.1386,
+        0.0
+      ],
+      "color": "#3e4248",
       "rot": [
-        0,
-        0,
-        -25
+        154.13,
+        90.0,
+        0
       ],
       "tag": "arm"
     },
     {
-      "shape": "cone",
-      "radius": 0.09,
-      "height": 0.2,
+      "shape": "capsule",
+      "radius": 0.0292,
+      "height": 0.1279,
       "pos": [
-        -0.286,
-        0.24,
+        -0.2226,
+        0.099,
+        0.0
+      ],
+      "color": "#3e4248",
+      "rot": [
+        121.55,
+        90.0,
         0
       ],
-      "color": "#2a2d32",
+      "tag": "arm"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0292,
+      "height": 0.1503,
+      "pos": [
+        -0.1488,
+        0.0687,
+        0.0
+      ],
+      "color": "#3e4248",
+      "rot": [
+        105.33,
+        90.0,
+        0
+      ],
+      "tag": "arm"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0292,
+      "height": 0.1633,
+      "pos": [
+        -0.0522,
+        0.0523,
+        0.0
+      ],
+      "color": "#3e4248",
+      "rot": [
+        94.67,
+        90.0,
+        0
+      ],
+      "tag": "arm"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0292,
+      "height": 0.1633,
+      "pos": [
+        0.0522,
+        0.0523,
+        0.0
+      ],
+      "color": "#3e4248",
+      "rot": [
+        85.33,
+        90.0,
+        0
+      ],
+      "tag": "arm"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0292,
+      "height": 0.1503,
+      "pos": [
+        0.1488,
+        0.0687,
+        0.0
+      ],
+      "color": "#3e4248",
+      "rot": [
+        74.67,
+        90.0,
+        0
+      ],
+      "tag": "arm"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0292,
+      "height": 0.1279,
+      "pos": [
+        0.2226,
+        0.099,
+        0.0
+      ],
+      "color": "#3e4248",
+      "rot": [
+        58.45,
+        90.0,
+        0
+      ],
+      "tag": "arm"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0292,
+      "height": 0.1061,
+      "pos": [
+        0.2626,
+        0.1386,
+        0.0
+      ],
+      "color": "#3e4248",
+      "rot": [
+        25.87,
+        90.0,
+        0
+      ],
+      "tag": "arm"
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        0.0325,
+        0.112,
+        0.13
+      ],
+      "pos": [
+        -0.273,
+        0.224,
+        0
+      ],
+      "color": "#3e4248",
+      "point": 1.0,
       "rot": [
         0,
-        0,
+        -90,
         0
       ],
       "tag": "fluke"
     },
     {
-      "shape": "box",
+      "shape": "wedge",
       "size": [
-        0.325,
-        0.05,
-        0.07
+        0.0325,
+        0.112,
+        0.13
       ],
       "pos": [
-        0.156,
-        0.144,
+        0.273,
+        0.224,
         0
       ],
-      "color": "#2a2d32",
+      "color": "#3e4248",
+      "point": 1.0,
       "rot": [
         0,
-        0,
-        25
-      ],
-      "tag": "arm"
-    },
-    {
-      "shape": "cone",
-      "radius": 0.09,
-      "height": 0.2,
-      "pos": [
-        0.286,
-        0.24,
-        0
-      ],
-      "color": "#2a2d32",
-      "rot": [
-        0,
-        0,
+        90,
         0
       ],
       "tag": "fluke"

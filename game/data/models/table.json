@@ -12,77 +12,173 @@
       "shape": "box",
       "size": [
         1.4,
-        0.07,
+        0.045,
         0.8
       ],
       "pos": [
         0,
-        0.7125,
+        0.7275,
         0
       ],
-      "color": "#7a4b26",
+      "color": "#b98a55",
       "tag": "top",
       "finish": "wood"
     },
     {
       "shape": "box",
       "size": [
-        0.045,
-        0.7125,
-        0.045
+        1.414,
+        0.015,
+        0.808
       ],
       "pos": [
-        -0.56,
-        0.3562,
-        -0.32
+        0,
+        0.7013,
+        0
       ],
-      "color": "#7a4b26",
-      "tag": "leg"
+      "color": "#8a5a32",
+      "tag": "top",
+      "finish": "wood"
     },
     {
       "shape": "box",
       "size": [
-        0.045,
-        0.7125,
-        0.045
+        0.056,
+        0.09,
+        0.688
       ],
       "pos": [
-        -0.56,
-        0.3562,
-        0.32
+        -0.616,
+        0.645,
+        0
       ],
-      "color": "#7a4b26",
-      "tag": "leg"
+      "color": "#8a5a32",
+      "tag": "apron",
+      "finish": "wood"
     },
     {
       "shape": "box",
       "size": [
-        0.045,
-        0.7125,
-        0.045
+        1.204,
+        0.09,
+        0.056
       ],
       "pos": [
-        0.56,
-        0.3562,
-        -0.32
+        0,
+        0.645,
+        -0.352
       ],
-      "color": "#7a4b26",
-      "tag": "leg"
+      "color": "#8a5a32",
+      "tag": "apron",
+      "finish": "wood"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.056,
+      "height": 0.69,
+      "pos": [
+        -0.616,
+        0.345,
+        -0.352
+      ],
+      "color": "#8a5a32",
+      "rot": [
+        0.0,
+        0.0,
+        0
+      ],
+      "top_radius": 0.077,
+      "tag": "leg",
+      "finish": "wood"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.056,
+      "height": 0.69,
+      "pos": [
+        -0.616,
+        0.345,
+        0.352
+      ],
+      "color": "#8a5a32",
+      "rot": [
+        0.0,
+        0.0,
+        0
+      ],
+      "top_radius": 0.077,
+      "tag": "leg",
+      "finish": "wood"
     },
     {
       "shape": "box",
       "size": [
-        0.045,
-        0.7125,
-        0.045
+        0.056,
+        0.09,
+        0.688
       ],
       "pos": [
-        0.56,
-        0.3562,
-        0.32
+        0.616,
+        0.645,
+        0
       ],
-      "color": "#7a4b26",
-      "tag": "leg"
+      "color": "#8a5a32",
+      "tag": "apron",
+      "finish": "wood"
+    },
+    {
+      "shape": "box",
+      "size": [
+        1.204,
+        0.09,
+        0.056
+      ],
+      "pos": [
+        0,
+        0.645,
+        0.352
+      ],
+      "color": "#8a5a32",
+      "tag": "apron",
+      "finish": "wood"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.056,
+      "height": 0.69,
+      "pos": [
+        0.616,
+        0.345,
+        -0.352
+      ],
+      "color": "#8a5a32",
+      "rot": [
+        0.0,
+        0.0,
+        0
+      ],
+      "top_radius": 0.077,
+      "tag": "leg",
+      "finish": "wood"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.056,
+      "height": 0.69,
+      "pos": [
+        0.616,
+        0.345,
+        0.352
+      ],
+      "color": "#8a5a32",
+      "rot": [
+        0.0,
+        0.0,
+        0
+      ],
+      "top_radius": 0.077,
+      "tag": "leg",
+      "finish": "wood"
     }
   ]
 }

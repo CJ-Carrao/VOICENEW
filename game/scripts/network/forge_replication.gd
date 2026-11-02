@@ -188,15 +188,15 @@ func _next_request_id() -> int:
 
 func submit_request(text: String, record_unknowns: bool = true, commands_only: bool = false) -> Dictionary:
 	if not is_active() or _session.has_authority():
-		return _blocked("A sessão ainda não está pronta para pedidos.")
+		return _blocked(tr("A sessão ainda não está pronta para pedidos."))
 	var request_id: = _next_request_id()
-	_request_creation.rpc_id(1, epoch, request_id, text, record_unknowns, commands_only)
+	_request_creation.rpc_id(1, epoch, request_id, text, record_unknowns, Lexicon.language(), commands_only)
 	return {"pending": true, "request_id": request_id}
 
 
 func submit_confirm(dims: Dictionary, at: Vector3 = Vector3.INF, forward: Vector3 = Vector3.ZERO) -> Dictionary:
 	if not is_active() or _session.has_authority():
-		return _blocked("A sessão ainda não está pronta para confirmar o rascunho.")
+		return _blocked(tr("A sessão ainda não está pronta para confirmar o rascunho."))
 	var request_id: = _next_request_id()
 	var draft: = Forge.draft_of(_session.local_player_id)
 	var placement: = {} if at == Vector3.INF else {"at": at, "forward": forward}
@@ -212,16 +212,19 @@ func submit_cancel() -> void :
 
 
 @rpc("any_peer", "call_remote", "reliable", 0)
-func _request_creation(packet_epoch: int, request_id: int, text: Variant, record_unknowns: Variant = true, commands_only: Variant = false) -> void :
+func _request_creation(packet_epoch: int, request_id: int, text: Variant, record_unknowns: Variant = true, lang: Variant = "", commands_only: Variant = false) -> void :
 	var player_id: = _accept_intent(packet_epoch, request_id)
 	if player_id == 0:
 		return
+	if not lang is String or not (lang.is_empty() or Lexicon.LANGUAGES.has(lang)):
+		_reject_intent(player_id, request_id, tr("Idioma do pedido desconhecido."))
+		return
 	if not text is String or not record_unknowns is bool or not commands_only is bool or text.strip_edges().is_empty() or text.to_utf8_buffer().size() > int(_config.max_text_bytes):
-		_reject_intent(player_id, request_id, "O pedido está vazio ou excede o tamanho permitido.")
+		_reject_intent(player_id, request_id, tr("O pedido está vazio ou excede o tamanho permitido."))
 		return
 	stats.requests += 1
 	_intent_context[player_id] = request_id
-	Forge.request(player_id, text, record_unknowns, commands_only)
+	Forge.request(player_id, text, record_unknowns, lang, commands_only)
 	_intent_context.erase(player_id)
 
 
@@ -232,7 +235,7 @@ func _confirm_creation(packet_epoch: int, request_id: int, draft_id: int, dimens
 		return
 	var draft: = Forge.draft_of(player_id)
 	if draft.is_empty() or draft_id <= 0 or draft_id != int(_draft_ids.get(player_id, 0)):
-		_reject_intent(player_id, request_id, "Esse rascunho já foi alterado ou cancelado.")
+		_reject_intent(player_id, request_id, tr("Esse rascunho já foi alterado ou cancelado."))
 		return
 	var clean: = _validate_confirmation(player_id, draft, dimensions, placement)
 	if clean.has("error"):
@@ -250,7 +253,7 @@ func _cancel_creation(packet_epoch: int, request_id: int, draft_id: int) -> void
 	if player_id == 0:
 		return
 	if draft_id <= 0 or draft_id != int(_draft_ids.get(player_id, 0)):
-		_reject_intent(player_id, request_id, "Esse rascunho já foi alterado ou cancelado.")
+		_reject_intent(player_id, request_id, tr("Esse rascunho já foi alterado ou cancelado."))
 		return
 	stats.cancels += 1
 	Forge.cancel_draft(player_id)
@@ -277,45 +280,45 @@ func _accept_intent(packet_epoch: int, request_id: int) -> int:
 
 func _validate_confirmation(player_id: int, draft: Dictionary, dims: Dictionary, placement: Dictionary) -> Dictionary:
 	if dims.size() > 4 or var_to_bytes(dims).size() > 256:
-		return {"error": "Medidas inválidas."}
+		return {"error": tr("Medidas inválidas.")}
 	var clean_dims: = {}
 	for key: Variant in dims:
 		var value: Variant = dims[key]
 		if not key is String or not key in Shape.dim_ids(Lexicon.data) or not (value is int or value is float) or not is_finite(float(value)):
-			return {"error": "Medidas inválidas."}
+			return {"error": tr("Medidas inválidas.")}
 		if float(value) < Lexicon.balf("shaping.min." + key) or float(value) > Lexicon.balf("shaping.max." + key):
-			return {"error": "Medidas fora dos limites."}
+			return {"error": tr("Medidas fora dos limites.")}
 		clean_dims[key] = Shape.clamp_dim(key, float(value), Lexicon.data)
 	var kind: = Lexicon.data.placement_for(str(draft.recipe.get("thing", "")))
 	if kind in ["hand", "throwable"]:
 		if not placement.is_empty():
-			return {"error": "Itens da mão não aceitam uma posição no mundo."}
+			return {"error": tr("Itens da mão não aceitam uma posição no mundo.")}
 		return {"dims": clean_dims, "at": Vector3.INF, "forward": Vector3.ZERO}
 	if placement.size() != 2 or not placement.get("at") is Vector3 or not placement.get("forward") is Vector3:
-		return {"error": "Posição do rascunho inválida."}
+		return {"error": tr("Posição do rascunho inválida.")}
 	var at: Vector3 = placement.at
 	var direction: Vector3 = placement.forward
 	if not at.is_finite() or not direction.is_finite() or direction.length_squared() < 0.01 or direction.length_squared() > 4.0:
-		return {"error": "Posição do rascunho inválida."}
+		return {"error": tr("Posição do rascunho inválida.")}
 	var player: = _world.get_player(player_id)
 
 	var up: = player.up()
 	var offset: = Gravity.flat(at - player.global_position, up)
 	var maximum: = Lexicon.balf("placement.structure_max_range") if kind == "aim_ground" else Lexicon.balf("placement.front_distance")
 	var tolerance: = float(_config.placement_tolerance_m)
-	var half: = Lexicon.balf("arena.size") * 0.5
+	var half: = _world.arena.size * 0.5
 	var outside: = ( not Gravity.inside_world(at, 0.0)) if Gravity.active() else (absf(at.x) > half or absf(at.z) > half)
 	if offset.length() > maximum + tolerance or outside:
-		return {"error": "O rascunho está fora do alcance."}
+		return {"error": tr("O rascunho está fora do alcance.")}
 	var authoritative_ground: = Forge.ground_point(at + up * ((player.global_position - at).dot(up) + tolerance), up)
 	if absf((at - authoritative_ground).dot(up)) > tolerance:
-		return {"error": "O rascunho precisa estar apoiado no mundo."}
+		return {"error": tr("O rascunho precisa estar apoiado no mundo.")}
 	if offset.length() > maximum:
 		var clamped: = player.global_position + offset.normalized() * maximum
 		authoritative_ground = Forge.ground_point(clamped + up * tolerance, up)
 	direction = Gravity.flat(direction, up)
 	if direction.length_squared() < 0.01:
-		return {"error": "Direção do rascunho inválida."}
+		return {"error": tr("Direção do rascunho inválida.")}
 	return {"dims": clean_dims, "at": authoritative_ground, "forward": direction.normalized()}
 
 
@@ -397,11 +400,11 @@ func creation_warning(player_id: int, recipe: Dictionary, cost: float, descendan
 	if not _session.is_online():
 		return ""
 	if not is_active() or not _session.has_authority():
-		return "A sessão ainda não está pronta para pedidos."
+		return tr("A sessão ainda não está pronta para pedidos.")
 	if not recipe.has("thing"):
 		return ""
 	if var_to_bytes(recipe).size() > 8192:
-		return "A receita excede o tamanho permitido para esta sessão."
+		return tr("A receita excede o tamanho permitido para esta sessão.")
 	var placement: = "world" if descendant else Lexicon.data.placement_for(str(recipe.thing))
 	var count: = 1 if descendant or placement in ["hand", "throwable", "attach", "load"] else maxi(1, int((recipe.get("mods", {}) as Dictionary).get("count", 1)))
 	var reclaimed: = 0
@@ -415,7 +418,7 @@ func creation_warning(player_id: int, recipe: Dictionary, cost: float, descendan
 				if old == held or held.is_ancestor_of(old):
 					reclaimed_live += 1
 	if int(_config.max_entities) > 0 and entries.size() + count - reclaimed > int(_config.max_entities):
-		return "Há criações demais nesta sessão. Recicle uma antes de pedir mais."
+		return tr("Há criações demais nesta sessão. Recicle uma antes de pedir mais.")
 	var cache_key: = str(descendant) + JSON.stringify(recipe, "", true)
 	if _preflight_cache.has(cache_key):
 		return _budget_warning(player_id, count, reclaimed_live, _preflight_cache[cache_key])
@@ -457,9 +460,9 @@ func _budget_warning(player_id: int, count: int, reclaimed_live: int, budget: Di
 	var live_after: = Forge.live_things(player_id).size() + int(budget.registered) * count - reclaimed_live
 	var live_cap := int(Lexicon.balf("caps.live_entities_per_player"))
 	if live_cap > 0 and live_after > live_cap:
-		return "Há criações e anexos demais em uso. Recicle uma criação antes de pedir mais."
+		return tr("Há criações e anexos demais em uso. Recicle uma criação antes de pedir mais.")
 	if int(budget.spawn_bytes) > int(_config.max_spawn_bytes) or int(budget.state_bytes) > int(_config.max_batch_bytes):
-		return "A criação tem peças demais para esta sessão. Reduza os anexos ou simplifique o pedido."
+		return tr("A criação tem peças demais para esta sessão. Reduza os anexos ou simplifique o pedido.")
 	return ""
 
 

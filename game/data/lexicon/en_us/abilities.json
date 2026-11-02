@@ -1,0 +1,6 @@
+{
+  "_comment": "A request with no thing, only an ability, becomes an ability applied to the player.",
+  "fly": { "words": ["fly", "flight", "flying", "take off"] },
+  "sprint": { "words": ["run", "run fast", "sprint", "super speed", "superspeed", "speed boost", "go fast", "dash"] },
+  "super_jump": { "words": ["jump high", "jump", "high jump", "super jump", "superjump", "leap", "big jump"] }
+}

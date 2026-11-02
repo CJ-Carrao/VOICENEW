@@ -11,6 +11,10 @@ static var _arrays: Dictionary = {}
 
 static var _maps_lock: = Mutex.new()
 
+const BAKED_PATH: = "res://assets/characters/lavoice/paint_maps.res"
+static var _baked: Dictionary = {}
+static var _baked_loaded: = false
+
 var surfaces: Dictionary = {}
 
 
@@ -67,7 +71,9 @@ static func _map(part: String, mesh: Mesh) -> Dictionary:
 	_maps_lock.lock()
 	if not _maps.has(part):
 		var arrays: Array = _arrays[part] if _arrays.has(part) else mesh.surface_get_arrays(0)
-		_maps[part] = PaintSurface.bake_arrays(arrays, texture_px(part))
+		var px: = texture_px(part)
+		var baked: = _baked_map(part, bake_key(arrays, px))
+		_maps[part] = baked if not baked.is_empty() else PaintSurface.bake_arrays(arrays, px)
 	var map: Dictionary = _maps[part]
 	_maps_lock.unlock()
 	return map
@@ -126,3 +132,31 @@ func commit() -> void :
 func _stamp(center: Vector3, radius: float, hardness: float, color: Color, erase: bool) -> void :
 	for surface: PaintSurface in surfaces.values():
 		surface.stamp(center, radius, hardness, color, erase)
+
+
+
+static func bake_key(arrays: Array, px: int) -> int:
+	return hash([arrays[Mesh.ARRAY_VERTEX], arrays[Mesh.ARRAY_TEX_UV], arrays[Mesh.ARRAY_INDEX], px, 
+		PaintSurface.GUTTER, PaintSurface.CELL_M])
+
+
+
+static func _baked_map(part: String, key: int) -> Dictionary:
+	if not _baked_loaded:
+		_baked_loaded = true
+		var bake: = load(BAKED_PATH) as PaintMapBake if ResourceLoader.exists(BAKED_PATH) else null
+		if bake != null:
+			_baked = bake.maps
+	var entry: Dictionary = _baked.get(part, {})
+	return entry["map"] if not entry.is_empty() and int(entry["key"]) == key else {}
+
+
+
+static func bake_all() -> PaintMapBake:
+	var bake: = PaintMapBake.new()
+	var meshes: = paintable_meshes()
+	for part: String in meshes:
+		var arrays: Array = (meshes[part] as Mesh).surface_get_arrays(0)
+		var px: = texture_px(part)
+		bake.maps[part] = {"key": bake_key(arrays, px), "map": PaintSurface.bake_arrays(arrays, px)}
+	return bake

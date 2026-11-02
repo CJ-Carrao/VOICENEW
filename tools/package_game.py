@@ -6,13 +6,15 @@ import struct
 import argparse
 
 ROOT = Path(__file__).resolve().parent.parent
-ENGINE = ROOT / "tools/runtime/lavoice-engine.bin"
-PACK = ROOT / "build/LAVOICE-Lab.pck"
-OUTPUT = ROOT / "build/LAVOICE-Lab.exe"
+ENGINE = ROOT / "tools/runtime/lavoice-h4-engine.bin"
+if not ENGINE.exists():
+    ENGINE = ROOT / "tools/runtime/lavoice-engine.bin"
+PACK = ROOT / "build/LAVOICE-Lab-H4.pck"
+OUTPUT = ROOT / "build/H4-Lab/LAVOICE-Lab-H4-v26.exe"
 
 
-def build(pack_path=PACK, output_path=OUTPUT):
-    engine = bytearray(ENGINE.read_bytes())
+def build(pack_path=PACK, output_path=OUTPUT, engine_path=ENGINE):
+    engine = bytearray(engine_path.read_bytes())
     pack = pack_path.read_bytes()
     if pack[:4] != b"GDPC":
         raise ValueError("Export is not a Godot PCK")
@@ -29,6 +31,7 @@ def build(pack_path=PACK, output_path=OUTPUT):
             break
     if not matched:
         raise ValueError("Preserved runtime has no PCK section")
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_bytes(engine + pack + struct.pack("<Q4s", len(pack), b"GDPC"))
     receipt = {
         "executable": output_path.name,
@@ -36,6 +39,7 @@ def build(pack_path=PACK, output_path=OUTPUT):
         "size": output_path.stat().st_size,
         "pack_sha256": hashlib.sha256(pack).hexdigest(),
         "runtime_sha256": hashlib.sha256(engine).hexdigest(),
+        "runtime_source": engine_path.name,
         "engine_version": "4.7.2",
         "user_data_folder": "%APPDATA%/LAVOICE-Lab",
     }
@@ -47,5 +51,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--pack", type=Path, default=PACK)
     parser.add_argument("--output", type=Path, default=OUTPUT)
+    parser.add_argument("--engine", type=Path, default=ENGINE)
     args = parser.parse_args()
-    build(args.pack, args.output)
+    build(args.pack, args.output, args.engine)

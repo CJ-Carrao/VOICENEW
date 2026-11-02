@@ -11,6 +11,7 @@ extends Node3D
 
 
 
+
 signal countdown_started(seconds: float)
 signal finished
 
@@ -270,7 +271,7 @@ func _build_ui() -> void :
 	var small: = MainMenu._variation(font, 520, 9)
 	var thin: = MainMenu._variation(font, 300, 7)
 	_subtitle = _label(String(_cfg.get("subtitle", "")), thin, 30, Color(0.96, 0.93, 0.88, 0.92))
-	_hint = _label("Para pular clique ESPAÇO", small, 18, Color(0.94, 0.91, 0.86, 0.7))
+	_hint = _label(tr("Para pular clique ESPAÇO"), small, 18, Color(0.94, 0.91, 0.86, 0.7))
 	for node: CanvasItem in [_subtitle, _hint]:
 		node.modulate.a = 0.0
 
@@ -286,7 +287,7 @@ func _build_knockout(font: Font) -> void :
 	add_child(_letters)
 	var heavy: = MainMenu._variation(font, int(cfg.get("weight", 800)), int(cfg.get("spacing", 46)))
 	var label: = Label.new()
-	label.text = String(_cfg.get("title", "ESPAÇO"))
+	label.text = String(_cfg.get("title", tr("ESPAÇO")))
 	label.add_theme_font_override("font", heavy)
 	label.add_theme_font_size_override("font_size", 400)
 	label.add_theme_color_override("font_color", Color.WHITE)
@@ -344,13 +345,15 @@ func _label(text: String, font: Font, size: int, color: Color) -> Label:
 func _build_music() -> void :
 	_music = AudioStreamPlayer.new()
 	_music.name = "MapMusic"
-	_music.bus = _music_bus()
 	var path: = String(_cfg.get("music", ""))
-	if ResourceLoader.exists(path):
-		var stream: = load(path) as AudioStream
-		if "loop" in stream:
-			stream.set("loop", true)
-		_music.stream = stream
+	var allowed: = not path.is_empty()
+	_music.bus = _music_bus() if allowed else AudioMix.bus(AudioMix.MUSIC)
+	if allowed:
+		if ResourceLoader.exists(path):
+			var stream: = load(path) as AudioStream
+			if "loop" in stream:
+				stream.set("loop", true)
+			_music.stream = stream
 	_music.volume_db = float(_cfg.get("music_db", 0.0))
 	add_child(_music)
 

@@ -16,98 +16,135 @@
         0.125,
         0
       ],
-      "color": "#3c7b39",
+      "color": "#2f6a2a",
       "tag": "body",
-      "_stretch": [
+      "scale": [
         0.25,
         0.25,
         0.32
       ]
     },
     {
-      "shape": "cylinder",
-      "radius": 0.005,
-      "height": 0.224,
+      "shape": "box",
+      "size": [
+        0.0325,
+        0.275,
+        0.352
+      ],
       "pos": [
-        -0.065,
-        0.2,
+        0,
+        0.125,
         0
       ],
-      "color": "#8eaf50",
+      "color": "#78b04c",
       "rot": [
-        -90,
+        0,
         0,
         0
       ],
-      "tag": "stripe"
+      "tag": "stripe",
+      "decal": true
     },
     {
-      "shape": "cylinder",
-      "radius": 0.005,
-      "height": 0.224,
+      "shape": "box",
+      "size": [
+        0.0325,
+        0.275,
+        0.352
+      ],
       "pos": [
-        -0.0325,
-        0.215,
-        0
-      ],
-      "color": "#8eaf50",
-      "rot": [
-        -90,
         0,
+        0.125,
         0
       ],
-      "tag": "stripe"
+      "color": "#78b04c",
+      "rot": [
+        0,
+        0,
+        36
+      ],
+      "tag": "stripe",
+      "decal": true
     },
     {
-      "shape": "cylinder",
-      "radius": 0.005,
-      "height": 0.224,
+      "shape": "box",
+      "size": [
+        0.0325,
+        0.275,
+        0.352
+      ],
+      "pos": [
+        0,
+        0.125,
+        0
+      ],
+      "color": "#78b04c",
+      "rot": [
+        0,
+        0,
+        72
+      ],
+      "tag": "stripe",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0325,
+        0.275,
+        0.352
+      ],
+      "pos": [
+        0,
+        0.125,
+        0
+      ],
+      "color": "#78b04c",
+      "rot": [
+        0,
+        0,
+        108
+      ],
+      "tag": "stripe",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0325,
+        0.275,
+        0.352
+      ],
+      "pos": [
+        0,
+        0.125,
+        0
+      ],
+      "color": "#78b04c",
+      "rot": [
+        0,
+        0,
+        144
+      ],
+      "tag": "stripe",
+      "decal": true
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0075,
+      "height": 0.0427,
       "pos": [
         0.0,
-        0.23,
-        0
+        0.135,
+        -0.1696
       ],
-      "color": "#8eaf50",
+      "color": "#5a4a2a",
       "rot": [
-        -90,
-        0,
+        43.83,
+        180.0,
         0
       ],
-      "tag": "stripe"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.005,
-      "height": 0.224,
-      "pos": [
-        0.0325,
-        0.215,
-        0
-      ],
-      "color": "#8eaf50",
-      "rot": [
-        -90,
-        0,
-        0
-      ],
-      "tag": "stripe"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.005,
-      "height": 0.224,
-      "pos": [
-        0.065,
-        0.2,
-        0
-      ],
-      "color": "#8eaf50",
-      "rot": [
-        -90,
-        0,
-        0
-      ],
-      "tag": "stripe"
+      "tag": "stem"
     }
   ]
 }

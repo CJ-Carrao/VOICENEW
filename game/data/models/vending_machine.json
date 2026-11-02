@@ -20,219 +20,540 @@
         0.925,
         0
       ],
-      "color": "#bd4036",
-      "tag": "body",
+      "color": "#c42e2e",
+      "tag": "body"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.589,
+        1.295,
+        0.04
+      ],
+      "pos": [
+        -0.133,
+        1.11,
+        -0.392
+      ],
+      "color": "#203040",
+      "tag": "window",
+      "finish": "glass"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0427,
+      "height": 0.185,
+      "pos": [
+        -0.361,
+        0.592,
+        -0.36
+      ],
+      "color": "#e53b2f",
+      "tag": "can",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0427,
+      "height": 0.185,
+      "pos": [
+        -0.2137,
+        0.592,
+        -0.36
+      ],
+      "color": "#2f7be5",
+      "tag": "can",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0427,
+      "height": 0.185,
+      "pos": [
+        -0.0665,
+        0.592,
+        -0.36
+      ],
+      "color": "#f2c230",
+      "tag": "can",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0427,
+      "height": 0.185,
+      "pos": [
+        0.0807,
+        0.592,
+        -0.36
+      ],
+      "color": "#3fbf5a",
+      "tag": "can",
       "finish": "metal"
     },
     {
       "shape": "box",
       "size": [
-        0.6365,
-        1.2395,
-        0.025
+        0.57,
+        0.0185,
+        0.08
       ],
       "pos": [
-        -0.095,
-        0.9805,
-        -0.408
+        -0.133,
+        0.4995,
+        -0.36
       ],
-      "color": "#233643",
-      "tag": "door"
+      "color": "#3b3f46",
+      "tag": "shelf"
     },
     {
       "shape": "cylinder",
-      "radius": 0.018,
-      "height": 0.025,
+      "radius": 0.0427,
+      "height": 0.185,
       "pos": [
-        0.361,
-        0.74,
-        -0.424
+        -0.361,
+        0.814,
+        -0.36
       ],
-      "color": "#c5c9ce",
-      "rot": [
-        -90,
-        0,
-        0
-      ],
-      "tag": "button"
+      "color": "#2f7be5",
+      "tag": "can",
+      "finish": "metal"
     },
     {
       "shape": "cylinder",
-      "radius": 0.018,
-      "height": 0.025,
+      "radius": 0.0427,
+      "height": 0.185,
       "pos": [
-        0.361,
-        1.11,
-        -0.424
+        -0.2137,
+        0.814,
+        -0.36
       ],
-      "color": "#c5c9ce",
-      "rot": [
-        -90,
-        0,
-        0
-      ],
-      "tag": "button"
+      "color": "#f2c230",
+      "tag": "can",
+      "finish": "metal"
     },
     {
       "shape": "cylinder",
-      "radius": 0.018,
-      "height": 0.025,
+      "radius": 0.0427,
+      "height": 0.185,
       "pos": [
-        0.361,
+        -0.0665,
+        0.814,
+        -0.36
+      ],
+      "color": "#3fbf5a",
+      "tag": "can",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0427,
+      "height": 0.185,
+      "pos": [
+        0.0807,
+        0.814,
+        -0.36
+      ],
+      "color": "#f28c2a",
+      "tag": "can",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.57,
+        0.0185,
+        0.08
+      ],
+      "pos": [
+        -0.133,
+        0.7215,
+        -0.36
+      ],
+      "color": "#3b3f46",
+      "tag": "shelf"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0427,
+      "height": 0.185,
+      "pos": [
+        -0.361,
+        1.036,
+        -0.36
+      ],
+      "color": "#f2c230",
+      "tag": "can",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0427,
+      "height": 0.185,
+      "pos": [
+        -0.2137,
+        1.036,
+        -0.36
+      ],
+      "color": "#3fbf5a",
+      "tag": "can",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0427,
+      "height": 0.185,
+      "pos": [
+        -0.0665,
+        1.036,
+        -0.36
+      ],
+      "color": "#f28c2a",
+      "tag": "can",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0427,
+      "height": 0.185,
+      "pos": [
+        0.0807,
+        1.036,
+        -0.36
+      ],
+      "color": "#e53b2f",
+      "tag": "can",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.57,
+        0.0185,
+        0.08
+      ],
+      "pos": [
+        -0.133,
+        0.9435,
+        -0.36
+      ],
+      "color": "#3b3f46",
+      "tag": "shelf"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0427,
+      "height": 0.185,
+      "pos": [
+        -0.361,
+        1.258,
+        -0.36
+      ],
+      "color": "#3fbf5a",
+      "tag": "can",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0427,
+      "height": 0.185,
+      "pos": [
+        -0.2137,
+        1.258,
+        -0.36
+      ],
+      "color": "#f28c2a",
+      "tag": "can",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0427,
+      "height": 0.185,
+      "pos": [
+        -0.0665,
+        1.258,
+        -0.36
+      ],
+      "color": "#e53b2f",
+      "tag": "can",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0427,
+      "height": 0.185,
+      "pos": [
+        0.0807,
+        1.258,
+        -0.36
+      ],
+      "color": "#2f7be5",
+      "tag": "can",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.57,
+        0.0185,
+        0.08
+      ],
+      "pos": [
+        -0.133,
+        1.1655,
+        -0.36
+      ],
+      "color": "#3b3f46",
+      "tag": "shelf"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0427,
+      "height": 0.185,
+      "pos": [
+        -0.361,
         1.48,
-        -0.424
+        -0.36
       ],
-      "color": "#c5c9ce",
-      "rot": [
-        -90,
-        0,
-        0
+      "color": "#f28c2a",
+      "tag": "can",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0427,
+      "height": 0.185,
+      "pos": [
+        -0.2137,
+        1.48,
+        -0.36
       ],
+      "color": "#e53b2f",
+      "tag": "can",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0427,
+      "height": 0.185,
+      "pos": [
+        -0.0665,
+        1.48,
+        -0.36
+      ],
+      "color": "#2f7be5",
+      "tag": "can",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0427,
+      "height": 0.185,
+      "pos": [
+        0.0807,
+        1.48,
+        -0.36
+      ],
+      "color": "#f2c230",
+      "tag": "can",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.57,
+        0.0185,
+        0.08
+      ],
+      "pos": [
+        -0.133,
+        1.3875,
+        -0.36
+      ],
+      "color": "#3b3f46",
+      "tag": "shelf"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.228,
+        1.295,
+        0.03
+      ],
+      "pos": [
+        0.342,
+        1.11,
+        -0.4
+      ],
+      "color": "#932222",
+      "tag": "panel"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.152,
+        0.111,
+        0.02
+      ],
+      "pos": [
+        0.342,
+        1.591,
+        -0.416
+      ],
+      "color": "#2a2f20",
+      "tag": "display"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.114,
+        0.0555,
+        0.02
+      ],
+      "pos": [
+        0.342,
+        1.591,
+        -0.42
+      ],
+      "color": "#9cff7a",
+      "tag": "display",
+      "glow": 1.2
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0475,
+        0.0463,
+        0.02
+      ],
+      "pos": [
+        0.304,
+        1.3875,
+        -0.416
+      ],
+      "color": "#f2efe6",
       "tag": "button"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.13,
-      "pos": [
-        -0.266,
-        0.555,
-        -0.424
+      "shape": "box",
+      "size": [
+        0.0475,
+        0.0463,
+        0.02
       ],
-      "color": "#397c9e",
-      "tag": "can"
+      "pos": [
+        0.38,
+        1.3875,
+        -0.416
+      ],
+      "color": "#f2efe6",
+      "tag": "button"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.13,
-      "pos": [
-        -0.076,
-        0.555,
-        -0.424
+      "shape": "box",
+      "size": [
+        0.0475,
+        0.0463,
+        0.02
       ],
-      "color": "#397c9e",
-      "tag": "can"
+      "pos": [
+        0.304,
+        1.295,
+        -0.416
+      ],
+      "color": "#f2efe6",
+      "tag": "button"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.13,
-      "pos": [
-        0.114,
-        0.555,
-        -0.424
+      "shape": "box",
+      "size": [
+        0.0475,
+        0.0463,
+        0.02
       ],
-      "color": "#397c9e",
-      "tag": "can"
+      "pos": [
+        0.38,
+        1.295,
+        -0.416
+      ],
+      "color": "#f2efe6",
+      "tag": "button"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.13,
-      "pos": [
-        -0.266,
-        0.888,
-        -0.424
+      "shape": "box",
+      "size": [
+        0.0475,
+        0.0463,
+        0.02
       ],
-      "color": "#397c9e",
-      "tag": "can"
+      "pos": [
+        0.304,
+        1.2025,
+        -0.416
+      ],
+      "color": "#f2efe6",
+      "tag": "button"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.13,
-      "pos": [
-        -0.076,
-        0.888,
-        -0.424
+      "shape": "box",
+      "size": [
+        0.0475,
+        0.0463,
+        0.02
       ],
-      "color": "#397c9e",
-      "tag": "can"
+      "pos": [
+        0.38,
+        1.2025,
+        -0.416
+      ],
+      "color": "#f2efe6",
+      "tag": "button"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.13,
-      "pos": [
-        0.114,
-        0.888,
-        -0.424
+      "shape": "box",
+      "size": [
+        0.0285,
+        0.111,
+        0.02
       ],
-      "color": "#397c9e",
-      "tag": "can"
+      "pos": [
+        0.342,
+        1.073,
+        -0.416
+      ],
+      "color": "#1e2024",
+      "tag": "coin"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.13,
-      "pos": [
-        -0.266,
-        1.221,
-        -0.424
+      "shape": "box",
+      "size": [
+        0.475,
+        0.185,
+        0.04
       ],
-      "color": "#397c9e",
-      "tag": "can"
+      "pos": [
+        -0.133,
+        0.185,
+        -0.392
+      ],
+      "color": "#1e2024",
+      "tag": "slot"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.13,
-      "pos": [
-        -0.076,
-        1.221,
-        -0.424
+      "shape": "box",
+      "size": [
+        0.969,
+        0.111,
+        0.816
       ],
-      "color": "#397c9e",
-      "tag": "can"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.13,
       "pos": [
-        0.114,
-        1.221,
-        -0.424
+        0,
+        1.813,
+        0
       ],
-      "color": "#397c9e",
-      "tag": "can"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.13,
-      "pos": [
-        -0.266,
-        1.554,
-        -0.424
-      ],
-      "color": "#397c9e",
-      "tag": "can"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.13,
-      "pos": [
-        -0.076,
-        1.554,
-        -0.424
-      ],
-      "color": "#397c9e",
-      "tag": "can"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.13,
-      "pos": [
-        0.114,
-        1.554,
-        -0.424
-      ],
-      "color": "#397c9e",
-      "tag": "can"
+      "color": "#d05858",
+      "tag": "top"
     }
   ]
 }

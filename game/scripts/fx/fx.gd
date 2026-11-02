@@ -19,6 +19,107 @@ const EXTRACT_BIT_SIZE: = 0.07
 const EXTRACT_BIT_TIME: = 0.28
 const EXTRACT_BIT_GLOW: = 1.6
 
+static var _explosion_sphere: SphereMesh
+static var _muzzle_sphere: SphereMesh
+static var _unit_box: BoxMesh
+static var _extract_bit_box: BoxMesh
+static var _ring_torus: TorusMesh
+
+
+static var _beam_mesh: ArrayMesh
+static var _materials: Dictionary = {}
+
+
+static func _shared_explosion_sphere() -> SphereMesh:
+	if _explosion_sphere == null:
+		_explosion_sphere = SphereMesh.new()
+		_explosion_sphere.radius = 1.0
+		_explosion_sphere.height = 2.0
+		_explosion_sphere.radial_segments = 24
+		_explosion_sphere.rings = 12
+	return _explosion_sphere
+
+
+static func _shared_muzzle_sphere() -> SphereMesh:
+	if _muzzle_sphere == null:
+		_muzzle_sphere = SphereMesh.new()
+		_muzzle_sphere.radius = 1.0
+		_muzzle_sphere.height = 2.0
+		_muzzle_sphere.radial_segments = 8
+		_muzzle_sphere.rings = 4
+	return _muzzle_sphere
+
+
+static func _shared_unit_box() -> BoxMesh:
+	if _unit_box == null:
+		_unit_box = BoxMesh.new()
+		_unit_box.size = Vector3.ONE
+	return _unit_box
+
+
+
+static func _shared_beam_mesh() -> ArrayMesh:
+	if _beam_mesh == null:
+		var points: = PackedVector3Array()
+		var colors: = PackedColorArray()
+		var steps: = 10
+		for i in steps:
+			var t0: = float(i) / steps
+			var t1: = t0 + 0.5 / steps
+			var wobble: = Vector3(sin(i * 2.3), cos(i * 1.7), 0.0) * 0.04
+			points.append(Vector3(wobble.x, wobble.y, t0))
+			colors.append(Color(1, 1, 1, 0.25 + 0.6 * t0))
+			points.append(Vector3(wobble.x, wobble.y, t1))
+			colors.append(Color(1, 1, 1, 0.25 + 0.6 * t1))
+		var arrays: = []
+		arrays.resize(Mesh.ARRAY_MAX)
+		arrays[Mesh.ARRAY_VERTEX] = points
+		arrays[Mesh.ARRAY_COLOR] = colors
+		_beam_mesh = ArrayMesh.new()
+		_beam_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_LINES, arrays)
+	return _beam_mesh
+
+
+
+static func _material(kind: String, color: Color) -> StandardMaterial3D:
+	var key: = "%s:%s" % [kind, color.to_html()]
+	var material: = _materials.get(key) as StandardMaterial3D
+	if material != null:
+		return material
+	material = StandardMaterial3D.new()
+	material.albedo_color = color
+	match kind:
+		"beam":
+			material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+			material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+			material.vertex_color_use_as_albedo = true
+		"bit":
+			material.emission_enabled = true
+			material.emission = color
+			material.emission_energy_multiplier = EXTRACT_BIT_GLOW
+		"flight":
+			material.emission_enabled = true
+			material.emission = color
+			material.emission_energy_multiplier = 0.4
+	_materials[key] = material
+	return material
+
+
+static func _shared_extract_bit_box() -> BoxMesh:
+	if _extract_bit_box == null:
+		_extract_bit_box = BoxMesh.new()
+		_extract_bit_box.size = Vector3.ONE * EXTRACT_BIT_SIZE
+	return _extract_bit_box
+
+
+static func _shared_ring_torus() -> TorusMesh:
+	if _ring_torus == null:
+		_ring_torus = TorusMesh.new()
+		_ring_torus.inner_radius = 0.9
+		_ring_torus.outer_radius = 1.0
+		_ring_torus.rings = 32
+	return _ring_torus
+
 
 
 static func explosion(parent: Node, center: Vector3, radius: float, color: Color) -> void :
@@ -33,12 +134,7 @@ static func explosion(parent: Node, center: Vector3, radius: float, color: Color
 		FeelSounds.fallback("impacts/explosion"), clampf(1.25 - radius * 0.06, 0.7, 1.3))
 
 	var ball: = MeshInstance3D.new()
-	var sphere: = SphereMesh.new()
-	sphere.radius = 1.0
-	sphere.height = 2.0
-	sphere.radial_segments = 24
-	sphere.rings = 12
-	ball.mesh = sphere
+	ball.mesh = _shared_explosion_sphere()
 	var material: = StandardMaterial3D.new()
 	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 	material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
@@ -56,11 +152,16 @@ static func explosion(parent: Node, center: Vector3, radius: float, color: Color
 	light.set_meta(VideoSettings.FX_LIGHT, true)
 	root.add_child(light)
 
+
+
+	var duration: = EXPLOSION_TIME * clampf(radius / 5.0, 1.0, 3.5)
 	var tween: = root.create_tween().set_parallel(true)
-	tween.tween_property(ball, "scale", Vector3.ONE * radius, EXPLOSION_TIME).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
-	tween.tween_property(material, "albedo_color:a", 0.0, EXPLOSION_TIME).set_ease(Tween.EASE_IN)
-	tween.tween_property(light, "light_energy", 0.0, EXPLOSION_TIME)
+	tween.tween_property(ball, "scale", Vector3.ONE * radius, duration * 0.45).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	tween.tween_property(material, "albedo_color:a", 0.0, duration * 0.55).set_delay(duration * 0.45).set_ease(Tween.EASE_IN)
+	tween.tween_property(light, "light_energy", 0.0, duration)
 	tween.chain().tween_callback(root.queue_free)
+	if radius >= 8.0:
+		ring(parent, center, radius, color, false, false)
 
 
 
@@ -97,12 +198,7 @@ static func muzzle_flash(parent: Node, at: Vector3, direction: Vector3, size: fl
 		SoundBank.play_at(parent, "weapons/parry", at, Lexicon.balf("feel.sound.fire_db"), FeelSounds.metal_hit(), 1.4)
 	var flash: = MeshInstance3D.new()
 	flash.name = "MuzzleFlash"
-	var sphere: = SphereMesh.new()
-	sphere.radius = size
-	sphere.height = size * 2.0
-	sphere.radial_segments = 8
-	sphere.rings = 4
-	flash.mesh = sphere
+	flash.mesh = _shared_muzzle_sphere()
 	var material: = StandardMaterial3D.new()
 	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 	material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
@@ -111,7 +207,7 @@ static func muzzle_flash(parent: Node, at: Vector3, direction: Vector3, size: fl
 	flash.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	parent.add_child(flash)
 	flash.global_position = at + direction.normalized() * size
-	flash.scale = Vector3(1.0, 1.0, 1.8)
+	flash.scale = Vector3(size, size, size * 1.8)
 	if direction.length_squared() > 0.0001 and absf(direction.normalized().dot(Vector3.UP)) < 0.99:
 		flash.look_at(flash.global_position + direction, Vector3.UP)
 	var tween: = flash.create_tween().set_parallel(true)
@@ -229,25 +325,19 @@ static func block_flight(parent: Node, from: Vector3, to_node: Node3D, size: flo
 		return
 	var cube: = MeshInstance3D.new()
 	cube.name = "ExtractedBlock"
-	var box: = BoxMesh.new()
-	box.size = Vector3.ONE * size
-	var material: = StandardMaterial3D.new()
-	material.albedo_color = color
-	material.emission_enabled = true
-	material.emission = color
-	material.emission_energy_multiplier = 0.4
-	box.material = material
-	cube.mesh = box
+	cube.mesh = _shared_unit_box()
+	cube.material_override = _material("flight", color)
 	cube.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	parent.add_child(cube)
 	cube.global_position = from
+	cube.scale = Vector3.ONE * size
 	var tween: = cube.create_tween()
 	tween.tween_method( func(t: float) -> void :
 		if not is_instance_valid(to_node):
 			return
 		var e: = t * t
 		cube.global_position = from.lerp(to_node.global_position, e)
-		cube.scale = Vector3.ONE * lerpf(1.0, 0.25, e)
+		cube.scale = Vector3.ONE * (size * lerpf(1.0, 0.25, e))
 		cube.rotation = Vector3(t * 6.0, t * 4.0, 0.0), 
 		0.0, 1.0, 0.32)
 	tween.tween_callback(cube.queue_free)
@@ -291,41 +381,30 @@ static func extraction_beam(parent: Node, from: Vector3, to: Vector3, color: Col
 		return
 	var trail: = MeshInstance3D.new()
 	trail.name = "ExtractFx"
-	var mesh: = ImmediateMesh.new()
-	var surface: = StandardMaterial3D.new()
-	surface.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	surface.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-	surface.vertex_color_use_as_albedo = true
-	mesh.surface_begin(Mesh.PRIMITIVE_LINES, surface)
-	var steps: = 10
-	for i in steps:
-
-		var t0: = float(i) / steps
-		var t1: = t0 + 0.5 / steps
-		var wobble: = Vector3(sin(i * 2.3), cos(i * 1.7), sin(i * 3.1)) * 0.04
-		mesh.surface_set_color(Color(color, 0.25 + 0.6 * t0))
-		mesh.surface_add_vertex(from.lerp(to, t0) + wobble)
-		mesh.surface_set_color(Color(color, 0.25 + 0.6 * t1))
-		mesh.surface_add_vertex(from.lerp(to, t1) + wobble)
-	mesh.surface_end()
-	trail.mesh = mesh
+	trail.mesh = _shared_beam_mesh()
+	trail.material_override = _material("beam", color)
 	trail.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	parent.add_child(trail)
+
+	var line: = to - from
+	var length: = line.length()
+	if length > 0.001:
+		var z: = line / length
+		var x: = z.cross(Vector3.UP)
+		if x.length_squared() < 0.0001:
+			x = z.cross(Vector3.RIGHT)
+		x = x.normalized()
+		trail.global_transform = Transform3D(Basis(x, z.cross(x), line), from)
+	else:
+		trail.visible = false
 	var tween: = trail.create_tween()
 	tween.tween_interval(EXTRACT_FX_TIME)
 	tween.tween_callback(trail.queue_free)
 
 	var bit: = MeshInstance3D.new()
 	bit.name = "ExtractBit"
-	var cube: = BoxMesh.new()
-	cube.size = Vector3.ONE * EXTRACT_BIT_SIZE
-	var glow: = StandardMaterial3D.new()
-	glow.albedo_color = color
-	glow.emission_enabled = true
-	glow.emission = color
-	glow.emission_energy_multiplier = EXTRACT_BIT_GLOW
-	cube.material = glow
-	bit.mesh = cube
+	bit.mesh = _shared_extract_bit_box()
+	bit.material_override = _material("bit", color)
 	bit.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	parent.add_child(bit)
 	bit.global_position = from
@@ -344,11 +423,7 @@ static func ring(parent: Node, center: Vector3, radius: float, color: Color, inw
 		return
 	var ring_mesh: = MeshInstance3D.new()
 	ring_mesh.name = "RingFx"
-	var torus: = TorusMesh.new()
-	torus.inner_radius = 0.9
-	torus.outer_radius = 1.0
-	torus.rings = 32
-	ring_mesh.mesh = torus
+	ring_mesh.mesh = _shared_ring_torus()
 	var material: = StandardMaterial3D.new()
 	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 	material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA

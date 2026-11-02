@@ -22,6 +22,8 @@ var hand_rot: = Vector3.ZERO
 
 var trauma: float = 0.0
 
+var _reset_left: float = 0.0
+
 var _cfg: Dictionary
 var _clock: float = 0.0
 var _bob_k: float = 0.0
@@ -129,6 +131,16 @@ func _process(delta: float) -> void :
 	rot.x += _hand_dip.x * deg_to_rad(float(land.get("weapon_pitch_deg_per_m", 60.0)))
 
 
+	if _reset_left > 0.0:
+		_reset_left = maxf(0.0, _reset_left - delta)
+		var reset_s: = maxf(_sf("reset", "s"), 0.01)
+		var fade: = _reset_left / reset_s
+		var wave: = sin((reset_s - _reset_left) * TAU * _sf("reset", "hz")) * fade
+		rot.z += deg_to_rad(_sf("reset", "roll_deg")) * wave
+		rot.y += deg_to_rad(_sf("reset", "yaw_deg")) * wave
+		pos.x += _sf("reset", "pos_m") * wave
+
+
 	_mantle_w = move_toward(_mantle_w, 0.0, delta / maxf(_sf("mantle", "s"), 0.01))
 	var m: = sin(_mantle_w * PI)
 	cam_pos.y -= m * _sf("mantle", "dip_m")
@@ -181,6 +193,9 @@ func _on_jumped() -> void :
 func _on_used(item: Thing, kind: String) -> void :
 	if kind == "fire" and item != null:
 		add_trauma(item.recoil_deg * _sf("shake", "fire_trauma_per_recoil_deg"))
+	elif kind == "reset":
+		_reset_left = _sf("reset", "s")
+		add_trauma(_sf("reset", "trauma"))
 
 
 

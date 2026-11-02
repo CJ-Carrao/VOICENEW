@@ -58,7 +58,9 @@ func pull(delta: float) -> void :
 	var previous_rate: = rate_per_second()
 	_pull_seconds = minf(_pull_seconds + delta, Lexicon.balf("extraction.ramp_s"))
 	var amount: = minf((previous_rate + rate_per_second()) * 0.5 * delta, player.max_matter - player.matter)
+	var probe: = DevProbe.now()
 	var taken: = float(source.call("extract_from", shape, point, amount))
+	DevProbe.done("extrai_bloco", probe)
 	player.add_matter(taken)
 
 	var block: Variant = source.get("last_extracted")

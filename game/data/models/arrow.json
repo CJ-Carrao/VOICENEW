@@ -14,7 +14,7 @@
     "muzzle": [
       0,
       0,
-      -0.2625
+      -0.375
     ]
   },
   "units": "meters",
@@ -22,51 +22,88 @@
   "pieces": [
     {
       "shape": "cylinder",
-      "radius": 0.005,
-      "height": 0.675,
+      "radius": 0.006,
+      "height": 0.645,
       "pos": [
         0,
         0,
-        0
+        0.0
       ],
-      "color": "#7a4b26",
+      "color": "#b98a55",
       "rot": [
         -90,
         0,
         0
       ],
-      "tag": "shaft"
+      "tag": "shaft",
+      "finish": "wood"
     },
     {
-      "shape": "cone",
-      "radius": 0.018,
-      "height": 0.08,
+      "shape": "wedge",
+      "size": [
+        0.004,
+        0.035,
+        0.07
+      ],
       "pos": [
         0,
         0,
-        -0.3675
+        -0.375
       ],
       "color": "#c5c9ce",
+      "point": 0.5,
+      "tag": "point",
+      "finish": "metal"
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        0.035,
+        0.004,
+        0.07
+      ],
+      "pos": [
+        0,
+        0,
+        -0.375
+      ],
+      "color": "#c5c9ce",
+      "point": 0.5,
+      "tag": "point",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.03,
+      "pos": [
+        0,
+        0,
+        -0.3125
+      ],
+      "color": "#1e2024",
       "rot": [
         -90,
         0,
         0
       ],
-      "tag": "point"
+      "tag": "point",
+      "finish": "metal"
     },
     {
-      "shape": "box",
+      "shape": "wedge",
       "size": [
-        0.055,
-        0.002,
-        0.1
+        0.003,
+        0.028,
+        0.12
       ],
       "pos": [
-        0,
-        0,
-        0.3
+        0.0,
+        0.014,
+        0.27
       ],
-      "color": "#bd4036",
+      "color": "#d23a2a",
+      "point": 0.0,
       "rot": [
         0,
         0,
@@ -75,44 +112,78 @@
       "tag": "feather"
     },
     {
-      "shape": "box",
+      "shape": "wedge",
       "size": [
-        0.055,
-        0.002,
-        0.1
+        0.003,
+        0.028,
+        0.12
       ],
       "pos": [
-        0,
-        0,
-        0.3
+        0.0121,
+        -0.007,
+        0.27
       ],
-      "color": "#bd4036",
+      "color": "#f2efe6",
+      "point": 0.0,
       "rot": [
         0,
         0,
-        120
+        -120
       ],
       "tag": "feather"
     },
     {
+      "shape": "wedge",
+      "size": [
+        0.003,
+        0.028,
+        0.12
+      ],
+      "pos": [
+        -0.0121,
+        -0.007,
+        0.27
+      ],
+      "color": "#f2efe6",
+      "point": 0.0,
+      "rot": [
+        0,
+        0,
+        -240
+      ],
+      "tag": "feather"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.008,
+      "height": 0.02,
+      "pos": [
+        0,
+        0,
+        0.315
+      ],
+      "color": "#2a2a2e",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "wrap"
+    },
+    {
       "shape": "box",
       "size": [
-        0.055,
-        0.002,
-        0.1
+        0.012,
+        0.016,
+        0.014
       ],
       "pos": [
         0,
         0,
-        0.3
+        0.33
       ],
-      "color": "#bd4036",
-      "rot": [
-        0,
-        0,
-        240
-      ],
-      "tag": "feather"
+      "color": "#d8b04a",
+      "tag": "nock"
     }
   ]
 }

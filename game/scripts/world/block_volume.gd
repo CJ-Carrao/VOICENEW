@@ -17,11 +17,16 @@ extends StaticBody3D
 
 signal cells_changed(changes: Dictionary)
 
+
+signal mesh_changed(region: AABB)
+
 const GROUP: = "block_volumes"
 const AIR: = 0
 
 var volume_id: int = 0
 var size_m: float = 0.25
+
+var chunk_cells_override: int = 0
 var dims: = Vector3i.ONE
 
 var origin: = Vector3.ZERO
@@ -37,6 +42,9 @@ var extract_origin: Variant = null
 var gravity_center: Variant = null
 
 var explosion_mult: float = 1.0
+
+
+var crater_cap_m: float = INF
 
 var last_process_ms: float = 0.0
 
@@ -79,8 +87,22 @@ var _queue: = PackedInt64Array()
 var _queue_head: = 0
 var _queue_point: = Vector3.INF
 var _pending_total: = 0
+var _job_counted: = false
+var _last_budget_frame: = -1
+
+
+var _blasts: Array = []
+
+var _scan_jobs: Array = []
 
 static var loading: = false
+static var _shaders: Dictionary = {}
+static var _active_mesh_jobs: = 0
+static var _budget_frame: = -1
+static var _budget_spent_us: = 0
+
+static var _blast_frame: = -1
+static var _blast_spent: = 0
 
 const FLAG_ANCHOR: = 1
 const FLAG_FOREVER: = 2
@@ -127,7 +149,7 @@ func setup(id: int, size: Vector3i, origin_local: Vector3) -> void :
 	volume_id = id
 	_cfg = Lexicon.bal("blocks", {})
 	size_m = float(_cfg.get("size_m", 0.25))
-	_chunk_cells = int(_cfg.get("chunk_cells", 16))
+	_chunk_cells = chunk_cells_override if chunk_cells_override > 0 else int(_cfg.get("chunk_cells", 16))
 	dims = size
 	origin = origin_local
 	_sy = 1
@@ -150,8 +172,12 @@ func set_reveal(radius: float, center: Vector3 = Vector3.ZERO) -> void :
 
 
 func _make_material(mode: String, extra: String) -> ShaderMaterial:
-	var shader: = Shader.new()
-	shader.code = SHADER % [mode, extra]
+	var key: = mode + "|" + extra
+	var shader: = _shaders.get(key) as Shader
+	if shader == null:
+		shader = Shader.new()
+		shader.code = SHADER % [mode, extra]
+		_shaders[key] = shader
 	var material: = ShaderMaterial.new()
 	material.shader = shader
 	material.set_shader_parameter("block", size_m)
@@ -242,6 +268,8 @@ func build_progress() -> float:
 
 
 func restore() -> void :
+	_finish_scans()
+	_blasts.clear()
 	if _settle_job >= 0:
 		WorkerThreadPool.wait_for_task_completion(_settle_job)
 		_settle_job = -1
@@ -249,6 +277,8 @@ func restore() -> void :
 	_queue = PackedInt64Array()
 	_queue_point = Vector3.INF
 	if network_changes.is_empty():
+		if not loading and not is_settled():
+			flush()
 		return
 	for index: int in network_changes:
 		_mark_dirty(cell_of_index(index))
@@ -326,10 +356,14 @@ func nearest_solid(point: Vector3, reach: int = 2) -> int:
 func set_cells(changes: Dictionary) -> void :
 	if changes.is_empty():
 		return
+	var probe: = DevProbe.now()
 	apply_cells(changes)
+	DevProbe.done("blocos_aplica", probe)
+	probe = DevProbe.now()
 	for index: int in changes:
 		network_changes[index] = changes[index]
 	cells_changed.emit(changes)
+	DevProbe.done("blocos_rede_sinal", probe)
 
 
 
@@ -404,33 +438,118 @@ func erase_sphere(center: Vector3, radius: float) -> void:
 func explode(center: Vector3, radius: float, damage: float) -> float:
 	if not Session.has_authority():
 		return 0.0
+	var scan_probe: = DevProbe.now()
 	var local: = to_local(center)
-	var r: = radius * float(_cfg.get("explosion_radius_mult", 0.6))
+
+
+	var r: = minf(radius * float(_cfg.get("explosion_radius_mult", 0.6)), crater_cap_m)
 	var reach: = ceili(r / size_m)
 	var c: = cell_of(local)
 
 	if c.x + reach < 0 or c.y + reach < 0 or c.z + reach < 0 or c.x - reach >= dims.x or c.y - reach >= dims.y or c.z - reach >= dims.z:
 		return 0.0
-	var hit: Array = []
-	for dx in range( - reach, reach + 1):
-		for dz in range( - reach, reach + 1):
-			for dy in range( - reach, reach + 1):
-				var cell: = c + Vector3i(dx, dy, dz)
-				if not inside(cell):
-					continue
-				var d: = cell_center(cell).distance_to(local)
-				if d > r:
-					continue
-				var index: = index_of(cell)
-				var type: = blocks[index]
-				if type == AIR:
-					continue
-				if _pal_hp[type] <= damage * float(_cfg.get("explosion_damage_mult", 2.0)) * (1.0 - d / maxf(r, 0.01)):
-					hit.append(index)
+	var strength: = damage * float(_cfg.get("explosion_damage_mult", 2.0))
+	if r > float(_cfg.get("blast_queue_radius_m", 6.0)):
+
+
+		var job: = {"center": center, "result": {}}
+		var snapshot: = blocks.duplicate()
+		job["task"] = WorkerThreadPool.add_task( func() -> void :
+			job["result"] = _scan_blast(snapshot, local, r, strength))
+		_scan_jobs.append(job)
+		DevProbe.done("cratera_varre", scan_probe)
+		return 0.0
+	var scan: = _scan_blast(blocks, local, r, strength)
+	DevProbe.done("cratera_varre", scan_probe)
+	var hit: Array = scan["hit"]
 	if hit.is_empty():
 		return 0.0
+	if hit.size() > int(_cfg.get("blast_queue_from", 1500)) or not _blasts.is_empty() or _blast_busy():
+		_queue_blast(center, scan)
+		return 0.0
+	var probe: = DevProbe.now()
 	var matter: = remove_cells(hit)
-	return _deposit(matter, center)
+	DevProbe.done("cratera_tira_%d" % hit.size(), probe)
+	probe = DevProbe.now()
+	var deposited: = _deposit(matter, center)
+	DevProbe.done("cratera_entulho", probe)
+	return deposited
+
+
+
+
+
+
+func _scan_blast(data: PackedByteArray, local: Vector3, r: float, strength: float) -> Dictionary:
+	var hit: Array = []
+
+	var shells: Array = []
+	var shell_m: = float(_cfg.get("blast_shell_m", 1.0))
+	shells.resize(int(r / shell_m) + 2)
+	for k in shells.size():
+		shells[k] = []
+	var inv_r: = 1.0 / maxf(r, 0.01)
+	var r2: = r * r
+	var reach: = ceili(r / size_m)
+	var c: = cell_of(local)
+	var x0: = maxi(c.x - reach, 0)
+	var x1: = mini(c.x + reach, dims.x - 1)
+	var z0: = maxi(c.z - reach, 0)
+	var z1: = mini(c.z + reach, dims.z - 1)
+
+
+	var strongest: = 0.0
+	for t in range(1, _pal_hp.size()):
+		strongest = maxf(strongest, _pal_hp[t])
+	var sure: = maxf(r * (1.0 - strongest / maxf(strength, 0.001)), 0.0)
+	var sure2: = sure * sure
+	for x in range(x0, x1 + 1):
+		var px: = origin.x + (x + 0.5) * size_m - local.x
+		for z in range(z0, z1 + 1):
+			var pz: = origin.z + (z + 0.5) * size_m - local.z
+			var flat: = px * px + pz * pz
+			if flat > r2:
+				continue
+
+			var half: = sqrt(r2 - flat)
+			var y0: = maxi(ceili((local.y - half - origin.y) / size_m - 0.5), 0)
+			var y1: = mini(floori((local.y + half - origin.y) / size_m - 0.5), dims.y - 1)
+			if y1 < y0:
+				continue
+			var start: = (x * dims.z + z) * dims.y
+			var column: = data.slice(start + y0, start + y1 + 1)
+			if column.count(AIR) == column.size():
+				continue
+
+			var sure_lo: = y1 + 1
+			var sure_hi: = y0 - 1
+			if flat < sure2:
+				var sure_half: = sqrt(sure2 - flat)
+				sure_lo = maxi(ceili((local.y - sure_half - origin.y) / size_m - 0.5), y0)
+				sure_hi = mini(floori((local.y + sure_half - origin.y) / size_m - 0.5), y1)
+			var column_shell: = mini(int(sqrt(flat) / shell_m), shells.size() - 1)
+			for i in column.size():
+				var type: = column[i]
+				if type == AIR:
+					continue
+				var y: = y0 + i
+				if y >= sure_lo and y <= sure_hi:
+					hit.append(start + y)
+					(shells[column_shell] as Array).append(start + y)
+					continue
+				var py: = origin.y + (y + 0.5) * size_m - local.y
+				var d: = sqrt(flat + py * py)
+				if d <= r and _pal_hp[type] <= strength * (1.0 - d * inv_r):
+					hit.append(start + y)
+					(shells[mini(int(d / shell_m), shells.size() - 1)] as Array).append(start + y)
+	return {"hit": hit, "shells": shells}
+
+
+
+func _queue_blast(center: Vector3, scan: Dictionary) -> void :
+	if (scan.get("hit", []) as Array).is_empty():
+		return
+	_blasts.append({"center": center, "shells": scan["shells"], "shell": 0, "cursor": 0, "matter": {}, "born": Time.get_ticks_msec()})
 
 
 
@@ -732,8 +851,7 @@ func flush() -> void :
 		_settle_seeds.clear()
 		_drop_islands(_find_islands(seeds, blocks, _anchor_columns()))
 	if _job >= 0:
-		WorkerThreadPool.wait_for_group_task_completion(_job)
-		_job = -1
+		_finish_mesh_job()
 		for chunk: Vector3i in _job_list:
 			_dirty[chunk] = true
 	_ready_chunks.clear()
@@ -744,17 +862,84 @@ func flush() -> void :
 
 func _process(_delta: float) -> void :
 	var started: = Time.get_ticks_usec()
-	_pump_settle()
-	_pump_mesh()
+	var frame: = Engine.get_process_frames()
+	if frame != _budget_frame or frame == _last_budget_frame:
+		_budget_frame = frame
+		_budget_spent_us = 0
+	_last_budget_frame = frame
+	if not _scan_jobs.is_empty():
+		_pump_scans()
+	if not _blasts.is_empty():
+		_pump_blasts()
+	var shared_snapshot: = _pump_settle()
+	_pump_mesh(shared_snapshot)
 	last_process_ms = (Time.get_ticks_usec() - started) / 1000.0
+
+
+
+func _pump_scans() -> void :
+	while not _scan_jobs.is_empty() and WorkerThreadPool.is_task_completed(int(_scan_jobs[0]["task"])):
+		var job: Dictionary = _scan_jobs.pop_front()
+		WorkerThreadPool.wait_for_task_completion(int(job["task"]))
+		_queue_blast(job["center"], job["result"])
+
+
+
+func is_busy() -> bool:
+	return not _blasts.is_empty() or not _scan_jobs.is_empty()
+
+
+
+
+static func _blast_busy() -> bool:
+	return _blast_frame == Engine.get_process_frames() and _blast_spent > 0
+
+
+
+
+func _pump_blasts() -> void :
+	var frame: = Engine.get_process_frames()
+	if frame != _blast_frame:
+		_blast_frame = frame
+		_blast_spent = 0
+
+
+	var budget_us: = int(float(_cfg.get("blast_budget_ms", 4.0)) * 1000.0)
+	var age: = (Time.get_ticks_msec() - int(_blasts[0].get("born", Time.get_ticks_msec()))) / 1000.0
+	var max_s: = float(_cfg.get("blast_max_s", 0.6))
+	budget_us = int(budget_us * (1.0 + 3.0 * clampf(age / max_s, 0.0, 1.0)))
+	var batch_size: = int(_cfg.get("blast_batch_cells", 400))
+	while _blast_spent < budget_us and not _blasts.is_empty():
+		var started: = Time.get_ticks_usec()
+		var blast: Dictionary = _blasts[0]
+		var shells: Array = blast["shells"]
+		if int(blast["shell"]) >= shells.size():
+			DevProbe.done("onda_ms_total", int(blast["born"]) * 1000)
+			_deposit(blast["matter"], blast["center"])
+			_blasts.pop_front()
+			_blast_spent += Time.get_ticks_usec() - started
+			continue
+		var cells: Array = shells[int(blast["shell"])]
+		var from: = int(blast["cursor"])
+		var to: = mini(from + batch_size, cells.size())
+		var matter: Dictionary = blast["matter"]
+		var got: = remove_cells(cells.slice(from, to))
+		for material: String in got:
+			matter[material] = float(matter.get(material, 0.0)) + float(got[material])
+		if to >= cells.size():
+			blast["shell"] = int(blast["shell"]) + 1
+			blast["cursor"] = 0
+		else:
+			blast["cursor"] = to
+		_blast_spent += maxi(Time.get_ticks_usec() - started, 1)
 
 
 
 
 func _exit_tree() -> void :
+	_finish_scans()
 	if _job >= 0:
-		WorkerThreadPool.wait_for_group_task_completion(_job)
-		_job = -1
+		_finish_mesh_job()
 		for chunk: Vector3i in _job_list:
 			_dirty[chunk] = true
 	if _settle_job >= 0:
@@ -762,51 +947,90 @@ func _exit_tree() -> void :
 		_settle_job = -1
 
 
+func _finish_scans() -> void :
+	for job: Dictionary in _scan_jobs:
+		WorkerThreadPool.wait_for_task_completion(int(job["task"]))
+	_scan_jobs.clear()
 
-func _pump_settle() -> void :
+
+func _finish_mesh_job() -> void :
+	WorkerThreadPool.wait_for_group_task_completion(_job)
+	_job = -1
+	if _job_counted:
+		_job_counted = false
+		_active_mesh_jobs = maxi(0, _active_mesh_jobs - 1)
+
+
+
+func _pump_settle() -> PackedByteArray:
 	if _settle_job >= 0:
 		if not WorkerThreadPool.is_task_completed(_settle_job):
-			return
+			return PackedByteArray()
 		WorkerThreadPool.wait_for_task_completion(_settle_job)
 		_settle_job = -1
+		var drop_probe: = DevProbe.now()
 		_drop_islands(_settle_result)
+		DevProbe.done("apoio_queda", drop_probe)
 	if _settle_seeds.is_empty():
-		return
+		return PackedByteArray()
 	var seeds: = _settle_seeds.duplicate()
 	_settle_seeds.clear()
+	var probe: = DevProbe.now()
 	var snapshot: = blocks.duplicate()
 	var anchors: = _anchor_columns()
+	DevProbe.done("apoio_copia", probe)
 	_settle_result = []
-	_settle_job = WorkerThreadPool.add_task( func() -> void : _settle_result = _find_islands(seeds, snapshot, anchors))
+	_settle_job = WorkerThreadPool.add_task( func() -> void :
+		var t: = DevProbe.now()
+		_settle_result = _find_islands(seeds, snapshot, anchors)
+		DevProbe.done("apoio_thread", t))
+	return snapshot
 
 
 
 
-func _pump_mesh() -> void :
+func _pump_mesh(shared_snapshot: PackedByteArray = PackedByteArray()) -> void :
 	var budget: = float(_cfg.get("load_budget_ms" if loading else "rebuild_budget_ms", 3.0)) * 1000.0
-	var started: = Time.get_ticks_usec()
 	if _job >= 0 and WorkerThreadPool.is_group_task_completed(_job):
-		WorkerThreadPool.wait_for_group_task_completion(_job)
-		_job = -1
+		_finish_mesh_job()
 		for i in _job_list.size():
 			_ready_chunks.append([_job_list[i], _job_results[i]])
 
 
-	while not _ready_chunks.is_empty() and Time.get_ticks_usec() - started < budget:
+	while not _ready_chunks.is_empty() and _budget_spent_us < int(budget):
+		var apply_started: = Time.get_ticks_usec()
 		var entry: Array = _ready_chunks.pop_front()
+		var probe: = DevProbe.now()
 		_apply_chunk(entry[0], entry[1])
-	if _job < 0 and not _dirty.is_empty():
+		DevProbe.done("malha_aplica", probe)
+		_budget_spent_us += Time.get_ticks_usec() - apply_started
+	var max_jobs: = 2 if loading else 4
+	if _job < 0 and not _dirty.is_empty() and _active_mesh_jobs < max_jobs:
 		_job_list.clear()
-		for chunk: Vector3i in _dirty.keys():
+		var keys: = _dirty.keys()
+		if not loading and keys.size() > 1 and extract_origin is Vector3:
+			var focus_local: = to_local(extract_origin as Vector3)
+			var half_chunk: = float(_chunk_cells) * size_m * 0.5
+			keys.sort_custom( func(a: Vector3i, b: Vector3i) -> bool:
+				var ca: = origin + Vector3(a) * (float(_chunk_cells) * size_m) + Vector3.ONE * half_chunk
+				var cb: = origin + Vector3(b) * (float(_chunk_cells) * size_m) + Vector3.ONE * half_chunk
+				return ca.distance_squared_to(focus_local) < cb.distance_squared_to(focus_local))
+		for chunk: Vector3i in keys:
 			_job_list.append(chunk)
 			_dirty.erase(chunk)
 			if _job_list.size() >= 64:
 				break
 		_job_results.clear()
 		_job_results.resize(_job_list.size())
-		var snapshot: = blocks.duplicate()
-		_job = WorkerThreadPool.add_group_task( func(i: int) -> void : _job_results[i] = _mesh_chunk(_job_list[i], snapshot), 
-			_job_list.size())
+		var copy_probe: = DevProbe.now()
+		var snapshot: = blocks.duplicate() if shared_snapshot.is_empty() else shared_snapshot
+		DevProbe.done("malha_copia", copy_probe)
+		_job_counted = true
+		_active_mesh_jobs += 1
+		_job = WorkerThreadPool.add_group_task( func(i: int) -> void :
+			var probe: = DevProbe.now()
+			_job_results[i] = _mesh_chunk(_job_list[i], snapshot)
+			DevProbe.done("malha_thread", probe), _job_list.size())
 
 
 
@@ -878,7 +1102,9 @@ func _apply_chunk(chunk: Vector3i, data: Dictionary) -> void :
 	if data.is_empty():
 		if not part.is_empty():
 			(part.mesh as MeshInstance3D).mesh = null
+			((part.shape as CollisionShape3D).shape as ConcavePolygonShape3D).set_faces(PackedVector3Array())
 			(part.shape as CollisionShape3D).disabled = true
+			mesh_changed.emit(_chunk_region(chunk))
 		return
 	if part.is_empty():
 		var mesh_node: = MeshInstance3D.new()
@@ -900,6 +1126,13 @@ func _apply_chunk(chunk: Vector3i, data: Dictionary) -> void :
 	(part.mesh as MeshInstance3D).mesh = mesh
 	((part.shape as CollisionShape3D).shape as ConcavePolygonShape3D).set_faces(data.faces)
 	(part.shape as CollisionShape3D).disabled = (data.faces as PackedVector3Array).is_empty()
+	mesh_changed.emit(_chunk_region(chunk))
+
+
+
+func _chunk_region(chunk: Vector3i) -> AABB:
+	var edge: = _chunk_cells * size_m
+	return global_transform * AABB(origin + Vector3(chunk) * edge, Vector3.ONE * edge)
 
 
 

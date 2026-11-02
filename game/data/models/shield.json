@@ -23,67 +23,286 @@
     {
       "shape": "box",
       "size": [
-        0.55,
-        0.8,
-        0.04
+        0.528,
+        0.594,
+        0.035
       ],
       "pos": [
         0,
-        0,
+        0.09,
         -0.025
       ],
-      "color": "#566575",
+      "color": "#3d5f8a",
       "tag": "body",
-      "finish": "metal"
+      "finish": "wood"
     },
     {
-      "shape": "wedge",
+      "shape": "box",
       "size": [
-        0.55,
-        0.15,
-        0.04
+        0.3734,
+        0.3734,
+        0.035
       ],
       "pos": [
         0,
-        -0.46,
+        -0.207,
         -0.025
       ],
-      "color": "#566575",
-      "point": 0.5,
+      "color": "#3d5f8a",
       "rot": [
         0,
         0,
-        180
+        45
       ],
-      "tag": "base"
+      "tag": "body",
+      "finish": "wood"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.022,
+        0.612,
+        0.045
+      ],
+      "pos": [
+        -0.264,
+        0.09,
+        -0.025
+      ],
+      "color": "#8a9098",
+      "tag": "rim",
+      "finish": "metal"
     },
     {
       "shape": "cylinder",
+      "radius": 0.0138,
+      "height": 0.3734,
+      "pos": [
+        -0.132,
+        -0.339,
+        -0.025
+      ],
+      "color": "#8a9098",
+      "rot": [
+        135.0,
+        90.0,
+        0
+      ],
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.022,
+        0.612,
+        0.045
+      ],
+      "pos": [
+        0.264,
+        0.09,
+        -0.025
+      ],
+      "color": "#8a9098",
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0138,
+      "height": 0.3734,
+      "pos": [
+        0.132,
+        -0.339,
+        -0.025
+      ],
+      "color": "#8a9098",
+      "rot": [
+        135.0,
+        -90.0,
+        0
+      ],
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.55,
+        0.036,
+        0.045
+      ],
+      "pos": [
+        0,
+        0.387,
+        -0.025
+      ],
+      "color": "#8a9098",
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.495,
+        0.09,
+        0.036
+      ],
+      "pos": [
+        0,
+        0.09,
+        -0.027
+      ],
+      "color": "#d8b04a",
+      "rot": [
+        0,
+        0,
+        32
+      ],
+      "tag": "stripe",
+      "decal": true
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0715,
+      "height": 0.045,
+      "pos": [
+        0.0,
+        0.0,
+        -0.0625
+      ],
+      "color": "#8a9098",
+      "rot": [
+        90.0,
+        180.0,
+        0
+      ],
+      "top_radius": 0.0385,
+      "tag": "boss",
+      "finish": "metal"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0165,
+      "pos": [
+        0,
+        0,
+        -0.085
+      ],
+      "color": "#c5c9ce",
+      "tag": "boss",
+      "finish": "metal"
+    },
+    {
+      "shape": "sphere",
       "radius": 0.012,
-      "height": 0.15,
+      "pos": [
+        -0.209,
+        0.288,
+        -0.045
+      ],
+      "color": "#c5c9ce",
+      "tag": "rivet",
+      "finish": "metal"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.012,
+      "pos": [
+        0.209,
+        0.288,
+        -0.045
+      ],
+      "color": "#c5c9ce",
+      "tag": "rivet",
+      "finish": "metal"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.012,
+      "pos": [
+        -0.209,
+        -0.135,
+        -0.045
+      ],
+      "color": "#c5c9ce",
+      "tag": "rivet",
+      "finish": "metal"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.012,
+      "pos": [
+        0.209,
+        -0.135,
+        -0.045
+      ],
+      "color": "#c5c9ce",
+      "tag": "rivet",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.14,
+        0.03
+      ],
       "pos": [
         0,
         0,
         0.03
       ],
-      "color": "#141416",
-      "tag": "grip"
+      "color": "#5a3a22",
+      "tag": "grip",
+      "section": "rear"
     },
     {
       "shape": "box",
       "size": [
-        0.4,
-        0.045,
+        0.03,
+        0.02,
         0.05
       ],
       "pos": [
         0,
-        0.27,
-        -0.03
+        -0.07,
+        0.01
       ],
-      "color": "#91a7b2",
-      "tag": "visor",
-      "finish": "glass"
+      "color": "#5a3a22",
+      "tag": "grip",
+      "section": "rear"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.02,
+        0.05
+      ],
+      "pos": [
+        0,
+        0.07,
+        0.01
+      ],
+      "color": "#5a3a22",
+      "tag": "grip",
+      "section": "rear"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.275,
+        0.04,
+        0.015
+      ],
+      "pos": [
+        0,
+        0.2,
+        0.005
+      ],
+      "color": "#4a3020",
+      "tag": "strap"
     }
   ]
 }

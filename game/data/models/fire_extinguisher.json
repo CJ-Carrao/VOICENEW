@@ -10,58 +10,165 @@
   "pieces": [
     {
       "shape": "cylinder",
-      "radius": 0.0828,
+      "radius": 0.0864,
       "height": 0.385,
       "pos": [
         0,
         0.198,
         0
       ],
-      "color": "#bd4036",
+      "color": "#c8302a",
+      "tag": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0864,
+      "pos": [
+        0,
+        0.385,
+        0
+      ],
+      "color": "#c8302a",
       "tag": "body"
     },
     {
       "shape": "cylinder",
-      "radius": 0.036,
-      "height": 0.1375,
+      "radius": 0.0882,
+      "height": 0.121,
       "pos": [
         0,
-        0.451,
+        0.22,
         0
       ],
-      "color": "#c5c9ce",
+      "color": "#f2efe6",
+      "tag": "label"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0252,
+      "height": 0.055,
+      "pos": [
+        0,
+        0.495,
+        0
+      ],
+      "color": "#1e2024",
       "tag": "neck"
     },
     {
       "shape": "box",
       "size": [
-        0.126,
-        0.066,
-        0.025
+        0.0252,
+        0.0165,
+        0.126
       ],
       "pos": [
         0,
-        0.5335,
-        0
+        0.539,
+        -0.018
       ],
-      "color": "#2a2d32",
+      "color": "#1e2024",
       "rot": [
+        8,
         0,
-        0,
-        15
+        0
       ],
       "tag": "handle"
     },
     {
-      "shape": "capsule",
-      "radius": 0.015,
-      "height": 0.3025,
+      "shape": "box",
+      "size": [
+        0.0252,
+        0.0165,
+        0.108
+      ],
       "pos": [
-        0.108,
-        0.2915,
+        0,
+        0.5115,
+        -0.0216
+      ],
+      "color": "#1e2024",
+      "tag": "handle"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.02,
+      "pos": [
+        0.0288,
+        0.495,
+        -0.018
+      ],
+      "color": "#f2efe6",
+      "rot": [
+        -90,
+        0,
         0
       ],
-      "color": "#141416",
+      "tag": "gauge"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0108,
+      "height": 0.1166,
+      "pos": [
+        0.0,
+        0.4675,
+        0.0603
+      ],
+      "color": "#1e2024",
+      "rot": [
+        125.4,
+        0.0,
+        0
+      ],
+      "tag": "hose"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0108,
+      "height": 0.1868,
+      "pos": [
+        0.0,
+        0.3575,
+        0.1035
+      ],
+      "color": "#1e2024",
+      "rot": [
+        176.88,
+        0.0,
+        0
+      ],
+      "tag": "hose"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0108,
+      "height": 0.132,
+      "pos": [
+        0.0,
+        0.22,
+        0.1035
+      ],
+      "color": "#1e2024",
+      "rot": [
+        175.32,
+        180.0,
+        0
+      ],
+      "tag": "hose"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0162,
+      "height": 0.044,
+      "pos": [
+        0,
+        0.143,
+        0.099
+      ],
+      "color": "#1e2024",
+      "top_radius": 0.009,
       "tag": "hose"
     }
   ]

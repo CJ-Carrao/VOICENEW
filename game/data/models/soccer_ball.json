@@ -16,105 +16,140 @@
         0.11,
         0
       ],
-      "color": "#d6dcd8",
-      "tag": "ball",
-      "finish": "rubber"
+      "color": "#f3f2ee",
+      "tag": "ball"
     },
     {
       "shape": "sphere",
-      "radius": 0.5,
+      "radius": 0.033,
       "pos": [
-        -0.1034,
+        0.0,
+        0.1597,
+        0.0805
+      ],
+      "color": "#1e1e22",
+      "tag": "patch"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.033,
+      "pos": [
+        0.0,
+        0.0603,
+        0.0805
+      ],
+      "color": "#1e1e22",
+      "tag": "patch"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.033,
+      "pos": [
+        0.0,
+        0.1597,
+        -0.0805
+      ],
+      "color": "#1e1e22",
+      "tag": "patch"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.033,
+      "pos": [
+        0.0,
+        0.0603,
+        -0.0805
+      ],
+      "color": "#1e1e22",
+      "tag": "patch"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.033,
+      "pos": [
+        0.0497,
+        0.1905,
+        0.0
+      ],
+      "color": "#1e1e22",
+      "tag": "patch"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.033,
+      "pos": [
+        -0.0497,
+        0.1905,
+        0.0
+      ],
+      "color": "#1e1e22",
+      "tag": "patch"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.033,
+      "pos": [
+        0.0497,
+        0.0295,
+        0.0
+      ],
+      "color": "#1e1e22",
+      "tag": "patch"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.033,
+      "pos": [
+        -0.0497,
+        0.0295,
+        0.0
+      ],
+      "color": "#1e1e22",
+      "tag": "patch"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.033,
+      "pos": [
+        0.0805,
         0.11,
-        0
+        0.0497
       ],
-      "color": "#2a2d32",
-      "tag": "patch",
-      "_stretch": [
-        0.015400000000000002,
-        0.0704,
-        0.0704
-      ]
+      "color": "#1e1e22",
+      "tag": "patch"
     },
     {
       "shape": "sphere",
-      "radius": 0.5,
+      "radius": 0.033,
       "pos": [
-        0,
-        0.0066,
-        0
-      ],
-      "color": "#2a2d32",
-      "tag": "patch",
-      "_stretch": [
-        0.0704,
-        0.015400000000000002,
-        0.0704
-      ]
-    },
-    {
-      "shape": "sphere",
-      "radius": 0.5,
-      "pos": [
-        0,
+        -0.0805,
         0.11,
-        -0.1034
+        0.0497
       ],
-      "color": "#2a2d32",
-      "tag": "patch",
-      "_stretch": [
-        0.0704,
-        0.0704,
-        0.015400000000000002
-      ]
+      "color": "#1e1e22",
+      "tag": "patch"
     },
     {
       "shape": "sphere",
-      "radius": 0.5,
+      "radius": 0.033,
       "pos": [
-        0.1034,
+        0.0805,
         0.11,
-        0
+        -0.0497
       ],
-      "color": "#2a2d32",
-      "tag": "patch",
-      "_stretch": [
-        0.015400000000000002,
-        0.0704,
-        0.0704
-      ]
+      "color": "#1e1e22",
+      "tag": "patch"
     },
     {
       "shape": "sphere",
-      "radius": 0.5,
+      "radius": 0.033,
       "pos": [
-        0,
-        0.2134,
-        0
-      ],
-      "color": "#2a2d32",
-      "tag": "patch",
-      "_stretch": [
-        0.0704,
-        0.015400000000000002,
-        0.0704
-      ]
-    },
-    {
-      "shape": "sphere",
-      "radius": 0.5,
-      "pos": [
-        0,
+        -0.0805,
         0.11,
-        0.1034
+        -0.0497
       ],
-      "color": "#2a2d32",
-      "tag": "patch",
-      "_stretch": [
-        0.0704,
-        0.0704,
-        0.015400000000000002
-      ]
+      "color": "#1e1e22",
+      "tag": "patch"
     }
   ]
 }

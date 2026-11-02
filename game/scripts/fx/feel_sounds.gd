@@ -58,6 +58,9 @@ static func fallback_for(id: String) -> AudioStream:
 
 
 static func fallback(id: String) -> AudioStream:
+
+	if SoundBank.has(id):
+		return null
 	match id:
 		"weapons/fire_light": return _stream("fire0")
 		"weapons/fire_medium": return _stream("fire1")

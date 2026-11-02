@@ -10,75 +10,223 @@
   "pieces": [
     {
       "shape": "cylinder",
-      "radius": 0.21,
-      "height": 0.06,
+      "radius": 0.035,
+      "height": 1.92,
       "pos": [
         0,
-        0.03,
+        0.96,
         0
       ],
-      "color": "#2a2d32",
-      "tag": "base"
+      "color": "#8a9098",
+      "tag": "pole",
+      "finish": "metal"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.045,
-      "height": 2.04,
+      "shape": "box",
+      "size": [
+        0.7,
+        0.2899,
+        0.05
+      ],
       "pos": [
         0,
-        1.032,
-        0
+        1.968,
+        -0.05
       ],
-      "color": "#2a2d32",
-      "tag": "pole"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.35,
-      "height": 0.035,
-      "pos": [
-        0,
-        2.05,
-        0
-      ],
-      "color": "#bd4036",
+      "color": "#ecebe6",
       "rot": [
-        -90,
+        0,
         0,
         0
       ],
-      "tag": "sign",
-      "radial_segments": 8
+      "tag": "sign"
     },
     {
       "shape": "box",
       "size": [
-        0.434,
-        0.018,
-        0.01
+        0.7,
+        0.2899,
+        0.05
       ],
       "pos": [
         0,
-        1.93,
-        -0.025
+        1.968,
+        -0.05
       ],
-      "color": "#d6dcd8",
+      "color": "#ecebe6",
+      "rot": [
+        0,
+        0,
+        45
+      ],
+      "tag": "sign"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.7,
+        0.2899,
+        0.05
+      ],
+      "pos": [
+        0,
+        1.968,
+        -0.05
+      ],
+      "color": "#ecebe6",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "sign"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.7,
+        0.2899,
+        0.05
+      ],
+      "pos": [
+        0,
+        1.968,
+        -0.05
+      ],
+      "color": "#ecebe6",
+      "rot": [
+        0,
+        0,
+        135
+      ],
+      "tag": "sign"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.602,
+        0.2494,
+        0.05
+      ],
+      "pos": [
+        0,
+        1.968,
+        -0.08
+      ],
+      "color": "#c8302a",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "sign"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.602,
+        0.2494,
+        0.05
+      ],
+      "pos": [
+        0,
+        1.968,
+        -0.08
+      ],
+      "color": "#c8302a",
+      "rot": [
+        0,
+        0,
+        45
+      ],
+      "tag": "sign"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.602,
+        0.2494,
+        0.05
+      ],
+      "pos": [
+        0,
+        1.968,
+        -0.08
+      ],
+      "color": "#c8302a",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "sign"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.602,
+        0.2494,
+        0.05
+      ],
+      "pos": [
+        0,
+        1.968,
+        -0.08
+      ],
+      "color": "#c8302a",
+      "rot": [
+        0,
+        0,
+        135
+      ],
+      "tag": "sign"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.455,
+        0.105,
+        0.05
+      ],
+      "pos": [
+        0,
+        1.968,
+        -0.11
+      ],
+      "color": "#ecebe6",
       "tag": "mark"
     },
     {
       "shape": "box",
       "size": [
-        0.434,
-        0.018,
-        0.01
+        0.1,
+        0.04,
+        0.06
       ],
       "pos": [
         0,
-        2.17,
-        -0.025
+        1.793,
+        -0.01
       ],
-      "color": "#d6dcd8",
-      "tag": "mark"
+      "color": "#5a6068",
+      "tag": "clamp",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.1,
+        0.04,
+        0.06
+      ],
+      "pos": [
+        0,
+        2.143,
+        -0.01
+      ],
+      "color": "#5a6068",
+      "tag": "clamp",
+      "finish": "metal"
     }
   ]
 }

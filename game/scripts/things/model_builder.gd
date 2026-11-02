@@ -15,6 +15,7 @@ extends RefCounted
 
 
 
+const CREATION_SHADER: = preload("res://scripts/things/creation_blocks.gdshader")
 const FALLBACK_PIECE: = {"shape": "box", "size": [0.5, 0.5, 0.5], "pos": [0, 0.25, 0], "color": "#c040c0", "tag": "body"}
 
 const DEFAULT_AXES: = {"width": "x", "height": "y", "length": "z"}
@@ -36,6 +37,8 @@ const FINISHES: = {
 }
 
 static var _mesh_cache: Dictionary = {}
+
+static var _model_cache: Dictionary = {}
 static var _material_cache: Dictionary = {}
 
 
@@ -52,6 +55,12 @@ static func build(thing_id: String, mods: Dictionary, lex: LexiconData) -> Dicti
 		pieces = _anatomy_pieces(pieces, mods.anatomy, lex)
 	if pieces.is_empty():
 		pieces = [FALLBACK_PIECE]
+	var rig: Dictionary = data.get("rig", {}) if not weapon else {}
+	# Use H-4 locomotion for our extra creatures, retaining their individual geometry.
+	if not weapon and (lex.thing_def(thing_id).get("category", "") == "creature" or thing_id == "walking_house") and (rig.is_empty() or mods.get("anatomy") is Dictionary):
+		var adapted: Dictionary = load("res://scripts/things/lab_creature_rig.gd").build(pieces, bool(lex.thing_def(thing_id).get("aerial", false)) or mods.get("anatomy", {}).has("wings"))
+		pieces = adapted.pieces
+		rig = adapted.rig
 	var stretch: = axis_stretch(thing_id, mods, lex)
 	var length: = float(mods.get("length", 1.0))
 	if weapon and _length_axis(thing_id, lex) == "z" and not is_equal_approx(length, 1.0):
@@ -89,12 +98,13 @@ static func build(thing_id: String, mods: Dictionary, lex: LexiconData) -> Dicti
 	var enclosure: = bool(lex.thing_def(thing_id).get("hollow", false)) or bool(lex.thing_def(thing_id).get("enclosure", false))
 
 	var tag_boxes: = {}
+
+	var entries: Array[Dictionary] = []
 	for piece: Dictionary in pieces:
 		var is_barrel: = String(piece.get("tag", "")) == "barrel"
 		var copies: = barrels if _replicates(piece, weapon, lex) else 1
 		for i in copies:
 			var mesh_instance: = MeshInstance3D.new()
-			mesh_instance.mesh = piece_mesh(piece, voxel)
 			mesh_instance.material_override = piece_material(piece, element, paint)
 			var at: = _vec(piece.get("pos", [0, 0, 0]))
 			var parent: Node3D = root
@@ -117,6 +127,10 @@ static func build(thing_id: String, mods: Dictionary, lex: LexiconData) -> Dicti
 				at += Vector3(side, 0.0, - absf(side) * BARREL_BEND)
 			mesh_instance.position = at
 			mesh_instance.rotation_degrees = _vec(piece.get("rot", [0, 0, 0]))
+
+
+			if piece.has("scale"):
+				mesh_instance.basis = mesh_instance.basis * Basis.from_scale(_vec(piece["scale"]))
 			if piece.has("_stretch"):
 				mesh_instance.basis = Basis.from_scale(_vec(piece["_stretch"])) * mesh_instance.basis
 			mesh_instance.set_meta("tag", piece.get("tag", ""))
@@ -124,17 +138,30 @@ static func build(thing_id: String, mods: Dictionary, lex: LexiconData) -> Dicti
 			mesh_instance.set_meta("source", piece.get("source", thing_id))
 			parent.add_child(mesh_instance)
 			built.append(mesh_instance)
-			var box: AABB = parent.transform * mesh_instance.transform * mesh_instance.mesh.get_aabb() if parent != root\
-			else mesh_instance.transform * mesh_instance.mesh.get_aabb()
-			bounds = bounds.merge(box) if has_bounds else box
-			has_bounds = true
-			if enclosure and bool(piece.get("collision", true)):
-				solids.append(box)
-			var piece_tag: = String(piece.get("tag", ""))
-			tag_boxes[piece_tag] = (tag_boxes[piece_tag] as AABB).merge(box) if tag_boxes.has(piece_tag) else box
-			if is_barrel:
-				var center: = box.get_center()
-				muzzles.append(Vector3(center.x, center.y, box.position.z))
+			var xform: Transform3D = parent.transform * mesh_instance.transform if parent != root else mesh_instance.transform
+			entries.append({"piece": piece, "xform": xform, "node": mesh_instance, "barrel": is_barrel})
+
+
+	var meshes: = _voxel_meshes(thing_id, mods, entries)
+	for i in entries.size():
+		var entry: Dictionary = entries[i]
+		(entry["node"] as MeshInstance3D).mesh = meshes[i]
+		if bool((entry["piece"] as Dictionary).get("decal", false)):
+			continue
+
+		var extent: = _shape_extent(entry["piece"])
+		var box: AABB = (entry["xform"] as Transform3D) * AABB( - extent * 0.5, extent)
+		bounds = bounds.merge(box) if has_bounds else box
+		has_bounds = true
+		if enclosure and bool((entry["piece"] as Dictionary).get("collision", true)):
+			solids.append(box)
+		var piece_tag: = String((entry["piece"] as Dictionary).get("tag", ""))
+		tag_boxes[piece_tag] = (tag_boxes[piece_tag] as AABB).merge(box) if tag_boxes.has(piece_tag) else box
+		if entry["barrel"]:
+			var center: = box.get_center()
+			muzzles.append(Vector3(center.x, center.y, box.position.z))
+	var assembly_order: = build_order(built, anchor)
+	var bones: = _install_rig(root, entries, rig) if not rig.is_empty() else {}
 
 	var scale: = Vector3.ONE * float(mods.get("scale", 1.0)) * stretch
 	root.scale = scale
@@ -142,8 +169,51 @@ static func build(thing_id: String, mods: Dictionary, lex: LexiconData) -> Dicti
 		solids[i] = AABB(solids[i].position * scale, solids[i].size * scale)
 	mounts.merge(universal_mounts(bounds, tag_boxes, data), true)
 	return {"root": root, "bounds": AABB(bounds.position * scale, bounds.size * scale), "muzzles": muzzles, 
-		"anchor": anchor, "pieces": build_order(built, anchor), "mounts": mounts, "solids": solids, 
-		"sight_y": _sight_height(pieces, mounts, mods, weapon, lex, thing_id), "grips": _grips(tag_boxes, anchor, lex)}
+		"anchor": anchor, "pieces": assembly_order, "mounts": mounts, "solids": solids, 
+		"sight_y": _sight_height(pieces, mounts, mods, weapon, lex, thing_id), "grips": _grips(tag_boxes, anchor, lex), 
+		"rig": rig, "bones": bones}
+
+
+
+
+static func _install_rig(root: Node3D, entries: Array[Dictionary], rig: Dictionary) -> Dictionary:
+	var specs: Dictionary = rig.get("joints", {})
+	var bones: Dictionary = {}
+	for name: String in specs:
+		var joint: = Node3D.new()
+		joint.name = name
+		bones[name] = joint
+	var pending: Array[String] = []
+	for name: String in specs:
+		pending.append(name)
+	while not pending.is_empty():
+		var before: = pending.size()
+		for index in range(pending.size() - 1, -1, -1):
+			var name: = pending[index]
+			var spec: Dictionary = specs[name]
+			var parent_name: = String(spec.get("parent", ""))
+			if not parent_name.is_empty() and not bones.has(parent_name):
+				continue
+			var parent: Node3D = bones[parent_name] if not parent_name.is_empty() else root
+			if parent_name.is_empty() or parent.get_parent() != null:
+				parent.add_child(bones[name])
+				var pivot: = _vec(spec.get("pivot", [0, 0, 0]))
+				var parent_pivot: = _vec((specs[parent_name] as Dictionary).get("pivot", [0, 0, 0])) if not parent_name.is_empty() else Vector3.ZERO
+				(bones[name] as Node3D).position = pivot - parent_pivot
+				pending.remove_at(index)
+		if pending.size() == before:
+			push_warning("Invalid creature rig hierarchy")
+			break
+	for entry: Dictionary in entries:
+		var bone: = String((entry["piece"] as Dictionary).get("bone", ""))
+		if not bones.has(bone):
+			continue
+		var mesh: MeshInstance3D = entry["node"]
+		var rest: Transform3D = entry["xform"]
+		root.remove_child(mesh)
+		(bones[bone] as Node3D).add_child(mesh)
+		mesh.transform = Transform3D(Basis.IDENTITY, - _vec((specs[bone] as Dictionary).get("pivot", [0, 0, 0]))) * rest
+	return bones
 
 
 
@@ -312,6 +382,8 @@ static func _with_attachments(pieces: Array, mounts: Dictionary, mods: Dictionar
 static func _piece_box(piece: Dictionary) -> AABB:
 	var rot: = _vec(piece.get("rot", [0, 0, 0])) * (PI / 180.0)
 	var basis: = Basis.from_euler(rot)
+	if piece.has("scale"):
+		basis = basis * Basis.from_scale(_vec(piece["scale"]))
 	if piece.has("_stretch"):
 		basis = Basis.from_scale(_vec(piece["_stretch"])) * basis
 	return Transform3D(basis, _vec(piece.get("pos", [0, 0, 0]))) * piece_mesh(piece).get_aabb()
@@ -527,6 +599,26 @@ static func build_order(pieces: Array[MeshInstance3D], anchor: Vector3) -> Array
 
 
 
+static func _voxel_meshes(thing_id: String, mods: Dictionary, entries: Array[Dictionary]) -> Array:
+	var key: = "%s|%s|%d" % [thing_id, JSON.stringify(mods, "", true), entries.size()]
+	if _model_cache.has(key):
+		return _model_cache[key]
+	var cfg: Dictionary = Lexicon.bal("blocks", {})
+	var result: = ModelVoxels.build(entries, float(cfg.get("creation_grain", 40.0)), float(cfg.get("creation_min_m", 0.004)), 
+		float(cfg.get("creation_max_m", 0.25)), int(cfg.get("creation_max_cells", 60000)), float(cfg.get("creation_slender_max", 1.0)), 
+		float(cfg.get("creation_slender_min_m", 0.0)))
+	var meshes: Array = result["meshes"]
+	for i in meshes.size():
+		if meshes[i] == null:
+			meshes[i] = ArrayMesh.new()
+	if _model_cache.size() > 512:
+		_model_cache.clear()
+	_model_cache[key] = meshes
+	return meshes
+
+
+
+
 
 static func voxel_size(pieces: Array) -> float:
 	var first: = true
@@ -735,7 +827,9 @@ static func _inside_shape(piece: Dictionary, p: Vector3) -> bool:
 			var tip_y: = lerpf( - hy, hy, clampf(float(piece.get("point", 0.5)), 0.0, 1.0))
 			return p.y >= lerpf( - hy, tip_y, t) and p.y <= lerpf(hy, tip_y, t)
 		_:
-			return true
+
+			var half: = _vec(piece.get("size", [0.5, 0.5, 0.5])) * 0.5
+			return absf(p.x) <= half.x and absf(p.y) <= half.y and absf(p.z) <= half.z
 
 
 
@@ -770,7 +864,7 @@ static func _wedge_mesh(size: Vector3, point: float) -> Mesh:
 
 
 
-static func piece_material(piece: Dictionary, element: Dictionary, paint: Dictionary = {}) -> StandardMaterial3D:
+static func piece_material(piece: Dictionary, element: Dictionary, paint: Dictionary = {}) -> ShaderMaterial:
 	var color: = Color.from_string(String(piece.get("color", "#c040c0")), Color.MAGENTA)
 	var glow: = float(piece.get("glow", 0.0))
 	if not paint.is_empty():
@@ -784,16 +878,16 @@ static func piece_material(piece: Dictionary, element: Dictionary, paint: Dictio
 		element.get("roughness", ""), element.get("metallic", "")]
 	if _material_cache.has(key):
 		return _material_cache[key]
-	var material: = StandardMaterial3D.new()
-	material.albedo_color = color
 
-	material.vertex_color_use_as_albedo = true
-	material.roughness = float(element.get("roughness", finish.get("roughness", 0.75)))
-	material.metallic = float(element.get("metallic", finish.get("metallic", 0.0)))
+
+	var material: = ShaderMaterial.new()
+	material.shader = CREATION_SHADER
+	material.set_shader_parameter("albedo", color)
+	material.set_shader_parameter("roughness", float(element.get("roughness", finish.get("roughness", 0.75))))
+	material.set_shader_parameter("metallic", float(element.get("metallic", finish.get("metallic", 0.0))))
 	if glow > 0.0:
-		material.emission_enabled = true
-		material.emission = color
-		material.emission_energy_multiplier = glow
+		material.set_shader_parameter("emission_color", color)
+		material.set_shader_parameter("emission_energy", glow)
 	_material_cache[key] = material
 	return material
 

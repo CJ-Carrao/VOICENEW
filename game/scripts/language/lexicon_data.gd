@@ -59,6 +59,10 @@ var hear_filler: PackedByteArray = []
 
 var number_joiners: PackedStringArray = []
 
+var number_adjacent_tens: bool = false
+
+var part_after_thing: bool = false
+
 var phonetic_rules: Array = []
 
 
@@ -374,10 +378,11 @@ func _build_index() -> void :
 		number_words[Normalizer.fold(word)] = float(number_table[word])
 	for word: String in numbers.get("joiners", []):
 		number_joiners.append(Normalizer.fold(word))
+	number_adjacent_tens = bool(numbers.get("adjacent_tens", false))
 	var articles: Dictionary = numbers.get("articles", {})
 	for word: String in articles:
 		_add_phrase(word, {"cls": "filler"})
-		_add_phrase(word, {"cls": "num", "value": float(articles[word])})
+		_add_phrase(word, {"cls": "num", "value": float(articles[word]), "article": true})
 
 	var fillers: Dictionary = lexicon["fillers"]
 	for word: String in fillers.get("always", []):
@@ -386,6 +391,7 @@ func _build_index() -> void :
 		_add_phrase(word, {"cls": "start_filler"})
 
 	var grammar: Dictionary = lexicon["grammar"]
+	part_after_thing = bool(grammar.get("part_after_thing", false))
 	for socket_id: String in grammar.get("mounts", {}):
 		var entry: Dictionary = grammar["mounts"][socket_id]
 		for word: String in entry["words"]:

@@ -19,13 +19,13 @@ reflected_light_source = 2
 tonemap_mode = 3
 glow_enabled = true
 
-[node name="Arena" type="Node3D" unique_id=485956374]
+[node name="Arena" type="Node3D" unique_id=39525018]
 script = ExtResource("1")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1567138068]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1703168259]
 environment = SubResource("Environment_main")
 
-[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1186200116]
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1310796846]
 transform = Transform3D(0.8191522, -0.4698461, 0.32898983, 0, 0.5735765, 0.819152, -0.5735762, -0.67101014, 0.46984646, 0, 0, 0)
 light_energy = 1.1
 shadow_enabled = true

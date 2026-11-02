@@ -16,6 +16,10 @@ static var _turn: Dictionary = {}
 static var _last_ms: Dictionary = {}
 
 
+static var _loaded: Dictionary = {}
+static var _warmed: = false
+
+
 
 static func stream(id: String, variant: int = -1) -> AudioStream:
 	_scan()
@@ -26,7 +30,11 @@ static func stream(id: String, variant: int = -1) -> AudioStream:
 	if index < 0:
 		index = int(_turn.get(id, 0))
 		_turn[id] = index + 1
-	var loaded: = load(paths[posmod(index, paths.size())]) as AudioStream
+	var path: String = paths[posmod(index, paths.size())]
+	var loaded: = _loaded.get(path) as AudioStream
+	if loaded == null:
+		loaded = load(path) as AudioStream
+		_loaded[path] = loaded
 	if loaded != null and not loaded.has_meta("sfx_db"):
 		loaded.set_meta("sfx_db", float(_entry(id).get("db", 0.0)))
 		if id.ends_with("_loop"):
@@ -39,6 +47,18 @@ static func stream(id: String, variant: int = -1) -> AudioStream:
 			elif "loop" in loaded:
 				loaded.set("loop", true)
 	return loaded
+
+
+
+static func warm_all() -> void :
+	if _warmed:
+		return
+	_warmed = true
+	_scan()
+	for id: String in _files:
+		for path: String in _files[id]:
+			if not _loaded.has(path):
+				_loaded[path] = load(path) as AudioStream
 
 
 static func has(id: String) -> bool:
@@ -137,8 +157,6 @@ static func _scan() -> void :
 
 
 static func _scan_dir(path: String, prefix: String) -> void :
-	if not DirAccess.dir_exists_absolute(path):
-		return
 	var names: = ResourceLoader.list_directory(path)
 	names.sort()
 	for name: String in names:

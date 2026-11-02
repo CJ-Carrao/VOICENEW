@@ -1,0 +1,73 @@
+{
+  "_comment": "HUD texts used to build the tree's 'pretty' text. {s}, {r}, {n}, {v}, {name} and {d} are replaced by values.",
+  "decimal_separator": ".",
+  "formats": {
+    "ability": "ABILITY {name} · {d} s",
+    "command": "{name}",
+    "ammo": "{name} of {ammo}",
+    "graft": "with {name} {mount}"
+  },
+  "triggers": {
+    "on_fire": "",
+    "on_hit": "on hit",
+    "every": "every {s} s",
+    "after": "after {s} s",
+    "on_death": "on death",
+    "near_enemy": "near the enemy ({r} m)",
+    "on_aim_hold": "marking {s} s",
+    "on_command": "on command"
+  },
+  "actions": {
+    "shoot": "shoots",
+    "drop": "drops",
+    "spawn": "creates",
+    "summon": "calls",
+    "explode": "explodes",
+    "anchor": "sticks to the ground",
+    "push": "pushes",
+    "pull": "pulls",
+    "freeze": "freezes",
+    "portal": "opens portal",
+    "ignite": "ignites",
+    "split": "splits into {n}", "strike": "strikes",
+    "burst_into": "explodes into"
+  },
+  "aim": { "enemy": "at the enemy" },
+  "mods": {
+    "scale": "×{v}",
+    "width": "width ×{v}",
+    "height": "height ×{v}",
+    "length": "length ×{v}",
+    "speed": "speed ×{v}",
+    "barrels": "{v} barrels", "barrels_melee": "{v} tips",
+    "upright": "upright",
+    "explosive": "explosive",
+    "element": { "fire": "fire", "ice": "ice", "laser": "laser" },
+    "parts": "{name} {section}",
+    "attachments": "with {names}",
+    "color": {"red": "red", "blue": "blue", "green": "green", "yellow": "yellow", "orange": "orange", "purple": "purple", "pink": "pink", "black": "black", "white": "white", "gold": "golden", "silver": "silver"},
+    "material": {"rubber": "rubber"},
+    "magnetic": "magnetic",
+    "unstable": "unstable"
+  },
+  "control": { "player": "remote controlled", "auto": "automatic" },
+  "movement": {
+    "static": "still",
+    "straight": "straight",
+    "ballistic": "arcing",
+    "fly": "flying",
+    "flyover": "flyover",
+    "bounce": "bouncing",
+    "chase_enemy": "chases the enemy",
+    "orbit_owner": "orbits its owner",
+    "follow_aim": "guided",
+    "piloted": "piloted"
+  },
+  "abilities": { "fly": "fly", "sprint": "sprint", "super_jump": "super jump" },
+  "commands": { "recycle": "recycle" },
+  "sections_melee": { "rear": "handle", "front": "blade", "muzzle": "tip" },
+  "sections": { "rear": "stock", "front": "body", "muzzle": "barrel" },
+  "dims": { "scale": "size", "width": "width", "height": "height", "length": "length" },
+  "status": { "frozen": "❄ frozen", "burning": "🔥 on fire" },
+  "mounts": {"mount_front": "on the front", "mount_back": "on the back", "mount_top": "on top", "mount_bottom": "underneath", "mount_left": "on the left", "mount_right": "on the right", "mount_hand": "in hand"}
+}

@@ -327,7 +327,9 @@ func morph(f: Formation, start: float, cfg: Dictionary) -> float:
 
 
 
-func finale(f: Formation, start: float, cfg: Dictionary, letter_times: PackedFloat32Array) -> void :
+
+func finale(f: Formation, start: float, cfg: Dictionary, letter_times: PackedFloat32Array, 
+		mobile_letter_times: PackedFloat32Array) -> void :
 	_finale = true
 	_orbit = cfg.get("orbit", {})
 	_orbit_speed = float(_orbit["speed"])
@@ -370,8 +372,13 @@ func finale(f: Formation, start: float, cfg: Dictionary, letter_times: PackedFlo
 			var land: = letter_times[group] - _rng.randf_range(0.0, 0.035)
 			_depart[i] = land - dive - _rng.randf_range(0.0, 0.1)
 			_t0[i] = land
+		elif group >= 8 and group - 8 < mobile_letter_times.size():
+			var land: = mobile_letter_times[group - 8] - _rng.randf_range(0.0, 0.025)
+			_depart[i] = land - dive - _rng.randf_range(0.0, 0.08)
+			_t0[i] = land
 		else:
-			orange_points.append(f.points[j])
+			if group == 7:
+				orange_points.append(f.points[j])
 			_depart[i] = _slam_s - float(_ball.get("drop_s", 0.17))
 			_t0[i] = _slam_s
 
@@ -497,7 +504,7 @@ func update(t: float) -> void :
 
 
 func _sample_finale(i: int, t: float) -> void :
-	var orange: = _group[i] >= 7
+	var orange: = _group[i] == 7
 	var depth: = 0.5 + 0.5 * sin(_orbit_a[i] + _orbit_speed * t)
 	var orbit_size: = _lav_cell * (1.25 if orange else lerpf(_rear_size, _front_size, depth))
 	var orbit_pos: = _ball_point(i, t) if orange else _orbit_point(i, t)

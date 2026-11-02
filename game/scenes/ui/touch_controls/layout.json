@@ -1,0 +1,31 @@
+{
+  "_comment": "Controles de toque do celular (scenes/ui/touch_controls/touch_controls.gd). Medidas no papel de 1920x1080; anchor 0..1 da tela + offset em pixels do papel (escala pela menor razão da tela). Polegar direito: ATIRAR (grande, muda conforme a mão), MIRAR, PULAR, ABAIXAR e RECARGA (só com arma de pente). Polegar esquerdo: analógico, FALAR e EXTRAIR logo acima dele (falar o pedido mirando com a outra mão). Em cima, pequenos: DIGITAR, CÂMERA (1ª ↔ 3ª pessoa), CHAT (online) e MENU. context: o botão só aparece quando serve (reloadable, shaper, pilot, online, setting:<chave>). optional: pode ser escondido no editor. mirror: troca de lado no modo canhoto.",
+  "reference_size": [1920, 1080],
+  "look_area": [0.46, 0.0, 0.54, 1.0],
+  "movement_area": [0.0, 0.25, 0.46, 0.75],
+  "joystick": {"anchor": [0, 1], "offset": [270, -275], "radius": 150, "deadzone": 0.18, "sprint_threshold": 0.94},
+  "style": {"plate": "#121318", "edge": "#f5f1e8", "ink": "#f5f1e8", "accent": "#f2601a", "gold": "#ffc65c", "base_alpha": 0.6},
+  "console": {"top": 70, "height": 130},
+  "hud": {"vitals": {"offset": [30, 21], "size": [420, 126]}},
+  "buttons": [
+    {"id": "menu", "label": "MENU", "icon": "menu", "action": "ui_cancel", "shape": "plate", "anchor": [1, 0], "offset": [-78, 62], "size": [96, 72], "mirror": false},
+    {"id": "console", "label": "DIGITAR", "icon": "console", "action": "console", "shape": "plate", "optional": true, "anchor": [1, 0], "offset": [-190, 62], "size": [96, 72], "mirror": false},
+    {"id": "camera", "label": "CÂMERA", "icon": "camera", "action": "camera", "shape": "plate", "optional": true, "anchor": [1, 0], "offset": [-302, 62], "size": [96, 72], "mirror": false},
+    {"id": "chat", "label": "CHAT", "icon": "chat", "action": "voice_chat", "shape": "plate", "context": "online", "optional": true, "anchor": [1, 0], "offset": [-414, 62], "size": [96, 72], "mirror": false},
+    {"id": "extract", "label": "EXTRAIR", "icon": "extract", "action": "talk", "pulse": true, "anchor": [0, 1], "offset": [300, -560], "size": [118, 118]},
+    {"id": "talk", "label": "FALAR", "icon": "talk", "action": "talk", "anchor": [0, 1], "offset": [470, -470], "size": [150, 150]},
+    {"id": "sprint", "label": "CORRER", "icon": "sprint", "action": "sprint", "context": "setting:sprint_button", "optional": true, "anchor": [0, 1], "offset": [460, -660], "size": [100, 100]},
+    {"id": "use_left", "label": "ATIRAR", "icon": "use", "action": "use", "drag_aim": true, "context": "setting:left_fire", "anchor": [0, 0.5], "offset": [150, -130], "size": [140, 140]},
+    {"id": "use", "label": "ATIRAR", "icon": "use", "action": "use", "drag_aim": true, "main": true, "anchor": [1, 1], "offset": [-245, -255], "size": [220, 220]},
+    {"id": "aim", "label": "MIRAR", "icon": "aim", "action": "aim", "drag_aim": true, "toggle_setting": "ads_toggle", "anchor": [1, 1], "offset": [-480, -360], "size": [136, 136]},
+    {"id": "jump", "label": "PULAR", "icon": "jump", "action": "jump", "anchor": [1, 1], "offset": [-120, -470], "size": [130, 130]},
+    {"id": "crouch", "label": "ABAIXAR", "icon": "crouch", "action": "crouch", "anchor": [1, 1], "offset": [-500, -170], "size": [120, 120]},
+    {"id": "reload", "label": "PENTE", "icon": "reload", "action": "reload", "phrase": "quero um pente", "context": "reloadable", "anchor": [1, 1], "offset": [-310, -485], "size": [108, 108]},
+    {"id": "size_up", "label": "MAIOR", "icon": "plus", "action": "slot_prev", "context": "shaper", "anchor": [1, 1], "offset": [-640, -520], "size": [100, 100]},
+    {"id": "size_down", "label": "MENOR", "icon": "minus", "action": "slot_next", "context": "shaper", "anchor": [1, 1], "offset": [-640, -400], "size": [100, 100]},
+    {"id": "exit_pilot", "label": "SAIR", "icon": "exit", "action": "exit_pilot", "shape": "plate", "context": "pilot", "anchor": [0.5, 1], "offset": [0, -300], "size": [170, 84]},
+    {"id": "slot_1", "label": "1", "action": "slot_1", "draw": false, "anchor": [0.5, 1], "offset": [-230, -70], "size": [220, 85]},
+    {"id": "slot_2", "label": "2", "action": "slot_2", "draw": false, "anchor": [0.5, 1], "offset": [0, -70], "size": [220, 85]},
+    {"id": "slot_3", "label": "3", "action": "slot_3", "draw": false, "anchor": [0.5, 1], "offset": [230, -70], "size": [220, 85]}
+  ]
+}

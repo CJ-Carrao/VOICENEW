@@ -12,45 +12,54 @@
       "shape": "box",
       "size": [
         0.3,
-        0.04,
+        0.03,
         0.3
       ],
       "pos": [
         0,
-        0.02,
+        0.015,
         0
       ],
-      "color": "#141416",
+      "color": "#1a1a1d",
       "tag": "base"
     },
     {
-      "shape": "cone",
-      "radius": 0.126,
-      "height": 0.5,
+      "shape": "cylinder",
+      "radius": 0.108,
+      "height": 0.46,
       "pos": [
         0,
-        0.26,
+        0.25,
         0
       ],
-      "color": "#e56e2d",
-      "rot": [
-        0,
-        0,
-        0
-      ],
+      "color": "#f07a2a",
+      "top_radius": 0.018,
       "tag": "cone"
     },
     {
       "shape": "cylinder",
-      "radius": 0.069,
-      "height": 0.06,
+      "radius": 0.0855,
+      "height": 0.05,
       "pos": [
         0,
-        0.275,
+        0.19,
         0
       ],
-      "color": "#ece5d8",
-      "top_radius": 0.054,
+      "color": "#f4f1ea",
+      "top_radius": 0.075,
+      "tag": "reflector"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0555,
+      "height": 0.05,
+      "pos": [
+        0,
+        0.32,
+        0
+      ],
+      "color": "#f4f1ea",
+      "top_radius": 0.045,
       "tag": "reflector"
     }
   ]

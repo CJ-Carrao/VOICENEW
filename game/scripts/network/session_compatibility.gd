@@ -4,9 +4,9 @@ extends RefCounted
 
 
 
-const PROTOCOL_VERSION: = 20
+const PROTOCOL_VERSION: = 24
 
-const GAMEPLAY_VERSION: = "block-steps-20"
+const GAMEPLAY_VERSION: = "voicenew-h4-lab-26"
 
 
 static func manifest(data_root: String = "res://data", character_root: String = "") -> Dictionary:
@@ -79,7 +79,13 @@ static func _hash_character_assets(hash: HashingContext, root: String) -> Dictio
 	if FileAccess.file_exists(model_path) and FileAccess.get_sha256(model_path) != checksum:
 		return {"error": "O modelo do robô mudou sem atualizar seu checksum em validacao.json."}
 	_hash_file(hash, "character/LAVOICE_base.glb.sha256", checksum.to_utf8_buffer())
-	return {"files": 4}
+	if report.get("runtime_scene_sha256") is String:
+		var scene_checksum: String = report.runtime_scene_sha256
+		var scene_path: = root.path_join("LAVOICE_base.native.scn")
+		if FileAccess.file_exists(scene_path) and FileAccess.get_sha256(scene_path) != scene_checksum:
+			return {"error": "O modelo de runtime do robô mudou sem atualizar seu checksum."}
+		_hash_file(hash, "character/LAVOICE_base.native.scn.sha256", scene_checksum.to_utf8_buffer())
+	return {"files": 5 if report.has("runtime_scene_sha256") else 4}
 
 
 static func mismatch(local_manifest: Dictionary, remote_manifest: Dictionary) -> String:
@@ -91,7 +97,7 @@ static func mismatch(local_manifest: Dictionary, remote_manifest: Dictionary) ->
 		if key in ["protocol", "files"]:
 			same_type = typeof(remote_value) in [TYPE_INT, TYPE_FLOAT]
 		if not same_type or remote_value != local_value:
-			return "Versões incompatíveis (%s). Host e cliente precisam da mesma versão do jogo e dos dados." % key
+			return String(TranslationServer.translate("Versões incompatíveis (%s). Host e cliente precisam da mesma versão do jogo e dos dados.")) % key
 	return ""
 
 

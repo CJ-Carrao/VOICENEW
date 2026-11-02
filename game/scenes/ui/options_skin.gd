@@ -9,6 +9,13 @@ const DARK: = Color("#242427")
 const RAISED: = Color("#303034")
 
 
+
+static func _focus_box() -> StyleBox:
+	if OS.has_feature("mobile") or MobileDev.args().has("--mobile"):
+		return StyleBoxEmpty.new()
+	return _chamfer("none", "#f2601a", 2.0)
+
+
 static func create_theme(font: Font) -> Theme:
 	var theme: = Theme.new()
 	theme.default_font_size = 24
@@ -46,14 +53,14 @@ static func create_theme(font: Font) -> Theme:
 		theme.set_stylebox("pressed", type, _chamfer("#302720", "#f2601a"))
 		theme.set_stylebox("hover_pressed", type, _chamfer("#3b2c24", "#f2601a"))
 		theme.set_stylebox("disabled", type, _chamfer("#242427", "#444145"))
-		theme.set_stylebox("focus", type, _chamfer("none", "#f2601a", 2.0))
+		theme.set_stylebox("focus", type, _focus_box())
 	_option_button(theme)
 	_toggle(theme)
 	_slider(theme)
 	_scroll(theme)
 	theme.set_stylebox("panel", "PanelContainer", _flat(DARK, Color("#494549"), 1, 20, 16))
 	theme.set_stylebox("normal", "RichTextLabel", StyleBoxEmpty.new())
-	theme.set_stylebox("focus", "RichTextLabel", _chamfer("none", "#f2601a", 2.0))
+	theme.set_stylebox("focus", "RichTextLabel", _focus_box())
 	theme.set_color("caret_color", "LineEdit", TEXT)
 	theme.set_color("selection_color", "LineEdit", Color("#794226"))
 	theme.set_color("font_selected_color", "LineEdit", TEXT)
@@ -122,7 +129,7 @@ static func _slider(theme: Theme) -> void :
 	theme.set_stylebox("slider", "HSlider", _flat(Color("#171719"), Color("#58524b"), 1, 0, 4))
 	theme.set_stylebox("grabber_area", "HSlider", _flat(ACCENT, Color.TRANSPARENT, 0, 0, 3))
 	theme.set_stylebox("grabber_area_highlight", "HSlider", _flat(Color("#ff9358"), Color.TRANSPARENT, 0, 0, 3))
-	theme.set_stylebox("focus", "HSlider", _chamfer("none", "#f2601a", 2.0))
+	theme.set_stylebox("focus", "HSlider", _focus_box())
 	var shape: = "<path d=\"M5 1H17L21 5V25L17 29H5L1 25V5Z\" fill=\"%s\" stroke=\"%s\" stroke-width=\"1.5\"/>"
 	theme.set_icon("grabber", "HSlider", _svg(22, 30, shape % ["#f2601a", "#f5f1e8"]))
 	theme.set_icon("grabber_highlight", "HSlider", _svg(22, 30, shape % ["#f5f1e8", "#f2601a"]))
@@ -133,7 +140,7 @@ static func _slider(theme: Theme) -> void :
 
 static func _scroll(theme: Theme) -> void :
 	theme.set_stylebox("panel", "ScrollContainer", StyleBoxEmpty.new())
-	theme.set_stylebox("focus", "ScrollContainer", _chamfer("none", "#f2601a", 2.0))
+	theme.set_stylebox("focus", "ScrollContainer", _focus_box())
 	theme.set_stylebox("scroll", "VScrollBar", _flat(Color("#19191c"), Color.TRANSPARENT, 0, 7, 4))
 	theme.set_stylebox("scroll_focus", "VScrollBar", _flat(Color("#19191c"), ACCENT, 1, 7, 4))
 	theme.set_stylebox("grabber", "VScrollBar", _flat(Color("#77716b"), Color.TRANSPARENT, 0, 7, 12))

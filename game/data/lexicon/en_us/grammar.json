@@ -1,0 +1,37 @@
+{
+  "_comment": "Function words of English. rel: links the relative clause ('that'). and: chains behaviors. of/with/in: complements. units: unit → multiplier. adjuncts: phrases that become a trigger or an action field (set). plural_rules: [suffix, replacement] for the plural fallback, in order. part_after_thing: 'with a bazooka body' = 'with the body of a bazooka'.",
+  "rel": ["that", "which", "who", "thats", "that can"],
+  "and": ["and", "and also", "and then", "then"],
+  "of": ["of", "made of"],
+  "with": ["with", "w", "using", "holding", "carrying", "armed with"],
+  "in": ["in", "into"],
+  "units": {
+    "second": 1, "seconds": 1, "sec": 1, "secs": 1, "s": 1,
+    "minute": 60, "minutes": 60, "min": 60,
+    "meter": 1, "meters": 1, "metre": 1, "metres": 1, "m": 1
+  },
+  "adjuncts": {
+    "every": { "trigger": "every", "words": ["every", "each"] },
+    "after": { "trigger": "after", "words": ["after", "after waiting"] },
+    "on_hit": { "trigger": "on_hit", "words": ["on hit", "on impact", "when it hits", "when they hit", "when hitting", "on contact", "when it touches", "when it lands"] },
+    "on_command": { "trigger": "on_command", "words": ["when i say so", "on my command", "when i want", "when i press", "on command", "when i tell it"] },
+    "on_death": { "trigger": "on_death", "words": ["when it dies", "when they die", "on death", "when destroyed", "when it breaks", "when it is destroyed", "when it gets destroyed"] },
+    "near_enemy": { "trigger": "near_enemy", "words": ["near the enemy", "near enemies", "near an enemy", "close to the enemy", "when it gets close", "when close"] },
+    "aim_enemy": { "set": { "aim": "enemy" }, "words": ["at the enemy", "at enemies", "at the enemies", "at my enemy", "at the opponent", "at the others", "towards the enemy", "at them"] },
+    "on_fire": { "trigger": "on_fire", "words": ["every bullet", "every shot", "per shot", "each shot"] }
+  },
+  "plural_rules": [
+    ["ies", "y"], ["ves", "f"], ["men", "man"], ["ches", "ch"], ["shes", "sh"], ["xes", "x"], ["sses", "ss"], ["oes", "o"], ["s", ""]
+  ],
+  "part_after_thing": true,
+  "mounts": {
+    "front": { "sockets": ["mount_front"], "words": ["on the front", "in front", "at the front", "up front"] },
+    "back": { "sockets": ["mount_back"], "words": ["on the back", "behind", "at the back", "in the back"] },
+    "top": { "sockets": ["mount_top"], "words": ["on top", "on the top", "on its back", "on top of it"] },
+    "bottom": { "sockets": ["mount_bottom"], "words": ["underneath", "on the bottom", "below", "under it"] },
+    "left": { "sockets": ["mount_left"], "words": ["on the left", "on its left", "left side"] },
+    "right": { "sockets": ["mount_right"], "words": ["on the right", "on its right", "right side"] },
+    "both": { "sockets": ["mount_left", "mount_right"], "words": ["on each side", "on both sides", "on either side"] },
+    "hand": { "sockets": ["mount_hand"], "words": ["in hand", "in the hand", "in its hand", "in its hands"] }
+  }
+}

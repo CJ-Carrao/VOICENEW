@@ -99,7 +99,8 @@ func setup(owner_player: Player) -> void :
 		if (cfg["hidden_meshes"] as Array).has(String(mesh.name)):
 			mesh.visible = false
 			continue
-		_pieces.append({"mesh": mesh, "bone": _mesh_bone(mesh), "bind": _mesh_bind(mesh)})
+		var bind: = _mesh_bind_index(mesh)
+		_pieces.append({"mesh": mesh, "bone": _mesh_bone(mesh, bind), "bind": _mesh_bind(mesh, bind)})
 	var screen: = model.find_child(String(cfg["face_mesh"]), true, false) as MeshInstance3D
 	var face_material: = ShaderMaterial.new()
 	face_material.shader = load(String(cfg["face_shader"]))
@@ -391,9 +392,13 @@ func _hook_match() -> void :
 	if _match_hooked or Forge.world == null:
 		return
 	_match_hooked = true
-	Forge.world.state_changed.connect( func() -> void :
-		if Forge.world.state in ["round_over", "match_over"] and Forge.world.last_winner == player:
-			_hold("won"))
+	if not Forge.world.state_changed.is_connected(_on_world_state_changed):
+		Forge.world.state_changed.connect(_on_world_state_changed)
+
+
+func _on_world_state_changed() -> void :
+	if Forge.world != null and Forge.world.state in ["round_over", "match_over"] and Forge.world.last_winner == player:
+		_hold("won")
 
 
 
@@ -676,6 +681,12 @@ func _exit_tree() -> void :
 	if _paint_task >= 0:
 		WorkerThreadPool.wait_for_task_completion(_paint_task)
 		_paint_task = -1
+	if Forge.request_processed.is_connected(_on_request):
+		Forge.request_processed.disconnect(_on_request)
+	if Forge.build_finished.is_connected(_on_build_finished):
+		Forge.build_finished.disconnect(_on_build_finished)
+	if Forge.world != null and Forge.world.state_changed.is_connected(_on_world_state_changed):
+		Forge.world.state_changed.disconnect(_on_world_state_changed)
 
 
 
@@ -724,25 +735,35 @@ func _attach_stickers(paint: RobotPaint) -> void :
 	StickerDecals.rebuild(paint, func(part: String) -> Node3D: return spaces.get(part), spaces.values())
 
 
+static var _bind_index_cache: Dictionary = {}
 
-func _mesh_bone(mesh: MeshInstance3D) -> int:
-	var bind: = _mesh_bind_index(mesh)
+
+
+func _mesh_bone(mesh: MeshInstance3D, bind: int = -2) -> int:
+	if bind == -2:
+		bind = _mesh_bind_index(mesh)
 	if bind < 0:
 		return -1
 	var bone: = rig.skeleton.find_bone(String(mesh.skin.get_bind_name(bind)))
 	return bone if bone >= 0 else mesh.skin.get_bind_bone(bind)
 
 
-func _mesh_bind(mesh: MeshInstance3D) -> Transform3D:
-	var bind: = _mesh_bind_index(mesh)
+func _mesh_bind(mesh: MeshInstance3D, bind: int = -2) -> Transform3D:
+	if bind == -2:
+		bind = _mesh_bind_index(mesh)
 	return mesh.skin.get_bind_pose(bind) if bind >= 0 else Transform3D.IDENTITY
 
 
 static func _mesh_bind_index(mesh: MeshInstance3D) -> int:
 	if mesh.skin == null or mesh.mesh == null:
 		return -1
+	var rid: = mesh.mesh.get_rid()
+	if _bind_index_cache.has(rid):
+		return int(_bind_index_cache[rid])
 	var bones: PackedInt32Array = mesh.mesh.surface_get_arrays(0)[Mesh.ARRAY_BONES]
-	return bones[0] if not bones.is_empty() else -1
+	var result: = bones[0] if not bones.is_empty() else -1
+	_bind_index_cache[rid] = result
+	return result
 
 
 static func _set_layers(node: Node, layer: int) -> void :

@@ -7,6 +7,7 @@ var cfg: Dictionary = {}
 var clock_s: float = 0.0
 var bursts: Array[Dictionary] = []
 var _halo: GradientTexture2D
+var _had_active: = false
 
 
 func setup(config: Dictionary) -> void :
@@ -49,7 +50,16 @@ func burst(at: Vector2, color: Color, amount: int, strength: float, event_s: flo
 
 func update(t: float) -> void :
 	clock_s = t
-	queue_redraw()
+	var life: = float(cfg.get("life_s", 0.0))
+	var any_active: = false
+	for entry: Dictionary in bursts:
+		var age: = t - float(entry["t"])
+		if age >= 0.0 and age < life:
+			any_active = true
+			break
+	if any_active or _had_active:
+		_had_active = any_active
+		queue_redraw()
 
 
 func _draw() -> void :

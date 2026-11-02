@@ -20,18 +20,113 @@
         0.425,
         0
       ],
-      "color": "#d6dcd8",
-      "tag": "body",
+      "color": "#ecebe6",
+      "tag": "body"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.576,
+        0.136,
+        0.02
+      ],
+      "pos": [
+        0,
+        0.765,
+        -0.3
+      ],
+      "color": "#deddd8",
+      "tag": "panel"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.042,
+      "height": 0.04,
+      "pos": [
+        0.15,
+        0.765,
+        -0.306
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "dial",
       "finish": "metal"
     },
     {
+      "shape": "box",
+      "size": [
+        0.168,
+        0.068,
+        0.02
+      ],
+      "pos": [
+        -0.144,
+        0.765,
+        -0.306
+      ],
+      "color": "#c9c8c4",
+      "tag": "drawer"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.0213,
+        0.02
+      ],
+      "pos": [
+        0.012,
+        0.765,
+        -0.306
+      ],
+      "color": "#3f86c2",
+      "tag": "button",
+      "glow": 0.5
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.0213,
+        0.02
+      ],
+      "pos": [
+        0.054,
+        0.765,
+        -0.306
+      ],
+      "color": "#3f86c2",
+      "tag": "button",
+      "glow": 0.5
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.0213,
+        0.02
+      ],
+      "pos": [
+        0.096,
+        0.765,
+        -0.306
+      ],
+      "color": "#3f86c2",
+      "tag": "button",
+      "glow": 0.5
+    },
+    {
       "shape": "torus",
-      "radius": 0.198,
-      "inner_radius": 0.144,
+      "radius": 0.204,
+      "inner_radius": 0.162,
       "pos": [
         0,
         0.374,
-        -0.306
+        -0.3
       ],
       "color": "#c5c9ce",
       "rot": [
@@ -39,41 +134,44 @@
         0,
         0
       ],
-      "tag": "door"
+      "tag": "door",
+      "finish": "metal"
     },
     {
       "shape": "cylinder",
-      "radius": 0.15,
-      "height": 0.025,
+      "radius": 0.168,
+      "height": 0.03,
       "pos": [
         0,
         0.374,
-        -0.312
+        -0.3
       ],
-      "color": "#334b58",
+      "color": "#1d3446",
       "rot": [
         -90,
         0,
         0
       ],
-      "tag": "window"
+      "tag": "window",
+      "finish": "glass"
     },
     {
       "shape": "cylinder",
-      "radius": 0.035,
-      "height": 0.02,
+      "radius": 0.096,
+      "height": 0.035,
       "pos": [
-        0.18,
-        0.7225,
-        -0.312
+        0,
+        0.374,
+        -0.306
       ],
-      "color": "#2a2d32",
+      "color": "#2d5b78",
       "rot": [
         -90,
         0,
         0
       ],
-      "tag": "dial"
+      "tag": "window",
+      "finish": "glass"
     }
   ]
 }

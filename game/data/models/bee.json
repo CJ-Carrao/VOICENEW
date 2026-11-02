@@ -5,6 +5,334 @@
     0.0075,
     0
   ],
+  "rig": {
+    "type": "flier",
+    "height_m": 0.015,
+    "joints": {
+      "body": {
+        "pivot": [
+          0.0,
+          0.0077,
+          0.0035
+        ],
+        "parent": "",
+        "type": "body"
+      },
+      "neck": {
+        "pivot": [
+          0.0,
+          0.008,
+          -0.002
+        ],
+        "parent": "body",
+        "type": "neck"
+      },
+      "head": {
+        "pivot": [
+          0.0,
+          0.0083,
+          -0.0075
+        ],
+        "parent": "neck",
+        "type": "head"
+      },
+      "jaw": {
+        "pivot": [
+          0.0,
+          0.0072,
+          -0.0085
+        ],
+        "parent": "head",
+        "type": "jaw"
+      },
+      "arm_l": {
+        "pivot": [
+          -0.012,
+          0.0095,
+          0.0035
+        ],
+        "parent": "body",
+        "type": "arm"
+      },
+      "wing_l": {
+        "pivot": [
+          -0.004,
+          0.0084,
+          0.0035
+        ],
+        "parent": "body",
+        "type": "wing"
+      },
+      "fin_l": {
+        "pivot": [
+          -0.0048,
+          0.0059,
+          0.0035
+        ],
+        "parent": "body",
+        "type": "fin"
+      },
+      "hip_l": {
+        "pivot": [
+          -0.0064,
+          0.0065,
+          0.0035
+        ],
+        "parent": "body",
+        "type": "hip",
+        "phase": 0.0,
+        "foot": [
+          -0.0064,
+          0.0004,
+          0.0035
+        ]
+      },
+      "knee_l": {
+        "pivot": [
+          -0.0072,
+          0.0035,
+          0.0035
+        ],
+        "parent": "hip_l",
+        "type": "knee",
+        "foot": [
+          -0.0064,
+          0.0004,
+          0.0035
+        ]
+      },
+      "arm_r": {
+        "pivot": [
+          0.012,
+          0.0095,
+          0.0035
+        ],
+        "parent": "body",
+        "type": "arm"
+      },
+      "wing_r": {
+        "pivot": [
+          0.004,
+          0.0084,
+          0.0035
+        ],
+        "parent": "body",
+        "type": "wing"
+      },
+      "fin_r": {
+        "pivot": [
+          0.0048,
+          0.0059,
+          0.0035
+        ],
+        "parent": "body",
+        "type": "fin"
+      },
+      "hip_r": {
+        "pivot": [
+          0.0064,
+          0.0065,
+          0.0035
+        ],
+        "parent": "body",
+        "type": "hip",
+        "phase": 0.5,
+        "foot": [
+          0.0064,
+          0.0004,
+          0.0035
+        ]
+      },
+      "knee_r": {
+        "pivot": [
+          0.0072,
+          0.0035,
+          0.0035
+        ],
+        "parent": "hip_r",
+        "type": "knee",
+        "foot": [
+          0.0064,
+          0.0004,
+          0.0035
+        ]
+      },
+      "hip_l_0": {
+        "pivot": [
+          -0.0048,
+          0.0077,
+          -0.0035
+        ],
+        "parent": "body",
+        "type": "hip",
+        "phase": 0.0,
+        "foot": [
+          -0.012,
+          -0.0021,
+          -0.0035
+        ]
+      },
+      "knee_l_0": {
+        "pivot": [
+          -0.0084,
+          0.0028,
+          -0.0015
+        ],
+        "parent": "hip_l_0",
+        "type": "knee",
+        "foot": [
+          -0.012,
+          -0.0021,
+          -0.0035
+        ]
+      },
+      "hip_l_1": {
+        "pivot": [
+          -0.0048,
+          0.0077,
+          -0.0015
+        ],
+        "parent": "body",
+        "type": "hip",
+        "phase": 0.5,
+        "foot": [
+          -0.012,
+          -0.0021,
+          -0.0015
+        ]
+      },
+      "knee_l_1": {
+        "pivot": [
+          -0.0084,
+          0.0028,
+          0.0005
+        ],
+        "parent": "hip_l_1",
+        "type": "knee",
+        "foot": [
+          -0.012,
+          -0.0021,
+          -0.0015
+        ]
+      },
+      "hip_l_2": {
+        "pivot": [
+          -0.0048,
+          0.0077,
+          0.0005
+        ],
+        "parent": "body",
+        "type": "hip",
+        "phase": 0.0,
+        "foot": [
+          -0.012,
+          -0.0021,
+          0.0005
+        ]
+      },
+      "knee_l_2": {
+        "pivot": [
+          -0.0084,
+          0.0028,
+          0.0005
+        ],
+        "parent": "hip_l_2",
+        "type": "knee",
+        "foot": [
+          -0.012,
+          -0.0021,
+          0.0005
+        ]
+      },
+      "hip_r_0": {
+        "pivot": [
+          0.0048,
+          0.0077,
+          -0.0035
+        ],
+        "parent": "body",
+        "type": "hip",
+        "phase": 0.5,
+        "foot": [
+          0.012,
+          -0.0021,
+          -0.0035
+        ]
+      },
+      "knee_r_0": {
+        "pivot": [
+          0.0084,
+          0.0028,
+          -0.0015
+        ],
+        "parent": "hip_r_0",
+        "type": "knee",
+        "foot": [
+          0.012,
+          -0.0021,
+          -0.0035
+        ]
+      },
+      "hip_r_1": {
+        "pivot": [
+          0.0048,
+          0.0077,
+          -0.0015
+        ],
+        "parent": "body",
+        "type": "hip",
+        "phase": 1.0,
+        "foot": [
+          0.012,
+          -0.0021,
+          -0.0015
+        ]
+      },
+      "knee_r_1": {
+        "pivot": [
+          0.0084,
+          0.0028,
+          0.0005
+        ],
+        "parent": "hip_r_1",
+        "type": "knee",
+        "foot": [
+          0.012,
+          -0.0021,
+          -0.0015
+        ]
+      },
+      "hip_r_2": {
+        "pivot": [
+          0.0048,
+          0.0077,
+          0.0005
+        ],
+        "parent": "body",
+        "type": "hip",
+        "phase": 0.5,
+        "foot": [
+          0.012,
+          -0.0021,
+          0.0005
+        ]
+      },
+      "knee_r_2": {
+        "pivot": [
+          0.0084,
+          0.0028,
+          0.0005
+        ],
+        "parent": "hip_r_2",
+        "type": "knee",
+        "foot": [
+          0.012,
+          -0.0021,
+          0.0005
+        ]
+      }
+    }
+  },
   "units": "meters",
   "generator": "tools/models/gen_world_assets.py",
   "pieces": [
@@ -14,109 +342,343 @@
       "pos": [
         0,
         0.0075,
-        0
+        0.0015
       ],
-      "color": "#d7ae36",
+      "color": "#f2c230",
       "tag": "abdomen",
-      "_stretch": [
-        0.012,
-        0.010499999999999999,
-        0.025
-      ]
-    },
-    {
-      "shape": "torus",
-      "radius": 0.0052,
-      "inner_radius": 0.0045,
-      "pos": [
-        0,
-        0.0075,
-        -0.0063
+      "scale": [
+        0.02,
+        0.0105,
+        0.0035
       ],
-      "color": "#2a2d32",
-      "rot": [
-        90,
-        0,
-        0
-      ],
-      "tag": "stripe"
-    },
-    {
-      "shape": "torus",
-      "radius": 0.0052,
-      "inner_radius": 0.0045,
-      "pos": [
-        0,
-        0.0075,
-        0.0
-      ],
-      "color": "#2a2d32",
-      "rot": [
-        90,
-        0,
-        0
-      ],
-      "tag": "stripe"
-    },
-    {
-      "shape": "torus",
-      "radius": 0.0052,
-      "inner_radius": 0.0045,
-      "pos": [
-        0,
-        0.0075,
-        0.0063
-      ],
-      "color": "#2a2d32",
-      "rot": [
-        90,
-        0,
-        0
-      ],
-      "tag": "stripe"
+      "bone": "body"
     },
     {
       "shape": "sphere",
       "radius": 0.5,
       "pos": [
-        -0.0108,
-        0.0127,
-        0
+        0,
+        0.0075,
+        0.0037
       ],
-      "color": "#dce3df",
-      "tag": "wing",
-      "_stretch": [
-        0.0168,
-        0.002,
-        0.017499999999999998
-      ]
+      "color": "#1c1a17",
+      "tag": "abdomen",
+      "scale": [
+        0.02,
+        0.0097,
+        0.0035
+      ],
+      "bone": "body"
     },
     {
       "shape": "sphere",
       "radius": 0.5,
       "pos": [
-        0.0108,
-        0.0127,
-        0
-      ],
-      "color": "#dce3df",
-      "tag": "wing",
-      "_stretch": [
-        0.0168,
-        0.002,
-        0.017499999999999998
-      ]
-    },
-    {
-      "shape": "sphere",
-      "radius": 0.0045,
-      "pos": [
         0,
+        0.0075,
+        0.006
+      ],
+      "color": "#f2c230",
+      "tag": "abdomen",
+      "scale": [
+        0.02,
         0.009,
-        -0.0125
+        0.0035
       ],
-      "color": "#2a2d32",
-      "tag": "head"
+      "bone": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.0075,
+        0.0083
+      ],
+      "color": "#1c1a17",
+      "tag": "abdomen",
+      "scale": [
+        0.02,
+        0.0082,
+        0.0035
+      ],
+      "bone": "body"
+    },
+    {
+      "shape": "cone",
+      "radius": 0.002,
+      "height": 0.0031,
+      "pos": [
+        0.0,
+        0.0069,
+        0.0115
+      ],
+      "color": "#1c1a17",
+      "rot": [
+        101.31,
+        0.0,
+        0
+      ],
+      "tag": "stinger",
+      "bone": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.0083,
+        -0.002
+      ],
+      "color": "#b59224",
+      "tag": "thorax",
+      "scale": [
+        0.0192,
+        0.009,
+        0.0055
+      ],
+      "bone": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.0083,
+        -0.0075
+      ],
+      "color": "#1c1a17",
+      "tag": "head",
+      "scale": [
+        0.0168,
+        0.0083,
+        0.005
+      ],
+      "bone": "head"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        -0.0064,
+        0.009,
+        -0.0085
+      ],
+      "color": "#3a2a20",
+      "tag": "eye",
+      "scale": [
+        0.0048,
+        0.0045,
+        0.003
+      ],
+      "bone": "head"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0008,
+      "height": 0.0089,
+      "pos": [
+        -0.004,
+        0.0145,
+        -0.0107
+      ],
+      "color": "#1c1a17",
+      "rot": [
+        40.51,
+        -137.56,
+        0
+      ],
+      "tag": "antenna",
+      "bone": "head"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        -0.0128,
+        0.0138,
+        0.0005
+      ],
+      "color": "#cfe6f2",
+      "tag": "wing",
+      "finish": "glass",
+      "scale": [
+        0.02,
+        0.0009,
+        0.0095
+      ],
+      "rot": [
+        0,
+        18,
+        12
+      ],
+      "bone": "wing_l"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0008,
+      "height": 0.0104,
+      "pos": [
+        -0.0084,
+        0.0028,
+        -0.0035
+      ],
+      "color": "#1c1a17",
+      "rot": [
+        124.25,
+        -82.09,
+        0
+      ],
+      "tag": "leg",
+      "bone": "hip_l_0"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0008,
+      "height": 0.0104,
+      "pos": [
+        -0.0084,
+        0.0028,
+        -0.0015
+      ],
+      "color": "#1c1a17",
+      "rot": [
+        124.25,
+        -82.09,
+        0
+      ],
+      "tag": "leg",
+      "bone": "hip_l_1"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0008,
+      "height": 0.0104,
+      "pos": [
+        -0.0084,
+        0.0028,
+        0.0005
+      ],
+      "color": "#1c1a17",
+      "rot": [
+        124.25,
+        -82.09,
+        0
+      ],
+      "tag": "leg",
+      "bone": "hip_l_2"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0.0064,
+        0.009,
+        -0.0085
+      ],
+      "color": "#3a2a20",
+      "tag": "eye",
+      "scale": [
+        0.0048,
+        0.0045,
+        0.003
+      ],
+      "bone": "head"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0008,
+      "height": 0.0089,
+      "pos": [
+        0.004,
+        0.0145,
+        -0.0107
+      ],
+      "color": "#1c1a17",
+      "rot": [
+        40.51,
+        137.56,
+        0
+      ],
+      "tag": "antenna",
+      "bone": "head"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0.0128,
+        0.0138,
+        0.0005
+      ],
+      "color": "#cfe6f2",
+      "tag": "wing",
+      "finish": "glass",
+      "scale": [
+        0.02,
+        0.0009,
+        0.0095
+      ],
+      "rot": [
+        0,
+        -18,
+        -12
+      ],
+      "bone": "wing_r"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0008,
+      "height": 0.0104,
+      "pos": [
+        0.0084,
+        0.0028,
+        -0.0035
+      ],
+      "color": "#1c1a17",
+      "rot": [
+        124.25,
+        82.09,
+        0
+      ],
+      "tag": "leg",
+      "bone": "hip_r_0"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0008,
+      "height": 0.0104,
+      "pos": [
+        0.0084,
+        0.0028,
+        -0.0015
+      ],
+      "color": "#1c1a17",
+      "rot": [
+        124.25,
+        82.09,
+        0
+      ],
+      "tag": "leg",
+      "bone": "hip_r_1"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0008,
+      "height": 0.0104,
+      "pos": [
+        0.0084,
+        0.0028,
+        0.0005
+      ],
+      "color": "#1c1a17",
+      "rot": [
+        124.25,
+        82.09,
+        0
+      ],
+      "tag": "leg",
+      "bone": "hip_r_2"
     }
   ]
 }

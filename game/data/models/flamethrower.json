@@ -3,7 +3,7 @@
   "anchor": [
     0,
     0,
-    0.05
+    0.04
   ],
   "joints": {
     "trigger": [
@@ -14,7 +14,7 @@
     "muzzle": [
       0,
       0,
-      -0.315
+      -0.558
     ]
   },
   "units": "meters",
@@ -23,84 +23,374 @@
     {
       "shape": "box",
       "size": [
-        0.09,
-        0.18,
-        0.07
+        0.034,
+        0.12,
+        0.05
       ],
       "pos": [
         0,
-        -0.09,
-        0.09
+        -0.07,
+        0.06
       ],
-      "color": "#2a2d32",
+      "color": "#1a1a1d",
+      "rot": [
+        -12,
+        0,
+        0
+      ],
       "tag": "grip",
+      "finish": "rubber",
       "section": "rear"
     },
     {
       "shape": "box",
       "size": [
-        0.132,
-        0.1,
-        0.405
+        0.008,
+        0.03,
+        0.008
+      ],
+      "pos": [
+        0,
+        -0.03,
+        0.02
+      ],
+      "color": "#c5c9ce",
+      "tag": "trigger",
+      "finish": "metal",
+      "section": "rear"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.04,
+        0.02,
+        0.12
+      ],
+      "pos": [
+        0,
+        -0.02,
+        0.1
+      ],
+      "color": "#3b3f46",
+      "tag": "trigger",
+      "finish": "metal",
+      "section": "rear"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.07,
+        0.08,
+        0.342
       ],
       "pos": [
         0,
         0,
-        -0.15
+        -0.1
       ],
-      "color": "#2a2d32",
+      "color": "#4f5a3c",
       "tag": "receiver",
       "section": "front"
     },
     {
       "shape": "cylinder",
-      "radius": 0.045,
+      "radius": 0.022,
+      "height": 0.03,
+      "pos": [
+        0.04,
+        0.03,
+        -0.05
+      ],
+      "color": "#f2efe6",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "gauge",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.016,
+      "height": 0.032,
+      "pos": [
+        0.041,
+        0.03,
+        -0.05
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "gauge",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.02,
+      "height": 0.04,
+      "pos": [
+        0,
+        0.055,
+        -0.16
+      ],
+      "color": "#c8302a",
+      "tag": "valve",
+      "finish": "metal",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.065,
+      "height": 0.32,
+      "pos": [
+        0,
+        -0.1,
+        -0.13
+      ],
+      "color": "#b8282a",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "fuel",
+      "finish": "metal",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.068,
+      "height": 0.02,
+      "pos": [
+        0,
+        -0.1,
+        -0.25
+      ],
+      "color": "#3b3f46",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "fuel",
+      "finish": "metal",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.068,
+      "height": 0.02,
+      "pos": [
+        0,
+        -0.1,
+        -0.01
+      ],
+      "color": "#3b3f46",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "fuel",
+      "finish": "metal",
+      "section": "front"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.06,
+        0.05
+      ],
+      "pos": [
+        0,
+        -0.05,
+        -0.13
+      ],
+      "color": "#3b3f46",
+      "tag": "fuel",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.026,
       "height": 0.405,
       "pos": [
         0,
         0,
         -0.468
       ],
-      "color": "#2a2d32",
+      "color": "#5d646c",
       "rot": [
         -90,
         0,
         0
       ],
       "tag": "barrel",
+      "finish": "metal",
       "section": "muzzle"
     },
     {
       "shape": "cylinder",
-      "radius": 0.08,
-      "height": 0.3,
-      "pos": [
-        0,
-        -0.14,
-        -0.15
-      ],
-      "color": "#bd4036",
-      "tag": "fuel",
-      "section": "front"
-    },
-    {
-      "shape": "cone",
-      "radius": 0.035,
-      "height": 0.08,
+      "radius": 0.04,
+      "height": 0.27,
       "pos": [
         0,
         0,
-        -0.702
+        -0.414
       ],
-      "color": "#e59d34",
+      "color": "#4f5a3c",
       "rot": [
         -90,
         0,
         0
       ],
+      "tag": "shroud",
+      "section": "muzzle"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.084,
+        0.012,
+        0.02
+      ],
+      "pos": [
+        0,
+        0,
+        -0.324
+      ],
+      "color": "#22261c",
+      "tag": "shroud",
+      "section": "muzzle",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.084,
+        0.012,
+        0.02
+      ],
+      "pos": [
+        0,
+        0,
+        -0.369
+      ],
+      "color": "#22261c",
+      "tag": "shroud",
+      "section": "muzzle",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.084,
+        0.012,
+        0.02
+      ],
+      "pos": [
+        0,
+        0,
+        -0.414
+      ],
+      "color": "#22261c",
+      "tag": "shroud",
+      "section": "muzzle",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.084,
+        0.012,
+        0.02
+      ],
+      "pos": [
+        0,
+        0,
+        -0.459
+      ],
+      "color": "#22261c",
+      "tag": "shroud",
+      "section": "muzzle",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.084,
+        0.012,
+        0.02
+      ],
+      "pos": [
+        0,
+        0,
+        -0.504
+      ],
+      "color": "#22261c",
+      "tag": "shroud",
+      "section": "muzzle",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.1,
+        0.045
+      ],
+      "pos": [
+        0,
+        -0.06,
+        -0.36
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        10,
+        0,
+        0
+      ],
+      "tag": "handguard",
+      "finish": "rubber",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.032,
+      "height": 0.05,
+      "pos": [
+        0,
+        0,
+        -0.684
+      ],
+      "color": "#2c2f33",
+      "top_radius": 0.022,
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "nozzle",
+      "finish": "metal",
+      "section": "muzzle"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.016,
+      "pos": [
+        0,
+        -0.035,
+        -0.684
+      ],
+      "color": "#ffb347",
       "tag": "pilot",
       "section": "muzzle",
-      "glow": 0.5
+      "glow": 3.0
     }
   ]
 }

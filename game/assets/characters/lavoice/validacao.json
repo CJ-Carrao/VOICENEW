@@ -142,5 +142,8 @@
       "sha256": "0b728e55a3447628e2b6d8435643985449e96660c8416d2732580922d23fe6e9",
       "scope": "137 MP4s: duration, 60 fps, three 512x512 views; visual inspection is separate."
     }
-  }
+  },
+  "original_glb_sha256": "f68740b117e00a693f2a03e0e48602b93a106b651a30004f61192bde3fd73260",
+  "runtime_scene_sha256": "046cc3d7b8969ff90f97f0795ea996dab7898a6120cf571b98cbfb2a19c7bc00",
+  "lab_recovery_note": "Runtime uses the exact H-4 imported PackedScene, preserving original bone names and 137 animations. The recovered GLB is retained as editable source; its conversion normalizes dotted names."
 }

@@ -2,22 +2,113 @@
   "_comment": "empilhadeira: medidas aproximadas de objeto comum, em metros.",
   "anchor": [
     0,
-    1.1,
+    0.88,
     0
   ],
   "units": "meters",
   "generator": "tools/models/gen_world_assets.py",
   "pieces": [
     {
-      "shape": "cylinder",
-      "radius": 0.352,
-      "height": 0.144,
-      "pos": [
-        -0.576,
-        0.352,
-        -0.896
+      "shape": "box",
+      "size": [
+        1.08,
+        0.572,
+        1.54
       ],
-      "color": "#141416",
+      "pos": [
+        0,
+        0.55,
+        0.14
+      ],
+      "color": "#e8b51e",
+      "tag": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0.66,
+        0.84
+      ],
+      "color": "#e8b51e",
+      "tag": "counterweight",
+      "scale": [
+        1.104,
+        0.748,
+        0.84
+      ]
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.6,
+        0.132,
+        0.56
+      ],
+      "pos": [
+        0,
+        0.924,
+        0.224
+      ],
+      "color": "#1f2023",
+      "tag": "seat"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.54,
+        0.396,
+        0.05
+      ],
+      "pos": [
+        0,
+        1.144,
+        0.56
+      ],
+      "color": "#1f2023",
+      "tag": "seat"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        1.364,
+        0.05
+      ],
+      "pos": [
+        -0.48,
+        1.54,
+        -0.392
+      ],
+      "color": "#1f2023",
+      "tag": "guard"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        1.364,
+        0.05
+      ],
+      "pos": [
+        -0.48,
+        1.54,
+        0.728
+      ],
+      "color": "#1f2023",
+      "tag": "guard"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.3,
+      "height": 0.2,
+      "pos": [
+        -0.504,
+        0.3,
+        -0.336
+      ],
+      "color": "#1a1a1d",
       "rot": [
         0,
         0,
@@ -28,31 +119,50 @@
     },
     {
       "shape": "cylinder",
-      "radius": 0.1584,
-      "height": 0.156,
+      "radius": 0.186,
+      "height": 0.208,
       "pos": [
-        -0.576,
-        0.352,
-        -0.896
+        -0.504,
+        0.3,
+        -0.336
       ],
-      "color": "#c5c9ce",
+      "color": "#1f2023",
       "rot": [
         0,
         0,
         90
       ],
-      "tag": "hub"
+      "tag": "rim",
+      "finish": "metal"
     },
     {
       "shape": "cylinder",
-      "radius": 0.352,
-      "height": 0.144,
+      "radius": 0.066,
+      "height": 0.22,
       "pos": [
-        -0.576,
-        0.352,
-        0.896
+        -0.504,
+        0.3,
+        -0.336
       ],
-      "color": "#141416",
+      "color": "#161619",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.24,
+      "height": 0.18,
+      "pos": [
+        -0.48,
+        0.24,
+        0.84
+      ],
+      "color": "#1a1a1d",
       "rot": [
         0,
         0,
@@ -63,31 +173,125 @@
     },
     {
       "shape": "cylinder",
-      "radius": 0.1584,
-      "height": 0.156,
+      "radius": 0.1488,
+      "height": 0.1872,
       "pos": [
-        -0.576,
-        0.352,
-        0.896
+        -0.48,
+        0.24,
+        0.84
       ],
-      "color": "#c5c9ce",
+      "color": "#1f2023",
       "rot": [
         0,
         0,
         90
       ],
-      "tag": "hub"
+      "tag": "rim",
+      "finish": "metal"
     },
     {
       "shape": "cylinder",
-      "radius": 0.352,
-      "height": 0.144,
+      "radius": 0.0528,
+      "height": 0.198,
       "pos": [
-        0.576,
-        0.352,
-        -0.896
+        -0.48,
+        0.24,
+        0.84
       ],
-      "color": "#141416",
+      "color": "#161619",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.06,
+        2.09,
+        0.08
+      ],
+      "pos": [
+        -0.36,
+        1.1,
+        -0.84
+      ],
+      "color": "#3b3f46",
+      "tag": "mast"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.08,
+        0.05,
+        1.12
+      ],
+      "pos": [
+        -0.24,
+        0.1,
+        -1.456
+      ],
+      "color": "#3b3f46",
+      "tag": "fork"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.08,
+        0.66,
+        0.05
+      ],
+      "pos": [
+        -0.24,
+        0.24,
+        -0.924
+      ],
+      "color": "#3b3f46",
+      "tag": "fork"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        1.364,
+        0.05
+      ],
+      "pos": [
+        0.48,
+        1.54,
+        -0.392
+      ],
+      "color": "#1f2023",
+      "tag": "guard"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        1.364,
+        0.05
+      ],
+      "pos": [
+        0.48,
+        1.54,
+        0.728
+      ],
+      "color": "#1f2023",
+      "tag": "guard"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.3,
+      "height": 0.2,
+      "pos": [
+        0.504,
+        0.3,
+        -0.336
+      ],
+      "color": "#1a1a1d",
       "rot": [
         0,
         0,
@@ -98,31 +302,50 @@
     },
     {
       "shape": "cylinder",
-      "radius": 0.1584,
-      "height": 0.156,
+      "radius": 0.186,
+      "height": 0.208,
       "pos": [
-        0.576,
-        0.352,
-        -0.896
+        0.504,
+        0.3,
+        -0.336
       ],
-      "color": "#c5c9ce",
+      "color": "#1f2023",
       "rot": [
         0,
         0,
         90
       ],
-      "tag": "hub"
+      "tag": "rim",
+      "finish": "metal"
     },
     {
       "shape": "cylinder",
-      "radius": 0.352,
-      "height": 0.144,
+      "radius": 0.066,
+      "height": 0.22,
       "pos": [
-        0.576,
-        0.352,
-        0.896
+        0.504,
+        0.3,
+        -0.336
       ],
-      "color": "#141416",
+      "color": "#161619",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.24,
+      "height": 0.18,
+      "pos": [
+        0.48,
+        0.24,
+        0.84
+      ],
+      "color": "#1a1a1d",
       "rot": [
         0,
         0,
@@ -133,125 +356,189 @@
     },
     {
       "shape": "cylinder",
-      "radius": 0.1584,
-      "height": 0.156,
+      "radius": 0.1488,
+      "height": 0.1872,
       "pos": [
-        0.576,
-        0.352,
-        0.896
+        0.48,
+        0.24,
+        0.84
       ],
-      "color": "#c5c9ce",
+      "color": "#1f2023",
       "rot": [
         0,
         0,
         90
       ],
-      "tag": "hub"
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0528,
+      "height": 0.198,
+      "pos": [
+        0.48,
+        0.24,
+        0.84
+      ],
+      "color": "#161619",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.06,
+        2.09,
+        0.08
+      ],
+      "pos": [
+        0.36,
+        1.1,
+        -0.84
+      ],
+      "color": "#3b3f46",
+      "tag": "mast"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.08,
+        0.05,
+        1.12
+      ],
+      "pos": [
+        0.24,
+        0.1,
+        -1.456
+      ],
+      "color": "#3b3f46",
+      "tag": "fork"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.08,
+        0.66,
+        0.05
+      ],
+      "pos": [
+        0.24,
+        0.24,
+        -0.924
+      ],
+      "color": "#3b3f46",
+      "tag": "fork"
     },
     {
       "shape": "box",
       "size": [
         1.08,
-        0.66,
-        2.52
+        0.06,
+        1.176
       ],
       "pos": [
         0,
-        0.77,
-        0
+        2.2,
+        0.168
       ],
-      "color": "#caa23d",
-      "tag": "chassis"
+      "color": "#1f2023",
+      "tag": "guard"
     },
     {
       "shape": "box",
       "size": [
-        0.984,
-        1.056,
-        1.008
+        1.08,
+        0.04,
+        0.04
       ],
       "pos": [
         0,
-        1.606,
+        2.2,
+        -0.28
+      ],
+      "color": "#1f2023",
+      "tag": "guard"
+    },
+    {
+      "shape": "box",
+      "size": [
+        1.08,
+        0.04,
+        0.04
+      ],
+      "pos": [
+        0,
+        2.2,
+        0.0
+      ],
+      "color": "#1f2023",
+      "tag": "guard"
+    },
+    {
+      "shape": "box",
+      "size": [
+        1.08,
+        0.04,
+        0.04
+      ],
+      "pos": [
+        0,
+        2.2,
         0.28
       ],
-      "color": "#caa23d",
-      "tag": "cabin"
+      "color": "#1f2023",
+      "tag": "guard"
+    },
+    {
+      "shape": "box",
+      "size": [
+        1.08,
+        0.04,
+        0.04
+      ],
+      "pos": [
+        0,
+        2.2,
+        0.56
+      ],
+      "color": "#1f2023",
+      "tag": "guard"
     },
     {
       "shape": "box",
       "size": [
         0.84,
-        0.572,
-        0.025
+        0.308,
+        0.06
       ],
       "pos": [
         0,
-        1.76,
-        -0.252
+        0.3,
+        -0.896
       ],
-      "color": "#7194a6",
-      "tag": "windshield"
+      "color": "#3b3f46",
+      "tag": "carriage"
     },
     {
       "shape": "box",
       "size": [
+        0.72,
         0.06,
-        2.2,
-        0.09
+        0.06
       ],
       "pos": [
-        -0.276,
-        1.1,
-        -1.092
+        0,
+        2.156,
+        -0.84
       ],
-      "color": "#2a2d32",
+      "color": "#3b3f46",
       "tag": "mast"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.12,
-        0.04,
-        1.12
-      ],
-      "pos": [
-        -0.276,
-        0.12,
-        -1.596
-      ],
-      "color": "#2a2d32",
-      "tag": "fork"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.06,
-        2.2,
-        0.09
-      ],
-      "pos": [
-        0.276,
-        1.1,
-        -1.092
-      ],
-      "color": "#2a2d32",
-      "tag": "mast"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.12,
-        0.04,
-        1.12
-      ],
-      "pos": [
-        0.276,
-        0.12,
-        -1.596
-      ],
-      "color": "#2a2d32",
-      "tag": "fork"
     }
   ]
 }

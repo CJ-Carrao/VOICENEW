@@ -39,6 +39,7 @@ func _run() -> void:
 	var species_checked := 0
 	for id: String in lex.defs.things:
 		if lex.thing_def(id).get("category", "") != "creature": continue
+		if lex.thing_def(id).get("coop_boss", false) or lex.lexicon.things.get(id, {}).get("words", []).is_empty(): continue
 		var parsed: Dictionary = parser.parse("quero uma bomba que mate todos os " + lex.thing_name(id), lex)
 		check(parsed.get("ok", false) and parsed.recipe.thing == "species_bomb" and parsed.recipe.mods.get("target_species", "") == id and parsed.get("unknown_words", []).is_empty() and parsed.get("ignored_words", []).is_empty(), "Species bomb phrase failed: " + id)
 		species_checked += 1

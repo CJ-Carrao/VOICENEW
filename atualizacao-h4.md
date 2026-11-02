@@ -1,0 +1,74 @@
+---
+title: Atualização original H-4 no LAVOICE Lab
+date: 2026-10-27
+tags:
+  - lavoice
+  - atualizacao
+status: pesquisando
+integracao: validada-localmente
+---
+
+# H-4 como base atual
+
+Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · [[Projetos/lavoice-lab/leia-me|Guia]]
+
+Em 27/10/2026, o usuário pediu priorizar a atualização original. A base atual é a H-4 oficial, com nossas adições integradas por comparação entre a recuperação anterior, o Lab e a nova versão. Em conflitos de conteúdo original, os modelos e comportamentos novos tiveram prioridade.
+
+Abra `C:\Tony\Projetos\lavoice-lab\jogar.cmd`, que aponta para `build/H4-Lab/LAVOICE-Lab-H4-v26.exe`. Ao mover o jogo, copie a pasta **H4-Lab inteira**, incluindo voz, licenças e bibliotecas. O atalho `Jogar VOICENEW.lnk` também foi atualizado. O jogo não foi aberto com janela nesta etapa.
+
+## Preservado e integrado
+
+- 172 modelos da H-4, incluindo 35 com rig, e as 137 animações originais do personagem. O esqueleto original foi preservado em `game/assets/characters/lavoice/LAVOICE_base.native.scn`; o GLB recuperado permanece como referência editável.
+- Animações de caminhada oficiais têm prioridade; movimento antigo fica como alternativa para criaturas extras sem rig. Captura, evolução e remontagem não duplicam animadores.
+- Bombas oficiais, portais, diagnóstico de voz e destruição em ondas com crateras e limites de trabalho da H-4. Camadas de colisão de armadilhas e portais foram separadas.
+- Pokémon, dinossauros, misturas, Jujutsu, captura, colônias, ordens pelo B, equipes, transporte, transformações e demais adições do Lab preservados. Bombas por espécie agora reconhecem todas as 100 espécies públicas verificadas.
+- **“Quero uma bomba nuclear”** usa a bomba oficial H-4. A versão anterior continua disponível como **“bomba nuclear do lab”**. Também existem Little Boy, Fat Man e Tsar Bomba oficiais.
+
+## Verificações e limites
+
+Importação, exportação e carregamento do pacote embutido no EXE passaram. Testes sem janela verificaram modelos oficiais por hash, animações, interpretação em português/inglês, crateras incrementais, bombas em multidões, captura, evolução, combos, domínios, ordens e táticas. Rede local com duas instâncias verificou lobby, criação de partida e replicação das táticas, inclusive usando o pacote exportado. A bomba atômica oficial também foi testada contra 64 criaturas agrupadas: nenhuma sobrevivente e nenhum erro no teste. Evidências em `analysis/h4-*.log` (arquivos locais ignorados pelo Git).
+
+Protocolo do Lab: **24 / voicenew-h4-lab-26**. Todos na partida precisam desta mesma versão modificada. Compatibilidade com APK oficial, Steam, internet entre PCs e microfone físico não foi validada; não presumir crossplay oficial. Inspeção visual em partida ainda depende de teste do usuário.
+
+A IA local de interpretação continua **protótipo separado**, sem opção no menu nem integração ao EXE. O resultado 70/74 registrado em [[Projetos/lavoice-lab/ia-local|IA local]] pertence à base anterior; exige revalidação na H-4.
+
+## Origem, preservação e publicação
+
+- [Página oficial](https://tsomyst.itch.io/lavoice) e [anúncio H-4](https://tsomyst.itch.io/lavoice/devlog/1733033/lavoice-h-4-atomic-bombs-rebuilt-models-more).
+- ZIP Windows conferido: 546.328.641 bytes; SHA256 `bf826853c6089b3a0bb05363ccde8ec4128966e2716b479eec690436b243f52b`. Proveniência e hashes dos modelos em `game/data/upstream_h4_manifest.json`.
+- Download, recuperação e candidato mantidos fora do cofre: `C:\Users\Calebe PC\Documents\VOICENEW-Upstream-H4`. Não são dependências para executar a build.
+- Instalação original `F:\Games\LAVOICE` preservada. Código anterior na referência Git local `backup/pre-h4-20261027`; EXE antigo `build/LAVOICE-Lab-Criaturas-Inteligentes.exe` mantido.
+- EXE da primeira integração H-4 (preservado como `LAVOICE-Lab-H4.exe`): 121.939.224 bytes; SHA256 `c6fb0cbd73786fe776a01d45331c43872824057771f5008401a52b51eb3f9d6f`. Recibo de empacotamento ao lado do executável.
+- **Sem commit, push ou release nesta etapa**. O GitHub continua com a versão anterior; esta integração está pronta localmente.
+
+- [x] Integrar H-4 com prioridade aos originais e preservar extensões.
+- [x] Gerar executável e atualizar lançadores.
+- [x] Validar recursos, explosões e rede local sem abrir a janela do jogo.
+- [ ] Conferir visualmente com o usuário e testar microfone/rede entre PCs.
+- [ ] Publicar a H-4 no GitHub quando solicitado.
+
+
+## Extensões adaptadas à H-4 — 27/10/2026
+
+Segundo pedido do usuário: aplicar os recursos novos também às nossas criações. Atualizados **26 modelos**: 12 bombas especiais, bomba por espécie, 12 granadas de criaturas e granada de troca de equipe. Usam as silhuetas originais da bomba atômica/granada H-4, com acabamento e identificação de cores próprios. Modelos oficiais permanecem intactos; efeitos, custos, proteções e funções das variantes foram preservados.
+
+O alcance de efeitos especiais agora inclui todas as criações dentro da esfera, inclusive multidões acima do limite de 128 resultados da física e corpos recém-criados antes da sincronização. Dano especial de nêutrons, eletricidade, gelo e gravidade entra na fila limitada por quadro usada pelas explosões, preservando a bomba até acabar o trabalho. Raios visuais da tempestade têm orçamento de 12; todos os alvos recebem o efeito. A nuclear do Lab usa crateras em ondas da H-4, sem duplicar seu efeito de cogumelo. A animação alternativa das criaturas extras agora pausa quando capturadas ou paralisadas, acompanhando o comportamento das animações oficiais.
+
+Teste específico passou com **150 criaturas por bomba**, nas quatro variantes de dano especial: nêutrons, tempestade, gelo e gravidade. Todos os 600 alvos foram processados; criaturas fora do alcance e aliados dos efeitos seletivos sobreviveram. Os 26 modelos foram montados e receberam limites físicos válidos. Testes de captura/animação, nuclear com 160 alvos, bomba por espécie, táticas e integridade da H-4 também passaram. Esses testes não substituem inspeção visual do usuário.
+
+Executável da etapa de bombas (agora anterior): `build/H4-Lab/LAVOICE-Lab-H4-Atualizado.exe`, 122.009.512 bytes, SHA256 `25d332e898009faf75cc96fc1ed7d1635bcd3fee7f905d7bc848e1562971dcb8`. `jogar.cmd` e o atalho apontam para ele. O usuário estava jogando o EXE anterior: o processo foi preservado; as alterações entram na próxima abertura pelo atalho. Gameplay `voicenew-h4-lab-25`, protocolo RPC 24; ambos os jogadores precisam da nova build. Sem IA local integrada e sem publicação no GitHub nesta etapa.
+
+
+## Criaturas, arsenal e interações — 27/10/2026
+
+Após o usuário perguntar pelo restante, a revisão foi estendida ao catálogo:
+
+- **Animação:** 101 criaturas verificadas (100 públicas + chefe privado), com 35 rigs originais preservados e 66 rigs extras adaptados ao `CreatureAnimator` da H-4. A forma original dos extras foi mantida; pernas recebem articulações e fases de passada, asas compartilham pivôs, e cabeça/olhos/boca se movem juntos. Verity e criaturas sem membros ganham oscilação discreta. A casa ambulante também usa quatro pernas articuladas, com passeio e desvio de parede validados.
+- **Misturas:** o rig é reconstruído sobre a geometria final, evitando olhos, pés ou cabeça de outro animal ficarem soltos. Evolução, troca de cabeça e transformação refazem o animador sem duplicá-lo. Verificados Pokémon, 10 brainrots, 30 misturas deles, 32 seções de dinossauros e híbridos entre elefante/cachorro/trex.
+- **Arsenal:** mais 11 modelos adaptados ao arsenal oficial: faca espacial, martelos de gravidade/trovão, machado de gelo, espada de fogo, três lançadores de criaturas, projetor de escudos, raio de envelhecimento e de troca de cabeça. Posições de empunhadura e saída herdadas das bases oficiais; cores distinguem as funções. Custos e definições de ataques preservados.
+- **Defesas:** as quatro bombas atômicas oficiais agora são reconhecidas como ameaça nuclear pelos escudos do Lab, sem alterar as definições originais. Resistência efetiva de um escudo nuclear testada por dano real.
+- **Poderes:** o Vermelho deixou de descartar alvos após 16 criaturas; teste com 32 alvos terminou sem sobreviventes. Alcance de cratera alinhado ao dano de quatro metros. Cortes espaciais consideram o volume mundial de estruturas giradas. Vazio Roxo, buracos negro/branco, colisões, domínios e técnicas passaram pelos testes existentes; não foram redesenhados como modelos genéricos.
+
+Validação final sem janela: catálogo/rigs, armas, escudos, cortes e Vermelho também passaram usando o **EXE exportado**. Captura/rejeição, sete evoluções, transformações, táticas, progresso, poderes espaciais, fidelidade dos ataques JJK e clash de domínios passaram. Teste de rede com duas instâncias do novo EXE concluiu lobby e partida com replicação de táticas. Integridade dos 172 modelos oficiais e 137 animações preservada. Registros locais em `analysis/h4-rest-*.log`; eventual falha inicial do Verity foi corrigida antes do empacotamento. Testes automatizados não são aprovação visual do usuário nem medição de FPS com multidões.
+
+**Build atual:** `build/H4-Lab/LAVOICE-Lab-H4-v26.exe`, 122.048.244 bytes; SHA256 `a699816923a4dcc152527cc943b9517c429278195eddc93db593269276a7713f`. Lançadores e recompilação apontam para ela; builds anteriores preservadas. Gameplay `voicenew-h4-lab-26`, protocolo RPC 24. Todos no online precisam desta versão. Nenhuma janela do jogo foi aberta, e nenhuma release foi publicada. IA local continua fora do jogo/menu.

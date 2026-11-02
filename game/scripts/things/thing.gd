@@ -80,6 +80,8 @@ var weight: float = 0.0
 
 var grafts: Array[Thing] = []
 var mount_host: Thing = null
+
+var reset_actions: = PackedStringArray()
 var mount_socket: String = ""
 var surface_friction: float = 1.0
 var explosion_spent: bool = false
@@ -192,6 +194,7 @@ var is_building: bool = false
 var collision: CollisionShape3D
 var collisions: Array[CollisionShape3D] = []
 var move: ThingMove
+var creature_animator: CreatureAnimator
 
 var control: Node
 
@@ -293,9 +296,35 @@ func configure(node: Dictionary, as_role: String, def: Dictionary, lex: LexiconD
 		var ammo_visual: = AmmoVisual.new()
 		ammo_visual.setup(self)
 		add_child(ammo_visual)
-	_arena_limit = lex.balf("arena.size") * 0.5 + lex.balf("arena.out_of_bounds_margin")
+	_arena_limit = Arena.active_size * 0.5 + lex.balf("arena.out_of_bounds_margin")
 	_kill_y = lex.balf("arena.kill_y")
 	_apply_role_layers()
+
+
+
+
+func reset_free_shots() -> bool:
+	if reset_actions.is_empty() or not has_simulation_authority():
+		return false
+	for id in reset_actions:
+		var script: GDScript = Assembler.ACTIONS.get(id)
+		if script != null:
+			var action: Object = script.new()
+			if action.has_method("reset_for"):
+				action.call("reset_for", self)
+			action.free()
+	return true
+
+
+
+func drop_magazine() -> void :
+	magazine = 0
+	capacity = 0
+	ammo = 0
+	var ammo_visual: = get_node_or_null("AmmoVisual")
+	if ammo_visual != null:
+		remove_child(ammo_visual)
+		ammo_visual.free()
 
 
 func attach_model(built: Dictionary) -> void :
@@ -336,6 +365,10 @@ func attach_model(built: Dictionary) -> void :
 		add_child(shape_node)
 		collisions.append(shape_node)
 	collision = collisions[0]
+	if (category == "creature" or bool(built.get("rig", {}).get("lab_adapted", false))) and not (built.get("rig", {}) as Dictionary).is_empty():
+		creature_animator = CreatureAnimator.new()
+		creature_animator.setup(self, built)
+		add_child(creature_animator)
 
 
 func set_collision_disabled(disabled: bool, deferred: bool = false) -> void :
@@ -395,6 +428,8 @@ func activate() -> void :
 	if is_active:
 		return
 	is_active = true
+	if creature_animator != null:
+		creature_animator.activate()
 
 	if network_replica:
 		_freeze_gameplay_components()
@@ -572,6 +607,12 @@ func add_attachment(id: String) -> void :
 
 
 func rebuild_equipment_model() -> void :
+	# Equipment, evolution and capture can rebuild an H-4 rig on the same entity.
+	# Retire the previous animator before its bones disappear.
+	if is_instance_valid(creature_animator):
+		creature_animator.set_process(false)
+		creature_animator.queue_free()
+		creature_animator = null
 	var mods: Dictionary = node_data.get("mods", {})
 	var visual_layers: = model_pieces[0].layers if not model_pieces.is_empty() else 1
 	var keep: = [ammo, capacity, ammo_override, reload_left, shots_fired, charges, hp]
@@ -599,6 +640,8 @@ func rebuild_equipment_model() -> void :
 			weight += graft.weight
 	if transformation != null: transformation.apply_stats()
 	set_held(is_held)
+	if creature_animator != null and is_active:
+		creature_animator.activate()
 	ammo_changed.emit()
 
 
@@ -623,6 +666,8 @@ func command(ctx: ActionContext) -> void :
 func report_hit(collision_info: KinematicCollision3D) -> void :
 	if not has_simulation_authority():
 		return
+	if creature_animator != null:
+		creature_animator.on_hit()
 	var who: = collision_info.get_collider() as Node3D
 	var ctx: = ActionContext.make(collision_info.get_position(), velocity, who)
 	ctx.normal = collision_info.get_normal()
@@ -643,6 +688,8 @@ func report_hit(collision_info: KinematicCollision3D) -> void :
 func take_damage(amount: float, _type: String, _source: Node) -> void :
 	if not has_simulation_authority():
 		return
+	if creature_animator != null:
+		creature_animator.on_hit()
 	impact_feedback(center())
 	if is_dead or (is_held and mount_host == null) or max_hp <= 0.0:
 		return
@@ -666,6 +713,8 @@ func die() -> void :
 	if network_replica or not Session.has_authority() or is_dead:
 		return
 	is_dead = true
+	if creature_animator != null:
+		creature_animator.on_death()
 	_cancel_build()
 	died.emit(context_here())
 	_leave_rubble()
@@ -902,7 +951,7 @@ func _physics_process(delta: float) -> void :
 
 
 func _arena_half_size() -> float:
-	return Lexicon.balf("arena.size") * 0.5
+	return Arena.active_size * 0.5
 
 
 func _apply_role_layers() -> void :
@@ -934,6 +983,8 @@ func _vanish() -> void :
 		_finish_vanish()
 		return
 	var tween: = create_tween()
+	if creature_animator != null and creature_animator.dying:
+		tween.tween_interval(Lexicon.balf("creature_anim.death_hold_s"))
 	tween.tween_property(model, "scale", model.scale * 0.01, DEATH_SHRINK_TIME).set_ease(Tween.EASE_IN)
 	tween.tween_callback(_finish_vanish)
 

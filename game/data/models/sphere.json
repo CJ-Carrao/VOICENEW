@@ -10,19 +10,32 @@
   "pieces": [
     {
       "shape": "sphere",
-      "radius": 0.5,
+      "radius": 0.15,
       "pos": [
         0,
         0.15,
         0
       ],
-      "color": "#6b92ab",
+      "color": "#8a929c",
       "tag": "body",
-      "_stretch": [
-        0.3,
-        0.3,
-        0.3
-      ]
+      "finish": "metal"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.1515,
+      "inner_radius": 0.1425,
+      "pos": [
+        0,
+        0.15,
+        0
+      ],
+      "color": "#5a6068",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "seam"
     }
   ]
 }

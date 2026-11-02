@@ -16,16 +16,22 @@ const FLOOR_GROUP: = "terrain"
 const VOLUME_ID: = 1
 
 var size_extent: float = 0.0
+
+var dig_depth_m: float = 2.5
 var _floor_cell: int = 0
 var _tcfg: Dictionary
 
 
-func build(arena_size: float, hills: Array, async: bool = false) -> void :
+
+
+func build(arena_size: float, hills: Array, async: bool = false, ground: Dictionary = {}, depth_m: float = 0.0) -> void :
 	_tcfg = Lexicon.bal("terrain", {})
 	name = "Terrain"
+	crater_cap_m = float(Lexicon.bal("blocks.explosion_max_crater_m", INF))
 	size_extent = arena_size
 	var block: = float(Lexicon.bal("blocks.size_m", 0.25))
-	var depth_cells: = ceili(float(_tcfg.get("max_depth_m", 2.5)) / block)
+	dig_depth_m = depth_m if depth_m > 0.0 else float(_tcfg.get("max_depth_m", 2.5))
+	var depth_cells: = ceili(dig_depth_m / block)
 	var tallest: = 0.0
 	for hill: Dictionary in hills:
 		tallest = maxf(tallest, float(hill["height"]))
@@ -40,10 +46,53 @@ func build(arena_size: float, hills: Array, async: bool = false) -> void :
 	var rock: = add_type("bedrock", Color(Lexicon.bal("materials.bedrock.color", "#2e2c31")), FLAG_ANCHOR | FLAG_FOREVER)
 	var soil: = add_type("soil", Color(Lexicon.bal("materials.soil.color", "#6b5038")))
 	var top: = add_type("soil", Color(String(_tcfg.get("ground_color", "#4d525c"))))
+	var road: = add_type("soil", Color(String(ground.get("road_color", "#353c45")))) if not ground.is_empty() else top
+	var sidewalk: = add_type("soil", Color(String(ground.get("sidewalk_color", "#85847d")))) if not ground.is_empty() else top
+	var lot: = add_type("soil", Color(String(ground.get("lot_color", "#626970")))) if not ground.is_empty() else top
+	var plaza: = add_type("soil", Color(String(ground.get("plaza_color", "#a49b8c")))) if not ground.is_empty() else top
+	var stripe: = add_type("soil", Color(String(ground.get("stripe_color", "#d5ac62")))) if not ground.is_empty() else top
+	var coast: = add_type("soil", Color(String(ground.get("coast_color", "#748487")))) if ground.has("coast_width_m") else top
 
 	var surface: = PackedInt32Array()
 	surface.resize(n * n)
 	surface.fill(_floor_cell)
+	var surface_types: = PackedByteArray()
+	surface_types.resize(n * n)
+	surface_types.fill(top)
+	if not ground.is_empty():
+		var road_half: = float(ground.get("road_half_m", 6.0))
+		var sidewalk_half: = float(ground.get("sidewalk_half_m", 10.0))
+		var plaza_half: = float(ground.get("plaza_half_m", 11.0))
+		var coast_width: = float(ground.get("coast_width_m", 0.0))
+		var roads_x: Array = ground.get("roads_x", [[0.0, road_half, sidewalk_half]])
+		var roads_z: Array = ground.get("roads_z", [[0.0, road_half, sidewalk_half]])
+		var x_band: = PackedByteArray()
+		var z_band: = PackedByteArray()
+		x_band.resize(n)
+		z_band.resize(n)
+		for axis_cell in n:
+			var axis_position: = origin.x + (axis_cell + 0.5) * block
+			x_band[axis_cell] = _street_band(axis_position, roads_x)
+			z_band[axis_cell] = _street_band(origin.z + (axis_cell + 0.5) * block, roads_z)
+		for x in n:
+			var px: = origin.x + (x + 0.5) * block
+			for z in n:
+				var pz: = origin.z + (z + 0.5) * block
+				var ax: = absf(px)
+				var az: = absf(pz)
+				var type: = lot
+				if coast_width > 0.0 and maxf(ax, az) >= arena_size * 0.5 - coast_width:
+					type = coast
+				elif ax < plaza_half and az < plaza_half:
+					type = plaza
+				elif x_band[x] == 2 or z_band[z] == 2:
+					type = road
+					if (ax < 0.15 and az > plaza_half and int(az / 4.0) % 2 == 0) or \
+					(az < 0.15 and ax > plaza_half and int(ax / 4.0) % 2 == 0):
+						type = stripe
+				elif x_band[x] == 1 or z_band[z] == 1:
+					type = sidewalk
+				surface_types[x * n + z] = type
 	for hill: Dictionary in hills:
 		var at: Array = hill["pos"]
 		var r: = float(hill["radius"])
@@ -63,17 +112,31 @@ func build(arena_size: float, hills: Array, async: bool = false) -> void :
 	var out: = PackedByteArray()
 	for x in n:
 		var row: = surface.slice(x * n, x * n + n)
-		if row.count(_floor_cell) == n:
+		if ground.is_empty() and row.count(_floor_cell) == n:
 			out.append_array(flat_row)
 			continue
 		for z in n:
 			var h: = row[z]
-			if not columns.has(h):
-				columns[h] = _column(h, rock, soil, top)
-			out.append_array(columns[h])
+			var color_type: = int(surface_types[x * n + z])
+			var key: = h * 256 + color_type
+			if not columns.has(key):
+				columns[key] = _column(h, rock, soil, color_type)
+			out.append_array(columns[key])
 	blocks = out
 	commit_base(async)
 	cells_changed.connect(_on_cells_changed)
+
+
+
+func _street_band(point: float, roads: Array) -> int:
+	var sidewalk: = false
+	for road: Array in roads:
+		var distance: = absf(point - float(road[0]))
+		if distance < float(road[1]):
+			return 2
+		if distance < float(road[2]):
+			sidewalk = true
+	return 1 if sidewalk else 0
 
 
 

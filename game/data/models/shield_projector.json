@@ -1,133 +1,9 @@
 {
-  "_comment": "Arte original do Pacote Caos: silhueta em blocos, sem superficies arredondadas.",
-  "units": "meters",
+  "_comment": "Variante Lab do arsenal H-4 pistol; comportamento preservado.",
   "anchor": [
     0,
-    -0.025,
-    0.06
-  ],
-  "pieces": [
-    {
-      "shape": "box",
-      "size": [
-        0.075,
-        0.14,
-        0.075
-      ],
-      "pos": [
-        0,
-        -0.05,
-        0.075
-      ],
-      "color": "#3a4047",
-      "tag": "handle"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.09,
-        0.045,
-        0.07
-      ],
-      "pos": [
-        0,
-        -0.13,
-        0.075
-      ],
-      "color": "#91b5c2",
-      "tag": "pommel"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.16,
-        0.16,
-        0.37
-      ],
-      "pos": [
-        0,
-        0.065,
-        -0.08
-      ],
-      "color": "#36434d",
-      "tag": "body"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.035,
-        0.13,
-        0.31
-      ],
-      "pos": [
-        -0.1,
-        0.065,
-        -0.1
-      ],
-      "color": "#91b5c2",
-      "tag": "panel"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.035,
-        0.13,
-        0.31
-      ],
-      "pos": [
-        0.1,
-        0.065,
-        -0.1
-      ],
-      "color": "#91b5c2",
-      "tag": "panel"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.11,
-        0.11,
-        0.2
-      ],
-      "pos": [
-        0,
-        0.065,
-        -0.35
-      ],
-      "color": "#1c2730",
-      "tag": "barrel"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.13,
-        0.13,
-        0.04
-      ],
-      "pos": [
-        0,
-        0.065,
-        -0.46
-      ],
-      "color": "#91b5c2",
-      "tag": "muzzle",
-      "glow": 0.3
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.04,
-        0.04,
-        0.1
-      ],
-      "pos": [
-        0,
-        0.17,
-        -0.09
-      ],
-      "color": "#91b5c2",
-      "tag": "sight"
-    }
+    -0.062,
+    0.045
   ],
   "joints": {
     "trigger": [
@@ -137,8 +13,367 @@
     ],
     "muzzle": [
       0,
-      0.065,
-      -0.3
+      0,
+      -0.116
     ]
-  }
+  },
+  "pieces": [
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.1,
+        0.052
+      ],
+      "pos": [
+        0,
+        -0.066,
+        0.045
+      ],
+      "color": "#1d1e21",
+      "rot": [
+        -18,
+        0,
+        0
+      ],
+      "tag": "grip",
+      "finish": "plastic"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.031,
+        0.06,
+        0.04
+      ],
+      "pos": [
+        0,
+        -0.07,
+        0.049
+      ],
+      "color": "#2a2c30",
+      "rot": [
+        -18,
+        0,
+        0
+      ],
+      "tag": "grip",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.026,
+        0.015,
+        0.06
+      ],
+      "pos": [
+        0,
+        -0.017,
+        0.05
+      ],
+      "color": "#1d1e21",
+      "tag": "grip",
+      "finish": "plastic"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.026,
+        0.012,
+        0.022
+      ],
+      "pos": [
+        0,
+        -0.02,
+        0.083
+      ],
+      "color": "#1d1e21",
+      "tag": "grip",
+      "finish": "plastic"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.032,
+        0.012,
+        0.05
+      ],
+      "pos": [
+        0,
+        -0.118,
+        0.064
+      ],
+      "color": "#16171a",
+      "rot": [
+        -18,
+        0,
+        0
+      ],
+      "tag": "magazine",
+      "finish": "plastic"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.006,
+        0.02,
+        0.006
+      ],
+      "pos": [
+        0,
+        -0.03,
+        -0.002
+      ],
+      "color": "#2a2d32",
+      "rot": [
+        12,
+        0,
+        0
+      ],
+      "tag": "trigger",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.011,
+        0.005,
+        0.048
+      ],
+      "pos": [
+        0,
+        -0.046,
+        -0.013
+      ],
+      "color": "#1d1e21",
+      "tag": "trigger"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.011,
+        0.03,
+        0.006
+      ],
+      "pos": [
+        0,
+        -0.031,
+        -0.037
+      ],
+      "color": "#1d1e21",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "trigger"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0255,
+        0.028,
+        0.186
+      ],
+      "pos": [
+        0,
+        0.006,
+        -0.023
+      ],
+      "color": "#8cc8cf",
+      "tag": "body",
+      "finish": "metal",
+      "glow": 0.015
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0262,
+        0.02,
+        0.0025
+      ],
+      "pos": [
+        0,
+        0.006,
+        0.048
+      ],
+      "color": "#8cc8cf",
+      "tag": "body",
+      "glow": 0.015
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0262,
+        0.02,
+        0.0025
+      ],
+      "pos": [
+        0,
+        0.006,
+        0.0525
+      ],
+      "color": "#8cc8cf",
+      "tag": "body",
+      "glow": 0.015
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0262,
+        0.02,
+        0.0025
+      ],
+      "pos": [
+        0,
+        0.006,
+        0.057
+      ],
+      "color": "#8cc8cf",
+      "tag": "body",
+      "glow": 0.015
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0262,
+        0.02,
+        0.0025
+      ],
+      "pos": [
+        0,
+        0.006,
+        0.0615
+      ],
+      "color": "#8cc8cf",
+      "tag": "body",
+      "glow": 0.015
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0262,
+        0.02,
+        0.0025
+      ],
+      "pos": [
+        0,
+        0.006,
+        0.066
+      ],
+      "color": "#8cc8cf",
+      "tag": "body",
+      "glow": 0.015
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.018,
+        0.003,
+        0.034
+      ],
+      "pos": [
+        0.0,
+        0.0202,
+        -0.012
+      ],
+      "color": "#8cc8cf",
+      "tag": "body",
+      "glow": 0.015
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.026,
+        0.014,
+        0.075
+      ],
+      "pos": [
+        0,
+        -0.017,
+        -0.068
+      ],
+      "color": "#8cc8cf",
+      "tag": "body",
+      "finish": "plastic",
+      "glow": 0.015
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.004,
+        0.03
+      ],
+      "pos": [
+        0,
+        -0.026,
+        -0.082
+      ],
+      "color": "#8cc8cf",
+      "tag": "body",
+      "glow": 0.015
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.006,
+        0.008
+      ],
+      "pos": [
+        0,
+        0.023,
+        0.062
+      ],
+      "color": "#16171a",
+      "tag": "sight"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.004,
+        0.006,
+        0.005
+      ],
+      "pos": [
+        0,
+        0.023,
+        -0.108
+      ],
+      "color": "#16171a",
+      "tag": "sight"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0016,
+      "pos": [
+        0,
+        0.0245,
+        -0.1053
+      ],
+      "color": "#f2f2f2",
+      "tag": "sight"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0072,
+      "height": 0.01,
+      "pos": [
+        0,
+        0.0,
+        -0.121
+      ],
+      "color": "#1d2128",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "barrel",
+      "finish": "metal"
+    }
+  ],
+  "lab_h4_base": "pistol"
 }

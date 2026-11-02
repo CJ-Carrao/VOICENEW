@@ -12,351 +12,503 @@
       "shape": "box",
       "size": [
         0.48,
+        0.03,
+        0.7
+      ],
+      "pos": [
+        0,
+        0.441,
+        0
+      ],
+      "color": "#c5c9ce",
+      "tag": "basket"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.007,
+      "height": 0.496,
+      "pos": [
+        -0.243,
+        0.6983,
+        -0.34
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        5.79,
+        -143.13,
+        0
+      ],
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.007,
+      "height": 0.4953,
+      "pos": [
+        -0.243,
+        0.6983,
+        -0.227
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        4.91,
+        -135.0,
+        0
+      ],
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.007,
+      "height": 0.4948,
+      "pos": [
+        -0.243,
+        0.6983,
+        -0.114
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        4.18,
+        -123.69,
+        0
+      ],
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.007,
+      "height": 0.4945,
+      "pos": [
+        -0.243,
+        0.6983,
+        -0.001
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        3.67,
+        -108.43,
+        0
+      ],
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.007,
+      "height": 0.4944,
+      "pos": [
+        -0.243,
+        0.6983,
+        0.112
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        3.48,
+        -90.0,
+        0
+      ],
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.007,
+      "height": 0.4945,
+      "pos": [
+        -0.243,
+        0.6983,
+        0.225
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        3.67,
+        -71.57,
+        0
+      ],
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.007,
+      "height": 0.4948,
+      "pos": [
+        -0.243,
+        0.6983,
+        0.338
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        4.18,
+        -56.31,
+        0
+      ],
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.7,
+      "pos": [
+        -0.2352,
+        0.5775,
+        0.01
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90.0,
+        0.0,
+        0
+      ],
+      "tag": "rail"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.7,
+      "pos": [
+        -0.2454,
+        0.756,
+        0.01
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90.0,
+        0.0,
+        0
+      ],
+      "tag": "rail"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.7,
+      "pos": [
+        -0.2562,
+        0.945,
+        0.01
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90.0,
+        0.0,
+        0
+      ],
+      "tag": "rail"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.007,
+      "height": 0.496,
+      "pos": [
+        0.243,
+        0.6983,
+        -0.34
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        5.79,
+        143.13,
+        0
+      ],
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.007,
+      "height": 0.4953,
+      "pos": [
+        0.243,
+        0.6983,
+        -0.227
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        4.91,
+        135.0,
+        0
+      ],
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.007,
+      "height": 0.4948,
+      "pos": [
+        0.243,
+        0.6983,
+        -0.114
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        4.18,
+        123.69,
+        0
+      ],
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.007,
+      "height": 0.4945,
+      "pos": [
+        0.243,
+        0.6983,
+        -0.001
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        3.67,
+        108.43,
+        0
+      ],
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.007,
+      "height": 0.4944,
+      "pos": [
+        0.243,
+        0.6983,
+        0.112
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        3.48,
+        90.0,
+        0
+      ],
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.007,
+      "height": 0.4945,
+      "pos": [
+        0.243,
+        0.6983,
+        0.225
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        3.67,
+        71.57,
+        0
+      ],
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.007,
+      "height": 0.4948,
+      "pos": [
+        0.243,
+        0.6983,
+        0.338
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        4.18,
+        56.31,
+        0
+      ],
+      "tag": "wire"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.7,
+      "pos": [
+        0.2352,
+        0.5775,
+        0.01
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90.0,
+        0.0,
+        0
+      ],
+      "tag": "rail"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.7,
+      "pos": [
+        0.2454,
+        0.756,
+        0.01
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90.0,
+        0.0,
+        0
+      ],
+      "tag": "rail"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.7,
+      "pos": [
+        0.2562,
+        0.945,
+        0.01
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90.0,
+        0.0,
+        0
+      ],
+      "tag": "rail"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.516,
+      "pos": [
+        0.0,
+        0.5775,
+        -0.35
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90.0,
+        90.0,
+        0
+      ],
+      "tag": "rail"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.516,
+      "pos": [
+        0.0,
+        0.5775,
+        0.35
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90.0,
+        90.0,
+        0
+      ],
+      "tag": "rail"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.516,
+      "pos": [
+        0.0,
+        0.756,
+        -0.35
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90.0,
+        90.0,
+        0
+      ],
+      "tag": "rail"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.516,
+      "pos": [
+        0.0,
+        0.756,
+        0.35
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90.0,
+        90.0,
+        0
+      ],
+      "tag": "rail"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.516,
+      "pos": [
+        0.0,
+        0.945,
+        -0.35
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90.0,
+        90.0,
+        0
+      ],
+      "tag": "rail"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.009,
+      "height": 0.516,
+      "pos": [
+        0.0,
+        0.945,
+        0.35
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90.0,
+        90.0,
+        0
+      ],
+      "tag": "rail"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.014,
+      "height": 0.66,
+      "pos": [
+        -0.216,
+        0.08,
+        0.01
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        90.0,
+        0.0,
+        0
+      ],
+      "tag": "chassis"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.014,
+      "height": 0.3412,
+      "pos": [
+        -0.222,
+        0.2705,
+        0.3
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        2.02,
+        -90.0,
+        0
+      ],
+      "tag": "chassis"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.05,
+      "height": 0.03,
+      "pos": [
+        -0.216,
         0.05,
-        0.7
-      ],
-      "pos": [
-        0,
-        0.4515,
-        0
-      ],
-      "color": "#2a2d32",
-      "tag": "frame"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.009,
-      "height": 0.42,
-      "pos": [
-        -0.258,
-        0.714,
         -0.32
       ],
-      "color": "#c5c9ce",
-      "tag": "wire"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.009,
-      "height": 0.42,
-      "pos": [
-        -0.258,
-        0.714,
-        -0.192
-      ],
-      "color": "#c5c9ce",
-      "tag": "wire"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.009,
-      "height": 0.42,
-      "pos": [
-        -0.258,
-        0.714,
-        -0.064
-      ],
-      "color": "#c5c9ce",
-      "tag": "wire"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.009,
-      "height": 0.42,
-      "pos": [
-        -0.258,
-        0.714,
-        0.064
-      ],
-      "color": "#c5c9ce",
-      "tag": "wire"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.009,
-      "height": 0.42,
-      "pos": [
-        -0.258,
-        0.714,
-        0.192
-      ],
-      "color": "#c5c9ce",
-      "tag": "wire"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.009,
-      "height": 0.42,
-      "pos": [
-        -0.258,
-        0.714,
-        0.32
-      ],
-      "color": "#c5c9ce",
-      "tag": "wire"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.014,
-        0.014,
-        0.7
-      ],
-      "pos": [
-        -0.258,
-        0.525,
-        0
-      ],
-      "color": "#c5c9ce",
-      "tag": "rail"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.516,
-        0.014,
-        0.014
-      ],
-      "pos": [
-        0,
-        0.525,
-        -0.35
-      ],
-      "color": "#c5c9ce",
-      "tag": "rail"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.014,
-        0.014,
-        0.7
-      ],
-      "pos": [
-        -0.258,
-        0.6825,
-        0
-      ],
-      "color": "#c5c9ce",
-      "tag": "rail"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.516,
-        0.014,
-        0.014
-      ],
-      "pos": [
-        0,
-        0.6825,
-        -0.35
-      ],
-      "color": "#c5c9ce",
-      "tag": "rail"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.014,
-        0.014,
-        0.7
-      ],
-      "pos": [
-        -0.258,
-        0.8925,
-        0
-      ],
-      "color": "#c5c9ce",
-      "tag": "rail"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.516,
-        0.014,
-        0.014
-      ],
-      "pos": [
-        0,
-        0.8925,
-        -0.35
-      ],
-      "color": "#c5c9ce",
-      "tag": "rail"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.009,
-      "height": 0.42,
-      "pos": [
-        0.258,
-        0.714,
-        -0.32
-      ],
-      "color": "#c5c9ce",
-      "tag": "wire"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.009,
-      "height": 0.42,
-      "pos": [
-        0.258,
-        0.714,
-        -0.192
-      ],
-      "color": "#c5c9ce",
-      "tag": "wire"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.009,
-      "height": 0.42,
-      "pos": [
-        0.258,
-        0.714,
-        -0.064
-      ],
-      "color": "#c5c9ce",
-      "tag": "wire"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.009,
-      "height": 0.42,
-      "pos": [
-        0.258,
-        0.714,
-        0.064
-      ],
-      "color": "#c5c9ce",
-      "tag": "wire"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.009,
-      "height": 0.42,
-      "pos": [
-        0.258,
-        0.714,
-        0.192
-      ],
-      "color": "#c5c9ce",
-      "tag": "wire"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.009,
-      "height": 0.42,
-      "pos": [
-        0.258,
-        0.714,
-        0.32
-      ],
-      "color": "#c5c9ce",
-      "tag": "wire"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.014,
-        0.014,
-        0.7
-      ],
-      "pos": [
-        0.258,
-        0.525,
-        0
-      ],
-      "color": "#c5c9ce",
-      "tag": "rail"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.516,
-        0.014,
-        0.014
-      ],
-      "pos": [
-        0,
-        0.525,
-        0.35
-      ],
-      "color": "#c5c9ce",
-      "tag": "rail"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.014,
-        0.014,
-        0.7
-      ],
-      "pos": [
-        0.258,
-        0.6825,
-        0
-      ],
-      "color": "#c5c9ce",
-      "tag": "rail"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.516,
-        0.014,
-        0.014
-      ],
-      "pos": [
-        0,
-        0.6825,
-        0.35
-      ],
-      "color": "#c5c9ce",
-      "tag": "rail"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.014,
-        0.014,
-        0.7
-      ],
-      "pos": [
-        0.258,
-        0.8925,
-        0
-      ],
-      "color": "#c5c9ce",
-      "tag": "rail"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.516,
-        0.014,
-        0.014
-      ],
-      "pos": [
-        0,
-        0.8925,
-        0.35
-      ],
-      "color": "#c5c9ce",
-      "tag": "rail"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.08,
-      "height": 0.072,
-      "pos": [
-        -0.288,
-        0.08,
-        -0.32
-      ],
-      "color": "#141416",
+      "color": "#1a1a1d",
       "rot": [
         0,
         0,
@@ -367,31 +519,50 @@
     },
     {
       "shape": "cylinder",
-      "radius": 0.036,
-      "height": 0.078,
+      "radius": 0.031,
+      "height": 0.0312,
       "pos": [
-        -0.288,
-        0.08,
+        -0.216,
+        0.05,
         -0.32
       ],
-      "color": "#c5c9ce",
+      "color": "#b9bec4",
       "rot": [
         0,
         0,
         90
       ],
-      "tag": "hub"
+      "tag": "rim",
+      "finish": "metal"
     },
     {
       "shape": "cylinder",
-      "radius": 0.08,
-      "height": 0.072,
+      "radius": 0.011,
+      "height": 0.033,
       "pos": [
-        -0.288,
-        0.08,
-        0.32
+        -0.216,
+        0.05,
+        -0.32
       ],
-      "color": "#141416",
+      "color": "#828589",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.05,
+      "height": 0.03,
+      "pos": [
+        -0.216,
+        0.05,
+        0.3
+      ],
+      "color": "#1a1a1d",
       "rot": [
         0,
         0,
@@ -402,182 +573,214 @@
     },
     {
       "shape": "cylinder",
-      "radius": 0.036,
-      "height": 0.078,
+      "radius": 0.031,
+      "height": 0.0312,
       "pos": [
-        -0.288,
+        -0.216,
+        0.05,
+        0.3
+      ],
+      "color": "#b9bec4",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.011,
+      "height": 0.033,
+      "pos": [
+        -0.216,
+        0.05,
+        0.3
+      ],
+      "color": "#828589",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.014,
+      "height": 0.66,
+      "pos": [
+        0.216,
         0.08,
-        0.32
+        0.01
       ],
       "color": "#c5c9ce",
       "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "hub"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.08,
-      "height": 0.072,
-      "pos": [
-        0.288,
-        0.08,
-        -0.32
-      ],
-      "color": "#141416",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "wheel",
-      "finish": "rubber"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.036,
-      "height": 0.078,
-      "pos": [
-        0.288,
-        0.08,
-        -0.32
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "hub"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.08,
-      "height": 0.072,
-      "pos": [
-        0.288,
-        0.08,
-        0.32
-      ],
-      "color": "#141416",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "wheel",
-      "finish": "rubber"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.036,
-      "height": 0.078,
-      "pos": [
-        0.288,
-        0.08,
-        0.32
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "hub"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.025,
-        0.025,
-        0.7
-      ],
-      "pos": [
-        -0.24,
-        0.13,
+        90.0,
+        0.0,
         0
       ],
-      "color": "#c5c9ce",
       "tag": "chassis"
     },
     {
       "shape": "cylinder",
-      "radius": 0.018,
-      "height": 0.378,
+      "radius": 0.014,
+      "height": 0.3412,
       "pos": [
-        -0.24,
-        0.273,
-        -0.32
+        0.222,
+        0.2705,
+        0.3
       ],
       "color": "#c5c9ce",
-      "tag": "support"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.018,
-      "height": 0.378,
-      "pos": [
-        -0.24,
-        0.273,
-        0.32
-      ],
-      "color": "#c5c9ce",
-      "tag": "support"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.025,
-        0.025,
-        0.7
-      ],
-      "pos": [
-        0.24,
-        0.13,
+      "rot": [
+        2.02,
+        90.0,
         0
       ],
-      "color": "#c5c9ce",
       "tag": "chassis"
     },
     {
       "shape": "cylinder",
-      "radius": 0.018,
-      "height": 0.378,
+      "radius": 0.05,
+      "height": 0.03,
       "pos": [
-        0.24,
-        0.273,
+        0.216,
+        0.05,
         -0.32
       ],
-      "color": "#c5c9ce",
-      "tag": "support"
+      "color": "#1a1a1d",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
     },
     {
       "shape": "cylinder",
-      "radius": 0.018,
-      "height": 0.378,
+      "radius": 0.031,
+      "height": 0.0312,
       "pos": [
-        0.24,
-        0.273,
-        0.32
+        0.216,
+        0.05,
+        -0.32
       ],
-      "color": "#c5c9ce",
-      "tag": "support"
+      "color": "#b9bec4",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal"
     },
     {
-      "shape": "box",
-      "size": [
-        0.51,
-        0.04,
-        0.04
-      ],
+      "shape": "cylinder",
+      "radius": 0.011,
+      "height": 0.033,
       "pos": [
+        0.216,
+        0.05,
+        -0.32
+      ],
+      "color": "#828589",
+      "rot": [
         0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.05,
+      "height": 0.03,
+      "pos": [
+        0.216,
+        0.05,
+        0.3
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.031,
+      "height": 0.0312,
+      "pos": [
+        0.216,
+        0.05,
+        0.3
+      ],
+      "color": "#b9bec4",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.011,
+      "height": 0.033,
+      "pos": [
+        0.216,
+        0.05,
+        0.3
+      ],
+      "color": "#828589",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.02,
+      "height": 0.54,
+      "pos": [
+        0.0,
+        1.05,
+        0.42
+      ],
+      "color": "#d23a2a",
+      "rot": [
+        90.0,
+        90.0,
+        0
+      ],
+      "tag": "handle"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.012,
+      "height": 0.1209,
+      "pos": [
+        0.0,
         0.9975,
-        0.38
+        0.39
       ],
-      "color": "#bd4036",
+      "color": "#c5c9ce",
+      "rot": [
+        29.74,
+        0.0,
+        0
+      ],
       "tag": "handle"
     }
   ]

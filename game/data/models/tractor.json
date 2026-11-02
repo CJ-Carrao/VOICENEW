@@ -2,196 +2,925 @@
   "_comment": "trator: medidas aproximadas de objeto comum, em metros.",
   "anchor": [
     0,
-    1.1,
+    0.99,
     0
   ],
   "units": "meters",
   "generator": "tools/models/gen_world_assets.py",
   "pieces": [
     {
-      "shape": "cylinder",
-      "radius": 0.352,
-      "height": 0.216,
-      "pos": [
-        -0.864,
-        0.352,
-        -1.12
-      ],
-      "color": "#141416",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "wheel",
-      "finish": "rubber"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.1584,
-      "height": 0.234,
-      "pos": [
-        -0.864,
-        0.352,
-        -1.12
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "hub"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.352,
-      "height": 0.216,
-      "pos": [
-        -0.864,
-        0.352,
-        1.12
-      ],
-      "color": "#141416",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "wheel",
-      "finish": "rubber"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.1584,
-      "height": 0.234,
-      "pos": [
-        -0.864,
-        0.352,
-        1.12
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "hub"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.352,
-      "height": 0.216,
-      "pos": [
-        0.864,
-        0.352,
-        -1.12
-      ],
-      "color": "#141416",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "wheel",
-      "finish": "rubber"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.1584,
-      "height": 0.234,
-      "pos": [
-        0.864,
-        0.352,
-        -1.12
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "hub"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.352,
-      "height": 0.216,
-      "pos": [
-        0.864,
-        0.352,
-        1.12
-      ],
-      "color": "#141416",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "wheel",
-      "finish": "rubber"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.1584,
-      "height": 0.234,
-      "pos": [
-        0.864,
-        0.352,
-        1.12
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "hub"
-    },
-    {
       "shape": "box",
       "size": [
-        1.62,
+        0.81,
         0.66,
-        3.15
+        1.75
       ],
       "pos": [
         0,
-        0.77,
-        0
+        0.924,
+        -0.63
       ],
-      "color": "#588047",
-      "tag": "chassis"
+      "color": "#3f8a3a",
+      "tag": "hood"
     },
     {
       "shape": "box",
       "size": [
-        1.476,
-        1.056,
-        1.26
+        0.72,
+        0.44,
+        0.04
       ],
       "pos": [
         0,
-        1.606,
-        0.35
+        0.924,
+        -1.54
       ],
-      "color": "#588047",
-      "tag": "cabin"
+      "color": "#1e2024",
+      "tag": "grille"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.99,
+        0.308,
+        1.12
+      ],
+      "pos": [
+        0,
+        0.66,
+        0.56
+      ],
+      "color": "#3f8a3a",
+      "tag": "body"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.9,
+        0.132,
+        0.7
+      ],
+      "pos": [
+        0,
+        0.924,
+        0.7
+      ],
+      "color": "#1e2024",
+      "tag": "seat"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.81,
+        0.44,
+        0.05
+      ],
+      "pos": [
+        0,
+        1.144,
+        1.05
+      ],
+      "color": "#1e2024",
+      "tag": "seat"
     },
     {
       "shape": "box",
       "size": [
         1.26,
-        0.572,
-        0.025
+        0.06,
+        1.26
       ],
       "pos": [
         0,
-        1.76,
-        -0.315
+        2.156,
+        0.63
       ],
-      "color": "#7194a6",
-      "tag": "windshield"
+      "color": "#3f8a3a",
+      "tag": "roof"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.06,
+        1.1,
+        0.06
+      ],
+      "pos": [
+        -0.576,
+        1.584,
+        0.07
+      ],
+      "color": "#1e2024",
+      "tag": "post"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.06,
+        1.1,
+        0.06
+      ],
+      "pos": [
+        -0.576,
+        1.584,
+        1.19
+      ],
+      "color": "#1e2024",
+      "tag": "post"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.62,
+      "height": 0.38,
+      "pos": [
+        -0.792,
+        0.62,
+        0.84
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.3844,
+      "height": 0.3952,
+      "pos": [
+        -0.792,
+        0.62,
+        0.84
+      ],
+      "color": "#e3c43a",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.1364,
+      "height": 0.418,
+      "pos": [
+        -0.792,
+        0.62,
+        0.84
+      ],
+      "color": "#9f8929",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        -0.792,
+        1.22,
+        0.84
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -0.0,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        -0.792,
+        1.1396,
+        1.14
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -29.999999999999996,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        -0.792,
+        0.92,
+        1.3596
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -59.99999999999999,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        -0.792,
+        0.62,
+        1.44
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -90.0,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        -0.792,
+        0.32,
+        1.3596
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -119.99999999999999,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        -0.792,
+        0.1004,
+        1.14
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -150.0,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        -0.792,
+        0.02,
+        0.84
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -180.0,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        -0.792,
+        0.1004,
+        0.54
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -210.00000000000003,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        -0.792,
+        0.32,
+        0.3204
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -239.99999999999997,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        -0.792,
+        0.62,
+        0.24
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -270.0,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        -0.792,
+        0.92,
+        0.3204
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -300.0,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        -0.792,
+        1.1396,
+        0.54
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -330.0,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.32,
+      "height": 0.2,
+      "pos": [
+        -0.612,
+        0.32,
+        -1.05
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.1984,
+      "height": 0.208,
+      "pos": [
+        -0.612,
+        0.32,
+        -1.05
+      ],
+      "color": "#e3c43a",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0704,
+      "height": 0.22,
+      "pos": [
+        -0.612,
+        0.32,
+        -1.05
+      ],
+      "color": "#9f8929",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.06,
+        1.1,
+        0.06
+      ],
+      "pos": [
+        0.576,
+        1.584,
+        0.07
+      ],
+      "color": "#1e2024",
+      "tag": "post"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.06,
+        1.1,
+        0.06
+      ],
+      "pos": [
+        0.576,
+        1.584,
+        1.19
+      ],
+      "color": "#1e2024",
+      "tag": "post"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.62,
+      "height": 0.38,
+      "pos": [
+        0.792,
+        0.62,
+        0.84
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.3844,
+      "height": 0.3952,
+      "pos": [
+        0.792,
+        0.62,
+        0.84
+      ],
+      "color": "#e3c43a",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.1364,
+      "height": 0.418,
+      "pos": [
+        0.792,
+        0.62,
+        0.84
+      ],
+      "color": "#9f8929",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        0.792,
+        1.22,
+        0.84
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -0.0,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        0.792,
+        1.1396,
+        1.14
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -29.999999999999996,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        0.792,
+        0.92,
+        1.3596
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -59.99999999999999,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        0.792,
+        0.62,
+        1.44
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -90.0,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        0.792,
+        0.32,
+        1.3596
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -119.99999999999999,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        0.792,
+        0.1004,
+        1.14
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -150.0,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        0.792,
+        0.02,
+        0.84
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -180.0,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        0.792,
+        0.1004,
+        0.54
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -210.00000000000003,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        0.792,
+        0.32,
+        0.3204
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -239.99999999999997,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        0.792,
+        0.62,
+        0.24
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -270.0,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        0.792,
+        0.92,
+        0.3204
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -300.0,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.38,
+        0.08,
+        0.1
+      ],
+      "pos": [
+        0.792,
+        1.1396,
+        0.54
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -330.0,
+        0,
+        0
+      ],
+      "tag": "tread",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.32,
+      "height": 0.2,
+      "pos": [
+        0.612,
+        0.32,
+        -1.05
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.1984,
+      "height": 0.208,
+      "pos": [
+        0.612,
+        0.32,
+        -1.05
+      ],
+      "color": "#e3c43a",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0704,
+      "height": 0.22,
+      "pos": [
+        0.612,
+        0.32,
+        -1.05
+      ],
+      "color": "#9f8929",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.05,
+      "height": 0.88,
+      "pos": [
+        0.216,
+        1.716,
+        -1.05
+      ],
+      "color": "#1e2024",
+      "tag": "exhaust"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.04,
+        0.04,
+        0.04
+      ],
+      "pos": [
+        0.36,
+        1.276,
+        -1.505
+      ],
+      "color": "#f4ecc4",
+      "tag": "headlight",
+      "glow": 1.2
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.04,
+        0.04,
+        0.04
+      ],
+      "pos": [
+        -0.36,
+        1.276,
+        -1.505
+      ],
+      "color": "#f4ecc4",
+      "tag": "headlight",
+      "glow": 1.2
     }
   ]
 }

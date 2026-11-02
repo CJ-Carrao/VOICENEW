@@ -1,0 +1,23 @@
+{
+  "office_tower": {"type":"city_building", "size":[18,18], "levels":18, "style":"office", "wall":"concrete", "profile":"setback", "podium_levels":3, "setback_m":1.0, "accent":"metal", "window_mode":"paired", "sign":true},
+  "department_store": {"type":"city_building", "size":[12,18], "levels":5, "style":"retail", "wall":"brick", "accent":"metal"},
+  "parking_garage": {"type":"city_building", "size":[20,20], "levels":3, "style":"garage"},
+  "clinic": {"type":"city_building", "size":[12,16], "levels":7, "style":"office", "wall":"concrete", "accent":"metal"},
+  "apartments": {"type":"city_building", "size":[18,18], "levels":8, "style":"residential", "wall":"brick", "profile":"setback", "podium_levels":3, "setback_m":0.75},
+  "small_shops": {"type":"city_building", "size":[12,18], "levels":3, "style":"retail", "wall":"brick"},
+  "construction_site": {"type":"city_building", "size":[18,18], "levels":8, "style":"construction"},
+  "hotel": {"type":"city_building", "size":[12,18], "levels":12, "style":"office", "wall":"concrete", "profile":"setback", "podium_levels":2, "setback_m":0.75, "window_mode":"paired", "glass_color":"#88a9bd"},
+  "brownstone": {"type":"city_building", "size":[10,12], "levels":6, "style":"residential", "wall":"brick"},
+  "corner_market": {"type":"city_building", "size":[10,12], "levels":3, "style":"retail", "wall":"brick"},
+  "office_midrise": {"type":"city_building", "size":[12,12], "levels":9, "style":"office", "wall":"concrete", "accent":"metal", "window_mode":"paired"},
+  "glass_tower": {"type":"city_building", "size":[12,12], "levels":20, "style":"office", "wall":"metal", "profile":"setback", "podium_levels":3, "setback_m":1.0, "accent":"glass", "window_mode":"ribbon", "glass_color":"#5b9fbd"},
+  "island_highrise": {"type":"city_building", "size":[10,12], "levels":16, "style":"office", "wall":"metal", "profile":"setback", "podium_levels":2, "setback_m":0.75, "window_mode":"ribbon", "glass_color":"#6e9bb4"},
+  "rowhouse": {"type":"city_building", "size":[10,12], "levels":6, "style":"residential", "wall":"brick"},
+  "city_viaduct_segment": {"type":"city_viaduct", "length":28, "width":4.5, "height":5.0},
+  "city_stairs_west": {"type":"city_stairs", "side":"west"},
+  "city_stairs_east": {"type":"city_stairs", "side":"east"},
+  "city_station": {"type":"city_station"},
+  "city_car_blue": {"type":"city_car", "paint":"#507997"},
+  "city_car_red": {"type":"city_car", "paint":"#a6534b"},
+  "city_car_white": {"type":"city_car", "paint":"#b8b9b4"}
+}

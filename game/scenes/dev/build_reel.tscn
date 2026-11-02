@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://dsidpjckooaga" path="res://scenes/dev/build_reel.gd" id="1"]
+
+[node name="BuildReel" type="Node3D" unique_id=1864116661]
+script = ExtResource("1")

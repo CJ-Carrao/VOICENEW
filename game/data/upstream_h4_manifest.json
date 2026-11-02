@@ -1,0 +1,778 @@
+{
+  "source": "https://tsomyst.itch.io/lavoice",
+  "version": "H-4",
+  "observed": "2026-10-27",
+  "archive_sha256": "bf826853c6089b3a0bb05363ccde8ec4128966e2716b479eec690436b243f52b",
+  "native_models": {
+    "acog": {
+      "sha256": "249ab789566566f1765924ba115c52f0ffb32a182794bae5f501ee83a9a1c51a",
+      "rigged": false
+    },
+    "ambulance": {
+      "sha256": "285ffea12b0f14d67f4cf535dca2d20ac003a9e51deb7ab66daaaaab22e49367",
+      "rigged": false
+    },
+    "anchor": {
+      "sha256": "d870c84dfa4dab783c0c8c29bf1e15608832ea5fd8d53953e845d27092549e8f",
+      "rigged": false
+    },
+    "anvil": {
+      "sha256": "c2fb71dfa25a0b06bb7466f61c78388fcdeccfceb4d520610b77ab78bd0fda89",
+      "rigged": false
+    },
+    "arrow": {
+      "sha256": "7800294bc1096d1c0a56affe6cb00bc67cead4c09e4f15598e1a319bb16e5173",
+      "rigged": false
+    },
+    "atomic_bomb": {
+      "sha256": "d38b40dc7e6d39c60efe5fb7d51e5edc268c458d2717dc8ddf9598f8d08db8e4",
+      "rigged": false
+    },
+    "axe": {
+      "sha256": "a5bde29fa7e1ad1062a6cac107be4de8319c56b2b1fda8269118642fc7023e64",
+      "rigged": false
+    },
+    "banana": {
+      "sha256": "7072c02cb410df5bc6a2896156223e6d21598b913f6bfc5cbe4ac51eccc63e67",
+      "rigged": false
+    },
+    "barrel": {
+      "sha256": "11a349291a804ba7232422d4112b9e615dc31ae53b24fc79119faa3629a32edd",
+      "rigged": false
+    },
+    "barrett": {
+      "sha256": "589a44a4612d7e4cf7fff5db3ce95b1af0c74af6028384c848e6b7b911645acd",
+      "rigged": false
+    },
+    "basketball": {
+      "sha256": "ea5c280d46d9a1ace1a3bb3ce672889a221da3aff8f07f60d5f4bec9eb225dd3",
+      "rigged": false
+    },
+    "bat": {
+      "sha256": "8cd3e838807d86bfbfbfca4dc87974869197d784a7d85fee13a79bdae803abb4",
+      "rigged": false
+    },
+    "bathtub": {
+      "sha256": "96f5e2aa14e519c312962f13ef70d89cb574e1fde858404db3dd190a00a57933",
+      "rigged": false
+    },
+    "bear": {
+      "sha256": "4b79972bcac1b88215296f365e5ee6839fb2792dbd51cdae007e36ad30e15968",
+      "rigged": true
+    },
+    "bear_trap": {
+      "sha256": "0c0ff390d7edeb4ce4ff7e4f45236a7f00a7e059c28803ee657535af2a0241fd",
+      "rigged": false
+    },
+    "bed": {
+      "sha256": "91b2a4189f4abf79139a41b8382a2f93cd6b488cfcc5972ecf70f69b70d7b3a5",
+      "rigged": false
+    },
+    "bee": {
+      "sha256": "0581e6dba219b34e51e5a503a6cf6f240453c9f94095940eefa717ce6d15b15e",
+      "rigged": true
+    },
+    "bell": {
+      "sha256": "0fc66994c5a3292643ede753065826a498902cf0756d8da6d7e61826fa11eb1c",
+      "rigged": false
+    },
+    "bicycle": {
+      "sha256": "09f08b59e627e50f885e4ab44707247c6eb9ca6e79e42955bd0726ba6d4a59bb",
+      "rigged": false
+    },
+    "bipod": {
+      "sha256": "0c45db12b6f733346d9015bc9e48b3c5ba9acffe8ae6de3164d6608da16173f5",
+      "rigged": false
+    },
+    "boar": {
+      "sha256": "a9b05c5704c6c4bbf6643e9a347a1e9428711902c118fc79e916f0fb472b23b7",
+      "rigged": true
+    },
+    "bomb": {
+      "sha256": "31384ba4e15accbec38dd07d7600f5a5f8b71f6ca422ad1195667cd2e12e4d6f",
+      "rigged": false
+    },
+    "bookshelf": {
+      "sha256": "81e6ed27e74443f1512322e28bf7f76e7a415bd4519fbe2053c81b728aa48947",
+      "rigged": false
+    },
+    "boomerang": {
+      "sha256": "df2b73c82f39c39e2ba89d845ccef1f9769bd2435daaf58e8d9f6eef9e7cc086",
+      "rigged": false
+    },
+    "boulder": {
+      "sha256": "6fb37a28593c41b5e75b6ca85d524211facb5f19f0d42c34ab872dd690670cc4",
+      "rigged": false
+    },
+    "bow": {
+      "sha256": "8313e6a30857f4c0367b9d7a57267d01b231cdfd8e62f846f1ca913c33d037af",
+      "rigged": false
+    },
+    "bowling_ball": {
+      "sha256": "c504577be532518fa03b3f5aaa2b1af0fbcb53299a9d490803593be899afb17f",
+      "rigged": false
+    },
+    "bowling_pin": {
+      "sha256": "0c5f0d78e61c546ef97b22b5f639bdde2489440e6dca30dba1ff1689d80eebe4",
+      "rigged": false
+    },
+    "brick": {
+      "sha256": "d8c62460bfd5edd9712a73ea73c47184fc6ac80e25a4b240d1264af707daa884",
+      "rigged": false
+    },
+    "bucket": {
+      "sha256": "1829458d0483ee92e4caf6d5a5e4b7a0836451dd968e8c9f31e6f9110988c10e",
+      "rigged": false
+    },
+    "bull": {
+      "sha256": "ab4d561f7fc1271ffce62dadf4e438517ce96da81f48b785502714d431e20658",
+      "rigged": true
+    },
+    "bullet": {
+      "sha256": "dbe78a0f550b0e0898b833ddf41d660fb820c9f5023c7dce533989012f80d926",
+      "rigged": false
+    },
+    "bunker": {
+      "sha256": "fac4664445721e58489fe006f1ac105fa1e70302b70c7fd040b42b99a6969d6c",
+      "rigged": false
+    },
+    "bus": {
+      "sha256": "0a7bafd73e643ab167591266fb9a46e7a03928198fbe9630e9d50978055beb83",
+      "rigged": false
+    },
+    "c4": {
+      "sha256": "51ac1fc2124a65ab0045dd39e49f2406c6ee58cf070ee13844a8b503d2afd599",
+      "rigged": false
+    },
+    "cage": {
+      "sha256": "63b879b309f39918c034ce47cb15b7b1ff1acd693ae3509e25d2f53d8d4175a0",
+      "rigged": false
+    },
+    "cannon": {
+      "sha256": "b1c8f8f2796a5cbfda22e8e5e805b0ae73459d338cfc0c63023d03c7f04011c1",
+      "rigged": false
+    },
+    "car": {
+      "sha256": "e1f82cb3f100fb1f46659daf1e6c6fb2483ff996b97a6924999e225bac622634",
+      "rigged": false
+    },
+    "cat": {
+      "sha256": "2de7abcd72544d1503895ccbde79a48193c8a852378622ed1bd1e74420452d91",
+      "rigged": true
+    },
+    "catapult": {
+      "sha256": "2cee6dc139b0c5004f2586db1f3a289a14d761979ee92eb1c1a8dc5774af937e",
+      "rigged": false
+    },
+    "chains": {
+      "sha256": "9f6f809a475ee64d0e3fabf0276909a9bde99fabe19109b24be520f2ed7447bb",
+      "rigged": false
+    },
+    "chainsaw": {
+      "sha256": "12b073d8cdc279f3b5f1dae0caa80bbd5bebf5c847e92b0907a28ed6c68fe68b",
+      "rigged": false
+    },
+    "chair": {
+      "sha256": "460518c7c55bfee769fc29f972cd95019ab41fae43b3eb086c95915f90c44b6a",
+      "rigged": false
+    },
+    "chicken": {
+      "sha256": "3e4b44d77a3ff5673ca58a7400a174980a1ac6857713f277f869eb36ddfd765c",
+      "rigged": true
+    },
+    "cinder_block": {
+      "sha256": "c0305becfa1e439fbb409add40205bd09431ced4e22fc61a8514912c6d1d35dc",
+      "rigged": false
+    },
+    "compensator": {
+      "sha256": "7e15327bd5c280a27b1b5d217e8cb96f06a29cb1d2c2220ddd43a764d0e323a4",
+      "rigged": false
+    },
+    "computer": {
+      "sha256": "cb643464b56342b7ed40f3ef2dd60332239bbcb4921864437fb1e3a9a5aa234f",
+      "rigged": false
+    },
+    "crab": {
+      "sha256": "09c097c4fffbe98b4e73335e2f0946d97d07b80856700a2ca2ecf8fdf3a23aea",
+      "rigged": true
+    },
+    "crate": {
+      "sha256": "4c00bf5c91e277d007607faddfab0487aef1d4f9bfbf65f401a9d660b837bfdd",
+      "rigged": false
+    },
+    "crocodile": {
+      "sha256": "7794eba8527e28c2ae491158f52742a5ebe9555d181e71c39d544fd3b9e49967",
+      "rigged": true
+    },
+    "crossbow": {
+      "sha256": "7e34e721587c90c7d9bb014ba951cf48ebe0124431071cbca1a0920c224d9e1a",
+      "rigged": false
+    },
+    "deer": {
+      "sha256": "9405de20918f4122bbee143d2df2bdee7a4c54c660fc4c5c15ebf945535dbb25",
+      "rigged": true
+    },
+    "desert_eagle": {
+      "sha256": "9b9b2a955460a7df404841769e0dd5e019994749a97903c9012d6ad55f6d1420",
+      "rigged": false
+    },
+    "dog": {
+      "sha256": "e522d5f423b32a0d27be60368d46c4846e86f40dd0927b77f6acca9c9b9f4051",
+      "rigged": true
+    },
+    "double_barrel": {
+      "sha256": "5ec248121e51ff18d7777c4426e7d12381c3b87c2485345f0ec05898f9e8351c",
+      "rigged": false
+    },
+    "drone": {
+      "sha256": "c00f7c8e04d3294c7309d38fe8fab65a4704a8befdb2422f9aebfa1ff84494fc",
+      "rigged": false
+    },
+    "dummy": {
+      "sha256": "492e5577965e7fb443caa7c69fdc39db686c801a2cbdece76f3936483e3cf157",
+      "rigged": true
+    },
+    "eagle": {
+      "sha256": "1a4458ba79b9d553ae1f5057f671453419295d20242e1c40bedce578291f4398",
+      "rigged": true
+    },
+    "elephant": {
+      "sha256": "3db209f555eb52e373f764bebdff92fd34e5dda4c14650464a89211ef7555de4",
+      "rigged": true
+    },
+    "fan": {
+      "sha256": "1984d1920bd0377dfd703f167a177760a28f094dab63f55fa40972a0e4502183",
+      "rigged": false
+    },
+    "fat_man": {
+      "sha256": "6a3e8572f1d00679d48f84b3200736dbe6298cc3913d0a25cc332d4f402337a5",
+      "rigged": false
+    },
+    "fire_extinguisher": {
+      "sha256": "0f20e3445a57e70b06ce914f97d273dce8f88ae1ea2399da86b93ad0e6c8edd6",
+      "rigged": false
+    },
+    "flamethrower": {
+      "sha256": "038910196858555ed43966aa677e7e0938ec287c2e9fed4142105c4ff1385e6c",
+      "rigged": false
+    },
+    "flashlight": {
+      "sha256": "ba7c60db3d86946daea46377c5c21953ce8f819c809dde5f230d1314b5e4fd3b",
+      "rigged": false
+    },
+    "foregrip": {
+      "sha256": "c5e8448d33a5ea4933bf7d2b93af73b90783e0399bb0af061b433d6b6917d17b",
+      "rigged": false
+    },
+    "forklift": {
+      "sha256": "f8ee83107671ab138888d61508e2bfa0c86d307aa40cdf37509fcfebd7a38068",
+      "rigged": false
+    },
+    "fox": {
+      "sha256": "b11307a1bb4a022b77722a8a8c65506329ea904a340d85d51508bb640b65122c",
+      "rigged": true
+    },
+    "fridge": {
+      "sha256": "78daa1486d473602c93072e0131ec75c9a5730a987915c8ad05e94bb437f7d31",
+      "rigged": false
+    },
+    "frog": {
+      "sha256": "9dc133f7e68f7f969cc4a2d5b55f8a66f9c581f4dac5f35e8f2cb17e4743d93f",
+      "rigged": true
+    },
+    "gas_cylinder": {
+      "sha256": "e9e510522e9cfa0dc10ead63b1f6609157b20e73f2b005bd2138b38d178feb81",
+      "rigged": false
+    },
+    "goat": {
+      "sha256": "c5fd0d9488ed5d630656ff8a5d6e432e7163b99532ee6c9436d1823d5f464c6c",
+      "rigged": true
+    },
+    "gorilla": {
+      "sha256": "07e7eab1510522b326c7ee9b811159de7bd2d9d487845485e631a91f77afcba5",
+      "rigged": true
+    },
+    "grenade": {
+      "sha256": "a3768157cfadf6efb8d167570dcc0a315817955d105f80b1f0c0be24ec0ae06c",
+      "rigged": false
+    },
+    "grenade_launcher": {
+      "sha256": "4d8b2261b599b00abc67cedd723202a118426d71fa9672332bd5b4d03dab97db",
+      "rigged": false
+    },
+    "guitar": {
+      "sha256": "6b3a772707bd52dd7f9606019dac1af000e99f87d5e2aef8bffc27da67fffeb7",
+      "rigged": false
+    },
+    "hammer": {
+      "sha256": "074835d89b95b8d67cbc42ba633284c3c8b2ecb70be45a45b38bdb7c9c89b724",
+      "rigged": false
+    },
+    "helicopter": {
+      "sha256": "68744c90650d4b08d5ed70399385a15e2660dff1c1dbc90af27a4ceae9649e22",
+      "rigged": false
+    },
+    "horse": {
+      "sha256": "25114f0a98c654e1199fab4cd4b25b5910541074d801fc466b92502e9103ef40",
+      "rigged": true
+    },
+    "katana": {
+      "sha256": "352b980567a2952470b30ea0a644bae5e65d2ab64e5b03481177ba0afdd522d4",
+      "rigged": false
+    },
+    "knife": {
+      "sha256": "7b3168a4ec54e1e3dabf6dd228d4d49ce04d8a826c48589843e02eee93c5db8c",
+      "rigged": false
+    },
+    "lamp": {
+      "sha256": "3eeb41eb398676b85e3a613ba646f78e04d43ceee28cbd15a28fc352e3f2f295",
+      "rigged": false
+    },
+    "landmine": {
+      "sha256": "e188375b0b86ece29fd7a672b03887ffb6d90ef2e31d060d02152f4982beacc7",
+      "rigged": false
+    },
+    "laser_beam": {
+      "sha256": "dcfdc2be678f33c6bcf35f8d436a8e6f818ce3ad7f8cd5549cbd8feb7fd8ba7e",
+      "rigged": false
+    },
+    "laser_pointer": {
+      "sha256": "087f5846b3f91659ed793d99206073eeecec3badc339ae3d5f2e91779d4a93d7",
+      "rigged": false
+    },
+    "laser_sight": {
+      "sha256": "3908be75a1d034f9e3357fa8e31ba245ecc46e51c28e7423654d545b2fb3e5d6",
+      "rigged": false
+    },
+    "lion": {
+      "sha256": "8f19bd71ac368b82058596e23c6aae9aeaee314b2b0a673094b5a8410fcb85d1",
+      "rigged": true
+    },
+    "little_boy": {
+      "sha256": "2ef6f100011d5ecc941d106bb80ec9ebb56d857e5d747d0c54b286c7990e7040",
+      "rigged": false
+    },
+    "lmg": {
+      "sha256": "d6e9f568bb74a56d9331f6d40a338e4d106358385d3bb322bfd1acb5c812aabe",
+      "rigged": false
+    },
+    "log": {
+      "sha256": "0910bdb90071655804f22bb75ebb78148bad8dae8550acaad15beaf1d5cacac4",
+      "rigged": false
+    },
+    "m4": {
+      "sha256": "06c50f9108231664b37c0c6f604eaa267a1124e7ae10792e97ce1219e09582df",
+      "rigged": false
+    },
+    "mace": {
+      "sha256": "ba584de27f3d407bcc26384a733f8b0ef26d02f4ed9c02468e433c559d5044d3",
+      "rigged": false
+    },
+    "machete": {
+      "sha256": "f08e682b19d1bed0794e2f06b7a8704ad1935eef9f093c57b114ef021456ae39",
+      "rigged": false
+    },
+    "magazine": {
+      "sha256": "648f3120c0a8f288ed9da76df44fa190f332481a010ebafa6b1aed846f484341",
+      "rigged": false
+    },
+    "magnet": {
+      "sha256": "1cac3a00493840326cfe184e0570dc02b50d6e5d5e4397ce0d85c9a064903a09",
+      "rigged": false
+    },
+    "mattress": {
+      "sha256": "dbe80af63e6305cdff175d9b2d3d8d4667ab87b9d07845721ec31aced4c9ae53",
+      "rigged": false
+    },
+    "microwave": {
+      "sha256": "db674f29c963007e1fe7f5a4e6fe35bf697d23f818c868275cdb5117e0f0ad06",
+      "rigged": false
+    },
+    "minigun": {
+      "sha256": "c4706df2e6c20d0bd190a05b3f3c92b28cd3171239db27e8a1277a8e8ca93a7d",
+      "rigged": false
+    },
+    "missile": {
+      "sha256": "530a7814d518afc22c1251b2b5e16b19c9839a449182f91ed345e0077781cc33",
+      "rigged": false
+    },
+    "molotov": {
+      "sha256": "911708f518c373e75d3b13aad83ffa7943d606559ee4f0299e424151b51bad5c",
+      "rigged": false
+    },
+    "monkey": {
+      "sha256": "801ef1b412784282a9a5f85902aabe8b3b962073299b3190d46989407d41474e",
+      "rigged": true
+    },
+    "mortar": {
+      "sha256": "e258165ac4f2b04e29256cdc99e5cc34a1472f0ef010067be1d3022613813516",
+      "rigged": false
+    },
+    "motorcycle": {
+      "sha256": "696f84ff6863f704cf598dd1b0d9edde8d36366f368a00caf3d33bc5286c5e01",
+      "rigged": false
+    },
+    "mp5": {
+      "sha256": "78a0ec9290cea128529d66c57b8f53ec120cdcc06f48e7bbf99c2024f70d3c8f",
+      "rigged": false
+    },
+    "muzzle_brake": {
+      "sha256": "0066750beb3afc6013eef012b42ebc3ef782f6d188294d704a917b821a4bcbf0",
+      "rigged": false
+    },
+    "pallet": {
+      "sha256": "070f9c6206bd9e373a18f8d4ab6011e8e9d1fe066d464989746dbeb008bb8309",
+      "rigged": false
+    },
+    "pan": {
+      "sha256": "4dbe32f1f37a65d3ad86adbfe0621bed2cb69d595097f06687c84ac6f9251835",
+      "rigged": false
+    },
+    "penguin": {
+      "sha256": "4c1ed122e182da2077ff4b92cc150ab419077d13c838029983e14183f6f794e3",
+      "rigged": true
+    },
+    "piano": {
+      "sha256": "3e85054e523471f909e1e149e1f68dc56fbcec104276447e6530ffe05ef2ba7e",
+      "rigged": false
+    },
+    "pigeon": {
+      "sha256": "b830eac7f21b8806212bbee25ede5e459f4ccb8f5354a2d2cb22b26bcfdae61b",
+      "rigged": true
+    },
+    "pipe": {
+      "sha256": "2ba2fbd7033cfc59fbd0584f84abb7eef53936b7f692f493f79a364fd68bedc7",
+      "rigged": false
+    },
+    "pistol": {
+      "sha256": "48c5932c6b874375b5c9c4b12417bece065ba7a84dddbf21e9b90eac649b5285",
+      "rigged": false
+    },
+    "plane": {
+      "sha256": "4ce39392f6ce5d68be21ec68f0e29969f67ce2eefb280399ff59a6d45952af58",
+      "rigged": false
+    },
+    "portal": {
+      "sha256": "3a926639ef18da1aeb47887299cddea2c4728ae0aadfc98f8e32bf290592fe75",
+      "rigged": false
+    },
+    "rabbit": {
+      "sha256": "8b2d6b40dc8e56d58856b7c13f288816b8fecf14c66b7d967806124f9b49cd82",
+      "rigged": true
+    },
+    "rat": {
+      "sha256": "83c991d93a54068ccadeebdc2005c464ef02ab43c37fa9c1414965edb53e3ce1",
+      "rigged": true
+    },
+    "red_dot": {
+      "sha256": "cf3cc6c9bfc12adcf225b40b1d0ff97ddcb452effedf01a96efb68c1e41bc7cd",
+      "rigged": false
+    },
+    "revolver": {
+      "sha256": "95f106a3d8f5a6c789195480fc6856f932e50d73a54c32e4a5135744bc839f5a",
+      "rigged": false
+    },
+    "rifle": {
+      "sha256": "5c9626299f9c84828d281644af60f35ed986f383e4068b1a2a862ce0dd3fcb49",
+      "rigged": false
+    },
+    "rocket_launcher": {
+      "sha256": "7a17a2bef15491dd5ee1f96ac558a94c349e79ac53efa75a1f242e425bc4e1aa",
+      "rigged": false
+    },
+    "rpg": {
+      "sha256": "a35a4d7928da7c6cd251bec03bd0cfbea493d6ab20a4515283d65f21d25d4333",
+      "rigged": false
+    },
+    "rubber_duck": {
+      "sha256": "1713f892799369d065a842a28603b476e4cd180dced6b0a57dd6173b16ca44e9",
+      "rigged": false
+    },
+    "safe": {
+      "sha256": "f332a574163fb0734041876e7d77e837a6222d6e734af038e83e407d3835a518",
+      "rigged": false
+    },
+    "scooter": {
+      "sha256": "a9e7fdb92685a67e63622b32ecde1aa5c1fad18b234788110b9121cc0f839550",
+      "rigged": false
+    },
+    "scorpion": {
+      "sha256": "c796a9f5a3b6d9053ae953452e95bebf52c57d97cf3801f3d3a234d288cc73e2",
+      "rigged": true
+    },
+    "shark": {
+      "sha256": "574addc2d244e24cee97267a1d08434915668bda2f1ef62f09def435a3b722db",
+      "rigged": true
+    },
+    "shield": {
+      "sha256": "889e6642f141371320bb95144e1c5211a114c61e3c10807f0397aa2a0de37137",
+      "rigged": false
+    },
+    "shipping_container": {
+      "sha256": "0283595cf2430ba4aaac6d8169791b176daa3fbba6b97e6c38af68584469787f",
+      "rigged": false
+    },
+    "shopping_cart": {
+      "sha256": "78c86f3c4a21f5fbaeaddfdd274bab3e06c476cfa5ec781795368891de3ad3dc",
+      "rigged": false
+    },
+    "shotgun": {
+      "sha256": "605d071ae60a1e75b07a7084a6a73028e37c77f7151733e76808383fa457dab1",
+      "rigged": false
+    },
+    "skateboard": {
+      "sha256": "95e8126ce92741efceba4742aae2902c8a720886ece9d357e55cec5ec69ff990",
+      "rigged": false
+    },
+    "skeleton": {
+      "sha256": "c51274df25ff29eb51e7db7b3e192e8224e35381c7e940a601bc6f322663b946",
+      "rigged": true
+    },
+    "sledgehammer": {
+      "sha256": "2c741beab2089ce7d49bcc3aa12842de945b96350db8dd9dbe814250d51781cc",
+      "rigged": false
+    },
+    "snake": {
+      "sha256": "ef1b28a81b2b9b75cae522b46c8c3b6d09d094b733cac9510a28e35f9cc5cf72",
+      "rigged": true
+    },
+    "sniper": {
+      "sha256": "e762ba25c557078a730caa4b5733a44b060332594b8e088a8489913718c98175",
+      "rigged": false
+    },
+    "sniper_scope": {
+      "sha256": "938cb97c0bf810216f5c190d776beedabd393786ec67d294b90816a97c8b33b1",
+      "rigged": false
+    },
+    "soccer_ball": {
+      "sha256": "2b789009839f719695283cceeb80acb220fa9d9b4de4725cf89591259b09ff48",
+      "rigged": false
+    },
+    "sofa": {
+      "sha256": "685802aba9d78fbdfa9afc804c0504be98353db6c963d8cccee5a97576ca3dcb",
+      "rigged": false
+    },
+    "spear": {
+      "sha256": "1a6bb90fee63daccb4297f5d5b5439ee2d3260e6d0ae15fe09f9f7edd5002643",
+      "rigged": false
+    },
+    "sphere": {
+      "sha256": "a0a0b51b5383240ab9ef597899197c83996c6a32c81fbc2ae347a2572a292b31",
+      "rigged": false
+    },
+    "spider": {
+      "sha256": "9567861956c1b9b7714aa261f4e2d0be503ff3334f818c28ceaa1cbb62b9b3c5",
+      "rigged": true
+    },
+    "spike_trap": {
+      "sha256": "41c0c74dfc042682f6682903ccbdc62503bd7695e0b2a818fb4c53b9d0909644",
+      "rigged": false
+    },
+    "stop_sign": {
+      "sha256": "04d8756ad1c3c6a7277eb9931dba8af28cdc1038ff8528a8b893429a0cbc6598",
+      "rigged": false
+    },
+    "street_light": {
+      "sha256": "258b027abba0e800658af98b7ecab2426f0253e0a11e42202265be5beb2e2052",
+      "rigged": false
+    },
+    "suppressor": {
+      "sha256": "5d5f7390ab3fbf6d7092726854ec55f5e0d1c6d255e033a88ecb14a6c7883fd4",
+      "rigged": false
+    },
+    "sword": {
+      "sha256": "47dc644c6f146a72b777be93602c033a54766c589c12d1f6218b18d50ac9b8dc",
+      "rigged": false
+    },
+    "table": {
+      "sha256": "d351a40406d211d1082db58dd6f761d79e0d1a90d184259d009252e908d60d38",
+      "rigged": false
+    },
+    "tank": {
+      "sha256": "b44eb8eff42acb50157f095602334e17bdfe7fb964ff46bd21288a1fa6637d6e",
+      "rigged": false
+    },
+    "tiger": {
+      "sha256": "45a5a5d409a6c2edbcea25f5c25b65d362541d2f67d98a3860b4c9a9e1fe3390",
+      "rigged": true
+    },
+    "tire": {
+      "sha256": "c662da1fd4e7306c32bff59d03a6d71780066767ef735ab74af211bde91a669c",
+      "rigged": false
+    },
+    "toilet": {
+      "sha256": "5ec33d4adae21c6823091762859f0e021b91617a9db95d005772de7fc1d100e9",
+      "rigged": false
+    },
+    "tommy_gun": {
+      "sha256": "02ab647be1eb82ee25724a318f5356a092664f8f3817d6a4bcde9549377b267a",
+      "rigged": false
+    },
+    "tower": {
+      "sha256": "175672f66abd6eca68e65b6f517f614dc56e49deb95ae86f786bcc1983c52f5a",
+      "rigged": false
+    },
+    "tractor": {
+      "sha256": "51128370581144a9ebb7789ac74341cb30a8a4ed0d45082dc6c8de6b2d3127d2",
+      "rigged": false
+    },
+    "traffic_barrier": {
+      "sha256": "e0a57aa2b82a3242e75a10bca7edfd77ec118e747c9a3513c37c546577c541bd",
+      "rigged": false
+    },
+    "traffic_cone": {
+      "sha256": "20e4b9f4f0e99e61cc2ea65a69a1610fabc3c904c1c70b78c4ef90bd03f5c15b",
+      "rigged": false
+    },
+    "traffic_light": {
+      "sha256": "32c56e734e0a1b830541056ec154019db63b1a82c2215d12cebe05ab09eab037",
+      "rigged": false
+    },
+    "trampoline": {
+      "sha256": "a53e1c191e27188b6681c2ec81deac370d07754698f123f711cb1c2719dd0cac",
+      "rigged": false
+    },
+    "trash_can": {
+      "sha256": "b750d45dad56a6fbbe852b7aed49acae1c9185885a8085a27f5ea968697f9c5d",
+      "rigged": false
+    },
+    "trex": {
+      "sha256": "93c3b289dbf2cd81082f891ba9e508acf7443b4f30c3bbb817262a7036a576db",
+      "rigged": true
+    },
+    "tsar_bomba": {
+      "sha256": "a0064ee23ea9a70dc987dfd3bb5a8add2537cee57befafadd0ffcb5b0bd8919e",
+      "rigged": false
+    },
+    "turtle": {
+      "sha256": "dbdd751dbdafb6815ee393b9385d731c33ca9f5c2d642c960cb1438c1b055fc2",
+      "rigged": true
+    },
+    "tv": {
+      "sha256": "35d238b5e83be0addc3f94b550ddd583d693a2c9c355f1de6cc2e72c58383f83",
+      "rigged": false
+    },
+    "unicorn": {
+      "sha256": "95798d00b2cce4d647c4f0bb75165914318f5af4a01166b6e368f26a800ccd4b",
+      "rigged": true
+    },
+    "uzi": {
+      "sha256": "78299fb6eaa39cd338136ad160593a8b8158833e6c26c5d5e6454ae538813028",
+      "rigged": false
+    },
+    "vending_machine": {
+      "sha256": "04001b387fc9cd4612070acdfb13241998f958846fe2394c41f1de32bc97cbba",
+      "rigged": false
+    },
+    "wall": {
+      "sha256": "592aac880baae3a5e969dd4da4fa0bea582208f12923c060a9eb9353f4d137f9",
+      "rigged": false
+    },
+    "washing_machine": {
+      "sha256": "51c23e1aa4f645ef762a8fc5c1261dc2baac0bcaded8c94f73e97ca396831875",
+      "rigged": false
+    },
+    "watermelon": {
+      "sha256": "d623a21aa358ce077320120bfe1f42b6c98433cab803ac421074dca3d079b203",
+      "rigged": false
+    },
+    "wheelbarrow": {
+      "sha256": "7b81529e1207616c9c9e60ea13e2cc5cbd3ccf2599e1bebf29fee8250c9ea463",
+      "rigged": false
+    },
+    "wheelchair": {
+      "sha256": "2480e81d350c0a2dbdcad9290eaadf2cd0d22f1fbb00b48e3d8aec56522d2d24",
+      "rigged": false
+    },
+    "wolf": {
+      "sha256": "80ad3c74d21e4f13d12b0178fe4c0bb517eb2ac876a9100bc40744f85499bfb4",
+      "rigged": true
+    },
+    "zombie": {
+      "sha256": "451299da6e179b90ffbf8a26e7e158bac07d1b694b7cfcb4051ccadf490f0a60",
+      "rigged": true
+    }
+  },
+  "native_new_definitions": {
+    "portal": {
+      "category": "projectile",
+      "movement": "straight",
+      "impact": "destroy",
+      "behaviors": [
+        {
+          "when": {
+            "type": "on_hit"
+          },
+          "do": {
+            "type": "portal"
+          }
+        }
+      ]
+    },
+    "atomic_bomb": {
+      "category": "projectile",
+      "movement": "ballistic",
+      "impact": "stop",
+      "behaviors": [
+        {
+          "when": {
+            "type": "on_hit"
+          },
+          "do": {
+            "type": "explode"
+          }
+        }
+      ]
+    },
+    "little_boy": {
+      "category": "projectile",
+      "movement": "ballistic",
+      "impact": "stop",
+      "behaviors": [
+        {
+          "when": {
+            "type": "on_hit"
+          },
+          "do": {
+            "type": "explode"
+          }
+        }
+      ]
+    },
+    "fat_man": {
+      "category": "projectile",
+      "movement": "ballistic",
+      "impact": "stop",
+      "behaviors": [
+        {
+          "when": {
+            "type": "on_hit"
+          },
+          "do": {
+            "type": "explode"
+          }
+        }
+      ]
+    },
+    "tsar_bomba": {
+      "category": "projectile",
+      "movement": "ballistic",
+      "impact": "stop",
+      "behaviors": [
+        {
+          "when": {
+            "type": "on_hit"
+          },
+          "do": {
+            "type": "explode"
+          }
+        }
+      ]
+    }
+  },
+  "native_modules": {
+    "scripts/portal/portal_system.gd": "7fbcec209cb0c4dd3d09fae49f537371f8b8974db4c5817b27200edd63c43384",
+    "scripts/things/action/action_portal.gd": "e52c66187f0d39523a1c51ca08b2da495dfd21fd3f9bad2c5c69d3e7226c4c4e",
+    "scripts/voice/voice_diagnostics.gd": "4aa87b9a1a08f48fabba0b81ef3891e6ec99355318f29eab15b6b41db73f75a7"
+  }
+}

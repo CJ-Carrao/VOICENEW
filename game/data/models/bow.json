@@ -3,7 +3,7 @@
   "anchor": [
     0,
     0,
-    0.05
+    0.03
   ],
   "joints": {
     "trigger": [
@@ -21,180 +21,282 @@
   "generator": "tools/models/gen_world_assets.py",
   "pieces": [
     {
-      "shape": "box",
-      "size": [
-        0.035,
-        0.1875,
-        0.035
-      ],
+      "shape": "cylinder",
+      "radius": 0.0105,
+      "height": 0.125,
       "pos": [
-        0,
-        -0.75,
-        -0.0
-      ],
-      "color": "#7a4b26",
-      "tag": "limb",
-      "section": "front"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.035,
-        0.1875,
-        0.035
-      ],
-      "pos": [
-        0,
-        -0.5625,
-        -0.0656
-      ],
-      "color": "#7a4b26",
-      "tag": "limb",
-      "section": "front"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.035,
-        0.1875,
-        0.035
-      ],
-      "pos": [
-        0,
-        -0.375,
-        -0.1125
-      ],
-      "color": "#7a4b26",
-      "tag": "limb",
-      "section": "front"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.035,
-        0.1875,
-        0.035
-      ],
-      "pos": [
-        0,
-        -0.1875,
-        -0.1406
-      ],
-      "color": "#7a4b26",
-      "tag": "limb",
-      "section": "front"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.035,
-        0.1875,
-        0.035
-      ],
-      "pos": [
-        0,
         0.0,
-        -0.15
+        -0.6875,
+        0.0717
       ],
-      "color": "#7a4b26",
-      "tag": "limb",
-      "section": "front"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.035,
-        0.1875,
-        0.035
-      ],
-      "pos": [
-        0,
-        0.1875,
-        -0.1406
-      ],
-      "color": "#7a4b26",
-      "tag": "limb",
-      "section": "front"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.035,
-        0.1875,
-        0.035
-      ],
-      "pos": [
-        0,
-        0.375,
-        -0.1125
-      ],
-      "color": "#7a4b26",
-      "tag": "limb",
-      "section": "front"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.035,
-        0.1875,
-        0.035
-      ],
-      "pos": [
-        0,
-        0.5625,
-        -0.0656
-      ],
-      "color": "#7a4b26",
-      "tag": "limb",
-      "section": "front"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.035,
-        0.1875,
-        0.035
-      ],
-      "pos": [
-        0,
-        0.75,
-        -0.0
-      ],
-      "color": "#7a4b26",
-      "tag": "limb",
-      "section": "front"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.004,
-        1.5,
-        0.004
-      ],
-      "pos": [
-        0,
-        0,
+      "color": "#8a5a32",
+      "rot": [
+        1.57,
+        0.0,
         0
       ],
-      "color": "#d6dcd8",
-      "tag": "string",
-      "section": "muzzle"
+      "tag": "limb",
+      "finish": "wood",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0115,
+      "height": 0.1274,
+      "pos": [
+        0.0,
+        -0.5625,
+        0.0612
+      ],
+      "color": "#8a5a32",
+      "rot": [
+        11.11,
+        180.0,
+        0
+      ],
+      "tag": "limb",
+      "finish": "wood",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0125,
+      "height": 0.1268,
+      "pos": [
+        0.0,
+        -0.4375,
+        0.0382
+      ],
+      "color": "#8a5a32",
+      "rot": [
+        9.71,
+        180.0,
+        0
+      ],
+      "tag": "limb",
+      "finish": "wood",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0135,
+      "height": 0.1259,
+      "pos": [
+        0.0,
+        -0.3125,
+        0.0199
+      ],
+      "color": "#8a5a32",
+      "rot": [
+        6.97,
+        180.0,
+        0
+      ],
+      "tag": "limb",
+      "finish": "wood",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0145,
+      "height": 0.1253,
+      "pos": [
+        0.0,
+        -0.1875,
+        0.0076
+      ],
+      "color": "#8a5a32",
+      "rot": [
+        4.19,
+        180.0,
+        0
+      ],
+      "tag": "limb",
+      "finish": "wood",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.022,
+      "height": 0.125,
+      "pos": [
+        0.0,
+        -0.0625,
+        0.0015
+      ],
+      "color": "#3a2414",
+      "rot": [
+        1.4,
+        180.0,
+        0
+      ],
+      "tag": "limb",
+      "finish": "wood",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.022,
+      "height": 0.125,
+      "pos": [
+        0.0,
+        0.0625,
+        0.0015
+      ],
+      "color": "#3a2414",
+      "rot": [
+        1.4,
+        0.0,
+        0
+      ],
+      "tag": "limb",
+      "finish": "wood",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0145,
+      "height": 0.1253,
+      "pos": [
+        0.0,
+        0.1875,
+        0.0076
+      ],
+      "color": "#8a5a32",
+      "rot": [
+        4.19,
+        0.0,
+        0
+      ],
+      "tag": "limb",
+      "finish": "wood",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0135,
+      "height": 0.1259,
+      "pos": [
+        0.0,
+        0.3125,
+        0.0199
+      ],
+      "color": "#8a5a32",
+      "rot": [
+        6.97,
+        0.0,
+        0
+      ],
+      "tag": "limb",
+      "finish": "wood",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0125,
+      "height": 0.1268,
+      "pos": [
+        0.0,
+        0.4375,
+        0.0382
+      ],
+      "color": "#8a5a32",
+      "rot": [
+        9.71,
+        0.0,
+        0
+      ],
+      "tag": "limb",
+      "finish": "wood",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0115,
+      "height": 0.1274,
+      "pos": [
+        0.0,
+        0.5625,
+        0.0612
+      ],
+      "color": "#8a5a32",
+      "rot": [
+        11.11,
+        0.0,
+        0
+      ],
+      "tag": "limb",
+      "finish": "wood",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0105,
+      "height": 0.125,
+      "pos": [
+        0.0,
+        0.6875,
+        0.0717
+      ],
+      "color": "#8a5a32",
+      "rot": [
+        1.57,
+        180.0,
+        0
+      ],
+      "tag": "limb",
+      "finish": "wood",
+      "section": "front"
     },
     {
       "shape": "box",
       "size": [
-        0.05,
-        0.13,
+        0.036,
+        0.12,
         0.045
       ],
       "pos": [
         0,
-        -0.03,
-        0.03
+        0,
+        0.004
       ],
-      "color": "#7a4b26",
+      "color": "#5a3a22",
       "tag": "grip",
       "section": "rear"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.012,
+        0.014,
+        0.03
+      ],
+      "pos": [
+        0.022,
+        0.07,
+        -0.008
+      ],
+      "color": "#2a2a2e",
+      "tag": "rest",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.002,
+      "height": 1.47,
+      "pos": [
+        0.0,
+        0.0,
+        0.08
+      ],
+      "color": "#efe9d8",
+      "rot": [
+        0.0,
+        0.0,
+        0
+      ],
+      "tag": "string",
+      "section": "muzzle"
     }
   ]
 }

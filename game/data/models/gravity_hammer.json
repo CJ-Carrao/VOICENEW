@@ -1,88 +1,9 @@
 {
-  "_comment": "Arte original do Pacote Caos: silhueta em blocos, sem superficies arredondadas.",
-  "units": "meters",
+  "_comment": "Variante Lab do arsenal H-4 sledgehammer; comportamento preservado.",
   "anchor": [
     0,
-    -0.025,
-    0.06
-  ],
-  "pieces": [
-    {
-      "shape": "box",
-      "size": [
-        0.075,
-        0.14,
-        0.075
-      ],
-      "pos": [
-        0,
-        -0.05,
-        0.075
-      ],
-      "color": "#3a4047",
-      "tag": "handle"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.09,
-        0.045,
-        0.07
-      ],
-      "pos": [
-        0,
-        -0.13,
-        0.075
-      ],
-      "color": "#a38bc9",
-      "tag": "pommel"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.055,
-        0.055,
-        0.55
-      ],
-      "pos": [
-        0,
-        0,
-        -0.2
-      ],
-      "color": "#5c5143",
-      "tag": "handle"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.32,
-        0.18,
-        0.15
-      ],
-      "pos": [
-        0,
-        0,
-        -0.49
-      ],
-      "color": "#66717a",
-      "tag": "head"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.36,
-        0.07,
-        0.1
-      ],
-      "pos": [
-        0,
-        0,
-        -0.49
-      ],
-      "color": "#a38bc9",
-      "tag": "blade",
-      "glow": 0.6
-    }
+    0,
+    0.04
   ],
   "joints": {
     "trigger": [
@@ -93,7 +14,157 @@
     "muzzle": [
       0,
       0,
-      -0.3
+      -0.82
     ]
-  }
+  },
+  "pieces": [
+    {
+      "shape": "cylinder",
+      "radius": 0.02,
+      "height": 0.09,
+      "pos": [
+        0,
+        0,
+        0.05
+      ],
+      "color": "#141416",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "handle",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.023,
+      "height": 0.012,
+      "pos": [
+        0,
+        0,
+        0.098
+      ],
+      "color": "#141416",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "pommel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0175,
+      "height": 0.8,
+      "pos": [
+        0,
+        0,
+        -0.4
+      ],
+      "color": "#b5835a",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "body",
+      "finish": "wood",
+      "section": "front"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.036,
+      "height": 0.15,
+      "pos": [
+        0,
+        0,
+        -0.775
+      ],
+      "color": "#a38bc9",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "head",
+      "finish": "metal",
+      "glow": 0.015
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.031,
+      "height": 0.012,
+      "pos": [
+        0,
+        -0.078,
+        -0.775
+      ],
+      "color": "#a38bc9",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "head",
+      "finish": "metal",
+      "glow": 0.015
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.031,
+      "height": 0.012,
+      "pos": [
+        0,
+        0.078,
+        -0.775
+      ],
+      "color": "#a38bc9",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "head",
+      "finish": "metal",
+      "glow": 0.015
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.02,
+        0.03
+      ],
+      "pos": [
+        0,
+        0,
+        -0.775
+      ],
+      "color": "#a38bc9",
+      "tag": "head",
+      "finish": "metal",
+      "glow": 0.015
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.02,
+      "pos": [
+        0,
+        0,
+        -0.815
+      ],
+      "color": "#16171a",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "tip",
+      "finish": "metal"
+    }
+  ],
+  "lab_h4_base": "sledgehammer"
 }

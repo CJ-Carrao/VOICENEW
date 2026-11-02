@@ -11,6 +11,8 @@ extends SpeechEngine
 const READY_LINE: = "READY"
 const ERROR_PREFIX: = "ERROR"
 
+const READY_TIMEOUT_S: = 90
+
 var _pid: int = -1
 var _pipe: FileAccess
 var _loaded: bool = false
@@ -18,10 +20,15 @@ var _mutex: = Mutex.new()
 
 
 func is_available(config: Dictionary) -> bool:
+	if OS.has_feature("android"):
+		error = tr("voz nativa do Android indisponível nesta build; use DIGITAR")
+		return false
 	for key in ["sidecar", "model"]:
 		var path: = String(config.get(key, ""))
 		if path.is_empty() or not FileAccess.file_exists(path):
-			error = "motor de voz sem travar não instalado: falta %s (tools/voice/setup_voice.ps1)" % path
+			error = tr("motor de voz sem travar não instalado: falta %s (tools/voice/setup_voice.ps1)") % path
+			VoiceDiagnostics.note("motor", "arquivo do motor não encontrado (%s): %s · %s" % [key, path, 
+				ProjectSettings.globalize_path(path)])
 			return false
 	return true
 
@@ -47,12 +54,16 @@ func setup(config: Dictionary, lex: LexiconData, _parent: Node) -> bool:
 	var denoiser: = String(config.get("denoiser", ""))
 	if not denoiser.is_empty():
 		args.append("--denoiser-%s=%s" % [String(config.get("denoiser_kind", "gtcrn")), ProjectSettings.globalize_path(denoiser)])
-	var started: = OS.execute_with_pipe(ProjectSettings.globalize_path(String(config["sidecar"])), args)
+	var sidecar: = ProjectSettings.globalize_path(String(config["sidecar"]))
+	var started: = OS.execute_with_pipe(sidecar, args)
 	if started.is_empty():
-		error = "não consegui abrir o motor de voz (%s)" % config["sidecar"]
+		error = tr("não consegui abrir o motor de voz (%s)") % config["sidecar"]
+		VoiceDiagnostics.note("motor", "creativoz NÃO abriu: %s (existe: %s)" % [sidecar, FileAccess.file_exists(sidecar)])
 		return false
 	_pipe = started["stdio"]
 	_pid = int(started["pid"])
+	VoiceDiagnostics.note("motor", "creativoz aberto · pid %d · %d threads · hotwords %s" % [_pid, int(config.get("threads", 3)), 
+		bool(config.get("hotwords", false))])
 	return true
 
 
@@ -77,7 +88,8 @@ func _transcribe_locked(samples: PackedFloat32Array) -> String:
 	_pipe.store_buffer(packet)
 	var line: = _pipe.get_line()
 	if line.is_empty():
-		error = "o motor de voz parou"
+		error = tr("o motor de voz parou")
+		VoiceDiagnostics.note("motor", "creativoz parou no meio de uma fala (processo vivo: %s)" % (_pid > 0 and OS.is_process_running(_pid)))
 		_loaded = false
 		_pipe = null
 		return ""
@@ -87,16 +99,29 @@ func _transcribe_locked(samples: PackedFloat32Array) -> String:
 	return clean(String((reply as Dictionary).get("text", "")))
 
 
+
+
 func _wait_ready() -> bool:
+	var deadline: = Time.get_ticks_msec() + READY_TIMEOUT_S * 1000
 	while true:
 		var line: = _pipe.get_line().strip_edges()
 		if line == READY_LINE:
 			_loaded = true
+			VoiceDiagnostics.note("motor", "creativoz pronto (READY)")
 			return true
-		if line.begins_with(ERROR_PREFIX) or (line.is_empty() and _pipe.eof_reached()):
-			error = "motor de voz: " + (line if not line.is_empty() else "fechou ao carregar")
+		var dead: = _pid > 0 and not OS.is_process_running(_pid)
+		if line.begins_with(ERROR_PREFIX) or (line.is_empty() and (_pipe.eof_reached() or dead)):
+			error = tr("motor de voz: ") + (line if not line.is_empty() else tr("fechou ao carregar"))
+			VoiceDiagnostics.note("motor", "creativoz falhou ao carregar: %s (processo vivo: %s)" % [line, not dead])
 			_pipe = null
 			return false
+		if Time.get_ticks_msec() > deadline:
+			error = tr("motor de voz não respondeu (o antivírus pode ter bloqueado o creativoz.exe)")
+			VoiceDiagnostics.note("motor", "creativoz sem READY em %d s" % READY_TIMEOUT_S)
+			_pipe = null
+			return false
+		if line.is_empty():
+			OS.delay_msec(20)
 	return false
 
 

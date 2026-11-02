@@ -64,20 +64,20 @@ static func talk_event_problem(event: InputEvent) -> String:
 		if mouse.button_index in TALK_MOUSE_BUTTONS:
 			return ""
 		if MOUSE_NAMES.has(mouse.button_index):
-			return "o %s já é usado no jogo" % MOUSE_NAMES[mouse.button_index]
-		return "esse botão do mouse não dá (a rodinha troca de slot)"
+			return String(TranslationServer.translate("o %s já é usado no jogo")) % TranslationServer.translate(MOUSE_NAMES[mouse.button_index])
+		return String(TranslationServer.translate("esse botão do mouse não dá (a rodinha troca de slot)"))
 	var key: = event as InputEventKey
 	if key == null:
-		return "use uma tecla ou um botão do mouse"
+		return String(TranslationServer.translate("use uma tecla ou um botão do mouse"))
 	if key.physical_keycode == KEY_ESCAPE:
-		return "Esc abre as opções"
+		return String(TranslationServer.translate("Esc abre as opções"))
 	for action: StringName in InputMap.get_actions():
 		if String(action).begins_with("ui_") or action == TALK_ACTION:
 			continue
 		for other in InputMap.action_get_events(action):
 			var other_key: = other as InputEventKey
 			if other_key != null and other_key.physical_keycode == key.physical_keycode:
-				return "%s já é %s" % [key_name(key), ACTION_NAMES.get(String(action), String(action))]
+				return String(TranslationServer.translate("%s já é %s")) % [key_name(key), TranslationServer.translate(ACTION_NAMES.get(String(action), String(action)))]
 	return ""
 
 
@@ -91,13 +91,14 @@ static func talk_key_name() -> String:
 static func key_name(event: InputEvent) -> String:
 	var mouse: = event as InputEventMouseButton
 	if mouse != null:
-		return MOUSE_NAMES.get(mouse.button_index, "botão %d do mouse" % mouse.button_index)
+		return String(TranslationServer.translate(MOUSE_NAMES[mouse.button_index])) if MOUSE_NAMES.has(mouse.button_index)\
+		else String(TranslationServer.translate("botão %d do mouse")) % mouse.button_index
 	var key: = event as InputEventKey
 	if key == null:
 		return "?"
 	var code: = key.physical_keycode if key.physical_keycode != KEY_NONE else key.keycode
 
-	if DisplayServer.get_name() != "headless":
+	if DisplayServer.get_name() != "headless" and not OS.has_feature("mobile"):
 		code = DisplayServer.keyboard_get_keycode_from_physical(code)
 	return OS.get_keycode_string(code)
 

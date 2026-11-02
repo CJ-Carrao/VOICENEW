@@ -162,18 +162,15 @@ func _red(point: Vector3) -> void:
 	if not detonates: return
 	resolved = true
 	_field(point)
-	var count := 0
 	var rows := []
 	for target in _candidates():
 		if not _allowed(target) or Combat.center_of(target).distance_to(point) > 4.0: continue
 		rows.append({"target": weakref(target), "damage": 80.0 * (1.0 - .7 * Combat.center_of(target).distance_to(point) / 4.0), "push": Vector3.ZERO, "type": "gravity"})
-		count += 1
-		if count >= 16: break
 	if not rows.is_empty():
 		var work = load("res://scripts/things/blast_work.gd").new()
 		work.setup(thing, rows)
 		get_tree().root.add_child(work)
-	Combat._crater(thing, point, 3.0, 80.0)
+	Combat._crater(thing, point, 4.0, 80.0)
 	load("res://scripts/fx/jujutsu_impact.gd").play(Forge.fx_root(thing), point, thing.travel_direction(), "red_burst")
 	thing.remove()
 

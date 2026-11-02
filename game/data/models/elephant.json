@@ -12,6 +12,194 @@
       -0.99
     ]
   },
+  "rig": {
+    "type": "quadruped",
+    "height_m": 3.3,
+    "joints": {
+      "body": {
+        "pivot": [
+          0.0,
+          2.211,
+          0.0
+        ],
+        "parent": "",
+        "type": "body"
+      },
+      "neck": {
+        "pivot": [
+          0.0,
+          2.4882,
+          -1.6698
+        ],
+        "parent": "body",
+        "type": "neck"
+      },
+      "head": {
+        "pivot": [
+          0.0,
+          2.6414,
+          -2.2212
+        ],
+        "parent": "neck",
+        "type": "head"
+      },
+      "jaw": {
+        "pivot": [
+          0.0,
+          2.3114,
+          -2.4522
+        ],
+        "parent": "head",
+        "type": "jaw"
+      },
+      "tail_1": {
+        "pivot": [
+          0.0,
+          2.4882,
+          1.8876
+        ],
+        "parent": "body",
+        "type": "tail",
+        "order": 0
+      },
+      "tail_2": {
+        "pivot": [
+          0.0,
+          2.4882,
+          2.2176
+        ],
+        "parent": "tail_1",
+        "type": "tail",
+        "order": 1
+      },
+      "tail_3": {
+        "pivot": [
+          0.0,
+          2.4882,
+          2.5476
+        ],
+        "parent": "tail_2",
+        "type": "tail",
+        "order": 2
+      },
+      "hip_fl": {
+        "pivot": [
+          -0.6048,
+          2.0724,
+          -0.9438
+        ],
+        "parent": "body",
+        "type": "hip",
+        "phase": 0.0,
+        "foot": [
+          -0.6048,
+          0.2657,
+          -0.9921
+        ]
+      },
+      "knee_fl": {
+        "pivot": [
+          -0.6048,
+          0.759,
+          -0.7506
+        ],
+        "parent": "hip_fl",
+        "type": "knee",
+        "foot": [
+          -0.6048,
+          0.2657,
+          -0.9921
+        ]
+      },
+      "hip_fr": {
+        "pivot": [
+          0.6048,
+          2.0724,
+          -0.9438
+        ],
+        "parent": "body",
+        "type": "hip",
+        "phase": 0.5,
+        "foot": [
+          0.6048,
+          0.2657,
+          -0.9921
+        ]
+      },
+      "knee_fr": {
+        "pivot": [
+          0.6048,
+          0.759,
+          -0.7506
+        ],
+        "parent": "hip_fr",
+        "type": "knee",
+        "foot": [
+          0.6048,
+          0.2657,
+          -0.9921
+        ]
+      },
+      "hip_hl": {
+        "pivot": [
+          -0.6048,
+          2.0724,
+          1.089
+        ],
+        "parent": "body",
+        "type": "hip",
+        "phase": 0.5,
+        "foot": [
+          -0.6048,
+          0.2657,
+          1.0407
+        ]
+      },
+      "knee_hl": {
+        "pivot": [
+          -0.6048,
+          0.759,
+          0.9924
+        ],
+        "parent": "hip_hl",
+        "type": "knee",
+        "foot": [
+          -0.6048,
+          0.2657,
+          1.0407
+        ]
+      },
+      "hip_hr": {
+        "pivot": [
+          0.6048,
+          2.0724,
+          1.089
+        ],
+        "parent": "body",
+        "type": "hip",
+        "phase": 0.0,
+        "foot": [
+          0.6048,
+          0.2657,
+          1.0407
+        ]
+      },
+      "knee_hr": {
+        "pivot": [
+          0.6048,
+          0.759,
+          0.9924
+        ],
+        "parent": "hip_hr",
+        "type": "knee",
+        "foot": [
+          0.6048,
+          0.2657,
+          1.0407
+        ]
+      }
+    }
+  },
   "units": "meters",
   "generator": "tools/models/gen_world_assets.py",
   "pieces": [
@@ -20,247 +208,864 @@
       "radius": 0.5,
       "pos": [
         0,
-        1.914,
+        2.211,
         0
       ],
-      "color": "#85858b",
+      "color": "#8b8b92",
       "tag": "body",
-      "_stretch": [
-        1.785,
-        1.452,
-        3.52
-      ]
+      "scale": [
+        1.89,
+        1.386,
+        2.8314
+      ],
+      "bone": "body"
     },
     {
       "shape": "sphere",
       "radius": 0.5,
       "pos": [
         0,
-        2.64,
-        -1.98
+        2.2942,
+        -0.9438
       ],
-      "color": "#85858b",
+      "color": "#8b8b92",
+      "tag": "body",
+      "scale": [
+        1.9656,
+        1.5246,
+        1.815
+      ],
+      "bone": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        2.2387,
+        1.089
+      ],
+      "color": "#8b8b92",
+      "tag": "body",
+      "scale": [
+        1.8144,
+        1.3583,
+        1.6698
+      ],
+      "bone": "body"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        1.9061,
+        0.2178
+      ],
+      "color": "#9a9aa1",
+      "tag": "belly",
+      "scale": [
+        1.3608,
+        0.5821,
+        1.815
+      ],
+      "bone": "body"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.5267,
+      "height": 1.2514,
+      "pos": [
+        0.0,
+        2.5054,
+        -1.7673
+      ],
+      "color": "#8b8b92",
+      "rot": [
+        80.0,
+        180.0,
+        0
+      ],
+      "tag": "neck",
+      "bone": "neck"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        2.6414,
+        -2.2212
+      ],
+      "color": "#8b8b92",
       "tag": "head",
-      "_stretch": [
-        1.26,
-        1.056,
-        1.375
-      ]
+      "scale": [
+        0.9742,
+        0.9504,
+        1.0692
+      ],
+      "bone": "head"
     },
     {
       "shape": "sphere",
-      "radius": 0.5,
+      "radius": 0.0832,
       "pos": [
-        0,
-        2.409,
-        -2.64
+        -0.4039,
+        2.7602,
+        -2.6014
       ],
-      "color": "#85858b",
-      "tag": "muzzle",
-      "_stretch": [
-        0.8400000000000001,
-        0.462,
-        0.99
-      ]
-    },
-    {
-      "shape": "capsule",
-      "radius": 0.294,
-      "height": 1.584,
-      "pos": [
-        -0.651,
-        0.792,
-        -1.265
-      ],
-      "color": "#85858b",
-      "tag": "leg"
-    },
-    {
-      "shape": "capsule",
-      "radius": 0.294,
-      "height": 1.584,
-      "pos": [
-        -0.651,
-        0.792,
-        1.265
-      ],
-      "color": "#85858b",
-      "tag": "leg"
-    },
-    {
-      "shape": "cone",
-      "radius": 0.273,
-      "height": 0.396,
-      "pos": [
-        -0.462,
-        3.234,
-        -1.705
-      ],
-      "color": "#85858b",
-      "rot": [
-        0,
-        0,
-        0
-      ],
-      "tag": "ear"
-    },
-    {
-      "shape": "capsule",
-      "radius": 0.294,
-      "height": 1.584,
-      "pos": [
-        0.651,
-        0.792,
-        -1.265
-      ],
-      "color": "#85858b",
-      "tag": "leg"
-    },
-    {
-      "shape": "capsule",
-      "radius": 0.294,
-      "height": 1.584,
-      "pos": [
-        0.651,
-        0.792,
-        1.265
-      ],
-      "color": "#85858b",
-      "tag": "leg"
-    },
-    {
-      "shape": "cone",
-      "radius": 0.273,
-      "height": 0.396,
-      "pos": [
-        0.462,
-        3.234,
-        -1.705
-      ],
-      "color": "#85858b",
-      "rot": [
-        0,
-        0,
-        0
-      ],
-      "tag": "ear"
-    },
-    {
-      "shape": "capsule",
-      "radius": 0.189,
-      "height": 1.65,
-      "pos": [
-        0,
-        2.046,
-        2.365
-      ],
-      "color": "#85858b",
-      "rot": [
-        90,
-        0,
-        0
-      ],
-      "tag": "tail"
+      "color": "#f2efe8",
+      "tag": "eye",
+      "bone": "head"
     },
     {
       "shape": "sphere",
-      "radius": 0.105,
+      "radius": 0.0516,
       "pos": [
-        -0.567,
-        2.805,
-        -2.365
+        -0.4189,
+        2.7602,
+        -2.635
       ],
       "color": "#151319",
-      "tag": "eye"
+      "tag": "eye",
+      "bone": "head"
     },
     {
       "shape": "sphere",
-      "radius": 0.105,
+      "radius": 0.0832,
       "pos": [
-        0.567,
-        2.805,
-        -2.365
+        0.4039,
+        2.7602,
+        -2.6014
+      ],
+      "color": "#f2efe8",
+      "tag": "eye",
+      "bone": "head"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0516,
+      "pos": [
+        0.4189,
+        2.7602,
+        -2.635
       ],
       "color": "#151319",
-      "tag": "eye"
+      "tag": "eye",
+      "bone": "head"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        -0.6534,
+        2.582,
+        -1.8054
+      ],
+      "color": "#838389",
+      "tag": "ear",
+      "scale": [
+        0.1663,
+        1.485,
+        1.188
+      ],
+      "rot": [
+        0,
+        -18,
+        0
+      ],
+      "bone": "head"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0.6534,
+        2.582,
+        -1.8054
+      ],
+      "color": "#838389",
+      "tag": "ear",
+      "scale": [
+        0.1663,
+        1.485,
+        1.188
+      ],
+      "rot": [
+        0,
+        18,
+        0
+      ],
+      "bone": "head"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        -0.6048,
+        1.9615,
+        -0.9438
+      ],
+      "color": "#8b8b92",
+      "tag": "leg",
+      "scale": [
+        1.1109,
+        0.9702,
+        1.2558
+      ],
+      "bone": "hip_fl"
     },
     {
       "shape": "capsule",
-      "radius": 0.15,
-      "height": 2.145,
+      "radius": 0.483,
+      "height": 2.2935,
       "pos": [
-        0,
-        1.518,
-        -2.805
+        -0.6048,
+        1.4157,
+        -0.8472
       ],
-      "color": "#85858b",
-      "tag": "trunk"
+      "color": "#8b8b92",
+      "rot": [
+        171.63,
+        0.0,
+        0
+      ],
+      "tag": "leg",
+      "bone": "hip_fl"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.4106,
+      "height": 1.3704,
+      "pos": [
+        -0.6048,
+        0.5123,
+        -0.8714
+      ],
+      "color": "#8b8b92",
+      "rot": [
+        153.92,
+        180.0,
+        0
+      ],
+      "tag": "leg",
+      "bone": "knee_fl"
     },
     {
       "shape": "sphere",
       "radius": 0.5,
       "pos": [
-        -1.05,
-        2.541,
-        -1.595
+        -0.6048,
+        0.2415,
+        -1.2336
       ],
-      "color": "#85858b",
-      "tag": "ear",
-      "_stretch": [
-        0.18,
-        1.3,
-        1
-      ]
+      "color": "#8b8b92",
+      "tag": "paw",
+      "scale": [
+        0.966,
+        0.483,
+        1.1592
+      ],
+      "bone": "knee_fl"
     },
     {
-      "shape": "cone",
-      "radius": 0.08,
-      "height": 0.7,
+      "shape": "box",
+      "size": [
+        0.0869,
+        0.1208,
+        0.1449
+      ],
       "pos": [
-        -0.3,
-        2.046,
-        -2.86
+        -0.8222,
+        0.0966,
+        -1.6925
       ],
-      "color": "#e9e1c8",
-      "rot": [
-        -90,
-        0,
-        0
+      "color": "#5a5a5f",
+      "tag": "claw",
+      "bone": "knee_fl"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0869,
+        0.1208,
+        0.1449
       ],
-      "tag": "tusk"
+      "pos": [
+        -0.6048,
+        0.0966,
+        -1.6925
+      ],
+      "color": "#5a5a5f",
+      "tag": "claw",
+      "bone": "knee_fl"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0869,
+        0.1208,
+        0.1449
+      ],
+      "pos": [
+        -0.3874,
+        0.0966,
+        -1.6925
+      ],
+      "color": "#5a5a5f",
+      "tag": "claw",
+      "bone": "knee_fl"
     },
     {
       "shape": "sphere",
       "radius": 0.5,
       "pos": [
-        1.05,
-        2.541,
-        -1.595
+        0.6048,
+        1.9615,
+        -0.9438
       ],
-      "color": "#85858b",
-      "tag": "ear",
-      "_stretch": [
-        0.18,
-        1.3,
-        1
-      ]
+      "color": "#8b8b92",
+      "tag": "leg",
+      "scale": [
+        1.1109,
+        0.9702,
+        1.2558
+      ],
+      "bone": "hip_fr"
     },
     {
-      "shape": "cone",
-      "radius": 0.08,
-      "height": 0.7,
+      "shape": "capsule",
+      "radius": 0.483,
+      "height": 2.2935,
       "pos": [
-        0.3,
-        2.046,
-        -2.86
+        0.6048,
+        1.4157,
+        -0.8472
       ],
-      "color": "#e9e1c8",
+      "color": "#8b8b92",
       "rot": [
-        -90,
-        0,
+        171.63,
+        0.0,
         0
       ],
-      "tag": "tusk"
+      "tag": "leg",
+      "bone": "hip_fr"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.4106,
+      "height": 1.3704,
+      "pos": [
+        0.6048,
+        0.5123,
+        -0.8714
+      ],
+      "color": "#8b8b92",
+      "rot": [
+        153.92,
+        180.0,
+        0
+      ],
+      "tag": "leg",
+      "bone": "knee_fr"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0.6048,
+        0.2415,
+        -1.2336
+      ],
+      "color": "#8b8b92",
+      "tag": "paw",
+      "scale": [
+        0.966,
+        0.483,
+        1.1592
+      ],
+      "bone": "knee_fr"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0869,
+        0.1208,
+        0.1449
+      ],
+      "pos": [
+        0.3874,
+        0.0966,
+        -1.6925
+      ],
+      "color": "#5a5a5f",
+      "tag": "claw",
+      "bone": "knee_fr"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0869,
+        0.1208,
+        0.1449
+      ],
+      "pos": [
+        0.6048,
+        0.0966,
+        -1.6925
+      ],
+      "color": "#5a5a5f",
+      "tag": "claw",
+      "bone": "knee_fr"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0869,
+        0.1208,
+        0.1449
+      ],
+      "pos": [
+        0.8222,
+        0.0966,
+        -1.6925
+      ],
+      "color": "#5a5a5f",
+      "tag": "claw",
+      "bone": "knee_fr"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        -0.6048,
+        1.9615,
+        1.089
+      ],
+      "color": "#8b8b92",
+      "tag": "leg",
+      "scale": [
+        1.1109,
+        0.9702,
+        1.2558
+      ],
+      "bone": "hip_hl"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.483,
+      "height": 2.2829,
+      "pos": [
+        -0.6048,
+        1.4157,
+        1.0407
+      ],
+      "color": "#8b8b92",
+      "rot": [
+        175.79,
+        180.0,
+        0
+      ],
+      "tag": "leg",
+      "bone": "hip_hl"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.4106,
+      "height": 1.3168,
+      "pos": [
+        -0.6048,
+        0.5123,
+        1.0166
+      ],
+      "color": "#8b8b92",
+      "rot": [
+        174.41,
+        0.0,
+        0
+      ],
+      "tag": "leg",
+      "bone": "knee_hl"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        -0.6048,
+        0.2415,
+        0.7992
+      ],
+      "color": "#8b8b92",
+      "tag": "paw",
+      "scale": [
+        0.966,
+        0.483,
+        1.1592
+      ],
+      "bone": "knee_hl"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0869,
+        0.1208,
+        0.1449
+      ],
+      "pos": [
+        -0.8222,
+        0.0966,
+        0.3403
+      ],
+      "color": "#5a5a5f",
+      "tag": "claw",
+      "bone": "knee_hl"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0869,
+        0.1208,
+        0.1449
+      ],
+      "pos": [
+        -0.6048,
+        0.0966,
+        0.3403
+      ],
+      "color": "#5a5a5f",
+      "tag": "claw",
+      "bone": "knee_hl"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0869,
+        0.1208,
+        0.1449
+      ],
+      "pos": [
+        -0.3874,
+        0.0966,
+        0.3403
+      ],
+      "color": "#5a5a5f",
+      "tag": "claw",
+      "bone": "knee_hl"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0.6048,
+        1.9615,
+        1.089
+      ],
+      "color": "#8b8b92",
+      "tag": "leg",
+      "scale": [
+        1.1109,
+        0.9702,
+        1.2558
+      ],
+      "bone": "hip_hr"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.483,
+      "height": 2.2829,
+      "pos": [
+        0.6048,
+        1.4157,
+        1.0407
+      ],
+      "color": "#8b8b92",
+      "rot": [
+        175.79,
+        180.0,
+        0
+      ],
+      "tag": "leg",
+      "bone": "hip_hr"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.4106,
+      "height": 1.3168,
+      "pos": [
+        0.6048,
+        0.5123,
+        1.0166
+      ],
+      "color": "#8b8b92",
+      "rot": [
+        174.41,
+        0.0,
+        0
+      ],
+      "tag": "leg",
+      "bone": "knee_hr"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0.6048,
+        0.2415,
+        0.7992
+      ],
+      "color": "#8b8b92",
+      "tag": "paw",
+      "scale": [
+        0.966,
+        0.483,
+        1.1592
+      ],
+      "bone": "knee_hr"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0869,
+        0.1208,
+        0.1449
+      ],
+      "pos": [
+        0.3874,
+        0.0966,
+        0.3403
+      ],
+      "color": "#5a5a5f",
+      "tag": "claw",
+      "bone": "knee_hr"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0869,
+        0.1208,
+        0.1449
+      ],
+      "pos": [
+        0.6048,
+        0.0966,
+        0.3403
+      ],
+      "color": "#5a5a5f",
+      "tag": "claw",
+      "bone": "knee_hr"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0869,
+        0.1208,
+        0.1449
+      ],
+      "pos": [
+        0.8222,
+        0.0966,
+        0.3403
+      ],
+      "color": "#5a5a5f",
+      "tag": "claw",
+      "bone": "knee_hr"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0735,
+      "height": 1.0959,
+      "pos": [
+        0.0,
+        2.3496,
+        2.3414
+      ],
+      "color": "#8b8b92",
+      "rot": [
+        106.99,
+        0.0,
+        0
+      ],
+      "tag": "tail",
+      "bone": "tail_1"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0515,
+      "height": 1.2155,
+      "pos": [
+        0.0,
+        1.7259,
+        3.0674
+      ],
+      "color": "#8b8b92",
+      "rot": [
+        150.7,
+        0.0,
+        0
+      ],
+      "tag": "tail",
+      "bone": "tail_3"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        1.2408,
+        3.3396
+      ],
+      "color": "#55555b",
+      "tag": "tail",
+      "scale": [
+        0.294,
+        0.42,
+        0.294
+      ],
+      "bone": "tail_3"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0832,
+      "height": 0.7852,
+      "pos": [
+        -0.3089,
+        1.9583,
+        -2.6667
+      ],
+      "color": "#ece4cf",
+      "rot": [
+        149.74,
+        -162.26,
+        0
+      ],
+      "tag": "tusk",
+      "bone": "head"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0416,
+      "height": 0.6812,
+      "pos": [
+        -0.3386,
+        1.6613,
+        -3.1122
+      ],
+      "color": "#ece4cf",
+      "rot": [
+        95.7,
+        176.57,
+        0
+      ],
+      "tag": "tusk",
+      "bone": "head"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0832,
+      "height": 0.7852,
+      "pos": [
+        0.3089,
+        1.9583,
+        -2.6667
+      ],
+      "color": "#ece4cf",
+      "rot": [
+        149.74,
+        162.26,
+        0
+      ],
+      "tag": "tusk",
+      "bone": "head"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0416,
+      "height": 0.6812,
+      "pos": [
+        0.3386,
+        1.6613,
+        -3.1122
+      ],
+      "color": "#ece4cf",
+      "rot": [
+        95.7,
+        -176.57,
+        0
+      ],
+      "tag": "tusk",
+      "bone": "head"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.2376,
+      "height": 1.1393,
+      "pos": [
+        0.0,
+        2.285,
+        -2.8449
+      ],
+      "color": "#8b8b92",
+      "rot": [
+        153.43,
+        180.0,
+        0
+      ],
+      "tag": "trunk",
+      "bone": "head"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.202,
+      "height": 1.0009,
+      "pos": [
+        0.0,
+        1.691,
+        -3.0231
+      ],
+      "color": "#8b8b92",
+      "rot": [
+        174.29,
+        180.0,
+        0
+      ],
+      "tag": "trunk",
+      "bone": "head"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.1663,
+      "height": 0.8962,
+      "pos": [
+        0.0,
+        1.1267,
+        -2.9637
+      ],
+      "color": "#8b8b92",
+      "rot": [
+        161.57,
+        0.0,
+        0
+      ],
+      "tag": "trunk",
+      "bone": "head"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.1307,
+      "height": 0.5307,
+      "pos": [
+        0.0,
+        0.7703,
+        -2.9756
+      ],
+      "color": "#8b8b92",
+      "rot": [
+        131.42,
+        180.0,
+        0
+      ],
+      "tag": "trunk",
+      "bone": "head"
     }
   ]
 }

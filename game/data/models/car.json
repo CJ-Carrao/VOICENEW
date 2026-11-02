@@ -12,251 +12,727 @@
     {
       "shape": "box",
       "size": [
-        1.6376,
-        0.55,
-        4.63
+        1.7088,
+        0.6027,
+        4.2596
       ],
       "pos": [
         0,
-        0.62,
+        0.5213,
         0
       ],
-      "color": "#346a94",
+      "color": "#2f6aa8",
       "tag": "body"
     },
     {
       "shape": "box",
       "size": [
-        1.424,
-        0.56,
-        2.2224
+        1.602,
+        0.1808,
+        4.4448
       ],
       "pos": [
         0,
-        1.12,
-        0.1
+        0.6723,
+        0
       ],
-      "color": "#4c7183",
-      "tag": "cabin"
+      "color": "#4076af",
+      "tag": "body"
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        1.6376,
+        0.1808,
+        1.2038
+      ],
+      "pos": [
+        0,
+        0.7827,
+        -1.5742
+      ],
+      "color": "#2f6aa8",
+      "point": 0.0,
+      "tag": "hood"
+    },
+    {
+      "shape": "wedge",
+      "size": [
+        1.6376,
+        0.1205,
+        0.8334
+      ],
+      "pos": [
+        0,
+        0.7727,
+        1.7594
+      ],
+      "color": "#2f6aa8",
+      "point": 0.0,
+      "rot": [
+        0,
+        180,
+        0
+      ],
+      "tag": "trunk"
     },
     {
       "shape": "box",
       "size": [
-        1.4596,
-        0.06,
-        2.0835
+        1.4952,
+        0.5166,
+        2.0372
       ],
       "pos": [
         0,
-        1.42,
-        0.1
+        1.0497,
+        0.1852
       ],
-      "color": "#346a94",
+      "color": "#86b9d3",
+      "tag": "glass",
+      "finish": "glass"
+    },
+    {
+      "shape": "box",
+      "size": [
+        1.424,
+        0.0861,
+        1.7594
+      ],
+      "pos": [
+        0,
+        1.3224,
+        0.1852
+      ],
+      "color": "#2f6aa8",
       "tag": "roof"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.3,
-      "height": 0.195,
+      "shape": "wedge",
+      "size": [
+        1.4952,
+        0.5166,
+        0.5556
+      ],
       "pos": [
-        -0.801,
-        0.3,
-        -1.35
-      ],
-      "color": "#141416",
-      "rot": [
         0,
-        0,
-        90
+        1.0497,
+        -1.0649
       ],
-      "tag": "wheel",
-      "finish": "rubber"
+      "color": "#86b9d3",
+      "point": 0.0,
+      "tag": "windshield",
+      "finish": "glass"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.15,
-      "height": 0.204,
-      "pos": [
-        -0.801,
-        0.3,
-        -1.35
+      "shape": "wedge",
+      "size": [
+        1.4952,
+        0.4879,
+        0.463
       ],
-      "color": "#c5c9ce",
+      "pos": [
+        0,
+        1.0497,
+        1.4353
+      ],
+      "color": "#86b9d3",
+      "point": 0.0,
       "rot": [
         0,
-        0,
-        90
+        180,
+        0
       ],
-      "tag": "hub",
-      "finish": "metal"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.3,
-      "height": 0.195,
-      "pos": [
-        -0.801,
-        0.3,
-        1.35
-      ],
-      "color": "#141416",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "wheel",
-      "finish": "rubber"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.15,
-      "height": 0.204,
-      "pos": [
-        -0.801,
-        0.3,
-        1.35
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "hub",
-      "finish": "metal"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.3,
-      "height": 0.195,
-      "pos": [
-        0.801,
-        0.3,
-        -1.35
-      ],
-      "color": "#141416",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "wheel",
-      "finish": "rubber"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.15,
-      "height": 0.204,
-      "pos": [
-        0.801,
-        0.3,
-        -1.35
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "hub",
-      "finish": "metal"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.3,
-      "height": 0.195,
-      "pos": [
-        0.801,
-        0.3,
-        1.35
-      ],
-      "color": "#141416",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "wheel",
-      "finish": "rubber"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.15,
-      "height": 0.204,
-      "pos": [
-        0.801,
-        0.3,
-        1.35
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "hub",
-      "finish": "metal"
+      "tag": "rear_window",
+      "finish": "glass"
     },
     {
       "shape": "box",
       "size": [
-        0.35,
-        0.15,
-        0.06
+        1.5308,
+        0.5166,
+        0.0926
       ],
       "pos": [
-        -0.58,
-        0.75,
-        -2.3382
+        0,
+        1.0497,
+        -0.5556
       ],
-      "color": "#eee5b9",
-      "tag": "headlight"
+      "color": "#2f6aa8",
+      "tag": "pillar"
+    },
+    {
+      "shape": "box",
+      "size": [
+        1.5308,
+        0.5166,
+        0.0926
+      ],
+      "pos": [
+        0,
+        1.0497,
+        0.1852
+      ],
+      "color": "#2f6aa8",
+      "tag": "pillar"
+    },
+    {
+      "shape": "box",
+      "size": [
+        1.5308,
+        0.5166,
+        0.0926
+      ],
+      "pos": [
+        0,
+        1.0497,
+        0.926
+      ],
+      "color": "#2f6aa8",
+      "tag": "pillar"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.4219,
+        0.02
+      ],
+      "pos": [
+        -0.8633,
+        0.4915,
+        -0.2315
+      ],
+      "color": "#1e2024",
+      "tag": "door_line"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.4219,
+        0.02
+      ],
+      "pos": [
+        -0.8633,
+        0.4915,
+        0.7408
+      ],
+      "color": "#1e2024",
+      "tag": "door_line"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.03,
+        0.14
+      ],
+      "pos": [
+        -0.8722,
+        0.6301,
+        -0.0926
+      ],
+      "color": "#c5c9ce",
+      "tag": "door_handle"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.03,
+        0.14
+      ],
+      "pos": [
+        -0.8722,
+        0.6301,
+        0.926
+      ],
+      "color": "#c5c9ce",
+      "tag": "door_handle"
     },
     {
       "shape": "box",
       "size": [
         0.1,
-        0.12,
-        0.4
+        0.08,
+        0.05
       ],
+      "pos": [
+        -0.89,
+        0.9062,
+        -0.7408
+      ],
+      "color": "#202227",
+      "tag": "mirror"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.36,
+      "height": 0.1424,
       "pos": [
         -0.8366,
-        0.8,
-        0.35
+        0.31,
+        -1.389
       ],
-      "color": "#2a2d32",
+      "color": "#1e2024",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel_arch"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.31,
+      "height": 0.2,
+      "pos": [
+        -0.801,
+        0.31,
+        -1.389
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.1922,
+      "height": 0.208,
+      "pos": [
+        -0.801,
+        0.31,
+        -1.389
+      ],
+      "color": "#b9bec4",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0682,
+      "height": 0.22,
+      "pos": [
+        -0.801,
+        0.31,
+        -1.389
+      ],
+      "color": "#828589",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.36,
+      "height": 0.1424,
+      "pos": [
+        -0.8366,
+        0.31,
+        1.389
+      ],
+      "color": "#1e2024",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel_arch"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.31,
+      "height": 0.2,
+      "pos": [
+        -0.801,
+        0.31,
+        1.389
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.1922,
+      "height": 0.208,
+      "pos": [
+        -0.801,
+        0.31,
+        1.389
+      ],
+      "color": "#b9bec4",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0682,
+      "height": 0.22,
+      "pos": [
+        -0.801,
+        0.31,
+        1.389
+      ],
+      "color": "#828589",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.4219,
+        0.02
+      ],
+      "pos": [
+        0.8633,
+        0.4915,
+        -0.2315
+      ],
+      "color": "#1e2024",
+      "tag": "door_line"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.02,
+        0.4219,
+        0.02
+      ],
+      "pos": [
+        0.8633,
+        0.4915,
+        0.7408
+      ],
+      "color": "#1e2024",
+      "tag": "door_line"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.03,
+        0.14
+      ],
+      "pos": [
+        0.8722,
+        0.6301,
+        -0.0926
+      ],
+      "color": "#c5c9ce",
       "tag": "door_handle"
     },
     {
       "shape": "box",
       "size": [
-        0.35,
-        0.15,
-        0.06
+        0.03,
+        0.03,
+        0.14
       ],
       "pos": [
-        0.58,
-        0.75,
-        -2.3382
+        0.8722,
+        0.6301,
+        0.926
       ],
-      "color": "#eee5b9",
-      "tag": "headlight"
+      "color": "#c5c9ce",
+      "tag": "door_handle"
     },
     {
       "shape": "box",
       "size": [
         0.1,
-        0.12,
-        0.4
+        0.08,
+        0.05
       ],
       "pos": [
-        0.8366,
-        0.8,
-        0.35
+        0.89,
+        0.9062,
+        -0.7408
       ],
-      "color": "#2a2d32",
-      "tag": "door_handle"
+      "color": "#202227",
+      "tag": "mirror"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.36,
+      "height": 0.1424,
+      "pos": [
+        0.8366,
+        0.31,
+        -1.389
+      ],
+      "color": "#1e2024",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel_arch"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.31,
+      "height": 0.2,
+      "pos": [
+        0.801,
+        0.31,
+        -1.389
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.1922,
+      "height": 0.208,
+      "pos": [
+        0.801,
+        0.31,
+        -1.389
+      ],
+      "color": "#b9bec4",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0682,
+      "height": 0.22,
+      "pos": [
+        0.801,
+        0.31,
+        -1.389
+      ],
+      "color": "#828589",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.36,
+      "height": 0.1424,
+      "pos": [
+        0.8366,
+        0.31,
+        1.389
+      ],
+      "color": "#1e2024",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel_arch"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.31,
+      "height": 0.2,
+      "pos": [
+        0.801,
+        0.31,
+        1.389
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.1922,
+      "height": 0.208,
+      "pos": [
+        0.801,
+        0.31,
+        1.389
+      ],
+      "color": "#b9bec4",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0682,
+      "height": 0.22,
+      "pos": [
+        0.801,
+        0.31,
+        1.389
+      ],
+      "color": "#828589",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        1.7444,
+        0.12,
+        0.12
+      ],
+      "pos": [
+        0,
+        0.26,
+        -2.1761
+      ],
+      "color": "#202227",
+      "tag": "bumper"
+    },
+    {
+      "shape": "box",
+      "size": [
+        1.7444,
+        0.12,
+        0.12
+      ],
+      "pos": [
+        0,
+        0.26,
+        2.1761
+      ],
+      "color": "#202227",
+      "tag": "bumper"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.712,
+        0.1808,
+        0.03
+      ],
+      "pos": [
+        0,
+        0.4915,
+        -2.153
+      ],
+      "color": "#1e2024",
+      "tag": "grille"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.356,
+        0.1205,
+        0.04
+      ],
+      "pos": [
+        -0.6408,
+        0.5819,
+        -2.153
+      ],
+      "color": "#f4ecc4",
+      "tag": "headlight",
+      "glow": 1.5
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.356,
+        0.1205,
+        0.04
+      ],
+      "pos": [
+        0.6408,
+        0.5819,
+        -2.153
+      ],
+      "color": "#f4ecc4",
+      "tag": "headlight",
+      "glow": 1.5
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.2848,
+        0.1085,
+        0.04
+      ],
+      "pos": [
+        -0.6764,
+        0.612,
+        2.153
+      ],
+      "color": "#c8302a",
+      "tag": "taillight",
+      "glow": 0.8
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.2848,
+        0.1085,
+        0.04
+      ],
+      "pos": [
+        0.6764,
+        0.612,
+        2.153
+      ],
+      "color": "#c8302a",
+      "tag": "taillight",
+      "glow": 0.8
     }
   ]
 }

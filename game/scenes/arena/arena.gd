@@ -12,6 +12,8 @@ const WORLD_LAYER: = 1
 var size: float = 0.0
 
 var map_id: String = "original"
+
+static var active_size: float = 96.0
 var space: SpaceMap = null
 
 static var next_map: String = ""
@@ -35,22 +37,32 @@ func _ready() -> void :
 	if map_id == "space":
 		_build_space()
 		return
-	size = Lexicon.balf("arena.size")
 	_layout = _read_layout()
+	size = float(_layout.get("size", Lexicon.balf("arena.size")))
+	active_size = size
 	terrain = Terrain.new()
+	terrain.chunk_cells_override = int(_layout.get("terrain_chunk_cells", 0))
 	add_child(terrain)
-	terrain.build(size, _layout.get("hills", []), build_async)
+	terrain.build(size, _layout.get("hills", []), build_async, _layout.get("ground", {}), float(_layout.get("ground_depth_m", 0.0)))
 	terrain.changed.connect(_on_terrain_changed)
-	_build_bounds(Lexicon.balf("arena.wall_height"), Lexicon.balf("arena.wall_thickness"))
-	_build_spawns(Lexicon.balf("arena.spawn_distance"))
+	if map_id == "tokyo3":
+		_build_city_light()
+	_build_bounds(float(_layout.get("wall_height", Lexicon.balf("arena.wall_height"))), Lexicon.balf("arena.wall_thickness"))
+	if _layout.has("spawns"):
+		_build_layout_spawns(_layout["spawns"])
+	else:
+		_build_spawns(Lexicon.balf("arena.spawn_distance"))
 
 
 static func chosen_map() -> String:
 	if not next_map.is_empty():
 		return next_map
-	for arg in OS.get_cmdline_user_args():
+	for arg in MobileDev.args():
 		if arg.begins_with("--mapa="):
-			return "space" if arg.trim_prefix("--mapa=") in ["espaco", "espaço", "space"] else "original"
+			var requested: = arg.trim_prefix("--mapa=")
+			if requested in ["espaco", "espaço", "space"]: return "space"
+			if requested in ["toquio3", "tokyo3"]: return "tokyo3"
+			return "original"
 	return "original"
 
 
@@ -58,19 +70,31 @@ static func chosen_map() -> String:
 func is_world_ready() -> bool:
 	if space != null:
 		return space.is_ready()
-	return terrain == null or terrain.is_settled()
+	if terrain != null and not terrain.is_settled():
+		return false
+	for structure: Structure in structures():
+		if not structure.is_settled():
+			return false
+	return true
 
 
 
 func world_progress() -> float:
 	if space != null:
 		return space.build_progress()
-	return terrain.build_progress() if terrain != null else 1.0
+	var list: = structures()
+	var total: = (1 if terrain != null else 0) + list.size()
+	if total <= 0:
+		return 1.0
+	var sum: = terrain.build_progress() if terrain != null else 0.0
+	for structure: Structure in list:
+		sum += structure.build_progress()
+	return sum / float(total)
 
 
 
 static func take_intro() -> bool:
-	var wanted: = play_intro or OS.get_cmdline_user_args().has("--mapa-intro")
+	var wanted: = play_intro or MobileDev.args().has("--mapa-intro")
 	play_intro = false
 	return wanted
 
@@ -89,38 +113,94 @@ func _build_space() -> void :
 	_spawns = space.spawns
 
 
+func _build_city_light() -> void :
+	var world: = get_node_or_null("WorldEnvironment") as WorldEnvironment
+	var sun: = get_node_or_null("Sun") as DirectionalLight3D
+	if world != null:
+		var env: = world.environment.duplicate(true) as Environment
+		var sky: = env.sky.duplicate(true) as Sky
+		var paint: = sky.sky_material.duplicate(true) as ProceduralSkyMaterial
+		paint.sky_top_color = Color("#55a6d7")
+		paint.sky_horizon_color = Color("#c4e9f3")
+		paint.ground_horizon_color = Color("#a6d4de")
+		paint.ground_bottom_color = Color("#6eacc6")
+		sky.sky_material = paint
+		env.sky = sky
+		env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
+		env.ambient_light_color = Color("#c9dce9")
+		env.ambient_light_energy = 0.8
+		env.tonemap_exposure = 1.0
+		world.environment = env
+	if sun != null:
+		sun.rotation = Vector3(deg_to_rad(-38.0), deg_to_rad(225.0), 0.0)
+		sun.light_color = Color("#fff1d5")
+		sun.light_energy = 1.45
+	var ocean: = preload("res://scripts/world/city_ocean.gd").new() as MeshInstance3D
+	ocean.set("island_half_size", size * 0.5)
+	add_child(ocean)
+
+
 
 func reset_world() -> void :
+
+	var portals: = PortalSystem.find(get_tree())
+	if portals != null:
+		portals.close_all()
+	if terrain != null:
+		terrain.restore()
+	if space != null:
+		space.restore()
+	var entries: Array = _layout.get("structures", [])
+	var existing: = structures()
+	var can_reuse: = destructibles != null and existing.size() == entries.size()
+	if can_reuse:
+		for i in entries.size():
+			if existing[i].blueprint_id != String(entries[i]["blueprint"]):
+				can_reuse = false
+				break
+	if can_reuse:
+		for child in destructibles.get_children():
+			if not (child is Structure):
+				destructibles.remove_child(child)
+				child.queue_free()
+		for structure: Structure in existing:
+			structure.restore()
+		world_reset.emit()
+		return
 	if destructibles != null:
 		remove_child(destructibles)
 		destructibles.queue_free()
 	destructibles = Node3D.new()
 	destructibles.name = "Destructibles"
 	add_child(destructibles)
-	if terrain != null:
-		terrain.restore()
-	if space != null:
-		space.restore()
+	var async_structures: = build_async and not Session.is_online()
 	var serial: = 0
-	for entry: Dictionary in _layout.get("structures", []):
+	for entry: Dictionary in entries:
 		serial += 1
 		var id: = String(entry["blueprint"])
 		var at: Array = entry.get("pos", [0.0, 0.0, 0.0])
 		var structure: = Structure.new()
+		structure.chunk_cells_override = int(_layout.get("structure_chunk_cells", 0))
 		structure.network_id = serial
 		structure.name = "Structure%d" % serial
 		structure.position = Vector3(float(at[0]), float(at[1]), float(at[2]))
 		structure.rotation.y = deg_to_rad(float(entry.get("rot", 0.0)))
 		destructibles.add_child(structure)
-		structure.build(StructureBlueprints.chunks(id), id)
+		structure.build(StructureBlueprints.chunks(id), id, async_structures)
 	world_reset.emit()
 
 
 func _read_layout() -> Dictionary:
-	var layout: Variant = JSON.parse_string(FileAccess.get_file_as_string(String(Lexicon.bal("world.layout", ""))))
+	var path: = "res://data/world/tokyo3.json" if map_id == "tokyo3" else String(Lexicon.bal("world.layout", ""))
+	var layout: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
 	if not layout is Dictionary:
-		push_warning("[Mundo] mapa não encontrado: %s" % Lexicon.bal("world.layout", ""))
+		push_warning("[Mundo] mapa não encontrado: %s" % path)
 		return {}
+	if String(layout.get("ground_depth_from", "")) == "original":
+		var original_path: = String(Lexicon.bal("world.layout", ""))
+		var original: Variant = JSON.parse_string(FileAccess.get_file_as_string(original_path))
+		if original is Dictionary:
+			layout["ground_depth_m"] = float(original.get("ground_depth_m", 0.0))
 	return layout
 
 
@@ -170,7 +250,7 @@ func _build_bounds(height: float, thickness: float) -> void :
 
 	var long_side: = size + thickness * 2.0
 
-	var below: = Lexicon.balf("terrain.max_depth_m") + 1.0
+	var below: = (terrain.dig_depth_m if terrain != null else Lexicon.balf("terrain.max_depth_m")) + 1.0
 	height += below
 
 	var sides: Array[Array] = [
@@ -185,7 +265,10 @@ func _build_bounds(height: float, thickness: float) -> void :
 		var wall: = StaticBody3D.new()
 		wall.name = "Bound%d" % i
 		wall.collision_layer = WORLD_LAYER
-		wall.position = center - Vector3(0.0, below * 0.5, 0.0)
+
+		wall.add_to_group(PortalSystem.NO_PORTAL_GROUP)
+
+		wall.position = center - Vector3(0.0, below, 0.0)
 		add_child(wall)
 
 		var shape: = CollisionShape3D.new()
@@ -200,6 +283,7 @@ func _build_bounds(height: float, thickness: float) -> void :
 		panel_mesh.material = glass
 		panel.mesh = panel_mesh
 		panel.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		panel.visible = map_id != "tokyo3"
 		wall.add_child(panel)
 
 
@@ -211,6 +295,7 @@ func _build_bounds(height: float, thickness: float) -> void :
 			strip.mesh = strip_mesh
 			strip.position.y = y
 			strip.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+			strip.visible = map_id != "tokyo3"
 			wall.add_child(strip)
 
 
@@ -227,4 +312,18 @@ func _build_spawns(distance: float) -> void :
 		var marker: = Marker3D.new()
 		marker.name = "Spawn%s" % ["A", "B", "C", "D"][i]
 		marker.transform = _spawns[i]
+		add_child(marker)
+
+
+
+func _build_layout_spawns(entries: Array) -> void :
+	_spawns.clear()
+	for i in entries.size():
+		var entry: Array = entries[i]
+		var at: = Vector3(float(entry[0]), 0.05, float(entry[1]))
+		var transform: = Transform3D(Basis(Vector3.UP, deg_to_rad(float(entry[2]))), at)
+		_spawns.append(transform)
+		var marker: = Marker3D.new()
+		marker.name = "Spawn%s" % ["A", "B", "C", "D"][i]
+		marker.transform = transform
 		add_child(marker)

@@ -9,109 +9,131 @@
   "generator": "tools/models/gen_world_assets.py",
   "pieces": [
     {
-      "shape": "sphere",
+      "shape": "capsule",
       "radius": 0.018,
+      "height": 0.0739,
       "pos": [
-        0.0057,
-        0.025,
-        -0.0908
+        0.0,
+        0.0315,
+        -0.0833
       ],
-      "color": "#e5c33e",
-      "tag": "fruit"
-    },
-    {
-      "shape": "sphere",
-      "radius": 0.018,
-      "pos": [
-        0.0126,
-        0.025,
-        -0.0672
-      ],
-      "color": "#e5c33e",
-      "tag": "fruit"
-    },
-    {
-      "shape": "sphere",
-      "radius": 0.018,
-      "pos": [
-        0.0173,
-        0.025,
-        -0.0412
-      ],
-      "color": "#e5c33e",
-      "tag": "fruit"
-    },
-    {
-      "shape": "sphere",
-      "radius": 0.018,
-      "pos": [
-        0.0197,
-        0.025,
-        -0.0139
-      ],
-      "color": "#e5c33e",
-      "tag": "fruit"
-    },
-    {
-      "shape": "sphere",
-      "radius": 0.018,
-      "pos": [
-        0.0197,
-        0.025,
-        0.0139
-      ],
-      "color": "#e5c33e",
-      "tag": "fruit"
-    },
-    {
-      "shape": "sphere",
-      "radius": 0.018,
-      "pos": [
-        0.0173,
-        0.025,
-        0.0412
-      ],
-      "color": "#e5c33e",
-      "tag": "fruit"
-    },
-    {
-      "shape": "sphere",
-      "radius": 0.018,
-      "pos": [
-        0.0126,
-        0.025,
-        0.0672
-      ],
-      "color": "#e5c33e",
-      "tag": "fruit"
-    },
-    {
-      "shape": "sphere",
-      "radius": 0.018,
-      "pos": [
-        0.0057,
-        0.025,
-        0.0908
-      ],
-      "color": "#e5c33e",
-      "tag": "fruit"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.01,
-        0.012,
-        0.025
-      ],
-      "pos": [
-        0.005,
-        0.025,
-        -0.1
-      ],
-      "color": "#7a4b26",
+      "color": "#f2cf3a",
       "rot": [
+        61.63,
+        0.0,
+        0
+      ],
+      "tag": "fruit"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0171,
+      "height": 0.07,
+      "pos": [
+        0.0,
+        0.0471,
+        -0.05
+      ],
+      "color": "#f2cf3a",
+      "rot": [
+        68.43,
+        0.0,
+        0
+      ],
+      "tag": "fruit"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0162,
+      "height": 0.0661,
+      "pos": [
+        0.0,
+        0.0561,
+        -0.0167
+      ],
+      "color": "#f2cf3a",
+      "rot": [
+        81.77,
+        0.0,
+        0
+      ],
+      "tag": "fruit"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0153,
+      "height": 0.0643,
+      "pos": [
+        0.0,
+        0.0561,
+        0.0167
+      ],
+      "color": "#f2cf3a",
+      "rot": [
+        98.23,
+        0.0,
+        0
+      ],
+      "tag": "fruit"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0144,
+      "height": 0.0646,
+      "pos": [
+        0.0,
+        0.0471,
+        0.05
+      ],
+      "color": "#f2cf3a",
+      "rot": [
+        111.57,
+        0.0,
+        0
+      ],
+      "tag": "fruit"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0135,
+      "height": 0.0649,
+      "pos": [
+        0.0,
+        0.0315,
+        0.0833
+      ],
+      "color": "#f2cf3a",
+      "rot": [
+        118.37,
+        0.0,
+        0
+      ],
+      "tag": "fruit"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0048,
+      "pos": [
         0,
-        -20,
+        0.0225,
+        0.1
+      ],
+      "color": "#3a2a14",
+      "tag": "tip"
+    },
+    {
+      "shape": "capsule",
+      "radius": 0.0056,
+      "height": 0.0278,
+      "pos": [
+        0.0,
+        0.0248,
+        -0.108
+      ],
+      "color": "#6a7a2a",
+      "rot": [
+        74.29,
+        180.0,
         0
       ],
       "tag": "stem"

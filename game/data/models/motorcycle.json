@@ -15,129 +15,286 @@
       "pos": [
         0,
         0.32,
-        -0.73
+        -0.714
       ],
-      "color": "#141416",
+      "color": "#1a1a1d",
       "rot": [
         0,
         0,
         90
       ],
-      "tag": "wheel"
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.1984,
+      "height": 0.1248,
+      "pos": [
+        0,
+        0.32,
+        -0.714
+      ],
+      "color": "#b9bec4",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0704,
+      "height": 0.132,
+      "pos": [
+        0,
+        0.32,
+        -0.714
+      ],
+      "color": "#828589",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
     },
     {
       "shape": "cylinder",
       "radius": 0.32,
-      "height": 0.12,
+      "height": 0.14,
       "pos": [
         0,
         0.32,
-        0.73
+        0.714
       ],
-      "color": "#141416",
+      "color": "#1a1a1d",
       "rot": [
         0,
         0,
         90
       ],
-      "tag": "wheel"
+      "tag": "wheel",
+      "finish": "rubber"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.1984,
+      "height": 0.1456,
+      "pos": [
+        0,
+        0.32,
+        0.714
+      ],
+      "color": "#b9bec4",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0704,
+      "height": 0.154,
+      "pos": [
+        0,
+        0.32,
+        0.714
+      ],
+      "color": "#828589",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
     },
     {
       "shape": "box",
       "size": [
-        0.3,
-        0.27,
-        0.65
+        0.24,
+        0.26,
+        0.5
       ],
       "pos": [
         0,
-        0.55,
+        0.46,
+        0.02
+      ],
+      "color": "#3b3f46",
+      "tag": "engine"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.045,
+      "height": 0.8358,
+      "pos": [
+        0.14,
+        0.34,
+        0.466
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        84.51,
+        0.0,
         0
       ],
-      "color": "#2a2d32",
-      "tag": "engine"
+      "tag": "exhaust"
     },
     {
       "shape": "sphere",
       "radius": 0.5,
       "pos": [
         0,
-        0.85,
-        -0.2
+        0.82,
+        -0.18
       ],
-      "color": "#a43c35",
+      "color": "#b33a30",
       "tag": "tank",
-      "_stretch": [
-        0.38,
-        0.3,
+      "scale": [
+        0.34,
+        0.26,
         0.55
       ]
     },
     {
       "shape": "box",
       "size": [
-        0.3,
+        0.28,
         0.1,
-        0.55
+        0.6
       ],
       "pos": [
         0,
-        0.92,
-        0.3
+        0.84,
+        0.32
       ],
-      "color": "#141416",
+      "color": "#1a1a1d",
       "tag": "seat"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.22,
+        0.14,
+        0.4
+      ],
+      "pos": [
+        0,
+        0.7,
+        0.5
+      ],
+      "color": "#b33a30",
+      "tag": "tail"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.12,
+        0.06,
+        0.04
+      ],
+      "pos": [
+        0,
+        0.74,
+        0.72
+      ],
+      "color": "#c8302a",
+      "tag": "taillight",
+      "glow": 0.8
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.03,
+      "height": 0.7252,
+      "pos": [
+        -0.1,
+        0.66,
+        -0.588
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        20.33,
+        0.0,
+        0
+      ],
+      "tag": "fork"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.03,
+      "height": 0.7252,
+      "pos": [
+        0.1,
+        0.66,
+        -0.588
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        20.33,
+        0.0,
+        0
+      ],
+      "tag": "fork"
     },
     {
       "shape": "cylinder",
       "radius": 0.025,
-      "height": 0.7,
+      "height": 0.72,
       "pos": [
-        0,
-        1.1,
-        -0.6
+        0.0,
+        1.08,
+        -0.42
       ],
-      "color": "#2a2d32",
+      "color": "#1e2024",
       "rot": [
-        0,
-        0,
-        90
+        90.0,
+        90.0,
+        0
       ],
       "tag": "handlebar"
     },
     {
       "shape": "cylinder",
-      "radius": 0.025,
-      "height": 0.75,
+      "radius": 0.1,
+      "height": 0.1,
       "pos": [
-        -0.12,
-        0.7,
-        -0.7
+        0,
+        0.94,
+        -0.63
       ],
-      "color": "#c5c9ce",
+      "color": "#f4ecc4",
       "rot": [
-        -12,
+        -90,
         0,
         0
       ],
-      "tag": "fork"
+      "tag": "headlight",
+      "glow": 1.4
     },
     {
       "shape": "cylinder",
-      "radius": 0.025,
-      "height": 0.75,
+      "radius": 0.05,
+      "height": 0.4636,
       "pos": [
-        0.12,
-        0.7,
-        -0.7
+        0.0,
+        0.725,
+        -0.352
       ],
-      "color": "#c5c9ce",
+      "color": "#3b3f46",
       "rot": [
-        -12,
-        0,
+        40.98,
+        180.0,
         0
       ],
-      "tag": "fork"
+      "tag": "frame"
     }
   ]
 }

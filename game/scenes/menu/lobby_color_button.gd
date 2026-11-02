@@ -21,7 +21,8 @@ func _ready() -> void :
 func _draw() -> void :
 	var selected: = owner_id == local_id
 	var occupied: = owner_id > 0 and not selected
-	var hovered: = not disabled and (is_hovered() or has_focus())
+
+	var hovered: = not disabled and not (OS.has_feature("mobile") or MobileDev.args().has("--mobile")) and (is_hovered() or has_focus())
 	var points: = PackedVector2Array([Vector2(9, 0), Vector2(size.x - 9, 0), Vector2(size.x, 9), Vector2(size.x, size.y - 9), Vector2(size.x - 9, size.y), Vector2(0, size.y), Vector2(0, 9)])
 	var background: = Color("#222329")
 	if selected: background = swatch.darkened(0.78)
@@ -43,7 +44,7 @@ func _draw() -> void :
 	var font: = ui_font if ui_font != null else ThemeDB.fallback_font
 	var ink: = Color("#f5f1e8") if not occupied else Color("#b8b5b0")
 	if not compact: _center_text(font, color_name, 54, 17, ink)
-	var status: = ("SUA" if compact else "SUA COR") if selected else ("P%d" % owner_id if occupied else ("·" if compact else "LIVRE"))
+	var status: = (tr("SUA") if compact else tr("SUA COR")) if selected else ("P%d" % owner_id if occupied else ("·" if compact else tr("LIVRE")))
 	_center_text(font, status, 44 if compact else 77, 13 if compact else 14, ink)
 	if selected:
 		var at: = swatch_rect.get_center()

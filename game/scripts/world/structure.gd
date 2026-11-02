@@ -28,7 +28,7 @@ var _anchors_dirty: = true
 
 
 
-func build(chunks: Array, id: String = "") -> void :
+func build(chunks: Array, id: String = "", async: bool = false) -> void :
 	blueprint_id = id
 	var s: = float(Lexicon.bal("blocks.size_m", 0.25))
 	var lo: = Vector3.INF
@@ -51,14 +51,22 @@ func build(chunks: Array, id: String = "") -> void :
 	var types: = {}
 	for chunk: Dictionary in chunks:
 		var material: = String(chunk["material"])
-		if not types.has(material):
-			types[material] = add_type(material, Color(String(Lexicon.bal("materials.%s.color" % material, "#999999"))))
-		_fill(chunk, int(types[material]))
-	commit_base()
+		var color: = String(chunk.get("color", Lexicon.bal("materials.%s.color" % material, "#999999")))
+		var glow: = float(chunk.get("glow", 0.0))
+		var palette_key: = material + ":" + color + ":" + str(glow)
+		if not types.has(palette_key):
+			types[palette_key] = add_type(material, Color(color), 0, glow)
+		_fill(chunk, int(types[palette_key]))
+	commit_base(async)
 	_born = alive_count()
 	var box: = AABB(corner, Vector3(n) * s)
 	_bounds_center = box.get_center()
 	_bounds_radius = box.size.length() * 0.5
+
+
+func restore() -> void :
+	_anchors_dirty = true
+	super.restore()
 
 
 
@@ -108,26 +116,93 @@ func matter_left() -> float:
 
 
 func nearest_chunk_point(from: Vector3) -> Vector3:
+	if dims.x <= 0 or dims.y <= 0 or dims.z <= 0:
+		return Vector3.INF
 	var local: = to_local(from)
+	var gx: = (local.x - origin.x) / size_m - 0.5
+	var gy: = (local.y - origin.y) / size_m - 0.5
+	var gz: = (local.z - origin.z) / size_m - 0.5
+	var x_axis: = _axis_order(dims.x, gx, size_m)
+	var z_axis: = _axis_order(dims.z, gz, size_m)
+	var xs: PackedInt32Array = x_axis[0]
+	var xd2: PackedFloat32Array = x_axis[1]
+	var zs: PackedInt32Array = z_axis[0]
+	var zd2: PackedFloat32Array = z_axis[1]
+	var y0: = clampi(floori(gy), 0, dims.y - 1)
 	var best: = -1
 	var best_d: = INF
-	for x in dims.x:
-		var px: = origin.x + (x + 0.5) * size_m - local.x
-		for z in dims.z:
-			var pz: = origin.z + (z + 0.5) * size_m - local.z
-			var flat: = px * px + pz * pz
+	for ix in xs.size():
+		var px2: = xd2[ix]
+		if px2 >= best_d:
+			break
+		var x: = xs[ix]
+		var x_stride: = x * dims.z
+		for iz in zs.size():
+			var flat: = px2 + zd2[iz]
 			if flat >= best_d:
-				continue
-			var start: = (x * dims.z + z) * dims.y
-			for y in dims.y:
-				if blocks[start + y] == AIR:
-					continue
-				var py: = origin.y + (y + 0.5) * size_m - local.y
-				var d: = flat + py * py
-				if d < best_d:
-					best_d = d
-					best = start + y
+				break
+			var start: = (x_stride + zs[iz]) * dims.y
+			var ly: = y0
+			var ry: = y0 + 1
+			while ly >= 0 or ry < dims.y:
+				var dyl: = INF
+				if ly >= 0:
+					var dy: = (float(ly) - gy) * size_m
+					dyl = dy * dy
+					if flat + dyl >= best_d:
+						ly = -1
+						dyl = INF
+				var dyr: = INF
+				if ry < dims.y:
+					var dy: = (float(ry) - gy) * size_m
+					dyr = dy * dy
+					if flat + dyr >= best_d:
+						ry = dims.y
+						dyr = INF
+				if ly < 0 and ry >= dims.y:
+					break
+				if dyl <= dyr:
+					if blocks[start + ly] != AIR:
+						best_d = flat + dyl
+						best = start + ly
+						break
+					ly -= 1
+				else:
+					if blocks[start + ry] != AIR:
+						best_d = flat + dyr
+						best = start + ry
+						break
+					ry += 1
 	return to_global(cell_center(cell_of_index(best))) if best >= 0 else Vector3.INF
+
+
+static func _axis_order(n: int, target_cell: float, step: float) -> Array:
+	var idx: = PackedInt32Array()
+	var d2: = PackedFloat32Array()
+	idx.resize(n)
+	d2.resize(n)
+	var l: = clampi(floori(target_cell), 0, n - 1)
+	var r: = l + 1
+	var k: = 0
+	while l >= 0 or r < n:
+		var dl: = INF
+		if l >= 0:
+			var dx: = (float(l) - target_cell) * step
+			dl = dx * dx
+		var dr: = INF
+		if r < n:
+			var dx: = (float(r) - target_cell) * step
+			dr = dx * dx
+		if dl <= dr:
+			idx[k] = l
+			d2[k] = dl
+			l -= 1
+		else:
+			idx[k] = r
+			d2[k] = dr
+			r += 1
+		k += 1
+	return [idx, d2]
 
 
 

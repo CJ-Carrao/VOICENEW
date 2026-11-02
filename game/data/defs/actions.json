@@ -1,5 +1,5 @@
 {
-  "_comment": "Ações (DESIGN 3.4). takes_arg: recebe uma subárvore X. arg_role: papel de X (escolhe o movimento padrão dele). projectile: X é projétil do dono (recebe os modificadores que descem). default_arg 'owner_projectile': sem X, usa o projétil padrão do dono; senão fallback_arg. takes_n: recebe um número (split). descends: sem gatilho dito na frase, numa coisa que atira, a ação desce pro projétil (como os modificadores: 'ak que explode' = 'ak explosiva').",
+  "_comment": "Ações (DESIGN 3.4). takes_arg: recebe uma subárvore X. arg_role: papel de X (escolhe o movimento padrão dele). projectile: X é projétil do dono (recebe os modificadores que descem). default_arg 'owner_projectile': sem X, usa o projétil padrão do dono; senão fallback_arg. takes_n: recebe um número (split). descends: sem gatilho dito na frase, numa coisa que atira, a ação desce pro projétil (como os modificadores: 'ak que explode' = 'ak explosiva'). free_ammo: tiro que só reposiciona algo (portal); a arma que só atira isso fica sem pente (munição infinita).",
   "shoot": {
     "takes_arg": true,
     "arg_role": "projectile",
@@ -35,6 +35,10 @@
   },
   "freeze": {
     "descends": true
+  },
+  "portal": {
+    "descends": true,
+    "free_ammo": true
   },
   "ignite": {
     "descends": true

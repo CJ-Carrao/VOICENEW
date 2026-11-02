@@ -16,44 +16,73 @@
         0.109,
         0
       ],
-      "color": "#594b89",
-      "tag": "ball",
-      "finish": "rubber"
+      "color": "#5a3aa0",
+      "tag": "ball"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.013,
-      "height": 0.002,
+      "shape": "sphere",
+      "radius": 0.0381,
       "pos": [
-        -0.03,
-        0.2138,
-        0
+        0.0305,
+        0.1624,
+        -0.0229
       ],
-      "color": "#2a2d32",
+      "color": "#8a5ad0",
+      "tag": "swirl"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0381,
+      "pos": [
+        -0.0381,
+        0.1243,
+        0.0458
+      ],
+      "color": "#8a5ad0",
+      "tag": "swirl"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0381,
+      "pos": [
+        0.0076,
+        0.0632,
+        0.0381
+      ],
+      "color": "#8a5ad0",
+      "tag": "swirl"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.0109,
+      "pos": [
+        -0.0131,
+        0.2093,
+        -0.0272
+      ],
+      "color": "#120c1c",
       "tag": "finger_hole"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.013,
-      "height": 0.002,
+      "shape": "sphere",
+      "radius": 0.0109,
       "pos": [
-        0.03,
-        0.2138,
-        0
+        0.0131,
+        0.2093,
+        -0.0272
       ],
-      "color": "#2a2d32",
+      "color": "#120c1c",
       "tag": "finger_hole"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.013,
-      "height": 0.002,
+      "shape": "sphere",
+      "radius": 0.0109,
       "pos": [
-        0,
-        0.2083,
-        0.045
+        0.0,
+        0.2006,
+        0.0109
       ],
-      "color": "#2a2d32",
+      "color": "#120c1c",
       "tag": "finger_hole"
     }
   ]

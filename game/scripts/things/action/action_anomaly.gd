@@ -38,7 +38,7 @@ func run(ctx: ActionContext) -> void:
 	var damage := clampf(float(spec.get("damage", 50.0)) * thing.scale_factor, 0.0, 240.0)
 	var color := Color.from_string(String(spec.get("color", "#a855f7")), Color.MEDIUM_PURPLE)
 	var parent := Forge.fx_root(thing)
-	ExpansionFx.burst(parent, at, minf(radius, 5.0), color, mode)
+	if mode != "nuclear": ExpansionFx.burst(parent, at, minf(radius, 5.0), color, mode)
 	match mode:
 		"nuclear":
 			ExpansionFx.burst(parent, at, radius, Color("ffca52"), "nuclear")
@@ -47,9 +47,7 @@ func run(ctx: ActionContext) -> void:
 			ExpansionFx.burst(parent, at, radius * 0.9, Color("bce8ef"), "neutron")
 			Fx.explosion(parent, at, radius * 0.65, Color("86c3d1"))
 			Combat.explode(thing, at, minf(radius * 0.32, 3.2), damage * 0.30)
-			for target in Combat.in_radius(thing, at, radius):
-				if Combat.affects(thing, target) and (target is Player or target.is_in_group(Combat.COMBATANTS_GROUP) or target.get("category") == "creature" or target.has_node("ProtectionEmitter")):
-					Combat.apply_damage(target, damage, "neutron", thing)
+			_damage_area(at, radius, damage, "neutron", true)
 		"gravity", "hypothetical", "singularity", "repulsion":
 			await _gravity_field(at, radius, damage, mode, color)
 		"frost":
@@ -59,11 +57,13 @@ func run(ctx: ActionContext) -> void:
 			Combat.area_status(thing, at, radius, "burning")
 			Combat.explode(thing, at, radius, damage)
 		"storm":
+			var bolts := 0
 			for target in Combat.in_radius(thing, at, radius):
-				if Combat.affects(thing, target):
+				if Combat.affects(thing, target) and bolts < 12:
 					var direction := Combat.center_of(target) - at
 					ExpansionFx.rift(parent, at, direction.normalized(), maxf(direction.length(), 0.1), color)
-					Combat.apply_damage(target, damage, "electric", thing)
+					bolts += 1
+			_damage_area(at, radius, damage, "electric")
 		"emp":
 			Combat.area_status(thing, at, radius, "frozen")
 			Combat.impulse(thing, at, radius, 8.0, 0.0)
@@ -86,10 +86,17 @@ func _note(mode: String) -> void:
 	executed[mode] = int(executed.get(mode, 0)) + 1
 
 
-func _damage_area(at: Vector3, radius: float, damage: float, kind: String) -> void:
+func _damage_area(at: Vector3, radius: float, damage: float, kind: String, living_only: bool = false) -> void:
+	var rows := []
 	for target in Combat.in_radius(thing, at, radius):
-		if Combat.affects(thing, target):
-			Combat.apply_damage(target, damage, kind, thing)
+		if not Combat.affects(thing, target): continue
+		if living_only and not (target is Player or target.is_in_group(Combat.COMBATANTS_GROUP) or target.get("category") == "creature" or target.has_node("ProtectionEmitter")): continue
+		rows.append({"target": weakref(target), "damage": damage, "push": Vector3.ZERO, "type": kind})
+	if rows.is_empty(): return
+	# Keep the bomb alive until the bounded damage work finishes, as with native blasts.
+	var work = load("res://scripts/things/blast_work.gd").new()
+	work.setup(thing, rows)
+	get_tree().root.add_child(work)
 
 
 func _gravity_field(at: Vector3, radius: float, damage: float, mode: String, color: Color) -> void:

@@ -66,6 +66,11 @@ func attach_world(match_node: Match) -> void :
 func detach_world(match_node: Match) -> void :
 	if world == match_node:
 		world = null
+		_drafts.clear()
+		_live.clear()
+		_builds.clear()
+		_explosion_times.clear()
+		_usage.clear()
 
 
 
@@ -81,12 +86,18 @@ func has_effect_authority() -> bool:
 	return has_gameplay_authority()
 
 
-func request(player_id: int, text: String, record_unknowns: bool = true, commands_only: bool = false) -> Dictionary:
+func request(player_id: int, text: String, record_unknowns: bool = true, lang: Variant = "", commands_only: bool = false) -> Dictionary:
+	# Preserve H-4 language argument and compatibility with the Lab command-only call.
+	if lang is bool:
+		commands_only = lang
+		lang = ""
+	if not lang is String: return _blocked_request(player_id, text, tr("Idioma do pedido desconhecido."))
 	if Session.is_online() and not Session.has_authority():
 		if player_id != Session.local_player_id or not Session.creations.is_active():
-			return _blocked_request(player_id, text, "Aguarde a sessão ficar pronta para pedir.")
+			return _blocked_request(player_id, text, tr("Aguarde a sessão ficar pronta para pedir."))
 		return Session.creations.submit_request(text, record_unknowns, commands_only)
-	var result: = PhraseParser.parse(text, Lexicon.data)
+
+	var result: = PhraseParser.parse(text, Lexicon.for_lang(lang) if not lang.is_empty() else Lexicon.data)
 	result["unsupported"] = []
 	result["cost"] = 0.0
 	result["base_cost"] = 0.0
@@ -97,7 +108,7 @@ func request(player_id: int, text: String, record_unknowns: bool = true, command
 		return _reject_result(player_id, text, result, "B aceita apenas comandos, como 'Squirtle, ataque'. Use V para criar coisas.")
 	if not has_gameplay_authority() or (world != null and world.get_player(player_id) == null):
 		result["blocked"] = true
-		result["warnings"].append("Pedido indisponível enquanto a sessão está sendo preparada.")
+		result["warnings"].append(tr("Pedido indisponível enquanto a sessão está sendo preparada."))
 		request_processed.emit(player_id, text, result)
 		return result
 	if world != null and Status.paralyzed(world.get_player(player_id)):
@@ -165,7 +176,7 @@ func _online_creation_warning(player_id: int, recipe: Dictionary, cost: float, c
 		return ""
 	var player: = world.get_player(player_id)
 	if player == null or not player.is_alive() or player.frozen or Status.paralyzed(player):
-		return "Aguarde o jogador estar pronto para pedir."
+		return tr("Aguarde o jogador estar pronto para pedir.")
 	if not check_economy:
 		return ""
 	var replication_warning: = Session.creations.creation_warning(player_id, recipe, cost)
@@ -382,7 +393,9 @@ func spawn_child(node: Dictionary, role: String, at: Vector3, direction: Vector3
 	var started := Time.get_ticks_usec()
 	var creature := String(Lexicon.data.thing_def(String(node.get("thing", ""))).get("category", "")) in ["creature", "vehicle"]
 	var child_role := "spawned" if role == "projectile" and creature else role
+	var probe: = DevProbe.now()
 	var child: = Assembler.build(node, child_role, Lexicon.data)
+	DevProbe.done("filho_monta", probe)
 	if not creature: child.target_filter = InnovationRules.target_diet(spawner)
 	child.set_owner_info(spawner.owner_id, spawner.team, spawner.owner_player, spawner)
 	if same_generation:
@@ -390,7 +403,7 @@ func spawn_child(node: Dictionary, role: String, at: Vector3, direction: Vector3
 	world.add_thing(child)
 
 
-	var legal: = Lexicon.balf("arena.size") * 0.5 + Lexicon.balf("arena.out_of_bounds_margin") - 1.0
+	var legal: = Arena.active_size * 0.5 + Lexicon.balf("arena.out_of_bounds_margin") - 1.0
 	child.global_position = clamp_to_world(at, legal)
 	child.face(direction, child.upright)
 	child.add_collision_exception_with(spawner)
@@ -473,7 +486,7 @@ func allow_explosion(player_id: int) -> bool:
 
 
 func clamp_to_arena(point: Vector3) -> Vector3:
-	return clamp_to_world(point, Lexicon.balf("arena.size") * 0.5)
+	return clamp_to_world(point, Arena.active_size * 0.5)
 
 
 
@@ -717,7 +730,7 @@ func _command(player_id: int, command: String, arguments: Dictionary = {}) -> Di
 		"recycle":
 			var held: = player.hands.current_item()
 			if held == null:
-				return {"warnings": ["nada na mão pra reciclar"]}
+				return {"warnings": [tr("nada na mão pra reciclar")]}
 			var held_name: = Lexicon.data.thing_name(held.thing_id)
 			var matter: = player.hands.dissolve_current()
 			var stored: = player.store_or_spill(matter)
@@ -769,13 +782,13 @@ func _materialize(player_id: int, recipe: Dictionary, build_s: float, cost: floa
 			_place_group(player, recipe, placement, build_s, cost, at, forward)
 		"attach":
 			if not _attach_to_hand(player, recipe, build_s, cost):
-				notes.append("nada na mão pra prender o acessório: ele vai pra mão")
+				notes.append(tr("nada na mão pra prender o acessório: ele vai pra mão"))
 				var loose: = _build_for(player, recipe)
 				player.hands.give(loose, true)
 				_start_build(loose, build_s, false, cost)
 		"load":
 			if not _load_into_hand(player, recipe, build_s, cost):
-				notes.append("sem arma de pente na mão: o pente vai pra mão")
+				notes.append(tr("sem arma de pente na mão: o pente vai pra mão"))
 				var spare: = _build_for(player, recipe)
 				player.hands.give(spare, true)
 				_start_build(spare, build_s, false, cost)
@@ -800,7 +813,15 @@ func _load_into_hand(player: Player, recipe: Dictionary, build_s: float, cost: f
 	weapon.loading = true
 	weapon.ammo_changed.emit()
 	_start_build(magazine, build_s, false, cost)
-	var on_done: = _on_magazine_built.bind(magazine, weapon)
+	var holder: = {}
+	holder["cb"] = func(pid: int, built: Thing) -> void :
+		if built != magazine:
+			return
+		var cb: Callable = holder["cb"]
+		if build_finished.is_connected(cb):
+			build_finished.disconnect(cb)
+		_on_magazine_built(pid, built, magazine, weapon)
+	var on_done: Callable = holder["cb"]
 	build_finished.connect(on_done)
 	magazine.removed.connect( func(_t: Thing) -> void :
 		if build_finished.is_connected(on_done):
@@ -825,7 +846,15 @@ func _attach_to_hand(player: Player, recipe: Dictionary, build_s: float, cost: f
 	if player.is_local:
 		Hands._set_layers(gear, 1 << (Hands.OWN_WEAPON_LAYER - 1))
 	_start_build(gear, build_s, false, cost)
-	var on_done: = _on_gear_built.bind(gear, target)
+	var holder: = {}
+	holder["cb"] = func(pid: int, built: Thing) -> void :
+		if built != gear:
+			return
+		var cb: Callable = holder["cb"]
+		if build_finished.is_connected(cb):
+			build_finished.disconnect(cb)
+		_on_gear_built(pid, built, gear, target)
+	var on_done: Callable = holder["cb"]
 	build_finished.connect(on_done)
 	gear.removed.connect( func(_t: Thing) -> void :
 		if build_finished.is_connected(on_done):

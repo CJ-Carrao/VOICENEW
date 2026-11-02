@@ -1,0 +1,278 @@
+{
+  "_comment": "Fat Man.",
+  "anchor": [
+    0,
+    0,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/art_core.py",
+  "pieces": [
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0,
+        -0.08
+      ],
+      "color": "#c9a23a",
+      "tag": "body",
+      "scale": [
+        0.52,
+        0.52,
+        0.72
+      ]
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.5,
+      "pos": [
+        0,
+        0,
+        -0.42
+      ],
+      "color": "#b59234",
+      "tag": "head",
+      "scale": [
+        0.46,
+        0.46,
+        0.2
+      ]
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.56,
+        0.56,
+        0.025
+      ],
+      "pos": [
+        0,
+        0,
+        -0.2
+      ],
+      "color": "#1d1e20",
+      "tag": "seam",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.56,
+        0.56,
+        0.025
+      ],
+      "pos": [
+        0,
+        0,
+        0.06
+      ],
+      "color": "#1d1e20",
+      "tag": "seam",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.56,
+        0.76
+      ],
+      "pos": [
+        0,
+        0,
+        -0.08
+      ],
+      "color": "#1d1e20",
+      "tag": "seam",
+      "decal": true
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.16,
+      "height": 0.16,
+      "pos": [
+        0.0,
+        0.0,
+        0.34
+      ],
+      "color": "#a1822e",
+      "rot": [
+        90.0,
+        0.0,
+        0
+      ],
+      "top_radius": 0.08,
+      "tag": "body"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.34,
+        0.238
+      ],
+      "pos": [
+        0.0,
+        0.17,
+        0.48
+      ],
+      "color": "#3c3a30",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.34,
+        0.238
+      ],
+      "pos": [
+        0.17,
+        0.0,
+        0.48
+      ],
+      "color": "#3c3a30",
+      "rot": [
+        0,
+        0,
+        -90
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.34,
+        0.238
+      ],
+      "pos": [
+        0.0,
+        -0.17,
+        0.48
+      ],
+      "color": "#3c3a30",
+      "rot": [
+        0,
+        0,
+        -180
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.34,
+        0.238
+      ],
+      "pos": [
+        -0.17,
+        -0.0,
+        0.48
+      ],
+      "color": "#3c3a30",
+      "rot": [
+        0,
+        0,
+        -270
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.238,
+        0.238
+      ],
+      "pos": [
+        0.1731,
+        0.1731,
+        0.48
+      ],
+      "color": "#3c3a30",
+      "rot": [
+        0,
+        0,
+        -45
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.238,
+        0.238
+      ],
+      "pos": [
+        0.1731,
+        -0.1731,
+        0.48
+      ],
+      "color": "#3c3a30",
+      "rot": [
+        0,
+        0,
+        -135
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.238,
+        0.238
+      ],
+      "pos": [
+        -0.1731,
+        -0.1731,
+        0.48
+      ],
+      "color": "#3c3a30",
+      "rot": [
+        0,
+        0,
+        -225
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0168,
+        0.238,
+        0.238
+      ],
+      "pos": [
+        -0.1731,
+        0.1731,
+        0.48
+      ],
+      "color": "#3c3a30",
+      "rot": [
+        0,
+        0,
+        -315
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    }
+  ]
+}

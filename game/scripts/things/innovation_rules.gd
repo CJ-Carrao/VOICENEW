@@ -79,6 +79,8 @@ static func threat(source: Thing, damage_type: String) -> String:
 	if damage_type in ["neutron", "gravity", "spatial"]:
 		return damage_type
 	if is_instance_valid(source):
+		# Preserve original H-4 definitions while recognizing them in Lab defenses.
+		if source.thing_id in ["atomic_bomb", "little_boy", "fat_man", "tsar_bomba"] and damage_type == "explosive": return "nuclear"
 		var specific := String(Lexicon.data.thing_def(source.thing_id).get("threat_type", ""))
 		if not specific.is_empty():
 			return specific

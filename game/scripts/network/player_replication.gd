@@ -201,12 +201,12 @@ func _physics_process(delta: float) -> void :
 			if not _peers.has(peer): continue
 			var deadline: = int(_peers[peer].deadline)
 			if deadline > 0 and Time.get_ticks_msec() > deadline:
-				_session.reject_peer(peer, "O jogador não concluiu o carregamento da arena.")
+				_session.reject_peer(peer, tr("O jogador não concluiu o carregamento da arena."))
 		_update_ready_deadline()
 	elif _ready_deadline_ms > 0 and not _active and Time.get_ticks_msec() > _ready_deadline_ms:
 		_ready_deadline_ms = 0
 		if _session.is_online():
-			_session.stop_online("Tempo esgotado ao preparar a arena com o host.")
+			_session.stop_online(tr("Tempo esgotado ao preparar a arena com o host."))
 	if not is_active() or not _session.has_authority():
 		return
 	_snapshot_elapsed += delta

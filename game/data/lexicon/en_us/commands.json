@@ -1,0 +1,4 @@
+{
+  "_comment": "How each command is said (data/defs/commands.json). A request with only a command: 'recycle', 'take it apart'.",
+  "recycle": { "words": ["recycle", "recycle it", "recycling", "disassemble", "dismantle", "take apart", "take it apart", "undo", "scrap", "scrap it", "break it down"] }
+}

@@ -1,0 +1,13 @@
+{
+  "_comment": "Common conversation words that are NOT game words. The 'ear' (misheard-word correction) never swaps these for a game word; they keep showing as unknown. Words the game already knows are ignored here.",
+  "words": [
+    "he", "she", "they", "we", "us", "them", "him", "her", "his", "hers", "their", "our", "your", "yours", "mine", "myself",
+    "here", "there", "where", "when", "what", "why", "how", "who", "yes", "no", "not", "never", "always", "maybe", "already",
+    "was", "were", "been", "being", "am", "do", "does", "did", "done", "say", "said", "see", "saw", "look", "know", "think",
+    "win", "won", "lose", "lost", "die", "died", "kill", "killed", "play", "played", "game", "match", "dude", "bro",
+    "man", "guys", "guy", "nice", "cool", "good", "bad", "great", "awesome", "lol", "omg", "wow", "damn", "sorry", "thanks",
+    "thank", "hello", "hi", "bye", "wait", "stop", "yeah", "yep", "nope", "sure", "right", "wrong", "true", "false", "hard",
+    "easy", "ready", "over", "again", "something", "nothing", "everything", "anything", "someone", "nobody", "seriously",
+    "internet", "time", "day", "night", "today", "tomorrow", "yesterday", "but", "because", "if", "or", "without", "about"
+  ]
+}

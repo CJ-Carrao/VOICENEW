@@ -11,154 +11,204 @@
     {
       "shape": "box",
       "size": [
-        0.52,
-        0.05,
-        0.91
+        0.585,
+        0.228,
+        0.65
       ],
       "pos": [
         0,
-        0.258,
-        0
+        0.432,
+        -0.13
       ],
-      "color": "#2a2d32",
-      "tag": "frame"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.65,
-        0.08,
-        0.78
-      ],
-      "pos": [
-        0,
-        0.42,
-        -0.195
-      ],
-      "color": "#397c9e",
+      "color": "#3a7cb8",
       "tag": "tray"
     },
     {
       "shape": "box",
       "size": [
-        0.05,
-        0.21,
-        0.78
-      ],
-      "pos": [
-        -0.2925,
-        0.504,
-        -0.195
-      ],
-      "color": "#397c9e",
-      "tag": "rim"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.04,
-        0.04,
-        0.78
-      ],
-      "pos": [
-        -0.195,
-        0.42,
-        0.455
-      ],
-      "color": "#7a4b26",
-      "tag": "handle"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.04,
-        0.36,
-        0.04
-      ],
-      "pos": [
-        -0.208,
+        0.52,
         0.18,
-        0.13
-      ],
-      "color": "#2a2d32",
-      "tag": "leg"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.05,
-        0.21,
-        0.78
+        0.572
       ],
       "pos": [
-        0.2925,
-        0.504,
-        -0.195
+        0,
+        0.468,
+        -0.13
       ],
-      "color": "#397c9e",
-      "tag": "rim"
+      "color": "#265178",
+      "tag": "tray_inside"
     },
     {
-      "shape": "box",
+      "shape": "wedge",
       "size": [
-        0.04,
-        0.04,
-        0.78
+        0.585,
+        0.228,
+        0.156
       ],
       "pos": [
-        0.195,
-        0.42,
-        0.455
+        0,
+        0.432,
+        -0.52
       ],
-      "color": "#7a4b26",
-      "tag": "handle"
-    },
-    {
-      "shape": "box",
-      "size": [
-        0.04,
-        0.36,
-        0.04
-      ],
-      "pos": [
-        0.208,
-        0.18,
-        0.13
-      ],
-      "color": "#2a2d32",
-      "tag": "leg"
+      "color": "#3a7cb8",
+      "point": 1.0,
+      "tag": "tray"
     },
     {
       "shape": "cylinder",
       "radius": 0.18,
-      "height": 0.12,
+      "height": 0.1,
       "pos": [
         0,
         0.18,
-        -0.52
+        -0.546
       ],
-      "color": "#141416",
+      "color": "#1a1a1d",
       "rot": [
         0,
         0,
         90
       ],
-      "tag": "wheel"
+      "tag": "wheel",
+      "finish": "rubber"
     },
     {
-      "shape": "box",
-      "size": [
-        0.5525,
-        0.04,
-        0.04
-      ],
+      "shape": "cylinder",
+      "radius": 0.1116,
+      "height": 0.104,
       "pos": [
         0,
-        0.57,
-        0.494
+        0.18,
+        -0.546
       ],
-      "color": "#bd4036",
+      "color": "#b9bec4",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0396,
+      "height": 0.11,
+      "pos": [
+        0,
+        0.18,
+        -0.546
+      ],
+      "color": "#828589",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.025,
+      "height": 1.084,
+      "pos": [
+        -0.221,
+        0.375,
+        0.0845
+      ],
+      "color": "#7a4b26",
+      "rot": [
+        85.24,
+        -2.76,
+        0
+      ],
       "tag": "handle"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.02,
+      "height": 0.3143,
+      "pos": [
+        -0.195,
+        0.175,
+        0.156
+      ],
+      "color": "#3b3f46",
+      "rot": [
+        170.48,
+        0.0,
+        0
+      ],
+      "tag": "leg"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.03,
+      "height": 0.12,
+      "pos": [
+        -0.247,
+        0.42,
+        0.624
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "grip"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.025,
+      "height": 1.084,
+      "pos": [
+        0.221,
+        0.375,
+        0.0845
+      ],
+      "color": "#7a4b26",
+      "rot": [
+        85.24,
+        2.76,
+        0
+      ],
+      "tag": "handle"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.02,
+      "height": 0.3143,
+      "pos": [
+        0.195,
+        0.175,
+        0.156
+      ],
+      "color": "#3b3f46",
+      "rot": [
+        170.48,
+        0.0,
+        0
+      ],
+      "tag": "leg"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.03,
+      "height": 0.12,
+      "pos": [
+        0.247,
+        0.42,
+        0.624
+      ],
+      "color": "#1a1a1d",
+      "rot": [
+        -90,
+        0,
+        0
+      ],
+      "tag": "grip"
     }
   ]
 }

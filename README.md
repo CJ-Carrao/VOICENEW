@@ -1,5 +1,7 @@
 # VOICENEW
 
+**Base local atual: H-4 oficial**, priorizando os recursos originais e preservando as adições do Lab. Abra `jogar.cmd` ou `build/H4-Lab/LAVOICE-Lab-H4-v26.exe`. [Integração, testes e limites](atualizacao-h4.md). A versão **v0.3.0** reúne a base H-4 e nossas adições; baixe o pacote completo nas Releases. A IA local de interpretação ainda é um protótipo separado e não está ativada no jogo.
+
 Jogo de criatividade por voz para Windows, desenvolvido a partir do projeto LAVOICE Lab. Crie animais, armas, construções e habilidades, misture suas partes e dê comandos aos companheiros.
 
 ## Baixar e jogar

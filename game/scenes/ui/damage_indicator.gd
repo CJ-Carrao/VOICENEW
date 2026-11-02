@@ -26,6 +26,8 @@ func add_hit(amount: float, source: Node) -> void :
 
 
 func _process(delta: float) -> void :
+	if _hits.is_empty():
+		return
 	for hit: Dictionary in _hits:
 		hit.life = float(hit.life) - delta
 	_hits = _hits.filter( func(h: Dictionary) -> bool: return float(h.life) > 0.0)

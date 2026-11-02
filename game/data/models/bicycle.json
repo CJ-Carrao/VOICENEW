@@ -9,239 +9,458 @@
   "generator": "tools/models/gen_world_assets.py",
   "pieces": [
     {
-      "shape": "cylinder",
-      "radius": 0.32,
-      "height": 0.06,
+      "shape": "torus",
+      "radius": 0.34,
+      "inner_radius": 0.2856,
       "pos": [
         0,
-        0.32,
-        -0.684
+        0.34,
+        0.576
       ],
-      "color": "#141416",
+      "color": "#1a1a1d",
       "rot": [
         0,
         0,
         90
       ],
-      "tag": "wheel"
+      "tag": "wheel",
+      "finish": "rubber",
+      "scale": [
+        1,
+        0.9191176470588235,
+        1
+      ]
+    },
+    {
+      "shape": "torus",
+      "radius": 0.2924,
+      "inner_radius": 0.2584,
+      "pos": [
+        0,
+        0.34,
+        0.576
+      ],
+      "color": "#a8adb3",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal",
+      "scale": [
+        1,
+        1.4705882352941189,
+        1
+      ]
     },
     {
       "shape": "cylinder",
-      "radius": 0.208,
-      "height": 0.065,
+      "radius": 0.0476,
+      "height": 0.08,
       "pos": [
         0,
-        0.32,
-        -0.684
+        0.34,
+        0.576
       ],
-      "color": "#c5c9ce",
+      "color": "#76797d",
       "rot": [
         0,
         0,
         90
       ],
-      "tag": "hub"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.32,
-      "height": 0.06,
-      "pos": [
-        0,
-        0.32,
-        0.684
-      ],
-      "color": "#141416",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "wheel"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.208,
-      "height": 0.065,
-      "pos": [
-        0,
-        0.32,
-        0.684
-      ],
-      "color": "#c5c9ce",
-      "rot": [
-        0,
-        0,
-        90
-      ],
-      "tag": "hub"
+      "tag": "hub",
+      "finish": "metal"
     },
     {
       "shape": "box",
       "size": [
-        0.04,
-        0.88,
-        0.04
+        0.0175,
+        0.5304,
+        0.017
       ],
       "pos": [
         0,
-        0.495,
+        0.34,
+        0.576
+      ],
+      "color": "#a8adb3",
+      "rot": [
+        0.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0175,
+        0.5304,
+        0.017
+      ],
+      "pos": [
+        0,
+        0.34,
+        0.576
+      ],
+      "color": "#a8adb3",
+      "rot": [
+        60.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0175,
+        0.5304,
+        0.017
+      ],
+      "pos": [
+        0,
+        0.34,
+        0.576
+      ],
+      "color": "#a8adb3",
+      "rot": [
+        120.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.34,
+      "inner_radius": 0.2856,
+      "pos": [
+        0,
+        0.34,
         -0.54
       ],
-      "color": "#2a2d32",
+      "color": "#1a1a1d",
       "rot": [
-        -8,
         0,
+        0,
+        90
+      ],
+      "tag": "wheel",
+      "finish": "rubber",
+      "scale": [
+        1,
+        0.9191176470588235,
+        1
+      ]
+    },
+    {
+      "shape": "torus",
+      "radius": 0.2924,
+      "inner_radius": 0.2584,
+      "pos": [
+        0,
+        0.34,
+        -0.54
+      ],
+      "color": "#a8adb3",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "rim",
+      "finish": "metal",
+      "scale": [
+        1,
+        1.4705882352941189,
+        1
+      ]
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.0476,
+      "height": 0.08,
+      "pos": [
+        0,
+        0.34,
+        -0.54
+      ],
+      "color": "#76797d",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "hub",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0175,
+        0.5304,
+        0.017
+      ],
+      "pos": [
+        0,
+        0.34,
+        -0.54
+      ],
+      "color": "#a8adb3",
+      "rot": [
+        0.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0175,
+        0.5304,
+        0.017
+      ],
+      "pos": [
+        0,
+        0.34,
+        -0.54
+      ],
+      "color": "#a8adb3",
+      "rot": [
+        60.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0175,
+        0.5304,
+        0.017
+      ],
+      "pos": [
+        0,
+        0.34,
+        -0.54
+      ],
+      "color": "#a8adb3",
+      "rot": [
+        120.0,
+        0,
+        0
+      ],
+      "tag": "spoke",
+      "finish": "metal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.025,
+      "height": 0.5291,
+      "pos": [
+        0.0,
+        0.599,
+        0.054
+      ],
+      "color": "#d2463a",
+      "rot": [
+        11.78,
+        0.0,
+        0
+      ],
+      "tag": "frame"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.028,
+      "height": 0.6674,
+      "pos": [
+        0.0,
+        0.621,
+        -0.18
+      ],
+      "color": "#d2463a",
+      "rot": [
+        32.64,
+        180.0,
+        0
+      ],
+      "tag": "frame"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.025,
+      "height": 0.4701,
+      "pos": [
+        0.0,
+        0.88,
+        -0.126
+      ],
+      "color": "#d2463a",
+      "rot": [
+        84.63,
+        180.0,
+        0
+      ],
+      "tag": "frame"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.02,
+      "height": 0.576,
+      "pos": [
+        0.0,
+        0.34,
+        0.288
+      ],
+      "color": "#d2463a",
+      "rot": [
+        90.0,
+        0.0,
+        0
+      ],
+      "tag": "frame"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.02,
+      "height": 0.6981,
+      "pos": [
+        0.0,
+        0.599,
+        0.342
+      ],
+      "color": "#d2463a",
+      "rot": [
+        137.9,
+        0.0,
+        0
+      ],
+      "tag": "frame"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.022,
+      "height": 0.5901,
+      "pos": [
+        0.0,
+        0.621,
+        -0.45
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        162.24,
+        180.0,
+        0
+      ],
+      "tag": "fork"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.02,
+      "height": 0.1582,
+      "pos": [
+        0.0,
+        0.979,
+        -0.378
+      ],
+      "color": "#c5c9ce",
+      "rot": [
+        13.16,
+        180.0,
         0
       ],
       "tag": "stem"
     },
     {
-      "shape": "box",
-      "size": [
-        0.55,
-        0.035,
-        0.035
-      ],
+      "shape": "cylinder",
+      "radius": 0.018,
+      "height": 0.52,
       "pos": [
-        0,
-        1.012,
-        -0.63
+        0.0,
+        1.056,
+        -0.396
       ],
-      "color": "#2a2d32",
+      "color": "#1e2024",
+      "rot": [
+        90.0,
+        90.0,
+        0
+      ],
       "tag": "handlebar"
     },
     {
-      "shape": "cylinder",
-      "radius": 0.018,
-      "height": 0.6347,
-      "pos": [
-        0,
-        0.335,
-        0.367
-      ],
-      "color": "#bd4036",
-      "rot": [
-        -87.29086399943814,
-        0,
-        0
-      ],
-      "tag": "frame"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.018,
-      "height": 0.6612,
-      "pos": [
-        0,
-        0.534,
-        0.432
-      ],
-      "color": "#bd4036",
-      "rot": [
-        -49.661873095238825,
-        0,
-        0
-      ],
-      "tag": "frame"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.018,
-      "height": 0.4187,
-      "pos": [
-        0,
-        0.549,
-        0.115
-      ],
-      "color": "#bd4036",
-      "rot": [
-        18.088754972461043,
-        0,
-        0
-      ],
-      "tag": "frame"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.018,
-      "height": 0.732,
-      "pos": [
-        0,
-        0.814,
-        -0.18
-      ],
-      "color": "#bd4036",
-      "rot": [
-        -79.6111421845304,
-        0,
-        0
-      ],
-      "tag": "frame"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.018,
-      "height": 0.7931,
-      "pos": [
-        0,
-        0.615,
-        -0.245
-      ],
-      "color": "#bd4036",
-      "rot": [
-        -48.0664855011259,
-        0,
-        0
-      ],
-      "tag": "frame"
-    },
-    {
-      "shape": "cylinder",
-      "radius": 0.018,
-      "height": 0.5782,
-      "pos": [
-        0,
-        0.6,
-        -0.612
-      ],
-      "color": "#bd4036",
-      "rot": [
-        -165.57922687248902,
-        0,
-        0
-      ],
-      "tag": "frame"
-    },
-    {
       "shape": "box",
       "size": [
-        0.17,
-        0.06,
-        0.25
+        0.1,
+        0.05,
+        0.22
       ],
       "pos": [
         0,
-        0.748,
-        0.18
+        0.902,
+        0.126
       ],
-      "color": "#2a2d32",
+      "color": "#1e2024",
       "tag": "saddle"
     },
     {
-      "shape": "box",
-      "size": [
-        0.385,
-        0.025,
-        0.06
-      ],
+      "shape": "cylinder",
+      "radius": 0.08,
+      "height": 0.03,
       "pos": [
         0,
-        0.275,
+        0.34,
         0
       ],
-      "color": "#2a2d32",
+      "color": "#1e2024",
+      "rot": [
+        0,
+        0,
+        90
+      ],
+      "tag": "chainring"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.03,
+        0.2
+      ],
+      "pos": [
+        0.05,
+        0.24,
+        -0.02
+      ],
+      "color": "#1e2024",
       "tag": "pedal"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.008,
+      "height": 0.576,
+      "pos": [
+        0.04,
+        0.34,
+        0.288
+      ],
+      "color": "#1e2024",
+      "rot": [
+        90.0,
+        0.0,
+        0
+      ],
+      "tag": "chain"
     }
   ]
 }

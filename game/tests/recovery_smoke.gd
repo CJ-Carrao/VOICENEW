@@ -38,7 +38,7 @@ func _run() -> void:
 	await process_frame
 	_walk("res://")
 	_check(scripts_loaded >= 160, "Recovered gameplay scripts are missing")
-	_check(scenes_loaded == 10, "Expected 10 recovered scenes")
+	_check(scenes_loaded >= 10, "Expected original scenes plus H-4 additions")
 	var lexicon = root.get_node("Lexicon")
 	_check(lexicon.data.errors.is_empty(), "Lexicon has loading errors")
 	_check(lexicon.data.phrases.size() >= 1461, "Recovered lexicon entries are missing")

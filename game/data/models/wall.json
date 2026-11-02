@@ -1,15 +1,616 @@
 {
-  "anchor": [0, 0, 0],
+  "_comment": "Parede de defesa.",
+  "anchor": [
+    0,
+    0,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/art_core.py",
   "pieces": [
-    { "shape": "box", "size": [3.1, 0.12, 0.4], "pos": [0, 0.06, 0], "color": "#5b5f68", "tag": "leg" },
-    { "shape": "box", "size": [0.96, 1.9, 0.28], "pos": [0, 1.07, 0], "color": "#8b8f99", "tag": "body" },
-    { "shape": "box", "size": [3.1, 0.1, 0.32], "pos": [0, 1.1, 0], "color": "#6c7079", "tag": "body" },
-    { "shape": "box", "size": [0.12, 2.0, 0.32], "pos": [-0.49, 1.06, 0], "color": "#7a7e88", "tag": "body" },
-    { "shape": "box", "size": [0.12, 2.0, 0.32], "pos": [0.49, 1.06, 0], "color": "#7a7e88", "tag": "body" },
-    { "shape": "box", "size": [0.96, 1.9, 0.28], "pos": [-0.98, 1.07, 0], "color": "#858994", "tag": "body" },
-    { "shape": "box", "size": [0.96, 1.9, 0.28], "pos": [0.98, 1.07, 0], "color": "#858994", "tag": "body" },
-    { "shape": "box", "size": [0.12, 2.0, 0.32], "pos": [-1.5, 1.06, 0], "color": "#7a7e88", "tag": "body" },
-    { "shape": "box", "size": [0.12, 2.0, 0.32], "pos": [1.5, 1.06, 0], "color": "#7a7e88", "tag": "body" },
-    { "shape": "box", "size": [3.1, 0.14, 0.38], "pos": [0, 2.12, 0], "color": "#6c7079", "tag": "head" }
+    {
+      "shape": "box",
+      "size": [
+        3.1,
+        0.12,
+        0.4
+      ],
+      "pos": [
+        0,
+        0.06,
+        0
+      ],
+      "color": "#5b5f68",
+      "tag": "leg"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.96,
+        1.9,
+        0.28
+      ],
+      "pos": [
+        -0.98,
+        1.07,
+        0
+      ],
+      "color": "#8b8f99",
+      "tag": "body"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.72,
+        1.6,
+        0.3
+      ],
+      "pos": [
+        -0.98,
+        1.07,
+        0
+      ],
+      "color": "#80848d",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.6,
+        1.44,
+        0.31
+      ],
+      "pos": [
+        -0.98,
+        1.07,
+        0
+      ],
+      "color": "#8e929c",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.96,
+        1.9,
+        0.28
+      ],
+      "pos": [
+        0,
+        1.07,
+        0
+      ],
+      "color": "#90939d",
+      "tag": "body"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.72,
+        1.6,
+        0.3
+      ],
+      "pos": [
+        0,
+        1.07,
+        0
+      ],
+      "color": "#80848d",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.6,
+        1.44,
+        0.31
+      ],
+      "pos": [
+        0,
+        1.07,
+        0
+      ],
+      "color": "#8e929c",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.96,
+        1.9,
+        0.28
+      ],
+      "pos": [
+        0.98,
+        1.07,
+        0
+      ],
+      "color": "#8b8f99",
+      "tag": "body"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.72,
+        1.6,
+        0.3
+      ],
+      "pos": [
+        0.98,
+        1.07,
+        0
+      ],
+      "color": "#80848d",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.6,
+        1.44,
+        0.31
+      ],
+      "pos": [
+        0.98,
+        1.07,
+        0
+      ],
+      "color": "#8e929c",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        3.1,
+        0.1,
+        0.32
+      ],
+      "pos": [
+        0,
+        1.1,
+        0
+      ],
+      "color": "#6c7079",
+      "tag": "body",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.12,
+        2.0,
+        0.32
+      ],
+      "pos": [
+        -1.5,
+        1.06,
+        0
+      ],
+      "color": "#7a7e88",
+      "tag": "body",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.05,
+        0.34
+      ],
+      "pos": [
+        -1.5,
+        0.4,
+        0
+      ],
+      "color": "#3c414a",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.05,
+        0.34
+      ],
+      "pos": [
+        -1.5,
+        1.1,
+        0
+      ],
+      "color": "#3c414a",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.05,
+        0.34
+      ],
+      "pos": [
+        -1.5,
+        1.8,
+        0
+      ],
+      "color": "#3c414a",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.12,
+        2.0,
+        0.32
+      ],
+      "pos": [
+        -0.49,
+        1.06,
+        0
+      ],
+      "color": "#7a7e88",
+      "tag": "body",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.05,
+        0.34
+      ],
+      "pos": [
+        -0.49,
+        0.4,
+        0
+      ],
+      "color": "#3c414a",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.05,
+        0.34
+      ],
+      "pos": [
+        -0.49,
+        1.1,
+        0
+      ],
+      "color": "#3c414a",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.05,
+        0.34
+      ],
+      "pos": [
+        -0.49,
+        1.8,
+        0
+      ],
+      "color": "#3c414a",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.12,
+        2.0,
+        0.32
+      ],
+      "pos": [
+        0.49,
+        1.06,
+        0
+      ],
+      "color": "#7a7e88",
+      "tag": "body",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.05,
+        0.34
+      ],
+      "pos": [
+        0.49,
+        0.4,
+        0
+      ],
+      "color": "#3c414a",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.05,
+        0.34
+      ],
+      "pos": [
+        0.49,
+        1.1,
+        0
+      ],
+      "color": "#3c414a",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.05,
+        0.34
+      ],
+      "pos": [
+        0.49,
+        1.8,
+        0
+      ],
+      "color": "#3c414a",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.12,
+        2.0,
+        0.32
+      ],
+      "pos": [
+        1.5,
+        1.06,
+        0
+      ],
+      "color": "#7a7e88",
+      "tag": "body",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.05,
+        0.34
+      ],
+      "pos": [
+        1.5,
+        0.4,
+        0
+      ],
+      "color": "#3c414a",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.05,
+        0.34
+      ],
+      "pos": [
+        1.5,
+        1.1,
+        0
+      ],
+      "color": "#3c414a",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.05,
+        0.05,
+        0.34
+      ],
+      "pos": [
+        1.5,
+        1.8,
+        0
+      ],
+      "color": "#3c414a",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.31,
+        0.22,
+        0.42
+      ],
+      "pos": [
+        -1.395,
+        0.15,
+        0
+      ],
+      "color": "#2a2c30",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.31,
+        0.22,
+        0.42
+      ],
+      "pos": [
+        -1.085,
+        0.15,
+        0
+      ],
+      "color": "#e8c43a",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.31,
+        0.22,
+        0.42
+      ],
+      "pos": [
+        -0.775,
+        0.15,
+        0
+      ],
+      "color": "#2a2c30",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.31,
+        0.22,
+        0.42
+      ],
+      "pos": [
+        -0.465,
+        0.15,
+        0
+      ],
+      "color": "#e8c43a",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.31,
+        0.22,
+        0.42
+      ],
+      "pos": [
+        -0.155,
+        0.15,
+        0
+      ],
+      "color": "#2a2c30",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.31,
+        0.22,
+        0.42
+      ],
+      "pos": [
+        0.155,
+        0.15,
+        0
+      ],
+      "color": "#e8c43a",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.31,
+        0.22,
+        0.42
+      ],
+      "pos": [
+        0.465,
+        0.15,
+        0
+      ],
+      "color": "#2a2c30",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.31,
+        0.22,
+        0.42
+      ],
+      "pos": [
+        0.775,
+        0.15,
+        0
+      ],
+      "color": "#e8c43a",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.31,
+        0.22,
+        0.42
+      ],
+      "pos": [
+        1.085,
+        0.15,
+        0
+      ],
+      "color": "#2a2c30",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.31,
+        0.22,
+        0.42
+      ],
+      "pos": [
+        1.395,
+        0.15,
+        0
+      ],
+      "color": "#e8c43a",
+      "tag": "body",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        3.1,
+        0.14,
+        0.38
+      ],
+      "pos": [
+        0,
+        2.12,
+        0
+      ],
+      "color": "#6c7079",
+      "tag": "head",
+      "finish": "metal"
+    }
   ]
 }

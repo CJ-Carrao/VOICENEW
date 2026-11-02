@@ -25,7 +25,7 @@ func _run() -> void:
 		var item = assembler.build(parsed.recipe, "head", lex)
 		check(item.unsupported.is_empty() and item.model_pieces.size() >= 15, "Invalid model: " + id)
 		check(item.bounds.size.is_finite() and item.bounds.size.length() < 7.0, "Invalid size: " + id)
-		check(item.get_node_or_null("VoxelCreatureMotion") != null, "Missing animation: " + id)
+		check(item.creature_animator != null, "Missing animation: " + id)
 		check(costs.of(parsed.recipe, lex) >= 70, "Unbalanced cost: " + id)
 		item.free()
 		for section in ["cara", "corpo", "patas"]:

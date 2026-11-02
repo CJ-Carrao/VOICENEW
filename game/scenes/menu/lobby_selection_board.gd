@@ -45,16 +45,16 @@ func _ready() -> void :
 		panel.position = Vector3(x, y, 0.09)
 		_front.add_child(panel)
 		_lamps.append(panel.material_override as StandardMaterial3D)
-		var label: = _label(_front, "P%d  /  LIVRE" % (i + 1), Vector3(x, y, 0.112), 0.0035, 32)
+		var label: = _label(_front, tr("P%d  /  LIVRE") % (i + 1), Vector3(x, y, 0.112), 0.0035, 32)
 		_slots.append(label)
-	_heading = _label(_back, "DESTINO DA PARTIDA", Vector3(0, 0.91, 0.095), 0.0042, 38)
+	_heading = _label(_back, tr("DESTINO DA PARTIDA"), Vector3(0, 0.91, 0.095), 0.0042, 38)
 	var bold: = font.duplicate() as FontVariation
 	bold.variation_opentype = {TextServerManager.get_primary_interface().name_to_tag("wght"): 800}
 	_heading.font = bold
-	_title = _label(_back, "ARENA ORIGINAL", Vector3(0, 0.64, 0.11), 0.0038, 32)
+	_title = _label(_back, tr("ARENA ORIGINAL"), Vector3(0, 0.64, 0.11), 0.0038, 32)
 	_title.font = bold
 	_build_grid(bold)
-	set_arena("ARENA ORIGINAL", "res://assets/menu/arena_original.png")
+	set_arena(tr("ARENA ORIGINAL"), "res://assets/menu/arena_original.png")
 	pose(0.0)
 
 
@@ -171,13 +171,13 @@ func _move_cursor(to: Vector3) -> void :
 func set_phase(mode: String) -> void :
 	if mode == _mode or _heading == null: return
 	_mode = mode
-	_heading.text = "ARENA CONFIRMADA" if mode == "versus" else "DESTINO DA PARTIDA"
+	_heading.text = tr("ARENA CONFIRMADA") if mode == "versus" else tr("DESTINO DA PARTIDA")
 
 func set_players(occupied: Dictionary, ready: Dictionary, selected_colors: Dictionary = {}) -> void :
 	for i in _slots.size():
 		var exists: = bool(occupied.get(i + 1, false))
 		var locked: = bool(ready.get(i + 1, false))
-		_slots[i].text = "P%d  /  %s" % [i + 1, "PRONTO" if locked else ("NA SALA" if exists else "LIVRE")]
+		_slots[i].text = "P%d  /  %s" % [i + 1, tr("PRONTO") if locked else (tr("NA SALA") if exists else tr("LIVRE"))]
 		var rgb24: = int(selected_colors.get(i + 1, -1))
 		var color: = RobotColor.from_rgb24(rgb24) if rgb24 >= 0 and rgb24 <= 16777215 else Color("a7adb6")
 		_lamps[i].albedo_color = color.darkened(0.56 if locked else 0.75) if exists else Color("1c2127")

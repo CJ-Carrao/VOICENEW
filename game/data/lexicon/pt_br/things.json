@@ -298,6 +298,21 @@
       "apontadores"
     ]
   },
+  "portal": {
+    "name": "portal",
+    "words": [
+      "portal",
+      "fenda",
+      "buraco de minhoca",
+      "rasgo"
+    ],
+    "forms": [
+      "portais",
+      "fendas",
+      "buracos de minhoca",
+      "rasgos"
+    ]
+  },
   "laser_beam": {
     "name": "raio laser",
     "words": [
@@ -657,6 +672,64 @@
       "bombas"
     ]
   },
+  "atomic_bomb": {
+    "name": "bomba atômica",
+    "words": [
+      "bomba atômica",
+      "bomba nuclear",
+      "ogiva nuclear",
+      "ogiva atômica",
+      "arma nuclear",
+      "nuke",
+      "bomba a"
+    ],
+    "forms": [
+      "bombas atômicas",
+      "bombas nucleares",
+      "ogivas nucleares",
+      "ogivas atômicas",
+      "armas nucleares",
+      "nukes"
+    ]
+  },
+  "little_boy": {
+    "name": "Little Boy",
+    "words": [
+      "little boy",
+      "bomba de hiroshima",
+      "garotinho"
+    ],
+    "forms": []
+  },
+  "fat_man": {
+    "name": "Fat Man",
+    "words": [
+      "fat man",
+      "fat boy",
+      "fatman",
+      "bomba de nagasaki",
+      "homem gordo"
+    ],
+    "forms": []
+  },
+  "tsar_bomba": {
+    "name": "Tsar Bomba",
+    "words": [
+      "tsar bomba",
+      "tsar",
+      "czar bomba",
+      "bomba tsar",
+      "bomba czar",
+      "bomba do czar",
+      "czar",
+      "bomba de hidrogênio",
+      "bomba h",
+      "rei das bombas"
+    ],
+    "forms": [
+      "tsar bombas"
+    ]
+  },
   "wall": {
     "name": "parede",
     "words": [
@@ -873,21 +946,6 @@
     "forms": [
       "aranhas",
       "tarântulas"
-    ]
-  },
-  "ant": {
-    "name": "formiga",
-    "words": [
-      "formiga",
-      "formiguinha",
-      "saúva",
-      "formiga cortadeira"
-    ],
-    "forms": [
-      "formigas",
-      "formiguinhas",
-      "saúvas",
-      "formigas cortadeiras"
     ]
   },
   "trex": {
@@ -2052,6 +2110,21 @@
       "casamatas"
     ]
   },
+  "ant": {
+    "name": "formiga",
+    "words": [
+      "formiga",
+      "formiguinha",
+      "saúva",
+      "formiga cortadeira"
+    ],
+    "forms": [
+      "formigas",
+      "formiguinhas",
+      "saúvas",
+      "formigas cortadeiras"
+    ]
+  },
   "duck": {
     "name": "pato",
     "words": [
@@ -2425,14 +2498,13 @@
     "forms": []
   },
   "nuclear_bomb": {
-    "name": "bomba nuclear",
+    "name": "bomba nuclear do Lab",
     "words": [
-      "bomba nuclear",
-      "bomba atômica",
-      "bomba atomica",
-      "ogiva nuclear"
+      "bomba nuclear do lab"
     ],
-    "forms": []
+    "forms": [
+      "bombas nucleares do lab"
+    ]
   },
   "neutron_bomb": {
     "name": "bomba de nêutrons",

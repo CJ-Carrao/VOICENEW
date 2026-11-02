@@ -11,44 +11,100 @@
     {
       "shape": "cylinder",
       "radius": 0.2,
-      "height": 0.4,
+      "height": 0.35,
       "pos": [
-        0,
+        0.0,
         0.225,
+        0.0
+      ],
+      "color": "#b8862e",
+      "rot": [
+        0.0,
+        0.0,
         0
       ],
-      "color": "#af8d48",
-      "top_radius": 0.08,
-      "tag": "bell",
-      "finish": "metal"
+      "top_radius": 0.128,
+      "tag": "bell"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.208,
+      "height": 0.05,
+      "pos": [
+        0,
+        0.05,
+        0
+      ],
+      "color": "#a67929",
+      "tag": "lip"
     },
     {
       "shape": "sphere",
-      "radius": 0.04,
+      "radius": 0.5,
       "pos": [
         0,
-        0.04,
+        0.4,
         0
       ],
-      "color": "#2a2d32",
-      "tag": "clapper"
+      "color": "#b8862e",
+      "tag": "bell",
+      "scale": [
+        0.256,
+        0.125,
+        0.256
+      ]
     },
     {
       "shape": "torus",
-      "radius": 0.055,
-      "inner_radius": 0.03,
+      "radius": 0.04,
+      "inner_radius": 0.024,
       "pos": [
         0,
-        0.47,
+        0.48,
         0
       ],
-      "color": "#af8d48",
+      "color": "#936b25",
       "rot": [
         90,
         0,
         0
       ],
       "tag": "loop"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.185,
+      "height": 0.015,
+      "pos": [
+        0,
+        0.15,
+        0
+      ],
+      "color": "#8a6522",
+      "tag": "band"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.153,
+      "height": 0.015,
+      "pos": [
+        0,
+        0.31,
+        0
+      ],
+      "color": "#8a6522",
+      "tag": "band"
+    },
+    {
+      "shape": "sphere",
+      "radius": 0.04,
+      "pos": [
+        0,
+        0.03,
+        0
+      ],
+      "color": "#1e2024",
+      "tag": "clapper"
     }
   ]
 }

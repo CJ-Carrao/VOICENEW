@@ -9,41 +9,74 @@
   "generator": "tools/models/gen_world_assets.py",
   "pieces": [
     {
-      "shape": "cylinder",
-      "radius": 0.105,
-      "height": 0.06,
+      "shape": "sphere",
+      "radius": 0.5,
       "pos": [
         0,
-        0.03,
+        0.06,
         0
       ],
-      "color": "#2a2d32",
-      "tag": "base"
+      "color": "#3a6f8e",
+      "tag": "base",
+      "scale": [
+        0.1925,
+        0.12,
+        0.1925
+      ]
     },
     {
       "shape": "cylinder",
-      "radius": 0.018,
-      "height": 0.51,
+      "radius": 0.0175,
+      "height": 0.24,
       "pos": [
         0,
-        0.258,
+        0.24,
         0
       ],
-      "color": "#2a2d32",
-      "tag": "pole"
+      "color": "#c9a64a",
+      "tag": "pole",
+      "finish": "metal"
     },
     {
       "shape": "cylinder",
       "radius": 0.175,
-      "height": 0.252,
+      "height": 0.228,
       "pos": [
         0,
         0.468,
         0
       ],
-      "color": "#d9c69a",
-      "top_radius": 0.0805,
+      "color": "#f2e6c4",
+      "top_radius": 0.105,
       "tag": "shade"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.042,
+      "height": 0.036,
+      "pos": [
+        0,
+        0.372,
+        0
+      ],
+      "color": "#fff3c4",
+      "tag": "bulb",
+      "glow": 2.0
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.0175,
+        0.024,
+        0.0175
+      ],
+      "pos": [
+        0.028,
+        0.3,
+        0
+      ],
+      "color": "#1e2024",
+      "tag": "switch"
     }
   ]
 }

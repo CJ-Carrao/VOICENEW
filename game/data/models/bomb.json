@@ -1,13 +1,231 @@
 {
-  "anchor": [0, 0, 0],
+  "_comment": "Bomba de avião.",
+  "anchor": [
+    0,
+    0,
+    0
+  ],
+  "units": "meters",
+  "generator": "tools/models/art_core.py",
   "pieces": [
-    { "shape": "capsule", "radius": 0.11, "height": 0.48, "pos": [0, 0, 0], "rot": [90, 0, 0], "color": "#33363c", "tag": "body" },
-    { "shape": "cylinder", "radius": 0.112, "height": 0.04, "pos": [0, 0, -0.06], "rot": [90, 0, 0], "color": "#c9a227", "tag": "stripe" },
-    { "shape": "cone", "radius": 0.09, "height": 0.12, "pos": [0, 0, 0.26], "rot": [90, 0, 0], "color": "#2a2c30", "tag": "body" },
-    { "shape": "box", "size": [0.015, 0.14, 0.12], "pos": [0, 0.1, 0.3], "color": "#55595f", "tag": "wing" },
-    { "shape": "box", "size": [0.015, 0.14, 0.12], "pos": [0, -0.1, 0.3], "color": "#55595f", "tag": "wing" },
-    { "shape": "box", "size": [0.14, 0.015, 0.12], "pos": [-0.1, 0, 0.3], "color": "#55595f", "tag": "wing" },
-    { "shape": "box", "size": [0.14, 0.015, 0.12], "pos": [0.1, 0, 0.3], "color": "#55595f", "tag": "wing" },
-    { "shape": "cylinder", "radius": 0.1, "height": 0.03, "pos": [0, 0, 0.36], "rot": [90, 0, 0], "color": "#55595f", "tag": "wing" }
+    {
+      "shape": "capsule",
+      "radius": 0.11,
+      "height": 0.47,
+      "pos": [
+        0.0,
+        0.0,
+        -0.005
+      ],
+      "color": "#4a5236",
+      "rot": [
+        90.0,
+        0.0,
+        0
+      ],
+      "tag": "body"
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.1,
+      "height": 0.13,
+      "pos": [
+        0.0,
+        0.0,
+        0.265
+      ],
+      "color": "#3f462e",
+      "rot": [
+        90.0,
+        0.0,
+        0
+      ],
+      "top_radius": 0.045,
+      "tag": "body"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.24,
+        0.24,
+        0.035
+      ],
+      "pos": [
+        0,
+        0,
+        -0.17
+      ],
+      "color": "#d8b04a",
+      "tag": "stripe",
+      "decal": true
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.24,
+        0.24,
+        0.02
+      ],
+      "pos": [
+        0,
+        0,
+        -0.12
+      ],
+      "color": "#d8b04a",
+      "tag": "stripe",
+      "decal": true
+    },
+    {
+      "shape": "cylinder",
+      "radius": 0.025,
+      "height": 0.05,
+      "pos": [
+        0.0,
+        0.0,
+        -0.245
+      ],
+      "color": "#8a9098",
+      "rot": [
+        90.0,
+        180.0,
+        0
+      ],
+      "tag": "body",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.03,
+        0.025
+      ],
+      "pos": [
+        0,
+        0.115,
+        -0.06
+      ],
+      "color": "#3b3f46",
+      "tag": "body",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.03,
+        0.03,
+        0.025
+      ],
+      "pos": [
+        0,
+        0.115,
+        0.08
+      ],
+      "color": "#3b3f46",
+      "tag": "body",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.012,
+        0.13,
+        0.13
+      ],
+      "pos": [
+        0.0,
+        0.1,
+        0.31
+      ],
+      "color": "#55595f",
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.012,
+        0.13,
+        0.13
+      ],
+      "pos": [
+        0.1,
+        0.0,
+        0.31
+      ],
+      "color": "#55595f",
+      "rot": [
+        0,
+        0,
+        -90
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.012,
+        0.13,
+        0.13
+      ],
+      "pos": [
+        0.0,
+        -0.1,
+        0.31
+      ],
+      "color": "#55595f",
+      "rot": [
+        0,
+        0,
+        -180
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "box",
+      "size": [
+        0.012,
+        0.13,
+        0.13
+      ],
+      "pos": [
+        -0.1,
+        -0.0,
+        0.31
+      ],
+      "color": "#55595f",
+      "rot": [
+        0,
+        0,
+        -270
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    },
+    {
+      "shape": "torus",
+      "radius": 0.115,
+      "inner_radius": 0.09,
+      "pos": [
+        0,
+        0,
+        0.36
+      ],
+      "color": "#55595f",
+      "rot": [
+        90,
+        0,
+        0
+      ],
+      "tag": "wing",
+      "finish": "metal"
+    }
   ]
 }

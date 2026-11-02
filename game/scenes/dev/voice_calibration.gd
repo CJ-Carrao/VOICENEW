@@ -88,6 +88,18 @@ func _ready() -> void :
 	_help = _dim("")
 	_help.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	box.add_child(_help)
+	if OS.has_feature("mobile"):
+		var talk: = Button.new()
+		talk.text = "SEGURE, ESPERE PODE FALAR E LEIA A FRASE"
+		talk.custom_minimum_size.y = 96
+		talk.focus_mode = Control.FOCUS_NONE
+		talk.button_down.connect( func() -> void :
+			if voice != null and not _finished_all and voice.begin_talk(true): _auto_next_at = 0)
+		talk.button_up.connect( func() -> void :
+			if voice != null and voice.is_private_talk(): voice.end_talk())
+		box.add_child(talk)
+		box.add_child(_button("CONFIGURAÇÕES DE VOZ OFFLINE", func() -> void :
+			if voice != null: voice.open_offline_settings()))
 
 	_buttons = HBoxContainer.new()
 	_buttons.add_theme_constant_override("separation", 8)
@@ -128,7 +140,7 @@ func start(voice_input: VoiceInput) -> void :
 func stop() -> void :
 	if voice != null and voice.utterance_done.is_connected(_on_utterance):
 		voice.utterance_done.disconnect(_on_utterance)
-	if voice != null and voice.is_private_talk() and voice.state == "listening":
+	if voice != null and voice.is_private_talk() and voice.state in ["starting", "listening"]:
 		voice.end_talk()
 	if not _attempts.is_empty():
 		print("[Voz] calibração salva em ", ProjectSettings.globalize_path(_dir()))
@@ -160,7 +172,7 @@ func _input(event: InputEvent) -> void :
 
 
 func next_phrase() -> void :
-	if _finished_all or voice.state in ["listening", "thinking"]:
+	if _finished_all or voice.state in ["starting", "listening", "thinking"]:
 		return
 	_auto_next_at = 0
 	_index += 1
@@ -174,7 +186,7 @@ func next_phrase() -> void :
 
 
 func discard_last() -> void :
-	if _attempts.is_empty() or voice.state in ["listening", "thinking"]:
+	if _attempts.is_empty() or voice.state in ["starting", "listening", "thinking"]:
 		return
 	var last: Dictionary = _attempts.back()
 	if int(last["phrase"]) != _index or last.get("discarded", false):
@@ -192,8 +204,10 @@ func _process(_delta: float) -> void :
 	if voice == null or _finished_all:
 		return
 	match voice.state:
+		"starting":
+			_status.text = "abrindo o microfone… espere PODE FALAR"
 		"listening":
-			_status.text = "🎤 OUVINDO… solte quando terminar"
+			_status.text = "🎤 PODE FALAR… solte quando terminar" if OS.has_feature("android") else "🎤 OUVINDO… solte quando terminar"
 		"thinking":
 			_status.text = "🎤 ENTENDENDO…"
 		"warming":
@@ -223,19 +237,19 @@ func _on_utterance(info: Dictionary) -> void :
 		return
 	var samples: PackedFloat32Array = info["samples"]
 	var reason: = String(info["ignored"])
-	if samples.is_empty():
+	if samples.is_empty() and not info.get("native_capture", false):
 		_heard.text = "[color=%s]%s[/color]" % [COLOR_BAD, reason]
 		_verdict.text = ""
 		return
 	_last_samples = samples
-	_replay.disabled = false
+	_replay.disabled = samples.is_empty()
 	var entry: Dictionary = _phrases[_index]
 	var expected: = String(entry["text"])
 	var heard: = String(info["text"])
 	var attempt_number: = _attempts.filter( func(a: Dictionary) -> bool: return int(a["phrase"]) == _index).size() + 1
-	var file: = "%02d_%d.wav" % [_index, attempt_number]
+	var file: = "" if samples.is_empty() else "%02d_%d.wav" % [_index, attempt_number]
 	DirAccess.make_dir_recursive_absolute(_dir())
-	SpeechEngine.to_wav(samples).save_to_wav(_dir().path_join(file))
+	if not samples.is_empty(): SpeechEngine.to_wav(samples).save_to_wav(_dir().path_join(file))
 	var got: = PhraseParser.parse(heard, Lexicon.data)
 	var want: = PhraseParser.parse(expected, Lexicon.data)
 	var right: = reason.is_empty() and VoiceScore.same_tree(expected, heard, Lexicon.data)
@@ -244,6 +258,7 @@ func _on_utterance(info: Dictionary) -> void :
 		"attempt": attempt_number, "file": file, "heard": heard, "ignored": reason, 
 		"level": snappedf(float(info["level"]), 0.0001), "seconds": snappedf(float(info["seconds"]), 0.01), 
 		"audio_s": snappedf(samples.size() / float(SpeechEngine.SAMPLE_RATE), 0.01), "same_tree": right, 
+		"ready_delay_s": info.get("ready_delay_s", 0.0), "native_capture": info.get("native_capture", false), 
 		"heard_pretty": String(got.get("pretty", "")), "expected_pretty": String(want.get("pretty", "")), 
 		"corrections": got.get("corrections", []), "unknown": got.get("unknown_words", []), "discarded": false, 
 	})
@@ -325,11 +340,15 @@ func _show_summary() -> void :
 
 func _write() -> void :
 	var samples: Array = []
+	var scored: Array = []
 	for a: Dictionary in _attempts:
 		if not a.get("discarded", false):
-			samples.append({"file": a["file"], "text": a["expected"]})
+			if not String(a["file"]).is_empty(): samples.append({"file": a["file"], "text": a["expected"]})
+			scored.append({"ref": a["expected"], "hyp": a["heard"], "ms": float(a["seconds"]) * 1000.0, 
+				"ready_delay_ms": float(a.get("ready_delay_s", 0.0)) * 1000.0, "ignored": a["ignored"]})
 	_save_json("index.json", {"voice": "microfone (calibração)", "samples": samples})
 	var config: = SpeechEngines.load_config()
+	_save_json("score.json", {"engine": voice.engine_id(), "results": scored})
 	_save_json("results.json", {
 		"created": Time.get_datetime_string_from_system(), 
 		"device": AudioServer.input_device, 

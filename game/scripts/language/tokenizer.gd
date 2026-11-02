@@ -158,7 +158,14 @@ static func _closest(word: String, lex: LexiconData) -> String:
 
 static func _search_closest(word: String, lex: LexiconData) -> String:
 	var length: = word.length()
-	if length < int(lex.bal("parser.fuzzy_min_len", 4)) or Normalizer.is_number(word):
+	if Normalizer.is_number(word) or length < int(lex.bal("parser.sound_exact_min_len", 3)):
+		return ""
+
+	if length < int(lex.bal("parser.fuzzy_min_len", 4)):
+		var short_key: = lex.phonetic(word)
+		for n in lex.hear_vocab.size():
+			if not lex.hear_filler[n] and lex.hear_keys[n] == short_key and lex.hear_vocab[n].length() <= length + 1:
+				return lex.hear_vocab[n]
 		return ""
 	var max_written: = int(lex.bal("parser.fuzzy_short_max_dist", 1))
 	if length >= int(lex.bal("parser.fuzzy_long_len", 8)):
@@ -194,6 +201,7 @@ static func _initial_penalty(a: String, b: String, lex: LexiconData) -> int:
 
 
 
+
 static func _numbers(spoken: PackedStringArray, lex: LexiconData) -> PackedStringArray:
 	var words: = PackedStringArray()
 	for word in spoken:
@@ -207,6 +215,14 @@ static func _numbers(spoken: PackedStringArray, lex: LexiconData) -> PackedStrin
 			if tens >= 20.0 and tens < 100.0 and fmod(tens, 10.0) == 0.0 and unit >= 1.0 and unit <= 9.0:
 				out.append(Normalizer.number_text(tens + unit))
 				i += 3
+				continue
+
+		if lex.number_adjacent_tens and i + 1 < words.size() and Normalizer.is_number(words[i]) and Normalizer.is_number(words[i + 1]):
+			var tens: = words[i].to_float()
+			var unit: = words[i + 1].to_float()
+			if tens >= 20.0 and tens < 100.0 and fmod(tens, 10.0) == 0.0 and unit >= 1.0 and unit <= 9.0:
+				out.append(Normalizer.number_text(tens + unit))
+				i += 2
 				continue
 		out.append(words[i])
 		i += 1

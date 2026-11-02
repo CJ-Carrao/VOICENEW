@@ -198,6 +198,7 @@ func _ready() -> void :
 	shaper.name = "Shaper"
 	shaper.player = self
 	add_child(shaper)
+	Forge.build_started.connect(_on_build_started)
 	move = FpsMove.new()
 	add_child(move)
 	move.setup(self)
@@ -528,6 +529,13 @@ func set_extracting(on: bool) -> void :
 
 
 
+func _on_build_started(owner_id: int, _thing: Thing) -> void :
+	if owner_id == player_id and extracting and has_simulation_authority():
+		set_extracting(false)
+
+
+
+
 func start_piloting(thing: Thing) -> void :
 	if not has_simulation_authority():
 		return
@@ -697,7 +705,7 @@ func _unhandled_input(event: InputEvent) -> void :
 		return
 	var motion: = event as InputEventMouseMotion
 	if motion == null and Status.paralyzed(self): return
-	var captured: = Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
+	var captured: = Input.mouse_mode == Input.MOUSE_MODE_CAPTURED or (motion != null and motion.device == TouchControls.DEVICE_ID) or OS.has_feature("mobile")
 	if shaper.active and motion == null:
 		_shaper_input(event)
 		return
@@ -807,7 +815,14 @@ func _physics_process(delta: float) -> void :
 	if piloting != null:
 		hands.cancel_use()
 	update_gravity(delta)
+
+	var portals: = PortalSystem.find(get_tree())
+	if portals != null:
+		portals.update_passage(self, center())
+	var eye_before: = camera.global_position
 	move.step(delta, frame.movement())
+	if portals != null:
+		portals.traverse_player(self, eye_before)
 	_tick_timers(delta, false)
 	if out_of_world():
 		release_input()

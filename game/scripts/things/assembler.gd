@@ -46,6 +46,7 @@ const ACTIONS: = {
 	"ignite": preload("res://scripts/things/action/action_ignite.gd"), 
 	"split": preload("res://scripts/things/action/action_split.gd"), 
 	"strike": preload("res://scripts/things/action/action_strike.gd"), 
+	"portal": preload("res://scripts/things/action/action_portal.gd"), 
 }
 
 const CONTROLS: = {
@@ -83,7 +84,8 @@ static func build(node: Dictionary, role: String, lex: LexiconData, mount_depth:
 		ecology.name = "EcologyBehavior"
 		ecology.setup(thing, ecosystem, diet)
 		thing.add_child(ecology)
-	if bool(def.get("voxel_motion", false)):
+	# H-4 rigs own their animation; use the Lab fallback only for unrigged additions.
+	if bool(def.get("voxel_motion", false)) and thing.creature_animator == null:
 		var motion = load("res://scripts/things/voxel_creature_motion.gd").new()
 		motion.name = "VoxelCreatureMotion"
 		motion.setup(thing, bool(def.get("aerial", false)) or anatomy.has("wings"))
@@ -199,13 +201,19 @@ static func build(node: Dictionary, role: String, lex: LexiconData, mount_depth:
 		thing.add_child(component)
 
 
-	for behavior in merged_behaviors(node, lex.thing_def(lex.behavior_source(node)), role_def, lex):
+	var behaviors: = merged_behaviors(node, lex.thing_def(lex.behavior_source(node)), role_def, lex)
+	for behavior in behaviors:
 		_add_behavior(thing, behavior)
 
 
 		if (behavior.get("when", {}) as Dictionary).get("type") == "on_fire"\
 		and (behavior.get("do", {}) as Dictionary).get("type") == "strike":
 			thing.melee = true
+
+
+	thing.reset_actions = _free_ammo_actions(behaviors, lex)
+	if thing.magazine > 0 and not thing.reset_actions.is_empty():
+		thing.drop_magazine()
 	if mount_depth < int(lex.bal("caps.graft_depth", 2)):
 		for graft: Dictionary in (node.get("mods", {}) as Dictionary).get("grafts", []):
 			if int(budget["left"]) <= 0:
@@ -235,6 +243,31 @@ static func build(node: Dictionary, role: String, lex: LexiconData, mount_depth:
 			equipment.setup(child, lex, int(graft.get("slot", 0)), int(graft.get("slots", 1)))
 			child.add_child(equipment)
 	return thing
+
+
+
+
+static func _free_ammo_actions(behaviors: Array[Dictionary], lex: LexiconData) -> PackedStringArray:
+	var found: = PackedStringArray()
+	var shots: = 0
+	for behavior in behaviors:
+		var action: Dictionary = behavior.get("do", {})
+		if String(action.get("type", "")) != "shoot":
+			continue
+		shots += 1
+		var shot: Variant = action.get("arg")
+		if not shot is Dictionary:
+			return PackedStringArray()
+		var free: = false
+		for inner in merged_behaviors(shot, lex.thing_def(lex.behavior_source(shot)), {}, lex):
+			var id: = String((inner.get("do", {}) as Dictionary).get("type", ""))
+			if bool(lex.action_def(id).get("free_ammo", false)):
+				free = true
+				if not found.has(id):
+					found.append(id)
+		if not free:
+			return PackedStringArray()
+	return found if shots > 0 else PackedStringArray()
 
 
 

@@ -12,6 +12,8 @@ var color: = Color("#777777")
 
 func build_planet(id: int, def: Dictionary, async: bool = false) -> void :
 	name = "Planet_" + String(def.get("name", str(id)))
+
+	crater_cap_m = float(Lexicon.bal("blocks.explosion_max_crater_m", INF))
 	var cfg: Dictionary = Lexicon.bal("space.voxel", {})
 	radius = float(def.radius)
 	core_radius = radius * float(cfg.get("core_fraction", 0.3))

@@ -42,6 +42,17 @@ static func command(text: String, lex: LexiconData) -> Dictionary:
 		if found != null: return single(found.get_string(1),entry[1],lex)
 	return {}
 
+# Resolve the selective-bomb target from the live creature catalog. Late additions
+# must not depend on an old pre-generated list of thirty species.
+static func species_bomb(text: String, lex: LexiconData) -> Dictionary:
+	var found = match_text("^(?:(?:eu )?(?:quero|crie|cria|faca|faz|invoque) )?(?:(?:um|uma|o|a) )?bomba(?: seletiva)? que (?:mate|mata|elimine|elimina|extermine|extermina)(?: (?:todos|todas))?(?: (?:os|as|o|a))? (.+)$",text)
+	if found == null: return {}
+	var target = species(found.get_string(1),lex)
+	if target.is_empty() or lex.category_of(target) != "creature" or lex.thing_def(target).get("coop_boss",false): return {}
+	var recipe = Recipe.new_node("species_bomb")
+	recipe.mods.target_species = target
+	return recipe
+
 static func single(actor_name: String, action: String, lex: LexiconData) -> Dictionary:
 	var actor = species(actor_name,lex)
 	if actor.is_empty() or lex.category_of(actor) != "creature": return {}

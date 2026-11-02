@@ -13,6 +13,8 @@ var landed: bool = false
 
 var steering: bool = false
 
+var visual_target: Node3D
+
 var _gravity: float = 0.0
 var _bounce_damping: float = 0.0
 var _floor_min_y: float = 0.0
@@ -126,14 +128,22 @@ func step(_delta: float) -> void :
 
 
 
+
+
 func travel(motion: Vector3) -> void :
 	if Status.movement_locked(thing):
 		thing.velocity = Vector3.ZERO
 		return
 	if motion.length_squared() < 1e-10:
 		return
+	var portals: = PortalSystem.find(thing.get_tree())
+	var before: = thing.global_position
+	if portals != null:
+		portals.update_passage(thing, before, motion.length())
 	if load("res://scripts/things/butterfly_shield.gd").intercept(thing,thing.global_position,thing.global_position+motion*Status.speed_mult(thing)): return
 	var collision_info: = thing.move_and_collide(motion * Status.speed_mult(thing))
+	if portals != null and not thing.is_dead:
+		portals.traverse_thing(thing, before)
 	if collision_info == null:
 		return
 	thing.report_hit(collision_info)
@@ -143,6 +153,12 @@ func travel(motion: Vector3) -> void :
 	if thing.is_dead or landed:
 		return
 	_react(collision_info)
+
+
+
+
+func portal_turned(_turn: Basis) -> void :
+	pass
 
 
 func orient() -> void :

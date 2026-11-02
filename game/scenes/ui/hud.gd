@@ -190,7 +190,7 @@ func bind_player(player: Player) -> void :
 			return
 		crosshair.call("hit", killed)
 		if killed and _target is Player and _target != player:
-			_show_toast("[b][color=#f2601a]ELIMINOU[/color] %s[/b]" % _escape((_target as Player).display_name))
+			_show_toast(tr("[b][color=#f2601a]ELIMINOU[/color] %s[/b]") % _escape((_target as Player).display_name))
 		_hit_sound.stream = FeelSounds.kill() if killed else FeelSounds.hit()
 		_hit_sound.volume_db = Lexicon.balf("feel.sound.hit_db") + SoundBank.gain(_hit_sound.stream)
 		_hit_sound.play())
@@ -225,6 +225,25 @@ func bind_voice(voice: VoiceInput) -> void :
 
 func refresh_controls_help() -> void :
 	_refresh_extract_banner()
+
+
+
+func show_spectating(on: bool) -> void :
+	var label: = get_node_or_null("Spectating") as Label
+	if label == null and on:
+		label = Label.new()
+		label.name = "Spectating"
+		label.text = tr("ESPECTANDO · voe pela arena até o próximo round")
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
+		label.position.y = 140.0
+		label.add_theme_font_size_override("font_size", 26)
+		label.add_theme_color_override("font_outline_color", Color.BLACK)
+		label.add_theme_constant_override("outline_size", 8)
+		label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		add_child(label)
+	if label != null:
+		label.visible = on
 
 
 
@@ -272,22 +291,22 @@ func show_request(player_id: int, text: String, result: Dictionary) -> void :
 	_last_result = result
 	if _voice_pending:
 		_voice_pending = false
-		var outcome: = "[color=%s]→ %s[/color]" % [COLOR_FIX, _escape(str(result.get("pretty", "")))] if result.get("ok", false)\
-		else "[color=%s]→ não entendi[/color]" % COLOR_FAIL
+		var outcome: = tr("[color=%s]→ %s[/color]") % [COLOR_FIX, _escape(str(result.get("pretty", "")))] if result.get("ok", false)\
+		else tr("[color=%s]→ não entendi[/color]") % COLOR_FAIL
 		var unknown_words: = PackedStringArray(result.get("unknown_words", []))
-		var extra: = " [color=%s](não conheço: %s)[/color]" % [COLOR_UNKNOWN, _escape(", ".join(unknown_words))]\
+		var extra: = tr(" [color=%s](não conheço: %s)[/color]") % [COLOR_UNKNOWN, _escape(", ".join(unknown_words))]\
 		if not unknown_words.is_empty() else ""
-		_log_voice("“%s” %s%s  [color=%s]%s s[/color]" % [_escape(text), outcome, extra, COLOR_MUTED, 
+		_log_voice(tr("“%s” %s%s  [color=%s]%s s[/color]") % [_escape(text), outcome, extra, COLOR_MUTED, 
 			Lexicon.data.format_number(snappedf(_voice_seconds, 0.1))])
 	var unknown: = PackedStringArray(result.get("unknown_words", []))
 	var unsupported: = PackedStringArray(result.get("unsupported", []))
 	var title: = ""
 	if result.get("blocked", false):
-		title = "PEDIDO RECUSADO"
+		title = tr("PEDIDO RECUSADO")
 	elif not result.get("ok", false):
-		title = "NÃO ENTENDI"
+		title = tr("NÃO ENTENDI")
 	elif not unsupported.is_empty():
-		title = "AINDA NÃO FUNCIONA: %s" % ", ".join(unsupported).to_upper()
+		title = tr("AINDA NÃO FUNCIONA: %s") % ", ".join(unsupported).to_upper()
 	if title.is_empty():
 		return
 	var line: = "[b][color=%s]%s[/color][/b]" % [COLOR_FAIL, _escape(title)]
@@ -465,7 +484,7 @@ func _build_slots(count: int) -> void :
 		label.add_theme_font_size_override("font_size", 14)
 		label.clip_text = true
 		label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
-		label.text = "VAZIO"
+		label.text = tr("VAZIO")
 		column.add_child(label)
 		var detail: = Label.new()
 		detail.theme_type_variation = &"DimLabel"
@@ -496,14 +515,17 @@ func _build_ammo_panel() -> void :
 	_ammo_panel.grow_horizontal = Control.GROW_DIRECTION_BEGIN
 	_ammo_panel.grow_vertical = Control.GROW_DIRECTION_BEGIN
 	var box: = VBoxContainer.new()
+	box.name = "Box"
 	box.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	box.add_theme_constant_override("separation", 0)
 	_ammo_panel.add_child(box)
 	_ammo_name = Label.new()
+	_ammo_name.name = "Name"
 	_ammo_name.theme_type_variation = &"TagLabel"
 	_ammo_name.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	box.add_child(_ammo_name)
 	var row: = HBoxContainer.new()
+	row.name = "Row"
 	row.alignment = BoxContainer.ALIGNMENT_END
 	row.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	box.add_child(row)
@@ -549,7 +571,7 @@ func _refresh_ammo(fired: bool = false) -> void :
 	if bool(held.get("building", item != null and item.is_building)):
 		var progress: = Forge.build_progress(item) if item != null else 0.0
 		_ammo_count.text = "%d%%" % roundi(progress * 100.0)
-		_ammo_total.text = " MONTANDO"
+		_ammo_total.text = tr(" MONTANDO")
 		_ammo_count.add_theme_color_override("font_color", HudSkin.MATTER)
 		_ammo_bar.fill = HudSkin.MATTER
 		_ammo_bar.max_value = 1.0
@@ -572,7 +594,7 @@ func _refresh_ammo(fired: bool = false) -> void :
 		color = HudSkin.MATTER
 	_ammo_count.add_theme_color_override("font_color", color)
 	if reload_left > 0.0:
-		_ammo_total.text = " RECARREGANDO"
+		_ammo_total.text = tr(" RECARREGANDO")
 		_ammo_bar.fill = HudSkin.ACCENT
 		_ammo_bar.max_value = maxf(item.reload_time if item != null else reload_left, reload_left)
 		_ammo_bar.value = _ammo_bar.max_value - reload_left
@@ -642,7 +664,7 @@ func _refresh_shape_banner() -> void :
 	var line: = "%s  ·  %s %s  ·  %s / %d" % [Lexicon.data.thing_name(shaper.thing_id).to_upper(), 
 		Lexicon.data.label("dims", dim).to_upper(), value, Lexicon.data.format_number(snappedf(cost, 0.1)), floori(have)]
 	if shaper.in_hand():
-		line += "  ·  %s kg" % Lexicon.data.format_number(snappedf(shaper.weight_kg(), 0.1))
+		line += tr("  ·  %s kg") % Lexicon.data.format_number(snappedf(shaper.weight_kg(), 0.1))
 	_shape_banner.text = line
 	_shape_banner.add_theme_color_override("font_color", COLOR_CHALK if cost <= have + 0.001 else Color(COLOR_WARN))
 
@@ -654,14 +676,14 @@ func _refresh_extract_banner() -> void :
 	_extract_banner.visible = _player.extracting
 	if not _player.extracting:
 		return
-	var line: = "◆ EXTRAÇÃO"
+	var line: = tr("◆ EXTRAÇÃO")
 	match _player.extractor.problem:
 		"full":
-			line = "◆ CARGA CHEIA"
+			line = tr("◆ CARGA CHEIA")
 		"nothing":
-			line = "◆ NADA AO ALCANCE"
+			line = tr("◆ NADA AO ALCANCE")
 	if _player.extractor.pulling:
-		line = "◆ EXTRAINDO"
+		line = tr("◆ EXTRAINDO")
 	_extract_banner.text = line
 
 
@@ -670,7 +692,7 @@ func _refresh_slots() -> void :
 	for i in _slot_panels.size():
 		var item: = hands.item_at(i)
 		var replica: = hands.network_item_state(i) if item == null else {}
-		var name: = "VAZIO"
+		var name: = tr("VAZIO")
 		var detail: = ""
 		var progress: = -1.0
 		if item != null:
@@ -678,15 +700,15 @@ func _refresh_slots() -> void :
 			if item.is_building:
 
 				progress = Forge.build_progress(item)
-				detail = "MONTANDO %d%%" % roundi(progress * 100.0) if i == hands.current else "GUARDADA %d%%" % roundi(progress * 100.0)
+				detail = tr("MONTANDO %d%%") % roundi(progress * 100.0) if i == hands.current else tr("GUARDADA %d%%") % roundi(progress * 100.0)
 			elif item.magazine > 0:
-				detail = "CARREGANDO" if item.loading else ("RECARREGANDO" if item.is_reloading() else "%d / %d" % [item.ammo, item.capacity])
+				detail = tr("CARREGANDO") if item.loading else (tr("RECARREGANDO") if item.is_reloading() else "%d / %d" % [item.ammo, item.capacity])
 			elif item.charges > 1:
 				detail = "×%d" % item.charges
 		elif not replica.is_empty():
 			name = Lexicon.data.thing_name(str(replica.get("id", ""))).to_upper()
 			if bool(replica.get("building", false)):
-				detail = "MONTANDO"
+				detail = tr("MONTANDO")
 			elif int(replica.get("magazine", 0)) > 0:
 				detail = "%d / %d" % [int(replica.get("ammo", 0)), int(replica.get("capacity", 0))]
 			elif int(replica.get("charges", 0)) > 1:
@@ -740,34 +762,39 @@ func _refresh_status() -> void :
 		if count <= 0:
 			continue
 		var name: = Lexicon.data.thing_name(id).to_upper()
-		parts.append("MONTANDO %s%s %d%%" % ["%d× " % count if count > 1 else "", name, roundi(float(building[id][1]) * 100.0)])
+		parts.append(tr("MONTANDO %s%s %d%%") % ["%d× " % count if count > 1 else "", name, roundi(float(building[id][1]) * 100.0)])
 	if waiting:
-		parts.append("FALTA MATÉRIA")
+		parts.append(tr("FALTA MATÉRIA"))
 	if stored > 0:
-		parts.append("%d GUARDADA%s" % [stored, "S" if stored > 1 else ""])
+		parts.append(tr("%d GUARDADA%s") % [stored, "S" if stored > 1 else ""])
 	if _voice != null:
 		if _voice.is_chat_talk():
-			parts.append("● CONVERSANDO")
+			parts.append(tr("● CONVERSANDO"))
 		match _voice.state:
+			"starting":
+				parts.append(tr("ABRINDO MICROFONE…"))
 			"listening":
 
 				if _voice.held_seconds() > Lexicon.balf("extraction.tap_max_s") or _voice.is_private_talk() or _voice.is_command_talk():
-					parts.append("● OUVINDO COMANDO [B]" if _voice.is_command_talk() else "● OUVINDO")
+					parts.append(tr("● OUVINDO COMANDO [B]") if _voice.is_command_talk() else (tr("● PODE FALAR") if OS.has_feature("android") or MobileDev.args().has("--mobile") else tr("● OUVINDO")))
 			"thinking":
-				parts.append("● ENTENDENDO…")
+				parts.append(tr("● ENTENDENDO…"))
 			"warming":
-				parts.append("PREPARANDO A VOZ…")
+				parts.append(tr("PREPARANDO A VOZ…"))
+			"off":
+				if OS.has_feature("android"):
+					parts.append(tr("VOZ OFFLINE INDISPONÍVEL · USE DIGITAR"))
 	if _voice_note_until > 0:
 		parts.append(_voice_note)
 	var held: = _player.hands.network_item_state()
 	if _player.hands.is_charging():
 		var charge: = _player.hands.charge_level()
-		parts.append("GOLPE FORTE %d%%" % roundi(charge * 100.0) if charge > 0.0 else "CARREGANDO GOLPE")
+		parts.append(tr("GOLPE FORTE %d%%") % roundi(charge * 100.0) if charge > 0.0 else tr("CARREGANDO GOLPE"))
 	elif _player.is_blocking():
-		parts.append("DEFENDENDO")
+		parts.append(tr("DEFENDENDO"))
 	var carry: = _player.carry_speed_mult()
 	if carry < 1.0:
-		parts.append("CARGA %s kg −%d%%" % [Lexicon.data.format_number(snappedf(_player.carried_weight(), 1.0)), 
+		parts.append(tr("CARGA %s kg −%d%%") % [Lexicon.data.format_number(snappedf(_player.carried_weight(), 1.0)), 
 			roundi((1.0 - carry) * 100.0)])
 	var status: = Status.of(_player)
 	if status != null:
@@ -779,9 +806,9 @@ func _refresh_status() -> void :
 				Lexicon.data.format_number(snappedf(float(status.remaining[kind]), 0.1))])
 	var pending: = _player.pending_ability()
 	if not pending.is_empty():
-		parts.append("%s · FALTA MATÉRIA" % Lexicon.data.label("abilities", String(pending["id"])).to_upper())
+		parts.append(tr("%s · FALTA MATÉRIA") % Lexicon.data.label("abilities", String(pending["id"])).to_upper())
 	if _player.piloting != null:
-		parts.append("PILOTANDO %s" % Lexicon.data.thing_name(_player.piloting.thing_id).to_upper())
+		parts.append(tr("PILOTANDO %s") % Lexicon.data.thing_name(_player.piloting.thing_id).to_upper())
 	var abilities: = _player.active_abilities()
 	for id: String in abilities:
 		parts.append("%s %s s" % [Lexicon.data.label("abilities", id).to_upper(), Lexicon.data.format_number(snappedf(float(abilities[id]), 0.1))])
@@ -818,8 +845,8 @@ func _refresh_match() -> void :
 	if _match == null or _player == null:
 		return
 	if Session.is_online() and not Session.replication.is_active():
-		_round_label.text = "ONLINE"
-		_scoreboard.text = "PREPARANDO"
+		_round_label.text = tr("ONLINE")
+		_scoreboard.text = tr("PREPARANDO")
 		_opponent_bar.visible = false
 		_opponent_label.visible = false
 		_set_banner("")
@@ -830,13 +857,13 @@ func _refresh_match() -> void :
 	_opponent_label.visible = duel
 	if not duel:
 		_round_label.text = ""
-		_scoreboard.text = "TREINO"
+		_scoreboard.text = tr("TREINO")
 		_set_banner("")
 		return
 	var opponent: = _match.opponent
 	var you: = int(_match.score.get(_player.player_id, 0))
 	var them: = int(_match.score.get(opponent.player_id, 0))
-	_round_label.text = "ROUND %d" % _match.round_number
+	_round_label.text = tr("ROUND %d") % _match.round_number
 	_scoreboard.text = "%s  %d × %d  %s" % [_player.display_name, you, them, opponent.display_name]
 	_opponent_bar.max_value = opponent.max_health
 	_opponent_bar.value = opponent.health
@@ -847,11 +874,11 @@ func _refresh_match() -> void :
 		for fighter: Player in _match.get_players():
 			scores.append("%s %d" % [fighter.display_name, int(_match.score.get(fighter.player_id, 0))])
 			if fighter.is_alive() and Session.peer_for_player(fighter.player_id) > 0: survivors += 1
-		_round_label.text = "FFA · ROUND %d" % _match.round_number
+		_round_label.text = tr("FFA · ROUND %d") % _match.round_number
 		_scoreboard.text = "  ·  ".join(scores)
-		_opponent_label.text = "%d SOBREVIVENTES" % survivors
+		_opponent_label.text = tr("%d SOBREVIVENTES") % survivors
 	var won: = _match.last_winner == _player
-	var winner_name: = _match.last_winner.display_name if is_instance_valid(_match.last_winner) else "NINGUÉM"
+	var winner_name: = _match.last_winner.display_name if is_instance_valid(_match.last_winner) else tr("NINGUÉM")
 	var state: = String(_match.state)
 	match state:
 		"countdown":
@@ -862,22 +889,22 @@ func _refresh_match() -> void :
 				SoundBank.play_flat(self, "match/countdown", Lexicon.balf("feel.sound.countdown_db"), 
 					FeelSounds.fallback("match/countdown"), AudioMix.EFFECTS)
 		"round_over":
-			_set_banner("VOCÊ VENCEU O ROUND" if won else ("EMPATE" if not is_instance_valid(_match.last_winner) else "%s VENCEU O ROUND" % winner_name))
+			_set_banner(tr("VOCÊ VENCEU O ROUND") if won else (tr("EMPATE") if not is_instance_valid(_match.last_winner) else tr("%s VENCEU O ROUND") % winner_name))
 			if _last_state != state:
 				SoundBank.play_flat(self, "match/round_win" if won else "match/round_lose", Lexicon.balf("feel.sound.match_db"))
 		"match_over":
-			_set_banner(("VOCÊ VENCEU!" if won else "%s VENCEU" % winner_name) + "\n[ESPAÇO]")
+			_set_banner((tr("VOCÊ VENCEU!") if won else tr("%s VENCEU") % winner_name) + tr("\n[ESPAÇO]"))
 			if _last_state != state:
 				SoundBank.play_flat(self, "match/match_win" if won else "match/match_lose", Lexicon.balf("feel.sound.match_db"))
 		_:
 			if _last_state == "countdown":
 				SoundBank.play_flat(self, "match/go", Lexicon.balf("feel.sound.countdown_db"), FeelSounds.fallback("match/go"))
-				_set_banner("LUTE!")
+				_set_banner(tr("LUTE!"))
 				get_tree().create_timer(0.7).timeout.connect( func() -> void :
-					if _match != null and _match.state not in ["countdown", "round_over", "match_over"] and _banner_text == "LUTE!":
-						_set_banner("ELIMINADO" if ffa and not _player.is_alive() else ""))
-			elif _banner_text != "LUTE!":
-				_set_banner("ELIMINADO" if ffa and not _player.is_alive() else "")
+					if _match != null and _match.state not in ["countdown", "round_over", "match_over"] and _banner_text == tr("LUTE!"):
+						_set_banner(tr("ELIMINADO") if ffa and not _player.is_alive() else ""))
+			elif _banner_text != tr("LUTE!"):
+				_set_banner(tr("ELIMINADO") if ffa and not _player.is_alive() else "")
 	if state != "countdown":
 		_last_count = -1
 	_last_state = state
@@ -904,7 +931,7 @@ func _set_banner(text: String) -> void :
 		return
 	_banner_text = text
 	_banner.text = text
-	_banner.add_theme_color_override("font_color", HudSkin.ACCENT if text.is_valid_int() or text == "LUTE!" else HudSkin.INK)
+	_banner.add_theme_color_override("font_color", HudSkin.ACCENT if text.is_valid_int() or text == tr("LUTE!") else HudSkin.INK)
 	_banner.add_theme_font_size_override("font_size", 96 if text.is_valid_int() else 46)
 	if not text.is_empty():
 		_pop(_banner, 1.6 if text.is_valid_int() else 1.15)
@@ -928,7 +955,7 @@ func _build_voice_log() -> void :
 	_voice_log.add_child(box)
 	var title: = Label.new()
 	title.theme_type_variation = &"TagLabel"
-	title.text = "VOZ"
+	title.text = tr("VOZ")
 	box.add_child(title)
 	_voice_log_text = RichTextLabel.new()
 	_voice_log_text.bbcode_enabled = true

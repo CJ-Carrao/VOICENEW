@@ -9,7 +9,11 @@ extends RefCounted
 
 
 
+
+
 const PATH: = "res://data/world/blueprints.json"
+const CITY_PATH: = "res://data/world/blueprints_city.json"
+const CITY_BLUEPRINTS: = preload("res://scripts/world/city_blueprints.gd")
 
 static var _data: Dictionary = {}
 
@@ -27,6 +31,16 @@ static func chunks(id: String) -> Array:
 	_load()
 	var bp: Dictionary = _data.get(id, {})
 	match String(bp.get("type", "")):
+		"city_building":
+			return CITY_BLUEPRINTS.build(bp)
+		"city_viaduct":
+			return CITY_BLUEPRINTS.build_viaduct(bp)
+		"city_station":
+			return CITY_BLUEPRINTS.build_station(bp)
+		"city_stairs":
+			return CITY_BLUEPRINTS.build_stairs(bp)
+		"city_car":
+			return CITY_BLUEPRINTS.build_car(bp)
 		"house":
 			return _house(bp)
 		"wall":
@@ -35,6 +49,8 @@ static func chunks(id: String) -> Array:
 			return _box(bp)
 		"rock":
 			return _rock(bp)
+		"parts":
+			return _parts(bp)
 	push_warning("[Mundo] planta desconhecida: %s" % id)
 	return []
 
@@ -42,6 +58,9 @@ static func chunks(id: String) -> Array:
 static func _load() -> void :
 	if _data.is_empty():
 		_data = JSON.parse_string(FileAccess.get_file_as_string(PATH))
+		var city: Variant = JSON.parse_string(FileAccess.get_file_as_string(CITY_PATH))
+		if city is Dictionary:
+			_data.merge(city)
 
 
 
@@ -201,4 +220,19 @@ static func _rock(bp: Dictionary) -> Array:
 		var chip: = Vector3(s.x * 0.36, s.y * 0.7, s.z * 0.36)
 		var pos: = Vector3(cos(angle) * s.x * 0.42, 0.0, sin(angle) * s.z * 0.42)
 		out.append({"pos": pos, "size": chip, "material": material, "shape": "ellipsoid"})
+	return out
+
+
+static func _parts(bp: Dictionary) -> Array:
+	var out: Array = []
+	for part: Dictionary in bp.get("parts", []):
+		var pos: Array = part.get("pos", [0.0, 0.0, 0.0])
+		var size: Array = part.get("size", [1.0, 1.0, 1.0])
+		var chunk: = {"pos": Vector3(float(pos[0]), float(pos[1]), float(pos[2])), 
+			"size": Vector3(float(size[0]), float(size[1]), float(size[2])), "material": String(part.get("material", "stone"))}
+		if part.has("shape"):
+			chunk["shape"] = String(part["shape"])
+		if part.has("color"):
+			chunk["color"] = String(part["color"])
+		out.append(chunk)
 	return out

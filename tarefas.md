@@ -1,7 +1,7 @@
 ---
 title: Próximas melhorias do jogo
 date: 2026-10-24
-updated: 2026-10-25
+updated: 2026-10-27
 tags:
   - lavoice
   - planejamento
@@ -11,7 +11,7 @@ tags:
 
 Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · Relacionado: [[Projetos/lavoice-lab/pokemon|Pokémon e comandos de voz]] · [[Projetos/lavoice-lab/criatividade|Criatividade, colônias e defesas]] · [[Projetos/lavoice-lab/leia-me|Guia do LAVOICE Lab]]
 
-Cada etapa só é marcada como concluída depois de implementada, testada e incluída no executável. Progresso: **8 de 8 etapas concluídas**. Todas estão reunidas em `build/LAVOICE-Lab-Criaturas-Inteligentes.exe`, aberto por `jogar.cmd`. Os nomes de executáveis nas primeiras etapas registram a entrega original de cada uma. Comandos e regras atuais: [[Projetos/lavoice-lab/criatividade-completa|Fusões, armas criativas, vínculo e chefes]].
+Cada etapa só é marcada como concluída depois de implementada, testada e incluída no executável. Progresso: **8 de 8 etapas concluídas**. Todas estão reunidas em `build/H4-Lab/LAVOICE-Lab-H4-v26.exe`, aberto por `jogar.cmd`. Os nomes de executáveis nas primeiras etapas registram a entrega original de cada uma. Comandos e regras atuais: [[Projetos/lavoice-lab/criatividade-completa|Fusões, armas criativas, vínculo e chefes]].
 
 **Fora desta etapa:** ambiente reagindo automaticamente a elementos e modo laboratório. Não abrir o jogo automaticamente; validar sem janela.
 
@@ -100,3 +100,13 @@ As quatro etapas finais passaram em `creative_progression.gd`, inclusive executa
 - Verificar o comportamento principal, balanceamento e interação com captura e misturas.
 - Verificar a partida online quando a etapa alterar ações ou estado de criaturas.
 - Atualizar executável e instruções; então marcar a etapa como concluída e avançar.
+
+
+## Integração H-4 — 27/10/2026
+
+- [x] Priorizar modelos, animações, portais e explosões oficiais, preservando nossas extensões.
+- [x] Recompilar e validar sem janela, incluindo rede entre duas instâncias locais.
+- [x] Atualizar lançadores e memória. Detalhes: [[Projetos/lavoice-lab/atualizacao-h4]].
+- [ ] Teste visual do usuário, microfone físico e rede entre PCs.
+
+- [x] Estender a adaptação H-4 a todo o catálogo de criaturas, casa ambulante, 11 armas e interações dos escudos com as bombas oficiais. Revisar Vermelho e cortes espaciais; gerar build v26 e testar pacote/rede. Detalhes: [[Projetos/lavoice-lab/atualizacao-h4#Criaturas, arsenal e interações — 27/10/2026]].

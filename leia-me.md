@@ -5,17 +5,19 @@ tags:
   - lavoice
   - godot
   - desenvolvimento
-updated: 2026-10-24
+updated: 2026-10-27
 ---
 
 # LAVOICE Lab
+
+Base atual: **H-4 oficial com adições do Lab**, priorizando a atualização original. Veja [[Projetos/lavoice-lab/atualizacao-h4|Integração H-4 e validações]]. Os registros de recuperação mais abaixo são históricos.
 
 Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · Relacionado: [[Projetos/lavoice-lab/criatividade|Criatividade, colônias e defesas]] · [[Projetos/lavoice-lab/correcoes.txt|Correções e testes do jogo]] · [[Projetos/lavoice-lab/tarefas|Próximas melhorias do jogo]]
 
 > [!info] Controles atuais
 > **V** cria por voz; **B** recebe somente comandos, como “Squirtle, ataque”; **T** abre o console. Use `jogar.cmd` para iniciar a versão atual. As seções de recuperação abaixo registram também versões anteriores.
 
-Atualização das correções: use `jogar.cmd` ou `build\LAVOICE-Lab-Criaturas-Inteligentes.exe`. A lista de problemas relatados e suas correções está em [[Projetos/lavoice-lab/correcoes.txt|correcoes.txt.md]]. Todos os participantes de uma partida online precisam usar a mesma versão corrigida.
+Atualização das correções: use `jogar.cmd` ou `build\H4-Lab\LAVOICE-Lab-H4-v26.exe`. A lista de problemas relatados e suas correções está em [[Projetos/lavoice-lab/correcoes.txt|correcoes.txt.md]]. Todos os participantes de uma partida online precisam usar a mesma versão corrigida.
 
 ## Atualizacao: Pacote Caos
 
@@ -37,13 +39,13 @@ Verificado no projeto e na build: pedido de uma formiga, montagem, gasto de mate
 
 ## Abrir
 
-- **Jogar:** abra `jogar.cmd`, ou `build\LAVOICE-Lab-Jujutsu.exe`.
+- **Jogar:** abra `jogar.cmd`, ou `build\H4-Lab\LAVOICE-Lab-H4-v26.exe`.
 - **Editar:** abra `editar.cmd`. O editor Godot 4.7.2 ja esta em `tools\godot`.
 - **Gerar outra versao depois de editar:** abra `recompilar.cmd`.
 - **Projeto:** `game\project.godot`.
 - **Preferencias, logs e saves da copia:** `%APPDATA%\LAVOICE-Lab`.
 
-Mantenha as pastas `voice`, `licenses`, `x86_64` e as DLLs junto do executavel ao mover a build. O primeiro carregamento pode demorar para preparar os shaders. Para distribuir uma pasta completa, copie `build` inteira; o arquivo `.pck` separado e intermediario da recompilacao, pois o executavel tambem o contem.
+Mantenha as pastas `voice`, `licenses`, `x86_64` e as DLLs junto do executavel ao mover a build. O primeiro carregamento pode demorar para preparar os shaders. Para distribuir uma pasta completa, copie `build/H4-Lab` inteira; o arquivo `.pck` separado e intermediario da recompilacao, pois o executavel tambem o contem.
 
 ## Onde adicionar coisas
 
