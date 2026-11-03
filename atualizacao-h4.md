@@ -126,3 +126,10 @@ Na detonação, raio e dano são calculados pelas dimensões físicas já escala
 Validação sem janela: 200 frases (100 espécies × matar/explodir), variantes naturais, preservação da bomba seletiva original, seleção por dono/espécie, capturados, liberação de vagas, tamanho pequeno/grande, 30 detonações completas e enxerto sobrevivendo à remoção do pai. Passou no EXE exportado. Captura e limites/alvos anteriores passaram novamente. Duas instâncias reais do novo EXE validaram comando remoto, remoção das 30 criaturas e 30 explosões concluídas no servidor. Microfone físico, FPS e rede entre PCs não medidos.
 
 Build: `build/H4-Lab/LAVOICE-Lab-H4-v28.exe`; gameplay 28, protocolo 24. Recibo e pacote atualizados; lançadores mantêm a abertura manual. Patch distribuído como v0.3.2; confirmação de publicação registrada abaixo.
+
+
+### Publicação dos comandos de descarte confirmada — 03/11/2026
+
+[Release v0.3.2](https://github.com/CJ-Carrao/VOICENEW/releases/tag/v0.3.2) publicada e conferida sem autenticação como mais recente. Código da build `e0655ed60f0b661192f66fe60085654534a12b75`. ZIP Windows completo: 564.045.517 bytes, SHA256 `8a528f35f14a4d74442b10a3522eb5a19445ff26bfef70db164a0d327b9aaa7d`, igual ao digest retornado pelo GitHub. EXE v28: 122.060.704 bytes, SHA256 `68b7e1d5a1e7ff79b92905e9941404df54a7bf382795341ff1964b044530531a`.
+
+Testes do pacote e rede local passaram, incluindo comando remoto pelo B e 30 explosões efetivamente executadas no servidor. Atalho e `jogar.cmd` apontam para v28; todas as pessoas da partida precisam atualizar. Builds e releases anteriores preservadas como histórico. Sem abertura de janela e sem mudança na IA local, que continua fora do jogo.
