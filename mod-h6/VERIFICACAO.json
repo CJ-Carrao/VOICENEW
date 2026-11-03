@@ -1,0 +1,20 @@
+{
+  "version": "v0.4.0",
+  "gameplay": "voicenew-h6-lab-32",
+  "source_patch_operations": 482,
+  "tested": [
+    "clean H-6 source patch application",
+    "Godot import/export and locally supplied runtime",
+    "castle placement, gate, patrol, invasion, repairs, Q",
+    "51 personal power profiles",
+    "187 original models and 15 original new definitions",
+    "two local ENet processes: creation, Q command, gate motion, repaired cells"
+  ],
+  "not_tested": [
+    "physical microphone",
+    "visual gameplay",
+    "FPS",
+    "external network"
+  ],
+  "original_files_bundled": false
+}
