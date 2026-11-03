@@ -1024,6 +1024,7 @@ func surface_touch(body: Node3D, at: Vector3, normal: Vector3) -> void :
 
 
 func can_act() -> bool:
+	if bool(get_meta("disposal_pending", false)): return false
 	if not has_simulation_authority() or not is_active or is_dead or is_building or Status.paralyzed(self):
 		return false
 	if is_held and is_instance_valid(owner_player) and Status.paralyzed(owner_player): return false

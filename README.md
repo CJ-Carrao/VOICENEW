@@ -1,6 +1,6 @@
 # VOICENEW
 
-**Base local atual: H-4 oficial**, priorizando os recursos originais e preservando as adições do Lab. Abra `jogar.cmd` ou `build/H4-Lab/LAVOICE-Lab-H4-v27.exe`. [Integração, testes e limites](atualizacao-h4.md). A versão **v0.3.1** reúne a base H-4 e nossas adições; baixe o pacote completo nas Releases. A IA local de interpretação ainda é um protótipo separado e não está ativada no jogo.
+**Base local atual: H-4 oficial**, priorizando os recursos originais e preservando as adições do Lab. Abra `jogar.cmd` ou `build/H4-Lab/LAVOICE-Lab-H4-v28.exe`. [Integração, testes e limites](atualizacao-h4.md). A versão **v0.3.2** reúne a base H-4 e nossas adições; baixe o pacote completo nas Releases. A IA local de interpretação ainda é um protótipo separado e não está ativada no jogo.
 
 Jogo de criatividade por voz para Windows, desenvolvido a partir do projeto LAVOICE Lab. Crie animais, armas, construções e habilidades, misture suas partes e dê comandos aos companheiros.
 
@@ -18,6 +18,15 @@ Cada jogador pode ter **até 30 animais vivos**, incluindo capturados e os gerad
 
 - Pelo **V**: “quero pombos que só ataquem o jogador 4”.
 - Pelo **B**: “pombos ataquem só o jogador 3”.
+
+Comandos adicionais pelo **B**, somente para os seus animais:
+
+- “mate todos os animais” — elimina todos os seus animais vivos, inclusive capturados.
+- “mate todos os elefantes” — elimina só os seus elefantes.
+- “quero que todos os elefantes se explodam” — sacrifica os seus elefantes com explosões proporcionais ao tamanho.
+- “quero que todos os animais se explodam” — faz o mesmo com todas as suas espécies.
+
+A seleção é por dono; explosões causam dano normal ao redor e destroem blocos. As detonações são distribuídas no tempo para respeitar o orçamento de efeitos.
 
 Vale para todas as espécies e para jogadores de 1 a 4. A criatura ignora outros jogadores e animais; se o alvo estiver ausente ou morto, aguarda sem escolher outra vítima. Não pode atacar o próprio treinador. Todos na partida precisam da mesma versão.
 

@@ -21,6 +21,8 @@ static func match_replace(pattern: String, text: String, replacement: String) ->
 	return regex.sub(text,replacement)
 
 static func command(text: String, lex: LexiconData) -> Dictionary:
+	var cleanup := disposal(text, lex)
+	if not cleanup.is_empty(): return cleanup
 	var choice = match_text("^(.+?) (?:(?:so|somente|apenas) )?(?:ataquem|ataque|ataca|atacam)(?: (?:so|somente|apenas))?(?: o)? jogador(?: numero)? (1|2|3|4|um|dois|tres|quatro)$",text)
 	if choice != null:
 		var result = single(choice.get_string(1),"target_player",lex)
@@ -92,3 +94,28 @@ static func player_creation(text: String) -> Dictionary:
 	if found == null:return {}
 	var number = player_number(found.get_string(1))
 	return {"base":text.erase(found.get_start(),found.get_end()-found.get_start()).strip_edges(),"player":number,"invalid":number<1 or number>4}
+
+
+static func disposal(text: String, lex: LexiconData) -> Dictionary:
+	var mode := ""
+	var target := ""
+	var found = match_text("^(?:(?:eu )?quero que )?(?:mate|mata|matem|elimine|elimina|eliminem|remova|removam) (.+)$", text)
+	if found != null:
+		mode = "dismiss"
+		target = found.get_string(1)
+	else:
+		found = match_text("^(?:(?:eu )?quero (?:que )?)?(?:exploda|explodam|esploda|detone) (.+)$", text)
+		if found != null:
+			mode = "detonate"
+			target = found.get_string(1)
+		else:
+			found = match_text("^(?:(?:eu )?quero que |(?:faca|faz) )?(.+?) (?:se )?(?:explodam|explodao|esplodam|esplodao|explodirem|explodir|exploda|detonem)$", text)
+			if found == null: return {}
+			mode = "detonate"
+			target = found.get_string(1)
+	target = match_replace("^(?:(?:todos|todas|os|as|o|a|meus|minhas|meu|minha|proprios|proprias) +)+", target, "")
+	var actor := ""
+	if target not in ["animais","animal","naimais","bichos","bicho","criaturas","criatura"]:
+		actor = species(target, lex)
+		if actor.is_empty() or lex.category_of(actor) != "creature" or lex.thing_def(actor).get("coop_boss",false): return {}
+	return {"command":"creature_tactics","tactics":{"actor":actor,"action":mode,"all":true}}

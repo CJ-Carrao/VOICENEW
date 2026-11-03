@@ -6,7 +6,7 @@ extends RefCounted
 
 const PROTOCOL_VERSION: = 24
 
-const GAMEPLAY_VERSION: = "voicenew-h4-lab-27"
+const GAMEPLAY_VERSION: = "voicenew-h4-lab-28"
 
 
 static func manifest(data_root: String = "res://data", character_root: String = "") -> Dictionary:

@@ -1,8 +1,8 @@
 ---
 title: Atualização original H-4 no LAVOICE Lab
 date: 2026-10-27
-updated: 2026-11-02
-publicacao: github-v0.3.1
+updated: 2026-11-03
+publicacao: github-v0.3.2
 tags:
   - lavoice
   - atualizacao
@@ -16,7 +16,7 @@ Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · [[Projetos/lavoice-lab/leia-m
 
 Em 27/10/2026, o usuário pediu priorizar a atualização original. A base atual é a H-4 oficial, com nossas adições integradas por comparação entre a recuperação anterior, o Lab e a nova versão. Em conflitos de conteúdo original, os modelos e comportamentos novos tiveram prioridade.
 
-Abra `C:\Tony\Projetos\lavoice-lab\jogar.cmd`, que aponta para `build/H4-Lab/LAVOICE-Lab-H4-v27.exe`. Ao mover o jogo, copie a pasta **H4-Lab inteira**, incluindo voz, licenças e bibliotecas. O atalho `Jogar VOICENEW.lnk` também foi atualizado. O jogo não foi aberto com janela nesta etapa.
+Abra `C:\Tony\Projetos\lavoice-lab\jogar.cmd`, que aponta para `build/H4-Lab/LAVOICE-Lab-H4-v28.exe`. Ao mover o jogo, copie a pasta **H4-Lab inteira**, incluindo voz, licenças e bibliotecas. O atalho `Jogar VOICENEW.lnk` também foi atualizado. O jogo não foi aberto com janela nesta etapa.
 
 ## Preservado e integrado
 
@@ -30,7 +30,7 @@ Abra `C:\Tony\Projetos\lavoice-lab\jogar.cmd`, que aponta para `build/H4-Lab/LAV
 
 Importação, exportação e carregamento do pacote embutido no EXE passaram. Testes sem janela verificaram modelos oficiais por hash, animações, interpretação em português/inglês, crateras incrementais, bombas em multidões, captura, evolução, combos, domínios, ordens e táticas. Rede local com duas instâncias verificou lobby, criação de partida e replicação das táticas, inclusive usando o pacote exportado. A bomba atômica oficial também foi testada contra 64 criaturas agrupadas: nenhuma sobrevivente e nenhum erro no teste. Evidências em `analysis/h4-*.log` (arquivos locais ignorados pelo Git).
 
-Protocolo do Lab: **24 / voicenew-h4-lab-27**. Todos na partida precisam desta mesma versão modificada. Compatibilidade com APK oficial, Steam, internet entre PCs e microfone físico não foi validada; não presumir crossplay oficial. Inspeção visual em partida ainda depende de teste do usuário.
+Protocolo do Lab: **24 / voicenew-h4-lab-28**. Todos na partida precisam desta mesma versão modificada. Compatibilidade com APK oficial, Steam, internet entre PCs e microfone físico não foi validada; não presumir crossplay oficial. Inspeção visual em partida ainda depende de teste do usuário.
 
 A IA local de interpretação continua **protótipo separado**, sem opção no menu nem integração ao EXE. O resultado 70/74 registrado em [[Projetos/lavoice-lab/ia-local|IA local]] pertence à base anterior; exige revalidação na H-4.
 
@@ -108,3 +108,21 @@ Build v27: `build/H4-Lab/LAVOICE-Lab-H4-v27.exe`, gameplay `voicenew-h4-lab-27`,
 [Release v0.3.1](https://github.com/CJ-Carrao/VOICENEW/releases/tag/v0.3.1) publicada em 02/11/2026 e conferida como mais recente sem autenticação. Código da build: `dcfc68c824b8bf3bd985eb7411b6b7a12bcf6442`. ZIP Windows completo com 564.040.291 bytes; SHA256 `8f6bd737a780ef8685802ca53d80edd6a27b90c481b0b8595f396f379b18be52`, confirmado no GitHub. EXE v27: 122.054.816 bytes, SHA256 `da5a8723004cb11d0a8631df4dfe86a370ae8338b9e438c1c50ce7c7efa186a7`.
 
 A bateria de limite/alvos passou também no executável exportado. Duas instâncias desse mesmo pacote confirmaram recusa do 31º animal remoto e propagação da ordem para 30 formigas. Lançadores locais atualizados. Todos devem usar v0.3.1 (gameplay 27); a v0.3.0 é histórica. Sem IA integrada e sem abertura de janela nesta etapa.
+
+
+## Eliminar ou explodir os próprios animais — 03/11/2026
+
+Pedido do usuário implementado com comandos por B (também aceitos pelo console e pelo caminho normal de voz):
+
+- “mate todos os animais” / “elimine todos os meus bichos”.
+- “mate todos os elefantes”.
+- “quero que todos os elefantes se explodam” / “exploda todos os elefantes”.
+- “quero que todos os animais se explodam”.
+
+A seleção é sempre **dos animais do jogador que falou**, em todo o mapa, incluindo criaturas montadas, capturadas e em montagem. Filtro por espécie usa a identidade atual da criatura, não apenas sua cabeça misturada. Animais inimigos e chefes privados não são selecionados. A operação ignora a resistência/Infinito dos próprios animais porque é uma ordem de descarte, e libera suas vagas no limite de 30. Uma segunda operação do mesmo dono aguarda o término da anterior; atores pendentes param de produzir/atacar.
+
+Na detonação, raio e dano são calculados pelas dimensões físicas já escaladas da criatura, incluindo tamanho, largura/altura e ajustes de enxerto. Limites: raio 0,75–8 m e dano 8–130. Usa explosão/crateras reais da H-4, com desgaste de escudos e regras normais de combate; **a explosão pode causar dano colateral**, embora o comando não selecione animais dos outros. Para capturados, o ponto da explosão é a Pokébola. Fontes e seus pais são retidos até concluir a fila para uma morte em cadeia não apagar detonações pendentes. Trabalho por quadro limitado e máximo nativo de seis explosões por segundo por jogador preservado; 30 animais detonam em sequência.
+
+Validação sem janela: 200 frases (100 espécies × matar/explodir), variantes naturais, preservação da bomba seletiva original, seleção por dono/espécie, capturados, liberação de vagas, tamanho pequeno/grande, 30 detonações completas e enxerto sobrevivendo à remoção do pai. Passou no EXE exportado. Captura e limites/alvos anteriores passaram novamente. Duas instâncias reais do novo EXE validaram comando remoto, remoção das 30 criaturas e 30 explosões concluídas no servidor. Microfone físico, FPS e rede entre PCs não medidos.
+
+Build: `build/H4-Lab/LAVOICE-Lab-H4-v28.exe`; gameplay 28, protocolo 24. Recibo e pacote atualizados; lançadores mantêm a abertura manual. Patch distribuído como v0.3.2; confirmação de publicação registrada abaixo.

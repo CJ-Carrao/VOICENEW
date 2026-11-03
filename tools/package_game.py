@@ -10,7 +10,7 @@ ENGINE = ROOT / "tools/runtime/lavoice-h4-engine.bin"
 if not ENGINE.exists():
     ENGINE = ROOT / "tools/runtime/lavoice-engine.bin"
 PACK = ROOT / "build/LAVOICE-Lab-H4.pck"
-OUTPUT = ROOT / "build/H4-Lab/LAVOICE-Lab-H4-v27.exe"
+OUTPUT = ROOT / "build/H4-Lab/LAVOICE-Lab-H4-v28.exe"
 
 
 def build(pack_path=PACK, output_path=OUTPUT, engine_path=ENGINE):

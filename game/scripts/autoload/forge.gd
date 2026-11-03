@@ -381,7 +381,7 @@ static func side_offsets(count: int, footprint: float) -> PackedFloat32Array:
 func spawn_child(node: Dictionary, role: String, at: Vector3, direction: Vector3, spawner: Thing, 
 		launch_speed: float = -1.0, inherit: Vector3 = Vector3.ZERO, same_generation: bool = false, 
 		speed_mult: float = 1.0, replace_pair: bool = false) -> Thing:
-	if not is_instance_valid(spawner) or spawner.is_captured: return null
+	if not is_instance_valid(spawner) or spawner.is_captured or bool(spawner.get_meta("disposal_pending",false)): return null
 	if not has_effect_authority() or world == null or node.is_empty() or ( not same_generation and not _depth_allows(spawner)):
 		return null
 	if Session.is_online() and not Session.creations.descendant_allowed(spawner.owner_id, node):
@@ -429,7 +429,7 @@ func spawn_child(node: Dictionary, role: String, at: Vector3, direction: Vector3
 
 
 func summon_child(node: Dictionary, target: Vector3, heading: Vector3, spawner: Thing) -> Thing:
-	if not is_instance_valid(spawner) or spawner.is_captured: return null
+	if not is_instance_valid(spawner) or spawner.is_captured or bool(spawner.get_meta("disposal_pending",false)): return null
 	if not has_effect_authority() or world == null or node.is_empty() or not _depth_allows(spawner):
 		return null
 	if Session.is_online() and not Session.creations.descendant_allowed(spawner.owner_id, node):
@@ -472,6 +472,14 @@ func reserve_anomaly_effect() -> bool:
 	return true
 
 
+
+func explosion_ready(player_id: int) -> bool:
+	if not has_effect_authority(): return false
+	var count := 0
+	var now := Time.get_ticks_msec()
+	for time in _explosion_times.get(player_id, []):
+		if now - int(time) <= 1000: count += 1
+	return count < int(Lexicon.balf("caps.explosions_per_s"))
 
 func allow_explosion(player_id: int) -> bool:
 	if not has_effect_authority():

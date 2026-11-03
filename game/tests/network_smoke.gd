@@ -98,6 +98,11 @@ func _success() -> void:
 				if selected:break
 				await create_timer(.05).timeout
 			if not selected or limiter.count(2)!=30: _finish(false,"Remote limit/numbered order failed");return
+			if OS.get_cmdline_user_args().has("--test-disposal"):
+				var disposal=load("res://scripts/things/creature_disposal.gd")
+				until=Time.get_ticks_msec()+12000
+				while disposal.totals.exploded<30 and Time.get_ticks_msec()<until:await create_timer(.05).timeout
+				if limiter.count(2)!=0 or disposal.totals.exploded!=30:_finish(false,"Remote self-detonation did not complete 30 explosions");return
 			await create_timer(1.5).timeout
 		else:
 			var until=Time.get_ticks_msec()+12000
@@ -120,6 +125,12 @@ func _success() -> void:
 				if selected==30:break
 				await create_timer(.05).timeout
 			if selected!=30 or limiter.count(2)!=30:_finish(false,"Numbered player target did not replicate to 30 animals");return
+			if OS.get_cmdline_user_args().has("--test-disposal"):
+				forge.request(2,"quero que todos os animais se explodam",false,true)
+				until=Time.get_ticks_msec()+12000
+				while limiter.count(2)>0 and Time.get_ticks_msec()<until:await create_timer(.05).timeout
+				if limiter.count(2)!=0:_finish(false,"Client animals survived remote self-detonation");return
+				await create_timer(.5).timeout
 	elif OS.get_cmdline_user_args().has("--test-tactics"):
 		await create_timer(3.3).timeout
 		if role == "host":

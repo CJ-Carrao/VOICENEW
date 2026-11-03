@@ -17,7 +17,7 @@ Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · Relacionado: [[Projetos/lavoi
 > [!info] Controles atuais
 > **V** cria por voz; **B** recebe somente comandos, como “Squirtle, ataque”; **T** abre o console. Use `jogar.cmd` para iniciar a versão atual. As seções de recuperação abaixo registram também versões anteriores.
 
-Atualização das correções: use `jogar.cmd` ou `build\H4-Lab\LAVOICE-Lab-H4-v27.exe`. A lista de problemas relatados e suas correções está em [[Projetos/lavoice-lab/correcoes.txt|correcoes.txt.md]]. Todos os participantes de uma partida online precisam usar a mesma versão corrigida.
+Atualização das correções: use `jogar.cmd` ou `build\H4-Lab\LAVOICE-Lab-H4-v28.exe`. A lista de problemas relatados e suas correções está em [[Projetos/lavoice-lab/correcoes.txt|correcoes.txt.md]]. Todos os participantes de uma partida online precisam usar a mesma versão corrigida.
 
 ## Atualizacao: Pacote Caos
 
@@ -39,7 +39,7 @@ Verificado no projeto e na build: pedido de uma formiga, montagem, gasto de mate
 
 ## Abrir
 
-- **Jogar:** abra `jogar.cmd`, ou `build\H4-Lab\LAVOICE-Lab-H4-v27.exe`.
+- **Jogar:** abra `jogar.cmd`, ou `build\H4-Lab\LAVOICE-Lab-H4-v28.exe`.
 - **Editar:** abra `editar.cmd`. O editor Godot 4.7.2 ja esta em `tools\godot`.
 - **Gerar outra versao depois de editar:** abra `recompilar.cmd`.
 - **Projeto:** `game\project.godot`.

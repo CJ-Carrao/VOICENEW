@@ -13,7 +13,7 @@ New-Item -ItemType Directory -Path $buildRoot -Force | Out-Null
 if ($LASTEXITCODE -ne 0) { throw 'Falha ao importar o projeto.' }
 & $engine --headless --path (Join-Path $projectRoot 'game') --export-pack 'Windows Desktop' (Join-Path $projectRoot 'build/LAVOICE-Lab-H4.pck')
 if ($LASTEXITCODE -ne 0) { throw 'Falha ao exportar o pacote.' }
-& $pythonRuntime (Join-Path $projectRoot 'tools/package_game.py') --pack (Join-Path $projectRoot 'build/LAVOICE-Lab-H4.pck') --output (Join-Path $buildRoot 'LAVOICE-Lab-H4-v27.exe')
+& $pythonRuntime (Join-Path $projectRoot 'tools/package_game.py') --pack (Join-Path $projectRoot 'build/LAVOICE-Lab-H4.pck') --output (Join-Path $buildRoot 'LAVOICE-Lab-H4-v28.exe')
 if ($LASTEXITCODE -ne 0) { throw 'Falha ao montar o executavel.' }
 foreach ($folder in @('voice', 'licenses')) {
     $target = Join-Path $buildRoot $folder
@@ -24,4 +24,4 @@ foreach ($folder in @('voice', 'licenses')) {
 Get-ChildItem -LiteralPath (Join-Path $projectRoot 'tools/runtime') -File -Filter '*.dll' | Copy-Item -Destination $buildRoot -Force
 Copy-Item -LiteralPath (Join-Path $projectRoot 'tools/runtime/x86_64') -Destination $buildRoot -Recurse -Force
 Copy-Item -LiteralPath (Join-Path $projectRoot 'game/CREDITOS.txt') -Destination (Join-Path $buildRoot 'CREDITOS.txt') -Force
-Write-Host "Pronto: $buildRoot\LAVOICE-Lab-H4-v27.exe"
+Write-Host "Pronto: $buildRoot\LAVOICE-Lab-H4-v28.exe"

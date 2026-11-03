@@ -36,7 +36,7 @@ static func parse(text: String, lex: LexiconData) -> Dictionary:
 	var prepared := CreativeComposer.prepare(text)
 	var tactics = load("res://scripts/language/tactical_language.gd")
 	var command: Dictionary = tactics.command(prepared,lex)
-	if not command.is_empty(): return {"ok":true,"text":text,"normalized":prepared,"recipe":command,"pretty":"ORDEM PARA "+lex.thing_name(command.tactics.actor),"unknown_words":[],"ignored_words":[],"corrections":[],"notes":[],"warnings":[],"lexicon_version":lex.version}
+	if not command.is_empty(): return {"ok":true,"text":text,"normalized":prepared,"recipe":command,"pretty":"ORDEM PARA "+(lex.thing_name(command.tactics.actor) if not String(command.tactics.actor).is_empty() else "SEUS ANIMAIS"),"unknown_words":[],"ignored_words":[],"corrections":[],"notes":[],"warnings":[],"lexicon_version":lex.version}
 	var selective: Dictionary = tactics.species_bomb(prepared,lex)
 	if not selective.is_empty(): return {"ok":true,"text":text,"normalized":prepared,"recipe":selective,"pretty":Recipe.pretty(selective,lex),"unknown_words":[],"ignored_words":[],"corrections":[],"notes":[],"warnings":[],"lexicon_version":lex.version}
 	var player_target: Dictionary = tactics.player_creation(prepared)
