@@ -1,20 +1,22 @@
 {
-  "version": "v0.4.0",
-  "gameplay": "voicenew-h6-lab-32",
-  "source_patch_operations": 482,
+  "version": "v0.4.2",
+  "gameplay": "voicenew-h6-lab-33",
+  "source_patch_operations": 484,
   "tested": [
-    "clean H-6 source patch application",
-    "Godot import/export and locally supplied runtime",
-    "castle placement, gate, patrol, invasion, repairs, Q",
-    "51 personal power profiles",
-    "187 original models and 15 original new definitions",
-    "two local ENet processes: creation, Q command, gate motion, repaired cells"
+    "final EXE: castle floor and obstacle detection",
+    "final EXE: queen creates nest and ants above actual floor/ramp",
+    "final EXE: elephant exits and returns through small castle entrance while following player",
+    "final EXE: extraction removes real blocks, preserves untouched colliders, repairs restore cells",
+    "final EXE: gate, patrol, invasion, repair replication and Q orders",
+    "two local ENet processes using final package: castle, orders, gate and repairs"
   ],
   "not_tested": [
     "physical microphone",
-    "visual gameplay",
-    "FPS",
+    "visual gameplay FPS",
     "external network"
   ],
-  "original_files_bundled": false
+  "original_files_bundled_in_source_patch": false,
+  "full_game_distribution": "with permission reported by maintainer; original credits preserved",
+  "exe_sha256": "4b599e374a9520c4bfa0a2e012c0c02c04df2df2474494eb630d988b77d5923f",
+  "zip_sha256": "d99bdb506227ce4e819f3812c48332526f8b2115a8e4be803deebf3338fb53cf"
 }

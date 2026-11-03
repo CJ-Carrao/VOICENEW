@@ -30,13 +30,14 @@ def build(project,godot,original,output):
         section=pe+24+optional+i*40
         if engine[section:section+8].rstrip(b'\0')==b'pck':struct.pack_into('<II',engine,section+16,len(data)+12,len(engine));found=True;break
     if not found:raise ValueError('Runtime sem seção de pacote.')
-    exe=output/'VOICENEW-H6-v32.exe';exe.write_bytes(engine+data+struct.pack('<Q4s',len(data),b'GDPC'))
+    revision=int(metadata['gameplay'].rsplit('-',1)[-1])
+    exe=output/('VOICENEW-H6-v'+str(revision)+'.exe');exe.write_bytes(engine+data+struct.pack('<Q4s',len(data),b'GDPC'))
     pack.unlink()
     for name in ['voice','licenses','x86_64']:shutil.copytree(original.parent/name,output/name)
     for item in original.parent.glob('*.dll'):shutil.copy2(item,output/item.name)
     for name in ['CREDITOS.txt','LICENCA.txt']:
         if (original.parent/name).is_file():shutil.copy2(original.parent/name,output/name)
-    (output/'jogar.cmd').write_text('@echo off\nstart "VOICENEW" /D "%~dp0" "%~dp0VOICENEW-H6-v32.exe" %*\n',encoding='utf8')
+    (output/'jogar.cmd').write_text('@echo off\nstart "VOICENEW" /D "%~dp0" "%~dp0'+exe.name+'" %*\n',encoding='utf8')
     result={'exe':exe.name,'sha256':hashlib.sha256(exe.read_bytes()).hexdigest(),'base_sha256':hashlib.sha256(raw).hexdigest()}
     (output/'build-info.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf8')
     return result

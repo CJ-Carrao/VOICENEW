@@ -1,4 +1,12 @@
-# H6-v32 — novidades do Lab
+# H6-v33 — correções de bases (v0.4.2)
+
+- Castelos reconhecidos como chão e obstáculos nas consultas das criações.
+- Ninhos e formigas sobre o piso; nascimentos procuram espaço livre de paredes e portões.
+- Entrada maior e salão central com espaço para criaturas grandes. Portão considera o tamanho do animal ao abrir.
+- Rotas por etapas para alinhar o corpo antes de atravessar, também ao seguir o jogador. Guardas e cerco preservados.
+- Extração atualiza apenas colisões de partes atingidas, com trabalho limitado por etapa, mantendo destruição real e reparos. Otimização medida sem janela; FPS visual ainda não medido.
+
+## Conteúdo anterior H6-v32
 
 - Integração à base oficial H-6, com cordas, jetpack, invisibilidade, singularidade e sincronização dos portais. Os recursos oficiais vêm da instalação local do usuário.
 - Cachorro Orelha refeito com pelagem escura e orelhas caídas; Oliver Tree, Gojo e Sukuna em blocos. Gojo/Sukuna alternam técnicas, priorizam seu rival e disputam domínios, inclusive invocados pelo mesmo dono.

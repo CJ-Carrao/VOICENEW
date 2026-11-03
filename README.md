@@ -1,6 +1,8 @@
 # VOICENEW — mod H-6
 
-## Instalar e jogar — v0.4.1
+## Instalar e jogar — v0.4.2
+
+Correções H6-v33: castelos reconhecidos como estrutura, nascimento de formigas sobre o piso, passagem de criaturas grandes e extração com colisões incrementais. Atualize pelo iniciador; todos no online precisam da mesma versão.
 
 Baixe **[VOICENEW-Instalar.exe](https://github.com/CJ-Carrao/VOICENEW/releases/latest)**, instale o iniciador e clique em **Instalar jogo**. Ele baixa o jogo completo pelo nosso GitHub. Depois, use **Jogar**. Atualizações automáticas ficam ativadas; jogo fechado durante a troca e versão anterior preservada. Não requer Python ou Godot. [Guia do iniciador](launcher/LEIA-ME.md).
 
