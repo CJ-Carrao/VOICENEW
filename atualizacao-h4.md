@@ -101,3 +101,10 @@ Pedidos adicionais do usuário: reduzir o acúmulo de criaturas e permitir escol
 - Testes: 400 frases (100 espécies × quatro jogadores), recusa do 31º sem gasto, grupos, geração por arma/invocação, liberação de vaga, donos independentes, captura/transferência e herança do alvo. Captura, ordens coletivas, progressão, construtores e aviões passaram. Duas instâncias reais verificaram recusa do pedido remoto e sincronização do alvo em 30 criaturas.
 
 Build v27: `build/H4-Lab/LAVOICE-Lab-H4-v27.exe`, gameplay `voicenew-h4-lab-27`, protocolo 24. Limitar animais reduz uma fonte de carga; não houve medição de FPS ou garantia de ausência de lag. Nenhuma janela aberta nesta etapa. O patch é distribuído como v0.3.1; ver confirmação de publicação abaixo.
+
+
+### Publicação do limite e alvos confirmada
+
+[Release v0.3.1](https://github.com/CJ-Carrao/VOICENEW/releases/tag/v0.3.1) publicada em 02/11/2026 e conferida como mais recente sem autenticação. Código da build: `dcfc68c824b8bf3bd985eb7411b6b7a12bcf6442`. ZIP Windows completo com 564.040.291 bytes; SHA256 `8f6bd737a780ef8685802ca53d80edd6a27b90c481b0b8595f396f379b18be52`, confirmado no GitHub. EXE v27: 122.054.816 bytes, SHA256 `da5a8723004cb11d0a8631df4dfe86a370ae8338b9e438c1c50ce7c7efa186a7`.
+
+A bateria de limite/alvos passou também no executável exportado. Duas instâncias desse mesmo pacote confirmaram recusa do 31º animal remoto e propagação da ordem para 30 formigas. Lançadores locais atualizados. Todos devem usar v0.3.1 (gameplay 27); a v0.3.0 é histórica. Sem IA integrada e sem abertura de janela nesta etapa.
