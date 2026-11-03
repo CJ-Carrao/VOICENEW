@@ -1,0 +1,10 @@
+VOICENEW — iniciador e alterações
+
+LAVOICE original: Tsomyst (Somyst Game Studio)
+https://tsomyst.itch.io/lavoice
+
+Os créditos e as licenças dos componentes do jogo são preservados
+em CREDITOS.txt e licenses/ na instalação do jogo.
+
+Iniciador: .NET / Windows Forms (Microsoft), Velopack (MIT).
+https://github.com/velopack/velopack

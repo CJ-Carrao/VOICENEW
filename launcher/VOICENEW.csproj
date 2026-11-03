@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>VOICENEW</AssemblyName>
+    <Version>0.4.1</Version>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup><PackageReference Include="Velopack" Version="1.2.161" /></ItemGroup>
+  <ItemGroup><None Update="CREDITOS.txt" CopyToOutputDirectory="PreserveNewest" /><None Update="LICENCAS.txt" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
+</Project>

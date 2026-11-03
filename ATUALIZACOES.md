@@ -1,6 +1,6 @@
 # Maneiras de atualizar o jogo
 
-Nenhum atualizador automático está implementado nesta versão.
+Implementado na v0.4.1: [iniciador próprio com Velopack](launcher/LEIA-ME.md), instalação do jogo pronto pelo GitHub, atualizações automáticas opcionais, integridade e preservação da versão anterior. A release principal contém apenas o instalador; os downloads auxiliares ficam separados. As opções abaixo são o histórico da comparação anterior à implementação.
 
 ## 1. Iniciador próprio usando GitHub Releases
 

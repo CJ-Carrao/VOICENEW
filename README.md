@@ -1,5 +1,13 @@
 # VOICENEW — mod H-6
 
+## Instalar e jogar — v0.4.1
+
+Baixe **[VOICENEW-Instalar.exe](https://github.com/CJ-Carrao/VOICENEW/releases/latest)**, instale o iniciador e clique em **Instalar jogo**. Ele baixa o jogo completo pelo nosso GitHub. Depois, use **Jogar**. Atualizações automáticas ficam ativadas; jogo fechado durante a troca e versão anterior preservada. Não requer Python ou Godot. [Guia do iniciador](launcher/LEIA-ME.md).
+
+**LAVOICE por Tsomyst — Somyst Game Studio**, com [crédito ao autor](https://tsomyst.itch.io/lavoice) no rodapé do iniciador e arquivos de créditos originais preservados.
+
+Os parágrafos abaixo documentam a publicação anterior v0.4.0, feita somente como patch. A distribuição pronta da v0.4.1 usa autorização relatada pelo mantenedor em 03/11/2026, condicionada aos créditos ao autor. A versão modificada não representa lançamento oficial.
+
 Atualização **v0.4.0**, correspondente às alterações do Lab até **H6-v32**: castelos, menu Q, poderes no jogador e personagens, preservando as adições anteriores.
 
 ## Baixar a atualização
