@@ -1,6 +1,6 @@
 # VOICENEW
 
-**Base local atual: H-4 oficial**, priorizando os recursos originais e preservando as adições do Lab. Abra `jogar.cmd` ou `build/H4-Lab/LAVOICE-Lab-H4-v26.exe`. [Integração, testes e limites](atualizacao-h4.md). A versão **v0.3.0** reúne a base H-4 e nossas adições; baixe o pacote completo nas Releases. A IA local de interpretação ainda é um protótipo separado e não está ativada no jogo.
+**Base local atual: H-4 oficial**, priorizando os recursos originais e preservando as adições do Lab. Abra `jogar.cmd` ou `build/H4-Lab/LAVOICE-Lab-H4-v27.exe`. [Integração, testes e limites](atualizacao-h4.md). A versão **v0.3.1** reúne a base H-4 e nossas adições; baixe o pacote completo nas Releases. A IA local de interpretação ainda é um protótipo separado e não está ativada no jogo.
 
 Jogo de criatividade por voz para Windows, desenvolvido a partir do projeto LAVOICE Lab. Crie animais, armas, construções e habilidades, misture suas partes e dê comandos aos companheiros.
 
@@ -11,6 +11,15 @@ Jogo de criatividade por voz para Windows, desenvolvido a partir do projeto LAVO
 3. Extraia o ZIP inteiro e abra **jogar.cmd** dentro da pasta **VOICENEW**.
 
 Mantenha as pastas de voz, licenças e bibliotecas junto do executável. O pacote inclui os modelos necessários ao reconhecimento de voz offline. O repositório e os downloads são públicos.
+
+## Limite e escolha de alvo
+
+Cada jogador pode ter **até 30 animais vivos**, incluindo capturados e os gerados por armas ou ninhos. Ao atingir o limite, novas criações de animais são bloqueadas; remover ou perder um animal libera uma vaga. Pedidos em grupo que ultrapassem o limite são recusados antes da cobrança.
+
+- Pelo **V**: “quero pombos que só ataquem o jogador 4”.
+- Pelo **B**: “pombos ataquem só o jogador 3”.
+
+Vale para todas as espécies e para jogadores de 1 a 4. A criatura ignora outros jogadores e animais; se o alvo estiver ausente ou morto, aguarda sem escolher outra vítima. Não pode atacar o próprio treinador. Todos na partida precisam da mesma versão.
 
 ## Controles principais
 

@@ -888,6 +888,7 @@
   "caps": {
     "tree_depth": 8,
     "live_entities_per_player": 0,
+    "live_creatures_per_player": 30,
     "explosions_per_s": 6,
     "projectile_max_life_s": 10,
     "split_max": 8,

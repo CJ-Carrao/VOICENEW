@@ -172,6 +172,8 @@ func _reject_result(player_id: int, text: String, result: Dictionary, reason: St
 
 
 func _online_creation_warning(player_id: int, recipe: Dictionary, cost: float, check_economy: bool = true) -> String:
+	if not CreatureLimit.allows(player_id, recipe, true): return CreatureLimit.warning()
+	if int(recipe.get("mods", {}).get("target_player", 0)) == player_id: return "Escolha outro jogador como alvo."
 	if not Session.is_online() or world == null:
 		return ""
 	var player: = world.get_player(player_id)
@@ -384,6 +386,7 @@ func spawn_child(node: Dictionary, role: String, at: Vector3, direction: Vector3
 		return null
 	if Session.is_online() and not Session.creations.descendant_allowed(spawner.owner_id, node):
 		return null
+	if not CreatureLimit.allows(spawner.owner_id, node): return null
 	var heavy := ProductionBudget.complex(node, Lexicon.data)
 	if heavy and not replace_pair and not production.reserve(spawner.owner_id, live_things(spawner.owner_id).size()):
 		stats.production_paused += 1
@@ -396,7 +399,7 @@ func spawn_child(node: Dictionary, role: String, at: Vector3, direction: Vector3
 	var probe: = DevProbe.now()
 	var child: = Assembler.build(node, child_role, Lexicon.data)
 	DevProbe.done("filho_monta", probe)
-	if not creature: child.target_filter = InnovationRules.target_diet(spawner)
+	if not creature or InnovationRules.target_diet(spawner).begins_with("player:"): child.target_filter = InnovationRules.target_diet(spawner)
 	child.set_owner_info(spawner.owner_id, spawner.team, spawner.owner_player, spawner)
 	if same_generation:
 		child.set_generation(spawner.generation)
@@ -431,6 +434,7 @@ func summon_child(node: Dictionary, target: Vector3, heading: Vector3, spawner: 
 		return null
 	if Session.is_online() and not Session.creations.descendant_allowed(spawner.owner_id, node):
 		return null
+	if not CreatureLimit.allows(spawner.owner_id, node): return null
 	if not production.reserve(spawner.owner_id, live_things(spawner.owner_id).size()):
 		stats.production_paused += 1
 		return null
@@ -439,6 +443,7 @@ func summon_child(node: Dictionary, target: Vector3, heading: Vector3, spawner: 
 	var started := Time.get_ticks_usec()
 	var child: = Assembler.build(node, "summoned", Lexicon.data)
 	child.set_owner_info(spawner.owner_id, spawner.team, spawner.owner_player, spawner)
+	if InnovationRules.target_diet(spawner).begins_with("player:"): child.target_filter = InnovationRules.target_diet(spawner)
 	world.add_thing(child)
 	child.add_collision_exception_with(spawner)
 	child.move.arrive(ground_point(clamp_to_arena(target)), heading)
@@ -535,19 +540,20 @@ func transfer_neutral(thing: Thing, team: int) -> void:
 	_register(thing)
 	live_things_changed.emit(previous)
 
-func transfer_owner(thing: Thing, player: Player, source: Thing = null) -> void:
-	if not is_instance_valid(thing) or not is_instance_valid(player) or not Session.has_authority(): return
+func transfer_owner(thing: Thing, player: Player, source: Thing = null) -> bool:
+	if not is_instance_valid(thing) or not is_instance_valid(player) or not Session.has_authority(): return false
+	if not CreatureLimit.can_transfer(thing, player.player_id): return false
 	var previous := thing.owner_id
-	var family := [thing]
-	for item in family:
-		family.append_array(item.grafts)
+	var family := CreatureLimit.family(thing)
 	for item in family:
 		for list in _live.values(): list.erase(item)
 	thing.set_owner_info(player.player_id, player.team, player, source)
-	_register(thing)
+	for item in family:
+		item.set_owner_info(player.player_id, player.team, player, source)
+		_register(item)
 	live_things_changed.emit(previous)
 	live_things_changed.emit(player.player_id)
-
+	return true
 
 
 
@@ -940,6 +946,7 @@ func _place_group(player: Player, recipe: Dictionary, placement: String, build_s
 
 
 func _start_build(thing: Thing, seconds: float, activate_after: bool, cost: float) -> void :
+	if thing.category == "creature": _register(thing)
 	if Session.is_online():
 		Session.creations.prepare_creation(thing)
 	for graft in thing.grafts:
@@ -999,6 +1006,10 @@ func _fail_in_front_of(player_id: int) -> void :
 
 
 func _register(thing: Thing) -> void :
+	if thing.category == "creature" and thing.owner_id > 0 and CreatureLimit.count(thing.owner_id) > CreatureLimit.cap():
+		thing.matter = 0.0
+		thing.remove()
+		return
 	var list: Array = _live.get_or_add(thing.owner_id, [])
 	if list.has(thing):
 		return

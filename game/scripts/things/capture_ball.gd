@@ -62,6 +62,7 @@ func _attempt(reference: WeakRef, roll: float = -1.0) -> bool:
 	var life := clampf(target.hp / maxf(target.max_hp, 1.0), 0.0, 1.0)
 	var chance := clampf(.22 + (1.0 - life) * .55 + clampf(1.0 - target.bounds.size.length() / 8.0, 0.0, .20) + (.10 if target.team == thing.team else 0.0), .15, .90)
 	var blocked := JujutsuRules.field(target, "infinity") != null and not JujutsuRules.bypasses(thing, "capture")
+	if not CreatureLimit.can_transfer(target, thing.owner_id): blocked = true
 	if blocked or (randf() if roll < 0.0 else roll) >= chance:
 		result = "rejected"
 		flying = false
@@ -73,7 +74,10 @@ func _attempt(reference: WeakRef, roll: float = -1.0) -> bool:
 	occupant_name = Lexicon.data.thing_name(target.thing_id)
 	var temporary = target.get_node_or_null("CreativeEffects")
 	if temporary != null: temporary.restore()
-	Forge.transfer_owner(target, thing.owner_player as Player, thing)
+	if not Forge.transfer_owner(target, thing.owner_player as Player, thing):
+		occupant_ref = null; occupant_id = 0; occupant_name = ""
+		result = "rejected"
+		return false
 	target.set_captured(true)
 	result = "captured"
 	flying = false
@@ -85,6 +89,7 @@ func _attempt(reference: WeakRef, roll: float = -1.0) -> bool:
 func release() -> Thing:
 	var animal := occupant()
 	if animal == null or not Session.has_authority() or Forge.world == null: return null
+	if not Forge.transfer_owner(animal, thing.owner_player as Player, thing): return null
 	occupant_ref = null
 	occupant_id = 0
 	occupant_name = ""
@@ -94,7 +99,6 @@ func release() -> Thing:
 	var ahead := Gravity.flat(thing.velocity, thing.up()).normalized()
 	if ahead.length_squared() < .01: ahead = Gravity.flat(-thing.global_basis.z, thing.up()).normalized()
 	var spot := Forge.ground_point(thing.global_position + ahead * (1.5 + animal.bounds.size.length() * .15), thing.up())
-	Forge.transfer_owner(animal, thing.owner_player as Player, thing)
 	animal.global_position = spot + thing.up() * maxf(.08, -animal.bounds.position.y + .05)
 	animal.set_captured(false)
 	animal.velocity = Vector3.ZERO

@@ -70,7 +70,57 @@ func _success() -> void:
 			_finish(false, "Match replication did not become active: " + session.last_error)
 			return
 	var chaos_test := OS.get_cmdline_user_args().has("--test-chaos")
-	if OS.get_cmdline_user_args().has("--test-tactics"):
+	if OS.get_cmdline_user_args().has("--test-limits"):
+		await create_timer(3.3).timeout
+		var forge = root.get_node("Forge")
+		var limiter = load("res://scripts/things/creature_limit.gd")
+		if role == "host":
+			for id in [1,2]: game.get_player(id).set_physics_process(false)
+			game.get_player(1).global_position=Vector3(20,40,0)
+			game.get_player(2).global_position=Vector3(0,40,8)
+			var recipe=load("res://scripts/language/recipe.gd")
+			var source=load("res://scripts/things/assembler.gd").build(recipe.new_node("pistol"),"head",root.get_node("Lexicon").data)
+			source.set_owner_info(2,2,game.get_player(2),null);game.add_thing(source)
+			var actors=[]
+			var until=Time.get_ticks_msec()+9000
+			while actors.size()<30 and Time.get_ticks_msec()<until:
+				var animal=forge.spawn_child(recipe.new_node("ant"),"spawned",Vector3((actors.size()%6)-3,40,(actors.size()/6)*.4),Vector3.FORWARD,source,0.0)
+				if animal!=null:
+					animal.set_physics_process(false);animal.move.set_physics_process(false);animal.get_node("AnimalOrders").set_physics_process(false);actors.append(animal)
+				await create_timer(.12).timeout
+			if actors.size()!=30: _finish(false,"Could not fill remote animal limit");return
+			until=Time.get_ticks_msec()+10000
+			var selected=false
+			while Time.get_ticks_msec()<until:
+				selected=true
+				for actor in actors:
+					if actor.node_data.mods.get("target_player",0)!=1:selected=false
+				if selected:break
+				await create_timer(.05).timeout
+			if not selected or limiter.count(2)!=30: _finish(false,"Remote limit/numbered order failed");return
+			await create_timer(1.5).timeout
+		else:
+			var until=Time.get_ticks_msec()+12000
+			while limiter.count(2)<30 and Time.get_ticks_msec()<until:await create_timer(.05).timeout
+			if limiter.count(2)!=30:_finish(false,"Client did not see 30 animals");return
+			var replies=[]
+			forge.request_processed.connect(func(pid,_text,result):
+				if pid==2:replies.append(result))
+			forge.request(2,"quero uma formiga",false)
+			until=Time.get_ticks_msec()+4000
+			while replies.is_empty() and Time.get_ticks_msec()<until:await create_timer(.05).timeout
+			if replies.is_empty() or not replies[0].get("blocked",false) or not str(replies[0].get("warnings",[])).contains("30"):_finish(false,"Host did not reject client 31st animal");return
+			forge.request(2,"formigas ataquem so o jogador 1",false,true)
+			until=Time.get_ticks_msec()+5000
+			var selected=0
+			while Time.get_ticks_msec()<until:
+				selected=0
+				for actor in forge.live_things(2):
+					if actor.category=="creature" and actor.get_node("AnimalOrders").snapshot().target_player==1:selected+=1
+				if selected==30:break
+				await create_timer(.05).timeout
+			if selected!=30 or limiter.count(2)!=30:_finish(false,"Numbered player target did not replicate to 30 animals");return
+	elif OS.get_cmdline_user_args().has("--test-tactics"):
 		await create_timer(3.3).timeout
 		if role == "host":
 			var forge = root.get_node("Forge")

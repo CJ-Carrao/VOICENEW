@@ -38,7 +38,7 @@ func step(delta: float) -> void :
 	_wander_time += delta
 	var up: = thing.up()
 	if not steering:
-		var enemy: = Combat.nearest_enemy(thing.center(), thing.team, get_tree())
+		var enemy: = Combat.nearest_target(thing, thing.center(), get_tree())
 		visual_target = enemy
 		var flat: = Gravity.flat(thing.velocity, up)
 		if enemy == null:

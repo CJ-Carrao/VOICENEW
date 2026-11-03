@@ -39,11 +39,20 @@ static func parse(text: String, lex: LexiconData) -> Dictionary:
 	if not command.is_empty(): return {"ok":true,"text":text,"normalized":prepared,"recipe":command,"pretty":"ORDEM PARA "+lex.thing_name(command.tactics.actor),"unknown_words":[],"ignored_words":[],"corrections":[],"notes":[],"warnings":[],"lexicon_version":lex.version}
 	var selective: Dictionary = tactics.species_bomb(prepared,lex)
 	if not selective.is_empty(): return {"ok":true,"text":text,"normalized":prepared,"recipe":selective,"pretty":Recipe.pretty(selective,lex),"unknown_words":[],"ignored_words":[],"corrections":[],"notes":[],"warnings":[],"lexicon_version":lex.version}
+	var player_target: Dictionary = tactics.player_creation(prepared)
+	if not player_target.is_empty(): prepared = player_target.base
 	var transformation: Dictionary = tactics.creation(prepared,lex)
 	var result := PhraseParser.new()._run(String(transformation.get("base",prepared)), lex)
 	if result.ok and not transformation.is_empty() and lex.category_of(String(result.recipe.get("thing",""))) == "creature":
 		result.recipe.mods.transform_to = transformation.form
 		result.pretty += " · vira "+lex.thing_name(transformation.form)+" com pouca vida"
+	if result.ok and not player_target.is_empty():
+		if player_target.invalid:
+			result.ok = false
+			result.warnings.append("Escolha um jogador de 1 a 4.")
+		else:
+			result.recipe.get_or_add("mods",{}).target_player = int(player_target.player)
+			result.pretty += " · só ataca o jogador %d" % int(player_target.player)
 	result["text"] = text
 	return result
 

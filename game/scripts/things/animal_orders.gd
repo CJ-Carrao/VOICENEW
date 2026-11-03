@@ -26,6 +26,9 @@ func _ready() -> void:
 	if bool(thing.node_data.get("mods", {}).get("aggressive", false)):
 		mode = "aggressive"
 		tick_left = 0.0
+	if InnovationRules.target_diet(thing).begins_with("player:"):
+		mode = "attack"
+		tick_left = 0.0
 
 static func of(source: Thing) -> Node:
 	var cursor := source
@@ -43,6 +46,10 @@ func active() -> bool: return mode != "free" or automatic_active
 func available() -> bool:
 	return is_instance_valid(thing) and thing.can_act() and not thing.is_captured and not thing.is_held
 func combat_target() -> Node3D:
+	var filter := InnovationRules.target_diet(thing)
+	if filter.begins_with("player:"):
+		var chosen = Forge.world.get_player(int(filter.trim_prefix("player:"))) if Forge.world != null else null
+		return chosen if _enemy(chosen) else null
 	var target = target_ref.get_ref() if target_ref != null else null
 	if target == null and automatic_ref != null: target = automatic_ref.get_ref()
 	return target if _enemy(target) else null
@@ -102,6 +109,14 @@ static func _apply_order(player: Node3D, settings: Dictionary, selected: Node, r
 	if action in ["attack","aggressive"] and bond != null and bond.refuses_danger():
 		return {"blocked":true,"warnings":["Muito ferido e assustado para atacar. Cuide da criatura ou mande recuar."]}
 	var target: Node3D
+	if action == "target_player":
+		var id := int(settings.get("target_player",0))
+		if id < 1 or id > 4 or id == player.player_id: return {"blocked":true,"warnings":["Escolha outro jogador, de 1 a 4."]}
+		selected.thing.node_data.get_or_add("mods",{}).target_player = id
+		selected.thing.target_filter = "player:%d" % id
+		selected.set_order("attack",selected.thing.global_position)
+		selected.last_label = "Só ataca o jogador %d." % id
+		return {"animal_order":action,"target_player":id,"warnings":[selected.last_label]}
 	if action == "attack":
 		var alignment := .45
 		var candidates := player.get_tree().get_nodes_in_group(Combat.COMBATANTS_GROUP)
@@ -236,7 +251,7 @@ func _physics_process(delta: float) -> void:
 	if target != null:
 		goal = Combat.center_of(target)
 		_attack(target)
-	elif mode == "attack":
+	elif mode == "attack" and not InnovationRules.target_diet(thing).begins_with("player:"):
 		mode = "stay"
 		point = thing.global_position
 		goal = point
@@ -319,10 +334,15 @@ func on_capture() -> void:
 	if mode == "build": set_order("stay", thing.global_position)
 func on_release() -> void:
 	if mode == "stay": point = thing.global_position; goal = point
-func snapshot() -> Dictionary: return {"mode": mode, "point": point, "goal": goal, "label": last_label,"automatic":automatic_active}
+func snapshot() -> Dictionary: return {"mode": mode, "point": point, "goal": goal, "label": last_label,"automatic":automatic_active,"target_player":int(InnovationRules.target_diet(thing).trim_prefix("player:")) if InnovationRules.target_diet(thing).begins_with("player:") else 0}
 func apply_snapshot(values: Dictionary) -> void:
 	mode = String(values.get("mode", "free"))
 	point = values.get("point", Vector3.ZERO)
 	goal = values.get("goal", point)
 	last_label = String(values.get("label", ""))
 	automatic_active = bool(values.get("automatic",false))
+
+	var chosen := clampi(int(values.get("target_player",0)),0,4)
+	if chosen > 0:
+		thing.node_data.get_or_add("mods",{}).target_player = chosen
+		thing.target_filter = "player:%d" % chosen

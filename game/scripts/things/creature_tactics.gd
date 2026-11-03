@@ -104,6 +104,8 @@ static func choose(player: Player, species_id: String, exclude: Thing = null) ->
 		selected = candidate
 	return selected
 static func request(player: Player, settings: Dictionary) -> Dictionary:
+	if settings.get("action", "") == "target_player":
+		return load("res://scripts/things/animal_orders.gd").request(player, {"species":settings.get("actor",""),"all":settings.get("all",false),"animal_order":"target_player","target_player":settings.get("target_player",0)})
 	if not player.can_act(): return {"blocked":true,"warnings":["Você não pode dar ordens agora."]}
 	var actor = choose(player,String(settings.get("actor","")))
 	if actor == null: return {"blocked":true,"warnings":["A criatura precisa ser sua, estar visível e a até 60 m."]}

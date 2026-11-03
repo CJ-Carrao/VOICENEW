@@ -61,6 +61,8 @@ static func target_diet(source: Thing) -> String:
 	while is_instance_valid(cursor) and not seen.has(cursor.get_instance_id()):
 		seen[cursor.get_instance_id()] = true
 		if not cursor.target_filter.is_empty(): return cursor.target_filter
+		var chosen := int(cursor.node_data.get("mods", {}).get("target_player", 0))
+		if chosen >= 1 and chosen <= 4: return "player:%d" % chosen
 		var diet := String(cursor.node_data.get("mods", {}).get("diet", Lexicon.data.thing_def(cursor.thing_id).get("diet", "")))
 		if not diet.is_empty() or cursor.category == "creature": return diet
 		# Release builds cannot safely cast a reference after the held item was freed.
@@ -72,6 +74,7 @@ static func target_diet(source: Thing) -> String:
 static func allows_target(source: Thing, target: Object) -> bool:
 	if not is_instance_valid(target): return false
 	var diet := target_diet(source)
+	if diet.begins_with("player:"): return target is Player and target != source.owner_player and target.player_id == int(diet.trim_prefix("player:"))
 	return diet.is_empty() or (target is Thing and target != source and matches_diet(target, diet))
 
 

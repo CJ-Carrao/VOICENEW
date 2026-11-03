@@ -132,9 +132,10 @@ func pickup(item: Thing = null) -> bool:
 	if not GroundItems.can_pickup(player, item): return false
 	var previous := current_item()
 	if is_instance_valid(previous) and previous.is_building: return false
+	if not CreatureLimit.can_transfer(item, player.player_id): return false
 	cancel_use()
 	drop_current()
-	Forge.transfer_owner(item, player)
+	if not Forge.transfer_owner(item, player): return false
 	item.ground_item = false
 	var throwable := item.get_node_or_null("CaptureBall") != null or Lexicon.data.placement_for(item.thing_id) in ["throwable", "load", "attach"]
 	give(item, throwable)

@@ -256,6 +256,9 @@ static func nearest_target(source: Thing, from: Vector3, tree: SceneTree) -> Nod
 	if orders != null and orders.active(): return orders.combat_target()
 	var diet := InnovationRules.target_diet(source)
 	if diet.is_empty(): return nearest_enemy(from, source.team, tree)
+	if diet.begins_with("player:"):
+		var chosen = Forge.world.get_player(int(diet.trim_prefix("player:"))) if Forge.world != null else null
+		return chosen if is_instance_valid(chosen) and chosen.is_alive() and InnovationRules.allows_target(source, chosen) else null
 	if Forge.world == null: return null
 	var best: Thing
 	var distance := INF

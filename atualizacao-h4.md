@@ -2,7 +2,7 @@
 title: Atualização original H-4 no LAVOICE Lab
 date: 2026-10-27
 updated: 2026-11-02
-publicacao: github-v0.3.0
+publicacao: github-v0.3.1
 tags:
   - lavoice
   - atualizacao
@@ -16,7 +16,7 @@ Projeto: [[Projetos/copia-de-jogo|LAVOICE Lab]] · [[Projetos/lavoice-lab/leia-m
 
 Em 27/10/2026, o usuário pediu priorizar a atualização original. A base atual é a H-4 oficial, com nossas adições integradas por comparação entre a recuperação anterior, o Lab e a nova versão. Em conflitos de conteúdo original, os modelos e comportamentos novos tiveram prioridade.
 
-Abra `C:\Tony\Projetos\lavoice-lab\jogar.cmd`, que aponta para `build/H4-Lab/LAVOICE-Lab-H4-v26.exe`. Ao mover o jogo, copie a pasta **H4-Lab inteira**, incluindo voz, licenças e bibliotecas. O atalho `Jogar VOICENEW.lnk` também foi atualizado. O jogo não foi aberto com janela nesta etapa.
+Abra `C:\Tony\Projetos\lavoice-lab\jogar.cmd`, que aponta para `build/H4-Lab/LAVOICE-Lab-H4-v27.exe`. Ao mover o jogo, copie a pasta **H4-Lab inteira**, incluindo voz, licenças e bibliotecas. O atalho `Jogar VOICENEW.lnk` também foi atualizado. O jogo não foi aberto com janela nesta etapa.
 
 ## Preservado e integrado
 
@@ -30,7 +30,7 @@ Abra `C:\Tony\Projetos\lavoice-lab\jogar.cmd`, que aponta para `build/H4-Lab/LAV
 
 Importação, exportação e carregamento do pacote embutido no EXE passaram. Testes sem janela verificaram modelos oficiais por hash, animações, interpretação em português/inglês, crateras incrementais, bombas em multidões, captura, evolução, combos, domínios, ordens e táticas. Rede local com duas instâncias verificou lobby, criação de partida e replicação das táticas, inclusive usando o pacote exportado. A bomba atômica oficial também foi testada contra 64 criaturas agrupadas: nenhuma sobrevivente e nenhum erro no teste. Evidências em `analysis/h4-*.log` (arquivos locais ignorados pelo Git).
 
-Protocolo do Lab: **24 / voicenew-h4-lab-26**. Todos na partida precisam desta mesma versão modificada. Compatibilidade com APK oficial, Steam, internet entre PCs e microfone físico não foi validada; não presumir crossplay oficial. Inspeção visual em partida ainda depende de teste do usuário.
+Protocolo do Lab: **24 / voicenew-h4-lab-27**. Todos na partida precisam desta mesma versão modificada. Compatibilidade com APK oficial, Steam, internet entre PCs e microfone físico não foi validada; não presumir crossplay oficial. Inspeção visual em partida ainda depende de teste do usuário.
 
 A IA local de interpretação continua **protótipo separado**, sem opção no menu nem integração ao EXE. O resultado 70/74 registrado em [[Projetos/lavoice-lab/ia-local|IA local]] pertence à base anterior; exige revalidação na H-4.
 
@@ -88,3 +88,16 @@ A pedido do usuário, código enviado à `main` e pacote Windows publicado como 
 - `Jogar VOICENEW.lnk` (atalho local) e `Novo(a) Documento de Texto.txt` (nota do usuário) ficaram fora do envio. Instalações, ferramentas binárias, caches, modelos de IA e arquivos privados de análise também não entraram no Git.
 
 Extraia o pacote inteiro e execute `VOICENEW/jogar.cmd`. Todos os participantes online precisam desta build. Permanecem pendentes avaliação visual, microfone físico e rede entre PCs.
+
+
+## Limite de animais e jogador escolhido — 02/11/2026
+
+Pedidos adicionais do usuário: reduzir o acúmulo de criaturas e permitir escolher o jogador que elas atacam.
+
+- **30 animais vivos por jogador**, somando espécies, criações em montagem, criaturas equipadas/montadas, capturadas e descendentes de armas, granadas, invocações e ninhos. Pedidos em grupo passam por conferência antes de cobrar matéria; não criam parcialmente um grupo acima da capacidade. Animais removidos/mortos liberam vaga. Armas e projéteis sem animais continuam utilizáveis.
+- Transferência de dono, captura e coleta de Pokébola cheia respeitam a capacidade de destino. Encantamento temporário reserva a vaga de retorno no dono anterior para evitar gerar criaturas neutras por falta de espaço.
+- **V:** “quero pombos que só ataquem o jogador 4”. **B:** “pombos ataquem só o jogador 3”. Valem números e nomes por extenso de 1 a 4, para todas as espécies; não escolhem outro alvo se o jogador estiver ausente/morto. O próprio treinador é protegido.
+- A seleção acompanha deslocamento, mordidas, armas montadas e descendentes. É persistida nas ordens e replicada pelo servidor; outros animais e jogadores não recebem dano desses ataques.
+- Testes: 400 frases (100 espécies × quatro jogadores), recusa do 31º sem gasto, grupos, geração por arma/invocação, liberação de vaga, donos independentes, captura/transferência e herança do alvo. Captura, ordens coletivas, progressão, construtores e aviões passaram. Duas instâncias reais verificaram recusa do pedido remoto e sincronização do alvo em 30 criaturas.
+
+Build v27: `build/H4-Lab/LAVOICE-Lab-H4-v27.exe`, gameplay `voicenew-h4-lab-27`, protocolo 24. Limitar animais reduz uma fonte de carga; não houve medição de FPS ou garantia de ausência de lag. Nenhuma janela aberta nesta etapa. O patch é distribuído como v0.3.1; ver confirmação de publicação abaixo.

@@ -1,7 +1,7 @@
 class_name ProductionBudget
 extends RefCounted
 
-# Bound new work, never the number of animals already alive.
+# Bound creation work; CreatureLimit separately caps each player at 30 animals.
 const PER_SECOND := 12.0
 const BURST := 3.0
 const PER_FRAME := 2

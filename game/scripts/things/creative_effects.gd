@@ -57,7 +57,7 @@ func charm(source: Thing) -> bool:
 	old_order = orders.snapshot() if orders != null else {}
 	old_target = orders.target_ref if orders != null else null
 	old_house = orders.house_ref if orders != null else null
-	Forge.transfer_owner(thing,source.owner_player,source)
+	if not Forge.transfer_owner(thing,source.owner_player,source): return false
 	if orders != null: orders.set_order("retaliate",thing.global_position)
 	team_time = 6.0
 	immunity = 18.0
@@ -70,7 +70,8 @@ func restore(clear_age: bool = true) -> void:
 		team_time = 0.0
 		var owner = Forge.world.get_player(old_owner) if Forge.world != null else null
 		var source = old_source.get_ref() if old_source != null else null
-		if is_instance_valid(owner): Forge.transfer_owner(thing,owner,source as Thing)
+		if is_instance_valid(owner):
+			if not Forge.transfer_owner(thing,owner,source as Thing): Forge.transfer_neutral(thing,old_team)
 		else: thing.set_owner_info(old_owner,old_team,null,source)
 		thing.team = old_team
 		var orders = thing.get_node_or_null("AnimalOrders")

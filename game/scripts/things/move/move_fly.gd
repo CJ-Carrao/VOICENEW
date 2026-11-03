@@ -67,7 +67,7 @@ func step(delta: float) -> void :
 	if not ground.is_empty():
 		altitude = maxf(0.0, (thing.global_position - (ground.position as Vector3)).dot(up))
 	if _autonomous():
-		var target := Combat.nearest_enemy(thing.center(), thing.team, get_tree())
+		var target := Combat.nearest_target(thing, thing.center(), get_tree())
 		var center := Combat.center_of(target) if target != null else (thing.owner_player.global_position if is_instance_valid(thing.owner_player) else thing.global_position)
 		var orbit := Gravity.frame_for(up) * Vector3(cos(_time * 0.45 + thing.get_instance_id() % 13), 0, sin(_time * 0.45 + thing.get_instance_id() % 13)) * 4.0
 		var direction := Gravity.flat(center + orbit - thing.global_position, up)

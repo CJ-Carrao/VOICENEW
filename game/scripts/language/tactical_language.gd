@@ -21,6 +21,12 @@ static func match_replace(pattern: String, text: String, replacement: String) ->
 	return regex.sub(text,replacement)
 
 static func command(text: String, lex: LexiconData) -> Dictionary:
+	var choice = match_text("^(.+?) (?:(?:so|somente|apenas) )?(?:ataquem|ataque|ataca|atacam)(?: (?:so|somente|apenas))?(?: o)? jogador(?: numero)? (1|2|3|4|um|dois|tres|quatro)$",text)
+	if choice != null:
+		var result = single(choice.get_string(1),"target_player",lex)
+		if not result.is_empty():
+			result.tactics.target_player = player_number(choice.get_string(2))
+			return result
 	var found = match_text("^(.+?) (?:proteja|protejam|protege) (.+?)(?: (?:e )?se (?:ele|ela) (?:ficar|estiver) ferid[oa] (?:leve|traga) (?:ele|ela) (?:ate|para) mim)$",text)
 	if found != null: return pair(found.get_string(1),found.get_string(2),"rescue",lex)
 	found = match_text("^(.+?) (?:proteja|protejam|protege) (.+)$",text)
@@ -76,3 +82,13 @@ static func creation(text: String, lex: LexiconData) -> Dictionary:
 	return {"base":found.get_string(1),"form":form}
 static func valid_form(id: String, lex: LexiconData) -> bool:
 	return not id.is_empty() and lex.category_of(id) in ["creature","vehicle"] and not lex.thing_def(id).get("coop_boss",false) and not lex.lexicon.things.get(id,{}).get("words",[]).is_empty()
+
+
+static func player_number(word: String) -> int:
+	return int({"um":1,"dois":2,"tres":3,"quatro":4}.get(word,word))
+
+static func player_creation(text: String) -> Dictionary:
+	var found = match_text("(?:que|q) (?:(?:so|somente|apenas) )?(?:ataquem|ataque|ataca|atacam)(?: (?:so|somente|apenas))?(?: o)? jogador(?: numero)? ([a-z0-9]+)(?![a-z0-9])",text)
+	if found == null:return {}
+	var number = player_number(found.get_string(1))
+	return {"base":text.erase(found.get_start(),found.get_end()-found.get_start()).strip_edges(),"player":number,"invalid":number<1 or number>4}
