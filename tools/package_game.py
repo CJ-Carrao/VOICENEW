@@ -6,11 +6,11 @@ import struct
 import argparse
 
 ROOT = Path(__file__).resolve().parent.parent
-ENGINE = ROOT / "tools/runtime/lavoice-h4-engine.bin"
+ENGINE = ROOT / "tools/runtime/lavoice-h6-engine.bin"
 if not ENGINE.exists():
     ENGINE = ROOT / "tools/runtime/lavoice-engine.bin"
-PACK = ROOT / "build/LAVOICE-Lab-H4.pck"
-OUTPUT = ROOT / "build/H4-Lab/LAVOICE-Lab-H4-v28.exe"
+PACK = ROOT / "build/LAVOICE-Lab-H6.pck"
+OUTPUT = ROOT / "build/H6-Lab/LAVOICE-Lab-H6-v44.exe"
 
 
 def build(pack_path=PACK, output_path=OUTPUT, engine_path=ENGINE):
