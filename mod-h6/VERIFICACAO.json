@@ -1,22 +1,23 @@
 {
-  "version": "v0.4.2",
-  "gameplay": "voicenew-h6-lab-33",
-  "source_patch_operations": 484,
+  "version": "v0.4.3",
+  "gameplay": "voicenew-h6-lab-34",
+  "source_patch_operations": 486,
   "tested": [
-    "final EXE: castle floor and obstacle detection",
-    "final EXE: queen creates nest and ants above actual floor/ramp",
-    "final EXE: elephant exits and returns through small castle entrance while following player",
-    "final EXE: extraction removes real blocks, preserves untouched colliders, repairs restore cells",
-    "final EXE: gate, patrol, invasion, repair replication and Q orders",
-    "two local ENet processes using final package: castle, orders, gate and repairs"
+    "final EXE: physical Black Flash timing, damage, no ranged hit and blocked impact",
+    "final EXE: travelling Fuga, preparation, wider area damage beyond previous radius, burning and Infinity protection",
+    "final EXE: actual pigeon flight with turtle passenger damaging enemy while remaining carried",
+    "final EXE: explicit passenger stay stops damage and free resumes combat",
+    "final EXE: bounded batched Black Flash/Fuga geometry and network effect validation",
+    "native executable boot 90 frames; ZIP CRC"
   ],
   "not_tested": [
+    "visual appearance in gameplay",
+    "visual FPS",
     "physical microphone",
-    "visual gameplay FPS",
-    "external network"
+    "clean application of updated source patch",
+    "full remote carried combat on separate PCs"
   ],
-  "original_files_bundled_in_source_patch": false,
-  "full_game_distribution": "with permission reported by maintainer; original credits preserved",
-  "exe_sha256": "4b599e374a9520c4bfa0a2e012c0c02c04df2df2474494eb630d988b77d5923f",
-  "zip_sha256": "d99bdb506227ce4e819f3812c48332526f8b2115a8e4be803deebf3338fb53cf"
+  "known_legacy_test_failure": "tactical_creativity transformation inheritance/armor assertion also fails on previous v33; unchanged by this update",
+  "exe_sha256": "0a6ebc7d065b475758e265c9459656e0ab186b34ba5136e9ce81c0b50c4d53a3",
+  "zip_sha256": "6558f612be42d0f5e712102e0be7a42f8d447c466129860d181dd10c50bc1067"
 }

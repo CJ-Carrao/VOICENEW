@@ -1,4 +1,13 @@
-# H6-v33 — correções de bases (v0.4.2)
+# H6-v34 — combate e transporte (v0.4.3)
+
+- Black Flash continua um golpe físico preciso: novos ramos 3D com núcleo escuro e halo vermelho, pulso breve e impacto no contato. Sem projétil ou dano à distância; precisão, zona e Infinito preservados. Efeito em duas malhas de instâncias para reduzir criação de objetos.
+- Fuga: flecha visualmente maior, explosão de 8 m/140 de dano base, incêndio e coluna de chamas. Preparação 0,45 s mantida; recarga 8 s no item e 8,5 s no Sukuna. Custo base 260, inclusive como habilidade de criatura; versão de poderes pessoais 351. São adaptações de balanceamento, não medidas do anime.
+- Passageiros atacam durante o transporte: alvo próprio ou do transportador, respeitando ordens, dieta e jogador escolhido. A locomoção fica com o transportador; o passageiro mantém ataques e armas. Voadores aproximam a carga para o alcance de contato.
+- Não há desembarque automático no inimigo. B “pombo carregue a tartaruga”; depois B “pombos ataquem o inimigo”. Para desembarcar, B “pombo solte a carga”. Use um pombo grande para ter capacidade. Permanecem limites de peso, um passageiro e velocidade reduzida.
+
+Referências: [Black Flash](https://jujutsu-kaisen.fandom.com/wiki/Black_Flash), [episódio oficial Nonstandard](https://www.crunchyroll.com/watch/G4VUQMWDZ/nonstandard) e [flecha contra Mahoraga](https://jujutsu-kaisen.fandom.com/wiki/Sukuna_vs._Mahoraga). Não foram copiados modelos, áudios ou cenas do anime. O item Fuga continua uma adaptação independente, sem exigir os votos/requisitos completos do mangá.
+
+## H6-v33 — correções de bases (v0.4.2)
 
 - Castelos reconhecidos como chão e obstáculos nas consultas das criações.
 - Ninhos e formigas sobre o piso; nascimentos procuram espaço livre de paredes e portões.

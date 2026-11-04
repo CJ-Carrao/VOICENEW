@@ -35,7 +35,7 @@ def main():
     updates={
         'yuji_black_flash':'Soco de contato: solte o clique na janela de precisão para um Black Flash. 18 de dano normal ou 45 preciso, raios pretos/vermelhos só no impacto; 0,8 s de recarga. Acerto preciso abre uma zona de 6 s.',
         'sukuna_cleave':'Dismantle: corte branco que viaja a 36 m/s, 32 de dano. Pode ser esquivado e é bloqueado pelo cenário; recarga de 1,2 s.',
-        'sukuna_fuga':'Fuga: prepara por 0,45 s e lança uma flecha de fogo a 25 m/s. Explode e incendeia no impacto; recarga de 5 s.',
+        'sukuna_fuga':'Fuga: prepara por 0,45 s e lança uma flecha de fogo. Detonação de 8 m, 140 de dano base e coluna de chamas; recarga de 8 s.',
         'sukuna_world_cut':'Prepara o corte espacial por 0,55 s. Corta o cenário e atravessa o Infinito, com 100 de dano e 4,5 s de recarga.',
         'reversal_red':'Projétil de repulsão: uma única detonação forte ao tocar um alvo ou o cenário. Pode fundir com Azul antes do impacto.'
     }

@@ -1,6 +1,8 @@
 # VOICENEW — mod H-6
 
-## Instalar e jogar — v0.4.2
+## Instalar e jogar — v0.4.3
+
+H6-v34: Black Flash com novos ramos negros/vermelhos em 3D no impacto; Fuga maior, com custo/recarga ajustados; combate do passageiro durante transporte, sem desembarque automático. Depois de carregar, mande o transportador atacar o inimigo. [Referências e mudanças](mod-h6/NOVIDADES.md).
 
 Correções H6-v33: castelos reconhecidos como estrutura, nascimento de formigas sobre o piso, passagem de criaturas grandes e extração com colisões incrementais. Atualize pelo iniciador; todos no online precisam da mesma versão.
 
