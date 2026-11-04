@@ -1,34 +1,37 @@
 {
-  "version": "0.4.8",
-  "gameplay": "voicenew-h6-lab-39",
+  "version": "0.4.11",
+  "gameplay": "voicenew-h6-lab-42",
   "protocol": 26,
-  "exe": "VOICENEW/LAVOICE-Lab-H6-v39.exe",
-  "exe_bytes": 145057372,
-  "exe_sha256": "20e6d7f9e268e6b0b487a90f30d9b157a7b14b51138b70ffdfb975443eebd4be",
-  "zip_bytes": 582046135,
-  "zip_sha256": "854fec74402fe12f8ff931d107799b9facf374aa84181e95942b56ab2445ebeb",
+  "exe": "VOICENEW/LAVOICE-Lab-H6-v42.exe",
+  "exe_bytes": 145059976,
+  "exe_sha256": "837eb0d100f24c4591900bda355402e16121e2ad4f21ac2ca9f2227027512291",
+  "zip_bytes": 582049142,
+  "zip_sha256": "a0d7ed5c7da6b04318d64969ad33ad4d7fa34f56977e657d699de71cc4ab1413",
   "source_patch": {
-    "operations": 560,
+    "operations": 566,
     "clean_application": true,
     "mismatches": []
   },
+  "changes": {
+    "godzilla_height_m": 12,
+    "previous_godzilla_height_m": 120,
+    "other_kaijus_resized": false,
+    "enemy_kaiju_priority": true,
+    "elephant_level_sole_support": true
+  },
   "final_pack_scenarios": [
+    "kaiju_priority",
     "kaiju_balance",
-    "kaiju_combat",
-    "crossover_integration",
-    "personal_powers",
-    "sans_characters"
+    "elephant_gait",
+    "castle_regressions"
   ],
-  "network": "Two actual local ENet processes running v39, crossover/giant models, equipment, player input, creation and orders",
   "native_headless_frames": 90,
-  "model_previews_inspected": 23,
+  "network": "No new network test for v40-v42; two-process ENet was validated in v39.",
   "not_tested": [
-    "gameplay window visual inspection and animation",
-    "FPS",
+    "visual animation in game window",
     "physical microphone",
-    "Internet gameplay between physical PCs"
+    "new two-PC or two-instance network session"
   ],
   "game_window_opened": false,
-  "interpretation_AI_integrated": false,
   "credits_preserved": true
 }
