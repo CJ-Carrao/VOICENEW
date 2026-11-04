@@ -1,3 +1,22 @@
+# H6-v39 — kaijus, crossover e custos/recargas visíveis (v0.4.8)
+
+Godzilla remodelado: focinho reptiliano, mandíbula e dentes, olhos âmbar com pupilas visíveis, braços curtos, cauda longa curvada e crista dorsal serrilhada. Tem 120 m, animação nativa e sopro atômico realinhado à boca.
+
+- Kaijus gigantes: Godzilla, Kong, King Ghidorah, Mothra e Rodan, com ataques próprios, ordens, captura, armas e misturas.
+- Neymar e bola de futebol; Sans, ossos brancos/azuis, Gaster Blaster, gravidade/alma azul e KARMA; DOOM Slayer e Crucible; Railcannon elétrica; Lança Simétrica; botas de velocidade.
+- Poderes do Sans para o jogador: peça “quero ter os poderes do Sans”; selecione a luva, clique usa e R troca o poder.
+- Mahoraga analisa fenômenos após sobreviver ao contato e continua aprendendo ao longo do tempo; Gojo e Sukuna calibrados em duelos de desenvolvimento.
+- Painel mostra custo real por uso, recarga base, contagem compartilhada, técnica que iniciou a espera, bloqueios e duração do Infinito/domínio. Exemplo: após Vazio Infinito o kit do Gojo espera 28 s; trocar com R não elimina a espera. Os golpes do Gojo continuam custando 0 de matéria por uso, com compra do kit paga.
+- Clique recusado por uma técnica bloqueada não emite sinal de disparo bem-sucedido. Preservados carregadores/recargas, armas sem cobrança por tiro, limite de 30 criaturas por jogador e as dez ideias da expansão v35.
+
+[Galeria dos modelos atuais](../docs/galeria-v048/README.md). São prévias estáticas dos arquivos de modelos, com luz simplificada, sem escala comum entre itens e sem poderes em ação. Arte original em blocos; não foram importados modelos dos jogos citados.
+
+Gameplay `voicenew-h6-lab-39`, protocolo 26: todos na partida precisam atualizar. Jogo 0.4.8; instalador preservado em 0.4.1, com créditos clicáveis ao autor.
+
+Validação: três cenários de porte/combate/integração na fonte e no pacote final v39, duas instâncias ENet do pacote, inicialização nativa por 90 quadros sem janela, ZIP/EXE por SHA-256/CRC e aplicação limpa de 560 operações de código sem diferenças. Cenários de poderes pessoais/Sans também reexecutados no pacote final para publicação. Prévias dos modelos inspecionadas; aparência/animação em janela, FPS, microfone físico e rede entre PCs físicos não aferidos. IA de interpretação continua sem integração.
+
+**LAVOICE por Tsomyst — Somyst Game Studio**: https://tsomyst.itch.io/lavoice. Créditos e licenças preservados.
+
 # H6-v36 — expansão criativa e munição sem cobrança (v0.4.5)
 
 - Armas não consomem matéria por disparo. Minigun de buracos negros continua atirando com saldo zero. Mantidos carregadores, recargas e limites de produção; projéteis gratuitos não devolvem matéria.

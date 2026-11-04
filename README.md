@@ -1,8 +1,8 @@
 # VOICENEW — mod H-6
 
-## Instalar e jogar — v0.4.5
+## Instalar e jogar — v0.4.8
 
-H6-v36: armas sem cobrança de matéria por disparo, incluindo minigun de buracos negros com saldo zero. Inclui as dez novidades criativas da v35: montarias, invasões, invenções salvas, combos, mimetizador e mais. Gameplay `voicenew-h6-lab-36`, protocolo 25; todos na partida devem atualizar. [Comandos, mudanças e validação](mod-h6/NOVIDADES.md).
+H6-v39: Godzilla remodelado, cinco kaijus gigantes, Neymar, Sans e seus poderes, DOOM Slayer/Crucible, Railcannon, Lança Simétrica, botas de velocidade e painel de custos/recargas. Inclui melhorias do Mahoraga, calibração Gojo/Sukuna e as novidades anteriores. Gameplay `voicenew-h6-lab-39`, protocolo 26; todos na partida devem atualizar. [Mudanças e validação](mod-h6/NOVIDADES.md) · [Ver os modelos](docs/galeria-v048/README.md).
 
 Correções H6-v33: castelos reconhecidos como estrutura, nascimento de formigas sobre o piso, passagem de criaturas grandes e extração com colisões incrementais. Atualize pelo iniciador; todos no online precisam da mesma versão.
 
@@ -34,6 +34,6 @@ A licença distribuída com a H-6 exige autorização escrita para redistribuir 
 
 **A atualização atual está em `mod-h6/`.** A pasta `game/` e os guias anteriores registram a versão H-4 já publicada; não são a fonte completa da H-6. [README histórico](docs/README-historico-h4.md).
 
-O aplicador cria uma cópia nova e verifica os arquivos de entrada. O compilador usa o runtime/dependências da instalação original do usuário. Ambos usam somente a biblioteca padrão do Python. Gameplay `voicenew-h6-lab-32`, protocolo 24: todos na partida precisam da mesma versão.
+O aplicador cria uma cópia nova e verifica os arquivos de entrada. O compilador usa o runtime/dependências da instalação original do usuário. Ambos usam somente a biblioteca padrão do Python. Gameplay atual `voicenew-h6-lab-39`, protocolo 26: todos na partida precisam da mesma versão.
 
-Aplicação numa base H-6 limpa, recompilação, testes do pacote e duas instâncias locais foram verificados em 03/11/2026. Sem teste de microfone físico, FPS ou rede entre PCs. IA de interpretação e atualização automática ainda não estão integradas.
+Aplicação das 560 alterações numa base H-6 limpa, testes do pacote e duas instâncias ENet locais foram verificados em 04/11/2026. O iniciador já entrega atualizações. Sem teste de microfone físico, FPS ou rede entre PCs físicos. IA de interpretação ainda não integrada.

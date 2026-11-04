@@ -35,8 +35,9 @@ def build(project,godot,original,output):
     pack.unlink()
     for name in ['voice','licenses','x86_64']:shutil.copytree(original.parent/name,output/name)
     for item in original.parent.glob('*.dll'):shutil.copy2(item,output/item.name)
-    for name in ['CREDITOS.txt','LICENCA.txt']:
-        if (original.parent/name).is_file():shutil.copy2(original.parent/name,output/name)
+    for name in ['CREDITOS.txt','LICENCA.txt','CRIATIVIDADE.txt']:
+        source=project/name if name=='CRIATIVIDADE.txt' else original.parent/name
+        if source.is_file():shutil.copy2(source,output/name)
     (output/'jogar.cmd').write_text('@echo off\nstart "VOICENEW" /D "%~dp0" "%~dp0'+exe.name+'" %*\n',encoding='utf8')
     result={'exe':exe.name,'sha256':hashlib.sha256(exe.read_bytes()).hexdigest(),'base_sha256':hashlib.sha256(raw).hexdigest()}
     (output/'build-info.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf8')

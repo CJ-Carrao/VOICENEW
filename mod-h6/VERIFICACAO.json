@@ -1,30 +1,34 @@
 {
-  "build": "H6-v36",
-  "local_version": "0.4.5",
-  "gameplay": "voicenew-h6-lab-36",
-  "protocol": 25,
-  "tests": [
-    "free_weapon_ammo (source and final pack)",
-    "creative_expansion_edges (final pack)"
-  ],
-  "exe_sha256": "a80314bbf9b3b4b16d334fdc383460d44e2a45be9e497709108284b35321cf3e",
-  "zip_sha256": "4a033c767553ea69c84b573df684da30e95cd35cfa0a462a9db2c8d404a3fe08",
-  "zip_bytes": 581996162,
-  "published": false,
-  "native_boot_tested_this_step": false,
-  "game_window_opened": false,
+  "version": "0.4.8",
+  "gameplay": "voicenew-h6-lab-39",
+  "protocol": 26,
+  "exe": "VOICENEW/LAVOICE-Lab-H6-v39.exe",
+  "exe_bytes": 145057372,
+  "exe_sha256": "20e6d7f9e268e6b0b487a90f30d9b157a7b14b51138b70ffdfb975443eebd4be",
+  "zip_bytes": 582046135,
+  "zip_sha256": "854fec74402fe12f8ff931d107799b9facf374aa84181e95942b56ab2445ebeb",
   "source_patch": {
-    "operations": 518,
+    "operations": 560,
     "clean_application": true,
-    "mismatches": [],
-    "source": "C:\\Users\\Calebe PC\\Documents\\VOICENEW-Validation-v045\\source"
+    "mismatches": []
   },
-  "prior_expansion_verification": "H6-v35: six final-pack scenarios and two-process ENet; see expansion-v35-verification.json in local development records.",
+  "final_pack_scenarios": [
+    "kaiju_balance",
+    "kaiju_combat",
+    "crossover_integration",
+    "personal_powers",
+    "sans_characters"
+  ],
+  "network": "Two actual local ENet processes running v39, crossover/giant models, equipment, player input, creation and orders",
+  "native_headless_frames": 90,
+  "model_previews_inspected": 23,
   "not_tested": [
-    "v36 native runtime boot",
-    "v36 remote gameplay regression",
-    "visual FPS/appearance",
+    "gameplay window visual inspection and animation",
+    "FPS",
     "physical microphone",
-    "separate physical PCs over Internet"
-  ]
+    "Internet gameplay between physical PCs"
+  ],
+  "game_window_opened": false,
+  "interpretation_AI_integrated": false,
+  "credits_preserved": true
 }

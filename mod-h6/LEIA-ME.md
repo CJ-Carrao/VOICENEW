@@ -1,6 +1,6 @@
-# VOICENEW — alterações H-6 / v0.4.0
+# VOICENEW — alterações H-6 / v0.4.8
 
-Este pacote reúne as alterações do Lab até a build **H6-v32**. Ele contém código próprio, modelos próprios e instruções de alteração dos arquivos locais. Não contém o jogo completo, o executável oficial, seu runtime, modelos originais nem os modelos grandes de voz.
+Este pacote reúne as alterações do Lab até a build **H6-v39**, com kaijus/crossover, Godzilla remodelado e painel de custos/recargas. Ele contém código próprio, modelos próprios e instruções de alteração dos arquivos locais. Não contém o jogo completo, o executável oficial, seu runtime, modelos originais nem os modelos grandes de voz.
 
 A distribuição H-6 traz uma licença que exige autorização escrita para redistribuir o jogo e o código extraído. Este pacote não concede direitos sobre o LAVOICE nem representa um lançamento oficial. Obtenha o original pelos [canais do autor](https://tsomyst.itch.io/lavoice) e respeite seus termos.
 
