@@ -1,6 +1,6 @@
 # VOICENEW
 
-**Base local atual: H-4 oficial**, priorizando os recursos originais e preservando as adições do Lab. Abra `jogar.cmd` ou `build/H4-Lab/LAVOICE-Lab-H4-v28.exe`. [Integração, testes e limites](atualizacao-h4.md). A versão **v0.3.2** reúne a base H-4 e nossas adições; baixe o pacote completo nas Releases. A IA local de interpretação ainda é um protótipo separado e não está ativada no jogo.
+**Base local atual: H-4 oficial**, priorizando os recursos originais e preservando as adições do Lab. Abra `jogar.cmd` ou `build/H4-Lab/LAVOICE-Lab-H4-v28.exe`. [Integração, testes e limites](historico-h4/atualizacao-h4.md). A versão **v0.3.2** reúne a base H-4 e nossas adições; baixe o pacote completo nas Releases. A IA local de interpretação ainda é um protótipo separado e não está ativada no jogo.
 
 Jogo de criatividade por voz para Windows, desenvolvido a partir do projeto LAVOICE Lab. Crie animais, armas, construções e habilidades, misture suas partes e dê comandos aos companheiros.
 
@@ -70,18 +70,18 @@ Exemplos: “quero um cachorro com cara de tiranossauro rex”, “quero um Pika
 
 O projeto Godot fica em [game/project.godot](game/project.godot). O executável e os modelos grandes de reconhecimento de voz são distribuídos em Releases; caches, backups e resultados temporários ficam fora do Git.
 
-Para editar ou recompilar, é necessário preparar a engine e as dependências locais usadas pelos scripts; elas não vêm no clone do repositório. Consulte o [guia do projeto](leia-me.md).
+Para editar ou recompilar, é necessário preparar a engine e as dependências locais usadas pelos scripts; elas não vêm no clone do repositório. Consulte o [guia do projeto](historico-h4/leia-me.md).
 
-- [Pokémon e comandos](pokemon.md)
-- [Jujutsu e domínios](jujutsu.md)
-- [Captura e itens](captura.md)
-- [Dinossauros e misturas](dinossauros.md)
-- [Brainrots](brainrots.md)
-- [Criatividade, defesas e colônias](criatividade.md)
-- [Ordens e animais construtores](animais-ordens.md)
-- [Próximas tarefas](tarefas.md)
-- [Fusões, armas criativas, vínculo e chefes](criatividade-completa.md)
-- [Equipes, regras por voz, defesa automática e transformações](taticas-criaturas.md)
+- [Pokémon e comandos](historico-h4/pokemon.md)
+- [Jujutsu e domínios](historico-h4/jujutsu.md)
+- [Captura e itens](historico-h4/captura.md)
+- [Dinossauros e misturas](historico-h4/dinossauros.md)
+- [Brainrots](historico-h4/brainrots.md)
+- [Criatividade, defesas e colônias](historico-h4/criatividade.md)
+- [Ordens e animais construtores](historico-h4/animais-ordens.md)
+- [Próximas tarefas](historico-h4/tarefas.md)
+- [Fusões, armas criativas, vínculo e chefes](historico-h4/criatividade-completa.md)
+- [Equipes, regras por voz, defesa automática e transformações](historico-h4/taticas-criaturas.md)
 
 ## Créditos
 

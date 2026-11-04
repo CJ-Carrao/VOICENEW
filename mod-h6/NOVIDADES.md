@@ -9,7 +9,7 @@ Godzilla remodelado: focinho reptiliano, mandíbula e dentes, olhos âmbar com p
 - Painel mostra custo real por uso, recarga base, contagem compartilhada, técnica que iniciou a espera, bloqueios e duração do Infinito/domínio. Exemplo: após Vazio Infinito o kit do Gojo espera 28 s; trocar com R não elimina a espera. Os golpes do Gojo continuam custando 0 de matéria por uso, com compra do kit paga.
 - Clique recusado por uma técnica bloqueada não emite sinal de disparo bem-sucedido. Preservados carregadores/recargas, armas sem cobrança por tiro, limite de 30 criaturas por jogador e as dez ideias da expansão v35.
 
-[Galeria dos modelos atuais](../docs/galeria-v048/README.md). São prévias estáticas dos arquivos de modelos, com luz simplificada, sem escala comum entre itens e sem poderes em ação. Arte original em blocos; não foram importados modelos dos jogos citados.
+Arte original em blocos; não foram importados modelos dos jogos citados.
 
 Gameplay `voicenew-h6-lab-39`, protocolo 26: todos na partida precisam atualizar. Jogo 0.4.8; instalador preservado em 0.4.1, com créditos clicáveis ao autor.
 
