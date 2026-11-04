@@ -1,8 +1,8 @@
 {
-  "gameVersion": "0.4.3",
-  "packageUrl": "https://github.com/CJ-Carrao/VOICENEW/releases/download/componentes-v043/VOICENEW-Windows.zip",
-  "sha256": "6558f612be42d0f5e712102e0be7a42f8d447c466129860d181dd10c50bc1067",
-  "exePath": "VOICENEW/LAVOICE-Lab-H6-v34.exe",
-  "exeSha256": "0a6ebc7d065b475758e265c9459656e0ab186b34ba5136e9ce81c0b50c4d53a3",
-  "size": 581953715
+  "gameVersion": "0.4.5",
+  "packageUrl": "https://github.com/CJ-Carrao/VOICENEW/releases/download/componentes-v045/VOICENEW-Windows.zip",
+  "sha256": "4a033c767553ea69c84b573df684da30e95cd35cfa0a462a9db2c8d404a3fe08",
+  "exePath": "VOICENEW/LAVOICE-Lab-H6-v36.exe",
+  "exeSha256": "a80314bbf9b3b4b16d334fdc383460d44e2a45be9e497709108284b35321cf3e",
+  "size": 581996162
 }

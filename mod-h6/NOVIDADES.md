@@ -1,3 +1,15 @@
+# H6-v36 — expansão criativa e munição sem cobrança (v0.4.5)
+
+- Armas não consomem matéria por disparo. Minigun de buracos negros continua atirando com saldo zero. Mantidos carregadores, recargas e limites de produção; projéteis gratuitos não devolvem matéria.
+- Inclui a expansão H6-v35: fusões de poderes, curadores e funções na base, evasão/cobertura por ataques repetidos, armas condicionais, montarias com habilidades, evolução por feitos, invasões de cinco ondas, invenções salvas, duplas coordenadas e mimetizador temporário.
+- Comandos, custos e regras no CRIATIVIDADE.txt junto do jogo. Limite de 30 criaturas por jogador, produção de colônias paga, custos de criação e recargas preservados.
+- Corrigida herança de habilidades do Squirtle em misturas, mantendo armas e transformação.
+- Gameplay voicenew-h6-lab-36, protocolo 25: todos na partida devem atualizar. O instalador permanece 0.4.1; o jogo é 0.4.5.
+
+Validação v36: teste de munição na fonte e pacote final (12 disparos, três variantes, saldos 0/500), regressão de granada condicional/colônias pagas/invenções e aplicação limpa das 518 operações de fonte. Os testes ampliados da expansão e rede com duas instâncias foram realizados na v35. Não repetidos rede e boot nativo na v36; aparência/FPS e microfone físico não aferidos. IA de interpretação continua sem integração.
+
+**LAVOICE por Tsomyst — Somyst Game Studio**: https://tsomyst.itch.io/lavoice. Créditos e licenças preservados.
+
 # H6-v34 — combate e transporte (v0.4.3)
 
 - Black Flash continua um golpe físico preciso: novos ramos 3D com núcleo escuro e halo vermelho, pulso breve e impacto no contato. Sem projétil ou dano à distância; precisão, zona e Infinito preservados. Efeito em duas malhas de instâncias para reduzir criação de objetos.
